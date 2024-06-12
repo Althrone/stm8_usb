@@ -1,0 +1,155 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module stm8s_iwdg
+                                      6 	.optsdcc -mstm8
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _assert_failed
+                                     12 	.globl _IWDG_WriteAccessCmd
+                                     13 	.globl _IWDG_SetPrescaler
+                                     14 	.globl _IWDG_SetReload
+                                     15 	.globl _IWDG_ReloadCounter
+                                     16 	.globl _IWDG_Enable
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area DATA
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area INITIALIZED
+                                     25 ;--------------------------------------------------------
+                                     26 ; absolute external ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area DABS (ABS)
+                                     29 
+                                     30 ; default segment ordering for linker
+                                     31 	.area HOME
+                                     32 	.area GSINIT
+                                     33 	.area GSFINAL
+                                     34 	.area CONST
+                                     35 	.area INITIALIZER
+                                     36 	.area CODE
+                                     37 
+                                     38 ;--------------------------------------------------------
+                                     39 ; global & static initialisations
+                                     40 ;--------------------------------------------------------
+                                     41 	.area HOME
+                                     42 	.area GSINIT
+                                     43 	.area GSFINAL
+                                     44 	.area GSINIT
+                                     45 ;--------------------------------------------------------
+                                     46 ; Home
+                                     47 ;--------------------------------------------------------
+                                     48 	.area HOME
+                                     49 	.area HOME
+                                     50 ;--------------------------------------------------------
+                                     51 ; code
+                                     52 ;--------------------------------------------------------
+                                     53 	.area CODE
+                                     54 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 48: void IWDG_WriteAccessCmd(IWDG_WriteAccess_TypeDef IWDG_WriteAccess)
+                                     55 ;	-----------------------------------------
+                                     56 ;	 function IWDG_WriteAccessCmd
+                                     57 ;	-----------------------------------------
+      000000                         58 _IWDG_WriteAccessCmd:
+                                     59 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 51: assert_param(IS_IWDG_WRITEACCESS_MODE_OK(IWDG_WriteAccess));
+      000000 A1 55            [ 1]   60 	cp	a, #0x55
+      000002 27 11            [ 1]   61 	jreq	00104$
+      000004 4D               [ 1]   62 	tnz	a
+      000005 27 0E            [ 1]   63 	jreq	00104$
+      000007 88               [ 1]   64 	push	a
+      000008 4B 33            [ 1]   65 	push	#0x33
+      00000A 5F               [ 1]   66 	clrw	x
+      00000B 89               [ 2]   67 	pushw	x
+      00000C 4B 00            [ 1]   68 	push	#0x00
+      00000E AEr00r00         [ 2]   69 	ldw	x, #(___str_0+0)
+      000011 CDr00r00         [ 4]   70 	call	_assert_failed
+      000014 84               [ 1]   71 	pop	a
+      000015                         72 00104$:
+                                     73 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 53: IWDG->KR = (uint8_t)IWDG_WriteAccess; /* Write Access */
+      000015 C7 50 E0         [ 1]   74 	ld	0x50e0, a
+                                     75 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 54: }
+      000018 81               [ 4]   76 	ret
+                                     77 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 63: void IWDG_SetPrescaler(IWDG_Prescaler_TypeDef IWDG_Prescaler)
+                                     78 ;	-----------------------------------------
+                                     79 ;	 function IWDG_SetPrescaler
+                                     80 ;	-----------------------------------------
+      000019                         81 _IWDG_SetPrescaler:
+                                     82 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 66: assert_param(IS_IWDG_PRESCALER_OK(IWDG_Prescaler));
+      000019 4D               [ 1]   83 	tnz	a
+      00001A 27 26            [ 1]   84 	jreq	00104$
+      00001C A1 01            [ 1]   85 	cp	a, #0x01
+      00001E 27 22            [ 1]   86 	jreq	00104$
+      000020 A1 02            [ 1]   87 	cp	a, #0x02
+      000022 27 1E            [ 1]   88 	jreq	00104$
+      000024 A1 03            [ 1]   89 	cp	a, #0x03
+      000026 27 1A            [ 1]   90 	jreq	00104$
+      000028 A1 04            [ 1]   91 	cp	a, #0x04
+      00002A 27 16            [ 1]   92 	jreq	00104$
+      00002C A1 05            [ 1]   93 	cp	a, #0x05
+      00002E 27 12            [ 1]   94 	jreq	00104$
+      000030 A1 06            [ 1]   95 	cp	a, #0x06
+      000032 27 0E            [ 1]   96 	jreq	00104$
+      000034 88               [ 1]   97 	push	a
+      000035 4B 42            [ 1]   98 	push	#0x42
+      000037 5F               [ 1]   99 	clrw	x
+      000038 89               [ 2]  100 	pushw	x
+      000039 4B 00            [ 1]  101 	push	#0x00
+      00003B AEr00r00         [ 2]  102 	ldw	x, #(___str_0+0)
+      00003E CDr00r00         [ 4]  103 	call	_assert_failed
+      000041 84               [ 1]  104 	pop	a
+      000042                        105 00104$:
+                                    106 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 68: IWDG->PR = (uint8_t)IWDG_Prescaler;
+      000042 C7 50 E1         [ 1]  107 	ld	0x50e1, a
+                                    108 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 69: }
+      000045 81               [ 4]  109 	ret
+                                    110 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 78: void IWDG_SetReload(uint8_t IWDG_Reload)
+                                    111 ;	-----------------------------------------
+                                    112 ;	 function IWDG_SetReload
+                                    113 ;	-----------------------------------------
+      000046                        114 _IWDG_SetReload:
+                                    115 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 80: IWDG->RLR = IWDG_Reload;
+      000046 C7 50 E2         [ 1]  116 	ld	0x50e2, a
+                                    117 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 81: }
+      000049 81               [ 4]  118 	ret
+                                    119 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 89: void IWDG_ReloadCounter(void)
+                                    120 ;	-----------------------------------------
+                                    121 ;	 function IWDG_ReloadCounter
+                                    122 ;	-----------------------------------------
+      00004A                        123 _IWDG_ReloadCounter:
+                                    124 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 91: IWDG->KR = IWDG_KEY_REFRESH;
+      00004A 35 AA 50 E0      [ 1]  125 	mov	0x50e0+0, #0xaa
+                                    126 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 92: }
+      00004E 81               [ 4]  127 	ret
+                                    128 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 99: void IWDG_Enable(void)
+                                    129 ;	-----------------------------------------
+                                    130 ;	 function IWDG_Enable
+                                    131 ;	-----------------------------------------
+      00004F                        132 _IWDG_Enable:
+                                    133 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 101: IWDG->KR = IWDG_KEY_ENABLE;
+      00004F 35 CC 50 E0      [ 1]  134 	mov	0x50e0+0, #0xcc
+                                    135 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_iwdg.c: 102: }
+      000053 81               [ 4]  136 	ret
+                                    137 	.area CODE
+                                    138 	.area CONST
+                                    139 	.area CONST
+      000000                        140 ___str_0:
+      000000 2E 2F 53 54 4D 38 53   141 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
+             5F 53 74 64 50 65 72
+             69 70 68 5F 4C 69 62
+             2F 4C 69 62 72 61 72
+             69 65 73 2F 53 54 4D
+             38 53 5F 53 74 64 50
+             65 72 69 70 68 5F 44
+             72 69 76 65 72 2F 73
+             72 63 2F 73
+      00003C 74 6D 38 73 5F 69 77   142 	.ascii "tm8s_iwdg.c"
+             64 67 2E 63
+      000047 00                     143 	.db 0x00
+                                    144 	.area CODE
+                                    145 	.area INITIALIZER
+                                    146 	.area CABS (ABS)

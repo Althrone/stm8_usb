@@ -1,0 +1,1727 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module stm8s_adc1
+                                      6 	.optsdcc -mstm8
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _assert_failed
+                                     12 	.globl _ADC1_DeInit
+                                     13 	.globl _ADC1_Init
+                                     14 	.globl _ADC1_Cmd
+                                     15 	.globl _ADC1_ScanModeCmd
+                                     16 	.globl _ADC1_DataBufferCmd
+                                     17 	.globl _ADC1_ITConfig
+                                     18 	.globl _ADC1_PrescalerConfig
+                                     19 	.globl _ADC1_SchmittTriggerConfig
+                                     20 	.globl _ADC1_ConversionConfig
+                                     21 	.globl _ADC1_ExternalTriggerConfig
+                                     22 	.globl _ADC1_StartConversion
+                                     23 	.globl _ADC1_GetConversionValue
+                                     24 	.globl _ADC1_AWDChannelConfig
+                                     25 	.globl _ADC1_SetHighThreshold
+                                     26 	.globl _ADC1_SetLowThreshold
+                                     27 	.globl _ADC1_GetBufferValue
+                                     28 	.globl _ADC1_GetAWDChannelStatus
+                                     29 	.globl _ADC1_GetFlagStatus
+                                     30 	.globl _ADC1_ClearFlag
+                                     31 	.globl _ADC1_GetITStatus
+                                     32 	.globl _ADC1_ClearITPendingBit
+                                     33 ;--------------------------------------------------------
+                                     34 ; ram data
+                                     35 ;--------------------------------------------------------
+                                     36 	.area DATA
+                                     37 ;--------------------------------------------------------
+                                     38 ; ram data
+                                     39 ;--------------------------------------------------------
+                                     40 	.area INITIALIZED
+                                     41 ;--------------------------------------------------------
+                                     42 ; absolute external ram data
+                                     43 ;--------------------------------------------------------
+                                     44 	.area DABS (ABS)
+                                     45 
+                                     46 ; default segment ordering for linker
+                                     47 	.area HOME
+                                     48 	.area GSINIT
+                                     49 	.area GSFINAL
+                                     50 	.area CONST
+                                     51 	.area INITIALIZER
+                                     52 	.area CODE
+                                     53 
+                                     54 ;--------------------------------------------------------
+                                     55 ; global & static initialisations
+                                     56 ;--------------------------------------------------------
+                                     57 	.area HOME
+                                     58 	.area GSINIT
+                                     59 	.area GSFINAL
+                                     60 	.area GSINIT
+                                     61 ;--------------------------------------------------------
+                                     62 ; Home
+                                     63 ;--------------------------------------------------------
+                                     64 	.area HOME
+                                     65 	.area HOME
+                                     66 ;--------------------------------------------------------
+                                     67 ; code
+                                     68 ;--------------------------------------------------------
+                                     69 	.area CODE
+                                     70 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 52: void ADC1_DeInit(void)
+                                     71 ;	-----------------------------------------
+                                     72 ;	 function ADC1_DeInit
+                                     73 ;	-----------------------------------------
+      000000                         74 _ADC1_DeInit:
+                                     75 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 54: ADC1->CSR  = ADC1_CSR_RESET_VALUE;
+      000000 35 00 54 00      [ 1]   76 	mov	0x5400+0, #0x00
+                                     77 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 55: ADC1->CR1  = ADC1_CR1_RESET_VALUE;
+      000004 35 00 54 01      [ 1]   78 	mov	0x5401+0, #0x00
+                                     79 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 56: ADC1->CR2  = ADC1_CR2_RESET_VALUE;
+      000008 35 00 54 02      [ 1]   80 	mov	0x5402+0, #0x00
+                                     81 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 57: ADC1->CR3  = ADC1_CR3_RESET_VALUE;
+      00000C 35 00 54 03      [ 1]   82 	mov	0x5403+0, #0x00
+                                     83 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 58: ADC1->TDRH = ADC1_TDRH_RESET_VALUE;
+      000010 35 00 54 06      [ 1]   84 	mov	0x5406+0, #0x00
+                                     85 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 59: ADC1->TDRL = ADC1_TDRL_RESET_VALUE;
+      000014 35 00 54 07      [ 1]   86 	mov	0x5407+0, #0x00
+                                     87 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 60: ADC1->HTRH = ADC1_HTRH_RESET_VALUE;
+      000018 35 FF 54 08      [ 1]   88 	mov	0x5408+0, #0xff
+                                     89 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 61: ADC1->HTRL = ADC1_HTRL_RESET_VALUE;
+      00001C 35 03 54 09      [ 1]   90 	mov	0x5409+0, #0x03
+                                     91 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 62: ADC1->LTRH = ADC1_LTRH_RESET_VALUE;
+      000020 35 00 54 0A      [ 1]   92 	mov	0x540a+0, #0x00
+                                     93 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 63: ADC1->LTRL = ADC1_LTRL_RESET_VALUE;
+      000024 35 00 54 0B      [ 1]   94 	mov	0x540b+0, #0x00
+                                     95 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 64: ADC1->AWCRH = ADC1_AWCRH_RESET_VALUE;
+      000028 35 00 54 0E      [ 1]   96 	mov	0x540e+0, #0x00
+                                     97 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 65: ADC1->AWCRL = ADC1_AWCRL_RESET_VALUE;
+      00002C 35 00 54 0F      [ 1]   98 	mov	0x540f+0, #0x00
+                                     99 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 66: }
+      000030 81               [ 4]  100 	ret
+                                    101 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 88: void ADC1_Init(ADC1_ConvMode_TypeDef ADC1_ConversionMode, ADC1_Channel_TypeDef ADC1_Channel, ADC1_PresSel_TypeDef ADC1_PrescalerSelection, ADC1_ExtTrig_TypeDef ADC1_ExtTrigger, FunctionalState ADC1_ExtTriggerState, ADC1_Align_TypeDef ADC1_Align, ADC1_SchmittTrigg_TypeDef ADC1_SchmittTriggerChannel, FunctionalState ADC1_SchmittTriggerState)
+                                    102 ;	-----------------------------------------
+                                    103 ;	 function ADC1_Init
+                                    104 ;	-----------------------------------------
+      000031                        105 _ADC1_Init:
+      000031 88               [ 1]  106 	push	a
+                                    107 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 91: assert_param(IS_ADC1_CONVERSIONMODE_OK(ADC1_ConversionMode));
+      000032 6B 01            [ 1]  108 	ld	(0x01, sp), a
+      000034 27 10            [ 1]  109 	jreq	00104$
+      000036 0D 01            [ 1]  110 	tnz	(0x01, sp)
+      000038 26 0C            [ 1]  111 	jrne	00104$
+      00003A 4B 5B            [ 1]  112 	push	#0x5b
+      00003C 5F               [ 1]  113 	clrw	x
+      00003D 89               [ 2]  114 	pushw	x
+      00003E 4B 00            [ 1]  115 	push	#0x00
+      000040 AEr00r00         [ 2]  116 	ldw	x, #(___str_0+0)
+      000043 CDr00r00         [ 4]  117 	call	_assert_failed
+      000046                        118 00104$:
+                                    119 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 92: assert_param(IS_ADC1_CHANNEL_OK(ADC1_Channel));
+      000046 0D 04            [ 1]  120 	tnz	(0x04, sp)
+      000048 27 47            [ 1]  121 	jreq	00109$
+      00004A 7B 04            [ 1]  122 	ld	a, (0x04, sp)
+      00004C 4A               [ 1]  123 	dec	a
+      00004D 27 42            [ 1]  124 	jreq	00109$
+      00004F 7B 04            [ 1]  125 	ld	a, (0x04, sp)
+      000051 A1 02            [ 1]  126 	cp	a, #0x02
+      000053 27 3C            [ 1]  127 	jreq	00109$
+      000055 7B 04            [ 1]  128 	ld	a, (0x04, sp)
+      000057 A1 03            [ 1]  129 	cp	a, #0x03
+      000059 27 36            [ 1]  130 	jreq	00109$
+      00005B 7B 04            [ 1]  131 	ld	a, (0x04, sp)
+      00005D A1 04            [ 1]  132 	cp	a, #0x04
+      00005F 27 30            [ 1]  133 	jreq	00109$
+      000061 7B 04            [ 1]  134 	ld	a, (0x04, sp)
+      000063 A1 05            [ 1]  135 	cp	a, #0x05
+      000065 27 2A            [ 1]  136 	jreq	00109$
+      000067 7B 04            [ 1]  137 	ld	a, (0x04, sp)
+      000069 A1 06            [ 1]  138 	cp	a, #0x06
+      00006B 27 24            [ 1]  139 	jreq	00109$
+      00006D 7B 04            [ 1]  140 	ld	a, (0x04, sp)
+      00006F A1 07            [ 1]  141 	cp	a, #0x07
+      000071 27 1E            [ 1]  142 	jreq	00109$
+      000073 7B 04            [ 1]  143 	ld	a, (0x04, sp)
+      000075 A1 08            [ 1]  144 	cp	a, #0x08
+      000077 27 18            [ 1]  145 	jreq	00109$
+      000079 7B 04            [ 1]  146 	ld	a, (0x04, sp)
+      00007B A1 0C            [ 1]  147 	cp	a, #0x0c
+      00007D 27 12            [ 1]  148 	jreq	00109$
+      00007F 7B 04            [ 1]  149 	ld	a, (0x04, sp)
+      000081 A1 09            [ 1]  150 	cp	a, #0x09
+      000083 27 0C            [ 1]  151 	jreq	00109$
+      000085 4B 5C            [ 1]  152 	push	#0x5c
+      000087 5F               [ 1]  153 	clrw	x
+      000088 89               [ 2]  154 	pushw	x
+      000089 4B 00            [ 1]  155 	push	#0x00
+      00008B AEr00r00         [ 2]  156 	ldw	x, #(___str_0+0)
+      00008E CDr00r00         [ 4]  157 	call	_assert_failed
+      000091                        158 00109$:
+                                    159 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 93: assert_param(IS_ADC1_PRESSEL_OK(ADC1_PrescalerSelection));
+      000091 0D 05            [ 1]  160 	tnz	(0x05, sp)
+      000093 27 36            [ 1]  161 	jreq	00141$
+      000095 7B 05            [ 1]  162 	ld	a, (0x05, sp)
+      000097 A1 10            [ 1]  163 	cp	a, #0x10
+      000099 27 30            [ 1]  164 	jreq	00141$
+      00009B 7B 05            [ 1]  165 	ld	a, (0x05, sp)
+      00009D A1 20            [ 1]  166 	cp	a, #0x20
+      00009F 27 2A            [ 1]  167 	jreq	00141$
+      0000A1 7B 05            [ 1]  168 	ld	a, (0x05, sp)
+      0000A3 A1 30            [ 1]  169 	cp	a, #0x30
+      0000A5 27 24            [ 1]  170 	jreq	00141$
+      0000A7 7B 05            [ 1]  171 	ld	a, (0x05, sp)
+      0000A9 A1 40            [ 1]  172 	cp	a, #0x40
+      0000AB 27 1E            [ 1]  173 	jreq	00141$
+      0000AD 7B 05            [ 1]  174 	ld	a, (0x05, sp)
+      0000AF A1 50            [ 1]  175 	cp	a, #0x50
+      0000B1 27 18            [ 1]  176 	jreq	00141$
+      0000B3 7B 05            [ 1]  177 	ld	a, (0x05, sp)
+      0000B5 A1 60            [ 1]  178 	cp	a, #0x60
+      0000B7 27 12            [ 1]  179 	jreq	00141$
+      0000B9 7B 05            [ 1]  180 	ld	a, (0x05, sp)
+      0000BB A1 70            [ 1]  181 	cp	a, #0x70
+      0000BD 27 0C            [ 1]  182 	jreq	00141$
+      0000BF 4B 5D            [ 1]  183 	push	#0x5d
+      0000C1 5F               [ 1]  184 	clrw	x
+      0000C2 89               [ 2]  185 	pushw	x
+      0000C3 4B 00            [ 1]  186 	push	#0x00
+      0000C5 AEr00r00         [ 2]  187 	ldw	x, #(___str_0+0)
+      0000C8 CDr00r00         [ 4]  188 	call	_assert_failed
+      0000CB                        189 00141$:
+                                    190 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 94: assert_param(IS_ADC1_EXTTRIG_OK(ADC1_ExtTrigger));
+      0000CB 0D 06            [ 1]  191 	tnz	(0x06, sp)
+      0000CD 27 12            [ 1]  192 	jreq	00164$
+      0000CF 7B 06            [ 1]  193 	ld	a, (0x06, sp)
+      0000D1 A1 10            [ 1]  194 	cp	a, #0x10
+      0000D3 27 0C            [ 1]  195 	jreq	00164$
+      0000D5 4B 5E            [ 1]  196 	push	#0x5e
+      0000D7 5F               [ 1]  197 	clrw	x
+      0000D8 89               [ 2]  198 	pushw	x
+      0000D9 4B 00            [ 1]  199 	push	#0x00
+      0000DB AEr00r00         [ 2]  200 	ldw	x, #(___str_0+0)
+      0000DE CDr00r00         [ 4]  201 	call	_assert_failed
+      0000E1                        202 00164$:
+                                    203 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 95: assert_param(IS_FUNCTIONALSTATE_OK(((ADC1_ExtTriggerState))));
+      0000E1 0D 07            [ 1]  204 	tnz	(0x07, sp)
+      0000E3 27 10            [ 1]  205 	jreq	00169$
+      0000E5 0D 07            [ 1]  206 	tnz	(0x07, sp)
+      0000E7 26 0C            [ 1]  207 	jrne	00169$
+      0000E9 4B 5F            [ 1]  208 	push	#0x5f
+      0000EB 5F               [ 1]  209 	clrw	x
+      0000EC 89               [ 2]  210 	pushw	x
+      0000ED 4B 00            [ 1]  211 	push	#0x00
+      0000EF AEr00r00         [ 2]  212 	ldw	x, #(___str_0+0)
+      0000F2 CDr00r00         [ 4]  213 	call	_assert_failed
+      0000F5                        214 00169$:
+                                    215 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 96: assert_param(IS_ADC1_ALIGN_OK(ADC1_Align));
+      0000F5 0D 08            [ 1]  216 	tnz	(0x08, sp)
+      0000F7 27 12            [ 1]  217 	jreq	00174$
+      0000F9 7B 08            [ 1]  218 	ld	a, (0x08, sp)
+      0000FB A1 08            [ 1]  219 	cp	a, #0x08
+      0000FD 27 0C            [ 1]  220 	jreq	00174$
+      0000FF 4B 60            [ 1]  221 	push	#0x60
+      000101 5F               [ 1]  222 	clrw	x
+      000102 89               [ 2]  223 	pushw	x
+      000103 4B 00            [ 1]  224 	push	#0x00
+      000105 AEr00r00         [ 2]  225 	ldw	x, #(___str_0+0)
+      000108 CDr00r00         [ 4]  226 	call	_assert_failed
+      00010B                        227 00174$:
+                                    228 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 97: assert_param(IS_ADC1_SCHMITTTRIG_OK(ADC1_SchmittTriggerChannel));
+      00010B 0D 09            [ 1]  229 	tnz	(0x09, sp)
+      00010D 27 4C            [ 1]  230 	jreq	00179$
+      00010F 7B 09            [ 1]  231 	ld	a, (0x09, sp)
+      000111 4A               [ 1]  232 	dec	a
+      000112 27 47            [ 1]  233 	jreq	00179$
+      000114 7B 09            [ 1]  234 	ld	a, (0x09, sp)
+      000116 A1 02            [ 1]  235 	cp	a, #0x02
+      000118 27 41            [ 1]  236 	jreq	00179$
+      00011A 7B 09            [ 1]  237 	ld	a, (0x09, sp)
+      00011C A1 03            [ 1]  238 	cp	a, #0x03
+      00011E 27 3B            [ 1]  239 	jreq	00179$
+      000120 7B 09            [ 1]  240 	ld	a, (0x09, sp)
+      000122 A1 04            [ 1]  241 	cp	a, #0x04
+      000124 27 35            [ 1]  242 	jreq	00179$
+      000126 7B 09            [ 1]  243 	ld	a, (0x09, sp)
+      000128 A1 05            [ 1]  244 	cp	a, #0x05
+      00012A 27 2F            [ 1]  245 	jreq	00179$
+      00012C 7B 09            [ 1]  246 	ld	a, (0x09, sp)
+      00012E A1 06            [ 1]  247 	cp	a, #0x06
+      000130 27 29            [ 1]  248 	jreq	00179$
+      000132 7B 09            [ 1]  249 	ld	a, (0x09, sp)
+      000134 A1 07            [ 1]  250 	cp	a, #0x07
+      000136 27 23            [ 1]  251 	jreq	00179$
+      000138 7B 09            [ 1]  252 	ld	a, (0x09, sp)
+      00013A A1 08            [ 1]  253 	cp	a, #0x08
+      00013C 27 1D            [ 1]  254 	jreq	00179$
+      00013E 7B 09            [ 1]  255 	ld	a, (0x09, sp)
+      000140 A1 0C            [ 1]  256 	cp	a, #0x0c
+      000142 27 17            [ 1]  257 	jreq	00179$
+      000144 7B 09            [ 1]  258 	ld	a, (0x09, sp)
+      000146 4C               [ 1]  259 	inc	a
+      000147 27 12            [ 1]  260 	jreq	00179$
+      000149 7B 09            [ 1]  261 	ld	a, (0x09, sp)
+      00014B A1 09            [ 1]  262 	cp	a, #0x09
+      00014D 27 0C            [ 1]  263 	jreq	00179$
+      00014F 4B 61            [ 1]  264 	push	#0x61
+      000151 5F               [ 1]  265 	clrw	x
+      000152 89               [ 2]  266 	pushw	x
+      000153 4B 00            [ 1]  267 	push	#0x00
+      000155 AEr00r00         [ 2]  268 	ldw	x, #(___str_0+0)
+      000158 CDr00r00         [ 4]  269 	call	_assert_failed
+      00015B                        270 00179$:
+                                    271 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 98: assert_param(IS_FUNCTIONALSTATE_OK(ADC1_SchmittTriggerState));
+      00015B 0D 0A            [ 1]  272 	tnz	(0x0a, sp)
+      00015D 27 10            [ 1]  273 	jreq	00214$
+      00015F 0D 0A            [ 1]  274 	tnz	(0x0a, sp)
+      000161 26 0C            [ 1]  275 	jrne	00214$
+      000163 4B 62            [ 1]  276 	push	#0x62
+      000165 5F               [ 1]  277 	clrw	x
+      000166 89               [ 2]  278 	pushw	x
+      000167 4B 00            [ 1]  279 	push	#0x00
+      000169 AEr00r00         [ 2]  280 	ldw	x, #(___str_0+0)
+      00016C CDr00r00         [ 4]  281 	call	_assert_failed
+      00016F                        282 00214$:
+                                    283 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 103: ADC1_ConversionConfig(ADC1_ConversionMode, ADC1_Channel, ADC1_Align);
+      00016F 7B 08            [ 1]  284 	ld	a, (0x08, sp)
+      000171 88               [ 1]  285 	push	a
+      000172 7B 05            [ 1]  286 	ld	a, (0x05, sp)
+      000174 88               [ 1]  287 	push	a
+      000175 7B 03            [ 1]  288 	ld	a, (0x03, sp)
+      000177 CDr03rA3         [ 4]  289 	call	_ADC1_ConversionConfig
+                                    290 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 105: ADC1_PrescalerConfig(ADC1_PrescalerSelection);
+      00017A 7B 05            [ 1]  291 	ld	a, (0x05, sp)
+      00017C CDr02r70         [ 4]  292 	call	_ADC1_PrescalerConfig
+                                    293 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 110: ADC1_ExternalTriggerConfig(ADC1_ExtTrigger, ADC1_ExtTriggerState);
+      00017F 7B 07            [ 1]  294 	ld	a, (0x07, sp)
+      000181 88               [ 1]  295 	push	a
+      000182 7B 07            [ 1]  296 	ld	a, (0x07, sp)
+      000184 CDr04r4D         [ 4]  297 	call	_ADC1_ExternalTriggerConfig
+                                    298 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 115: ADC1_SchmittTriggerConfig(ADC1_SchmittTriggerChannel, ADC1_SchmittTriggerState);
+      000187 7B 0A            [ 1]  299 	ld	a, (0x0a, sp)
+      000189 88               [ 1]  300 	push	a
+      00018A 7B 0A            [ 1]  301 	ld	a, (0x0a, sp)
+      00018C CDr02rBD         [ 4]  302 	call	_ADC1_SchmittTriggerConfig
+                                    303 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 118: ADC1->CR1 |= ADC1_CR1_ADON;
+      00018F C6 54 01         [ 1]  304 	ld	a, 0x5401
+      000192 AA 01            [ 1]  305 	or	a, #0x01
+      000194 C7 54 01         [ 1]  306 	ld	0x5401, a
+                                    307 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 119: }
+      000197 1E 02            [ 2]  308 	ldw	x, (2, sp)
+      000199 5B 0A            [ 2]  309 	addw	sp, #10
+      00019B FC               [ 2]  310 	jp	(x)
+                                    311 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 126: void ADC1_Cmd(FunctionalState NewState)
+                                    312 ;	-----------------------------------------
+                                    313 ;	 function ADC1_Cmd
+                                    314 ;	-----------------------------------------
+      00019C                        315 _ADC1_Cmd:
+      00019C 88               [ 1]  316 	push	a
+                                    317 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 129: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      00019D 6B 01            [ 1]  318 	ld	(0x01, sp), a
+      00019F 27 10            [ 1]  319 	jreq	00107$
+      0001A1 0D 01            [ 1]  320 	tnz	(0x01, sp)
+      0001A3 26 0C            [ 1]  321 	jrne	00107$
+      0001A5 4B 81            [ 1]  322 	push	#0x81
+      0001A7 5F               [ 1]  323 	clrw	x
+      0001A8 89               [ 2]  324 	pushw	x
+      0001A9 4B 00            [ 1]  325 	push	#0x00
+      0001AB AEr00r00         [ 2]  326 	ldw	x, #(___str_0+0)
+      0001AE CDr00r00         [ 4]  327 	call	_assert_failed
+      0001B1                        328 00107$:
+                                    329 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 133: ADC1->CR1 |= ADC1_CR1_ADON;
+      0001B1 C6 54 01         [ 1]  330 	ld	a, 0x5401
+                                    331 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 131: if (NewState != DISABLE)
+      0001B4 0D 01            [ 1]  332 	tnz	(0x01, sp)
+      0001B6 27 07            [ 1]  333 	jreq	00102$
+                                    334 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 133: ADC1->CR1 |= ADC1_CR1_ADON;
+      0001B8 AA 01            [ 1]  335 	or	a, #0x01
+      0001BA C7 54 01         [ 1]  336 	ld	0x5401, a
+      0001BD 20 05            [ 2]  337 	jra	00104$
+      0001BF                        338 00102$:
+                                    339 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 137: ADC1->CR1 &= (uint8_t)(~ADC1_CR1_ADON);
+      0001BF A4 FE            [ 1]  340 	and	a, #0xfe
+      0001C1 C7 54 01         [ 1]  341 	ld	0x5401, a
+      0001C4                        342 00104$:
+                                    343 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 139: }
+      0001C4 84               [ 1]  344 	pop	a
+      0001C5 81               [ 4]  345 	ret
+                                    346 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 146: void ADC1_ScanModeCmd(FunctionalState NewState)
+                                    347 ;	-----------------------------------------
+                                    348 ;	 function ADC1_ScanModeCmd
+                                    349 ;	-----------------------------------------
+      0001C6                        350 _ADC1_ScanModeCmd:
+      0001C6 88               [ 1]  351 	push	a
+                                    352 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 149: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0001C7 6B 01            [ 1]  353 	ld	(0x01, sp), a
+      0001C9 27 10            [ 1]  354 	jreq	00107$
+      0001CB 0D 01            [ 1]  355 	tnz	(0x01, sp)
+      0001CD 26 0C            [ 1]  356 	jrne	00107$
+      0001CF 4B 95            [ 1]  357 	push	#0x95
+      0001D1 5F               [ 1]  358 	clrw	x
+      0001D2 89               [ 2]  359 	pushw	x
+      0001D3 4B 00            [ 1]  360 	push	#0x00
+      0001D5 AEr00r00         [ 2]  361 	ldw	x, #(___str_0+0)
+      0001D8 CDr00r00         [ 4]  362 	call	_assert_failed
+      0001DB                        363 00107$:
+                                    364 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 153: ADC1->CR2 |= ADC1_CR2_SCAN;
+      0001DB C6 54 02         [ 1]  365 	ld	a, 0x5402
+                                    366 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 151: if (NewState != DISABLE)
+      0001DE 0D 01            [ 1]  367 	tnz	(0x01, sp)
+      0001E0 27 07            [ 1]  368 	jreq	00102$
+                                    369 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 153: ADC1->CR2 |= ADC1_CR2_SCAN;
+      0001E2 AA 02            [ 1]  370 	or	a, #0x02
+      0001E4 C7 54 02         [ 1]  371 	ld	0x5402, a
+      0001E7 20 05            [ 2]  372 	jra	00104$
+      0001E9                        373 00102$:
+                                    374 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 157: ADC1->CR2 &= (uint8_t)(~ADC1_CR2_SCAN);
+      0001E9 A4 FD            [ 1]  375 	and	a, #0xfd
+      0001EB C7 54 02         [ 1]  376 	ld	0x5402, a
+      0001EE                        377 00104$:
+                                    378 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 159: }
+      0001EE 84               [ 1]  379 	pop	a
+      0001EF 81               [ 4]  380 	ret
+                                    381 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 166: void ADC1_DataBufferCmd(FunctionalState NewState)
+                                    382 ;	-----------------------------------------
+                                    383 ;	 function ADC1_DataBufferCmd
+                                    384 ;	-----------------------------------------
+      0001F0                        385 _ADC1_DataBufferCmd:
+      0001F0 88               [ 1]  386 	push	a
+                                    387 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 169: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0001F1 6B 01            [ 1]  388 	ld	(0x01, sp), a
+      0001F3 27 10            [ 1]  389 	jreq	00107$
+      0001F5 0D 01            [ 1]  390 	tnz	(0x01, sp)
+      0001F7 26 0C            [ 1]  391 	jrne	00107$
+      0001F9 4B A9            [ 1]  392 	push	#0xa9
+      0001FB 5F               [ 1]  393 	clrw	x
+      0001FC 89               [ 2]  394 	pushw	x
+      0001FD 4B 00            [ 1]  395 	push	#0x00
+      0001FF AEr00r00         [ 2]  396 	ldw	x, #(___str_0+0)
+      000202 CDr00r00         [ 4]  397 	call	_assert_failed
+      000205                        398 00107$:
+                                    399 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 173: ADC1->CR3 |= ADC1_CR3_DBUF;
+      000205 C6 54 03         [ 1]  400 	ld	a, 0x5403
+                                    401 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 171: if (NewState != DISABLE)
+      000208 0D 01            [ 1]  402 	tnz	(0x01, sp)
+      00020A 27 07            [ 1]  403 	jreq	00102$
+                                    404 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 173: ADC1->CR3 |= ADC1_CR3_DBUF;
+      00020C AA 80            [ 1]  405 	or	a, #0x80
+      00020E C7 54 03         [ 1]  406 	ld	0x5403, a
+      000211 20 05            [ 2]  407 	jra	00104$
+      000213                        408 00102$:
+                                    409 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 177: ADC1->CR3 &= (uint8_t)(~ADC1_CR3_DBUF);
+      000213 A4 7F            [ 1]  410 	and	a, #0x7f
+      000215 C7 54 03         [ 1]  411 	ld	0x5403, a
+      000218                        412 00104$:
+                                    413 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 179: }
+      000218 84               [ 1]  414 	pop	a
+      000219 81               [ 4]  415 	ret
+                                    416 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 190: void ADC1_ITConfig(ADC1_IT_TypeDef ADC1_IT, FunctionalState NewState)
+                                    417 ;	-----------------------------------------
+                                    418 ;	 function ADC1_ITConfig
+                                    419 ;	-----------------------------------------
+      00021A                        420 _ADC1_ITConfig:
+      00021A 52 04            [ 2]  421 	sub	sp, #4
+      00021C 1F 03            [ 2]  422 	ldw	(0x03, sp), x
+      00021E 6B 02            [ 1]  423 	ld	(0x02, sp), a
+                                    424 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 193: assert_param(IS_ADC1_IT_OK(ADC1_IT));
+      000220 1E 03            [ 2]  425 	ldw	x, (0x03, sp)
+      000222 A3 00 20         [ 2]  426 	cpw	x, #0x0020
+      000225 27 15            [ 1]  427 	jreq	00107$
+      000227 A3 00 10         [ 2]  428 	cpw	x, #0x0010
+      00022A 27 10            [ 1]  429 	jreq	00107$
+      00022C 89               [ 2]  430 	pushw	x
+      00022D 4B C1            [ 1]  431 	push	#0xc1
+      00022F 4B 00            [ 1]  432 	push	#0x00
+      000231 4B 00            [ 1]  433 	push	#0x00
+      000233 4B 00            [ 1]  434 	push	#0x00
+      000235 AEr00r00         [ 2]  435 	ldw	x, #(___str_0+0)
+      000238 CDr00r00         [ 4]  436 	call	_assert_failed
+      00023B 85               [ 2]  437 	popw	x
+      00023C                        438 00107$:
+                                    439 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 194: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      00023C 0D 02            [ 1]  440 	tnz	(0x02, sp)
+      00023E 27 14            [ 1]  441 	jreq	00112$
+      000240 0D 02            [ 1]  442 	tnz	(0x02, sp)
+      000242 26 10            [ 1]  443 	jrne	00112$
+      000244 89               [ 2]  444 	pushw	x
+      000245 4B C2            [ 1]  445 	push	#0xc2
+      000247 4B 00            [ 1]  446 	push	#0x00
+      000249 4B 00            [ 1]  447 	push	#0x00
+      00024B 4B 00            [ 1]  448 	push	#0x00
+      00024D AEr00r00         [ 2]  449 	ldw	x, #(___str_0+0)
+      000250 CDr00r00         [ 4]  450 	call	_assert_failed
+      000253 85               [ 2]  451 	popw	x
+      000254                        452 00112$:
+                                    453 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 199: ADC1->CSR |= (uint8_t)ADC1_IT;
+      000254 C6 54 00         [ 1]  454 	ld	a, 0x5400
+      000257 6B 01            [ 1]  455 	ld	(0x01, sp), a
+                                    456 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 196: if (NewState != DISABLE)
+      000259 0D 02            [ 1]  457 	tnz	(0x02, sp)
+      00025B 27 09            [ 1]  458 	jreq	00102$
+                                    459 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 199: ADC1->CSR |= (uint8_t)ADC1_IT;
+      00025D 7B 04            [ 1]  460 	ld	a, (0x04, sp)
+      00025F 1A 01            [ 1]  461 	or	a, (0x01, sp)
+      000261 C7 54 00         [ 1]  462 	ld	0x5400, a
+      000264 20 07            [ 2]  463 	jra	00104$
+      000266                        464 00102$:
+                                    465 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 204: ADC1->CSR &= (uint8_t)((uint16_t)~(uint16_t)ADC1_IT);
+      000266 53               [ 2]  466 	cplw	x
+      000267 9F               [ 1]  467 	ld	a, xl
+      000268 14 01            [ 1]  468 	and	a, (0x01, sp)
+      00026A C7 54 00         [ 1]  469 	ld	0x5400, a
+      00026D                        470 00104$:
+                                    471 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 206: }
+      00026D 5B 04            [ 2]  472 	addw	sp, #4
+      00026F 81               [ 4]  473 	ret
+                                    474 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 214: void ADC1_PrescalerConfig(ADC1_PresSel_TypeDef ADC1_Prescaler)
+                                    475 ;	-----------------------------------------
+                                    476 ;	 function ADC1_PrescalerConfig
+                                    477 ;	-----------------------------------------
+      000270                        478 _ADC1_PrescalerConfig:
+      000270 88               [ 1]  479 	push	a
+                                    480 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 217: assert_param(IS_ADC1_PRESSEL_OK(ADC1_Prescaler));
+      000271 6B 01            [ 1]  481 	ld	(0x01, sp), a
+      000273 27 36            [ 1]  482 	jreq	00104$
+      000275 7B 01            [ 1]  483 	ld	a, (0x01, sp)
+      000277 A1 10            [ 1]  484 	cp	a, #0x10
+      000279 27 30            [ 1]  485 	jreq	00104$
+      00027B 7B 01            [ 1]  486 	ld	a, (0x01, sp)
+      00027D A1 20            [ 1]  487 	cp	a, #0x20
+      00027F 27 2A            [ 1]  488 	jreq	00104$
+      000281 7B 01            [ 1]  489 	ld	a, (0x01, sp)
+      000283 A1 30            [ 1]  490 	cp	a, #0x30
+      000285 27 24            [ 1]  491 	jreq	00104$
+      000287 7B 01            [ 1]  492 	ld	a, (0x01, sp)
+      000289 A1 40            [ 1]  493 	cp	a, #0x40
+      00028B 27 1E            [ 1]  494 	jreq	00104$
+      00028D 7B 01            [ 1]  495 	ld	a, (0x01, sp)
+      00028F A1 50            [ 1]  496 	cp	a, #0x50
+      000291 27 18            [ 1]  497 	jreq	00104$
+      000293 7B 01            [ 1]  498 	ld	a, (0x01, sp)
+      000295 A1 60            [ 1]  499 	cp	a, #0x60
+      000297 27 12            [ 1]  500 	jreq	00104$
+      000299 7B 01            [ 1]  501 	ld	a, (0x01, sp)
+      00029B A1 70            [ 1]  502 	cp	a, #0x70
+      00029D 27 0C            [ 1]  503 	jreq	00104$
+      00029F 4B D9            [ 1]  504 	push	#0xd9
+      0002A1 5F               [ 1]  505 	clrw	x
+      0002A2 89               [ 2]  506 	pushw	x
+      0002A3 4B 00            [ 1]  507 	push	#0x00
+      0002A5 AEr00r00         [ 2]  508 	ldw	x, #(___str_0+0)
+      0002A8 CDr00r00         [ 4]  509 	call	_assert_failed
+      0002AB                        510 00104$:
+                                    511 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 220: ADC1->CR1 &= (uint8_t)(~ADC1_CR1_SPSEL);
+      0002AB C6 54 01         [ 1]  512 	ld	a, 0x5401
+      0002AE A4 8F            [ 1]  513 	and	a, #0x8f
+      0002B0 C7 54 01         [ 1]  514 	ld	0x5401, a
+                                    515 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 222: ADC1->CR1 |= (uint8_t)(ADC1_Prescaler);
+      0002B3 C6 54 01         [ 1]  516 	ld	a, 0x5401
+      0002B6 1A 01            [ 1]  517 	or	a, (0x01, sp)
+      0002B8 C7 54 01         [ 1]  518 	ld	0x5401, a
+                                    519 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 223: }
+      0002BB 84               [ 1]  520 	pop	a
+      0002BC 81               [ 4]  521 	ret
+                                    522 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 233: void ADC1_SchmittTriggerConfig(ADC1_SchmittTrigg_TypeDef ADC1_SchmittTriggerChannel, FunctionalState NewState)
+                                    523 ;	-----------------------------------------
+                                    524 ;	 function ADC1_SchmittTriggerConfig
+                                    525 ;	-----------------------------------------
+      0002BD                        526 _ADC1_SchmittTriggerConfig:
+      0002BD 88               [ 1]  527 	push	a
+                                    528 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 236: assert_param(IS_ADC1_SCHMITTTRIG_OK(ADC1_SchmittTriggerChannel));
+      0002BE 97               [ 1]  529 	ld	xl, a
+      0002BF 4C               [ 1]  530 	inc	a
+      0002C0 26 05            [ 1]  531 	jrne	00254$
+      0002C2 A6 01            [ 1]  532 	ld	a, #0x01
+      0002C4 95               [ 1]  533 	ld	xh, a
+      0002C5 20 02            [ 2]  534 	jra	00255$
+      0002C7                        535 00254$:
+      0002C7 4F               [ 1]  536 	clr	a
+      0002C8 95               [ 1]  537 	ld	xh, a
+      0002C9                        538 00255$:
+      0002C9 9F               [ 1]  539 	ld	a, xl
+      0002CA 4D               [ 1]  540 	tnz	a
+      0002CB 27 45            [ 1]  541 	jreq	00119$
+      0002CD 9F               [ 1]  542 	ld	a, xl
+      0002CE 4A               [ 1]  543 	dec	a
+      0002CF 27 41            [ 1]  544 	jreq	00119$
+      0002D1 9F               [ 1]  545 	ld	a, xl
+      0002D2 A1 02            [ 1]  546 	cp	a, #0x02
+      0002D4 27 3C            [ 1]  547 	jreq	00119$
+      0002D6 9F               [ 1]  548 	ld	a, xl
+      0002D7 A1 03            [ 1]  549 	cp	a, #0x03
+      0002D9 27 37            [ 1]  550 	jreq	00119$
+      0002DB 9F               [ 1]  551 	ld	a, xl
+      0002DC A1 04            [ 1]  552 	cp	a, #0x04
+      0002DE 27 32            [ 1]  553 	jreq	00119$
+      0002E0 9F               [ 1]  554 	ld	a, xl
+      0002E1 A1 05            [ 1]  555 	cp	a, #0x05
+      0002E3 27 2D            [ 1]  556 	jreq	00119$
+      0002E5 9F               [ 1]  557 	ld	a, xl
+      0002E6 A1 06            [ 1]  558 	cp	a, #0x06
+      0002E8 27 28            [ 1]  559 	jreq	00119$
+      0002EA 9F               [ 1]  560 	ld	a, xl
+      0002EB A1 07            [ 1]  561 	cp	a, #0x07
+      0002ED 27 23            [ 1]  562 	jreq	00119$
+      0002EF 9F               [ 1]  563 	ld	a, xl
+      0002F0 A1 08            [ 1]  564 	cp	a, #0x08
+      0002F2 27 1E            [ 1]  565 	jreq	00119$
+      0002F4 9F               [ 1]  566 	ld	a, xl
+      0002F5 A1 0C            [ 1]  567 	cp	a, #0x0c
+      0002F7 27 19            [ 1]  568 	jreq	00119$
+      0002F9 9E               [ 1]  569 	ld	a, xh
+      0002FA 4D               [ 1]  570 	tnz	a
+      0002FB 26 15            [ 1]  571 	jrne	00119$
+      0002FD 9F               [ 1]  572 	ld	a, xl
+      0002FE A1 09            [ 1]  573 	cp	a, #0x09
+      000300 27 10            [ 1]  574 	jreq	00119$
+      000302 89               [ 2]  575 	pushw	x
+      000303 4B EC            [ 1]  576 	push	#0xec
+      000305 4B 00            [ 1]  577 	push	#0x00
+      000307 4B 00            [ 1]  578 	push	#0x00
+      000309 4B 00            [ 1]  579 	push	#0x00
+      00030B AEr00r00         [ 2]  580 	ldw	x, #(___str_0+0)
+      00030E CDr00r00         [ 4]  581 	call	_assert_failed
+      000311 85               [ 2]  582 	popw	x
+      000312                        583 00119$:
+                                    584 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 237: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000312 0D 04            [ 1]  585 	tnz	(0x04, sp)
+      000314 27 14            [ 1]  586 	jreq	00154$
+      000316 0D 04            [ 1]  587 	tnz	(0x04, sp)
+      000318 26 10            [ 1]  588 	jrne	00154$
+      00031A 89               [ 2]  589 	pushw	x
+      00031B 4B ED            [ 1]  590 	push	#0xed
+      00031D 4B 00            [ 1]  591 	push	#0x00
+      00031F 4B 00            [ 1]  592 	push	#0x00
+      000321 4B 00            [ 1]  593 	push	#0x00
+      000323 AEr00r00         [ 2]  594 	ldw	x, #(___str_0+0)
+      000326 CDr00r00         [ 4]  595 	call	_assert_failed
+      000329 85               [ 2]  596 	popw	x
+      00032A                        597 00154$:
+                                    598 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 239: if (ADC1_SchmittTriggerChannel == ADC1_SCHMITTTRIG_ALL)
+      00032A 9E               [ 1]  599 	ld	a, xh
+      00032B 4D               [ 1]  600 	tnz	a
+      00032C 27 21            [ 1]  601 	jreq	00114$
+                                    602 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 243: ADC1->TDRL &= (uint8_t)0x0;
+      00032E C6 54 07         [ 1]  603 	ld	a, 0x5407
+                                    604 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 241: if (NewState != DISABLE)
+      000331 0D 04            [ 1]  605 	tnz	(0x04, sp)
+      000333 27 0D            [ 1]  606 	jreq	00102$
+                                    607 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 243: ADC1->TDRL &= (uint8_t)0x0;
+      000335 35 00 54 07      [ 1]  608 	mov	0x5407+0, #0x00
+                                    609 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 244: ADC1->TDRH &= (uint8_t)0x0;
+      000339 C6 54 06         [ 1]  610 	ld	a, 0x5406
+      00033C 35 00 54 06      [ 1]  611 	mov	0x5406+0, #0x00
+      000340 20 5D            [ 2]  612 	jra	00116$
+      000342                        613 00102$:
+                                    614 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 248: ADC1->TDRL |= (uint8_t)0xFF;
+      000342 35 FF 54 07      [ 1]  615 	mov	0x5407+0, #0xff
+                                    616 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 249: ADC1->TDRH |= (uint8_t)0xFF;
+      000346 C6 54 06         [ 1]  617 	ld	a, 0x5406
+      000349 35 FF 54 06      [ 1]  618 	mov	0x5406+0, #0xff
+      00034D 20 50            [ 2]  619 	jra	00116$
+      00034F                        620 00114$:
+                                    621 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 252: else if (ADC1_SchmittTriggerChannel < ADC1_SCHMITTTRIG_CHANNEL8)
+      00034F 9F               [ 1]  622 	ld	a, xl
+      000350 A1 08            [ 1]  623 	cp	a, #0x08
+      000352 24 25            [ 1]  624 	jrnc	00111$
+                                    625 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 243: ADC1->TDRL &= (uint8_t)0x0;
+      000354 C6 54 07         [ 1]  626 	ld	a, 0x5407
+      000357 6B 01            [ 1]  627 	ld	(0x01, sp), a
+                                    628 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 256: ADC1->TDRL &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << (uint8_t)ADC1_SchmittTriggerChannel));
+      000359 A6 01            [ 1]  629 	ld	a, #0x01
+      00035B 88               [ 1]  630 	push	a
+      00035C 9F               [ 1]  631 	ld	a, xl
+      00035D 4D               [ 1]  632 	tnz	a
+      00035E 27 05            [ 1]  633 	jreq	00294$
+      000360                        634 00293$:
+      000360 08 01            [ 1]  635 	sll	(1, sp)
+      000362 4A               [ 1]  636 	dec	a
+      000363 26 FB            [ 1]  637 	jrne	00293$
+      000365                        638 00294$:
+      000365 84               [ 1]  639 	pop	a
+                                    640 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 254: if (NewState != DISABLE)
+      000366 0D 04            [ 1]  641 	tnz	(0x04, sp)
+      000368 27 08            [ 1]  642 	jreq	00105$
+                                    643 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 256: ADC1->TDRL &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << (uint8_t)ADC1_SchmittTriggerChannel));
+      00036A 43               [ 1]  644 	cpl	a
+      00036B 14 01            [ 1]  645 	and	a, (0x01, sp)
+      00036D C7 54 07         [ 1]  646 	ld	0x5407, a
+      000370 20 2D            [ 2]  647 	jra	00116$
+      000372                        648 00105$:
+                                    649 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 260: ADC1->TDRL |= (uint8_t)((uint8_t)0x01 << (uint8_t)ADC1_SchmittTriggerChannel);
+      000372 1A 01            [ 1]  650 	or	a, (0x01, sp)
+      000374 C7 54 07         [ 1]  651 	ld	0x5407, a
+      000377 20 26            [ 2]  652 	jra	00116$
+      000379                        653 00111$:
+                                    654 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 244: ADC1->TDRH &= (uint8_t)0x0;
+      000379 C6 54 06         [ 1]  655 	ld	a, 0x5406
+      00037C 6B 01            [ 1]  656 	ld	(0x01, sp), a
+                                    657 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 267: ADC1->TDRH &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << ((uint8_t)ADC1_SchmittTriggerChannel - (uint8_t)8)));
+      00037E 1D 00 08         [ 2]  658 	subw	x, #8
+      000381 A6 01            [ 1]  659 	ld	a, #0x01
+      000383 88               [ 1]  660 	push	a
+      000384 9F               [ 1]  661 	ld	a, xl
+      000385 4D               [ 1]  662 	tnz	a
+      000386 27 05            [ 1]  663 	jreq	00297$
+      000388                        664 00296$:
+      000388 08 01            [ 1]  665 	sll	(1, sp)
+      00038A 4A               [ 1]  666 	dec	a
+      00038B 26 FB            [ 1]  667 	jrne	00296$
+      00038D                        668 00297$:
+      00038D 84               [ 1]  669 	pop	a
+                                    670 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 265: if (NewState != DISABLE)
+      00038E 0D 04            [ 1]  671 	tnz	(0x04, sp)
+      000390 27 08            [ 1]  672 	jreq	00108$
+                                    673 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 267: ADC1->TDRH &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << ((uint8_t)ADC1_SchmittTriggerChannel - (uint8_t)8)));
+      000392 43               [ 1]  674 	cpl	a
+      000393 14 01            [ 1]  675 	and	a, (0x01, sp)
+      000395 C7 54 06         [ 1]  676 	ld	0x5406, a
+      000398 20 05            [ 2]  677 	jra	00116$
+      00039A                        678 00108$:
+                                    679 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 271: ADC1->TDRH |= (uint8_t)((uint8_t)0x01 << ((uint8_t)ADC1_SchmittTriggerChannel - (uint8_t)8));
+      00039A 1A 01            [ 1]  680 	or	a, (0x01, sp)
+      00039C C7 54 06         [ 1]  681 	ld	0x5406, a
+      00039F                        682 00116$:
+                                    683 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 274: }
+      00039F 84               [ 1]  684 	pop	a
+      0003A0 85               [ 2]  685 	popw	x
+      0003A1 84               [ 1]  686 	pop	a
+      0003A2 FC               [ 2]  687 	jp	(x)
+                                    688 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 286: void ADC1_ConversionConfig(ADC1_ConvMode_TypeDef ADC1_ConversionMode, ADC1_Channel_TypeDef ADC1_Channel, ADC1_Align_TypeDef ADC1_Align)
+                                    689 ;	-----------------------------------------
+                                    690 ;	 function ADC1_ConversionConfig
+                                    691 ;	-----------------------------------------
+      0003A3                        692 _ADC1_ConversionConfig:
+      0003A3 88               [ 1]  693 	push	a
+                                    694 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 289: assert_param(IS_ADC1_CONVERSIONMODE_OK(ADC1_ConversionMode));
+      0003A4 6B 01            [ 1]  695 	ld	(0x01, sp), a
+      0003A6 27 10            [ 1]  696 	jreq	00107$
+      0003A8 0D 01            [ 1]  697 	tnz	(0x01, sp)
+      0003AA 26 0C            [ 1]  698 	jrne	00107$
+      0003AC 4B 21            [ 1]  699 	push	#0x21
+      0003AE 4B 01            [ 1]  700 	push	#0x01
+      0003B0 5F               [ 1]  701 	clrw	x
+      0003B1 89               [ 2]  702 	pushw	x
+      0003B2 AEr00r00         [ 2]  703 	ldw	x, #(___str_0+0)
+      0003B5 CDr00r00         [ 4]  704 	call	_assert_failed
+      0003B8                        705 00107$:
+                                    706 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 290: assert_param(IS_ADC1_CHANNEL_OK(ADC1_Channel));
+      0003B8 0D 04            [ 1]  707 	tnz	(0x04, sp)
+      0003BA 27 47            [ 1]  708 	jreq	00112$
+      0003BC 7B 04            [ 1]  709 	ld	a, (0x04, sp)
+      0003BE 4A               [ 1]  710 	dec	a
+      0003BF 27 42            [ 1]  711 	jreq	00112$
+      0003C1 7B 04            [ 1]  712 	ld	a, (0x04, sp)
+      0003C3 A1 02            [ 1]  713 	cp	a, #0x02
+      0003C5 27 3C            [ 1]  714 	jreq	00112$
+      0003C7 7B 04            [ 1]  715 	ld	a, (0x04, sp)
+      0003C9 A1 03            [ 1]  716 	cp	a, #0x03
+      0003CB 27 36            [ 1]  717 	jreq	00112$
+      0003CD 7B 04            [ 1]  718 	ld	a, (0x04, sp)
+      0003CF A1 04            [ 1]  719 	cp	a, #0x04
+      0003D1 27 30            [ 1]  720 	jreq	00112$
+      0003D3 7B 04            [ 1]  721 	ld	a, (0x04, sp)
+      0003D5 A1 05            [ 1]  722 	cp	a, #0x05
+      0003D7 27 2A            [ 1]  723 	jreq	00112$
+      0003D9 7B 04            [ 1]  724 	ld	a, (0x04, sp)
+      0003DB A1 06            [ 1]  725 	cp	a, #0x06
+      0003DD 27 24            [ 1]  726 	jreq	00112$
+      0003DF 7B 04            [ 1]  727 	ld	a, (0x04, sp)
+      0003E1 A1 07            [ 1]  728 	cp	a, #0x07
+      0003E3 27 1E            [ 1]  729 	jreq	00112$
+      0003E5 7B 04            [ 1]  730 	ld	a, (0x04, sp)
+      0003E7 A1 08            [ 1]  731 	cp	a, #0x08
+      0003E9 27 18            [ 1]  732 	jreq	00112$
+      0003EB 7B 04            [ 1]  733 	ld	a, (0x04, sp)
+      0003ED A1 0C            [ 1]  734 	cp	a, #0x0c
+      0003EF 27 12            [ 1]  735 	jreq	00112$
+      0003F1 7B 04            [ 1]  736 	ld	a, (0x04, sp)
+      0003F3 A1 09            [ 1]  737 	cp	a, #0x09
+      0003F5 27 0C            [ 1]  738 	jreq	00112$
+      0003F7 4B 22            [ 1]  739 	push	#0x22
+      0003F9 4B 01            [ 1]  740 	push	#0x01
+      0003FB 5F               [ 1]  741 	clrw	x
+      0003FC 89               [ 2]  742 	pushw	x
+      0003FD AEr00r00         [ 2]  743 	ldw	x, #(___str_0+0)
+      000400 CDr00r00         [ 4]  744 	call	_assert_failed
+      000403                        745 00112$:
+                                    746 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 291: assert_param(IS_ADC1_ALIGN_OK(ADC1_Align));
+      000403 0D 05            [ 1]  747 	tnz	(0x05, sp)
+      000405 27 12            [ 1]  748 	jreq	00144$
+      000407 7B 05            [ 1]  749 	ld	a, (0x05, sp)
+      000409 A1 08            [ 1]  750 	cp	a, #0x08
+      00040B 27 0C            [ 1]  751 	jreq	00144$
+      00040D 4B 23            [ 1]  752 	push	#0x23
+      00040F 4B 01            [ 1]  753 	push	#0x01
+      000411 5F               [ 1]  754 	clrw	x
+      000412 89               [ 2]  755 	pushw	x
+      000413 AEr00r00         [ 2]  756 	ldw	x, #(___str_0+0)
+      000416 CDr00r00         [ 4]  757 	call	_assert_failed
+      000419                        758 00144$:
+                                    759 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 294: ADC1->CR2 &= (uint8_t)(~ADC1_CR2_ALIGN);
+      000419 72 17 54 02      [ 1]  760 	bres	0x5402, #3
+                                    761 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 296: ADC1->CR2 |= (uint8_t)(ADC1_Align);
+      00041D C6 54 02         [ 1]  762 	ld	a, 0x5402
+      000420 1A 05            [ 1]  763 	or	a, (0x05, sp)
+      000422 C7 54 02         [ 1]  764 	ld	0x5402, a
+                                    765 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 301: ADC1->CR1 |= ADC1_CR1_CONT;
+      000425 C6 54 01         [ 1]  766 	ld	a, 0x5401
+                                    767 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 298: if (ADC1_ConversionMode == ADC1_CONVERSIONMODE_CONTINUOUS)
+      000428 0D 01            [ 1]  768 	tnz	(0x01, sp)
+      00042A 27 07            [ 1]  769 	jreq	00102$
+                                    770 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 301: ADC1->CR1 |= ADC1_CR1_CONT;
+      00042C AA 02            [ 1]  771 	or	a, #0x02
+      00042E C7 54 01         [ 1]  772 	ld	0x5401, a
+      000431 20 05            [ 2]  773 	jra	00103$
+      000433                        774 00102$:
+                                    775 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 306: ADC1->CR1 &= (uint8_t)(~ADC1_CR1_CONT);
+      000433 A4 FD            [ 1]  776 	and	a, #0xfd
+      000435 C7 54 01         [ 1]  777 	ld	0x5401, a
+      000438                        778 00103$:
+                                    779 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 310: ADC1->CSR &= (uint8_t)(~ADC1_CSR_CH);
+      000438 C6 54 00         [ 1]  780 	ld	a, 0x5400
+      00043B A4 F0            [ 1]  781 	and	a, #0xf0
+      00043D C7 54 00         [ 1]  782 	ld	0x5400, a
+                                    783 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 312: ADC1->CSR |= (uint8_t)(ADC1_Channel);
+      000440 C6 54 00         [ 1]  784 	ld	a, 0x5400
+      000443 1A 04            [ 1]  785 	or	a, (0x04, sp)
+      000445 C7 54 00         [ 1]  786 	ld	0x5400, a
+                                    787 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 313: }
+      000448 1E 02            [ 2]  788 	ldw	x, (2, sp)
+      00044A 5B 05            [ 2]  789 	addw	sp, #5
+      00044C FC               [ 2]  790 	jp	(x)
+                                    791 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 325: void ADC1_ExternalTriggerConfig(ADC1_ExtTrig_TypeDef ADC1_ExtTrigger, FunctionalState NewState)
+                                    792 ;	-----------------------------------------
+                                    793 ;	 function ADC1_ExternalTriggerConfig
+                                    794 ;	-----------------------------------------
+      00044D                        795 _ADC1_ExternalTriggerConfig:
+      00044D 88               [ 1]  796 	push	a
+                                    797 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 328: assert_param(IS_ADC1_EXTTRIG_OK(ADC1_ExtTrigger));
+      00044E 6B 01            [ 1]  798 	ld	(0x01, sp), a
+      000450 27 12            [ 1]  799 	jreq	00107$
+      000452 7B 01            [ 1]  800 	ld	a, (0x01, sp)
+      000454 A1 10            [ 1]  801 	cp	a, #0x10
+      000456 27 0C            [ 1]  802 	jreq	00107$
+      000458 4B 48            [ 1]  803 	push	#0x48
+      00045A 4B 01            [ 1]  804 	push	#0x01
+      00045C 5F               [ 1]  805 	clrw	x
+      00045D 89               [ 2]  806 	pushw	x
+      00045E AEr00r00         [ 2]  807 	ldw	x, #(___str_0+0)
+      000461 CDr00r00         [ 4]  808 	call	_assert_failed
+      000464                        809 00107$:
+                                    810 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 329: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000464 0D 04            [ 1]  811 	tnz	(0x04, sp)
+      000466 27 10            [ 1]  812 	jreq	00112$
+      000468 0D 04            [ 1]  813 	tnz	(0x04, sp)
+      00046A 26 0C            [ 1]  814 	jrne	00112$
+      00046C 4B 49            [ 1]  815 	push	#0x49
+      00046E 4B 01            [ 1]  816 	push	#0x01
+      000470 5F               [ 1]  817 	clrw	x
+      000471 89               [ 2]  818 	pushw	x
+      000472 AEr00r00         [ 2]  819 	ldw	x, #(___str_0+0)
+      000475 CDr00r00         [ 4]  820 	call	_assert_failed
+      000478                        821 00112$:
+                                    822 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 332: ADC1->CR2 &= (uint8_t)(~ADC1_CR2_EXTSEL);
+      000478 C6 54 02         [ 1]  823 	ld	a, 0x5402
+      00047B A4 CF            [ 1]  824 	and	a, #0xcf
+      00047D C7 54 02         [ 1]  825 	ld	0x5402, a
+      000480 C6 54 02         [ 1]  826 	ld	a, 0x5402
+                                    827 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 334: if (NewState != DISABLE)
+      000483 0D 04            [ 1]  828 	tnz	(0x04, sp)
+      000485 27 07            [ 1]  829 	jreq	00102$
+                                    830 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 337: ADC1->CR2 |= (uint8_t)(ADC1_CR2_EXTTRIG);
+      000487 AA 40            [ 1]  831 	or	a, #0x40
+      000489 C7 54 02         [ 1]  832 	ld	0x5402, a
+      00048C 20 05            [ 2]  833 	jra	00103$
+      00048E                        834 00102$:
+                                    835 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 342: ADC1->CR2 &= (uint8_t)(~ADC1_CR2_EXTTRIG);
+      00048E A4 BF            [ 1]  836 	and	a, #0xbf
+      000490 C7 54 02         [ 1]  837 	ld	0x5402, a
+      000493                        838 00103$:
+                                    839 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 346: ADC1->CR2 |= (uint8_t)(ADC1_ExtTrigger);
+      000493 C6 54 02         [ 1]  840 	ld	a, 0x5402
+      000496 1A 01            [ 1]  841 	or	a, (0x01, sp)
+      000498 C7 54 02         [ 1]  842 	ld	0x5402, a
+                                    843 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 347: }
+      00049B 84               [ 1]  844 	pop	a
+      00049C 85               [ 2]  845 	popw	x
+      00049D 84               [ 1]  846 	pop	a
+      00049E FC               [ 2]  847 	jp	(x)
+                                    848 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 358: void ADC1_StartConversion(void)
+                                    849 ;	-----------------------------------------
+                                    850 ;	 function ADC1_StartConversion
+                                    851 ;	-----------------------------------------
+      00049F                        852 _ADC1_StartConversion:
+                                    853 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 360: ADC1->CR1 |= ADC1_CR1_ADON;
+      00049F 72 10 54 01      [ 1]  854 	bset	0x5401, #0
+                                    855 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 361: }
+      0004A3 81               [ 4]  856 	ret
+                                    857 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 370: uint16_t ADC1_GetConversionValue(void)
+                                    858 ;	-----------------------------------------
+                                    859 ;	 function ADC1_GetConversionValue
+                                    860 ;	-----------------------------------------
+      0004A4                        861 _ADC1_GetConversionValue:
+      0004A4 89               [ 2]  862 	pushw	x
+                                    863 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 375: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
+      0004A5 72 07 54 02 15   [ 2]  864 	btjf	0x5402, #3, 00102$
+                                    865 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 378: templ = ADC1->DRL;
+      0004AA C6 54 05         [ 1]  866 	ld	a, 0x5405
+      0004AD 97               [ 1]  867 	ld	xl, a
+                                    868 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 380: temph = ADC1->DRH;
+      0004AE C6 54 04         [ 1]  869 	ld	a, 0x5404
+      0004B1 95               [ 1]  870 	ld	xh, a
+                                    871 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 382: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
+      0004B2 0F 02            [ 1]  872 	clr	(0x02, sp)
+      0004B4 4F               [ 1]  873 	clr	a
+      0004B5 89               [ 2]  874 	pushw	x
+      0004B6 1A 01            [ 1]  875 	or	a, (1, sp)
+      0004B8 85               [ 2]  876 	popw	x
+      0004B9 01               [ 1]  877 	rrwa	x
+      0004BA 1A 02            [ 1]  878 	or	a, (0x02, sp)
+      0004BC 97               [ 1]  879 	ld	xl, a
+      0004BD 20 1C            [ 2]  880 	jra	00103$
+      0004BF                        881 00102$:
+                                    882 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 387: temph = ADC1->DRH;
+      0004BF C6 54 04         [ 1]  883 	ld	a, 0x5404
+      0004C2 90 5F            [ 1]  884 	clrw	y
+      0004C4 90 97            [ 1]  885 	ld	yl, a
+                                    886 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 389: templ = ADC1->DRL;
+      0004C6 C6 54 05         [ 1]  887 	ld	a, 0x5405
+                                    888 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 391: temph = (uint16_t)((uint16_t)((uint16_t)templ << 6) | (uint16_t)((uint16_t)temph << 8));
+      0004C9 5F               [ 1]  889 	clrw	x
+      0004CA 97               [ 1]  890 	ld	xl, a
+      0004CB 58               [ 2]  891 	sllw	x
+      0004CC 58               [ 2]  892 	sllw	x
+      0004CD 58               [ 2]  893 	sllw	x
+      0004CE 58               [ 2]  894 	sllw	x
+      0004CF 58               [ 2]  895 	sllw	x
+      0004D0 58               [ 2]  896 	sllw	x
+      0004D1 1F 01            [ 2]  897 	ldw	(0x01, sp), x
+      0004D3 7B 02            [ 1]  898 	ld	a, (0x02, sp)
+      0004D5 97               [ 1]  899 	ld	xl, a
+      0004D6 90 9F            [ 1]  900 	ld	a, yl
+      0004D8 1A 01            [ 1]  901 	or	a, (0x01, sp)
+      0004DA 95               [ 1]  902 	ld	xh, a
+      0004DB                        903 00103$:
+                                    904 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 394: return ((uint16_t)temph);
+                                    905 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 395: }
+      0004DB 5B 02            [ 2]  906 	addw	sp, #2
+      0004DD 81               [ 4]  907 	ret
+                                    908 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 405: void ADC1_AWDChannelConfig(ADC1_Channel_TypeDef Channel, FunctionalState NewState)
+                                    909 ;	-----------------------------------------
+                                    910 ;	 function ADC1_AWDChannelConfig
+                                    911 ;	-----------------------------------------
+      0004DE                        912 _ADC1_AWDChannelConfig:
+      0004DE 89               [ 2]  913 	pushw	x
+                                    914 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 408: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0004DF 0D 05            [ 1]  915 	tnz	(0x05, sp)
+      0004E1 27 12            [ 1]  916 	jreq	00113$
+      0004E3 0D 05            [ 1]  917 	tnz	(0x05, sp)
+      0004E5 26 0E            [ 1]  918 	jrne	00113$
+      0004E7 88               [ 1]  919 	push	a
+      0004E8 4B 98            [ 1]  920 	push	#0x98
+      0004EA 4B 01            [ 1]  921 	push	#0x01
+      0004EC 5F               [ 1]  922 	clrw	x
+      0004ED 89               [ 2]  923 	pushw	x
+      0004EE AEr00r00         [ 2]  924 	ldw	x, #(___str_0+0)
+      0004F1 CDr00r00         [ 4]  925 	call	_assert_failed
+      0004F4 84               [ 1]  926 	pop	a
+      0004F5                        927 00113$:
+                                    928 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 409: assert_param(IS_ADC1_CHANNEL_OK(Channel));
+      0004F5 4D               [ 1]  929 	tnz	a
+      0004F6 27 36            [ 1]  930 	jreq	00118$
+      0004F8 A1 01            [ 1]  931 	cp	a, #0x01
+      0004FA 27 32            [ 1]  932 	jreq	00118$
+      0004FC A1 02            [ 1]  933 	cp	a, #0x02
+      0004FE 27 2E            [ 1]  934 	jreq	00118$
+      000500 A1 03            [ 1]  935 	cp	a, #0x03
+      000502 27 2A            [ 1]  936 	jreq	00118$
+      000504 A1 04            [ 1]  937 	cp	a, #0x04
+      000506 27 26            [ 1]  938 	jreq	00118$
+      000508 A1 05            [ 1]  939 	cp	a, #0x05
+      00050A 27 22            [ 1]  940 	jreq	00118$
+      00050C A1 06            [ 1]  941 	cp	a, #0x06
+      00050E 27 1E            [ 1]  942 	jreq	00118$
+      000510 A1 07            [ 1]  943 	cp	a, #0x07
+      000512 27 1A            [ 1]  944 	jreq	00118$
+      000514 A1 08            [ 1]  945 	cp	a, #0x08
+      000516 27 16            [ 1]  946 	jreq	00118$
+      000518 A1 0C            [ 1]  947 	cp	a, #0x0c
+      00051A 27 12            [ 1]  948 	jreq	00118$
+      00051C A1 09            [ 1]  949 	cp	a, #0x09
+      00051E 27 0E            [ 1]  950 	jreq	00118$
+      000520 88               [ 1]  951 	push	a
+      000521 4B 99            [ 1]  952 	push	#0x99
+      000523 4B 01            [ 1]  953 	push	#0x01
+      000525 5F               [ 1]  954 	clrw	x
+      000526 89               [ 2]  955 	pushw	x
+      000527 AEr00r00         [ 2]  956 	ldw	x, #(___str_0+0)
+      00052A CDr00r00         [ 4]  957 	call	_assert_failed
+      00052D 84               [ 1]  958 	pop	a
+      00052E                        959 00118$:
+                                    960 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 411: if (Channel < (uint8_t)8)
+      00052E A1 08            [ 1]  961 	cp	a, #0x08
+      000530 24 2B            [ 1]  962 	jrnc	00108$
+                                    963 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 415: ADC1->AWCRL |= (uint8_t)((uint8_t)1 << Channel);
+      000532 AE 54 0F         [ 2]  964 	ldw	x, #0x540f
+      000535 88               [ 1]  965 	push	a
+      000536 F6               [ 1]  966 	ld	a, (x)
+      000537 6B 02            [ 1]  967 	ld	(0x02, sp), a
+      000539 A6 01            [ 1]  968 	ld	a, #0x01
+      00053B 6B 03            [ 1]  969 	ld	(0x03, sp), a
+      00053D 84               [ 1]  970 	pop	a
+      00053E 4D               [ 1]  971 	tnz	a
+      00053F 27 05            [ 1]  972 	jreq	00264$
+      000541                        973 00263$:
+      000541 08 02            [ 1]  974 	sll	(0x02, sp)
+      000543 4A               [ 1]  975 	dec	a
+      000544 26 FB            [ 1]  976 	jrne	00263$
+      000546                        977 00264$:
+                                    978 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 413: if (NewState != DISABLE)
+      000546 0D 05            [ 1]  979 	tnz	(0x05, sp)
+      000548 27 09            [ 1]  980 	jreq	00102$
+                                    981 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 415: ADC1->AWCRL |= (uint8_t)((uint8_t)1 << Channel);
+      00054A 7B 01            [ 1]  982 	ld	a, (0x01, sp)
+      00054C 1A 02            [ 1]  983 	or	a, (0x02, sp)
+      00054E C7 54 0F         [ 1]  984 	ld	0x540f, a
+      000551 20 33            [ 2]  985 	jra	00110$
+      000553                        986 00102$:
+                                    987 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 419: ADC1->AWCRL &= (uint8_t)~(uint8_t)((uint8_t)1 << Channel);
+      000553 7B 02            [ 1]  988 	ld	a, (0x02, sp)
+      000555 43               [ 1]  989 	cpl	a
+      000556 14 01            [ 1]  990 	and	a, (0x01, sp)
+      000558 C7 54 0F         [ 1]  991 	ld	0x540f, a
+      00055B 20 29            [ 2]  992 	jra	00110$
+      00055D                        993 00108$:
+                                    994 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 426: ADC1->AWCRH |= (uint8_t)((uint8_t)1 << (Channel - (uint8_t)8));
+      00055D AE 54 0E         [ 2]  995 	ldw	x, #0x540e
+      000560 88               [ 1]  996 	push	a
+      000561 F6               [ 1]  997 	ld	a, (x)
+      000562 6B 03            [ 1]  998 	ld	(0x03, sp), a
+      000564 84               [ 1]  999 	pop	a
+      000565 A0 08            [ 1] 1000 	sub	a, #0x08
+      000567 97               [ 1] 1001 	ld	xl, a
+      000568 A6 01            [ 1] 1002 	ld	a, #0x01
+      00056A 88               [ 1] 1003 	push	a
+      00056B 9F               [ 1] 1004 	ld	a, xl
+      00056C 4D               [ 1] 1005 	tnz	a
+      00056D 27 05            [ 1] 1006 	jreq	00267$
+      00056F                       1007 00266$:
+      00056F 08 01            [ 1] 1008 	sll	(1, sp)
+      000571 4A               [ 1] 1009 	dec	a
+      000572 26 FB            [ 1] 1010 	jrne	00266$
+      000574                       1011 00267$:
+      000574 84               [ 1] 1012 	pop	a
+                                   1013 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 424: if (NewState != DISABLE)
+      000575 0D 05            [ 1] 1014 	tnz	(0x05, sp)
+      000577 27 07            [ 1] 1015 	jreq	00105$
+                                   1016 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 426: ADC1->AWCRH |= (uint8_t)((uint8_t)1 << (Channel - (uint8_t)8));
+      000579 1A 02            [ 1] 1017 	or	a, (0x02, sp)
+      00057B C7 54 0E         [ 1] 1018 	ld	0x540e, a
+      00057E 20 06            [ 2] 1019 	jra	00110$
+      000580                       1020 00105$:
+                                   1021 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 430: ADC1->AWCRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (uint8_t)(Channel - (uint8_t)8));
+      000580 43               [ 1] 1022 	cpl	a
+      000581 14 02            [ 1] 1023 	and	a, (0x02, sp)
+      000583 C7 54 0E         [ 1] 1024 	ld	0x540e, a
+      000586                       1025 00110$:
+                                   1026 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 433: }
+      000586 85               [ 2] 1027 	popw	x
+      000587 85               [ 2] 1028 	popw	x
+      000588 84               [ 1] 1029 	pop	a
+      000589 FC               [ 2] 1030 	jp	(x)
+                                   1031 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 441: void ADC1_SetHighThreshold(uint16_t Threshold)
+                                   1032 ;	-----------------------------------------
+                                   1033 ;	 function ADC1_SetHighThreshold
+                                   1034 ;	-----------------------------------------
+      00058A                       1035 _ADC1_SetHighThreshold:
+                                   1036 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 443: ADC1->HTRH = (uint8_t)(Threshold >> (uint8_t)2);
+      00058A 90 93            [ 1] 1037 	ldw	y, x
+      00058C 54               [ 2] 1038 	srlw	x
+      00058D 54               [ 2] 1039 	srlw	x
+      00058E 9F               [ 1] 1040 	ld	a, xl
+      00058F C7 54 08         [ 1] 1041 	ld	0x5408, a
+                                   1042 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 444: ADC1->HTRL = (uint8_t)Threshold;
+      000592 90 9F            [ 1] 1043 	ld	a, yl
+      000594 C7 54 09         [ 1] 1044 	ld	0x5409, a
+                                   1045 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 445: }
+      000597 81               [ 4] 1046 	ret
+                                   1047 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 453: void ADC1_SetLowThreshold(uint16_t Threshold)
+                                   1048 ;	-----------------------------------------
+                                   1049 ;	 function ADC1_SetLowThreshold
+                                   1050 ;	-----------------------------------------
+      000598                       1051 _ADC1_SetLowThreshold:
+                                   1052 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 455: ADC1->LTRL = (uint8_t)Threshold;
+      000598 9F               [ 1] 1053 	ld	a, xl
+      000599 C7 54 0B         [ 1] 1054 	ld	0x540b, a
+                                   1055 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 456: ADC1->LTRH = (uint8_t)(Threshold >> (uint8_t)2);
+      00059C 54               [ 2] 1056 	srlw	x
+      00059D 54               [ 2] 1057 	srlw	x
+      00059E 9F               [ 1] 1058 	ld	a, xl
+      00059F C7 54 0A         [ 1] 1059 	ld	0x540a, a
+                                   1060 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 457: }
+      0005A2 81               [ 4] 1061 	ret
+                                   1062 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 466: uint16_t ADC1_GetBufferValue(uint8_t Buffer)
+                                   1063 ;	-----------------------------------------
+                                   1064 ;	 function ADC1_GetBufferValue
+                                   1065 ;	-----------------------------------------
+      0005A3                       1066 _ADC1_GetBufferValue:
+      0005A3 52 06            [ 2] 1067 	sub	sp, #6
+                                   1068 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 472: assert_param(IS_ADC1_BUFFER_OK(Buffer));
+      0005A5 A1 09            [ 1] 1069 	cp	a, #0x09
+      0005A7 23 0E            [ 2] 1070 	jrule	00107$
+      0005A9 88               [ 1] 1071 	push	a
+      0005AA 4B D8            [ 1] 1072 	push	#0xd8
+      0005AC 4B 01            [ 1] 1073 	push	#0x01
+      0005AE 5F               [ 1] 1074 	clrw	x
+      0005AF 89               [ 2] 1075 	pushw	x
+      0005B0 AEr00r00         [ 2] 1076 	ldw	x, #(___str_0+0)
+      0005B3 CDr00r00         [ 4] 1077 	call	_assert_failed
+      0005B6 84               [ 1] 1078 	pop	a
+      0005B7                       1079 00107$:
+                                   1080 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 474: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
+      0005B7 AE 54 02         [ 2] 1081 	ldw	x, #0x5402
+      0005BA 88               [ 1] 1082 	push	a
+      0005BB F6               [ 1] 1083 	ld	a, (x)
+      0005BC 6B 04            [ 1] 1084 	ld	(0x04, sp), a
+      0005BE 84               [ 1] 1085 	pop	a
+                                   1086 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 477: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+      0005BF 48               [ 1] 1087 	sll	a
+      0005C0 5F               [ 1] 1088 	clrw	x
+      0005C1 97               [ 1] 1089 	ld	xl, a
+      0005C2 90 93            [ 1] 1090 	ldw	y, x
+      0005C4 72 A9 53 E1      [ 2] 1091 	addw	y, #0x53e1
+                                   1092 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 479: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      0005C8 1C 53 E0         [ 2] 1093 	addw	x, #0x53e0
+                                   1094 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 477: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+                                   1095 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 479: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+                                   1096 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 477: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+      0005CB 90 F6            [ 1] 1097 	ld	a, (y)
+      0005CD 6B 06            [ 1] 1098 	ld	(0x06, sp), a
+                                   1099 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 479: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      0005CF F6               [ 1] 1100 	ld	a, (x)
+      0005D0 6B 05            [ 1] 1101 	ld	(0x05, sp), a
+      0005D2 0F 04            [ 1] 1102 	clr	(0x04, sp)
+                                   1103 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 474: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
+      0005D4 7B 03            [ 1] 1104 	ld	a, (0x03, sp)
+      0005D6 A5 08            [ 1] 1105 	bcp	a, #0x08
+      0005D8 27 1A            [ 1] 1106 	jreq	00102$
+                                   1107 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 477: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+                                   1108 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 479: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      0005DA 16 04            [ 2] 1109 	ldw	y, (0x04, sp)
+      0005DC 17 01            [ 2] 1110 	ldw	(0x01, sp), y
+                                   1111 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 481: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
+      0005DE 7B 02            [ 1] 1112 	ld	a, (0x02, sp)
+      0005E0 6B 03            [ 1] 1113 	ld	(0x03, sp), a
+      0005E2 0F 04            [ 1] 1114 	clr	(0x04, sp)
+      0005E4 0F 05            [ 1] 1115 	clr	(0x05, sp)
+      0005E6 7B 06            [ 1] 1116 	ld	a, (0x06, sp)
+      0005E8 1A 04            [ 1] 1117 	or	a, (0x04, sp)
+      0005EA 6B 02            [ 1] 1118 	ld	(0x02, sp), a
+      0005EC 7B 05            [ 1] 1119 	ld	a, (0x05, sp)
+      0005EE 1A 03            [ 1] 1120 	or	a, (0x03, sp)
+      0005F0 6B 01            [ 1] 1121 	ld	(0x01, sp), a
+      0005F2 20 1C            [ 2] 1122 	jra	00103$
+      0005F4                       1123 00102$:
+                                   1124 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 486: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      0005F4 16 04            [ 2] 1125 	ldw	y, (0x04, sp)
+                                   1126 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 488: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+      0005F6 7B 06            [ 1] 1127 	ld	a, (0x06, sp)
+                                   1128 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 490: temph = (uint16_t)((uint16_t)((uint16_t)templ << 6) | (uint16_t)(temph << 8));
+      0005F8 5F               [ 1] 1129 	clrw	x
+      0005F9 97               [ 1] 1130 	ld	xl, a
+      0005FA 58               [ 2] 1131 	sllw	x
+      0005FB 58               [ 2] 1132 	sllw	x
+      0005FC 58               [ 2] 1133 	sllw	x
+      0005FD 58               [ 2] 1134 	sllw	x
+      0005FE 58               [ 2] 1135 	sllw	x
+      0005FF 58               [ 2] 1136 	sllw	x
+      000600 1F 03            [ 2] 1137 	ldw	(0x03, sp), x
+      000602 90 9F            [ 1] 1138 	ld	a, yl
+      000604 0F 06            [ 1] 1139 	clr	(0x06, sp)
+      000606 1A 03            [ 1] 1140 	or	a, (0x03, sp)
+      000608 6B 01            [ 1] 1141 	ld	(0x01, sp), a
+      00060A 7B 04            [ 1] 1142 	ld	a, (0x04, sp)
+      00060C 1A 06            [ 1] 1143 	or	a, (0x06, sp)
+      00060E 6B 02            [ 1] 1144 	ld	(0x02, sp), a
+      000610                       1145 00103$:
+                                   1146 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 493: return ((uint16_t)temph);
+      000610 1E 01            [ 2] 1147 	ldw	x, (0x01, sp)
+                                   1148 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 494: }
+      000612 5B 06            [ 2] 1149 	addw	sp, #6
+      000614 81               [ 4] 1150 	ret
+                                   1151 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 502: FlagStatus ADC1_GetAWDChannelStatus(ADC1_Channel_TypeDef Channel)
+                                   1152 ;	-----------------------------------------
+                                   1153 ;	 function ADC1_GetAWDChannelStatus
+                                   1154 ;	-----------------------------------------
+      000615                       1155 _ADC1_GetAWDChannelStatus:
+      000615 88               [ 1] 1156 	push	a
+                                   1157 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 507: assert_param(IS_ADC1_CHANNEL_OK(Channel));
+      000616 4D               [ 1] 1158 	tnz	a
+      000617 27 36            [ 1] 1159 	jreq	00107$
+      000619 A1 01            [ 1] 1160 	cp	a, #0x01
+      00061B 27 32            [ 1] 1161 	jreq	00107$
+      00061D A1 02            [ 1] 1162 	cp	a, #0x02
+      00061F 27 2E            [ 1] 1163 	jreq	00107$
+      000621 A1 03            [ 1] 1164 	cp	a, #0x03
+      000623 27 2A            [ 1] 1165 	jreq	00107$
+      000625 A1 04            [ 1] 1166 	cp	a, #0x04
+      000627 27 26            [ 1] 1167 	jreq	00107$
+      000629 A1 05            [ 1] 1168 	cp	a, #0x05
+      00062B 27 22            [ 1] 1169 	jreq	00107$
+      00062D A1 06            [ 1] 1170 	cp	a, #0x06
+      00062F 27 1E            [ 1] 1171 	jreq	00107$
+      000631 A1 07            [ 1] 1172 	cp	a, #0x07
+      000633 27 1A            [ 1] 1173 	jreq	00107$
+      000635 A1 08            [ 1] 1174 	cp	a, #0x08
+      000637 27 16            [ 1] 1175 	jreq	00107$
+      000639 A1 0C            [ 1] 1176 	cp	a, #0x0c
+      00063B 27 12            [ 1] 1177 	jreq	00107$
+      00063D A1 09            [ 1] 1178 	cp	a, #0x09
+      00063F 27 0E            [ 1] 1179 	jreq	00107$
+      000641 88               [ 1] 1180 	push	a
+      000642 4B FB            [ 1] 1181 	push	#0xfb
+      000644 4B 01            [ 1] 1182 	push	#0x01
+      000646 5F               [ 1] 1183 	clrw	x
+      000647 89               [ 2] 1184 	pushw	x
+      000648 AEr00r00         [ 2] 1185 	ldw	x, #(___str_0+0)
+      00064B CDr00r00         [ 4] 1186 	call	_assert_failed
+      00064E 84               [ 1] 1187 	pop	a
+      00064F                       1188 00107$:
+                                   1189 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 509: if (Channel < (uint8_t)8)
+      00064F A1 08            [ 1] 1190 	cp	a, #0x08
+      000651 24 18            [ 1] 1191 	jrnc	00102$
+                                   1192 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 511: status = (uint8_t)(ADC1->AWSRL & (uint8_t)((uint8_t)1 << Channel));
+      000653 AE 54 0D         [ 2] 1193 	ldw	x, #0x540d
+      000656 88               [ 1] 1194 	push	a
+      000657 F6               [ 1] 1195 	ld	a, (x)
+      000658 97               [ 1] 1196 	ld	xl, a
+      000659 A6 01            [ 1] 1197 	ld	a, #0x01
+      00065B 6B 02            [ 1] 1198 	ld	(0x02, sp), a
+      00065D 84               [ 1] 1199 	pop	a
+      00065E 4D               [ 1] 1200 	tnz	a
+      00065F 27 05            [ 1] 1201 	jreq	00231$
+      000661                       1202 00230$:
+      000661 08 01            [ 1] 1203 	sll	(0x01, sp)
+      000663 4A               [ 1] 1204 	dec	a
+      000664 26 FB            [ 1] 1205 	jrne	00230$
+      000666                       1206 00231$:
+      000666 9F               [ 1] 1207 	ld	a, xl
+      000667 14 01            [ 1] 1208 	and	a, (0x01, sp)
+      000669 20 1A            [ 2] 1209 	jra	00103$
+      00066B                       1210 00102$:
+                                   1211 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 515: status = (uint8_t)(ADC1->AWSRH & (uint8_t)((uint8_t)1 << (Channel - (uint8_t)8)));
+      00066B AE 54 0C         [ 2] 1212 	ldw	x, #0x540c
+      00066E 88               [ 1] 1213 	push	a
+      00066F F6               [ 1] 1214 	ld	a, (x)
+      000670 6B 02            [ 1] 1215 	ld	(0x02, sp), a
+      000672 84               [ 1] 1216 	pop	a
+      000673 A0 08            [ 1] 1217 	sub	a, #0x08
+      000675 97               [ 1] 1218 	ld	xl, a
+      000676 A6 01            [ 1] 1219 	ld	a, #0x01
+      000678 88               [ 1] 1220 	push	a
+      000679 9F               [ 1] 1221 	ld	a, xl
+      00067A 4D               [ 1] 1222 	tnz	a
+      00067B 27 05            [ 1] 1223 	jreq	00233$
+      00067D                       1224 00232$:
+      00067D 08 01            [ 1] 1225 	sll	(1, sp)
+      00067F 4A               [ 1] 1226 	dec	a
+      000680 26 FB            [ 1] 1227 	jrne	00232$
+      000682                       1228 00233$:
+      000682 84               [ 1] 1229 	pop	a
+      000683 14 01            [ 1] 1230 	and	a, (0x01, sp)
+      000685                       1231 00103$:
+                                   1232 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 518: return ((FlagStatus)status);
+      000685 40               [ 1] 1233 	neg	a
+      000686 4F               [ 1] 1234 	clr	a
+      000687 49               [ 1] 1235 	rlc	a
+                                   1236 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 519: }
+      000688 5B 01            [ 2] 1237 	addw	sp, #1
+      00068A 81               [ 4] 1238 	ret
+                                   1239 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 527: FlagStatus ADC1_GetFlagStatus(ADC1_Flag_TypeDef Flag)
+                                   1240 ;	-----------------------------------------
+                                   1241 ;	 function ADC1_GetFlagStatus
+                                   1242 ;	-----------------------------------------
+      00068B                       1243 _ADC1_GetFlagStatus:
+      00068B 52 03            [ 2] 1244 	sub	sp, #3
+                                   1245 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 533: assert_param(IS_ADC1_FLAG_OK(Flag));
+      00068D 6B 03            [ 1] 1246 	ld	(0x03, sp), a
+      00068F A1 80            [ 1] 1247 	cp	a, #0x80
+      000691 27 54            [ 1] 1248 	jreq	00113$
+      000693 7B 03            [ 1] 1249 	ld	a, (0x03, sp)
+      000695 A1 41            [ 1] 1250 	cp	a, #0x41
+      000697 27 4E            [ 1] 1251 	jreq	00113$
+      000699 7B 03            [ 1] 1252 	ld	a, (0x03, sp)
+      00069B A1 40            [ 1] 1253 	cp	a, #0x40
+      00069D 27 48            [ 1] 1254 	jreq	00113$
+      00069F 7B 03            [ 1] 1255 	ld	a, (0x03, sp)
+      0006A1 A1 10            [ 1] 1256 	cp	a, #0x10
+      0006A3 27 42            [ 1] 1257 	jreq	00113$
+      0006A5 7B 03            [ 1] 1258 	ld	a, (0x03, sp)
+      0006A7 A1 11            [ 1] 1259 	cp	a, #0x11
+      0006A9 27 3C            [ 1] 1260 	jreq	00113$
+      0006AB 7B 03            [ 1] 1261 	ld	a, (0x03, sp)
+      0006AD A1 12            [ 1] 1262 	cp	a, #0x12
+      0006AF 27 36            [ 1] 1263 	jreq	00113$
+      0006B1 7B 03            [ 1] 1264 	ld	a, (0x03, sp)
+      0006B3 A1 13            [ 1] 1265 	cp	a, #0x13
+      0006B5 27 30            [ 1] 1266 	jreq	00113$
+      0006B7 7B 03            [ 1] 1267 	ld	a, (0x03, sp)
+      0006B9 A1 14            [ 1] 1268 	cp	a, #0x14
+      0006BB 27 2A            [ 1] 1269 	jreq	00113$
+      0006BD 7B 03            [ 1] 1270 	ld	a, (0x03, sp)
+      0006BF A1 15            [ 1] 1271 	cp	a, #0x15
+      0006C1 27 24            [ 1] 1272 	jreq	00113$
+      0006C3 7B 03            [ 1] 1273 	ld	a, (0x03, sp)
+      0006C5 A1 16            [ 1] 1274 	cp	a, #0x16
+      0006C7 27 1E            [ 1] 1275 	jreq	00113$
+      0006C9 7B 03            [ 1] 1276 	ld	a, (0x03, sp)
+      0006CB A1 17            [ 1] 1277 	cp	a, #0x17
+      0006CD 27 18            [ 1] 1278 	jreq	00113$
+      0006CF 7B 03            [ 1] 1279 	ld	a, (0x03, sp)
+      0006D1 A1 18            [ 1] 1280 	cp	a, #0x18
+      0006D3 27 12            [ 1] 1281 	jreq	00113$
+      0006D5 7B 03            [ 1] 1282 	ld	a, (0x03, sp)
+      0006D7 A1 19            [ 1] 1283 	cp	a, #0x19
+      0006D9 27 0C            [ 1] 1284 	jreq	00113$
+      0006DB 4B 15            [ 1] 1285 	push	#0x15
+      0006DD 4B 02            [ 1] 1286 	push	#0x02
+      0006DF 5F               [ 1] 1287 	clrw	x
+      0006E0 89               [ 2] 1288 	pushw	x
+      0006E1 AEr00r00         [ 2] 1289 	ldw	x, #(___str_0+0)
+      0006E4 CDr00r00         [ 4] 1290 	call	_assert_failed
+      0006E7                       1291 00113$:
+                                   1292 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 535: if ((Flag & 0x0F) == 0x01)
+      0006E7 7B 03            [ 1] 1293 	ld	a, (0x03, sp)
+      0006E9 6B 02            [ 1] 1294 	ld	(0x02, sp), a
+      0006EB 0F 01            [ 1] 1295 	clr	(0x01, sp)
+      0006ED 5F               [ 1] 1296 	clrw	x
+      0006EE 7B 02            [ 1] 1297 	ld	a, (0x02, sp)
+      0006F0 A4 0F            [ 1] 1298 	and	a, #0x0f
+      0006F2 97               [ 1] 1299 	ld	xl, a
+      0006F3 5A               [ 2] 1300 	decw	x
+      0006F4 26 07            [ 1] 1301 	jrne	00108$
+                                   1302 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 538: flagstatus = (uint8_t)(ADC1->CR3 & ADC1_CR3_OVR);
+      0006F6 C6 54 03         [ 1] 1303 	ld	a, 0x5403
+      0006F9 A4 40            [ 1] 1304 	and	a, #0x40
+      0006FB 20 48            [ 2] 1305 	jra	00109$
+      0006FD                       1306 00108$:
+                                   1307 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 540: else if ((Flag & 0xF0) == 0x10)
+      0006FD 5F               [ 1] 1308 	clrw	x
+      0006FE 7B 02            [ 1] 1309 	ld	a, (0x02, sp)
+      000700 A4 F0            [ 1] 1310 	and	a, #0xf0
+      000702 97               [ 1] 1311 	ld	xl, a
+      000703 A3 00 10         [ 2] 1312 	cpw	x, #0x0010
+      000706 26 38            [ 1] 1313 	jrne	00105$
+                                   1314 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 543: temp = (uint8_t)(Flag & (uint8_t)0x0F);
+      000708 7B 03            [ 1] 1315 	ld	a, (0x03, sp)
+      00070A A4 0F            [ 1] 1316 	and	a, #0x0f
+                                   1317 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 544: if (temp < 8)
+      00070C 97               [ 1] 1318 	ld	xl, a
+      00070D A1 08            [ 1] 1319 	cp	a, #0x08
+      00070F 24 16            [ 1] 1320 	jrnc	00102$
+                                   1321 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 546: flagstatus = (uint8_t)(ADC1->AWSRL & (uint8_t)((uint8_t)1 << temp));
+      000711 C6 54 0D         [ 1] 1322 	ld	a, 0x540d
+      000714 6B 02            [ 1] 1323 	ld	(0x02, sp), a
+      000716 A6 01            [ 1] 1324 	ld	a, #0x01
+      000718 88               [ 1] 1325 	push	a
+      000719 9F               [ 1] 1326 	ld	a, xl
+      00071A 4D               [ 1] 1327 	tnz	a
+      00071B 27 05            [ 1] 1328 	jreq	00277$
+      00071D                       1329 00276$:
+      00071D 08 01            [ 1] 1330 	sll	(1, sp)
+      00071F 4A               [ 1] 1331 	dec	a
+      000720 26 FB            [ 1] 1332 	jrne	00276$
+      000722                       1333 00277$:
+      000722 84               [ 1] 1334 	pop	a
+      000723 14 02            [ 1] 1335 	and	a, (0x02, sp)
+      000725 20 1E            [ 2] 1336 	jra	00109$
+      000727                       1337 00102$:
+                                   1338 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 550: flagstatus = (uint8_t)(ADC1->AWSRH & (uint8_t)((uint8_t)1 << (temp - 8)));
+      000727 C6 54 0C         [ 1] 1339 	ld	a, 0x540c
+      00072A 6B 02            [ 1] 1340 	ld	(0x02, sp), a
+      00072C 1D 00 08         [ 2] 1341 	subw	x, #8
+      00072F A6 01            [ 1] 1342 	ld	a, #0x01
+      000731 88               [ 1] 1343 	push	a
+      000732 9F               [ 1] 1344 	ld	a, xl
+      000733 4D               [ 1] 1345 	tnz	a
+      000734 27 05            [ 1] 1346 	jreq	00279$
+      000736                       1347 00278$:
+      000736 08 01            [ 1] 1348 	sll	(1, sp)
+      000738 4A               [ 1] 1349 	dec	a
+      000739 26 FB            [ 1] 1350 	jrne	00278$
+      00073B                       1351 00279$:
+      00073B 84               [ 1] 1352 	pop	a
+      00073C 14 02            [ 1] 1353 	and	a, (0x02, sp)
+      00073E 20 05            [ 2] 1354 	jra	00109$
+      000740                       1355 00105$:
+                                   1356 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 555: flagstatus = (uint8_t)(ADC1->CSR & Flag);
+      000740 C6 54 00         [ 1] 1357 	ld	a, 0x5400
+      000743 14 03            [ 1] 1358 	and	a, (0x03, sp)
+      000745                       1359 00109$:
+                                   1360 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 557: return ((FlagStatus)flagstatus);
+      000745 40               [ 1] 1361 	neg	a
+      000746 4F               [ 1] 1362 	clr	a
+      000747 49               [ 1] 1363 	rlc	a
+                                   1364 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 559: }
+      000748 5B 03            [ 2] 1365 	addw	sp, #3
+      00074A 81               [ 4] 1366 	ret
+                                   1367 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 567: void ADC1_ClearFlag(ADC1_Flag_TypeDef Flag)
+                                   1368 ;	-----------------------------------------
+                                   1369 ;	 function ADC1_ClearFlag
+                                   1370 ;	-----------------------------------------
+      00074B                       1371 _ADC1_ClearFlag:
+      00074B 89               [ 2] 1372 	pushw	x
+                                   1373 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 572: assert_param(IS_ADC1_FLAG_OK(Flag));
+      00074C A1 80            [ 1] 1374 	cp	a, #0x80
+      00074E 27 3E            [ 1] 1375 	jreq	00113$
+      000750 A1 41            [ 1] 1376 	cp	a, #0x41
+      000752 27 3A            [ 1] 1377 	jreq	00113$
+      000754 A1 40            [ 1] 1378 	cp	a, #0x40
+      000756 27 36            [ 1] 1379 	jreq	00113$
+      000758 A1 10            [ 1] 1380 	cp	a, #0x10
+      00075A 27 32            [ 1] 1381 	jreq	00113$
+      00075C A1 11            [ 1] 1382 	cp	a, #0x11
+      00075E 27 2E            [ 1] 1383 	jreq	00113$
+      000760 A1 12            [ 1] 1384 	cp	a, #0x12
+      000762 27 2A            [ 1] 1385 	jreq	00113$
+      000764 A1 13            [ 1] 1386 	cp	a, #0x13
+      000766 27 26            [ 1] 1387 	jreq	00113$
+      000768 A1 14            [ 1] 1388 	cp	a, #0x14
+      00076A 27 22            [ 1] 1389 	jreq	00113$
+      00076C A1 15            [ 1] 1390 	cp	a, #0x15
+      00076E 27 1E            [ 1] 1391 	jreq	00113$
+      000770 A1 16            [ 1] 1392 	cp	a, #0x16
+      000772 27 1A            [ 1] 1393 	jreq	00113$
+      000774 A1 17            [ 1] 1394 	cp	a, #0x17
+      000776 27 16            [ 1] 1395 	jreq	00113$
+      000778 A1 18            [ 1] 1396 	cp	a, #0x18
+      00077A 27 12            [ 1] 1397 	jreq	00113$
+      00077C A1 19            [ 1] 1398 	cp	a, #0x19
+      00077E 27 0E            [ 1] 1399 	jreq	00113$
+      000780 88               [ 1] 1400 	push	a
+      000781 4B 3C            [ 1] 1401 	push	#0x3c
+      000783 4B 02            [ 1] 1402 	push	#0x02
+      000785 5F               [ 1] 1403 	clrw	x
+      000786 89               [ 2] 1404 	pushw	x
+      000787 AEr00r00         [ 2] 1405 	ldw	x, #(___str_0+0)
+      00078A CDr00r00         [ 4] 1406 	call	_assert_failed
+      00078D 84               [ 1] 1407 	pop	a
+      00078E                       1408 00113$:
+                                   1409 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 574: if ((Flag & 0x0F) == 0x01)
+      00078E 6B 02            [ 1] 1410 	ld	(0x02, sp), a
+      000790 0F 01            [ 1] 1411 	clr	(0x01, sp)
+      000792 88               [ 1] 1412 	push	a
+      000793 5F               [ 1] 1413 	clrw	x
+      000794 7B 03            [ 1] 1414 	ld	a, (0x03, sp)
+      000796 A4 0F            [ 1] 1415 	and	a, #0x0f
+      000798 97               [ 1] 1416 	ld	xl, a
+      000799 84               [ 1] 1417 	pop	a
+      00079A 5A               [ 2] 1418 	decw	x
+      00079B 26 06            [ 1] 1419 	jrne	00108$
+                                   1420 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 577: ADC1->CR3 &= (uint8_t)(~ADC1_CR3_OVR);
+      00079D 72 1D 54 03      [ 1] 1421 	bres	0x5403, #6
+      0007A1 20 59            [ 2] 1422 	jra	00110$
+      0007A3                       1423 00108$:
+                                   1424 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 579: else if ((Flag & 0xF0) == 0x10)
+      0007A3 88               [ 1] 1425 	push	a
+      0007A4 5F               [ 1] 1426 	clrw	x
+      0007A5 7B 03            [ 1] 1427 	ld	a, (0x03, sp)
+      0007A7 A4 F0            [ 1] 1428 	and	a, #0xf0
+      0007A9 97               [ 1] 1429 	ld	xl, a
+      0007AA 84               [ 1] 1430 	pop	a
+      0007AB A3 00 10         [ 2] 1431 	cpw	x, #0x0010
+      0007AE 26 3E            [ 1] 1432 	jrne	00105$
+                                   1433 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 582: temp = (uint8_t)(Flag & (uint8_t)0x0F);
+      0007B0 A4 0F            [ 1] 1434 	and	a, #0x0f
+                                   1435 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 583: if (temp < 8)
+      0007B2 97               [ 1] 1436 	ld	xl, a
+      0007B3 A1 08            [ 1] 1437 	cp	a, #0x08
+      0007B5 24 1A            [ 1] 1438 	jrnc	00102$
+                                   1439 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 585: ADC1->AWSRL &= (uint8_t)~(uint8_t)((uint8_t)1 << temp);
+      0007B7 C6 54 0D         [ 1] 1440 	ld	a, 0x540d
+      0007BA 6B 02            [ 1] 1441 	ld	(0x02, sp), a
+      0007BC A6 01            [ 1] 1442 	ld	a, #0x01
+      0007BE 88               [ 1] 1443 	push	a
+      0007BF 9F               [ 1] 1444 	ld	a, xl
+      0007C0 4D               [ 1] 1445 	tnz	a
+      0007C1 27 05            [ 1] 1446 	jreq	00277$
+      0007C3                       1447 00276$:
+      0007C3 08 01            [ 1] 1448 	sll	(1, sp)
+      0007C5 4A               [ 1] 1449 	dec	a
+      0007C6 26 FB            [ 1] 1450 	jrne	00276$
+      0007C8                       1451 00277$:
+      0007C8 84               [ 1] 1452 	pop	a
+      0007C9 43               [ 1] 1453 	cpl	a
+      0007CA 14 02            [ 1] 1454 	and	a, (0x02, sp)
+      0007CC C7 54 0D         [ 1] 1455 	ld	0x540d, a
+      0007CF 20 2B            [ 2] 1456 	jra	00110$
+      0007D1                       1457 00102$:
+                                   1458 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 589: ADC1->AWSRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (temp - 8));
+      0007D1 C6 54 0C         [ 1] 1459 	ld	a, 0x540c
+      0007D4 6B 02            [ 1] 1460 	ld	(0x02, sp), a
+      0007D6 1D 00 08         [ 2] 1461 	subw	x, #8
+      0007D9 A6 01            [ 1] 1462 	ld	a, #0x01
+      0007DB 88               [ 1] 1463 	push	a
+      0007DC 9F               [ 1] 1464 	ld	a, xl
+      0007DD 4D               [ 1] 1465 	tnz	a
+      0007DE 27 05            [ 1] 1466 	jreq	00279$
+      0007E0                       1467 00278$:
+      0007E0 08 01            [ 1] 1468 	sll	(1, sp)
+      0007E2 4A               [ 1] 1469 	dec	a
+      0007E3 26 FB            [ 1] 1470 	jrne	00278$
+      0007E5                       1471 00279$:
+      0007E5 84               [ 1] 1472 	pop	a
+      0007E6 43               [ 1] 1473 	cpl	a
+      0007E7 14 02            [ 1] 1474 	and	a, (0x02, sp)
+      0007E9 C7 54 0C         [ 1] 1475 	ld	0x540c, a
+      0007EC 20 0E            [ 2] 1476 	jra	00110$
+      0007EE                       1477 00105$:
+                                   1478 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 594: ADC1->CSR &= (uint8_t) (~Flag);
+      0007EE AE 54 00         [ 2] 1479 	ldw	x, #0x5400
+      0007F1 88               [ 1] 1480 	push	a
+      0007F2 F6               [ 1] 1481 	ld	a, (x)
+      0007F3 6B 03            [ 1] 1482 	ld	(0x03, sp), a
+      0007F5 84               [ 1] 1483 	pop	a
+      0007F6 43               [ 1] 1484 	cpl	a
+      0007F7 14 02            [ 1] 1485 	and	a, (0x02, sp)
+      0007F9 C7 54 00         [ 1] 1486 	ld	0x5400, a
+      0007FC                       1487 00110$:
+                                   1488 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 596: }
+      0007FC 85               [ 2] 1489 	popw	x
+      0007FD 81               [ 4] 1490 	ret
+                                   1491 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 616: ITStatus ADC1_GetITStatus(ADC1_IT_TypeDef ITPendingBit)
+                                   1492 ;	-----------------------------------------
+                                   1493 ;	 function ADC1_GetITStatus
+                                   1494 ;	-----------------------------------------
+      0007FE                       1495 _ADC1_GetITStatus:
+      0007FE 52 03            [ 2] 1496 	sub	sp, #3
+                                   1497 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 622: assert_param(IS_ADC1_ITPENDINGBIT_OK(ITPendingBit));
+      000800 1F 02            [ 2] 1498 	ldw	(0x02, sp), x
+      000802 A3 00 80         [ 2] 1499 	cpw	x, #0x0080
+      000805 27 48            [ 1] 1500 	jreq	00110$
+      000807 A3 01 40         [ 2] 1501 	cpw	x, #0x0140
+      00080A 27 43            [ 1] 1502 	jreq	00110$
+      00080C A3 01 10         [ 2] 1503 	cpw	x, #0x0110
+      00080F 27 3E            [ 1] 1504 	jreq	00110$
+      000811 A3 01 11         [ 2] 1505 	cpw	x, #0x0111
+      000814 27 39            [ 1] 1506 	jreq	00110$
+      000816 A3 01 12         [ 2] 1507 	cpw	x, #0x0112
+      000819 27 34            [ 1] 1508 	jreq	00110$
+      00081B A3 01 13         [ 2] 1509 	cpw	x, #0x0113
+      00081E 27 2F            [ 1] 1510 	jreq	00110$
+      000820 A3 01 14         [ 2] 1511 	cpw	x, #0x0114
+      000823 27 2A            [ 1] 1512 	jreq	00110$
+      000825 A3 01 15         [ 2] 1513 	cpw	x, #0x0115
+      000828 27 25            [ 1] 1514 	jreq	00110$
+      00082A A3 01 16         [ 2] 1515 	cpw	x, #0x0116
+      00082D 27 20            [ 1] 1516 	jreq	00110$
+      00082F A3 01 17         [ 2] 1517 	cpw	x, #0x0117
+      000832 27 1B            [ 1] 1518 	jreq	00110$
+      000834 A3 01 18         [ 2] 1519 	cpw	x, #0x0118
+      000837 27 16            [ 1] 1520 	jreq	00110$
+      000839 A3 01 1C         [ 2] 1521 	cpw	x, #0x011c
+      00083C 27 11            [ 1] 1522 	jreq	00110$
+      00083E A3 01 19         [ 2] 1523 	cpw	x, #0x0119
+      000841 27 0C            [ 1] 1524 	jreq	00110$
+      000843 4B 6E            [ 1] 1525 	push	#0x6e
+      000845 4B 02            [ 1] 1526 	push	#0x02
+      000847 5F               [ 1] 1527 	clrw	x
+      000848 89               [ 2] 1528 	pushw	x
+      000849 AEr00r00         [ 2] 1529 	ldw	x, #(___str_0+0)
+      00084C CDr00r00         [ 4] 1530 	call	_assert_failed
+      00084F                       1531 00110$:
+                                   1532 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 624: if (((uint16_t)ITPendingBit & 0xF0) == 0x10)
+      00084F 5F               [ 1] 1533 	clrw	x
+      000850 7B 03            [ 1] 1534 	ld	a, (0x03, sp)
+      000852 A4 F0            [ 1] 1535 	and	a, #0xf0
+      000854 97               [ 1] 1536 	ld	xl, a
+      000855 A3 00 10         [ 2] 1537 	cpw	x, #0x0010
+      000858 26 3E            [ 1] 1538 	jrne	00105$
+                                   1539 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 627: temp = (uint8_t)((uint16_t)ITPendingBit & 0x0F);
+      00085A 7B 03            [ 1] 1540 	ld	a, (0x03, sp)
+      00085C A4 0F            [ 1] 1541 	and	a, #0x0f
+                                   1542 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 628: if (temp < 8)
+      00085E 97               [ 1] 1543 	ld	xl, a
+      00085F A1 08            [ 1] 1544 	cp	a, #0x08
+      000861 24 19            [ 1] 1545 	jrnc	00102$
+                                   1546 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 630: itstatus = (ITStatus)(ADC1->AWSRL & (uint8_t)((uint8_t)1 << temp));
+      000863 C6 54 0D         [ 1] 1547 	ld	a, 0x540d
+      000866 88               [ 1] 1548 	push	a
+      000867 A6 01            [ 1] 1549 	ld	a, #0x01
+      000869 6B 02            [ 1] 1550 	ld	(0x02, sp), a
+      00086B 9F               [ 1] 1551 	ld	a, xl
+      00086C 4D               [ 1] 1552 	tnz	a
+      00086D 27 05            [ 1] 1553 	jreq	00266$
+      00086F                       1554 00265$:
+      00086F 08 02            [ 1] 1555 	sll	(0x02, sp)
+      000871 4A               [ 1] 1556 	dec	a
+      000872 26 FB            [ 1] 1557 	jrne	00265$
+      000874                       1558 00266$:
+      000874 84               [ 1] 1559 	pop	a
+      000875 14 01            [ 1] 1560 	and	a, (0x01, sp)
+      000877 40               [ 1] 1561 	neg	a
+      000878 4F               [ 1] 1562 	clr	a
+      000879 49               [ 1] 1563 	rlc	a
+      00087A 20 28            [ 2] 1564 	jra	00106$
+      00087C                       1565 00102$:
+                                   1566 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 634: itstatus = (ITStatus)(ADC1->AWSRH & (uint8_t)((uint8_t)1 << (temp - 8)));
+      00087C C6 54 0C         [ 1] 1567 	ld	a, 0x540c
+      00087F 6B 01            [ 1] 1568 	ld	(0x01, sp), a
+      000881 1D 00 08         [ 2] 1569 	subw	x, #8
+      000884 A6 01            [ 1] 1570 	ld	a, #0x01
+      000886 88               [ 1] 1571 	push	a
+      000887 9F               [ 1] 1572 	ld	a, xl
+      000888 4D               [ 1] 1573 	tnz	a
+      000889 27 05            [ 1] 1574 	jreq	00268$
+      00088B                       1575 00267$:
+      00088B 08 01            [ 1] 1576 	sll	(1, sp)
+      00088D 4A               [ 1] 1577 	dec	a
+      00088E 26 FB            [ 1] 1578 	jrne	00267$
+      000890                       1579 00268$:
+      000890 84               [ 1] 1580 	pop	a
+      000891 14 01            [ 1] 1581 	and	a, (0x01, sp)
+      000893 40               [ 1] 1582 	neg	a
+      000894 4F               [ 1] 1583 	clr	a
+      000895 49               [ 1] 1584 	rlc	a
+      000896 20 0C            [ 2] 1585 	jra	00106$
+      000898                       1586 00105$:
+                                   1587 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 639: itstatus = (ITStatus)(ADC1->CSR & (uint8_t)ITPendingBit);
+      000898 C6 54 00         [ 1] 1588 	ld	a, 0x5400
+      00089B 6B 01            [ 1] 1589 	ld	(0x01, sp), a
+      00089D 7B 03            [ 1] 1590 	ld	a, (0x03, sp)
+      00089F 14 01            [ 1] 1591 	and	a, (0x01, sp)
+      0008A1 40               [ 1] 1592 	neg	a
+      0008A2 4F               [ 1] 1593 	clr	a
+      0008A3 49               [ 1] 1594 	rlc	a
+      0008A4                       1595 00106$:
+                                   1596 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 641: return ((ITStatus)itstatus);
+                                   1597 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 642: }
+      0008A4 5B 03            [ 2] 1598 	addw	sp, #3
+      0008A6 81               [ 4] 1599 	ret
+                                   1600 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 662: void ADC1_ClearITPendingBit(ADC1_IT_TypeDef ITPendingBit)
+                                   1601 ;	-----------------------------------------
+                                   1602 ;	 function ADC1_ClearITPendingBit
+                                   1603 ;	-----------------------------------------
+      0008A7                       1604 _ADC1_ClearITPendingBit:
+      0008A7 52 03            [ 2] 1605 	sub	sp, #3
+                                   1606 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 667: assert_param(IS_ADC1_ITPENDINGBIT_OK(ITPendingBit));
+      0008A9 1F 02            [ 2] 1607 	ldw	(0x02, sp), x
+      0008AB A3 00 80         [ 2] 1608 	cpw	x, #0x0080
+      0008AE 27 4C            [ 1] 1609 	jreq	00110$
+      0008B0 A3 01 40         [ 2] 1610 	cpw	x, #0x0140
+      0008B3 27 47            [ 1] 1611 	jreq	00110$
+      0008B5 A3 01 10         [ 2] 1612 	cpw	x, #0x0110
+      0008B8 27 42            [ 1] 1613 	jreq	00110$
+      0008BA A3 01 11         [ 2] 1614 	cpw	x, #0x0111
+      0008BD 27 3D            [ 1] 1615 	jreq	00110$
+      0008BF A3 01 12         [ 2] 1616 	cpw	x, #0x0112
+      0008C2 27 38            [ 1] 1617 	jreq	00110$
+      0008C4 A3 01 13         [ 2] 1618 	cpw	x, #0x0113
+      0008C7 27 33            [ 1] 1619 	jreq	00110$
+      0008C9 A3 01 14         [ 2] 1620 	cpw	x, #0x0114
+      0008CC 27 2E            [ 1] 1621 	jreq	00110$
+      0008CE A3 01 15         [ 2] 1622 	cpw	x, #0x0115
+      0008D1 27 29            [ 1] 1623 	jreq	00110$
+      0008D3 A3 01 16         [ 2] 1624 	cpw	x, #0x0116
+      0008D6 27 24            [ 1] 1625 	jreq	00110$
+      0008D8 A3 01 17         [ 2] 1626 	cpw	x, #0x0117
+      0008DB 27 1F            [ 1] 1627 	jreq	00110$
+      0008DD A3 01 18         [ 2] 1628 	cpw	x, #0x0118
+      0008E0 27 1A            [ 1] 1629 	jreq	00110$
+      0008E2 A3 01 1C         [ 2] 1630 	cpw	x, #0x011c
+      0008E5 27 15            [ 1] 1631 	jreq	00110$
+      0008E7 A3 01 19         [ 2] 1632 	cpw	x, #0x0119
+      0008EA 27 10            [ 1] 1633 	jreq	00110$
+      0008EC 89               [ 2] 1634 	pushw	x
+      0008ED 4B 9B            [ 1] 1635 	push	#0x9b
+      0008EF 4B 02            [ 1] 1636 	push	#0x02
+      0008F1 4B 00            [ 1] 1637 	push	#0x00
+      0008F3 4B 00            [ 1] 1638 	push	#0x00
+      0008F5 AEr00r00         [ 2] 1639 	ldw	x, #(___str_0+0)
+      0008F8 CDr00r00         [ 4] 1640 	call	_assert_failed
+      0008FB 85               [ 2] 1641 	popw	x
+      0008FC                       1642 00110$:
+                                   1643 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 669: if (((uint16_t)ITPendingBit & 0xF0) == 0x10)
+      0008FC 90 5F            [ 1] 1644 	clrw	y
+      0008FE 7B 03            [ 1] 1645 	ld	a, (0x03, sp)
+      000900 A4 F0            [ 1] 1646 	and	a, #0xf0
+      000902 90 97            [ 1] 1647 	ld	yl, a
+      000904 90 A3 00 10      [ 2] 1648 	cpw	y, #0x0010
+      000908 26 40            [ 1] 1649 	jrne	00105$
+                                   1650 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 672: temp = (uint8_t)((uint16_t)ITPendingBit & 0x0F);
+      00090A 7B 03            [ 1] 1651 	ld	a, (0x03, sp)
+      00090C A4 0F            [ 1] 1652 	and	a, #0x0f
+                                   1653 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 673: if (temp < 8)
+      00090E 97               [ 1] 1654 	ld	xl, a
+      00090F A1 08            [ 1] 1655 	cp	a, #0x08
+      000911 24 1A            [ 1] 1656 	jrnc	00102$
+                                   1657 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 675: ADC1->AWSRL &= (uint8_t)~(uint8_t)((uint8_t)1 << temp);
+      000913 C6 54 0D         [ 1] 1658 	ld	a, 0x540d
+      000916 6B 01            [ 1] 1659 	ld	(0x01, sp), a
+      000918 A6 01            [ 1] 1660 	ld	a, #0x01
+      00091A 88               [ 1] 1661 	push	a
+      00091B 9F               [ 1] 1662 	ld	a, xl
+      00091C 4D               [ 1] 1663 	tnz	a
+      00091D 27 05            [ 1] 1664 	jreq	00266$
+      00091F                       1665 00265$:
+      00091F 08 01            [ 1] 1666 	sll	(1, sp)
+      000921 4A               [ 1] 1667 	dec	a
+      000922 26 FB            [ 1] 1668 	jrne	00265$
+      000924                       1669 00266$:
+      000924 84               [ 1] 1670 	pop	a
+      000925 43               [ 1] 1671 	cpl	a
+      000926 14 01            [ 1] 1672 	and	a, (0x01, sp)
+      000928 C7 54 0D         [ 1] 1673 	ld	0x540d, a
+      00092B 20 2A            [ 2] 1674 	jra	00107$
+      00092D                       1675 00102$:
+                                   1676 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 679: ADC1->AWSRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (temp - 8));
+      00092D C6 54 0C         [ 1] 1677 	ld	a, 0x540c
+      000930 6B 01            [ 1] 1678 	ld	(0x01, sp), a
+      000932 1D 00 08         [ 2] 1679 	subw	x, #8
+      000935 A6 01            [ 1] 1680 	ld	a, #0x01
+      000937 88               [ 1] 1681 	push	a
+      000938 9F               [ 1] 1682 	ld	a, xl
+      000939 4D               [ 1] 1683 	tnz	a
+      00093A 27 05            [ 1] 1684 	jreq	00268$
+      00093C                       1685 00267$:
+      00093C 08 01            [ 1] 1686 	sll	(1, sp)
+      00093E 4A               [ 1] 1687 	dec	a
+      00093F 26 FB            [ 1] 1688 	jrne	00267$
+      000941                       1689 00268$:
+      000941 84               [ 1] 1690 	pop	a
+      000942 43               [ 1] 1691 	cpl	a
+      000943 14 01            [ 1] 1692 	and	a, (0x01, sp)
+      000945 C7 54 0C         [ 1] 1693 	ld	0x540c, a
+      000948 20 0D            [ 2] 1694 	jra	00107$
+      00094A                       1695 00105$:
+                                   1696 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 684: ADC1->CSR &= (uint8_t)((uint16_t)~(uint16_t)ITPendingBit);
+      00094A C6 54 00         [ 1] 1697 	ld	a, 0x5400
+      00094D 88               [ 1] 1698 	push	a
+      00094E 53               [ 2] 1699 	cplw	x
+      00094F 84               [ 1] 1700 	pop	a
+      000950 89               [ 2] 1701 	pushw	x
+      000951 14 02            [ 1] 1702 	and	a, (2, sp)
+      000953 85               [ 2] 1703 	popw	x
+      000954 C7 54 00         [ 1] 1704 	ld	0x5400, a
+      000957                       1705 00107$:
+                                   1706 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 686: }
+      000957 5B 03            [ 2] 1707 	addw	sp, #3
+      000959 81               [ 4] 1708 	ret
+                                   1709 	.area CODE
+                                   1710 	.area CONST
+                                   1711 	.area CONST
+      000000                       1712 ___str_0:
+      000000 2E 2F 53 54 4D 38 53  1713 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
+             5F 53 74 64 50 65 72
+             69 70 68 5F 4C 69 62
+             2F 4C 69 62 72 61 72
+             69 65 73 2F 53 54 4D
+             38 53 5F 53 74 64 50
+             65 72 69 70 68 5F 44
+             72 69 76 65 72 2F 73
+             72 63 2F 73
+      00003C 74 6D 38 73 5F 61 64  1714 	.ascii "tm8s_adc1.c"
+             63 31 2E 63
+      000047 00                    1715 	.db 0x00
+                                   1716 	.area CODE
+                                   1717 	.area INITIALIZER
+                                   1718 	.area CABS (ABS)

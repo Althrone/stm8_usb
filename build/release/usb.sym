@@ -1,0 +1,50 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+    _CLK_ClockSwitchConfig                                         ****** GX
+    _CLK_HSECmd                                                    ****** GX
+  9 _EXIT_PORTC_IRQHandler                                         000031 GR
+    _EXTI_SetExtIntSensitivity                                     ****** GX
+    _GPIO_Init                                                     ****** GX
+    _GPIO_ReadInputData                                            ****** GX
+    _ITC_SetSoftwarePriority                                       ****** GX
+    _TIM4_Cmd                                                      ****** GX
+    _TIM4_SetCounter                                               ****** GX
+    _TIM4_TimeBaseInit                                             ****** GX
+  1 _UsbBitStateEnum                                               000000 GR
+  8 __xinit__usb_bit_state                                         000000 R
+  9 _exit_irqhandler                                               00004E GR
+  9 _software_reset                                                00004F GR
+  2 _usb_bit_state                                                 000000 GR
+  7 _usb_configuration_descriptor                                  000012 GR
+  7 _usb_device_descriptor                                         000000 GR
+  9 _usb_device_init                                               000000 GR
+  9 _usb_device_service                                            00004D GR
+  7 _usb_endpoin0_descriptor                                       000024 GR
+  7 _usb_interface_descriptor                                      00001B GR
+  1 _usb_tx_buf                                                    000001 GR
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 DATA                                       size      D   flags    0
+   2 INITIALIZED                                size      2   flags    0
+   3 DABS                                       size      0   flags    8
+   4 HOME                                       size      0   flags    0
+   5 GSINIT                                     size      0   flags    0
+   6 GSFINAL                                    size      0   flags    0
+   7 CONST                                      size     2B   flags    0
+   8 INITIALIZER                                size      2   flags    0
+   9 CODE                                       size     58   flags    0
+   A CABS                                       size      0   flags    8
+

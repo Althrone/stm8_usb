@@ -1,0 +1,155 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+  9 A$stm8s_rst$101                                                00002B GR
+  9 A$stm8s_rst$102                                                00002D GR
+  9 A$stm8s_rst$103                                                00002F GR
+  9 A$stm8s_rst$104                                                000030 GR
+  9 A$stm8s_rst$105                                                000031 GR
+  9 A$stm8s_rst$108                                                000032 GR
+  9 A$stm8s_rst$112                                                000034 GR
+  9 A$stm8s_rst$123                                                000035 GR
+  9 A$stm8s_rst$124                                                000037 GR
+  9 A$stm8s_rst$126                                                000039 GR
+  9 A$stm8s_rst$127                                                00003B GR
+  9 A$stm8s_rst$129                                                00003D GR
+  9 A$stm8s_rst$130                                                00003F GR
+  9 A$stm8s_rst$132                                                000041 GR
+  9 A$stm8s_rst$133                                                000043 GR
+  9 A$stm8s_rst$135                                                000045 GR
+  9 A$stm8s_rst$136                                                000047 GR
+  9 A$stm8s_rst$138                                                000049 GR
+  9 A$stm8s_rst$140                                                00004A GR
+  9 A$stm8s_rst$142                                                00004C GR
+  9 A$stm8s_rst$143                                                00004D GR
+  9 A$stm8s_rst$145                                                00004E GR
+  9 A$stm8s_rst$147                                                000050 GR
+  9 A$stm8s_rst$148                                                000053 GR
+  9 A$stm8s_rst$150                                                000056 GR
+  9 A$stm8s_rst$155                                                000057 GR
+  9 A$stm8s_rst$160                                                00005A GR
+  9 A$stm8s_rst$58                                                 000000 GR
+  9 A$stm8s_rst$62                                                 000001 GR
+  9 A$stm8s_rst$63                                                 000003 GR
+  9 A$stm8s_rst$65                                                 000005 GR
+  9 A$stm8s_rst$66                                                 000007 GR
+  9 A$stm8s_rst$68                                                 000009 GR
+  9 A$stm8s_rst$69                                                 00000B GR
+  9 A$stm8s_rst$71                                                 00000D GR
+  9 A$stm8s_rst$72                                                 00000F GR
+  9 A$stm8s_rst$74                                                 000011 GR
+  9 A$stm8s_rst$75                                                 000013 GR
+  9 A$stm8s_rst$77                                                 000015 GR
+  9 A$stm8s_rst$79                                                 000016 GR
+  9 A$stm8s_rst$81                                                 000018 GR
+  9 A$stm8s_rst$82                                                 000019 GR
+  9 A$stm8s_rst$84                                                 00001A GR
+  9 A$stm8s_rst$86                                                 00001C GR
+  9 A$stm8s_rst$87                                                 00001F GR
+  9 A$stm8s_rst$89                                                 000022 GR
+  9 A$stm8s_rst$94                                                 000023 GR
+  9 A$stm8s_rst$95                                                 000026 GR
+  9 A$stm8s_rst$97                                                 000027 GR
+  9 A$stm8s_rst$98                                                 000028 GR
+  9 A$stm8s_rst$99                                                 00002A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 2
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  7 Fstm8s_rst$__str_0$0_0$0                                    =  000000 GR
+ 10 Ldebug_CIE0_end                                                000014 R
+ 10 Ldebug_CIE0_start                                              000004 R
+ 10 Ldebug_CIE1_end                                                00008C R
+ 10 Ldebug_CIE1_start                                              00007C R
+  D Ldebug_abbrev                                                  000000 R
+  E Ldebug_info_end                                                00011C R
+  E Ldebug_info_start                                              000004 R
+  B Ldebug_line_end                                                00010F R
+  B Ldebug_line_start                                              000004 R
+  B Ldebug_line_stmt                                               0000B2 R
+  C Ldebug_loc_start                                               000000 R
+  F Ldebug_pubnames_end                                            00003A R
+  F Ldebug_pubnames_start                                          000004 R
+  9 Sstm8s_rst$RST_ClearFlag$22                                 =  000035 GR
+  9 Sstm8s_rst$RST_ClearFlag$23                                 =  000035 GR
+  9 Sstm8s_rst$RST_ClearFlag$24                                 =  000035 GR
+  9 Sstm8s_rst$RST_ClearFlag$25                                 =  000039 GR
+  9 Sstm8s_rst$RST_ClearFlag$26                                 =  00003D GR
+  9 Sstm8s_rst$RST_ClearFlag$27                                 =  000041 GR
+  9 Sstm8s_rst$RST_ClearFlag$28                                 =  000045 GR
+  9 Sstm8s_rst$RST_ClearFlag$29                                 =  000049 GR
+  9 Sstm8s_rst$RST_ClearFlag$30                                 =  00004A GR
+  9 Sstm8s_rst$RST_ClearFlag$31                                 =  00004C GR
+  9 Sstm8s_rst$RST_ClearFlag$32                                 =  00004E GR
+  9 Sstm8s_rst$RST_ClearFlag$33                                 =  000050 GR
+  9 Sstm8s_rst$RST_ClearFlag$34                                 =  000056 GR
+  9 Sstm8s_rst$RST_ClearFlag$35                                 =  000057 GR
+  9 Sstm8s_rst$RST_ClearFlag$36                                 =  000057 GR
+  9 Sstm8s_rst$RST_ClearFlag$37                                 =  00005A GR
+  9 Sstm8s_rst$RST_ClearFlag$38                                 =  00005A GR
+  9 Sstm8s_rst$RST_ClearFlag$39                                 =  00005B GR
+  9 Sstm8s_rst$RST_GetFlagStatus$0                              =  000000 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$1                              =  000000 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$10                             =  000018 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$11                             =  00001A GR
+  9 Sstm8s_rst$RST_GetFlagStatus$12                             =  00001C GR
+  9 Sstm8s_rst$RST_GetFlagStatus$13                             =  000022 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$14                             =  000023 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$15                             =  000023 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$16                             =  000027 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$17                             =  00002B GR
+  9 Sstm8s_rst$RST_GetFlagStatus$18                             =  000032 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$19                             =  000034 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$2                              =  000001 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$20                             =  000034 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$21                             =  000035 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$3                              =  000001 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$4                              =  000005 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$5                              =  000009 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$6                              =  00000D GR
+  9 Sstm8s_rst$RST_GetFlagStatus$7                              =  000011 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$8                              =  000015 GR
+  9 Sstm8s_rst$RST_GetFlagStatus$9                              =  000016 GR
+  9 XG$RST_ClearFlag$0$0                                        =  00005A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 3
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 XG$RST_GetFlagStatus$0$0                                    =  000034 GR
+  9 _RST_ClearFlag                                                 000035 GR
+  9 _RST_GetFlagStatus                                             000000 GR
+  7 ___str_0                                                       000000 R
+    _assert_failed                                                 ****** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 4
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 DATA                                       size      0   flags    0
+   2 INITIALIZED                                size      0   flags    0
+   3 DABS                                       size      0   flags    8
+   4 HOME                                       size      0   flags    0
+   5 GSINIT                                     size      0   flags    0
+   6 GSFINAL                                    size      0   flags    0
+   7 CONST                                      size     47   flags    0
+   8 INITIALIZER                                size      0   flags    0
+   9 CODE                                       size     5B   flags    0
+   A CABS                                       size      0   flags    8
+   B .debug_line                                size    10F   flags  100
+   C .debug_loc                                 size    160   flags  100
+   D .debug_abbrev                              size     6C   flags  100
+   E .debug_info                                size    11C   flags  100
+   F .debug_pubnames                            size     3A   flags  100
+  10 .debug_frame                               size    10C   flags  100
+

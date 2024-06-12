@@ -1,0 +1,377 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+  9 A$stm8s_awu$101                                                00001B GR
+  9 A$stm8s_awu$102                                                00001C GR
+  9 A$stm8s_awu$103                                                00001E GR
+  9 A$stm8s_awu$105                                                000020 GR
+  9 A$stm8s_awu$106                                                000021 GR
+  9 A$stm8s_awu$107                                                000023 GR
+  9 A$stm8s_awu$109                                                000025 GR
+  9 A$stm8s_awu$110                                                000026 GR
+  9 A$stm8s_awu$111                                                000028 GR
+  9 A$stm8s_awu$113                                                00002A GR
+  9 A$stm8s_awu$114                                                00002B GR
+  9 A$stm8s_awu$115                                                00002D GR
+  9 A$stm8s_awu$117                                                00002F GR
+  9 A$stm8s_awu$118                                                000030 GR
+  9 A$stm8s_awu$119                                                000032 GR
+  9 A$stm8s_awu$121                                                000034 GR
+  9 A$stm8s_awu$122                                                000035 GR
+  9 A$stm8s_awu$123                                                000037 GR
+  9 A$stm8s_awu$125                                                000039 GR
+  9 A$stm8s_awu$126                                                00003A GR
+  9 A$stm8s_awu$127                                                00003C GR
+  9 A$stm8s_awu$129                                                00003E GR
+  9 A$stm8s_awu$130                                                00003F GR
+  9 A$stm8s_awu$131                                                000041 GR
+  9 A$stm8s_awu$133                                                000043 GR
+  9 A$stm8s_awu$134                                                000044 GR
+  9 A$stm8s_awu$135                                                000046 GR
+  9 A$stm8s_awu$137                                                000048 GR
+  9 A$stm8s_awu$138                                                000049 GR
+  9 A$stm8s_awu$139                                                00004B GR
+  9 A$stm8s_awu$141                                                00004D GR
+  9 A$stm8s_awu$142                                                00004E GR
+  9 A$stm8s_awu$143                                                000050 GR
+  9 A$stm8s_awu$145                                                000052 GR
+  9 A$stm8s_awu$146                                                000053 GR
+  9 A$stm8s_awu$147                                                000055 GR
+  9 A$stm8s_awu$149                                                000057 GR
+  9 A$stm8s_awu$150                                                000058 GR
+  9 A$stm8s_awu$151                                                00005A GR
+  9 A$stm8s_awu$153                                                00005C GR
+  9 A$stm8s_awu$154                                                00005D GR
+  9 A$stm8s_awu$155                                                00005F GR
+  9 A$stm8s_awu$157                                                000061 GR
+  9 A$stm8s_awu$159                                                000062 GR
+  9 A$stm8s_awu$161                                                000064 GR
+  9 A$stm8s_awu$163                                                000066 GR
+  9 A$stm8s_awu$165                                                000068 GR
+  9 A$stm8s_awu$167                                                00006A GR
+  9 A$stm8s_awu$168                                                00006D GR
+  9 A$stm8s_awu$170                                                000070 GR
+  9 A$stm8s_awu$172                                                000072 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 2
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 A$stm8s_awu$173                                                000073 GR
+  9 A$stm8s_awu$175                                                000074 GR
+  9 A$stm8s_awu$179                                                000075 GR
+  9 A$stm8s_awu$182                                                000079 GR
+  9 A$stm8s_awu$183                                                00007C GR
+  9 A$stm8s_awu$184                                                00007E GR
+  9 A$stm8s_awu$187                                                000081 GR
+  9 A$stm8s_awu$188                                                000084 GR
+  9 A$stm8s_awu$189                                                000086 GR
+  9 A$stm8s_awu$190                                                000088 GR
+  9 A$stm8s_awu$191                                                000089 GR
+  9 A$stm8s_awu$192                                                00008A GR
+  9 A$stm8s_awu$193                                                00008B GR
+  9 A$stm8s_awu$194                                                00008F GR
+  9 A$stm8s_awu$195                                                000091 GR
+  9 A$stm8s_awu$198                                                000094 GR
+  9 A$stm8s_awu$199                                                000097 GR
+  9 A$stm8s_awu$200                                                000099 GR
+  9 A$stm8s_awu$203                                                00009C GR
+  9 A$stm8s_awu$204                                                00009F GR
+  9 A$stm8s_awu$205                                                0000A1 GR
+  9 A$stm8s_awu$206                                                0000A2 GR
+  9 A$stm8s_awu$207                                                0000A3 GR
+  9 A$stm8s_awu$208                                                0000A6 GR
+  9 A$stm8s_awu$209                                                0000A8 GR
+  9 A$stm8s_awu$212                                                0000AB GR
+  9 A$stm8s_awu$216                                                0000AC GR
+  9 A$stm8s_awu$225                                                0000AD GR
+  9 A$stm8s_awu$227                                                0000AE GR
+  9 A$stm8s_awu$230                                                0000B0 GR
+  9 A$stm8s_awu$233                                                0000B3 GR
+  9 A$stm8s_awu$234                                                0000B5 GR
+  9 A$stm8s_awu$238                                                0000B7 GR
+  9 A$stm8s_awu$239                                                0000B9 GR
+  9 A$stm8s_awu$241                                                0000BC GR
+  9 A$stm8s_awu$246                                                0000BE GR
+  9 A$stm8s_awu$247                                                0000C0 GR
+  9 A$stm8s_awu$252                                                0000C3 GR
+  9 A$stm8s_awu$256                                                0000C4 GR
+  9 A$stm8s_awu$265                                                0000C5 GR
+  9 A$stm8s_awu$269                                                0000C7 GR
+  9 A$stm8s_awu$270                                                0000C9 GR
+  9 A$stm8s_awu$271                                                0000CC GR
+  9 A$stm8s_awu$272                                                0000CE GR
+  9 A$stm8s_awu$273                                                0000D0 GR
+  9 A$stm8s_awu$274                                                0000D2 GR
+  9 A$stm8s_awu$275                                                0000D4 GR
+  9 A$stm8s_awu$276                                                0000D6 GR
+  9 A$stm8s_awu$277                                                0000D9 GR
+  9 A$stm8s_awu$278                                                0000DB GR
+  9 A$stm8s_awu$279                                                0000DD GR
+  9 A$stm8s_awu$280                                                0000DF GR
+  9 A$stm8s_awu$281                                                0000E0 GR
+  9 A$stm8s_awu$282                                                0000E2 GR
+  9 A$stm8s_awu$284                                                0000E4 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 3
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 A$stm8s_awu$286                                                0000E6 GR
+  9 A$stm8s_awu$287                                                0000E7 GR
+  9 A$stm8s_awu$289                                                0000E8 GR
+  9 A$stm8s_awu$291                                                0000EA GR
+  9 A$stm8s_awu$292                                                0000ED GR
+  9 A$stm8s_awu$297                                                0000F0 GR
+  9 A$stm8s_awu$299                                                0000F2 GR
+  9 A$stm8s_awu$301                                                0000F4 GR
+  9 A$stm8s_awu$302                                                0000F5 GR
+  9 A$stm8s_awu$304                                                0000F6 GR
+  9 A$stm8s_awu$305                                                0000F8 GR
+  9 A$stm8s_awu$307                                                0000F9 GR
+  9 A$stm8s_awu$308                                                0000FB GR
+  9 A$stm8s_awu$310                                                0000FC GR
+  9 A$stm8s_awu$311                                                0000FF GR
+  9 A$stm8s_awu$315                                                000101 GR
+  9 A$stm8s_awu$316                                                000103 GR
+  9 A$stm8s_awu$317                                                000104 GR
+  9 A$stm8s_awu$320                                                000105 GR
+  9 A$stm8s_awu$321                                                000107 GR
+  9 A$stm8s_awu$322                                                000109 GR
+  9 A$stm8s_awu$323                                                00010B GR
+  9 A$stm8s_awu$324                                                00010D GR
+  9 A$stm8s_awu$325                                                00010F GR
+  9 A$stm8s_awu$326                                                000111 GR
+  9 A$stm8s_awu$327                                                000113 GR
+  9 A$stm8s_awu$328                                                000116 GR
+  9 A$stm8s_awu$329                                                000117 GR
+  9 A$stm8s_awu$330                                                000118 GR
+  9 A$stm8s_awu$332                                                000119 GR
+  9 A$stm8s_awu$335                                                00011A GR
+  9 A$stm8s_awu$337                                                00011D GR
+  9 A$stm8s_awu$338                                                00011F GR
+  9 A$stm8s_awu$341                                                000121 GR
+  9 A$stm8s_awu$342                                                000123 GR
+  9 A$stm8s_awu$343                                                000125 GR
+  9 A$stm8s_awu$347                                                000127 GR
+  9 A$stm8s_awu$348                                                000129 GR
+  9 A$stm8s_awu$350                                                00012C GR
+  9 A$stm8s_awu$355                                                00012E GR
+  9 A$stm8s_awu$356                                                00012F GR
+  9 A$stm8s_awu$361                                                000132 GR
+  9 A$stm8s_awu$362                                                000134 GR
+  9 A$stm8s_awu$364                                                000136 GR
+  9 A$stm8s_awu$375                                                000137 GR
+  9 A$stm8s_awu$378                                                00013B GR
+  9 A$stm8s_awu$383                                                00013F GR
+  9 A$stm8s_awu$394                                                000140 GR
+  9 A$stm8s_awu$395                                                000143 GR
+  9 A$stm8s_awu$396                                                000145 GR
+  9 A$stm8s_awu$397                                                000147 GR
+  9 A$stm8s_awu$398                                                000148 GR
+  9 A$stm8s_awu$399                                                000149 GR
+  9 A$stm8s_awu$404                                                00014A GR
+  9 A$stm8s_awu$66                                                 000000 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 4
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 A$stm8s_awu$69                                                 000004 GR
+  9 A$stm8s_awu$72                                                 000008 GR
+  9 A$stm8s_awu$77                                                 00000C GR
+  9 A$stm8s_awu$86                                                 00000D GR
+  9 A$stm8s_awu$90                                                 00000E GR
+  9 A$stm8s_awu$91                                                 00000F GR
+  9 A$stm8s_awu$92                                                 000010 GR
+  9 A$stm8s_awu$93                                                 000012 GR
+  9 A$stm8s_awu$94                                                 000013 GR
+  9 A$stm8s_awu$95                                                 000014 GR
+  9 A$stm8s_awu$97                                                 000016 GR
+  9 A$stm8s_awu$98                                                 000017 GR
+  9 A$stm8s_awu$99                                                 000019 GR
+  7 Fstm8s_awu$__str_0$0_0$0                                    =  000022 GR
+  7 G$APR_Array$0_0$0                                           =  000000 GR
+  7 G$TBR_Array$0_0$0                                           =  000011 GR
+ 10 Ldebug_CIE0_end                                                000014 R
+ 10 Ldebug_CIE0_start                                              000004 R
+ 10 Ldebug_CIE1_end                                                000040 R
+ 10 Ldebug_CIE1_start                                              000030 R
+ 10 Ldebug_CIE2_end                                                00006C R
+ 10 Ldebug_CIE2_start                                              00005C R
+ 10 Ldebug_CIE3_end                                                000100 R
+ 10 Ldebug_CIE3_start                                              0000F0 R
+ 10 Ldebug_CIE4_end                                                00013C R
+ 10 Ldebug_CIE4_start                                              00012C R
+ 10 Ldebug_CIE5_end                                                000220 R
+ 10 Ldebug_CIE5_start                                              000210 R
+  D Ldebug_abbrev                                                  000000 R
+  E Ldebug_info_end                                                00023D R
+  E Ldebug_info_start                                              000004 R
+  B Ldebug_line_end                                                00023D R
+  B Ldebug_line_start                                              000004 R
+  B Ldebug_line_stmt                                               0000B2 R
+  C Ldebug_loc_start                                               000000 R
+  F Ldebug_pubnames_end                                            0000A0 R
+  F Ldebug_pubnames_start                                          000004 R
+  9 Sstm8s_awu$AWU_Cmd$45                                       =  0000AD GR
+  9 Sstm8s_awu$AWU_Cmd$46                                       =  0000AD GR
+  9 Sstm8s_awu$AWU_Cmd$47                                       =  0000AE GR
+  9 Sstm8s_awu$AWU_Cmd$48                                       =  0000B0 GR
+  9 Sstm8s_awu$AWU_Cmd$49                                       =  0000B3 GR
+  9 Sstm8s_awu$AWU_Cmd$50                                       =  0000B7 GR
+  9 Sstm8s_awu$AWU_Cmd$51                                       =  0000B7 GR
+  9 Sstm8s_awu$AWU_Cmd$52                                       =  0000BC GR
+  9 Sstm8s_awu$AWU_Cmd$53                                       =  0000BE GR
+  9 Sstm8s_awu$AWU_Cmd$54                                       =  0000BE GR
+  9 Sstm8s_awu$AWU_Cmd$55                                       =  0000C3 GR
+  9 Sstm8s_awu$AWU_Cmd$56                                       =  0000C3 GR
+  9 Sstm8s_awu$AWU_Cmd$57                                       =  0000C4 GR
+  9 Sstm8s_awu$AWU_Cmd$58                                       =  0000C4 GR
+  9 Sstm8s_awu$AWU_Cmd$59                                       =  0000C5 GR
+  9 Sstm8s_awu$AWU_DeInit$0                                     =  000000 GR
+  9 Sstm8s_awu$AWU_DeInit$1                                     =  000000 GR
+  9 Sstm8s_awu$AWU_DeInit$2                                     =  000000 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 5
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 Sstm8s_awu$AWU_DeInit$3                                     =  000004 GR
+  9 Sstm8s_awu$AWU_DeInit$4                                     =  000008 GR
+  9 Sstm8s_awu$AWU_DeInit$5                                     =  00000C GR
+  9 Sstm8s_awu$AWU_DeInit$6                                     =  00000C GR
+  9 Sstm8s_awu$AWU_DeInit$7                                     =  00000D GR
+  9 Sstm8s_awu$AWU_GetFlagStatus$100                            =  00014A GR
+  9 Sstm8s_awu$AWU_GetFlagStatus$101                            =  00014A GR
+  9 Sstm8s_awu$AWU_GetFlagStatus$102                            =  00014B GR
+  9 Sstm8s_awu$AWU_GetFlagStatus$97                             =  000140 GR
+  9 Sstm8s_awu$AWU_GetFlagStatus$98                             =  000140 GR
+  9 Sstm8s_awu$AWU_GetFlagStatus$99                             =  000140 GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$90                            =  000137 GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$91                            =  000137 GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$92                            =  000137 GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$93                            =  00013B GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$94                            =  00013F GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$95                            =  00013F GR
+  9 Sstm8s_awu$AWU_IdleModeEnable$96                            =  000140 GR
+  9 Sstm8s_awu$AWU_Init$10                                      =  00000E GR
+  9 Sstm8s_awu$AWU_Init$11                                      =  00000E GR
+  9 Sstm8s_awu$AWU_Init$12                                      =  000016 GR
+  9 Sstm8s_awu$AWU_Init$13                                      =  00001B GR
+  9 Sstm8s_awu$AWU_Init$14                                      =  000020 GR
+  9 Sstm8s_awu$AWU_Init$15                                      =  000025 GR
+  9 Sstm8s_awu$AWU_Init$16                                      =  00002A GR
+  9 Sstm8s_awu$AWU_Init$17                                      =  00002F GR
+  9 Sstm8s_awu$AWU_Init$18                                      =  000034 GR
+  9 Sstm8s_awu$AWU_Init$19                                      =  000039 GR
+  9 Sstm8s_awu$AWU_Init$20                                      =  00003E GR
+  9 Sstm8s_awu$AWU_Init$21                                      =  000043 GR
+  9 Sstm8s_awu$AWU_Init$22                                      =  000048 GR
+  9 Sstm8s_awu$AWU_Init$23                                      =  00004D GR
+  9 Sstm8s_awu$AWU_Init$24                                      =  000052 GR
+  9 Sstm8s_awu$AWU_Init$25                                      =  000057 GR
+  9 Sstm8s_awu$AWU_Init$26                                      =  00005C GR
+  9 Sstm8s_awu$AWU_Init$27                                      =  000061 GR
+  9 Sstm8s_awu$AWU_Init$28                                      =  000062 GR
+  9 Sstm8s_awu$AWU_Init$29                                      =  000064 GR
+  9 Sstm8s_awu$AWU_Init$30                                      =  000066 GR
+  9 Sstm8s_awu$AWU_Init$31                                      =  000068 GR
+  9 Sstm8s_awu$AWU_Init$32                                      =  00006A GR
+  9 Sstm8s_awu$AWU_Init$33                                      =  000070 GR
+  9 Sstm8s_awu$AWU_Init$34                                      =  000072 GR
+  9 Sstm8s_awu$AWU_Init$35                                      =  000074 GR
+  9 Sstm8s_awu$AWU_Init$36                                      =  000075 GR
+  9 Sstm8s_awu$AWU_Init$37                                      =  000079 GR
+  9 Sstm8s_awu$AWU_Init$38                                      =  000081 GR
+  9 Sstm8s_awu$AWU_Init$39                                      =  000094 GR
+  9 Sstm8s_awu$AWU_Init$40                                      =  00009C GR
+  9 Sstm8s_awu$AWU_Init$41                                      =  0000AB GR
+  9 Sstm8s_awu$AWU_Init$42                                      =  0000AC GR
+  9 Sstm8s_awu$AWU_Init$43                                      =  0000AC GR
+  9 Sstm8s_awu$AWU_Init$44                                      =  0000AD GR
+  9 Sstm8s_awu$AWU_Init$8                                       =  00000D GR
+  9 Sstm8s_awu$AWU_Init$9                                       =  00000D GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 6
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$60                      =  0000C5 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$61                      =  0000C5 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$62                      =  0000C7 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$63                      =  0000C7 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$64                      =  0000E6 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$65                      =  0000E8 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$66                      =  0000EA GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$67                      =  0000F0 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$68                      =  0000F0 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$69                      =  0000F2 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$70                      =  0000F4 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$71                      =  0000F6 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$72                      =  0000F9 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$73                      =  0000FC GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$74                      =  000101 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$75                      =  000101 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$76                      =  000105 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$77                      =  000119 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$78                      =  00011A GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$79                      =  00011D GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$80                      =  000121 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$81                      =  000127 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$82                      =  000127 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$83                      =  00012C GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$84                      =  00012E GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$85                      =  00012E GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$86                      =  000132 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$87                      =  000132 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$88                      =  000136 GR
+  9 Sstm8s_awu$AWU_LSICalibrationConfig$89                      =  000137 GR
+  9 XG$AWU_Cmd$0$0                                              =  0000C4 GR
+  9 XG$AWU_DeInit$0$0                                           =  00000C GR
+  9 XG$AWU_GetFlagStatus$0$0                                    =  00014A GR
+  9 XG$AWU_IdleModeEnable$0$0                                   =  00013F GR
+  9 XG$AWU_Init$0$0                                             =  0000AC GR
+  7 _APR_Array                                                     000000 GR
+  9 _AWU_Cmd                                                       0000AD GR
+  9 _AWU_DeInit                                                    000000 GR
+  9 _AWU_GetFlagStatus                                             000140 GR
+  9 _AWU_IdleModeEnable                                            000137 GR
+  9 _AWU_Init                                                      00000D GR
+  9 _AWU_LSICalibrationConfig                                      0000C5 GR
+  7 _TBR_Array                                                     000011 GR
+  7 ___str_0                                                       000022 R
+    __divulong                                                     ****** GX
+    __mulint                                                       ****** GX
+    _assert_failed                                                 ****** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 7
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 DATA                                       size      0   flags    0
+   2 INITIALIZED                                size      0   flags    0
+   3 DABS                                       size      0   flags    8
+   4 HOME                                       size      0   flags    0
+   5 GSINIT                                     size      0   flags    0
+   6 GSFINAL                                    size      0   flags    0
+   7 CONST                                      size     69   flags    0
+   8 INITIALIZER                                size      0   flags    0
+   9 CODE                                       size    14B   flags    0
+   A CABS                                       size      0   flags    8
+   B .debug_line                                size    23D   flags  100
+   C .debug_loc                                 size    268   flags  100
+   D .debug_abbrev                              size     9C   flags  100
+   E .debug_info                                size    23D   flags  100
+   F .debug_pubnames                            size     A0   flags  100
+  10 .debug_frame                               size    238   flags  100
+

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stm8s.h": "c",
+        "stm8s_conf.h": "c",
+        "stm8s_clk.h": "c",
+        "algorithm": "c"
+    }
+}

@@ -1,0 +1,183 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+  9 A$stm8s_wwdg$100                                               00002B GR
+  9 A$stm8s_wwdg$102                                               00002C GR
+  9 A$stm8s_wwdg$113                                               00002D GR
+  9 A$stm8s_wwdg$114                                               00002F GR
+  9 A$stm8s_wwdg$115                                               000031 GR
+  9 A$stm8s_wwdg$117                                               000032 GR
+  9 A$stm8s_wwdg$119                                               000034 GR
+  9 A$stm8s_wwdg$120                                               000035 GR
+  9 A$stm8s_wwdg$122                                               000036 GR
+  9 A$stm8s_wwdg$124                                               000038 GR
+  9 A$stm8s_wwdg$125                                               00003B GR
+  9 A$stm8s_wwdg$127                                               00003E GR
+  9 A$stm8s_wwdg$132                                               00003F GR
+  9 A$stm8s_wwdg$133                                               000041 GR
+  9 A$stm8s_wwdg$138                                               000044 GR
+  9 A$stm8s_wwdg$149                                               000045 GR
+  9 A$stm8s_wwdg$154                                               000048 GR
+  9 A$stm8s_wwdg$165                                               000049 GR
+  9 A$stm8s_wwdg$170                                               00004D GR
+  9 A$stm8s_wwdg$181                                               00004E GR
+  9 A$stm8s_wwdg$182                                               000050 GR
+  9 A$stm8s_wwdg$183                                               000052 GR
+  9 A$stm8s_wwdg$185                                               000053 GR
+  9 A$stm8s_wwdg$187                                               000055 GR
+  9 A$stm8s_wwdg$188                                               000056 GR
+  9 A$stm8s_wwdg$190                                               000057 GR
+  9 A$stm8s_wwdg$192                                               000059 GR
+  9 A$stm8s_wwdg$193                                               00005C GR
+  9 A$stm8s_wwdg$195                                               00005F GR
+  9 A$stm8s_wwdg$200                                               000060 GR
+  9 A$stm8s_wwdg$201                                               000062 GR
+  9 A$stm8s_wwdg$202                                               000064 GR
+  9 A$stm8s_wwdg$207                                               000067 GR
+  9 A$stm8s_wwdg$61                                                000000 GR
+  9 A$stm8s_wwdg$63                                                000001 GR
+  9 A$stm8s_wwdg$66                                                000003 GR
+  9 A$stm8s_wwdg$67                                                000005 GR
+  9 A$stm8s_wwdg$68                                                000007 GR
+  9 A$stm8s_wwdg$69                                                000009 GR
+  9 A$stm8s_wwdg$71                                                00000B GR
+  9 A$stm8s_wwdg$72                                                00000C GR
+  9 A$stm8s_wwdg$74                                                00000D GR
+  9 A$stm8s_wwdg$76                                                00000F GR
+  9 A$stm8s_wwdg$77                                                000012 GR
+  9 A$stm8s_wwdg$82                                                000015 GR
+  9 A$stm8s_wwdg$85                                                000019 GR
+  9 A$stm8s_wwdg$86                                                00001B GR
+  9 A$stm8s_wwdg$87                                                00001D GR
+  9 A$stm8s_wwdg$90                                                000020 GR
+  9 A$stm8s_wwdg$91                                                000022 GR
+  9 A$stm8s_wwdg$92                                                000024 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 2
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 A$stm8s_wwdg$93                                                000026 GR
+  9 A$stm8s_wwdg$96                                                000029 GR
+  9 A$stm8s_wwdg$98                                                00002A GR
+  7 Fstm8s_wwdg$__str_0$0_0$0                                   =  000000 GR
+ 10 Ldebug_CIE0_end                                                000014 R
+ 10 Ldebug_CIE0_start                                              000004 R
+ 10 Ldebug_CIE1_end                                                00006C R
+ 10 Ldebug_CIE1_start                                              00005C R
+ 10 Ldebug_CIE2_end                                                000098 R
+ 10 Ldebug_CIE2_start                                              000088 R
+ 10 Ldebug_CIE3_end                                                0000C4 R
+ 10 Ldebug_CIE3_start                                              0000B4 R
+ 10 Ldebug_CIE4_end                                                00011C R
+ 10 Ldebug_CIE4_start                                              00010C R
+  D Ldebug_abbrev                                                  000000 R
+  E Ldebug_info_end                                                00018C R
+  E Ldebug_info_start                                              000004 R
+  B Ldebug_line_end                                                000196 R
+  B Ldebug_line_start                                              000004 R
+  B Ldebug_line_stmt                                               0000B3 R
+  C Ldebug_loc_start                                               000000 R
+  F Ldebug_pubnames_end                                            000071 R
+  F Ldebug_pubnames_start                                          000004 R
+  9 Sstm8s_wwdg$WWDG_GetCounter$29                              =  000045 GR
+  9 Sstm8s_wwdg$WWDG_GetCounter$30                              =  000045 GR
+  9 Sstm8s_wwdg$WWDG_GetCounter$31                              =  000045 GR
+  9 Sstm8s_wwdg$WWDG_GetCounter$32                              =  000048 GR
+  9 Sstm8s_wwdg$WWDG_GetCounter$33                              =  000048 GR
+  9 Sstm8s_wwdg$WWDG_GetCounter$34                              =  000049 GR
+  9 Sstm8s_wwdg$WWDG_Init$0                                     =  000000 GR
+  9 Sstm8s_wwdg$WWDG_Init$1                                     =  000000 GR
+  9 Sstm8s_wwdg$WWDG_Init$10                                    =  000020 GR
+  9 Sstm8s_wwdg$WWDG_Init$11                                    =  000029 GR
+  9 Sstm8s_wwdg$WWDG_Init$12                                    =  00002A GR
+  9 Sstm8s_wwdg$WWDG_Init$13                                    =  00002B GR
+  9 Sstm8s_wwdg$WWDG_Init$14                                    =  00002C GR
+  9 Sstm8s_wwdg$WWDG_Init$15                                    =  00002D GR
+  9 Sstm8s_wwdg$WWDG_Init$2                                     =  000001 GR
+  9 Sstm8s_wwdg$WWDG_Init$3                                     =  000003 GR
+  9 Sstm8s_wwdg$WWDG_Init$4                                     =  00000B GR
+  9 Sstm8s_wwdg$WWDG_Init$5                                     =  00000D GR
+  9 Sstm8s_wwdg$WWDG_Init$6                                     =  00000F GR
+  9 Sstm8s_wwdg$WWDG_Init$7                                     =  000015 GR
+  9 Sstm8s_wwdg$WWDG_Init$8                                     =  000015 GR
+  9 Sstm8s_wwdg$WWDG_Init$9                                     =  000019 GR
+  9 Sstm8s_wwdg$WWDG_SWReset$35                                 =  000049 GR
+  9 Sstm8s_wwdg$WWDG_SWReset$36                                 =  000049 GR
+  9 Sstm8s_wwdg$WWDG_SWReset$37                                 =  000049 GR
+  9 Sstm8s_wwdg$WWDG_SWReset$38                                 =  00004D GR
+  9 Sstm8s_wwdg$WWDG_SWReset$39                                 =  00004D GR
+  9 Sstm8s_wwdg$WWDG_SWReset$40                                 =  00004E GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$16                              =  00002D GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$17                              =  00002D GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$18                              =  00002D GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$19                              =  000032 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 3
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  9 Sstm8s_wwdg$WWDG_SetCounter$20                              =  000034 GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$21                              =  000036 GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$22                              =  000038 GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$23                              =  00003E GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$24                              =  00003F GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$25                              =  00003F GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$26                              =  000044 GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$27                              =  000044 GR
+  9 Sstm8s_wwdg$WWDG_SetCounter$28                              =  000045 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$41                          =  00004E GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$42                          =  00004E GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$43                          =  00004E GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$44                          =  000053 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$45                          =  000055 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$46                          =  000057 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$47                          =  000059 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$48                          =  00005F GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$49                          =  000060 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$50                          =  000060 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$51                          =  000067 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$52                          =  000067 GR
+  9 Sstm8s_wwdg$WWDG_SetWindowValue$53                          =  000068 GR
+  9 XG$WWDG_GetCounter$0$0                                      =  000048 GR
+  9 XG$WWDG_SWReset$0$0                                         =  00004D GR
+  9 XG$WWDG_SetCounter$0$0                                      =  000044 GR
+  9 XG$WWDG_SetWindowValue$0$0                                  =  000067 GR
+  9 _WWDG_GetCounter                                               000045 GR
+  9 _WWDG_Init                                                     000000 GR
+  9 _WWDG_SWReset                                                  000049 GR
+  9 _WWDG_SetCounter                                               00002D GR
+  9 _WWDG_SetWindowValue                                           00004E GR
+  7 ___str_0                                                       000000 R
+    _assert_failed                                                 ****** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 4
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 DATA                                       size      0   flags    0
+   2 INITIALIZED                                size      0   flags    0
+   3 DABS                                       size      0   flags    8
+   4 HOME                                       size      0   flags    0
+   5 GSINIT                                     size      0   flags    0
+   6 GSFINAL                                    size      0   flags    0
+   7 CONST                                      size     48   flags    0
+   8 INITIALIZER                                size      0   flags    0
+   9 CODE                                       size     68   flags    0
+   A CABS                                       size      0   flags    8
+   B .debug_line                                size    196   flags  100
+   C .debug_loc                                 size    14C   flags  100
+   D .debug_abbrev                              size     86   flags  100
+   E .debug_info                                size    18C   flags  100
+   F .debug_pubnames                            size     71   flags  100
+  10 .debug_frame                               size    170   flags  100
+

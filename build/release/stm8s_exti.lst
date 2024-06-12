@@ -1,0 +1,373 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module stm8s_exti
+                                      6 	.optsdcc -mstm8
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _assert_failed
+                                     12 	.globl _EXTI_DeInit
+                                     13 	.globl _EXTI_SetExtIntSensitivity
+                                     14 	.globl _EXTI_SetTLISensitivity
+                                     15 	.globl _EXTI_GetExtIntSensitivity
+                                     16 	.globl _EXTI_GetTLISensitivity
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area DATA
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area INITIALIZED
+                                     25 ;--------------------------------------------------------
+                                     26 ; absolute external ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area DABS (ABS)
+                                     29 
+                                     30 ; default segment ordering for linker
+                                     31 	.area HOME
+                                     32 	.area GSINIT
+                                     33 	.area GSFINAL
+                                     34 	.area CONST
+                                     35 	.area INITIALIZER
+                                     36 	.area CODE
+                                     37 
+                                     38 ;--------------------------------------------------------
+                                     39 ; global & static initialisations
+                                     40 ;--------------------------------------------------------
+                                     41 	.area HOME
+                                     42 	.area GSINIT
+                                     43 	.area GSFINAL
+                                     44 	.area GSINIT
+                                     45 ;--------------------------------------------------------
+                                     46 ; Home
+                                     47 ;--------------------------------------------------------
+                                     48 	.area HOME
+                                     49 	.area HOME
+                                     50 ;--------------------------------------------------------
+                                     51 ; code
+                                     52 ;--------------------------------------------------------
+                                     53 	.area CODE
+                                     54 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 53: void EXTI_DeInit(void)
+                                     55 ;	-----------------------------------------
+                                     56 ;	 function EXTI_DeInit
+                                     57 ;	-----------------------------------------
+      000000                         58 _EXTI_DeInit:
+                                     59 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 55: EXTI->CR1 = EXTI_CR1_RESET_VALUE;
+      000000 35 00 50 A0      [ 1]   60 	mov	0x50a0+0, #0x00
+                                     61 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 56: EXTI->CR2 = EXTI_CR2_RESET_VALUE;
+      000004 35 00 50 A1      [ 1]   62 	mov	0x50a1+0, #0x00
+                                     63 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 57: }
+      000008 81               [ 4]   64 	ret
+                                     65 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 70: void EXTI_SetExtIntSensitivity(EXTI_Port_TypeDef Port, EXTI_Sensitivity_TypeDef SensitivityValue)
+                                     66 ;	-----------------------------------------
+                                     67 ;	 function EXTI_SetExtIntSensitivity
+                                     68 ;	-----------------------------------------
+      000009                         69 _EXTI_SetExtIntSensitivity:
+      000009 88               [ 1]   70 	push	a
+                                     71 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 73: assert_param(IS_EXTI_PORT_OK(Port));
+      00000A 4D               [ 1]   72 	tnz	a
+      00000B 27 1E            [ 1]   73 	jreq	00111$
+      00000D A1 01            [ 1]   74 	cp	a, #0x01
+      00000F 27 1A            [ 1]   75 	jreq	00111$
+      000011 A1 02            [ 1]   76 	cp	a, #0x02
+      000013 27 16            [ 1]   77 	jreq	00111$
+      000015 A1 03            [ 1]   78 	cp	a, #0x03
+      000017 27 12            [ 1]   79 	jreq	00111$
+      000019 A1 04            [ 1]   80 	cp	a, #0x04
+      00001B 27 0E            [ 1]   81 	jreq	00111$
+      00001D 88               [ 1]   82 	push	a
+      00001E 4B 49            [ 1]   83 	push	#0x49
+      000020 5F               [ 1]   84 	clrw	x
+      000021 89               [ 2]   85 	pushw	x
+      000022 4B 00            [ 1]   86 	push	#0x00
+      000024 AEr00r00         [ 2]   87 	ldw	x, #(___str_0+0)
+      000027 CDr00r00         [ 4]   88 	call	_assert_failed
+      00002A 84               [ 1]   89 	pop	a
+      00002B                         90 00111$:
+                                     91 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 74: assert_param(IS_EXTI_SENSITIVITY_OK(SensitivityValue));
+      00002B 0D 04            [ 1]   92 	tnz	(0x04, sp)
+      00002D 27 25            [ 1]   93 	jreq	00125$
+      00002F 88               [ 1]   94 	push	a
+      000030 7B 05            [ 1]   95 	ld	a, (0x05, sp)
+      000032 4A               [ 1]   96 	dec	a
+      000033 84               [ 1]   97 	pop	a
+      000034 27 1E            [ 1]   98 	jreq	00125$
+      000036 88               [ 1]   99 	push	a
+      000037 7B 05            [ 1]  100 	ld	a, (0x05, sp)
+      000039 A1 02            [ 1]  101 	cp	a, #0x02
+      00003B 84               [ 1]  102 	pop	a
+      00003C 27 16            [ 1]  103 	jreq	00125$
+      00003E 88               [ 1]  104 	push	a
+      00003F 7B 05            [ 1]  105 	ld	a, (0x05, sp)
+      000041 A1 03            [ 1]  106 	cp	a, #0x03
+      000043 84               [ 1]  107 	pop	a
+      000044 27 0E            [ 1]  108 	jreq	00125$
+      000046 88               [ 1]  109 	push	a
+      000047 4B 4A            [ 1]  110 	push	#0x4a
+      000049 5F               [ 1]  111 	clrw	x
+      00004A 89               [ 2]  112 	pushw	x
+      00004B 4B 00            [ 1]  113 	push	#0x00
+      00004D AEr00r00         [ 2]  114 	ldw	x, #(___str_0+0)
+      000050 CDr00r00         [ 4]  115 	call	_assert_failed
+      000053 84               [ 1]  116 	pop	a
+      000054                        117 00125$:
+                                    118 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 77: switch (Port)
+      000054 A1 04            [ 1]  119 	cp	a, #0x04
+      000056 23 03            [ 2]  120 	jrule	00208$
+      000058 CCr00rDD         [ 2]  121 	jp	00108$
+      00005B                        122 00208$:
+                                    123 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 85: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 2);
+      00005B 61               [ 1]  124 	exg	a, yl
+      00005C 7B 04            [ 1]  125 	ld	a, (0x04, sp)
+      00005E 61               [ 1]  126 	exg	a, yl
+                                    127 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 77: switch (Port)
+      00005F 5F               [ 1]  128 	clrw	x
+      000060 97               [ 1]  129 	ld	xl, a
+      000061 58               [ 2]  130 	sllw	x
+      000062 DEu00u66         [ 2]  131 	ldw	x, (#00209$, x)
+      000065 FC               [ 2]  132 	jp	(x)
+      000066                        133 00209$:
+      000066r00r70                  134 	.dw	#00101$
+      000068r00r82                  135 	.dw	#00102$
+      00006Ar00r99                  136 	.dw	#00103$
+      00006Cr00rB2                  137 	.dw	#00104$
+      00006Er00rCD                  138 	.dw	#00105$
+                                    139 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 79: case EXTI_PORT_GPIOA:
+      000070                        140 00101$:
+                                    141 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 80: EXTI->CR1 &= (uint8_t)(~EXTI_CR1_PAIS);
+      000070 C6 50 A0         [ 1]  142 	ld	a, 0x50a0
+      000073 A4 FC            [ 1]  143 	and	a, #0xfc
+      000075 C7 50 A0         [ 1]  144 	ld	0x50a0, a
+                                    145 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 81: EXTI->CR1 |= (uint8_t)(SensitivityValue);
+      000078 C6 50 A0         [ 1]  146 	ld	a, 0x50a0
+      00007B 1A 04            [ 1]  147 	or	a, (0x04, sp)
+      00007D C7 50 A0         [ 1]  148 	ld	0x50a0, a
+                                    149 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 82: break;
+      000080 20 5B            [ 2]  150 	jra	00108$
+                                    151 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 83: case EXTI_PORT_GPIOB:
+      000082                        152 00102$:
+                                    153 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 84: EXTI->CR1 &= (uint8_t)(~EXTI_CR1_PBIS);
+      000082 C6 50 A0         [ 1]  154 	ld	a, 0x50a0
+      000085 A4 F3            [ 1]  155 	and	a, #0xf3
+      000087 C7 50 A0         [ 1]  156 	ld	0x50a0, a
+                                    157 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 85: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 2);
+      00008A C6 50 A0         [ 1]  158 	ld	a, 0x50a0
+      00008D 93               [ 1]  159 	ldw	x, y
+      00008E 58               [ 2]  160 	sllw	x
+      00008F 58               [ 2]  161 	sllw	x
+      000090 89               [ 2]  162 	pushw	x
+      000091 1A 02            [ 1]  163 	or	a, (2, sp)
+      000093 85               [ 2]  164 	popw	x
+      000094 C7 50 A0         [ 1]  165 	ld	0x50a0, a
+                                    166 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 86: break;
+      000097 20 44            [ 2]  167 	jra	00108$
+                                    168 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 87: case EXTI_PORT_GPIOC:
+      000099                        169 00103$:
+                                    170 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 88: EXTI->CR1 &= (uint8_t)(~EXTI_CR1_PCIS);
+      000099 C6 50 A0         [ 1]  171 	ld	a, 0x50a0
+      00009C A4 CF            [ 1]  172 	and	a, #0xcf
+      00009E C7 50 A0         [ 1]  173 	ld	0x50a0, a
+                                    174 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 89: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 4);
+      0000A1 C6 50 A0         [ 1]  175 	ld	a, 0x50a0
+      0000A4 6B 01            [ 1]  176 	ld	(0x01, sp), a
+      0000A6 90 9F            [ 1]  177 	ld	a, yl
+      0000A8 4E               [ 1]  178 	swap	a
+      0000A9 A4 F0            [ 1]  179 	and	a, #0xf0
+      0000AB 1A 01            [ 1]  180 	or	a, (0x01, sp)
+      0000AD C7 50 A0         [ 1]  181 	ld	0x50a0, a
+                                    182 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 90: break;
+      0000B0 20 2B            [ 2]  183 	jra	00108$
+                                    184 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 91: case EXTI_PORT_GPIOD:
+      0000B2                        185 00104$:
+                                    186 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 92: EXTI->CR1 &= (uint8_t)(~EXTI_CR1_PDIS);
+      0000B2 C6 50 A0         [ 1]  187 	ld	a, 0x50a0
+      0000B5 A4 3F            [ 1]  188 	and	a, #0x3f
+      0000B7 C7 50 A0         [ 1]  189 	ld	0x50a0, a
+                                    190 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 93: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 6);
+      0000BA C6 50 A0         [ 1]  191 	ld	a, 0x50a0
+      0000BD 6B 01            [ 1]  192 	ld	(0x01, sp), a
+      0000BF 90 9F            [ 1]  193 	ld	a, yl
+      0000C1 4E               [ 1]  194 	swap	a
+      0000C2 A4 F0            [ 1]  195 	and	a, #0xf0
+      0000C4 48               [ 1]  196 	sll	a
+      0000C5 48               [ 1]  197 	sll	a
+      0000C6 1A 01            [ 1]  198 	or	a, (0x01, sp)
+      0000C8 C7 50 A0         [ 1]  199 	ld	0x50a0, a
+                                    200 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 94: break;
+      0000CB 20 10            [ 2]  201 	jra	00108$
+                                    202 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 95: case EXTI_PORT_GPIOE:
+      0000CD                        203 00105$:
+                                    204 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 96: EXTI->CR2 &= (uint8_t)(~EXTI_CR2_PEIS);
+      0000CD C6 50 A1         [ 1]  205 	ld	a, 0x50a1
+      0000D0 A4 FC            [ 1]  206 	and	a, #0xfc
+      0000D2 C7 50 A1         [ 1]  207 	ld	0x50a1, a
+                                    208 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 97: EXTI->CR2 |= (uint8_t)(SensitivityValue);
+      0000D5 C6 50 A1         [ 1]  209 	ld	a, 0x50a1
+      0000D8 1A 04            [ 1]  210 	or	a, (0x04, sp)
+      0000DA C7 50 A1         [ 1]  211 	ld	0x50a1, a
+                                    212 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 101: }
+      0000DD                        213 00108$:
+                                    214 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 102: }
+      0000DD 84               [ 1]  215 	pop	a
+      0000DE 85               [ 2]  216 	popw	x
+      0000DF 84               [ 1]  217 	pop	a
+      0000E0 FC               [ 2]  218 	jp	(x)
+                                    219 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 111: void EXTI_SetTLISensitivity(EXTI_TLISensitivity_TypeDef SensitivityValue)
+                                    220 ;	-----------------------------------------
+                                    221 ;	 function EXTI_SetTLISensitivity
+                                    222 ;	-----------------------------------------
+      0000E1                        223 _EXTI_SetTLISensitivity:
+      0000E1 88               [ 1]  224 	push	a
+                                    225 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 114: assert_param(IS_EXTI_TLISENSITIVITY_OK(SensitivityValue));
+      0000E2 6B 01            [ 1]  226 	ld	(0x01, sp), a
+      0000E4 27 12            [ 1]  227 	jreq	00104$
+      0000E6 7B 01            [ 1]  228 	ld	a, (0x01, sp)
+      0000E8 A1 04            [ 1]  229 	cp	a, #0x04
+      0000EA 27 0C            [ 1]  230 	jreq	00104$
+      0000EC 4B 72            [ 1]  231 	push	#0x72
+      0000EE 5F               [ 1]  232 	clrw	x
+      0000EF 89               [ 2]  233 	pushw	x
+      0000F0 4B 00            [ 1]  234 	push	#0x00
+      0000F2 AEr00r00         [ 2]  235 	ldw	x, #(___str_0+0)
+      0000F5 CDr00r00         [ 4]  236 	call	_assert_failed
+      0000F8                        237 00104$:
+                                    238 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 117: EXTI->CR2 &= (uint8_t)(~EXTI_CR2_TLIS);
+      0000F8 C6 50 A1         [ 1]  239 	ld	a, 0x50a1
+      0000FB A4 FB            [ 1]  240 	and	a, #0xfb
+      0000FD C7 50 A1         [ 1]  241 	ld	0x50a1, a
+                                    242 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 118: EXTI->CR2 |= (uint8_t)(SensitivityValue);
+      000100 C6 50 A1         [ 1]  243 	ld	a, 0x50a1
+      000103 1A 01            [ 1]  244 	or	a, (0x01, sp)
+      000105 C7 50 A1         [ 1]  245 	ld	0x50a1, a
+                                    246 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 119: }
+      000108 84               [ 1]  247 	pop	a
+      000109 81               [ 4]  248 	ret
+                                    249 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 126: EXTI_Sensitivity_TypeDef EXTI_GetExtIntSensitivity(EXTI_Port_TypeDef Port)
+                                    250 ;	-----------------------------------------
+                                    251 ;	 function EXTI_GetExtIntSensitivity
+                                    252 ;	-----------------------------------------
+      00010A                        253 _EXTI_GetExtIntSensitivity:
+      00010A 88               [ 1]  254 	push	a
+                                    255 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 128: uint8_t value = 0;
+      00010B 0F 01            [ 1]  256 	clr	(0x01, sp)
+                                    257 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 131: assert_param(IS_EXTI_PORT_OK(Port));
+      00010D 4D               [ 1]  258 	tnz	a
+      00010E 27 1E            [ 1]  259 	jreq	00111$
+      000110 A1 01            [ 1]  260 	cp	a, #0x01
+      000112 27 1A            [ 1]  261 	jreq	00111$
+      000114 A1 02            [ 1]  262 	cp	a, #0x02
+      000116 27 16            [ 1]  263 	jreq	00111$
+      000118 A1 03            [ 1]  264 	cp	a, #0x03
+      00011A 27 12            [ 1]  265 	jreq	00111$
+      00011C A1 04            [ 1]  266 	cp	a, #0x04
+      00011E 27 0E            [ 1]  267 	jreq	00111$
+      000120 88               [ 1]  268 	push	a
+      000121 4B 83            [ 1]  269 	push	#0x83
+      000123 5F               [ 1]  270 	clrw	x
+      000124 89               [ 2]  271 	pushw	x
+      000125 4B 00            [ 1]  272 	push	#0x00
+      000127 AEr00r00         [ 2]  273 	ldw	x, #(___str_0+0)
+      00012A CDr00r00         [ 4]  274 	call	_assert_failed
+      00012D 84               [ 1]  275 	pop	a
+      00012E                        276 00111$:
+                                    277 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 133: switch (Port)
+      00012E A1 04            [ 1]  278 	cp	a, #0x04
+      000130 22 46            [ 1]  279 	jrugt	00107$
+      000132 5F               [ 1]  280 	clrw	x
+      000133 97               [ 1]  281 	ld	xl, a
+      000134 58               [ 2]  282 	sllw	x
+      000135 DEu01u39         [ 2]  283 	ldw	x, (#00168$, x)
+      000138 FC               [ 2]  284 	jp	(x)
+      000139                        285 00168$:
+      000139r01r43                  286 	.dw	#00101$
+      00013Br01r4C                  287 	.dw	#00102$
+      00013Dr01r57                  288 	.dw	#00103$
+      00013Fr01r63                  289 	.dw	#00104$
+      000141r01r71                  290 	.dw	#00105$
+                                    291 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 135: case EXTI_PORT_GPIOA:
+      000143                        292 00101$:
+                                    293 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 136: value = (uint8_t)(EXTI->CR1 & EXTI_CR1_PAIS);
+      000143 C6 50 A0         [ 1]  294 	ld	a, 0x50a0
+      000146 A4 03            [ 1]  295 	and	a, #0x03
+      000148 6B 01            [ 1]  296 	ld	(0x01, sp), a
+                                    297 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 137: break;
+      00014A 20 2C            [ 2]  298 	jra	00107$
+                                    299 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 138: case EXTI_PORT_GPIOB:
+      00014C                        300 00102$:
+                                    301 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 139: value = (uint8_t)((uint8_t)(EXTI->CR1 & EXTI_CR1_PBIS) >> 2);
+      00014C C6 50 A0         [ 1]  302 	ld	a, 0x50a0
+      00014F A4 0C            [ 1]  303 	and	a, #0x0c
+      000151 44               [ 1]  304 	srl	a
+      000152 44               [ 1]  305 	srl	a
+      000153 6B 01            [ 1]  306 	ld	(0x01, sp), a
+                                    307 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 140: break;
+      000155 20 21            [ 2]  308 	jra	00107$
+                                    309 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 141: case EXTI_PORT_GPIOC:
+      000157                        310 00103$:
+                                    311 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 142: value = (uint8_t)((uint8_t)(EXTI->CR1 & EXTI_CR1_PCIS) >> 4);
+      000157 C6 50 A0         [ 1]  312 	ld	a, 0x50a0
+      00015A A4 30            [ 1]  313 	and	a, #0x30
+      00015C 4E               [ 1]  314 	swap	a
+      00015D A4 0F            [ 1]  315 	and	a, #0x0f
+      00015F 6B 01            [ 1]  316 	ld	(0x01, sp), a
+                                    317 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 143: break;
+      000161 20 15            [ 2]  318 	jra	00107$
+                                    319 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 144: case EXTI_PORT_GPIOD:
+      000163                        320 00104$:
+                                    321 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 145: value = (uint8_t)((uint8_t)(EXTI->CR1 & EXTI_CR1_PDIS) >> 6);
+      000163 C6 50 A0         [ 1]  322 	ld	a, 0x50a0
+      000166 A4 C0            [ 1]  323 	and	a, #0xc0
+      000168 4E               [ 1]  324 	swap	a
+      000169 A4 0F            [ 1]  325 	and	a, #0x0f
+      00016B 44               [ 1]  326 	srl	a
+      00016C 44               [ 1]  327 	srl	a
+      00016D 6B 01            [ 1]  328 	ld	(0x01, sp), a
+                                    329 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 146: break;
+      00016F 20 07            [ 2]  330 	jra	00107$
+                                    331 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 147: case EXTI_PORT_GPIOE:
+      000171                        332 00105$:
+                                    333 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 148: value = (uint8_t)(EXTI->CR2 & EXTI_CR2_PEIS);
+      000171 C6 50 A1         [ 1]  334 	ld	a, 0x50a1
+      000174 A4 03            [ 1]  335 	and	a, #0x03
+      000176 6B 01            [ 1]  336 	ld	(0x01, sp), a
+                                    337 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 152: }
+      000178                        338 00107$:
+                                    339 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 154: return((EXTI_Sensitivity_TypeDef)value);
+      000178 7B 01            [ 1]  340 	ld	a, (0x01, sp)
+                                    341 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 155: }
+      00017A 5B 01            [ 2]  342 	addw	sp, #1
+      00017C 81               [ 4]  343 	ret
+                                    344 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 162: EXTI_TLISensitivity_TypeDef EXTI_GetTLISensitivity(void)
+                                    345 ;	-----------------------------------------
+                                    346 ;	 function EXTI_GetTLISensitivity
+                                    347 ;	-----------------------------------------
+      00017D                        348 _EXTI_GetTLISensitivity:
+                                    349 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 167: value = (uint8_t)(EXTI->CR2 & EXTI_CR2_TLIS);
+      00017D C6 50 A1         [ 1]  350 	ld	a, 0x50a1
+      000180 A4 04            [ 1]  351 	and	a, #0x04
+                                    352 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 169: return((EXTI_TLISensitivity_TypeDef)value);
+                                    353 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 170: }
+      000182 81               [ 4]  354 	ret
+                                    355 	.area CODE
+                                    356 	.area CONST
+                                    357 	.area CONST
+      000000                        358 ___str_0:
+      000000 2E 2F 53 54 4D 38 53   359 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
+             5F 53 74 64 50 65 72
+             69 70 68 5F 4C 69 62
+             2F 4C 69 62 72 61 72
+             69 65 73 2F 53 54 4D
+             38 53 5F 53 74 64 50
+             65 72 69 70 68 5F 44
+             72 69 76 65 72 2F 73
+             72 63 2F 73
+      00003C 74 6D 38 73 5F 65 78   360 	.ascii "tm8s_exti.c"
+             74 69 2E 63
+      000047 00                     361 	.db 0x00
+                                    362 	.area CODE
+                                    363 	.area INITIALIZER
+                                    364 	.area CABS (ABS)

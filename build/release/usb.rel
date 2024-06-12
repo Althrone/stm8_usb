@@ -1,0 +1,101 @@
+XH3
+H B areas 16 global symbols
+M usb
+O -mstm8
+S _GPIO_Init Ref000000
+S _CLK_HSECmd Ref000000
+S _CLK_ClockSwitchConfig Ref000000
+S .__.ABS. Def000000
+S _TIM4_SetCounter Ref000000
+S _EXTI_SetExtIntSensitivity Ref000000
+S _TIM4_Cmd Ref000000
+S _GPIO_ReadInputData Ref000000
+S _ITC_SetSoftwarePriority Ref000000
+S _TIM4_TimeBaseInit Ref000000
+A _CODE size 0 flags 0 addr 0
+A DATA size D flags 0 addr 0
+S _usb_tx_buf Def000001
+S _UsbBitStateEnum Def000000
+A INITIALIZED size 2 flags 0 addr 0
+S _usb_bit_state Def000000
+A DABS size 0 flags 8 addr 0
+A HOME size 0 flags 0 addr 0
+A GSINIT size 0 flags 0 addr 0
+A GSFINAL size 0 flags 0 addr 0
+A CONST size 2B flags 0 addr 0
+S _usb_endpoin0_descriptor Def000024
+S _usb_device_descriptor Def000000
+S _usb_interface_descriptor Def00001B
+S _usb_configuration_descriptor Def000012
+A INITIALIZER size 2 flags 0 addr 0
+A CODE size 58 flags 0 addr 0
+S _usb_device_service Def00004D
+S _EXIT_PORTC_IRQHandler Def000031
+S _usb_device_init Def000000
+S _software_reset Def00004F
+S _exit_irqhandler Def00004E
+A CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 01
+T 00 00 00
+R 00 00 00 01
+T 00 00 01
+R 00 00 00 01
+T 00 00 01
+R 00 00 00 01
+T 00 00 00
+R 00 00 00 02
+T 00 00 00
+R 00 00 00 02
+T 00 00 00
+R 00 00 00 09
+T 00 00 00 9B A6 01 CD 00 00 4B 00 4B 00 4B B4 A6
+R 00 00 00 09 02 07 00 01
+T 00 00 0D 01 CD 00 00 4B 03 A6 05 CD 00 00 4B 20
+R 00 00 00 09 02 05 00 02 02 0C 00 08
+T 00 00 1A A6 18 AE 50 0A CD 00 00 4B 03 A6 02 CD
+R 00 00 00 09 02 09 00 00
+T 00 00 27 00 00 4B FF 4F CD 00 00 9A 81
+R 00 00 00 09 02 03 00 05 02 09 00 09
+T 00 00 31
+R 00 00 00 09
+T 00 00 31 62 4F CD 00 00 A6 01 CD 00 00 AE 50 0A
+R 00 00 00 09 02 06 00 04 02 0B 00 06
+T 00 00 3E CD 00 00 A4 03 5F 97 CF 00 00 35 00
+R 00 00 00 09 02 04 00 07 10 0B 00 02
+T 00 00 4A 53 46 80
+R 00 00 00 09
+T 00 00 4D
+R 00 00 00 09
+T 00 00 4D 81
+R 00 00 00 09
+T 00 00 4E
+R 00 00 00 09
+T 00 00 4E 81
+R 00 00 00 09
+T 00 00 4F
+R 00 00 00 09
+T 00 00 4F 35 02 00 01 35 80 50 D1 81
+R 00 00 00 09 10 05 00 01
+T 00 00 00
+R 00 00 00 07
+T 00 00 00 12 01 01 10 01 00 00 08 07 CD 01 96
+R 00 00 00 07
+T 00 00 0C 00 01 00 00 00 01
+R 00 00 00 07
+T 00 00 12
+R 00 00 00 07
+T 00 00 12 09 02 00 01 01 01 00 C0 32
+R 00 00 00 07
+T 00 00 1B
+R 00 00 00 07
+T 00 00 1B 09 04 00 00 00 01 00 00 00
+R 00 00 00 07
+T 00 00 24
+R 00 00 00 07
+T 00 00 24 07 05 00 00 00 08 00
+R 00 00 00 07
+T 00 00 00
+R 00 00 00 08
+T 00 00 00 00 00
+R 00 00 00 08

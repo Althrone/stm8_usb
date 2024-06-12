@@ -1,0 +1,602 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ISO C Compiler 
+                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      4 ;--------------------------------------------------------
+                                      5 	.module stm8s_tim4
+                                      6 	.optsdcc -mstm8
+                                      7 	
+                                      8 ;--------------------------------------------------------
+                                      9 ; Public variables in this module
+                                     10 ;--------------------------------------------------------
+                                     11 	.globl _assert_failed
+                                     12 	.globl _TIM4_DeInit
+                                     13 	.globl _TIM4_TimeBaseInit
+                                     14 	.globl _TIM4_Cmd
+                                     15 	.globl _TIM4_ITConfig
+                                     16 	.globl _TIM4_UpdateDisableConfig
+                                     17 	.globl _TIM4_UpdateRequestConfig
+                                     18 	.globl _TIM4_SelectOnePulseMode
+                                     19 	.globl _TIM4_PrescalerConfig
+                                     20 	.globl _TIM4_ARRPreloadConfig
+                                     21 	.globl _TIM4_GenerateEvent
+                                     22 	.globl _TIM4_SetCounter
+                                     23 	.globl _TIM4_SetAutoreload
+                                     24 	.globl _TIM4_GetCounter
+                                     25 	.globl _TIM4_GetPrescaler
+                                     26 	.globl _TIM4_GetFlagStatus
+                                     27 	.globl _TIM4_ClearFlag
+                                     28 	.globl _TIM4_GetITStatus
+                                     29 	.globl _TIM4_ClearITPendingBit
+                                     30 ;--------------------------------------------------------
+                                     31 ; ram data
+                                     32 ;--------------------------------------------------------
+                                     33 	.area DATA
+                                     34 ;--------------------------------------------------------
+                                     35 ; ram data
+                                     36 ;--------------------------------------------------------
+                                     37 	.area INITIALIZED
+                                     38 ;--------------------------------------------------------
+                                     39 ; absolute external ram data
+                                     40 ;--------------------------------------------------------
+                                     41 	.area DABS (ABS)
+                                     42 
+                                     43 ; default segment ordering for linker
+                                     44 	.area HOME
+                                     45 	.area GSINIT
+                                     46 	.area GSFINAL
+                                     47 	.area CONST
+                                     48 	.area INITIALIZER
+                                     49 	.area CODE
+                                     50 
+                                     51 ;--------------------------------------------------------
+                                     52 ; global & static initialisations
+                                     53 ;--------------------------------------------------------
+                                     54 	.area HOME
+                                     55 	.area GSINIT
+                                     56 	.area GSFINAL
+                                     57 	.area GSINIT
+                                     58 ;--------------------------------------------------------
+                                     59 ; Home
+                                     60 ;--------------------------------------------------------
+                                     61 	.area HOME
+                                     62 	.area HOME
+                                     63 ;--------------------------------------------------------
+                                     64 ; code
+                                     65 ;--------------------------------------------------------
+                                     66 	.area CODE
+                                     67 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 49: void TIM4_DeInit(void)
+                                     68 ;	-----------------------------------------
+                                     69 ;	 function TIM4_DeInit
+                                     70 ;	-----------------------------------------
+      000000                         71 _TIM4_DeInit:
+                                     72 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 51: TIM4->CR1 = TIM4_CR1_RESET_VALUE;
+      000000 35 00 53 40      [ 1]   73 	mov	0x5340+0, #0x00
+                                     74 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 52: TIM4->IER = TIM4_IER_RESET_VALUE;
+      000004 35 00 53 43      [ 1]   75 	mov	0x5343+0, #0x00
+                                     76 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 53: TIM4->CNTR = TIM4_CNTR_RESET_VALUE;
+      000008 35 00 53 46      [ 1]   77 	mov	0x5346+0, #0x00
+                                     78 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 54: TIM4->PSCR = TIM4_PSCR_RESET_VALUE;
+      00000C 35 00 53 47      [ 1]   79 	mov	0x5347+0, #0x00
+                                     80 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 55: TIM4->ARR = TIM4_ARR_RESET_VALUE;
+      000010 35 FF 53 48      [ 1]   81 	mov	0x5348+0, #0xff
+                                     82 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 56: TIM4->SR1 = TIM4_SR1_RESET_VALUE;
+      000014 35 00 53 44      [ 1]   83 	mov	0x5344+0, #0x00
+                                     84 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 57: }
+      000018 81               [ 4]   85 	ret
+                                     86 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 65: void TIM4_TimeBaseInit(TIM4_Prescaler_TypeDef TIM4_Prescaler, uint8_t TIM4_Period)
+                                     87 ;	-----------------------------------------
+                                     88 ;	 function TIM4_TimeBaseInit
+                                     89 ;	-----------------------------------------
+      000019                         90 _TIM4_TimeBaseInit:
+                                     91 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 68: assert_param(IS_TIM4_PRESCALER_OK(TIM4_Prescaler));
+      000019 4D               [ 1]   92 	tnz	a
+      00001A 27 2A            [ 1]   93 	jreq	00104$
+      00001C A1 01            [ 1]   94 	cp	a, #0x01
+      00001E 27 26            [ 1]   95 	jreq	00104$
+      000020 A1 02            [ 1]   96 	cp	a, #0x02
+      000022 27 22            [ 1]   97 	jreq	00104$
+      000024 A1 03            [ 1]   98 	cp	a, #0x03
+      000026 27 1E            [ 1]   99 	jreq	00104$
+      000028 A1 04            [ 1]  100 	cp	a, #0x04
+      00002A 27 1A            [ 1]  101 	jreq	00104$
+      00002C A1 05            [ 1]  102 	cp	a, #0x05
+      00002E 27 16            [ 1]  103 	jreq	00104$
+      000030 A1 06            [ 1]  104 	cp	a, #0x06
+      000032 27 12            [ 1]  105 	jreq	00104$
+      000034 A1 07            [ 1]  106 	cp	a, #0x07
+      000036 27 0E            [ 1]  107 	jreq	00104$
+      000038 88               [ 1]  108 	push	a
+      000039 4B 44            [ 1]  109 	push	#0x44
+      00003B 5F               [ 1]  110 	clrw	x
+      00003C 89               [ 2]  111 	pushw	x
+      00003D 4B 00            [ 1]  112 	push	#0x00
+      00003F AEr00r00         [ 2]  113 	ldw	x, #(___str_0+0)
+      000042 CDr00r00         [ 4]  114 	call	_assert_failed
+      000045 84               [ 1]  115 	pop	a
+      000046                        116 00104$:
+                                    117 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 70: TIM4->PSCR = (uint8_t)(TIM4_Prescaler);
+      000046 C7 53 47         [ 1]  118 	ld	0x5347, a
+                                    119 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 72: TIM4->ARR = (uint8_t)(TIM4_Period);
+      000049 AE 53 48         [ 2]  120 	ldw	x, #0x5348
+      00004C 7B 03            [ 1]  121 	ld	a, (0x03, sp)
+      00004E F7               [ 1]  122 	ld	(x), a
+                                    123 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 73: }
+      00004F 85               [ 2]  124 	popw	x
+      000050 84               [ 1]  125 	pop	a
+      000051 FC               [ 2]  126 	jp	(x)
+                                    127 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 81: void TIM4_Cmd(FunctionalState NewState)
+                                    128 ;	-----------------------------------------
+                                    129 ;	 function TIM4_Cmd
+                                    130 ;	-----------------------------------------
+      000052                        131 _TIM4_Cmd:
+      000052 88               [ 1]  132 	push	a
+                                    133 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 84: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000053 6B 01            [ 1]  134 	ld	(0x01, sp), a
+      000055 27 10            [ 1]  135 	jreq	00107$
+      000057 0D 01            [ 1]  136 	tnz	(0x01, sp)
+      000059 26 0C            [ 1]  137 	jrne	00107$
+      00005B 4B 54            [ 1]  138 	push	#0x54
+      00005D 5F               [ 1]  139 	clrw	x
+      00005E 89               [ 2]  140 	pushw	x
+      00005F 4B 00            [ 1]  141 	push	#0x00
+      000061 AEr00r00         [ 2]  142 	ldw	x, #(___str_0+0)
+      000064 CDr00r00         [ 4]  143 	call	_assert_failed
+      000067                        144 00107$:
+                                    145 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 89: TIM4->CR1 |= TIM4_CR1_CEN;
+      000067 C6 53 40         [ 1]  146 	ld	a, 0x5340
+                                    147 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 87: if (NewState != DISABLE)
+      00006A 0D 01            [ 1]  148 	tnz	(0x01, sp)
+      00006C 27 07            [ 1]  149 	jreq	00102$
+                                    150 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 89: TIM4->CR1 |= TIM4_CR1_CEN;
+      00006E AA 01            [ 1]  151 	or	a, #0x01
+      000070 C7 53 40         [ 1]  152 	ld	0x5340, a
+      000073 20 05            [ 2]  153 	jra	00104$
+      000075                        154 00102$:
+                                    155 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 93: TIM4->CR1 &= (uint8_t)(~TIM4_CR1_CEN);
+      000075 A4 FE            [ 1]  156 	and	a, #0xfe
+      000077 C7 53 40         [ 1]  157 	ld	0x5340, a
+      00007A                        158 00104$:
+                                    159 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 95: }
+      00007A 84               [ 1]  160 	pop	a
+      00007B 81               [ 4]  161 	ret
+                                    162 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 107: void TIM4_ITConfig(TIM4_IT_TypeDef TIM4_IT, FunctionalState NewState)
+                                    163 ;	-----------------------------------------
+                                    164 ;	 function TIM4_ITConfig
+                                    165 ;	-----------------------------------------
+      00007C                        166 _TIM4_ITConfig:
+      00007C 89               [ 2]  167 	pushw	x
+                                    168 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 110: assert_param(IS_TIM4_IT_OK(TIM4_IT));
+      00007D 6B 02            [ 1]  169 	ld	(0x02, sp), a
+      00007F 26 0C            [ 1]  170 	jrne	00107$
+      000081 4B 6E            [ 1]  171 	push	#0x6e
+      000083 5F               [ 1]  172 	clrw	x
+      000084 89               [ 2]  173 	pushw	x
+      000085 4B 00            [ 1]  174 	push	#0x00
+      000087 AEr00r00         [ 2]  175 	ldw	x, #(___str_0+0)
+      00008A CDr00r00         [ 4]  176 	call	_assert_failed
+      00008D                        177 00107$:
+                                    178 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 111: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      00008D 0D 05            [ 1]  179 	tnz	(0x05, sp)
+      00008F 27 10            [ 1]  180 	jreq	00109$
+      000091 0D 05            [ 1]  181 	tnz	(0x05, sp)
+      000093 26 0C            [ 1]  182 	jrne	00109$
+      000095 4B 6F            [ 1]  183 	push	#0x6f
+      000097 5F               [ 1]  184 	clrw	x
+      000098 89               [ 2]  185 	pushw	x
+      000099 4B 00            [ 1]  186 	push	#0x00
+      00009B AEr00r00         [ 2]  187 	ldw	x, #(___str_0+0)
+      00009E CDr00r00         [ 4]  188 	call	_assert_failed
+      0000A1                        189 00109$:
+                                    190 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 116: TIM4->IER |= (uint8_t)TIM4_IT;
+      0000A1 C6 53 43         [ 1]  191 	ld	a, 0x5343
+      0000A4 6B 01            [ 1]  192 	ld	(0x01, sp), a
+                                    193 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 113: if (NewState != DISABLE)
+      0000A6 0D 05            [ 1]  194 	tnz	(0x05, sp)
+      0000A8 27 09            [ 1]  195 	jreq	00102$
+                                    196 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 116: TIM4->IER |= (uint8_t)TIM4_IT;
+      0000AA 7B 02            [ 1]  197 	ld	a, (0x02, sp)
+      0000AC 1A 01            [ 1]  198 	or	a, (0x01, sp)
+      0000AE C7 53 43         [ 1]  199 	ld	0x5343, a
+      0000B1 20 08            [ 2]  200 	jra	00104$
+      0000B3                        201 00102$:
+                                    202 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 121: TIM4->IER &= (uint8_t)(~TIM4_IT);
+      0000B3 7B 02            [ 1]  203 	ld	a, (0x02, sp)
+      0000B5 43               [ 1]  204 	cpl	a
+      0000B6 14 01            [ 1]  205 	and	a, (0x01, sp)
+      0000B8 C7 53 43         [ 1]  206 	ld	0x5343, a
+      0000BB                        207 00104$:
+                                    208 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 123: }
+      0000BB 85               [ 2]  209 	popw	x
+      0000BC 85               [ 2]  210 	popw	x
+      0000BD 84               [ 1]  211 	pop	a
+      0000BE FC               [ 2]  212 	jp	(x)
+                                    213 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 131: void TIM4_UpdateDisableConfig(FunctionalState NewState)
+                                    214 ;	-----------------------------------------
+                                    215 ;	 function TIM4_UpdateDisableConfig
+                                    216 ;	-----------------------------------------
+      0000BF                        217 _TIM4_UpdateDisableConfig:
+      0000BF 88               [ 1]  218 	push	a
+                                    219 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 134: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0000C0 6B 01            [ 1]  220 	ld	(0x01, sp), a
+      0000C2 27 10            [ 1]  221 	jreq	00107$
+      0000C4 0D 01            [ 1]  222 	tnz	(0x01, sp)
+      0000C6 26 0C            [ 1]  223 	jrne	00107$
+      0000C8 4B 86            [ 1]  224 	push	#0x86
+      0000CA 5F               [ 1]  225 	clrw	x
+      0000CB 89               [ 2]  226 	pushw	x
+      0000CC 4B 00            [ 1]  227 	push	#0x00
+      0000CE AEr00r00         [ 2]  228 	ldw	x, #(___str_0+0)
+      0000D1 CDr00r00         [ 4]  229 	call	_assert_failed
+      0000D4                        230 00107$:
+                                    231 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 139: TIM4->CR1 |= TIM4_CR1_UDIS;
+      0000D4 C6 53 40         [ 1]  232 	ld	a, 0x5340
+                                    233 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 137: if (NewState != DISABLE)
+      0000D7 0D 01            [ 1]  234 	tnz	(0x01, sp)
+      0000D9 27 07            [ 1]  235 	jreq	00102$
+                                    236 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 139: TIM4->CR1 |= TIM4_CR1_UDIS;
+      0000DB AA 02            [ 1]  237 	or	a, #0x02
+      0000DD C7 53 40         [ 1]  238 	ld	0x5340, a
+      0000E0 20 05            [ 2]  239 	jra	00104$
+      0000E2                        240 00102$:
+                                    241 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 143: TIM4->CR1 &= (uint8_t)(~TIM4_CR1_UDIS);
+      0000E2 A4 FD            [ 1]  242 	and	a, #0xfd
+      0000E4 C7 53 40         [ 1]  243 	ld	0x5340, a
+      0000E7                        244 00104$:
+                                    245 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 145: }
+      0000E7 84               [ 1]  246 	pop	a
+      0000E8 81               [ 4]  247 	ret
+                                    248 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 155: void TIM4_UpdateRequestConfig(TIM4_UpdateSource_TypeDef TIM4_UpdateSource)
+                                    249 ;	-----------------------------------------
+                                    250 ;	 function TIM4_UpdateRequestConfig
+                                    251 ;	-----------------------------------------
+      0000E9                        252 _TIM4_UpdateRequestConfig:
+      0000E9 88               [ 1]  253 	push	a
+                                    254 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 158: assert_param(IS_TIM4_UPDATE_SOURCE_OK(TIM4_UpdateSource));
+      0000EA 6B 01            [ 1]  255 	ld	(0x01, sp), a
+      0000EC 27 10            [ 1]  256 	jreq	00107$
+      0000EE 0D 01            [ 1]  257 	tnz	(0x01, sp)
+      0000F0 26 0C            [ 1]  258 	jrne	00107$
+      0000F2 4B 9E            [ 1]  259 	push	#0x9e
+      0000F4 5F               [ 1]  260 	clrw	x
+      0000F5 89               [ 2]  261 	pushw	x
+      0000F6 4B 00            [ 1]  262 	push	#0x00
+      0000F8 AEr00r00         [ 2]  263 	ldw	x, #(___str_0+0)
+      0000FB CDr00r00         [ 4]  264 	call	_assert_failed
+      0000FE                        265 00107$:
+                                    266 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 163: TIM4->CR1 |= TIM4_CR1_URS;
+      0000FE C6 53 40         [ 1]  267 	ld	a, 0x5340
+                                    268 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 161: if (TIM4_UpdateSource != TIM4_UPDATESOURCE_GLOBAL)
+      000101 0D 01            [ 1]  269 	tnz	(0x01, sp)
+      000103 27 07            [ 1]  270 	jreq	00102$
+                                    271 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 163: TIM4->CR1 |= TIM4_CR1_URS;
+      000105 AA 04            [ 1]  272 	or	a, #0x04
+      000107 C7 53 40         [ 1]  273 	ld	0x5340, a
+      00010A 20 05            [ 2]  274 	jra	00104$
+      00010C                        275 00102$:
+                                    276 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 167: TIM4->CR1 &= (uint8_t)(~TIM4_CR1_URS);
+      00010C A4 FB            [ 1]  277 	and	a, #0xfb
+      00010E C7 53 40         [ 1]  278 	ld	0x5340, a
+      000111                        279 00104$:
+                                    280 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 169: }
+      000111 84               [ 1]  281 	pop	a
+      000112 81               [ 4]  282 	ret
+                                    283 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 179: void TIM4_SelectOnePulseMode(TIM4_OPMode_TypeDef TIM4_OPMode)
+                                    284 ;	-----------------------------------------
+                                    285 ;	 function TIM4_SelectOnePulseMode
+                                    286 ;	-----------------------------------------
+      000113                        287 _TIM4_SelectOnePulseMode:
+      000113 88               [ 1]  288 	push	a
+                                    289 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 182: assert_param(IS_TIM4_OPM_MODE_OK(TIM4_OPMode));
+      000114 6B 01            [ 1]  290 	ld	(0x01, sp), a
+      000116 26 10            [ 1]  291 	jrne	00107$
+      000118 0D 01            [ 1]  292 	tnz	(0x01, sp)
+      00011A 27 0C            [ 1]  293 	jreq	00107$
+      00011C 4B B6            [ 1]  294 	push	#0xb6
+      00011E 5F               [ 1]  295 	clrw	x
+      00011F 89               [ 2]  296 	pushw	x
+      000120 4B 00            [ 1]  297 	push	#0x00
+      000122 AEr00r00         [ 2]  298 	ldw	x, #(___str_0+0)
+      000125 CDr00r00         [ 4]  299 	call	_assert_failed
+      000128                        300 00107$:
+                                    301 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 187: TIM4->CR1 |= TIM4_CR1_OPM;
+      000128 C6 53 40         [ 1]  302 	ld	a, 0x5340
+                                    303 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 185: if (TIM4_OPMode != TIM4_OPMODE_REPETITIVE)
+      00012B 0D 01            [ 1]  304 	tnz	(0x01, sp)
+      00012D 27 07            [ 1]  305 	jreq	00102$
+                                    306 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 187: TIM4->CR1 |= TIM4_CR1_OPM;
+      00012F AA 08            [ 1]  307 	or	a, #0x08
+      000131 C7 53 40         [ 1]  308 	ld	0x5340, a
+      000134 20 05            [ 2]  309 	jra	00104$
+      000136                        310 00102$:
+                                    311 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 191: TIM4->CR1 &= (uint8_t)(~TIM4_CR1_OPM);
+      000136 A4 F7            [ 1]  312 	and	a, #0xf7
+      000138 C7 53 40         [ 1]  313 	ld	0x5340, a
+      00013B                        314 00104$:
+                                    315 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 193: }
+      00013B 84               [ 1]  316 	pop	a
+      00013C 81               [ 4]  317 	ret
+                                    318 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 215: void TIM4_PrescalerConfig(TIM4_Prescaler_TypeDef Prescaler, TIM4_PSCReloadMode_TypeDef TIM4_PSCReloadMode)
+                                    319 ;	-----------------------------------------
+                                    320 ;	 function TIM4_PrescalerConfig
+                                    321 ;	-----------------------------------------
+      00013D                        322 _TIM4_PrescalerConfig:
+                                    323 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 218: assert_param(IS_TIM4_PRESCALER_RELOAD_OK(TIM4_PSCReloadMode));
+      00013D 0D 03            [ 1]  324 	tnz	(0x03, sp)
+      00013F 27 12            [ 1]  325 	jreq	00104$
+      000141 0D 03            [ 1]  326 	tnz	(0x03, sp)
+      000143 26 0E            [ 1]  327 	jrne	00104$
+      000145 88               [ 1]  328 	push	a
+      000146 4B DA            [ 1]  329 	push	#0xda
+      000148 5F               [ 1]  330 	clrw	x
+      000149 89               [ 2]  331 	pushw	x
+      00014A 4B 00            [ 1]  332 	push	#0x00
+      00014C AEr00r00         [ 2]  333 	ldw	x, #(___str_0+0)
+      00014F CDr00r00         [ 4]  334 	call	_assert_failed
+      000152 84               [ 1]  335 	pop	a
+      000153                        336 00104$:
+                                    337 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 219: assert_param(IS_TIM4_PRESCALER_OK(Prescaler));
+      000153 4D               [ 1]  338 	tnz	a
+      000154 27 2A            [ 1]  339 	jreq	00109$
+      000156 A1 01            [ 1]  340 	cp	a, #0x01
+      000158 27 26            [ 1]  341 	jreq	00109$
+      00015A A1 02            [ 1]  342 	cp	a, #0x02
+      00015C 27 22            [ 1]  343 	jreq	00109$
+      00015E A1 03            [ 1]  344 	cp	a, #0x03
+      000160 27 1E            [ 1]  345 	jreq	00109$
+      000162 A1 04            [ 1]  346 	cp	a, #0x04
+      000164 27 1A            [ 1]  347 	jreq	00109$
+      000166 A1 05            [ 1]  348 	cp	a, #0x05
+      000168 27 16            [ 1]  349 	jreq	00109$
+      00016A A1 06            [ 1]  350 	cp	a, #0x06
+      00016C 27 12            [ 1]  351 	jreq	00109$
+      00016E A1 07            [ 1]  352 	cp	a, #0x07
+      000170 27 0E            [ 1]  353 	jreq	00109$
+      000172 88               [ 1]  354 	push	a
+      000173 4B DB            [ 1]  355 	push	#0xdb
+      000175 5F               [ 1]  356 	clrw	x
+      000176 89               [ 2]  357 	pushw	x
+      000177 4B 00            [ 1]  358 	push	#0x00
+      000179 AEr00r00         [ 2]  359 	ldw	x, #(___str_0+0)
+      00017C CDr00r00         [ 4]  360 	call	_assert_failed
+      00017F 84               [ 1]  361 	pop	a
+      000180                        362 00109$:
+                                    363 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 222: TIM4->PSCR = (uint8_t)Prescaler;
+      000180 C7 53 47         [ 1]  364 	ld	0x5347, a
+                                    365 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 225: TIM4->EGR = (uint8_t)TIM4_PSCReloadMode;
+      000183 7B 03            [ 1]  366 	ld	a, (0x03, sp)
+      000185 C7 53 45         [ 1]  367 	ld	0x5345, a
+                                    368 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 226: }
+      000188 85               [ 2]  369 	popw	x
+      000189 84               [ 1]  370 	pop	a
+      00018A FC               [ 2]  371 	jp	(x)
+                                    372 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 234: void TIM4_ARRPreloadConfig(FunctionalState NewState)
+                                    373 ;	-----------------------------------------
+                                    374 ;	 function TIM4_ARRPreloadConfig
+                                    375 ;	-----------------------------------------
+      00018B                        376 _TIM4_ARRPreloadConfig:
+      00018B 88               [ 1]  377 	push	a
+                                    378 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 237: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      00018C 6B 01            [ 1]  379 	ld	(0x01, sp), a
+      00018E 27 10            [ 1]  380 	jreq	00107$
+      000190 0D 01            [ 1]  381 	tnz	(0x01, sp)
+      000192 26 0C            [ 1]  382 	jrne	00107$
+      000194 4B ED            [ 1]  383 	push	#0xed
+      000196 5F               [ 1]  384 	clrw	x
+      000197 89               [ 2]  385 	pushw	x
+      000198 4B 00            [ 1]  386 	push	#0x00
+      00019A AEr00r00         [ 2]  387 	ldw	x, #(___str_0+0)
+      00019D CDr00r00         [ 4]  388 	call	_assert_failed
+      0001A0                        389 00107$:
+                                    390 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 242: TIM4->CR1 |= TIM4_CR1_ARPE;
+      0001A0 C6 53 40         [ 1]  391 	ld	a, 0x5340
+                                    392 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 240: if (NewState != DISABLE)
+      0001A3 0D 01            [ 1]  393 	tnz	(0x01, sp)
+      0001A5 27 07            [ 1]  394 	jreq	00102$
+                                    395 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 242: TIM4->CR1 |= TIM4_CR1_ARPE;
+      0001A7 AA 80            [ 1]  396 	or	a, #0x80
+      0001A9 C7 53 40         [ 1]  397 	ld	0x5340, a
+      0001AC 20 05            [ 2]  398 	jra	00104$
+      0001AE                        399 00102$:
+                                    400 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 246: TIM4->CR1 &= (uint8_t)(~TIM4_CR1_ARPE);
+      0001AE A4 7F            [ 1]  401 	and	a, #0x7f
+      0001B0 C7 53 40         [ 1]  402 	ld	0x5340, a
+      0001B3                        403 00104$:
+                                    404 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 248: }
+      0001B3 84               [ 1]  405 	pop	a
+      0001B4 81               [ 4]  406 	ret
+                                    407 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 257: void TIM4_GenerateEvent(TIM4_EventSource_TypeDef TIM4_EventSource)
+                                    408 ;	-----------------------------------------
+                                    409 ;	 function TIM4_GenerateEvent
+                                    410 ;	-----------------------------------------
+      0001B5                        411 _TIM4_GenerateEvent:
+                                    412 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 260: assert_param(IS_TIM4_EVENT_SOURCE_OK(TIM4_EventSource));
+      0001B5 4D               [ 1]  413 	tnz	a
+      0001B6 26 0E            [ 1]  414 	jrne	00104$
+      0001B8 88               [ 1]  415 	push	a
+      0001B9 4B 04            [ 1]  416 	push	#0x04
+      0001BB 4B 01            [ 1]  417 	push	#0x01
+      0001BD 5F               [ 1]  418 	clrw	x
+      0001BE 89               [ 2]  419 	pushw	x
+      0001BF AEr00r00         [ 2]  420 	ldw	x, #(___str_0+0)
+      0001C2 CDr00r00         [ 4]  421 	call	_assert_failed
+      0001C5 84               [ 1]  422 	pop	a
+      0001C6                        423 00104$:
+                                    424 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 263: TIM4->EGR = (uint8_t)(TIM4_EventSource);
+      0001C6 C7 53 45         [ 1]  425 	ld	0x5345, a
+                                    426 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 264: }
+      0001C9 81               [ 4]  427 	ret
+                                    428 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 272: void TIM4_SetCounter(uint8_t Counter)
+                                    429 ;	-----------------------------------------
+                                    430 ;	 function TIM4_SetCounter
+                                    431 ;	-----------------------------------------
+      0001CA                        432 _TIM4_SetCounter:
+                                    433 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 275: TIM4->CNTR = (uint8_t)(Counter);
+      0001CA C7 53 46         [ 1]  434 	ld	0x5346, a
+                                    435 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 276: }
+      0001CD 81               [ 4]  436 	ret
+                                    437 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 284: void TIM4_SetAutoreload(uint8_t Autoreload)
+                                    438 ;	-----------------------------------------
+                                    439 ;	 function TIM4_SetAutoreload
+                                    440 ;	-----------------------------------------
+      0001CE                        441 _TIM4_SetAutoreload:
+                                    442 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 287: TIM4->ARR = (uint8_t)(Autoreload);
+      0001CE C7 53 48         [ 1]  443 	ld	0x5348, a
+                                    444 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 288: }
+      0001D1 81               [ 4]  445 	ret
+                                    446 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 295: uint8_t TIM4_GetCounter(void)
+                                    447 ;	-----------------------------------------
+                                    448 ;	 function TIM4_GetCounter
+                                    449 ;	-----------------------------------------
+      0001D2                        450 _TIM4_GetCounter:
+                                    451 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 298: return (uint8_t)(TIM4->CNTR);
+      0001D2 C6 53 46         [ 1]  452 	ld	a, 0x5346
+                                    453 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 299: }
+      0001D5 81               [ 4]  454 	ret
+                                    455 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 306: TIM4_Prescaler_TypeDef TIM4_GetPrescaler(void)
+                                    456 ;	-----------------------------------------
+                                    457 ;	 function TIM4_GetPrescaler
+                                    458 ;	-----------------------------------------
+      0001D6                        459 _TIM4_GetPrescaler:
+                                    460 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 309: return (TIM4_Prescaler_TypeDef)(TIM4->PSCR);
+      0001D6 C6 53 47         [ 1]  461 	ld	a, 0x5347
+                                    462 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 310: }
+      0001D9 81               [ 4]  463 	ret
+                                    464 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 319: FlagStatus TIM4_GetFlagStatus(TIM4_FLAG_TypeDef TIM4_FLAG)
+                                    465 ;	-----------------------------------------
+                                    466 ;	 function TIM4_GetFlagStatus
+                                    467 ;	-----------------------------------------
+      0001DA                        468 _TIM4_GetFlagStatus:
+      0001DA 89               [ 2]  469 	pushw	x
+                                    470 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 324: assert_param(IS_TIM4_GET_FLAG_OK(TIM4_FLAG));
+      0001DB 6B 02            [ 1]  471 	ld	(0x02, sp), a
+      0001DD 26 0C            [ 1]  472 	jrne	00107$
+      0001DF 4B 44            [ 1]  473 	push	#0x44
+      0001E1 4B 01            [ 1]  474 	push	#0x01
+      0001E3 5F               [ 1]  475 	clrw	x
+      0001E4 89               [ 2]  476 	pushw	x
+      0001E5 AEr00r00         [ 2]  477 	ldw	x, #(___str_0+0)
+      0001E8 CDr00r00         [ 4]  478 	call	_assert_failed
+      0001EB                        479 00107$:
+                                    480 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 326: if ((TIM4->SR1 & (uint8_t)TIM4_FLAG)  != 0)
+      0001EB C6 53 44         [ 1]  481 	ld	a, 0x5344
+      0001EE 6B 01            [ 1]  482 	ld	(0x01, sp), a
+      0001F0 7B 02            [ 1]  483 	ld	a, (0x02, sp)
+      0001F2 14 01            [ 1]  484 	and	a, (0x01, sp)
+      0001F4 27 03            [ 1]  485 	jreq	00102$
+                                    486 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 328: bitstatus = SET;
+      0001F6 A6 01            [ 1]  487 	ld	a, #0x01
+                                    488 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 332: bitstatus = RESET;
+      0001F8 21                     489 	.byte 0x21
+      0001F9                        490 00102$:
+      0001F9 4F               [ 1]  491 	clr	a
+      0001FA                        492 00103$:
+                                    493 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 334: return ((FlagStatus)bitstatus);
+                                    494 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 335: }
+      0001FA 85               [ 2]  495 	popw	x
+      0001FB 81               [ 4]  496 	ret
+                                    497 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 344: void TIM4_ClearFlag(TIM4_FLAG_TypeDef TIM4_FLAG)
+                                    498 ;	-----------------------------------------
+                                    499 ;	 function TIM4_ClearFlag
+                                    500 ;	-----------------------------------------
+      0001FC                        501 _TIM4_ClearFlag:
+                                    502 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 347: assert_param(IS_TIM4_GET_FLAG_OK(TIM4_FLAG));
+      0001FC 4D               [ 1]  503 	tnz	a
+      0001FD 26 0E            [ 1]  504 	jrne	00104$
+      0001FF 88               [ 1]  505 	push	a
+      000200 4B 5B            [ 1]  506 	push	#0x5b
+      000202 4B 01            [ 1]  507 	push	#0x01
+      000204 5F               [ 1]  508 	clrw	x
+      000205 89               [ 2]  509 	pushw	x
+      000206 AEr00r00         [ 2]  510 	ldw	x, #(___str_0+0)
+      000209 CDr00r00         [ 4]  511 	call	_assert_failed
+      00020C 84               [ 1]  512 	pop	a
+      00020D                        513 00104$:
+                                    514 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 350: TIM4->SR1 = (uint8_t)(~TIM4_FLAG);
+      00020D 43               [ 1]  515 	cpl	a
+      00020E C7 53 44         [ 1]  516 	ld	0x5344, a
+                                    517 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 351: }
+      000211 81               [ 4]  518 	ret
+                                    519 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 360: ITStatus TIM4_GetITStatus(TIM4_IT_TypeDef TIM4_IT)
+                                    520 ;	-----------------------------------------
+                                    521 ;	 function TIM4_GetITStatus
+                                    522 ;	-----------------------------------------
+      000212                        523 _TIM4_GetITStatus:
+      000212 52 03            [ 2]  524 	sub	sp, #3
+                                    525 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 367: assert_param(IS_TIM4_IT_OK(TIM4_IT));
+      000214 6B 03            [ 1]  526 	ld	(0x03, sp), a
+      000216 26 0C            [ 1]  527 	jrne	00108$
+      000218 4B 6F            [ 1]  528 	push	#0x6f
+      00021A 4B 01            [ 1]  529 	push	#0x01
+      00021C 5F               [ 1]  530 	clrw	x
+      00021D 89               [ 2]  531 	pushw	x
+      00021E AEr00r00         [ 2]  532 	ldw	x, #(___str_0+0)
+      000221 CDr00r00         [ 4]  533 	call	_assert_failed
+      000224                        534 00108$:
+                                    535 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 369: itstatus = (uint8_t)(TIM4->SR1 & (uint8_t)TIM4_IT);
+      000224 C6 53 44         [ 1]  536 	ld	a, 0x5344
+      000227 88               [ 1]  537 	push	a
+      000228 7B 04            [ 1]  538 	ld	a, (0x04, sp)
+      00022A 6B 02            [ 1]  539 	ld	(0x02, sp), a
+      00022C 84               [ 1]  540 	pop	a
+      00022D 14 01            [ 1]  541 	and	a, (0x01, sp)
+      00022F 6B 02            [ 1]  542 	ld	(0x02, sp), a
+                                    543 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 371: itenable = (uint8_t)(TIM4->IER & (uint8_t)TIM4_IT);
+      000231 C6 53 43         [ 1]  544 	ld	a, 0x5343
+      000234 14 01            [ 1]  545 	and	a, (0x01, sp)
+                                    546 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 373: if ((itstatus != (uint8_t)RESET ) && (itenable != (uint8_t)RESET ))
+      000236 0D 02            [ 1]  547 	tnz	(0x02, sp)
+      000238 27 06            [ 1]  548 	jreq	00102$
+      00023A 4D               [ 1]  549 	tnz	a
+      00023B 27 03            [ 1]  550 	jreq	00102$
+                                    551 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 375: bitstatus = (ITStatus)SET;
+      00023D A6 01            [ 1]  552 	ld	a, #0x01
+                                    553 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 379: bitstatus = (ITStatus)RESET;
+      00023F 21                     554 	.byte 0x21
+      000240                        555 00102$:
+      000240 4F               [ 1]  556 	clr	a
+      000241                        557 00103$:
+                                    558 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 381: return ((ITStatus)bitstatus);
+                                    559 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 382: }
+      000241 5B 03            [ 2]  560 	addw	sp, #3
+      000243 81               [ 4]  561 	ret
+                                    562 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 391: void TIM4_ClearITPendingBit(TIM4_IT_TypeDef TIM4_IT)
+                                    563 ;	-----------------------------------------
+                                    564 ;	 function TIM4_ClearITPendingBit
+                                    565 ;	-----------------------------------------
+      000244                        566 _TIM4_ClearITPendingBit:
+                                    567 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 394: assert_param(IS_TIM4_IT_OK(TIM4_IT));
+      000244 4D               [ 1]  568 	tnz	a
+      000245 26 0E            [ 1]  569 	jrne	00104$
+      000247 88               [ 1]  570 	push	a
+      000248 4B 8A            [ 1]  571 	push	#0x8a
+      00024A 4B 01            [ 1]  572 	push	#0x01
+      00024C 5F               [ 1]  573 	clrw	x
+      00024D 89               [ 2]  574 	pushw	x
+      00024E AEr00r00         [ 2]  575 	ldw	x, #(___str_0+0)
+      000251 CDr00r00         [ 4]  576 	call	_assert_failed
+      000254 84               [ 1]  577 	pop	a
+      000255                        578 00104$:
+                                    579 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 397: TIM4->SR1 = (uint8_t)(~TIM4_IT);
+      000255 43               [ 1]  580 	cpl	a
+      000256 C7 53 44         [ 1]  581 	ld	0x5344, a
+                                    582 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim4.c: 398: }
+      000259 81               [ 4]  583 	ret
+                                    584 	.area CODE
+                                    585 	.area CONST
+                                    586 	.area CONST
+      000000                        587 ___str_0:
+      000000 2E 2F 53 54 4D 38 53   588 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
+             5F 53 74 64 50 65 72
+             69 70 68 5F 4C 69 62
+             2F 4C 69 62 72 61 72
+             69 65 73 2F 53 54 4D
+             38 53 5F 53 74 64 50
+             65 72 69 70 68 5F 44
+             72 69 76 65 72 2F 73
+             72 63 2F 73
+      00003C 74 6D 38 73 5F 74 69   589 	.ascii "tm8s_tim4.c"
+             6D 34 2E 63
+      000047 00                     590 	.db 0x00
+                                    591 	.area CODE
+                                    592 	.area INITIALIZER
+                                    593 	.area CABS (ABS)
