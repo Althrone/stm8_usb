@@ -161,20 +161,18 @@ typedef struct
 typedef enum
 {
     kUsbNoPid       = 0x00,
-    //PID0在LSB，PID0先发，下文注释为发送的先后顺序
-    //由于stm8是大端的，所以反过来
-    //PID Type=Token
-    kUsbPidOut      = 0xE1, //1000 0111
-    kUsbPidIn       = 0x69, //1001 0110
+    //PID Type=Token          <<<<<<<<<-先发送最低位
+    kUsbPidOut      = 0xE1, //1110 0001
+    kUsbPidIn       = 0x69, //0110 1001
     kUsbPidSof      = 0xA5, //1010 0101
-    kUsbPidSetup    = 0x2D, //1011 0100
+    kUsbPidSetup    = 0x2D, //0010 1101
     //PID Type=Data
     kUsbPidData0    = 0xC3, //1100 0011
-    kUsbPidData1    = 0x4B, //1101 0010
+    kUsbPidData1    = 0x4B, //0100 1011
     //PID Type=Handshake
-    kUsbPidAck      = 0xD2, //0100 1011
+    kUsbPidAck      = 0xD2, //1101 0010
     kUsbPidNak      = 0x5A, //0101 1010
-    kUsbPidStall    = 0x1E, //0111 1000
+    kUsbPidStall    = 0x1E, //0001 1110
     //PID Type=Special
     kUsbPidPre      = 0x3C, //0011 1100
 }UsbPidEnum;
