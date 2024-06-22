@@ -1,0 +1,29 @@
+
+Segment List
+------------
+
+d:\project\stm8_usb\simulate\main.asm[2]  308-  312       100 -      103                 'ram1'  [void]
+d:\project\stm8_usb\simulate\main.asm[1]    5-  307      8080 -     81F0                 'rom'  [text]
+d:\project\stm8_usb\simulate\main.asm[3]  313-  336      81F1 -     8210                 'rom'  [text]
+d:\project\stm8_usb\simulate\main.asm[4]  337-  370      8000 -     807F                 'vectit'  [data]
+
+
+Class List
+----------
+
+0 '        ram0'   byte from        0 to FFFFFFFF (lim       FF) =  0% V
+0 '        ram1'   byte from      100 to      103 (lim      1FF) =  1% D
+0 '       stack'   byte from      200 to      1FF (lim      3FF) =  0% V
+0 '      eeprom'   byte from     4000 to     3FFF (lim     407F) =  0% V
+0 '         rom'   byte from     8080 to     8210 (lim     9FFF) =  4% C
+0 '      vectit'   byte from     8000 to     807F (lim     807F) =100% S
+
+
+
+External Label list
+-------------------
+
+Symbol Name                       Value     Scope  Def(line)
+
+
+0 labels

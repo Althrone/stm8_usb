@@ -4,8 +4,8 @@ stm8/
 
 	segment 'rom'
 
-;å‘é€2bit timeçš„se0
-;å‘é€1bit timeçš„j
+;·¢ËÍ2bit timeµÄse0
+;·¢ËÍ1bit timeµÄj
 Tx_Eop1_1:
 	nop
 Tx_Eop3:
@@ -17,43 +17,43 @@ NOP_delay:
 	nop
 	nop
 
-	bset $500A,#6;pc6æ‹‰é«˜ï¼Œåˆ°è¿™é‡Œå·®ä¸å¤šæ˜¯2bit time
+	bset $500A,#6;pc6À­¸ß£¬µ½ÕâÀï²î²»¶àÊÇ2bit time
 	nop
 	nop
 	nop
-	ret	;è¿”å›žåˆ°cå‡½æ•°ï¼Œè¿™é‡Œè¦å››ä¸ªcycle
+	ret	;·µ»Øµ½cº¯Êý£¬ÕâÀïÒªËÄ¸öcycle
 Tx_Eop1:
 	jp Tx_Eop1_1
 
 Tx_Bit1_0:
-	rlc	(x)
-	jrc	Tx_Bit1_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	rrc	(x)
+	jrc	Tx_Bit1_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
 	nop
 	jp	Tx_Bit2_0
 
 Tx_Bit2_0:
-	rlc	(x)
-	jrc	Tx_Bit2_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	rrc	(x)
+	jrc	Tx_Bit2_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
 	nop
 	jp Tx_Bit3_0
 
 Tx_Bit1_1:
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
 	nop
 	nop
-	jrne	Tx_Bit2_0;aå‡äº†ä¹‹åŽä¸ç­‰äºŽ0ï¼Œå°±è·³2ï¼Œç­‰äºŽé›¶ ä¸‹é¢ä½åè½¬+ä½å¡«å……1
+	jrne	Tx_Bit2_0;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
 
 	ld	a,#6;
 	nop
 	nop
 
-	;å¦‚æžœè¿žç»­å‘äº†6ä½1ï¼Œåˆ™éœ€è¦åè½¬æ’å…¥ä¸€ä½
+	;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈëÒ»Î»
 	cpl	$500A;
 	nop
 	nop
@@ -61,16 +61,16 @@ Tx_Bit1_1:
 	jp Tx_Bit2_0;2
 
 Tx_Bit0_1:
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
 	nop
 	nop
-	jrne	Tx_Bit1_0;aå‡äº†ä¹‹åŽä¸ç­‰äºŽ0ï¼Œå°±è·³2ï¼Œç­‰äºŽé›¶ ä¸‹é¢ä½åè½¬+ä½å¡«å……1
+	jrne	Tx_Bit1_0;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
 
 	ld	a,#6;
 	nop
 	nop
 
-	;å¦‚æžœè¿žç»­å‘äº†6ä½1ï¼Œåˆ™éœ€è¦åè½¬æ’å…¥ä¸€ä½
+	;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈëÒ»Î»
 	cpl	$500A;
 	nop
 	nop
@@ -78,10 +78,10 @@ Tx_Bit0_1:
 	jp Tx_Bit1_0;2
 
 Tx_Bit7_1:
-	rlc	(x)	;6/14
+	rrc	(x)	;6/14
 	dec	a;7/15
-	jrne	Tx_Check_End;å¦‚æžœè¿žç»­å‘äº†å…­ä¸ª1ï¼Œå°±ä¸è·³1ï¼Œè·³2
-	;ä¸è·³
+	jrne	Tx_Check_End;Èç¹ûÁ¬Ðø·¢ÁËÁù¸ö1£¬¾Í²»Ìø1£¬Ìø2
+	;²»Ìø
 	incw x;10
 	dec var3
 	ld	a,#6;
@@ -89,23 +89,23 @@ Tx_Bit7_1:
 	nop	;15
 	nop	;15
 
-	cpl	$500A;åè½¬æ’å…¥ä¸€ä½
+	cpl	$500A;·´×ª²åÈëÒ»Î»
 	tnz	var3
 	rcf
 	jreq	Tx_Eop1
 	jp	Tx_Bit0_0
 
 Tx_Bit2_1:
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
 	nop
 	nop
-	jrne	Tx_Bit3_0;aå‡äº†ä¹‹åŽä¸ç­‰äºŽ0ï¼Œå°±è·³2ï¼Œç­‰äºŽé›¶ ä¸‹é¢ä½åè½¬+ä½å¡«å……1
+	jrne	Tx_Bit3_0;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
 
 	ld	a,#6;
 	nop
 	nop
 
-	;å¦‚æžœè¿žç»­å‘äº†6ä½1ï¼Œåˆ™éœ€è¦åè½¬æ’å…¥ä¸€ä½
+	;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈëÒ»Î»
 	cpl	$500A;
 	nop
 	nop
@@ -113,16 +113,16 @@ Tx_Bit2_1:
 	jp Tx_Bit3_0;2
 
 Tx_Bit3_1:
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
 	nop
 	nop
-	jrne	Tx_Bit4_0;aå‡äº†ä¹‹åŽä¸ç­‰äºŽ0ï¼Œå°±è·³2ï¼Œç­‰äºŽé›¶ ä¸‹é¢ä½åè½¬+ä½å¡«å……1
+	jrne	Tx_Bit4_0;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
 
 	ld	a,#6;
 	nop
 	nop
 
-	;å¦‚æžœè¿žç»­å‘äº†6ä½1ï¼Œåˆ™éœ€è¦åè½¬æ’å…¥ä¸€ä½
+	;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈëÒ»Î»
 	cpl	$500A;
 	nop
 	nop
@@ -130,85 +130,86 @@ Tx_Bit3_1:
 	jp Tx_Bit4_0;2
 
 Tx_Bit6_0:
-	rlc	(x)
-	jrc	Tx_Bit6_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	rrc	(x)
+	nop
+	jrc	Tx_Bit6_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
-	rlc	(x)
+	rrc	(x)
 
 Tx_Bit7_0:
-	jrc	Tx_Bit7_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2 
-Tx_Bit7_0_1:
-	jrc	Tx_Bit7_1
-	dec var3
-	rlc	(x)	;å­—ç¬¦è¿˜åŽŸ
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	jrc	Tx_Bit7_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2 
+	nop
+	dec $0102
+	rrc	(x)	;×Ö·û»¹Ô­
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 
 Tx_Check_End:
-	incw x;2
+	inc var4
 Tx_Check_End_1:
 	ld	a,#6
 	rcf
+	;cp var3 #$00
 	jreq Tx_Eop2
 
-Tx_Bit0_0:	;è¿™ä¸ªè¦å’Œcheck endè¿žåœ¨ä¸€èµ·
-	rlc	(x)
-	jrc	Tx_Bit0_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+Tx_Bit0_0:	;Õâ¸öÒªºÍcheck endÁ¬ÔÚÒ»Æð
+	rrc	($1,x)
+	jrc	Tx_Bit0_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
 	nop
 	jp Tx_Bit1_0
 
 Tx_Bit6_1:
-	rlc		(x)	;9
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
-	jreq	send_01;åœ¨å¦ä¸€ä¸ªå‡½æ•°å†…å‘åè½¬ä½
+	rrc		(x)	;9
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
+	jreq	send_01;ÔÚÁíÒ»¸öº¯ÊýÄÚ·¢·´×ªÎ»
 	jrc		Tx_Bit7_1;
-	rlc		(x)	;å¤ä½å‚æ•°
+	rrc		(x)	;¸´Î»²ÎÊý
 	incw x;2
-	cpl	$500A;å®žé™…ä¸Šå°±æ˜¯7_0
+	cpl	$500A;Êµ¼ÊÉÏ¾ÍÊÇ7_0
 	jp Tx_Check_End_1;2
 
 Tx_Bit3_0:
-	rlc	(x)
-	jrc	Tx_Bit3_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	rrc	(x)
+	jrc	Tx_Bit3_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
 	nop
 	jp Tx_Bit4_0
 
 Tx_Bit4_0:
-	rlc	(x)
-	jrc	Tx_Bit4_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	rrc	(x)
+	jrc	Tx_Bit4_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
 	nop
 	jp Tx_Bit5_0
 
 Tx_Bit5_0:
-	rlc	(x)
-	jrc	Tx_Bit5_1;è¿™ä¸ªå‡½æ•°è·³åˆ°ä¸åè½¬çš„ ä¸è·³å°±1 è·³å°±2
-	cpl	$500A;cc.c=0,ç¿»è½¬è¾“å‡ºï¼Œsop
+	rrc	(x)
+	jrc	Tx_Bit5_1;Õâ¸öº¯ÊýÌøµ½²»·´×ªµÄ ²»Ìø¾Í1 Ìø¾Í2
+	cpl	$500A;cc.c=0,·­×ªÊä³ö£¬sop
 	rcf
 	ld	a, #$06
-	nop
+	;nop
 	jp Tx_Bit6_0
 
 Tx_Bit5_1:
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
 	nop
 	nop
-	jrne	Tx_Bit6_0;aå‡äº†ä¹‹åŽä¸ç­‰äºŽ0ï¼Œå°±è·³2ï¼Œç­‰äºŽé›¶ ä¸‹é¢ä½åè½¬+ä½å¡«å……1
+	jrne	Tx_Bit6_0;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
 
 	ld	a,#6;
 	nop
 	nop
 
-	;å¦‚æžœè¿žç»­å‘äº†6ä½1ï¼Œåˆ™éœ€è¦åè½¬æ’å…¥ä¸€ä½
+	;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈëÒ»Î»
 	cpl	$500A;
 	nop
 	nop
@@ -225,8 +226,8 @@ send_01:
 
 
 
-;å‘é€2bit timeçš„se0
-;å‘é€1bit timeçš„j
+;·¢ËÍ2bit timeµÄse0
+;·¢ËÍ1bit timeµÄj
 Tx_Eop2:
 	nop
 	clr	$500A;se0
@@ -237,32 +238,32 @@ NOP_delay1:
 	nop
 	nop
 
-	bset $500A,#6;pc6æ‹‰é«˜ï¼Œåˆ°è¿™é‡Œå·®ä¸å¤šæ˜¯2bit time
+	bset $500A,#6;pc6À­¸ß£¬µ½ÕâÀï²î²»¶àÊÇ2bit time
 	nop
 	nop
 	nop
-	ret	;è¿”å›žåˆ°cå‡½æ•°ï¼Œè¿™é‡Œè¦å››ä¸ªcycle
+	ret	;·µ»Øµ½cº¯Êý£¬ÕâÀïÒªËÄ¸öcycle
 
 Tx_Bit4_1:
-	dec	a;1å‘¨æœŸï¼Œå‰ä¸€ä½çš„ç¬¬9ä¸ªå‘¨æœŸ
+	dec	a;1ÖÜÆÚ£¬Ç°Ò»Î»µÄµÚ9¸öÖÜÆÚ
 	nop
 	nop
-	jrne	Tx_Bit5_0;aå‡äº†ä¹‹åŽä¸ç­‰äºŽ0ï¼Œå°±è·³2ï¼Œç­‰äºŽé›¶ ä¸‹é¢ä½åè½¬+ä½å¡«å……1
+	jrne	Tx_Bit5_0;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
 
 	ld	a,#6;
 	nop
 	nop
 
-	;å¦‚æžœè¿žç»­å‘äº†6ä½1ï¼Œåˆ™éœ€è¦åè½¬æ’å…¥ä¸€ä½
+	;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈëÒ»Î»
 	cpl	$500A;
 	nop
 	nop
 	nop
 	jp Tx_Bit5_0;2
 
-
-
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;main Êµ¼ÊÉÏÊÇ_usb_tx
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 main.l
 	; initialize SP
@@ -304,29 +305,30 @@ clear_stack.l
 	jrule clear_stack
 
 infinite_loop.l
-	segment 'ram1'
+		segment 'ram1'
 var1 ds.b 1
 var2 ds.b 1
-var3 ds.b 1
+var3 ds.b 1;Ê£Óà·¢ËÍ³¤¶È
+var4 ds.b 1;´æ´¢Ïà¶ÔÖ¸Õë
 	segment 'rom'
-	ld A,#$7F
-	ld var1,A
+	ld	A,#$00
+	ld	var1,A
 	
-	ld A,#$FE
-	ld var2,A
+	ld	A,#$FE
+	ld	var2,A
 	
-	ld A,#$02
-	ld var3,A
+	ld	A,#$01
+	ld	var3,A
 	
-	ldw X,#var1;å°†var1çš„åœ°å€æ”¾å…¥x
+	ldw	X,#var1;·¢ËÍÊý×éµØÖ··ÅÈëx¼Ä´æÆ÷ 2tick
 	
-	mov $500A,#$40;port cçš„ä¸¤ä¸ªgpioå¼•è„šå‘é€idle j 1tick
+	mov	$500A,#$40;port cµÄÁ½¸ögpioÒý½Å·¢ËÍidle j 1tick
+	
+	mov	var4,#6;a¼Ä´æÆ÷×¨ÃÅ×ö6´Î1µÄ¼ÆÊý,¼õµ½0µÄÊ±ºòÍ¨¹ýzÀ´ÅÐ¶Ï1tick
+	;push	var3
+	call	Tx_Bit0_0;Èç¹ûTx_Bit0_0Ïà¶ÔµØÖ·³¬¹ý+-127£¬ÓÃcall(4tick)²»ÓÃjra
 
-	ld a,#6;aå¯„å­˜å™¨ä¸“é—¨åš6æ¬¡1çš„è®¡æ•°,å‡åˆ°0çš„æ—¶å€™é€šè¿‡zæ¥åˆ¤æ–­1tick
-
-	call Tx_Bit0_0;å¦‚æžœTx_Bit0_0ç›¸å¯¹åœ°å€è¶…è¿‡+-127ï¼Œç”¨call(4tick)ä¸ç”¨jra
-	
-	jra infinite_loop
+	jra	infinite_loop
 
 	interrupt NonHandledInterrupt
 NonHandledInterrupt.l
