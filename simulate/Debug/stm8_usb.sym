@@ -1,9 +1,9 @@
 000002;00001;
 'CONSTANTS' 
 
-'ram0' V
+'ram0' D
 
-'ram1' D
+'ram1' V
 
 'stack' V
 

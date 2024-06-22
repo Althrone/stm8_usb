@@ -3,6 +3,38 @@ stm8/
 	#include "mapping.inc"
 
 	segment 'rom'
+
+;发送2bit time的se0
+;发送1bit time的j
+Tx_Eop1_1:
+	nop
+Tx_Eop3:
+	clr	$500A;se0
+	ldw Y,#3;2
+NOP_delay:
+	decw Y
+	jrne	NOP_delay
+	nop
+	nop
+
+	bset $500A,#6;pc6拉高，到这里差不多是2bit time
+	nop
+	nop
+	nop
+	ret	;返回到c函数，这里要四个cycle
+Tx_Eop1:
+	jp Tx_Eop1_1
+
+Tx_Bit7_0A:
+	jreq Tx_Eop1
+	jp	Tx_Bit0_0
+
+;7_1翻转的情况
+Tx_7_1_Filp:
+	;dec _tx_buf_size
+	;jrne	Tx_Bit0_0;如果没发完，继续
+	;发完的情况
+	;jp	Tx_End
 	
 Tx_Bit0_0:
 	rrc	(X)
@@ -139,84 +171,87 @@ Tx_Bit5_0:
 	jrc	Tx_Bit5_1;不翻转电平		j2 nj1
 	cpl	$500A;翻转输出				1
 	ld	A,#6;复位连续1计数			1
-	rrc	(X)
+	nop
+	nop
 	jp Tx_Bit6_0;					2
 
 Tx_Bit5_1:
-	rrc	(X)	;10实际上是第六位的位移
 	dec	a;前一位的第10个周期
+	nop
+	nop
 	jrne	Tx_Bit6_0;a减了之后不等于0，就跳2，等于零 下面位反转+位填充1
 
 	ld	A,#6;复位连续1计数			1
 	nop
 	nop
-	push CC
 
 	;如果连续发了6位1，则需要反转插入一位
 	cpl	$500A;
-	pop CC
+	nop
+	nop
 	nop
 	jp Tx_Bit6_0;2
 
 Tx_Bit6_0:
-	jrc	Tx_Bit6_1;不翻转电平		j2 nj1 6/14
+	rrc	(X)
+	jrc	Tx_Bit6_1;不翻转电平		j2 nj1
+	cpl	$500A;翻转输出				1
 	ld	A,#6;复位连续1计数			1
 	nop
-	cpl	$500A;翻转输出				1
+	nop
 	jp	Tx_Bit7_0;					2
 	
 Tx_Bit6_1:
-	dec	a;前一位的第8个周期
+	dec	a;前一位的第10个周期
+	nop
 	nop
 	jrne	Tx_Bit7_0;
 	ld	A,#6;复位连续1计数			1
 	nop
 	nop
-	nop
-	nop
-	nop
 	cpl	$500A;实际上就是7_0
+	nop
+	nop
+	nop
 	jp Tx_Bit7_0;2
 
 Tx_Bit7_0:
-	rrc	(X)	;4/12
-	incw	X;ptxbuf+1
+	rrc	(X)
 	jrc	Tx_Bit7_1;不翻转电平		j2 nj1
+	incw	X;ptxbuf+1
+	dec _tx_buf_size;长度-1
 	nop
 	cpl	$500A;翻转输出				1
+	nop	;rcf	;清空cpl导致的cc.c=1		1
 	ld	A,#6;复位连续1计数			1
-	dec _tx_buf_size;长度-1
-	jreq	Tx_Eop6
-	jp	Tx_Bit0_0
+	nop
+	tnz	_tx_buf_size
+	jreq Tx_Eop2
 
 Tx_Bit7_1:
-	dec	a;9/17
-	jreq Tx_7_1_Flip
+	incw x;7/16
+	dec	a
+	;jreq	Tx_7_1_Filp;如果连续发了六个1就跳2，不是六个1不跳1
 	;不用翻转的情况
 	dec _tx_buf_size;11
-	jreq	Tx_Eop6;如果发完了，去结束流程
-	jp	Tx_Bit0_0;没发完，继续
+	jrne	Tx_Bit0_0;如果发完了，去结束流程
+	jp	Tx_Eop1;没发完，继续
 
-;处理电平反转
-Tx_7_1_Flip:
-	ld	A,#6;12
+
+
+
+send_01:
+	ld	a,#6;
 	nop
 	nop
-	nop
-	nop
-	cpl	$500A;翻转输出				1
-	dec _tx_buf_size;长度-1
-	jreq	Tx_Eop5;如果发完了，去结束流程
-	nop
-	jp	Tx_Bit0_0
+	push	cc;保护存在c中的bit
+	cpl	$500A;
+	pop	cc
+	jp Tx_Bit7_0;2
 
 ;发送2bit time的se0
 ;发送1bit time的j
-Tx_Eop5:
-	nop
-Tx_Eop6:
-	nop
-	nop
+Tx_Eop2:
 	nop
 	clr	$500A;se0
 	ldw Y,#3;2
@@ -287,7 +322,7 @@ _tx_buf_size	ds.b 1;剩余发送长度
 	
 	;变量赋值
 	mov	var1,#$00;
-	mov	var2,#$7F;
+	mov	var2,#$10;
 
 	mov _tx_buf_size,#2;要发多少个
 

@@ -28,7 +28,7 @@ FormatParameters=0
 [DebugState_v1-Debug.AddOn.St7Watchpoint]
 NbDataBreakpoint=0
 [DebugState_v1-Debug.AddOn.St7Registers]
-ActiveTab=2
+ActiveTab=3
 HexaTimeDisplay=0
 HexaInstrTimeDisplay=1
 [DebugState_v1-Debug.AddOn.St7PeripheralRegister]
