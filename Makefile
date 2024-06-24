@@ -75,5 +75,18 @@ $(BUILD_DIR):
 	mkdir $@/debug
 	mkdir $@/release
 
+burn:
+	openocd \
+	-f interface/$(OCD_LINK_FILE) \
+	-f target/$(OCD_CHIP_FILE) \
+	-c init \
+	-c "reset halt" \
+	-c "flash write_image erase $(BUILD_DIR)/$(TARGET).elf" \
+	-c "reset run" \
+	-c exit
+
+size: $(BUILD_DIR)/$(TARGET).elf
+	$(SZ) $@
+
 echo:
-	@echo  $(OBJS_DEBUG)
+	@echo  $(INC_DIRS)
