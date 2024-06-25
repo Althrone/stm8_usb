@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_i2c
 	.optsdcc -mstm8
@@ -208,12 +208,13 @@ _I2C_Init:
 	ld	a, 0x521b
 	mov	0x521b+0, #0x00
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 136: result = (uint16_t) ((InputClockFrequencyMHz * 1000000) / (OutputClockFrequencyHz * 3));
-	clrw	x
 	ld	a, (0x13, sp)
-	ld	xl, a
-	clrw	y
+	clrw	x
+	clr	(0x01, sp)
+	push	a
 	pushw	x
-	pushw	y
+	clr	a
+	push	a
 	push	#0x40
 	push	#0x42
 	push	#0x0f
@@ -588,14 +589,14 @@ _I2C_AcknowledgeConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 348: assert_param(IS_I2C_ACK_OK(Ack));
 	ld	xl, a
 	dec	a
-	jrne	00143$
+	jrne	00153$
 	ld	a, #0x01
 	ld	xh, a
-	jra	00144$
-00143$:
+	jra	00154$
+00153$:
 	clr	a
 	ld	xh, a
-00144$:
+00154$:
 	ld	a, xl
 	tnz	a
 	jreq	00110$
@@ -723,15 +724,15 @@ _I2C_FastModeDutyCycleConfig:
 	push	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 408: assert_param(IS_I2C_DUTYCYCLE_OK(I2C_DutyCycle));
 	cp	a, #0x40
-	jrne	00127$
+	jrne	00133$
 	push	a
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	pop	a
 	.byte 0xc5
-00127$:
+00133$:
 	clr	(0x01, sp)
-00128$:
+00134$:
 	tnz	a
 	jreq	00107$
 	tnz	(0x01, sp)
@@ -836,12 +837,12 @@ _I2C_CheckEvent:
 	clr	(0x01, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 586: assert_param(IS_I2C_EVENT_OK(I2C_Event));
 	cpw	x, #0x0004
-	jrne	00247$
+	jrne	00283$
 	ld	a, #0x01
 	.byte 0x21
-00247$:
+00283$:
 	clr	a
-00248$:
+00284$:
 	cpw	x, #0x0682
 	jreq	00110$
 	cpw	x, #0x0202
@@ -891,25 +892,20 @@ _I2C_CheckEvent:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 590: lastevent = I2C->SR2 & I2C_SR2_AF;
 	ld	a, 0x5218
 	and	a, #0x04
-	clrw	y
-	ld	yl, a
-	ldw	(0x01, sp), y
+	clr	(0x05, sp)
+	ld	(0x02, sp), a
+	clr	(0x01, sp)
 	jra	00103$
 00102$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 594: flag1 = I2C->SR1;
 	ld	a, 0x5217
-	ld	(0x06, sp), a
+	ld	yl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 595: flag2 = I2C->SR3;
 	ld	a, 0x5219
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 596: lastevent = ((uint16_t)((uint16_t)flag2 << (uint16_t)8) | (uint16_t)flag1);
 	ld	yh, a
 	clr	(0x04, sp)
-	ld	a, (0x06, sp)
 	clr	(0x05, sp)
-	or	a, (0x04, sp)
-	rlwa	y
-	or	a, (0x05, sp)
-	ld	yh, a
 	ldw	(0x01, sp), y
 00103$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 599: if (((uint16_t)lastevent & (uint16_t)I2C_Event) == (uint16_t)I2C_Event)
@@ -950,16 +946,12 @@ _I2C_GetLastEvent:
 00102$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 641: flag1 = I2C->SR1;
 	ld	a, 0x5217
-	ld	(0x04, sp), a
-	clr	(0x03, sp)
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 642: flag2 = I2C->SR3;
 	ld	a, 0x5219
+	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 645: lastevent = ((uint16_t)((uint16_t)flag2 << 8) | (uint16_t)flag1);
-	ld	xh, a
-	ld	a, (0x04, sp)
-	rlwa	x
-	or	a, (0x03, sp)
-	ld	xh, a
+	clr	(0x04, sp)
 	ldw	(0x01, sp), x
 00103$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 648: return (I2C_Event_TypeDef)lastevent;
@@ -1143,9 +1135,11 @@ _I2C_GetITStatus:
 	clr	(0x02, sp)
 	ld	a, xh
 	and	a, #0x07
-	ld	(0x04, sp), a
+	ld	yl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 803: enablestatus = (uint8_t)(I2C->ITR & ( uint8_t)tempregister);
 	ld	a, 0x521a
+	ld	(0x04, sp), a
+	ld	a, yl
 	and	a, (0x04, sp)
 	ld	(0x03, sp), a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_i2c.c: 805: if ((uint16_t)((uint16_t)I2C_ITPendingBit & REGISTER_Mask) == REGISTER_SR1_Index)

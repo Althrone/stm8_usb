@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_uart1
 	.optsdcc -mstm8
@@ -236,12 +236,12 @@ _UART1_Init:
 	Sstm8s_uart1$UART1_Init$49 ==.
 	ld	a, (0x18, sp)
 	sub	a, #0x0c
-	jrne	00339$
+	jrne	00388$
 	inc	a
 	.byte 0x21
-00339$:
+00388$:
 	clr	a
-00340$:
+00389$:
 	Sstm8s_uart1$UART1_Init$50 ==.
 	tnz	a
 	jrne	00139$
@@ -354,12 +354,12 @@ _UART1_Init:
 	ldw	(0x06, sp), x
 	ldw	x, (0x12, sp)
 	ld	a, #0x04
-00364$:
+00413$:
 	sllw	x
 	rlc	(0x07, sp)
 	rlc	(0x06, sp)
 	dec	a
-	jrne	00364$
+	jrne	00413$
 	ldw	(0x08, sp), x
 	pushw	x
 	Sstm8s_uart1$UART1_Init$77 ==.
@@ -371,13 +371,13 @@ _UART1_Init:
 	Sstm8s_uart1$UART1_Init$79 ==.
 	pushw	y
 	Sstm8s_uart1$UART1_Init$80 ==.
+	Sstm8s_uart1$UART1_Init$81 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
 	call	__divulong
 	addw	sp, #8
-	Sstm8s_uart1$UART1_Init$81 ==.
+	Sstm8s_uart1$UART1_Init$82 ==.
 	ldw	(0x03, sp), x
 	ldw	(0x01, sp), y
-	Sstm8s_uart1$UART1_Init$82 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
 	call	_CLK_GetClockFreq
 	pushw	x
 	Sstm8s_uart1$UART1_Init$83 ==.
@@ -405,15 +405,16 @@ _UART1_Init:
 	Sstm8s_uart1$UART1_Init$91 ==.
 	pushw	y
 	Sstm8s_uart1$UART1_Init$92 ==.
+	Sstm8s_uart1$UART1_Init$93 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
 	call	__divulong
 	addw	sp, #8
-	Sstm8s_uart1$UART1_Init$93 ==.
-	ld	a, yh
-	ldw	(0x07, sp), x
-	ld	(0x05, sp), a
-	ld	a, yl
 	Sstm8s_uart1$UART1_Init$94 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
+	ldw	(0x07, sp), x
+	rlwa	y
+	ld	(0x05, sp), a
+	rrwa	y
+	ld	a, yl
 	ldw	x, #0x5233
 	push	a
 	Sstm8s_uart1$UART1_Init$95 ==.
@@ -448,11 +449,11 @@ _UART1_Init:
 	sbc	a, (0x0a, sp)
 	ld	xh, a
 	ld	a, #0x04
-00366$:
+00415$:
 	sllw	y
 	rlcw	x
 	dec	a
-	jrne	00366$
+	jrne	00415$
 	push	#0x64
 	Sstm8s_uart1$UART1_Init$105 ==.
 	push	#0x00
@@ -719,38 +720,38 @@ _UART1_ITConfig:
 	ld	a, #0x01
 	exg	a, xl
 	tnz	a
-	jreq	00226$
-00225$:
+	jreq	00252$
+00251$:
 	exg	a, xl
 	sll	a
 	exg	a, xl
 	dec	a
-	jrne	00225$
-00226$:
+	jrne	00251$
+00252$:
 	Sstm8s_uart1$UART1_ITConfig$192 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 227: if (uartreg == 0x01)
 	ld	a, xh
 	dec	a
-	jrne	00228$
+	jrne	00254$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00228$:
+00254$:
 	clr	(0x01, sp)
-00229$:
+00255$:
 	Sstm8s_uart1$UART1_ITConfig$193 ==.
 	Sstm8s_uart1$UART1_ITConfig$194 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 231: else if (uartreg == 0x02)
 	ld	a, xh
 	sub	a, #0x02
-	jrne	00231$
+	jrne	00257$
 	inc	a
 	ld	xh, a
-	jra	00232$
-00231$:
+	jra	00258$
+00257$:
 	clr	a
 	ld	xh, a
-00232$:
+00258$:
 	Sstm8s_uart1$UART1_ITConfig$195 ==.
 	Sstm8s_uart1$UART1_ITConfig$196 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 224: if (NewState != DISABLE)
@@ -1369,9 +1370,7 @@ _UART1_ReceiveData8:
 ;	-----------------------------------------
 _UART1_ReceiveData9:
 	Sstm8s_uart1$UART1_ReceiveData9$414 ==.
-	pushw	x
 	Sstm8s_uart1$UART1_ReceiveData9$415 ==.
-	Sstm8s_uart1$UART1_ReceiveData9$416 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 465: temp = (uint16_t)(((uint16_t)( (uint16_t)UART1->CR1 & (uint16_t)UART1_CR1_R8)) << 1);
 	ld	a, 0x5234
 	and	a, #0x80
@@ -1379,54 +1378,50 @@ _UART1_ReceiveData9:
 	clr	a
 	ld	xh, a
 	sllw	x
-	ldw	(0x01, sp), x
-	Sstm8s_uart1$UART1_ReceiveData9$417 ==.
+	exgw	x, y
+	Sstm8s_uart1$UART1_ReceiveData9$416 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 466: return (uint16_t)( (((uint16_t) UART1->DR) | temp ) & ((uint16_t)0x01FF));
 	ld	a, 0x5231
-	clrw	x
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	ld	xl, a
+	ld	a, yh
 	and	a, #0x01
 	ld	xh, a
-	Sstm8s_uart1$UART1_ReceiveData9$418 ==.
+	Sstm8s_uart1$UART1_ReceiveData9$417 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 467: }
-	addw	sp, #2
-	Sstm8s_uart1$UART1_ReceiveData9$419 ==.
-	Sstm8s_uart1$UART1_ReceiveData9$420 ==.
+	Sstm8s_uart1$UART1_ReceiveData9$418 ==.
 	XG$UART1_ReceiveData9$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_ReceiveData9$421 ==.
-	Sstm8s_uart1$UART1_SendData8$422 ==.
+	Sstm8s_uart1$UART1_ReceiveData9$419 ==.
+	Sstm8s_uart1$UART1_SendData8$420 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 474: void UART1_SendData8(uint8_t Data)
 ;	-----------------------------------------
 ;	 function UART1_SendData8
 ;	-----------------------------------------
 _UART1_SendData8:
-	Sstm8s_uart1$UART1_SendData8$423 ==.
-	Sstm8s_uart1$UART1_SendData8$424 ==.
+	Sstm8s_uart1$UART1_SendData8$421 ==.
+	Sstm8s_uart1$UART1_SendData8$422 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 477: UART1->DR = Data;
 	ld	0x5231, a
-	Sstm8s_uart1$UART1_SendData8$425 ==.
+	Sstm8s_uart1$UART1_SendData8$423 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 478: }
-	Sstm8s_uart1$UART1_SendData8$426 ==.
+	Sstm8s_uart1$UART1_SendData8$424 ==.
 	XG$UART1_SendData8$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_SendData8$427 ==.
-	Sstm8s_uart1$UART1_SendData9$428 ==.
+	Sstm8s_uart1$UART1_SendData8$425 ==.
+	Sstm8s_uart1$UART1_SendData9$426 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 486: void UART1_SendData9(uint16_t Data)
 ;	-----------------------------------------
 ;	 function UART1_SendData9
 ;	-----------------------------------------
 _UART1_SendData9:
-	Sstm8s_uart1$UART1_SendData9$429 ==.
+	Sstm8s_uart1$UART1_SendData9$427 ==.
 	push	a
-	Sstm8s_uart1$UART1_SendData9$430 ==.
+	Sstm8s_uart1$UART1_SendData9$428 ==.
 	exgw	x, y
-	Sstm8s_uart1$UART1_SendData9$431 ==.
+	Sstm8s_uart1$UART1_SendData9$429 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 489: UART1->CR1 &= ((uint8_t)~UART1_CR1_T8);
 	bres	0x5234, #6
-	Sstm8s_uart1$UART1_SendData9$432 ==.
+	Sstm8s_uart1$UART1_SendData9$430 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 491: UART1->CR1 |= (uint8_t)(((uint8_t)(Data >> 2)) & UART1_CR1_T8);
 	ld	a, 0x5234
 	ld	(0x01, sp), a
@@ -1437,439 +1432,439 @@ _UART1_SendData9:
 	and	a, #0x40
 	or	a, (0x01, sp)
 	ld	0x5234, a
-	Sstm8s_uart1$UART1_SendData9$433 ==.
+	Sstm8s_uart1$UART1_SendData9$431 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 493: UART1->DR   = (uint8_t)(Data);
 	ld	a, yl
 	ld	0x5231, a
-	Sstm8s_uart1$UART1_SendData9$434 ==.
+	Sstm8s_uart1$UART1_SendData9$432 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 494: }
 	pop	a
-	Sstm8s_uart1$UART1_SendData9$435 ==.
-	Sstm8s_uart1$UART1_SendData9$436 ==.
+	Sstm8s_uart1$UART1_SendData9$433 ==.
+	Sstm8s_uart1$UART1_SendData9$434 ==.
 	XG$UART1_SendData9$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_SendData9$437 ==.
-	Sstm8s_uart1$UART1_SendBreak$438 ==.
+	Sstm8s_uart1$UART1_SendData9$435 ==.
+	Sstm8s_uart1$UART1_SendBreak$436 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 501: void UART1_SendBreak(void)
 ;	-----------------------------------------
 ;	 function UART1_SendBreak
 ;	-----------------------------------------
 _UART1_SendBreak:
-	Sstm8s_uart1$UART1_SendBreak$439 ==.
-	Sstm8s_uart1$UART1_SendBreak$440 ==.
+	Sstm8s_uart1$UART1_SendBreak$437 ==.
+	Sstm8s_uart1$UART1_SendBreak$438 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 503: UART1->CR2 |= UART1_CR2_SBK;
 	bset	0x5235, #0
-	Sstm8s_uart1$UART1_SendBreak$441 ==.
+	Sstm8s_uart1$UART1_SendBreak$439 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 504: }
-	Sstm8s_uart1$UART1_SendBreak$442 ==.
+	Sstm8s_uart1$UART1_SendBreak$440 ==.
 	XG$UART1_SendBreak$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_SendBreak$443 ==.
-	Sstm8s_uart1$UART1_SetAddress$444 ==.
+	Sstm8s_uart1$UART1_SendBreak$441 ==.
+	Sstm8s_uart1$UART1_SetAddress$442 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 511: void UART1_SetAddress(uint8_t UART1_Address)
 ;	-----------------------------------------
 ;	 function UART1_SetAddress
 ;	-----------------------------------------
 _UART1_SetAddress:
-	Sstm8s_uart1$UART1_SetAddress$445 ==.
+	Sstm8s_uart1$UART1_SetAddress$443 ==.
 	push	a
-	Sstm8s_uart1$UART1_SetAddress$446 ==.
-	Sstm8s_uart1$UART1_SetAddress$447 ==.
+	Sstm8s_uart1$UART1_SetAddress$444 ==.
+	Sstm8s_uart1$UART1_SetAddress$445 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 514: assert_param(IS_UART1_ADDRESS_OK(UART1_Address));
 	ld	(0x01, sp), a
 	cp	a, #0x10
 	jrc	00104$
 	push	#0x02
-	Sstm8s_uart1$UART1_SetAddress$448 ==.
+	Sstm8s_uart1$UART1_SetAddress$446 ==.
 	push	#0x02
-	Sstm8s_uart1$UART1_SetAddress$449 ==.
+	Sstm8s_uart1$UART1_SetAddress$447 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_uart1$UART1_SetAddress$450 ==.
+	Sstm8s_uart1$UART1_SetAddress$448 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_uart1$UART1_SetAddress$451 ==.
+	Sstm8s_uart1$UART1_SetAddress$449 ==.
 00104$:
-	Sstm8s_uart1$UART1_SetAddress$452 ==.
+	Sstm8s_uart1$UART1_SetAddress$450 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 517: UART1->CR4 &= ((uint8_t)~UART1_CR4_ADD);
 	ld	a, 0x5237
 	and	a, #0xf0
 	ld	0x5237, a
-	Sstm8s_uart1$UART1_SetAddress$453 ==.
+	Sstm8s_uart1$UART1_SetAddress$451 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 519: UART1->CR4 |= UART1_Address;
 	ld	a, 0x5237
 	or	a, (0x01, sp)
 	ld	0x5237, a
-	Sstm8s_uart1$UART1_SetAddress$454 ==.
+	Sstm8s_uart1$UART1_SetAddress$452 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 520: }
 	pop	a
-	Sstm8s_uart1$UART1_SetAddress$455 ==.
-	Sstm8s_uart1$UART1_SetAddress$456 ==.
+	Sstm8s_uart1$UART1_SetAddress$453 ==.
+	Sstm8s_uart1$UART1_SetAddress$454 ==.
 	XG$UART1_SetAddress$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_SetAddress$457 ==.
-	Sstm8s_uart1$UART1_SetGuardTime$458 ==.
+	Sstm8s_uart1$UART1_SetAddress$455 ==.
+	Sstm8s_uart1$UART1_SetGuardTime$456 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 528: void UART1_SetGuardTime(uint8_t UART1_GuardTime)
 ;	-----------------------------------------
 ;	 function UART1_SetGuardTime
 ;	-----------------------------------------
 _UART1_SetGuardTime:
-	Sstm8s_uart1$UART1_SetGuardTime$459 ==.
-	Sstm8s_uart1$UART1_SetGuardTime$460 ==.
+	Sstm8s_uart1$UART1_SetGuardTime$457 ==.
+	Sstm8s_uart1$UART1_SetGuardTime$458 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 531: UART1->GTR = UART1_GuardTime;
 	ld	0x5239, a
-	Sstm8s_uart1$UART1_SetGuardTime$461 ==.
+	Sstm8s_uart1$UART1_SetGuardTime$459 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 532: }
-	Sstm8s_uart1$UART1_SetGuardTime$462 ==.
+	Sstm8s_uart1$UART1_SetGuardTime$460 ==.
 	XG$UART1_SetGuardTime$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_SetGuardTime$463 ==.
-	Sstm8s_uart1$UART1_SetPrescaler$464 ==.
+	Sstm8s_uart1$UART1_SetGuardTime$461 ==.
+	Sstm8s_uart1$UART1_SetPrescaler$462 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 556: void UART1_SetPrescaler(uint8_t UART1_Prescaler)
 ;	-----------------------------------------
 ;	 function UART1_SetPrescaler
 ;	-----------------------------------------
 _UART1_SetPrescaler:
-	Sstm8s_uart1$UART1_SetPrescaler$465 ==.
-	Sstm8s_uart1$UART1_SetPrescaler$466 ==.
+	Sstm8s_uart1$UART1_SetPrescaler$463 ==.
+	Sstm8s_uart1$UART1_SetPrescaler$464 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 559: UART1->PSCR = UART1_Prescaler;
 	ld	0x523a, a
-	Sstm8s_uart1$UART1_SetPrescaler$467 ==.
+	Sstm8s_uart1$UART1_SetPrescaler$465 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 560: }
-	Sstm8s_uart1$UART1_SetPrescaler$468 ==.
+	Sstm8s_uart1$UART1_SetPrescaler$466 ==.
 	XG$UART1_SetPrescaler$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_SetPrescaler$469 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$470 ==.
+	Sstm8s_uart1$UART1_SetPrescaler$467 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$468 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 568: FlagStatus UART1_GetFlagStatus(UART1_Flag_TypeDef UART1_FLAG)
 ;	-----------------------------------------
 ;	 function UART1_GetFlagStatus
 ;	-----------------------------------------
 _UART1_GetFlagStatus:
-	Sstm8s_uart1$UART1_GetFlagStatus$471 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$469 ==.
 	pushw	x
-	Sstm8s_uart1$UART1_GetFlagStatus$472 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$473 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$470 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$471 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 573: assert_param(IS_UART1_FLAG_OK(UART1_FLAG));
 	ldw	y, x
 	cpw	x, #0x0101
-	jrne	00223$
+	jrne	00253$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00223$:
+00253$:
 	clr	(0x01, sp)
-00224$:
-	Sstm8s_uart1$UART1_GetFlagStatus$474 ==.
+00254$:
+	Sstm8s_uart1$UART1_GetFlagStatus$472 ==.
 	cpw	x, #0x0210
-	jrne	00226$
+	jrne	00256$
 	ld	a, #0x01
 	.byte 0x21
-00226$:
+00256$:
 	clr	a
-00227$:
-	Sstm8s_uart1$UART1_GetFlagStatus$475 ==.
+00257$:
+	Sstm8s_uart1$UART1_GetFlagStatus$473 ==.
 	cpw	x, #0x0080
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$476 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$474 ==.
 	cpw	x, #0x0040
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$477 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$475 ==.
 	cpw	x, #0x0020
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$478 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$476 ==.
 	cpw	x, #0x0010
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$479 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$477 ==.
 	cpw	x, #0x0008
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$480 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$478 ==.
 	cpw	x, #0x0004
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$481 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$479 ==.
 	cpw	x, #0x0002
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$482 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$480 ==.
 	decw	x
 	jreq	00119$
-	Sstm8s_uart1$UART1_GetFlagStatus$483 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$481 ==.
 	tnz	(0x01, sp)
 	jrne	00119$
 	tnz	a
 	jrne	00119$
 	push	a
-	Sstm8s_uart1$UART1_GetFlagStatus$484 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$482 ==.
 	pushw	y
-	Sstm8s_uart1$UART1_GetFlagStatus$485 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$483 ==.
 	push	#0x3d
-	Sstm8s_uart1$UART1_GetFlagStatus$486 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$484 ==.
 	push	#0x02
-	Sstm8s_uart1$UART1_GetFlagStatus$487 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$485 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_uart1$UART1_GetFlagStatus$488 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$486 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_uart1$UART1_GetFlagStatus$489 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$487 ==.
 	popw	y
-	Sstm8s_uart1$UART1_GetFlagStatus$490 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$488 ==.
 	pop	a
-	Sstm8s_uart1$UART1_GetFlagStatus$491 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$489 ==.
 00119$:
-	Sstm8s_uart1$UART1_GetFlagStatus$492 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$490 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
 	exg	a, yl
 	ld	(0x02, sp), a
 	exg	a, yl
-	Sstm8s_uart1$UART1_GetFlagStatus$493 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$491 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 577: if (UART1_FLAG == UART1_FLAG_LBDF)
 	tnz	a
 	jreq	00114$
-	Sstm8s_uart1$UART1_GetFlagStatus$494 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$495 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$492 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$493 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
 	ld	a, 0x5237
 	and	a, (0x02, sp)
 	jreq	00102$
-	Sstm8s_uart1$UART1_GetFlagStatus$496 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$497 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$494 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$495 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 582: status = SET;
 	ld	a, #0x01
-	Sstm8s_uart1$UART1_GetFlagStatus$498 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$496 ==.
 	jra	00115$
 00102$:
-	Sstm8s_uart1$UART1_GetFlagStatus$499 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$500 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$497 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$498 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 587: status = RESET;
 	clr	a
-	Sstm8s_uart1$UART1_GetFlagStatus$501 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$499 ==.
 	jra	00115$
 00114$:
-	Sstm8s_uart1$UART1_GetFlagStatus$502 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$500 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 590: else if (UART1_FLAG == UART1_FLAG_SBK)
 	ld	a, (0x01, sp)
 	jreq	00111$
-	Sstm8s_uart1$UART1_GetFlagStatus$503 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$504 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$501 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$502 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 592: if ((UART1->CR2 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
 	ld	a, 0x5235
 	and	a, (0x02, sp)
 	jreq	00105$
-	Sstm8s_uart1$UART1_GetFlagStatus$505 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$506 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$503 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$504 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 595: status = SET;
 	ld	a, #0x01
-	Sstm8s_uart1$UART1_GetFlagStatus$507 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$505 ==.
 	jra	00115$
 00105$:
-	Sstm8s_uart1$UART1_GetFlagStatus$508 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$509 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$506 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$507 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 600: status = RESET;
 	clr	a
-	Sstm8s_uart1$UART1_GetFlagStatus$510 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$508 ==.
 	jra	00115$
 00111$:
-	Sstm8s_uart1$UART1_GetFlagStatus$511 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$512 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$509 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$510 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 605: if ((UART1->SR & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
 	ld	a, 0x5230
 	and	a, (0x02, sp)
 	jreq	00108$
-	Sstm8s_uart1$UART1_GetFlagStatus$513 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$514 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$511 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$512 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 608: status = SET;
 	ld	a, #0x01
+	Sstm8s_uart1$UART1_GetFlagStatus$513 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$514 ==.
 	Sstm8s_uart1$UART1_GetFlagStatus$515 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$516 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$517 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 613: status = RESET;
-	Sstm8s_uart1$UART1_GetFlagStatus$518 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$516 ==.
 	.byte 0x21
 00108$:
 	clr	a
 00115$:
-	Sstm8s_uart1$UART1_GetFlagStatus$519 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$517 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 617: return status;
-	Sstm8s_uart1$UART1_GetFlagStatus$520 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$518 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 618: }
 	popw	x
-	Sstm8s_uart1$UART1_GetFlagStatus$521 ==.
-	Sstm8s_uart1$UART1_GetFlagStatus$522 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$519 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$520 ==.
 	XG$UART1_GetFlagStatus$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_GetFlagStatus$523 ==.
-	Sstm8s_uart1$UART1_ClearFlag$524 ==.
+	Sstm8s_uart1$UART1_GetFlagStatus$521 ==.
+	Sstm8s_uart1$UART1_ClearFlag$522 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 646: void UART1_ClearFlag(UART1_Flag_TypeDef UART1_FLAG)
 ;	-----------------------------------------
 ;	 function UART1_ClearFlag
 ;	-----------------------------------------
 _UART1_ClearFlag:
-	Sstm8s_uart1$UART1_ClearFlag$525 ==.
-	Sstm8s_uart1$UART1_ClearFlag$526 ==.
+	Sstm8s_uart1$UART1_ClearFlag$523 ==.
+	Sstm8s_uart1$UART1_ClearFlag$524 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 648: assert_param(IS_UART1_CLEAR_FLAG_OK(UART1_FLAG));
 	cpw	x, #0x0020
-	jrne	00127$
+	jrne	00133$
 	ld	a, #0x01
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
-	Sstm8s_uart1$UART1_ClearFlag$527 ==.
+00134$:
+	Sstm8s_uart1$UART1_ClearFlag$525 ==.
 	tnz	a
 	jrne	00107$
 	cpw	x, #0x0210
 	jreq	00107$
-	Sstm8s_uart1$UART1_ClearFlag$528 ==.
+	Sstm8s_uart1$UART1_ClearFlag$526 ==.
 	push	a
-	Sstm8s_uart1$UART1_ClearFlag$529 ==.
+	Sstm8s_uart1$UART1_ClearFlag$527 ==.
 	push	#0x88
-	Sstm8s_uart1$UART1_ClearFlag$530 ==.
+	Sstm8s_uart1$UART1_ClearFlag$528 ==.
 	push	#0x02
-	Sstm8s_uart1$UART1_ClearFlag$531 ==.
+	Sstm8s_uart1$UART1_ClearFlag$529 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_uart1$UART1_ClearFlag$532 ==.
+	Sstm8s_uart1$UART1_ClearFlag$530 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_uart1$UART1_ClearFlag$533 ==.
+	Sstm8s_uart1$UART1_ClearFlag$531 ==.
 	pop	a
-	Sstm8s_uart1$UART1_ClearFlag$534 ==.
+	Sstm8s_uart1$UART1_ClearFlag$532 ==.
 00107$:
-	Sstm8s_uart1$UART1_ClearFlag$535 ==.
+	Sstm8s_uart1$UART1_ClearFlag$533 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 651: if (UART1_FLAG == UART1_FLAG_RXNE)
 	tnz	a
 	jreq	00102$
-	Sstm8s_uart1$UART1_ClearFlag$536 ==.
-	Sstm8s_uart1$UART1_ClearFlag$537 ==.
+	Sstm8s_uart1$UART1_ClearFlag$534 ==.
+	Sstm8s_uart1$UART1_ClearFlag$535 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 653: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
 	mov	0x5230+0, #0xdf
-	Sstm8s_uart1$UART1_ClearFlag$538 ==.
+	Sstm8s_uart1$UART1_ClearFlag$536 ==.
 	ret
 00102$:
-	Sstm8s_uart1$UART1_ClearFlag$539 ==.
-	Sstm8s_uart1$UART1_ClearFlag$540 ==.
+	Sstm8s_uart1$UART1_ClearFlag$537 ==.
+	Sstm8s_uart1$UART1_ClearFlag$538 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 658: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
 	bres	0x5237, #4
-	Sstm8s_uart1$UART1_ClearFlag$541 ==.
-	Sstm8s_uart1$UART1_ClearFlag$542 ==.
+	Sstm8s_uart1$UART1_ClearFlag$539 ==.
+	Sstm8s_uart1$UART1_ClearFlag$540 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 660: }
-	Sstm8s_uart1$UART1_ClearFlag$543 ==.
+	Sstm8s_uart1$UART1_ClearFlag$541 ==.
 	XG$UART1_ClearFlag$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_ClearFlag$544 ==.
-	Sstm8s_uart1$UART1_GetITStatus$545 ==.
+	Sstm8s_uart1$UART1_ClearFlag$542 ==.
+	Sstm8s_uart1$UART1_GetITStatus$543 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 675: ITStatus UART1_GetITStatus(UART1_IT_TypeDef UART1_IT)
 ;	-----------------------------------------
 ;	 function UART1_GetITStatus
 ;	-----------------------------------------
 _UART1_GetITStatus:
-	Sstm8s_uart1$UART1_GetITStatus$546 ==.
+	Sstm8s_uart1$UART1_GetITStatus$544 ==.
 	sub	sp, #4
-	Sstm8s_uart1$UART1_GetITStatus$547 ==.
-	Sstm8s_uart1$UART1_GetITStatus$548 ==.
+	Sstm8s_uart1$UART1_GetITStatus$545 ==.
+	Sstm8s_uart1$UART1_GetITStatus$546 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 684: assert_param(IS_UART1_GET_IT_OK(UART1_IT));
 	ldw	y, x
 	cpw	x, #0x0346
-	jrne	00217$
+	jrne	00247$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00217$:
+00247$:
 	clr	(0x01, sp)
-00218$:
-	Sstm8s_uart1$UART1_GetITStatus$549 ==.
+00248$:
+	Sstm8s_uart1$UART1_GetITStatus$547 ==.
 	cpw	x, #0x0100
-	jrne	00220$
+	jrne	00250$
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	.byte 0xc5
-00220$:
+00250$:
 	clr	(0x02, sp)
-00221$:
-	Sstm8s_uart1$UART1_GetITStatus$550 ==.
+00251$:
+	Sstm8s_uart1$UART1_GetITStatus$548 ==.
 	cpw	x, #0x0277
 	jreq	00122$
-	Sstm8s_uart1$UART1_GetITStatus$551 ==.
+	Sstm8s_uart1$UART1_GetITStatus$549 ==.
 	cpw	x, #0x0266
 	jreq	00122$
-	Sstm8s_uart1$UART1_GetITStatus$552 ==.
+	Sstm8s_uart1$UART1_GetITStatus$550 ==.
 	cpw	x, #0x0255
 	jreq	00122$
-	Sstm8s_uart1$UART1_GetITStatus$553 ==.
+	Sstm8s_uart1$UART1_GetITStatus$551 ==.
 	cpw	x, #0x0244
 	jreq	00122$
-	Sstm8s_uart1$UART1_GetITStatus$554 ==.
+	Sstm8s_uart1$UART1_GetITStatus$552 ==.
 	cpw	x, #0x0235
 	jreq	00122$
-	Sstm8s_uart1$UART1_GetITStatus$555 ==.
+	Sstm8s_uart1$UART1_GetITStatus$553 ==.
 	tnz	(0x01, sp)
 	jrne	00122$
 	tnz	(0x02, sp)
 	jrne	00122$
 	pushw	y
-	Sstm8s_uart1$UART1_GetITStatus$556 ==.
+	Sstm8s_uart1$UART1_GetITStatus$554 ==.
 	push	#0xac
-	Sstm8s_uart1$UART1_GetITStatus$557 ==.
+	Sstm8s_uart1$UART1_GetITStatus$555 ==.
 	push	#0x02
-	Sstm8s_uart1$UART1_GetITStatus$558 ==.
+	Sstm8s_uart1$UART1_GetITStatus$556 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_uart1$UART1_GetITStatus$559 ==.
+	Sstm8s_uart1$UART1_GetITStatus$557 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_uart1$UART1_GetITStatus$560 ==.
+	Sstm8s_uart1$UART1_GetITStatus$558 ==.
 	popw	y
-	Sstm8s_uart1$UART1_GetITStatus$561 ==.
+	Sstm8s_uart1$UART1_GetITStatus$559 ==.
 00122$:
-	Sstm8s_uart1$UART1_GetITStatus$562 ==.
+	Sstm8s_uart1$UART1_GetITStatus$560 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 687: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
 	ldw	x, y
 	ld	a, xl
 	and	a, #0x0f
 	push	a
-	Sstm8s_uart1$UART1_GetITStatus$563 ==.
+	Sstm8s_uart1$UART1_GetITStatus$561 ==.
 	ld	a, #0x01
 	ld	(0x04, sp), a
 	pop	a
-	Sstm8s_uart1$UART1_GetITStatus$564 ==.
+	Sstm8s_uart1$UART1_GetITStatus$562 ==.
 	tnz	a
-	jreq	00240$
-00239$:
+	jreq	00270$
+00269$:
 	sll	(0x03, sp)
 	dec	a
-	jrne	00239$
-00240$:
-	Sstm8s_uart1$UART1_GetITStatus$565 ==.
+	jrne	00269$
+00270$:
+	Sstm8s_uart1$UART1_GetITStatus$563 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 689: itmask1 = (uint8_t)((uint8_t)UART1_IT >> (uint8_t)4);
 	ld	a, xl
 	swap	a
 	and	a, #0x0f
-	Sstm8s_uart1$UART1_GetITStatus$566 ==.
+	Sstm8s_uart1$UART1_GetITStatus$564 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 691: itmask2 = (uint8_t)((uint8_t)1 << itmask1);
 	push	a
-	Sstm8s_uart1$UART1_GetITStatus$567 ==.
+	Sstm8s_uart1$UART1_GetITStatus$565 ==.
 	ld	a, #0x01
 	ld	(0x05, sp), a
 	pop	a
-	Sstm8s_uart1$UART1_GetITStatus$568 ==.
+	Sstm8s_uart1$UART1_GetITStatus$566 ==.
 	tnz	a
-	jreq	00242$
-00241$:
+	jreq	00272$
+00271$:
 	sll	(0x04, sp)
 	dec	a
-	jrne	00241$
-00242$:
-	Sstm8s_uart1$UART1_GetITStatus$569 ==.
+	jrne	00271$
+00272$:
+	Sstm8s_uart1$UART1_GetITStatus$567 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 695: if (UART1_IT == UART1_IT_PE)
 	ld	a, (0x02, sp)
 	jreq	00117$
-	Sstm8s_uart1$UART1_GetITStatus$570 ==.
-	Sstm8s_uart1$UART1_GetITStatus$571 ==.
+	Sstm8s_uart1$UART1_GetITStatus$568 ==.
+	Sstm8s_uart1$UART1_GetITStatus$569 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 698: enablestatus = (uint8_t)((uint8_t)UART1->CR1 & itmask2);
 	ld	a, 0x5234
 	and	a, (0x04, sp)
 	ld	xl, a
-	Sstm8s_uart1$UART1_GetITStatus$572 ==.
+	Sstm8s_uart1$UART1_GetITStatus$570 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 701: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
 	ld	a, 0x5230
 	and	a, (0x03, sp)
@@ -1877,31 +1872,31 @@ _UART1_GetITStatus:
 	ld	a, xl
 	tnz	a
 	jreq	00102$
-	Sstm8s_uart1$UART1_GetITStatus$573 ==.
-	Sstm8s_uart1$UART1_GetITStatus$574 ==.
+	Sstm8s_uart1$UART1_GetITStatus$571 ==.
+	Sstm8s_uart1$UART1_GetITStatus$572 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 704: pendingbitstatus = SET;
 	ld	a, #0x01
-	Sstm8s_uart1$UART1_GetITStatus$575 ==.
+	Sstm8s_uart1$UART1_GetITStatus$573 ==.
 	jra	00118$
 00102$:
-	Sstm8s_uart1$UART1_GetITStatus$576 ==.
-	Sstm8s_uart1$UART1_GetITStatus$577 ==.
+	Sstm8s_uart1$UART1_GetITStatus$574 ==.
+	Sstm8s_uart1$UART1_GetITStatus$575 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 709: pendingbitstatus = RESET;
 	clr	a
-	Sstm8s_uart1$UART1_GetITStatus$578 ==.
+	Sstm8s_uart1$UART1_GetITStatus$576 ==.
 	jra	00118$
 00117$:
-	Sstm8s_uart1$UART1_GetITStatus$579 ==.
+	Sstm8s_uart1$UART1_GetITStatus$577 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 713: else if (UART1_IT == UART1_IT_LBDF)
 	ld	a, (0x01, sp)
 	jreq	00114$
-	Sstm8s_uart1$UART1_GetITStatus$580 ==.
-	Sstm8s_uart1$UART1_GetITStatus$581 ==.
+	Sstm8s_uart1$UART1_GetITStatus$578 ==.
+	Sstm8s_uart1$UART1_GetITStatus$579 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 716: enablestatus = (uint8_t)((uint8_t)UART1->CR4 & itmask2);
 	ld	a, 0x5237
 	and	a, (0x04, sp)
 	ld	xl, a
-	Sstm8s_uart1$UART1_GetITStatus$582 ==.
+	Sstm8s_uart1$UART1_GetITStatus$580 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 718: if (((UART1->CR4 & itpos) != (uint8_t)0x00) && enablestatus)
 	ld	a, 0x5237
 	and	a, (0x03, sp)
@@ -1909,27 +1904,27 @@ _UART1_GetITStatus:
 	ld	a, xl
 	tnz	a
 	jreq	00106$
-	Sstm8s_uart1$UART1_GetITStatus$583 ==.
-	Sstm8s_uart1$UART1_GetITStatus$584 ==.
+	Sstm8s_uart1$UART1_GetITStatus$581 ==.
+	Sstm8s_uart1$UART1_GetITStatus$582 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 721: pendingbitstatus = SET;
 	ld	a, #0x01
-	Sstm8s_uart1$UART1_GetITStatus$585 ==.
+	Sstm8s_uart1$UART1_GetITStatus$583 ==.
 	jra	00118$
 00106$:
-	Sstm8s_uart1$UART1_GetITStatus$586 ==.
-	Sstm8s_uart1$UART1_GetITStatus$587 ==.
+	Sstm8s_uart1$UART1_GetITStatus$584 ==.
+	Sstm8s_uart1$UART1_GetITStatus$585 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 726: pendingbitstatus = RESET;
 	clr	a
-	Sstm8s_uart1$UART1_GetITStatus$588 ==.
+	Sstm8s_uart1$UART1_GetITStatus$586 ==.
 	jra	00118$
 00114$:
-	Sstm8s_uart1$UART1_GetITStatus$589 ==.
-	Sstm8s_uart1$UART1_GetITStatus$590 ==.
+	Sstm8s_uart1$UART1_GetITStatus$587 ==.
+	Sstm8s_uart1$UART1_GetITStatus$588 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 732: enablestatus = (uint8_t)((uint8_t)UART1->CR2 & itmask2);
 	ld	a, 0x5235
 	and	a, (0x04, sp)
 	ld	xl, a
-	Sstm8s_uart1$UART1_GetITStatus$591 ==.
+	Sstm8s_uart1$UART1_GetITStatus$589 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 734: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
 	ld	a, 0x5230
 	and	a, (0x03, sp)
@@ -1937,88 +1932,88 @@ _UART1_GetITStatus:
 	ld	a, xl
 	tnz	a
 	jreq	00110$
-	Sstm8s_uart1$UART1_GetITStatus$592 ==.
-	Sstm8s_uart1$UART1_GetITStatus$593 ==.
+	Sstm8s_uart1$UART1_GetITStatus$590 ==.
+	Sstm8s_uart1$UART1_GetITStatus$591 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 737: pendingbitstatus = SET;
 	ld	a, #0x01
+	Sstm8s_uart1$UART1_GetITStatus$592 ==.
+	Sstm8s_uart1$UART1_GetITStatus$593 ==.
 	Sstm8s_uart1$UART1_GetITStatus$594 ==.
-	Sstm8s_uart1$UART1_GetITStatus$595 ==.
-	Sstm8s_uart1$UART1_GetITStatus$596 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 742: pendingbitstatus = RESET;
-	Sstm8s_uart1$UART1_GetITStatus$597 ==.
+	Sstm8s_uart1$UART1_GetITStatus$595 ==.
 	.byte 0x21
 00110$:
 	clr	a
 00118$:
-	Sstm8s_uart1$UART1_GetITStatus$598 ==.
+	Sstm8s_uart1$UART1_GetITStatus$596 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 747: return  pendingbitstatus;
-	Sstm8s_uart1$UART1_GetITStatus$599 ==.
+	Sstm8s_uart1$UART1_GetITStatus$597 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 748: }
 	addw	sp, #4
-	Sstm8s_uart1$UART1_GetITStatus$600 ==.
-	Sstm8s_uart1$UART1_GetITStatus$601 ==.
+	Sstm8s_uart1$UART1_GetITStatus$598 ==.
+	Sstm8s_uart1$UART1_GetITStatus$599 ==.
 	XG$UART1_GetITStatus$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_GetITStatus$602 ==.
-	Sstm8s_uart1$UART1_ClearITPendingBit$603 ==.
+	Sstm8s_uart1$UART1_GetITStatus$600 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$601 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 775: void UART1_ClearITPendingBit(UART1_IT_TypeDef UART1_IT)
 ;	-----------------------------------------
 ;	 function UART1_ClearITPendingBit
 ;	-----------------------------------------
 _UART1_ClearITPendingBit:
-	Sstm8s_uart1$UART1_ClearITPendingBit$604 ==.
-	Sstm8s_uart1$UART1_ClearITPendingBit$605 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$602 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$603 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 777: assert_param(IS_UART1_CLEAR_IT_OK(UART1_IT));
 	cpw	x, #0x0255
-	jrne	00127$
+	jrne	00133$
 	ld	a, #0x01
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
-	Sstm8s_uart1$UART1_ClearITPendingBit$606 ==.
+00134$:
+	Sstm8s_uart1$UART1_ClearITPendingBit$604 ==.
 	tnz	a
 	jrne	00107$
 	cpw	x, #0x0346
 	jreq	00107$
-	Sstm8s_uart1$UART1_ClearITPendingBit$607 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$605 ==.
 	push	a
-	Sstm8s_uart1$UART1_ClearITPendingBit$608 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$606 ==.
 	push	#0x09
-	Sstm8s_uart1$UART1_ClearITPendingBit$609 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$607 ==.
 	push	#0x03
-	Sstm8s_uart1$UART1_ClearITPendingBit$610 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$608 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_uart1$UART1_ClearITPendingBit$611 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$609 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_uart1$UART1_ClearITPendingBit$612 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$610 ==.
 	pop	a
-	Sstm8s_uart1$UART1_ClearITPendingBit$613 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$611 ==.
 00107$:
-	Sstm8s_uart1$UART1_ClearITPendingBit$614 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$612 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 780: if (UART1_IT == UART1_IT_RXNE)
 	tnz	a
 	jreq	00102$
-	Sstm8s_uart1$UART1_ClearITPendingBit$615 ==.
-	Sstm8s_uart1$UART1_ClearITPendingBit$616 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$613 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$614 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 782: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
 	mov	0x5230+0, #0xdf
-	Sstm8s_uart1$UART1_ClearITPendingBit$617 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$615 ==.
 	ret
 00102$:
-	Sstm8s_uart1$UART1_ClearITPendingBit$618 ==.
-	Sstm8s_uart1$UART1_ClearITPendingBit$619 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$616 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$617 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 787: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
 	bres	0x5237, #4
-	Sstm8s_uart1$UART1_ClearITPendingBit$620 ==.
-	Sstm8s_uart1$UART1_ClearITPendingBit$621 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$618 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$619 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 789: }
-	Sstm8s_uart1$UART1_ClearITPendingBit$622 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$620 ==.
 	XG$UART1_ClearITPendingBit$0$0 ==.
 	ret
-	Sstm8s_uart1$UART1_ClearITPendingBit$623 ==.
+	Sstm8s_uart1$UART1_ClearITPendingBit$621 ==.
 	.area CODE
 	.area CONST
 Fstm8s_uart1$__str_0$0_0$0 == .
@@ -2050,9 +2045,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c"
@@ -2280,14 +2275,14 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_Init$82)
+	.dw	0,(Sstm8s_uart1$UART1_Init$81)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_Init$94)
+	.dw	0,(Sstm8s_uart1$UART1_Init$93)
 	.db	3
 	.sleb128	2
 	.db	1
@@ -3117,9 +3112,16 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$416)
+	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$415)
 	.db	3
 	.sleb128	4
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$416)
+	.db	3
+	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
@@ -3128,276 +3130,276 @@ Ldebug_line_stmt:
 	.db	3
 	.sleb128	1
 	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$418)
-	.db	3
-	.sleb128	1
-	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_ReceiveData9$420-Sstm8s_uart1$UART1_ReceiveData9$418
+	.dw	1+Sstm8s_uart1$UART1_ReceiveData9$418-Sstm8s_uart1$UART1_ReceiveData9$417
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$422)
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$420)
 	.db	3
 	.sleb128	473
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$424)
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$422)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$425)
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$423)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_SendData8$426-Sstm8s_uart1$UART1_SendData8$425
+	.dw	1+Sstm8s_uart1$UART1_SendData8$424-Sstm8s_uart1$UART1_SendData8$423
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$428)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$426)
 	.db	3
 	.sleb128	485
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$431)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$429)
 	.db	3
 	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$430)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$431)
+	.db	3
+	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_SendData9$432)
 	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$433)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$434)
-	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_SendData9$436-Sstm8s_uart1$UART1_SendData9$434
+	.dw	1+Sstm8s_uart1$UART1_SendData9$434-Sstm8s_uart1$UART1_SendData9$432
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$438)
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$436)
 	.db	3
 	.sleb128	500
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$440)
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$438)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$441)
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$439)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_SendBreak$442-Sstm8s_uart1$UART1_SendBreak$441
+	.dw	1+Sstm8s_uart1$UART1_SendBreak$440-Sstm8s_uart1$UART1_SendBreak$439
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$444)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$442)
 	.db	3
 	.sleb128	510
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$447)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$445)
 	.db	3
 	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$450)
+	.db	3
+	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$451)
+	.db	3
+	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_SetAddress$452)
 	.db	3
-	.sleb128	3
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$453)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$454)
-	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_SetAddress$456-Sstm8s_uart1$UART1_SetAddress$454
+	.dw	1+Sstm8s_uart1$UART1_SetAddress$454-Sstm8s_uart1$UART1_SetAddress$452
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$458)
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$456)
 	.db	3
 	.sleb128	527
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$460)
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$458)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$461)
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$459)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_SetGuardTime$462-Sstm8s_uart1$UART1_SetGuardTime$461
+	.dw	1+Sstm8s_uart1$UART1_SetGuardTime$460-Sstm8s_uart1$UART1_SetGuardTime$459
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$464)
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$462)
 	.db	3
 	.sleb128	555
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$466)
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$464)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$467)
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$465)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_SetPrescaler$468-Sstm8s_uart1$UART1_SetPrescaler$467
+	.dw	1+Sstm8s_uart1$UART1_SetPrescaler$466-Sstm8s_uart1$UART1_SetPrescaler$465
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$470)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$468)
 	.db	3
 	.sleb128	567
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$473)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$471)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$492)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$490)
 	.db	3
 	.sleb128	6
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$493)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$491)
 	.db	3
 	.sleb128	-2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$495)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$493)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$497)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$495)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$500)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$498)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$502)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$500)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$504)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$502)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$506)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$504)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$509)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$507)
+	.db	3
+	.sleb128	5
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$510)
 	.db	3
 	.sleb128	5
 	.db	1
@@ -3406,134 +3408,134 @@ Ldebug_line_stmt:
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$512)
 	.db	3
-	.sleb128	5
+	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$514)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$515)
 	.db	3
-	.sleb128	3
+	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$517)
 	.db	3
-	.sleb128	5
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$519)
-	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$520)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$518)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_GetFlagStatus$522-Sstm8s_uart1$UART1_GetFlagStatus$520
+	.dw	1+Sstm8s_uart1$UART1_GetFlagStatus$520-Sstm8s_uart1$UART1_GetFlagStatus$518
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$524)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$522)
 	.db	3
 	.sleb128	645
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$526)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$524)
 	.db	3
 	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$533)
+	.db	3
+	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$535)
 	.db	3
-	.sleb128	3
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$537)
-	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$540)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$538)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$542)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$540)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_ClearFlag$543-Sstm8s_uart1$UART1_ClearFlag$542
+	.dw	1+Sstm8s_uart1$UART1_ClearFlag$541-Sstm8s_uart1$UART1_ClearFlag$540
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$545)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$543)
 	.db	3
 	.sleb128	674
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$548)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$546)
 	.db	3
 	.sleb128	9
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$562)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$560)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$565)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$563)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$566)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$564)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$569)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$567)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$571)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$569)
+	.db	3
+	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$570)
 	.db	3
 	.sleb128	3
 	.db	1
@@ -3547,72 +3549,72 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$574)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$575)
 	.db	3
-	.sleb128	3
+	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$577)
 	.db	3
-	.sleb128	5
+	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$579)
 	.db	3
-	.sleb128	4
+	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$581)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$580)
 	.db	3
-	.sleb128	3
+	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$582)
 	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$584)
-	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$587)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$585)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$590)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$588)
 	.db	3
 	.sleb128	6
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$591)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$589)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$593)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$591)
 	.db	3
 	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$594)
+	.db	3
+	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
@@ -3624,66 +3626,59 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$598)
-	.db	3
-	.sleb128	5
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$599)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$597)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_GetITStatus$601-Sstm8s_uart1$UART1_GetITStatus$599
+	.dw	1+Sstm8s_uart1$UART1_GetITStatus$599-Sstm8s_uart1$UART1_GetITStatus$597
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$603)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$601)
 	.db	3
 	.sleb128	774
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$605)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$603)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$614)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$612)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$616)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$614)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$619)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$617)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$621)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$619)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_uart1$UART1_ClearITPendingBit$622-Sstm8s_uart1$UART1_ClearITPendingBit$621
+	.dw	1+Sstm8s_uart1$UART1_ClearITPendingBit$620-Sstm8s_uart1$UART1_ClearITPendingBit$619
 	.db	0
 	.uleb128	1
 	.db	1
@@ -3691,118 +3686,108 @@ Ldebug_line_end:
 
 	.area .debug_loc (NOLOAD)
 Ldebug_loc_start:
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$613)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$623)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$611)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$621)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$612)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$613)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$610)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$611)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$611)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$612)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$609)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$610)
 	.dw	2
 	.db	120
 	.sleb128	6
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$610)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$611)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$608)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$609)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$609)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$610)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$607)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$608)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$608)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$609)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$606)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$607)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$607)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$608)
-	.dw	2
-	.db	120
-	.sleb128	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$605)
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$606)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$607)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$604)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$606)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$605)
+	.dw	2
+	.db	120
+	.sleb128	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$602)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$604)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$598)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$600)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$602)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$568)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$600)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$566)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$598)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$567)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$568)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$565)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$566)
 	.dw	2
 	.db	120
 	.sleb128	6
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$564)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$567)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$562)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$565)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$563)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$564)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$561)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$562)
 	.dw	2
 	.db	120
 	.sleb128	6
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$559)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$561)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$563)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$560)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$561)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$558)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$559)
 	.dw	2
 	.db	120
 	.sleb128	7
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$559)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$560)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$557)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$558)
 	.dw	2
 	.db	120
 	.sleb128	11
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$558)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$559)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$556)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$557)
 	.dw	2
 	.db	120
 	.sleb128	9
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$557)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$558)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$555)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$556)
 	.dw	2
 	.db	120
 	.sleb128	8
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$556)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$557)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$554)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$555)
 	.dw	2
 	.db	120
 	.sleb128	7
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$555)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$556)
-	.dw	2
-	.db	120
-	.sleb128	5
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$554)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$555)
-	.dw	2
-	.db	120
-	.sleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$553)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$554)
 	.dw	2
@@ -3828,120 +3813,120 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$547)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$548)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$549)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$546)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$547)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$548)
+	.dw	2
+	.db	120
+	.sleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$545)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$547)
 	.dw	2
 	.db	120
-	.sleb128	1
-	.dw	0,0
-	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$534)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$544)
+	.sleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$544)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$545)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$533)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$534)
+	.dw	0,0
+	.dw	0,0
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$532)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$542)
+	.dw	2
+	.db	120
+	.sleb128	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$531)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$532)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$532)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$533)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$530)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$531)
 	.dw	2
 	.db	120
 	.sleb128	6
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$531)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$532)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$529)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$530)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$530)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$531)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$528)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$529)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$529)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$530)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$527)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$528)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$528)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$529)
-	.dw	2
-	.db	120
-	.sleb128	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$526)
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$527)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$528)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$525)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$527)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$526)
+	.dw	2
+	.db	120
+	.sleb128	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$523)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$525)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$519)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$521)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$523)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$491)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$521)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$489)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$519)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$490)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$491)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$488)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$489)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$489)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$490)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$487)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$488)
 	.dw	2
 	.db	120
 	.sleb128	6
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$488)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$489)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$486)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$487)
 	.dw	2
 	.db	120
 	.sleb128	10
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$487)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$488)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$485)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$486)
 	.dw	2
 	.db	120
 	.sleb128	8
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$486)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$487)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$484)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$485)
 	.dw	2
 	.db	120
 	.sleb128	7
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$485)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$486)
-	.dw	2
-	.db	120
-	.sleb128	6
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$484)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$485)
-	.dw	2
-	.db	120
-	.sleb128	4
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$483)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$484)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	6
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$482)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$483)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	4
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$481)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$482)
 	.dw	2
@@ -3982,112 +3967,112 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$472)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$473)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$474)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$471)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$472)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$473)
+	.dw	2
+	.db	120
+	.sleb128	3
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$470)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$472)
 	.dw	2
 	.db	120
-	.sleb128	1
-	.dw	0,0
-	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$465)
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$469)
+	.sleb128	3
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$469)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$470)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$459)
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$463)
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$463)
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$467)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$457)
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$461)
+	.dw	2
+	.db	120
+	.sleb128	1
+	.dw	0,0
+	.dw	0,0
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$453)
 	.dw	0,(Sstm8s_uart1$UART1_SetAddress$455)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$457)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$451)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$455)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$449)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$453)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$450)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$451)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$448)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$449)
 	.dw	2
 	.db	120
 	.sleb128	6
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$449)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$450)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$447)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$448)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$448)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$449)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$446)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$447)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$446)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$448)
-	.dw	2
-	.db	120
-	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$445)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$444)
 	.dw	0,(Sstm8s_uart1$UART1_SetAddress$446)
 	.dw	2
 	.db	120
-	.sleb128	1
-	.dw	0,0
-	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$439)
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$443)
+	.sleb128	2
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$443)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$444)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$435)
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$437)
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$437)
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$441)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$430)
+	.dw	0,0
+	.dw	0,0
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$433)
 	.dw	0,(Sstm8s_uart1$UART1_SendData9$435)
+	.dw	2
+	.db	120
+	.sleb128	1
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$428)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$433)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$429)
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$430)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$427)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$428)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$423)
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$427)
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$421)
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$425)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$419)
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$421)
-	.dw	2
-	.db	120
-	.sleb128	1
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$415)
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$419)
-	.dw	2
-	.db	120
-	.sleb128	3
 	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$414)
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$415)
+	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$419)
 	.dw	2
 	.db	120
 	.sleb128	1
@@ -4730,13 +4715,13 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	15
-	.dw	0,(Sstm8s_uart1$UART1_Init$93)
+	.dw	0,(Sstm8s_uart1$UART1_Init$94)
 	.dw	0,(Sstm8s_uart1$UART1_Init$95)
 	.dw	2
 	.db	120
 	.sleb128	14
 	.dw	0,(Sstm8s_uart1$UART1_Init$92)
-	.dw	0,(Sstm8s_uart1$UART1_Init$93)
+	.dw	0,(Sstm8s_uart1$UART1_Init$94)
 	.dw	2
 	.db	120
 	.sleb128	22
@@ -4785,13 +4770,13 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	16
-	.dw	0,(Sstm8s_uart1$UART1_Init$81)
+	.dw	0,(Sstm8s_uart1$UART1_Init$82)
 	.dw	0,(Sstm8s_uart1$UART1_Init$83)
 	.dw	2
 	.db	120
 	.sleb128	14
 	.dw	0,(Sstm8s_uart1$UART1_Init$80)
-	.dw	0,(Sstm8s_uart1$UART1_Init$81)
+	.dw	0,(Sstm8s_uart1$UART1_Init$82)
 	.dw	2
 	.db	120
 	.sleb128	22
@@ -5225,7 +5210,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "UART1_DeInit"
@@ -5233,7 +5218,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_DeInit)
 	.dw	0,(XG$UART1_DeInit$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3292)
+	.dw	0,(Ldebug_loc_start+3268)
 	.uleb128	3
 	.dw	0,385
 	.ascii "UART1_Init"
@@ -5345,7 +5330,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_Cmd)
 	.dw	0,(XG$UART1_Cmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2240)
+	.dw	0,(Ldebug_loc_start+2216)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5372,7 +5357,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_ITConfig)
 	.dw	0,(XG$UART1_ITConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1860)
+	.dw	0,(Ldebug_loc_start+1836)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5438,7 +5423,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_HalfDuplexCmd)
 	.dw	0,(XG$UART1_HalfDuplexCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1768)
+	.dw	0,(Ldebug_loc_start+1744)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5460,7 +5445,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_IrDAConfig)
 	.dw	0,(XG$UART1_IrDAConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1676)
+	.dw	0,(Ldebug_loc_start+1652)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5482,7 +5467,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_IrDACmd)
 	.dw	0,(XG$UART1_IrDACmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1584)
+	.dw	0,(Ldebug_loc_start+1560)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5504,7 +5489,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_LINBreakDetectionConfig)
 	.dw	0,(XG$UART1_LINBreakDetectionConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1492)
+	.dw	0,(Ldebug_loc_start+1468)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5526,7 +5511,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_LINCmd)
 	.dw	0,(XG$UART1_LINCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1400)
+	.dw	0,(Ldebug_loc_start+1376)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5548,7 +5533,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_SmartCardCmd)
 	.dw	0,(XG$UART1_SmartCardCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1308)
+	.dw	0,(Ldebug_loc_start+1284)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5570,7 +5555,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_SmartCardNACKCmd)
 	.dw	0,(XG$UART1_SmartCardNACKCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1216)
+	.dw	0,(Ldebug_loc_start+1192)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5592,7 +5577,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_WakeUpConfig)
 	.dw	0,(XG$UART1_WakeUpConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1112)
+	.dw	0,(Ldebug_loc_start+1088)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5608,7 +5593,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_ReceiverWakeUpCmd)
 	.dw	0,(XG$UART1_ReceiverWakeUpCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1020)
+	.dw	0,(Ldebug_loc_start+996)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5629,7 +5614,7 @@ Ldebug_info_start:
 	.dw	0,(_UART1_ReceiveData8)
 	.dw	0,(XG$UART1_ReceiveData8$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1000)
+	.dw	0,(Ldebug_loc_start+976)
 	.dw	0,402
 	.uleb128	7
 	.ascii "unsigned int"
@@ -5637,7 +5622,7 @@ Ldebug_info_start:
 	.db	2
 	.db	7
 	.uleb128	11
-	.dw	0,1464
+	.dw	0,1468
 	.ascii "UART1_ReceiveData9"
 	.db	0
 	.dw	0,(_UART1_ReceiveData9)
@@ -5646,15 +5631,19 @@ Ldebug_info_start:
 	.dw	0,(Ldebug_loc_start+956)
 	.dw	0,1393
 	.uleb128	6
-	.db	2
-	.db	145
-	.sleb128	-2
+	.db	6
+	.db	84
+	.db	147
+	.uleb128	1
+	.db	83
+	.db	147
+	.uleb128	1
 	.ascii "temp"
 	.db	0
 	.dw	0,1393
 	.uleb128	0
 	.uleb128	8
-	.dw	0,1511
+	.dw	0,1515
 	.ascii "UART1_SendData8"
 	.db	0
 	.dw	0,(_UART1_SendData8)
@@ -5669,7 +5658,7 @@ Ldebug_info_start:
 	.dw	0,402
 	.uleb128	0
 	.uleb128	8
-	.dw	0,1563
+	.dw	0,1567
 	.ascii "UART1_SendData9"
 	.db	0
 	.dw	0,(_UART1_SendData9)
@@ -5696,7 +5685,7 @@ Ldebug_info_start:
 	.db	1
 	.dw	0,(Ldebug_loc_start+872)
 	.uleb128	8
-	.dw	0,1651
+	.dw	0,1655
 	.ascii "UART1_SetAddress"
 	.db	0
 	.dw	0,(_UART1_SetAddress)
@@ -5712,7 +5701,7 @@ Ldebug_info_start:
 	.dw	0,402
 	.uleb128	0
 	.uleb128	8
-	.dw	0,1712
+	.dw	0,1716
 	.ascii "UART1_SetGuardTime"
 	.db	0
 	.dw	0,(_UART1_SetGuardTime)
@@ -5727,7 +5716,7 @@ Ldebug_info_start:
 	.dw	0,402
 	.uleb128	0
 	.uleb128	8
-	.dw	0,1773
+	.dw	0,1777
 	.ascii "UART1_SetPrescaler"
 	.db	0
 	.dw	0,(_UART1_SetPrescaler)
@@ -5742,7 +5731,7 @@ Ldebug_info_start:
 	.dw	0,402
 	.uleb128	0
 	.uleb128	11
-	.dw	0,1937
+	.dw	0,1941
 	.ascii "UART1_GetFlagStatus"
 	.db	0
 	.dw	0,(_UART1_GetFlagStatus)
@@ -5762,34 +5751,34 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,662
 	.uleb128	9
-	.dw	0,1866
+	.dw	0,1870
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$492)
+	.uleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$494)
-	.uleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$496)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$498)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$497)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$499)
+	.uleb128	0
+	.uleb128	9
+	.dw	0,1898
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$501)
-	.uleb128	0
-	.uleb128	9
-	.dw	0,1894
+	.uleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$503)
-	.uleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$505)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$507)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$506)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$508)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$510)
 	.uleb128	0
 	.uleb128	9
-	.dw	0,1922
+	.dw	0,1926
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$509)
+	.uleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$511)
-	.uleb128	5
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$513)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$515)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$514)
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$516)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$518)
 	.uleb128	0
 	.uleb128	6
 	.db	1
@@ -5799,7 +5788,7 @@ Ldebug_info_start:
 	.dw	0,483
 	.uleb128	0
 	.uleb128	8
-	.dw	0,2013
+	.dw	0,2017
 	.ascii "UART1_ClearFlag"
 	.db	0
 	.dw	0,(_UART1_ClearFlag)
@@ -5818,14 +5807,14 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,662
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$534)
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$536)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$538)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$537)
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$539)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$541)
 	.uleb128	0
 	.uleb128	11
-	.dw	0,2248
+	.dw	0,2252
 	.ascii "UART1_GetITStatus"
 	.db	0
 	.dw	0,(_UART1_GetITStatus)
@@ -5845,34 +5834,34 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,662
 	.uleb128	9
-	.dw	0,2102
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$570)
+	.dw	0,2106
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$568)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$571)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$573)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$575)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$574)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$576)
+	.uleb128	0
+	.uleb128	9
+	.dw	0,2134
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$578)
-	.uleb128	0
-	.uleb128	9
-	.dw	0,2130
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$580)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$581)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$583)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$585)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$584)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$586)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$588)
 	.uleb128	0
 	.uleb128	9
-	.dw	0,2158
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$589)
+	.dw	0,2162
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$587)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$590)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$592)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$594)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$593)
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$595)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$597)
 	.uleb128	0
 	.uleb128	6
 	.db	1
@@ -5908,7 +5897,7 @@ Ldebug_info_start:
 	.dw	0,402
 	.uleb128	0
 	.uleb128	8
-	.dw	0,2330
+	.dw	0,2334
 	.ascii "UART1_ClearITPendingBit"
 	.db	0
 	.dw	0,(_UART1_ClearITPendingBit)
@@ -5927,18 +5916,18 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,662
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$613)
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$615)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$617)
 	.uleb128	5
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$616)
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$618)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$620)
 	.uleb128	0
 	.uleb128	12
 	.dw	0,402
 	.uleb128	13
-	.dw	0,2348
+	.dw	0,2352
 	.db	73
-	.dw	0,2330
+	.dw	0,2334
 	.uleb128	14
 	.db	72
 	.uleb128	0
@@ -5948,7 +5937,7 @@ Ldebug_info_start:
 	.dw	0,(___str_0)
 	.ascii "__str_0"
 	.db	0
-	.dw	0,2335
+	.dw	0,2339
 	.uleb128	0
 Ldebug_info_end:
 
@@ -6003,34 +5992,34 @@ Ldebug_pubnames_start:
 	.dw	0,1409
 	.ascii "UART1_ReceiveData9"
 	.db	0
-	.dw	0,1464
+	.dw	0,1468
 	.ascii "UART1_SendData8"
 	.db	0
-	.dw	0,1511
+	.dw	0,1515
 	.ascii "UART1_SendData9"
 	.db	0
-	.dw	0,1563
+	.dw	0,1567
 	.ascii "UART1_SendBreak"
 	.db	0
-	.dw	0,1593
+	.dw	0,1597
 	.ascii "UART1_SetAddress"
 	.db	0
-	.dw	0,1651
+	.dw	0,1655
 	.ascii "UART1_SetGuardTime"
 	.db	0
-	.dw	0,1712
+	.dw	0,1716
 	.ascii "UART1_SetPrescaler"
 	.db	0
-	.dw	0,1773
+	.dw	0,1777
 	.ascii "UART1_GetFlagStatus"
 	.db	0
-	.dw	0,1937
+	.dw	0,1941
 	.ascii "UART1_ClearFlag"
 	.db	0
-	.dw	0,2013
+	.dw	0,2017
 	.ascii "UART1_GetITStatus"
 	.db	0
-	.dw	0,2248
+	.dw	0,2252
 	.ascii "UART1_ClearITPendingBit"
 	.db	0
 	.dw	0,0
@@ -6057,42 +6046,42 @@ Ldebug_CIE0_start:
 Ldebug_CIE0_end:
 	.dw	0,76
 	.dw	0,(Ldebug_CIE0_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$604)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_ClearITPendingBit$623-Sstm8s_uart1$UART1_ClearITPendingBit$604
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$602)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_ClearITPendingBit$621-Sstm8s_uart1$UART1_ClearITPendingBit$602
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$602)
+	.db	14
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$604)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$606)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$605)
 	.db	14
 	.uleb128	2
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$606)
+	.db	14
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$607)
 	.db	14
-	.uleb128	2
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$608)
 	.db	14
-	.uleb128	3
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$609)
 	.db	14
-	.uleb128	4
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$610)
 	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$611)
-	.db	14
-	.uleb128	7
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$612)
-	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$613)
+	.dw	0,(Sstm8s_uart1$UART1_ClearITPendingBit$611)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6118,14 +6107,22 @@ Ldebug_CIE1_start:
 Ldebug_CIE1_end:
 	.dw	0,152
 	.dw	0,(Ldebug_CIE1_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$546)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_GetITStatus$602-Sstm8s_uart1$UART1_GetITStatus$546
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$544)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_GetITStatus$600-Sstm8s_uart1$UART1_GetITStatus$544
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$546)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$544)
 	.db	14
 	.uleb128	2
 	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$545)
+	.db	14
+	.uleb128	6
+	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$547)
+	.db	14
+	.uleb128	6
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$548)
 	.db	14
 	.uleb128	6
 	.db	1
@@ -6151,53 +6148,45 @@ Ldebug_CIE1_end:
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$554)
 	.db	14
-	.uleb128	6
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$555)
 	.db	14
-	.uleb128	6
+	.uleb128	9
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$556)
 	.db	14
-	.uleb128	8
+	.uleb128	10
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$557)
 	.db	14
-	.uleb128	9
+	.uleb128	12
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$558)
 	.db	14
-	.uleb128	10
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$559)
 	.db	14
-	.uleb128	12
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$560)
-	.db	14
-	.uleb128	8
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$561)
 	.db	14
+	.uleb128	7
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$562)
+	.db	14
 	.uleb128	6
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$563)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$565)
 	.db	14
 	.uleb128	7
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$564)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$566)
 	.db	14
 	.uleb128	6
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$567)
-	.db	14
-	.uleb128	7
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$568)
-	.db	14
-	.uleb128	6
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$600)
+	.dw	0,(Sstm8s_uart1$UART1_GetITStatus$598)
 	.db	14
 	.uleb128	2
 
@@ -6222,42 +6211,42 @@ Ldebug_CIE2_start:
 Ldebug_CIE2_end:
 	.dw	0,76
 	.dw	0,(Ldebug_CIE2_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$525)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_ClearFlag$544-Sstm8s_uart1$UART1_ClearFlag$525
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$523)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_ClearFlag$542-Sstm8s_uart1$UART1_ClearFlag$523
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$523)
+	.db	14
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$525)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$527)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$526)
 	.db	14
 	.uleb128	2
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$527)
+	.db	14
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$528)
 	.db	14
-	.uleb128	2
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$529)
 	.db	14
-	.uleb128	3
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$530)
 	.db	14
-	.uleb128	4
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$531)
 	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$532)
-	.db	14
-	.uleb128	7
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$533)
-	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$534)
+	.dw	0,(Sstm8s_uart1$UART1_ClearFlag$532)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6283,14 +6272,22 @@ Ldebug_CIE3_start:
 Ldebug_CIE3_end:
 	.dw	0,160
 	.dw	0,(Ldebug_CIE3_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$471)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_GetFlagStatus$523-Sstm8s_uart1$UART1_GetFlagStatus$471
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$469)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_GetFlagStatus$521-Sstm8s_uart1$UART1_GetFlagStatus$469
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$471)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$469)
 	.db	14
 	.uleb128	2
 	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$470)
+	.db	14
+	.uleb128	4
+	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$472)
+	.db	14
+	.uleb128	4
+	.db	1
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$473)
 	.db	14
 	.uleb128	4
 	.db	1
@@ -6328,45 +6325,37 @@ Ldebug_CIE3_end:
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$482)
 	.db	14
-	.uleb128	4
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$483)
 	.db	14
-	.uleb128	4
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$484)
 	.db	14
-	.uleb128	5
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$485)
 	.db	14
-	.uleb128	7
+	.uleb128	9
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$486)
 	.db	14
-	.uleb128	8
+	.uleb128	11
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$487)
 	.db	14
-	.uleb128	9
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$488)
 	.db	14
-	.uleb128	11
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$489)
 	.db	14
-	.uleb128	7
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$490)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$491)
-	.db	14
 	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$521)
+	.dw	0,(Sstm8s_uart1$UART1_GetFlagStatus$519)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6392,10 +6381,10 @@ Ldebug_CIE4_start:
 Ldebug_CIE4_end:
 	.dw	0,20
 	.dw	0,(Ldebug_CIE4_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$465)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_SetPrescaler$469-Sstm8s_uart1$UART1_SetPrescaler$465
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$463)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_SetPrescaler$467-Sstm8s_uart1$UART1_SetPrescaler$463
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$465)
+	.dw	0,(Sstm8s_uart1$UART1_SetPrescaler$463)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6421,10 +6410,10 @@ Ldebug_CIE5_start:
 Ldebug_CIE5_end:
 	.dw	0,20
 	.dw	0,(Ldebug_CIE5_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$459)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_SetGuardTime$463-Sstm8s_uart1$UART1_SetGuardTime$459
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$457)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_SetGuardTime$461-Sstm8s_uart1$UART1_SetGuardTime$457
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$459)
+	.dw	0,(Sstm8s_uart1$UART1_SetGuardTime$457)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6450,34 +6439,34 @@ Ldebug_CIE6_start:
 Ldebug_CIE6_end:
 	.dw	0,64
 	.dw	0,(Ldebug_CIE6_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$445)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_SetAddress$457-Sstm8s_uart1$UART1_SetAddress$445
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$443)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_SetAddress$455-Sstm8s_uart1$UART1_SetAddress$443
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$445)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$443)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$446)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$444)
 	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$448)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$446)
 	.db	14
 	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$449)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$447)
 	.db	14
 	.uleb128	5
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$450)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$448)
 	.db	14
 	.uleb128	7
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$451)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$449)
 	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SetAddress$455)
+	.dw	0,(Sstm8s_uart1$UART1_SetAddress$453)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6505,10 +6494,10 @@ Ldebug_CIE7_start:
 Ldebug_CIE7_end:
 	.dw	0,20
 	.dw	0,(Ldebug_CIE7_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$439)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_SendBreak$443-Sstm8s_uart1$UART1_SendBreak$439
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$437)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_SendBreak$441-Sstm8s_uart1$UART1_SendBreak$437
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SendBreak$439)
+	.dw	0,(Sstm8s_uart1$UART1_SendBreak$437)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6534,18 +6523,18 @@ Ldebug_CIE8_start:
 Ldebug_CIE8_end:
 	.dw	0,36
 	.dw	0,(Ldebug_CIE8_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$429)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_SendData9$437-Sstm8s_uart1$UART1_SendData9$429
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$427)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_SendData9$435-Sstm8s_uart1$UART1_SendData9$427
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$429)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$427)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$430)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$428)
 	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SendData9$435)
+	.dw	0,(Sstm8s_uart1$UART1_SendData9$433)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6573,10 +6562,10 @@ Ldebug_CIE9_start:
 Ldebug_CIE9_end:
 	.dw	0,20
 	.dw	0,(Ldebug_CIE9_start-4)
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$423)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_SendData8$427-Sstm8s_uart1$UART1_SendData8$423
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$421)	;initial loc
+	.dw	0,Sstm8s_uart1$UART1_SendData8$425-Sstm8s_uart1$UART1_SendData8$421
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_SendData8$423)
+	.dw	0,(Sstm8s_uart1$UART1_SendData8$421)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6600,24 +6589,14 @@ Ldebug_CIE10_start:
 	.db	0
 	.db	0
 Ldebug_CIE10_end:
-	.dw	0,36
+	.dw	0,20
 	.dw	0,(Ldebug_CIE10_start-4)
 	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$414)	;initial loc
-	.dw	0,Sstm8s_uart1$UART1_ReceiveData9$421-Sstm8s_uart1$UART1_ReceiveData9$414
+	.dw	0,Sstm8s_uart1$UART1_ReceiveData9$419-Sstm8s_uart1$UART1_ReceiveData9$414
 	.db	1
 	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$414)
 	.db	14
 	.uleb128	2
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$415)
-	.db	14
-	.uleb128	4
-	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_ReceiveData9$419)
-	.db	14
-	.uleb128	2
-	.db	0
-	.db	0
 	.db	0
 
 	.area .debug_frame (NOLOAD)
@@ -7551,7 +7530,7 @@ Ldebug_CIE23_end:
 	.db	14
 	.uleb128	23
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_Init$81)
+	.dw	0,(Sstm8s_uart1$UART1_Init$82)
 	.db	14
 	.uleb128	15
 	.db	1
@@ -7595,7 +7574,7 @@ Ldebug_CIE23_end:
 	.db	14
 	.uleb128	23
 	.db	1
-	.dw	0,(Sstm8s_uart1$UART1_Init$93)
+	.dw	0,(Sstm8s_uart1$UART1_Init$94)
 	.db	14
 	.uleb128	15
 	.db	1

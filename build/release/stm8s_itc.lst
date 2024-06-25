@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_itc
                                       6 	.optsdcc -mstm8
@@ -107,13 +107,13 @@
                                     107 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 116: assert_param(IS_ITC_IRQ_OK((uint8_t)IrqNum));
       000030 7B 05            [ 1]  108 	ld	a, (0x05, sp)
       000032 A1 18            [ 1]  109 	cp	a, #0x18
-      000034 22 04            [ 1]  110 	jrugt	00138$
+      000034 22 04            [ 1]  110 	jrugt	00142$
       000036 0F 02            [ 1]  111 	clr	(0x02, sp)
-      000038 20 04            [ 2]  112 	jra	00139$
-      00003A                        113 00138$:
+      000038 20 04            [ 2]  112 	jra	00143$
+      00003A                        113 00142$:
       00003A A6 01            [ 1]  114 	ld	a, #0x01
       00003C 6B 02            [ 1]  115 	ld	(0x02, sp), a
-      00003E                        116 00139$:
+      00003E                        116 00143$:
       00003E 0D 02            [ 1]  117 	tnz	(0x02, sp)
       000040 27 0C            [ 1]  118 	jreq	00127$
       000042 4B 74            [ 1]  119 	push	#0x74
@@ -131,12 +131,12 @@
       000055 A6 03            [ 1]  131 	ld	a, #0x03
       000057 6B 04            [ 1]  132 	ld	(0x04, sp), a
       000059 7B 03            [ 1]  133 	ld	a, (0x03, sp)
-      00005B 27 05            [ 1]  134 	jreq	00142$
-      00005D                        135 00141$:
+      00005B 27 05            [ 1]  134 	jreq	00146$
+      00005D                        135 00145$:
       00005D 08 04            [ 1]  136 	sll	(0x04, sp)
       00005F 4A               [ 1]  137 	dec	a
-      000060 26 FB            [ 1]  138 	jrne	00141$
-      000062                        139 00142$:
+      000060 26 FB            [ 1]  138 	jrne	00145$
+      000062                        139 00146$:
                                     140 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 121: switch (IrqNum)
       000062 7B 02            [ 1]  141 	ld	a, (0x02, sp)
       000064 26 78            [ 1]  142 	jrne	00123$
@@ -144,9 +144,9 @@
       000067 7B 05            [ 1]  144 	ld	a, (0x05, sp)
       000069 97               [ 1]  145 	ld	xl, a
       00006A 58               [ 2]  146 	sllw	x
-      00006B DEu00u6F         [ 2]  147 	ldw	x, (#00144$, x)
+      00006B DEu00u6F         [ 2]  147 	ldw	x, (#00148$, x)
       00006E FC               [ 2]  148 	jp	(x)
-      00006F                        149 00144$:
+      00006F                        149 00148$:
       00006Fr00rA1                  150 	.dw	#00104$
       000071r00rA1                  151 	.dw	#00104$
       000073r00rA1                  152 	.dw	#00104$
@@ -232,12 +232,12 @@
       0000DE 7B 01            [ 1]  232 	ld	a, (0x01, sp)
       0000E0 88               [ 1]  233 	push	a
       0000E1 7B 04            [ 1]  234 	ld	a, (0x04, sp)
-      0000E3 27 05            [ 1]  235 	jreq	00146$
-      0000E5                        236 00145$:
+      0000E3 27 05            [ 1]  235 	jreq	00150$
+      0000E5                        236 00149$:
       0000E5 04 01            [ 1]  237 	srl	(1, sp)
       0000E7 4A               [ 1]  238 	dec	a
-      0000E8 26 FB            [ 1]  239 	jrne	00145$
-      0000EA                        240 00146$:
+      0000E8 26 FB            [ 1]  239 	jrne	00149$
+      0000EA                        240 00150$:
       0000EA 84               [ 1]  241 	pop	a
                                     242 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 207: return((ITC_PriorityLevel_TypeDef)Value);
                                     243 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 208: }
@@ -252,13 +252,13 @@
                                     252 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 229: assert_param(IS_ITC_IRQ_OK((uint8_t)IrqNum));
       0000F0 6B 04            [ 1]  253 	ld	(0x04, sp), a
       0000F2 A1 18            [ 1]  254 	cp	a, #0x18
-      0000F4 22 04            [ 1]  255 	jrugt	00176$
+      0000F4 22 04            [ 1]  255 	jrugt	00190$
       0000F6 0F 01            [ 1]  256 	clr	(0x01, sp)
-      0000F8 20 04            [ 2]  257 	jra	00177$
-      0000FA                        258 00176$:
+      0000F8 20 04            [ 2]  257 	jra	00191$
+      0000FA                        258 00190$:
       0000FA A6 01            [ 1]  259 	ld	a, #0x01
       0000FC 6B 01            [ 1]  260 	ld	(0x01, sp), a
-      0000FE                        261 00177$:
+      0000FE                        261 00191$:
       0000FE 0D 01            [ 1]  262 	tnz	(0x01, sp)
       000100 27 0C            [ 1]  263 	jreq	00127$
       000102 4B E5            [ 1]  264 	push	#0xe5
@@ -300,167 +300,166 @@
       000142                        300 00140$:
                                     301 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 237: Mask = (uint8_t)(~(uint8_t)(0x03U << (((uint8_t)IrqNum % 4U) * 2U)));
       000142 7B 04            [ 1]  302 	ld	a, (0x04, sp)
-      000144 5F               [ 1]  303 	clrw	x
-      000145 A4 03            [ 1]  304 	and	a, #0x03
+      000144 A4 03            [ 1]  303 	and	a, #0x03
+      000146 48               [ 1]  304 	sll	a
       000147 97               [ 1]  305 	ld	xl, a
-      000148 58               [ 2]  306 	sllw	x
-      000149 A6 03            [ 1]  307 	ld	a, #0x03
-      00014B 88               [ 1]  308 	push	a
-      00014C 9F               [ 1]  309 	ld	a, xl
-      00014D 4D               [ 1]  310 	tnz	a
-      00014E 27 05            [ 1]  311 	jreq	00193$
-      000150                        312 00192$:
-      000150 08 01            [ 1]  313 	sll	(1, sp)
-      000152 4A               [ 1]  314 	dec	a
-      000153 26 FB            [ 1]  315 	jrne	00192$
-      000155                        316 00193$:
-      000155 84               [ 1]  317 	pop	a
-      000156 43               [ 1]  318 	cpl	a
-      000157 6B 02            [ 1]  319 	ld	(0x02, sp), a
-                                    320 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 240: NewPriority = (uint8_t)((uint8_t)(PriorityValue) << (((uint8_t)IrqNum % 4U) * 2U));
-      000159 7B 07            [ 1]  321 	ld	a, (0x07, sp)
-      00015B 88               [ 1]  322 	push	a
-      00015C 9F               [ 1]  323 	ld	a, xl
-      00015D 4D               [ 1]  324 	tnz	a
-      00015E 27 05            [ 1]  325 	jreq	00195$
-      000160                        326 00194$:
-      000160 08 01            [ 1]  327 	sll	(1, sp)
-      000162 4A               [ 1]  328 	dec	a
-      000163 26 FB            [ 1]  329 	jrne	00194$
-      000165                        330 00195$:
-      000165 84               [ 1]  331 	pop	a
-      000166 6B 03            [ 1]  332 	ld	(0x03, sp), a
-                                    333 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 242: switch (IrqNum)
-      000168 7B 01            [ 1]  334 	ld	a, (0x01, sp)
-      00016A 27 03            [ 1]  335 	jreq	00196$
-      00016C CCr02r26         [ 2]  336 	jp	00124$
-      00016F                        337 00196$:
-      00016F 5F               [ 1]  338 	clrw	x
-      000170 7B 04            [ 1]  339 	ld	a, (0x04, sp)
-      000172 97               [ 1]  340 	ld	xl, a
-      000173 58               [ 2]  341 	sllw	x
-      000174 DEu01u78         [ 2]  342 	ldw	x, (#00197$, x)
-      000177 FC               [ 2]  343 	jp	(x)
-      000178                        344 00197$:
-      000178r01rAA                  345 	.dw	#00104$
-      00017Ar01rAA                  346 	.dw	#00104$
-      00017Cr01rAA                  347 	.dw	#00104$
-      00017Er01rAA                  348 	.dw	#00104$
-      000180r01rBC                  349 	.dw	#00108$
-      000182r01rBC                  350 	.dw	#00108$
-      000184r01rBC                  351 	.dw	#00108$
-      000186r01rBC                  352 	.dw	#00108$
-      000188r02r26                  353 	.dw	#00124$
-      00018Ar02r26                  354 	.dw	#00124$
-      00018Cr01rCE                  355 	.dw	#00110$
-      00018Er01rCE                  356 	.dw	#00110$
-      000190r01rE0                  357 	.dw	#00114$
-      000192r01rE0                  358 	.dw	#00114$
-      000194r01rE0                  359 	.dw	#00114$
-      000196r01rE0                  360 	.dw	#00114$
-      000198r01rF2                  361 	.dw	#00118$
-      00019Ar01rF2                  362 	.dw	#00118$
-      00019Cr01rF2                  363 	.dw	#00118$
-      00019Er01rF2                  364 	.dw	#00118$
-      0001A0r02r26                  365 	.dw	#00124$
-      0001A2r02r26                  366 	.dw	#00124$
-      0001A4r02r04                  367 	.dw	#00120$
-      0001A6r02r04                  368 	.dw	#00120$
-      0001A8r02r16                  369 	.dw	#00121$
-                                    370 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 247: case ITC_IRQ_PORTA:
-      0001AA                        371 00104$:
-                                    372 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 248: ITC->ISPR1 &= Mask;
-      0001AA C6 7F 70         [ 1]  373 	ld	a, 0x7f70
-      0001AD 14 02            [ 1]  374 	and	a, (0x02, sp)
-      0001AF C7 7F 70         [ 1]  375 	ld	0x7f70, a
-                                    376 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 249: ITC->ISPR1 |= NewPriority;
-      0001B2 C6 7F 70         [ 1]  377 	ld	a, 0x7f70
-      0001B5 1A 03            [ 1]  378 	or	a, (0x03, sp)
-      0001B7 C7 7F 70         [ 1]  379 	ld	0x7f70, a
-                                    380 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 250: break;
-      0001BA 20 6A            [ 2]  381 	jra	00124$
-                                    382 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 255: case ITC_IRQ_PORTE:
-      0001BC                        383 00108$:
-                                    384 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 256: ITC->ISPR2 &= Mask;
-      0001BC C6 7F 71         [ 1]  385 	ld	a, 0x7f71
-      0001BF 14 02            [ 1]  386 	and	a, (0x02, sp)
-      0001C1 C7 7F 71         [ 1]  387 	ld	0x7f71, a
-                                    388 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 257: ITC->ISPR2 |= NewPriority;
-      0001C4 C6 7F 71         [ 1]  389 	ld	a, 0x7f71
-      0001C7 1A 03            [ 1]  390 	or	a, (0x03, sp)
-      0001C9 C7 7F 71         [ 1]  391 	ld	0x7f71, a
-                                    392 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 258: break;
-      0001CC 20 58            [ 2]  393 	jra	00124$
-                                    394 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 268: case ITC_IRQ_TIM1_OVF:
-      0001CE                        395 00110$:
-                                    396 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 269: ITC->ISPR3 &= Mask;
-      0001CE C6 7F 72         [ 1]  397 	ld	a, 0x7f72
-      0001D1 14 02            [ 1]  398 	and	a, (0x02, sp)
-      0001D3 C7 7F 72         [ 1]  399 	ld	0x7f72, a
-                                    400 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 270: ITC->ISPR3 |= NewPriority;
-      0001D6 C6 7F 72         [ 1]  401 	ld	a, 0x7f72
-      0001D9 1A 03            [ 1]  402 	or	a, (0x03, sp)
-      0001DB C7 7F 72         [ 1]  403 	ld	0x7f72, a
-                                    404 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 271: break;
-      0001DE 20 46            [ 2]  405 	jra	00124$
-                                    406 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 281: case ITC_IRQ_TIM3_OVF:
-      0001E0                        407 00114$:
-                                    408 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 282: ITC->ISPR4 &= Mask;
-      0001E0 C6 7F 73         [ 1]  409 	ld	a, 0x7f73
-      0001E3 14 02            [ 1]  410 	and	a, (0x02, sp)
-      0001E5 C7 7F 73         [ 1]  411 	ld	0x7f73, a
-                                    412 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 283: ITC->ISPR4 |= NewPriority;
-      0001E8 C6 7F 73         [ 1]  413 	ld	a, 0x7f73
-      0001EB 1A 03            [ 1]  414 	or	a, (0x03, sp)
-      0001ED C7 7F 73         [ 1]  415 	ld	0x7f73, a
-                                    416 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 284: break;
-      0001F0 20 34            [ 2]  417 	jra	00124$
-                                    418 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 296: case ITC_IRQ_I2C:
-      0001F2                        419 00118$:
-                                    420 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 297: ITC->ISPR5 &= Mask;
-      0001F2 C6 7F 74         [ 1]  421 	ld	a, 0x7f74
-      0001F5 14 02            [ 1]  422 	and	a, (0x02, sp)
-      0001F7 C7 7F 74         [ 1]  423 	ld	0x7f74, a
-                                    424 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 298: ITC->ISPR5 |= NewPriority;
-      0001FA C6 7F 74         [ 1]  425 	ld	a, 0x7f74
-      0001FD 1A 03            [ 1]  426 	or	a, (0x03, sp)
-      0001FF C7 7F 74         [ 1]  427 	ld	0x7f74, a
-                                    428 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 299: break;
-      000202 20 22            [ 2]  429 	jra	00124$
-                                    430 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 321: case ITC_IRQ_TIM4_OVF:
-      000204                        431 00120$:
-                                    432 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 323: ITC->ISPR6 &= Mask;
-      000204 C6 7F 75         [ 1]  433 	ld	a, 0x7f75
-      000207 14 02            [ 1]  434 	and	a, (0x02, sp)
-      000209 C7 7F 75         [ 1]  435 	ld	0x7f75, a
-                                    436 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 324: ITC->ISPR6 |= NewPriority;
-      00020C C6 7F 75         [ 1]  437 	ld	a, 0x7f75
-      00020F 1A 03            [ 1]  438 	or	a, (0x03, sp)
-      000211 C7 7F 75         [ 1]  439 	ld	0x7f75, a
-                                    440 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 325: break;
-      000214 20 10            [ 2]  441 	jra	00124$
-                                    442 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 327: case ITC_IRQ_EEPROM_EEC:
-      000216                        443 00121$:
-                                    444 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 328: ITC->ISPR7 &= Mask;
-      000216 C6 7F 76         [ 1]  445 	ld	a, 0x7f76
-      000219 14 02            [ 1]  446 	and	a, (0x02, sp)
-      00021B C7 7F 76         [ 1]  447 	ld	0x7f76, a
-                                    448 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 329: ITC->ISPR7 |= NewPriority;
-      00021E C6 7F 76         [ 1]  449 	ld	a, 0x7f76
-      000221 1A 03            [ 1]  450 	or	a, (0x03, sp)
-      000223 C7 7F 76         [ 1]  451 	ld	0x7f76, a
-                                    452 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 334: }
-      000226                        453 00124$:
-                                    454 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 335: }
-      000226 5B 04            [ 2]  455 	addw	sp, #4
-      000228 85               [ 2]  456 	popw	x
-      000229 84               [ 1]  457 	pop	a
-      00022A FC               [ 2]  458 	jp	(x)
-                                    459 	.area CODE
+      000148 A6 03            [ 1]  306 	ld	a, #0x03
+      00014A 88               [ 1]  307 	push	a
+      00014B 9F               [ 1]  308 	ld	a, xl
+      00014C 4D               [ 1]  309 	tnz	a
+      00014D 27 05            [ 1]  310 	jreq	00207$
+      00014F                        311 00206$:
+      00014F 08 01            [ 1]  312 	sll	(1, sp)
+      000151 4A               [ 1]  313 	dec	a
+      000152 26 FB            [ 1]  314 	jrne	00206$
+      000154                        315 00207$:
+      000154 84               [ 1]  316 	pop	a
+      000155 43               [ 1]  317 	cpl	a
+      000156 6B 02            [ 1]  318 	ld	(0x02, sp), a
+                                    319 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 240: NewPriority = (uint8_t)((uint8_t)(PriorityValue) << (((uint8_t)IrqNum % 4U) * 2U));
+      000158 7B 07            [ 1]  320 	ld	a, (0x07, sp)
+      00015A 88               [ 1]  321 	push	a
+      00015B 9F               [ 1]  322 	ld	a, xl
+      00015C 4D               [ 1]  323 	tnz	a
+      00015D 27 05            [ 1]  324 	jreq	00209$
+      00015F                        325 00208$:
+      00015F 08 01            [ 1]  326 	sll	(1, sp)
+      000161 4A               [ 1]  327 	dec	a
+      000162 26 FB            [ 1]  328 	jrne	00208$
+      000164                        329 00209$:
+      000164 84               [ 1]  330 	pop	a
+      000165 6B 03            [ 1]  331 	ld	(0x03, sp), a
+                                    332 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 242: switch (IrqNum)
+      000167 7B 01            [ 1]  333 	ld	a, (0x01, sp)
+      000169 27 03            [ 1]  334 	jreq	00210$
+      00016B CCr02r25         [ 2]  335 	jp	00124$
+      00016E                        336 00210$:
+      00016E 5F               [ 1]  337 	clrw	x
+      00016F 7B 04            [ 1]  338 	ld	a, (0x04, sp)
+      000171 97               [ 1]  339 	ld	xl, a
+      000172 58               [ 2]  340 	sllw	x
+      000173 DEu01u77         [ 2]  341 	ldw	x, (#00211$, x)
+      000176 FC               [ 2]  342 	jp	(x)
+      000177                        343 00211$:
+      000177r01rA9                  344 	.dw	#00104$
+      000179r01rA9                  345 	.dw	#00104$
+      00017Br01rA9                  346 	.dw	#00104$
+      00017Dr01rA9                  347 	.dw	#00104$
+      00017Fr01rBB                  348 	.dw	#00108$
+      000181r01rBB                  349 	.dw	#00108$
+      000183r01rBB                  350 	.dw	#00108$
+      000185r01rBB                  351 	.dw	#00108$
+      000187r02r25                  352 	.dw	#00124$
+      000189r02r25                  353 	.dw	#00124$
+      00018Br01rCD                  354 	.dw	#00110$
+      00018Dr01rCD                  355 	.dw	#00110$
+      00018Fr01rDF                  356 	.dw	#00114$
+      000191r01rDF                  357 	.dw	#00114$
+      000193r01rDF                  358 	.dw	#00114$
+      000195r01rDF                  359 	.dw	#00114$
+      000197r01rF1                  360 	.dw	#00118$
+      000199r01rF1                  361 	.dw	#00118$
+      00019Br01rF1                  362 	.dw	#00118$
+      00019Dr01rF1                  363 	.dw	#00118$
+      00019Fr02r25                  364 	.dw	#00124$
+      0001A1r02r25                  365 	.dw	#00124$
+      0001A3r02r03                  366 	.dw	#00120$
+      0001A5r02r03                  367 	.dw	#00120$
+      0001A7r02r15                  368 	.dw	#00121$
+                                    369 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 247: case ITC_IRQ_PORTA:
+      0001A9                        370 00104$:
+                                    371 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 248: ITC->ISPR1 &= Mask;
+      0001A9 C6 7F 70         [ 1]  372 	ld	a, 0x7f70
+      0001AC 14 02            [ 1]  373 	and	a, (0x02, sp)
+      0001AE C7 7F 70         [ 1]  374 	ld	0x7f70, a
+                                    375 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 249: ITC->ISPR1 |= NewPriority;
+      0001B1 C6 7F 70         [ 1]  376 	ld	a, 0x7f70
+      0001B4 1A 03            [ 1]  377 	or	a, (0x03, sp)
+      0001B6 C7 7F 70         [ 1]  378 	ld	0x7f70, a
+                                    379 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 250: break;
+      0001B9 20 6A            [ 2]  380 	jra	00124$
+                                    381 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 255: case ITC_IRQ_PORTE:
+      0001BB                        382 00108$:
+                                    383 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 256: ITC->ISPR2 &= Mask;
+      0001BB C6 7F 71         [ 1]  384 	ld	a, 0x7f71
+      0001BE 14 02            [ 1]  385 	and	a, (0x02, sp)
+      0001C0 C7 7F 71         [ 1]  386 	ld	0x7f71, a
+                                    387 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 257: ITC->ISPR2 |= NewPriority;
+      0001C3 C6 7F 71         [ 1]  388 	ld	a, 0x7f71
+      0001C6 1A 03            [ 1]  389 	or	a, (0x03, sp)
+      0001C8 C7 7F 71         [ 1]  390 	ld	0x7f71, a
+                                    391 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 258: break;
+      0001CB 20 58            [ 2]  392 	jra	00124$
+                                    393 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 268: case ITC_IRQ_TIM1_OVF:
+      0001CD                        394 00110$:
+                                    395 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 269: ITC->ISPR3 &= Mask;
+      0001CD C6 7F 72         [ 1]  396 	ld	a, 0x7f72
+      0001D0 14 02            [ 1]  397 	and	a, (0x02, sp)
+      0001D2 C7 7F 72         [ 1]  398 	ld	0x7f72, a
+                                    399 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 270: ITC->ISPR3 |= NewPriority;
+      0001D5 C6 7F 72         [ 1]  400 	ld	a, 0x7f72
+      0001D8 1A 03            [ 1]  401 	or	a, (0x03, sp)
+      0001DA C7 7F 72         [ 1]  402 	ld	0x7f72, a
+                                    403 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 271: break;
+      0001DD 20 46            [ 2]  404 	jra	00124$
+                                    405 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 281: case ITC_IRQ_TIM3_OVF:
+      0001DF                        406 00114$:
+                                    407 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 282: ITC->ISPR4 &= Mask;
+      0001DF C6 7F 73         [ 1]  408 	ld	a, 0x7f73
+      0001E2 14 02            [ 1]  409 	and	a, (0x02, sp)
+      0001E4 C7 7F 73         [ 1]  410 	ld	0x7f73, a
+                                    411 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 283: ITC->ISPR4 |= NewPriority;
+      0001E7 C6 7F 73         [ 1]  412 	ld	a, 0x7f73
+      0001EA 1A 03            [ 1]  413 	or	a, (0x03, sp)
+      0001EC C7 7F 73         [ 1]  414 	ld	0x7f73, a
+                                    415 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 284: break;
+      0001EF 20 34            [ 2]  416 	jra	00124$
+                                    417 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 296: case ITC_IRQ_I2C:
+      0001F1                        418 00118$:
+                                    419 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 297: ITC->ISPR5 &= Mask;
+      0001F1 C6 7F 74         [ 1]  420 	ld	a, 0x7f74
+      0001F4 14 02            [ 1]  421 	and	a, (0x02, sp)
+      0001F6 C7 7F 74         [ 1]  422 	ld	0x7f74, a
+                                    423 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 298: ITC->ISPR5 |= NewPriority;
+      0001F9 C6 7F 74         [ 1]  424 	ld	a, 0x7f74
+      0001FC 1A 03            [ 1]  425 	or	a, (0x03, sp)
+      0001FE C7 7F 74         [ 1]  426 	ld	0x7f74, a
+                                    427 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 299: break;
+      000201 20 22            [ 2]  428 	jra	00124$
+                                    429 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 321: case ITC_IRQ_TIM4_OVF:
+      000203                        430 00120$:
+                                    431 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 323: ITC->ISPR6 &= Mask;
+      000203 C6 7F 75         [ 1]  432 	ld	a, 0x7f75
+      000206 14 02            [ 1]  433 	and	a, (0x02, sp)
+      000208 C7 7F 75         [ 1]  434 	ld	0x7f75, a
+                                    435 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 324: ITC->ISPR6 |= NewPriority;
+      00020B C6 7F 75         [ 1]  436 	ld	a, 0x7f75
+      00020E 1A 03            [ 1]  437 	or	a, (0x03, sp)
+      000210 C7 7F 75         [ 1]  438 	ld	0x7f75, a
+                                    439 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 325: break;
+      000213 20 10            [ 2]  440 	jra	00124$
+                                    441 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 327: case ITC_IRQ_EEPROM_EEC:
+      000215                        442 00121$:
+                                    443 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 328: ITC->ISPR7 &= Mask;
+      000215 C6 7F 76         [ 1]  444 	ld	a, 0x7f76
+      000218 14 02            [ 1]  445 	and	a, (0x02, sp)
+      00021A C7 7F 76         [ 1]  446 	ld	0x7f76, a
+                                    447 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 329: ITC->ISPR7 |= NewPriority;
+      00021D C6 7F 76         [ 1]  448 	ld	a, 0x7f76
+      000220 1A 03            [ 1]  449 	or	a, (0x03, sp)
+      000222 C7 7F 76         [ 1]  450 	ld	0x7f76, a
+                                    451 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 334: }
+      000225                        452 00124$:
+                                    453 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 335: }
+      000225 5B 04            [ 2]  454 	addw	sp, #4
+      000227 85               [ 2]  455 	popw	x
+      000228 84               [ 1]  456 	pop	a
+      000229 FC               [ 2]  457 	jp	(x)
+                                    458 	.area CODE
+                                    459 	.area CONST
                                     460 	.area CONST
-                                    461 	.area CONST
-      000000                        462 ___str_0:
-      000000 2E 2F 53 54 4D 38 53   463 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
+      000000                        461 ___str_0:
+      000000 2E 2F 53 54 4D 38 53   462 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -469,9 +468,9 @@
              65 72 69 70 68 5F 44
              72 69 76 65 72 2F 73
              72 63 2F 73
-      00003C 74 6D 38 73 5F 69 74   464 	.ascii "tm8s_itc.c"
+      00003C 74 6D 38 73 5F 69 74   463 	.ascii "tm8s_itc.c"
              63 2E 63
-      000046 00                     465 	.db 0x00
-                                    466 	.area CODE
-                                    467 	.area INITIALIZER
-                                    468 	.area CABS (ABS)
+      000046 00                     464 	.db 0x00
+                                    465 	.area CODE
+                                    466 	.area INITIALIZER
+                                    467 	.area CABS (ABS)

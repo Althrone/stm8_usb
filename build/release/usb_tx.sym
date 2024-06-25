@@ -1,0 +1,53 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+  9 NOP_delay1                                                     000149 R
+  9 Tx_7_1_Flip                                                    000129 R
+  9 Tx_Bit0_0                                                      000027 R
+  9 Tx_Bit0_1                                                      000035 R
+  9 Tx_Bit1_0                                                      000048 R
+  9 Tx_Bit1_1                                                      000056 R
+  9 Tx_Bit2_0                                                      000069 R
+  9 Tx_Bit2_1                                                      000077 R
+  9 Tx_Bit3_0                                                      00008A R
+  9 Tx_Bit3_1                                                      000098 R
+  9 Tx_Bit4_0                                                      0000AB R
+  9 Tx_Bit4_1                                                      0000B9 R
+  9 Tx_Bit5_0                                                      0000CC R
+  9 Tx_Bit5_1                                                      0000D9 R
+  9 Tx_Bit6_0                                                      0000EB R
+  9 Tx_Bit6_1                                                      0000F7 R
+  9 Tx_Bit7_0                                                      000109 R
+  9 Tx_Bit7_1                                                      00011D R
+  9 Tx_Eop5                                                        00013D R
+  9 Tx_Eop6                                                        00013E R
+  8 __xinit__tx_buf_size                                           000000 R
+  8 __xinit__usb_tx_buf                                            000001 R
+  2 _tx_buf_size                                                   000000 R
+  9 _usb_tx                                                        000000 GR
+  2 _usb_tx_buf                                                    000001 R
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 2
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 DATA                                       size      0   flags    0
+   2 INITIALIZED                                size      D   flags    0
+   3 DABS                                       size      0   flags    8
+   4 HOME                                       size      0   flags    0
+   5 GSINIT                                     size      0   flags    0
+   6 GSFINAL                                    size      0   flags    0
+   7 CONST                                      size      0   flags    0
+   8 INITIALIZER                                size      D   flags    0
+   9 CODE                                       size    17B   flags    0
+   A CABS                                       size      0   flags    8
+

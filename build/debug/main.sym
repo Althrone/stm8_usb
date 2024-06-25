@@ -1,0 +1,110 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 1
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.                                                    =  002710 L
+    .__.ABS.                                                    =  000000 G
+    .__.CPU.                                                    =  000000 L
+    .__.H$L.                                                    =  000001 L
+  A A$main$100                                                     000000 GR
+  A A$main$102                                                     000002 GR
+  A A$main$103                                                     000004 GR
+  A A$main$104                                                     000007 GR
+  A A$main$108                                                     00000A GR
+  A A$main$110                                                     00000C GR
+  A A$main$111                                                     00000E GR
+  A A$main$112                                                     000011 GR
+  A A$main$120                                                     000014 GR
+  A A$main$122                                                     000017 GR
+  A A$main$127                                                     000019 GR
+  5 A$main$47                                                      000000 GR
+  6 A$main$55                                                      000000 GR
+  6 A$main$56                                                      000003 GR
+  6 A$main$57                                                      000004 GR
+  6 A$main$58                                                      000006 GR
+  6 A$main$61                                                      000009 GR
+  6 A$main$62                                                      00000C GR
+  6 A$main$64                                                      00000E GR
+  6 A$main$65                                                      000012 GR
+  6 A$main$66                                                      000013 GR
+  6 A$main$68                                                      000015 GR
+  6 A$main$69                                                      000018 GR
+  6 A$main$71                                                      00001A GR
+  6 A$main$72                                                      00001D GR
+  6 A$main$73                                                      000020 GR
+  6 A$main$74                                                      000021 GR
+  7 A$main$78                                                      000000 GR
+  5 A$main$85                                                      000004 GR
+ 11 Ldebug_CIE0_end                                                000014 R
+ 11 Ldebug_CIE0_start                                              000004 R
+  E Ldebug_abbrev                                                  000000 R
+  F Ldebug_info_end                                                000050 R
+  F Ldebug_info_start                                              000004 R
+  C Ldebug_line_end                                                0000C0 R
+  C Ldebug_line_start                                              000004 R
+  C Ldebug_line_stmt                                               00007E R
+  D Ldebug_loc_start                                               000000 R
+ 10 Ldebug_pubnames_end                                            00001B R
+ 10 Ldebug_pubnames_start                                          000004 R
+  A Smain$main$0                                                =  000000 GR
+  A Smain$main$1                                                =  000000 GR
+  A Smain$main$10                                               =  000014 GR
+  A Smain$main$11                                               =  000017 GR
+  A Smain$main$12                                               =  000019 GR
+  A Smain$main$13                                               =  000019 GR
+  A Smain$main$14                                               =  00001A GR
+  A Smain$main$2                                                =  000000 GR
+  A Smain$main$3                                                =  000002 GR
+  A Smain$main$4                                                =  00000A GR
+  A Smain$main$5                                                =  00000A GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 2
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+  A Smain$main$6                                                =  00000C GR
+  A Smain$main$7                                                =  000014 GR
+  A Smain$main$8                                                =  000014 GR
+  A Smain$main$9                                                =  000014 GR
+  A XG$main$0$0                                                 =  000019 GR
+    _GPIO_Init                                                     ****** GX
+    ___sdcc_external_startup                                       ****** GX
+  5 __interrupt_vect                                               000000 R
+  6 __sdcc_init_data                                               000009 R
+  5 __sdcc_program_startup                                         000004 R
+  3 __start__stack                                                 000000 R
+  A _main                                                          000000 GR
+    _usb_tx                                                        ****** GX
+    l_DATA                                                         ****** GX
+    l_INITIALIZER                                                  ****** GX
+    s_DATA                                                         ****** GX
+    s_GSINIT                                                       ****** GX
+    s_INITIALIZED                                                  ****** GX
+    s_INITIALIZER                                                  ****** GX
+
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 3
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE                                      size      0   flags    0
+   1 DATA                                       size      0   flags    0
+   2 INITIALIZED                                size      0   flags    0
+   3 SSEG                                       size      1   flags    0
+   4 DABS                                       size      0   flags    8
+   5 HOME                                       size      7   flags    0
+   6 GSINIT                                     size     23   flags    0
+   7 GSFINAL                                    size      3   flags    0
+   8 CONST                                      size      0   flags    0
+   9 INITIALIZER                                size      0   flags    0
+   A CODE                                       size     1A   flags    0
+   B CABS                                       size      0   flags    8
+   C .debug_line                                size     C0   flags  100
+   D .debug_loc                                 size     44   flags  100
+   E .debug_abbrev                              size     26   flags  100
+   F .debug_info                                size     50   flags  100
+  10 .debug_pubnames                            size     1B   flags  100
+  11 .debug_frame                               size     48   flags  100
+

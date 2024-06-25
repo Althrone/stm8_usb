@@ -70,9 +70,9 @@ Symbol Table
   D Ldebug_abbrev                                                  000000 R
   E Ldebug_info_end                                                000194 R
   E Ldebug_info_start                                              000004 R
-  B Ldebug_line_end                                                00017E R
+  B Ldebug_line_end                                                00018A R
   B Ldebug_line_start                                              000004 R
-  B Ldebug_line_stmt                                               0000B3 R
+  B Ldebug_line_stmt                                               0000BF R
   C Ldebug_loc_start                                               000000 R
   F Ldebug_pubnames_end                                            00007A R
   F Ldebug_pubnames_start                                          000004 R
@@ -162,7 +162,7 @@ Area Table
    8 INITIALIZER                                size      0   flags    0
    9 CODE                                       size     54   flags    0
    A CABS                                       size      0   flags    8
-   B .debug_line                                size    17E   flags  100
+   B .debug_line                                size    18A   flags  100
    C .debug_loc                                 size    148   flags  100
    D .debug_abbrev                              size     68   flags  100
    E .debug_info                                size    194   flags  100

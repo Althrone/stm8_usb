@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_flash
 	.optsdcc -mstm8
@@ -74,12 +74,12 @@ _FLASH_Unlock:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 90: assert_param(IS_MEMORY_TYPE_OK(FLASH_MemType));
 	ld	xl, a
 	sub	a, #0xfd
-	jrne	00127$
+	jrne	00133$
 	inc	a
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
+00134$:
 	tnz	a
 	jrne	00107$
 	push	a
@@ -589,11 +589,8 @@ _FLASH_ReadOptionByte:
 	ld	a, (0x02, sp)
 	clr	(0x01, sp)
 	pushw	x
-	or	a, (2, sp)
 	popw	x
-	rlwa	x
-	or	a, (0x01, sp)
-	ld	xh, a
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 328: res_value = FLASH_OPTIONBYTE_ERROR;
 	.byte 0xbc
 00102$:
@@ -697,27 +694,28 @@ _FLASH_GetProgrammingTime:
 _FLASH_GetBootSize:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 397: temp = (uint32_t)((uint32_t)FLASH->FPR * (uint32_t)512);
 	ld	a, 0x505d
-	clrw	x
-	swapw	x
-	ld	yh, a
+	clrw	y
+	swapw	y
+	ld	xh, a
 	clr	a
-	ld	yl, a
-	sllw	y
-	rlcw	x
+	ld	xl, a
+	sllw	x
+	rlcw	y
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 400: if(FLASH->FPR == 0xFF)
 	ld	a, 0x505d
 	inc	a
-	jrne	00102$
+	jreq	00114$
+	ret
+00114$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 402: temp += 512;
-	addw	y, #0x0200
-	ld	a, xl
+	addw	x, #0x0200
+	ld	a, yl
 	adc	a, #0x00
-	rlwa	x
+	ld	yl, a
+	clr	a
 	adc	a, #0x00
-	ld	xh, a
-00102$:
+	ld	yh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 406: return(temp);
-	exgw	x, y
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 407: }
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 417: FlagStatus FLASH_GetFlagStatus(FLASH_Flag_TypeDef FLASH_FLAG)
@@ -787,9 +785,9 @@ _FLASH_WaitForLastOperation:
 00104$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 584: if(timeout == 0x00 )
 	tnzw	x
-	jreq	00132$
+	jreq	00140$
 	ret
-00132$:
+00140$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 586: flagstatus = FLASH_STATUS_TIMEOUT;
 	ld	a, #0x02
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 589: return((FLASH_Status_TypeDef)flagstatus);
@@ -800,17 +798,17 @@ _FLASH_WaitForLastOperation:
 ;	 function FLASH_EraseBlock
 ;	-----------------------------------------
 _FLASH_EraseBlock:
-	sub	sp, #8
-	ldw	(0x07, sp), x
+	sub	sp, #4
+	ldw	(0x03, sp), x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 611: assert_param(IS_MEMORY_TYPE_OK(FLASH_MemType));
 	ld	xl, a
 	sub	a, #0xfd
-	jrne	00141$
+	jrne	00151$
 	inc	a
 	.byte 0x21
-00141$:
+00151$:
 	clr	a
-00142$:
+00152$:
 	tnz	a
 	jrne	00107$
 	push	a
@@ -831,7 +829,7 @@ _FLASH_EraseBlock:
 	tnz	a
 	jreq	00102$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 614: assert_param(IS_FLASH_PROG_BLOCK_NUMBER_OK(BlockNum));
-	ldw	x, (0x07, sp)
+	ldw	x, (0x03, sp)
 	cpw	x, #0x0080
 	jrc	00112$
 	push	#0x66
@@ -842,12 +840,11 @@ _FLASH_EraseBlock:
 	call	_assert_failed
 00112$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 615: startaddress = FLASH_PROG_START_PHYSICAL_ADDRESS;
-	ldw	x, #0x8000
-	ldw	(0x03, sp), x
+	ldw	y, #0x8000
 	jra	00103$
 00102$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 619: assert_param(IS_FLASH_DATA_BLOCK_NUMBER_OK(BlockNum));
-	ldw	x, (0x07, sp)
+	ldw	x, (0x03, sp)
 	cpw	x, #0x000a
 	jrc	00114$
 	push	#0x6b
@@ -858,19 +855,19 @@ _FLASH_EraseBlock:
 	call	_assert_failed
 00114$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 620: startaddress = FLASH_DATA_START_PHYSICAL_ADDRESS;
-	ldw	x, #0x4000
-	ldw	(0x03, sp), x
+	ldw	y, #0x4000
 00103$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 628: pwFlash = (PointerAttr uint32_t *)(MemoryAddressCast)(startaddress + ((uint32_t)BlockNum * FLASH_BLOCK_SIZE));
-	ldw	x, (0x07, sp)
+	ldw	x, (0x03, sp)
 	sllw	x
 	sllw	x
 	sllw	x
 	sllw	x
 	sllw	x
 	sllw	x
-	ldw	(0x05, sp), x
-	addw	x, (0x03, sp)
+	ldw	(0x01, sp), x
+	ldw	x, y
+	addw	x, (0x01, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 632: FLASH->CR2 |= FLASH_CR2_ERASE;
 	bset	0x505b, #5
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 633: FLASH->NCR2 &= (uint8_t)(~FLASH_NCR2_NERASE);
@@ -880,27 +877,27 @@ _FLASH_EraseBlock:
 	ldw	(0x2, x), y
 	ldw	(x), y
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 645: }
-	addw	sp, #8
+	addw	sp, #4
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 656: IN_RAM(void FLASH_ProgramBlock(uint16_t BlockNum, FLASH_MemType_TypeDef FLASH_MemType, 
 ;	-----------------------------------------
 ;	 function FLASH_ProgramBlock
 ;	-----------------------------------------
 _FLASH_ProgramBlock:
-	sub	sp, #16
+	sub	sp, #14
 	ldw	(0x0d, sp), x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 663: assert_param(IS_MEMORY_TYPE_OK(FLASH_MemType));
 	cp	a, #0xfd
-	jrne	00173$
+	jrne	00191$
 	push	a
 	ld	a, #0x01
-	ld	(0x11, sp), a
+	ld	(0x0d, sp), a
 	pop	a
 	.byte 0xc5
-00173$:
-	clr	(0x10, sp)
-00174$:
-	tnz	(0x10, sp)
+00191$:
+	clr	(0x0c, sp)
+00192$:
+	tnz	(0x0c, sp)
 	jrne	00113$
 	cp	a, #0xf7
 	jreq	00113$
@@ -912,9 +909,9 @@ _FLASH_ProgramBlock:
 	call	_assert_failed
 00113$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 664: assert_param(IS_FLASH_PROGRAM_MODE_OK(FLASH_ProgMode));
-	tnz	(0x13, sp)
+	tnz	(0x11, sp)
 	jreq	00118$
-	ld	a, (0x13, sp)
+	ld	a, (0x11, sp)
 	cp	a, #0x10
 	jreq	00118$
 	push	#0x98
@@ -925,7 +922,7 @@ _FLASH_ProgramBlock:
 	call	_assert_failed
 00118$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 665: if(FLASH_MemType == FLASH_MEMTYPE_PROG)
-	ld	a, (0x10, sp)
+	ld	a, (0x0c, sp)
 	jreq	00102$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 667: assert_param(IS_FLASH_PROG_BLOCK_NUMBER_OK(BlockNum));
 	ldw	x, (0x0d, sp)
@@ -968,26 +965,28 @@ _FLASH_ProgramBlock:
 	ldw	(0x0c, sp), y
 	ldw	y, (0x06, sp)
 	ld	a, #0x06
-00186$:
+00204$:
 	sll	(0x0d, sp)
 	rlc	(0x0c, sp)
 	rlcw	y
 	dec	a
-	jrne	00186$
+	jrne	00204$
+	ld	a, xl
+	add	a, (0x0d, sp)
+	ld	(0x09, sp), a
 	pop	a
-	ld	xh, a
-	addw	x, (0x0b, sp)
+	adc	a, (0x0b, sp)
+	ld	(0x07, sp), a
 	ld	a, yl
 	adc	a, (0x02, sp)
-	ld	yl, a
+	ld	(0x06, sp), a
 	ld	a, yh
 	adc	a, (0x01, sp)
-	ldw	(0x09, sp), x
-	ld	(0x07, sp), a
+	ld	(0x05, sp), a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 683: FLASH->CR2 |= FLASH_CR2_PRG;
 	ld	a, 0x505b
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 680: if(FLASH_ProgMode == FLASH_PROGRAMMODE_STANDARD)
-	tnz	(0x13, sp)
+	tnz	(0x11, sp)
 	jrne	00105$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 683: FLASH->CR2 |= FLASH_CR2_PRG;
 	or	a, #0x01
@@ -1004,26 +1003,28 @@ _FLASH_ProgramBlock:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 694: for(Count = 0; Count < FLASH_BLOCK_SIZE; Count++)
 00134$:
 	clrw	x
-	ldw	(0x0f, sp), x
 00108$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 696: *((PointerAttr uint8_t*) (MemoryAddressCast)startaddress + Count) = ((uint8_t)(Buffer[Count]));
-	ldw	x, (0x09, sp)
-	addw	x, (0x0f, sp)
-	ldw	(0x0b, sp), x
-	ldw	x, (0x14, sp)
-	addw	x, (0x0f, sp)
-	ld	a, (x)
-	ldw	x, (0x0b, sp)
-	ld	(x), a
+	ldw	y, (0x07, sp)
+	ldw	(0x09, sp), y
+	ld	a, xl
+	add	a, (0x0a, sp)
+	ld	(0x0c, sp), a
+	clr	a
+	adc	a, (0x09, sp)
+	ld	(0x0b, sp), a
+	ldw	y, x
+	addw	y, (0x12, sp)
+	ld	a, (y)
+	ldw	y, (0x0b, sp)
+	ld	(y), a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 694: for(Count = 0; Count < FLASH_BLOCK_SIZE; Count++)
-	ldw	x, (0x0f, sp)
 	incw	x
-	ldw	(0x0f, sp), x
 	cpw	x, #0x0040
 	jrc	00108$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 698: }
-	ldw	x, (17, sp)
-	addw	sp, #21
+	ldw	x, (15, sp)
+	addw	sp, #19
 	jp	(x)
 	.area CODE
 	.area CONST

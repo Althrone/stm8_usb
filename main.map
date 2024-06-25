@@ -11,37 +11,52 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000000  l_CABS                          
      00000000  l_CONST                         
      00000000  l_DABS                          
-     00000000  l_INITIALIZED                   
-     00000000  l_INITIALIZER                   
+     00000000  l_DATA                          
      00000000  l__CODE                         
+     00000000  s_.debug_abbrev                 
+     00000000  s_.debug_frame                  
+     00000000  s_.debug_info                   
+     00000000  s_.debug_line                   
+     00000000  s_.debug_loc                    
+     00000000  s_.debug_pubnames               
      00000000  s_CABS                          
      00000000  s_DABS                          
      00000000  s__CODE                         
      00000001  l_SSEG                          
      00000001  s_DATA                          
+     00000001  s_INITIALIZED                   
      00000003  l_GSFINAL                       
      00000007  l_HOME                          
-     0000000D  l_DATA                          
-     0000000E  s_INITIALIZED                   
+     0000000D  l_INITIALIZED                   
+     0000000D  l_INITIALIZER                   
      0000000E  s_SSEG                          
      00000023  l_GSINIT                        
+     00000028  l_.debug_loc                    
+     00000038  l_.debug_pubnames               
+     00000058  l_.debug_frame                  
+     0000006B  l_.debug_abbrev                 
+     000000E5  l_.debug_info                   
+     00000151  l_.debug_line                   
      00000183  l_CODE                          
      00008000  s_HOME                          
      00008007  s_GSINIT                        
      0000802A  s_GSFINAL                       
-     0000802D  s_CODE                          
      0000802D  s_CONST                         
      0000802D  s_INITIALIZER                   
+     0000803A  s_CODE                          
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 2.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-DATA                                00000001    0000000D =          13. bytes (REL,CON)
+INITIALIZED                         00000001    0000000D =          13. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000001  Fusb_tx$tx_buf_size$0_0$0          usb_tx
+     00000002  Fusb_tx$usb_tx_buf$0_0$0           usb_tx
+
 ASxxxx Linker V03.00/V05.40 + sdld,  page 3.
 Hexadecimal  [32-Bits]
 
@@ -60,6 +75,9 @@ HOME                                00008000    00000007 =           7. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00008000  A$main$46                          main
+     00008004  A$main$84                          main
+
 ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
@@ -69,6 +87,21 @@ GSINIT                              00008007    00000023 =          35. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00008007  A$main$54                          main
+     0000800A  A$main$55                          main
+     0000800B  A$main$56                          main
+     0000800D  A$main$57                          main
+     00008010  A$main$60                          main
+     00008013  A$main$61                          main
+     00008015  A$main$63                          main
+     00008019  A$main$64                          main
+     0000801A  A$main$65                          main
+     0000801C  A$main$67                          main
+     0000801F  A$main$68                          main
+     00008021  A$main$70                          main
+     00008024  A$main$71                          main
+     00008027  A$main$72                          main
+     00008028  A$main$73                          main
 ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
 Hexadecimal  [32-Bits]
 
@@ -78,19 +111,333 @@ GSFINAL                             0000802A    00000003 =           3. bytes (R
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     0000802A  A$main$77                          main
+
 ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-CODE                                0000802D    00000183 =         387. bytes (REL,CON)
+INITIALIZER                         0000802D    0000000D =          13. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0000802D  _main                              main
-     00008033  _usb_tx                            usb_tx
-     000081AE  ___sdcc_external_startup           _startup
+     0000802D  Fusb_tx$__xinit_tx_buf_size$0_0$   usb_tx
+     0000802E  Fusb_tx$__xinit_usb_tx_buf$0_0$0   usb_tx
+
 ASxxxx Linker V03.00/V05.40 + sdld,  page 8.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                0000803A    00000183 =         387. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000803A  A$main$103                         main
+     0000803A  Smain$main$0                       main
+     0000803A  Smain$main$1                       main
+     0000803A  Smain$main$2                       main
+     0000803A  Smain$main$3                       main
+     0000803A  Smain$main$4                       main
+     0000803A  _main                              main
+     0000803D  A$main$105                         main
+     0000803D  Smain$main$5                       main
+     0000803F  A$main$110                         main
+     0000803F  Smain$main$6                       main
+     0000803F  Smain$main$7                       main
+     0000803F  XG$main$0$0                        main
+     00008040  A$usb_tx$64                        usb_tx
+     00008040  Smain$main$8                       main
+     00008040  Susb_tx$usb_tx$0                   usb_tx
+     00008040  Susb_tx$usb_tx$1                   usb_tx
+     00008040  Susb_tx$usb_tx$2                   usb_tx
+     00008040  _usb_tx                            usb_tx
+     00008043  A$usb_tx$65                        usb_tx
+     00008046  A$usb_tx$66                        usb_tx
+     00008049  A$usb_tx$67                        usb_tx
+     0000804C  A$usb_tx$68                        usb_tx
+     0000804F  A$usb_tx$69                        usb_tx
+     00008052  A$usb_tx$70                        usb_tx
+     00008055  A$usb_tx$71                        usb_tx
+     00008058  A$usb_tx$72                        usb_tx
+     0000805B  A$usb_tx$73                        usb_tx
+     0000805E  A$usb_tx$74                        usb_tx
+     00008061  A$usb_tx$75                        usb_tx
+     00008064  A$usb_tx$76                        usb_tx
+     00008067  A$usb_tx$78                        usb_tx
+     00008068  A$usb_tx$79                        usb_tx
+     0000806A  A$usb_tx$80                        usb_tx
+     0000806E  A$usb_tx$81                        usb_tx
+     00008070  A$usb_tx$82                        usb_tx
+     00008071  A$usb_tx$83                        usb_tx
+     00008072  A$usb_tx$84                        usb_tx
+     00008075  A$usb_tx$86                        usb_tx
+     00008076  A$usb_tx$87                        usb_tx
+     00008077  A$usb_tx$88                        usb_tx
+     00008078  A$usb_tx$89                        usb_tx
+     0000807A  A$usb_tx$90                        usb_tx
+     0000807C  A$usb_tx$91                        usb_tx
+     0000807D  A$usb_tx$92                        usb_tx
+     0000807E  A$usb_tx$94                        usb_tx
+     00008082  A$usb_tx$95                        usb_tx
+     00008083  A$usb_tx$96                        usb_tx
+     00008084  A$usb_tx$97                        usb_tx
+     00008085  A$usb_tx$98                        usb_tx
+ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                0000803A    00000183 =         387. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00008088  A$usb_tx$100                       usb_tx
+     00008089  A$usb_tx$101                       usb_tx
+     0000808B  A$usb_tx$102                       usb_tx
+     0000808F  A$usb_tx$103                       usb_tx
+     00008091  A$usb_tx$104                       usb_tx
+     00008092  A$usb_tx$105                       usb_tx
+     00008093  A$usb_tx$106                       usb_tx
+     00008096  A$usb_tx$108                       usb_tx
+     00008097  A$usb_tx$109                       usb_tx
+     00008098  A$usb_tx$110                       usb_tx
+     00008099  A$usb_tx$111                       usb_tx
+     0000809B  A$usb_tx$112                       usb_tx
+     0000809D  A$usb_tx$113                       usb_tx
+     0000809E  A$usb_tx$114                       usb_tx
+     0000809F  A$usb_tx$116                       usb_tx
+     000080A3  A$usb_tx$117                       usb_tx
+     000080A4  A$usb_tx$118                       usb_tx
+     000080A5  A$usb_tx$119                       usb_tx
+     000080A6  A$usb_tx$120                       usb_tx
+     000080A9  A$usb_tx$122                       usb_tx
+     000080AA  A$usb_tx$123                       usb_tx
+     000080AC  A$usb_tx$124                       usb_tx
+     000080B0  A$usb_tx$125                       usb_tx
+     000080B2  A$usb_tx$126                       usb_tx
+     000080B3  A$usb_tx$127                       usb_tx
+     000080B4  A$usb_tx$128                       usb_tx
+     000080B7  A$usb_tx$130                       usb_tx
+     000080B8  A$usb_tx$131                       usb_tx
+     000080B9  A$usb_tx$132                       usb_tx
+     000080BA  A$usb_tx$133                       usb_tx
+     000080BC  A$usb_tx$134                       usb_tx
+     000080BE  A$usb_tx$135                       usb_tx
+     000080BF  A$usb_tx$136                       usb_tx
+     000080C0  A$usb_tx$138                       usb_tx
+     000080C4  A$usb_tx$139                       usb_tx
+     000080C5  A$usb_tx$140                       usb_tx
+     000080C6  A$usb_tx$141                       usb_tx
+     000080C7  A$usb_tx$142                       usb_tx
+     000080CA  A$usb_tx$144                       usb_tx
+     000080CB  A$usb_tx$145                       usb_tx
+     000080CD  A$usb_tx$146                       usb_tx
+     000080D1  A$usb_tx$147                       usb_tx
+     000080D3  A$usb_tx$148                       usb_tx
+     000080D4  A$usb_tx$149                       usb_tx
+     000080D5  A$usb_tx$150                       usb_tx
+     000080D8  A$usb_tx$152                       usb_tx
+     000080D9  A$usb_tx$153                       usb_tx
+     000080DA  A$usb_tx$154                       usb_tx
+     000080DB  A$usb_tx$155                       usb_tx
+     000080DD  A$usb_tx$156                       usb_tx
+     000080DF  A$usb_tx$157                       usb_tx
+ASxxxx Linker V03.00/V05.40 + sdld,  page 10.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                0000803A    00000183 =         387. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000080E0  A$usb_tx$158                       usb_tx
+     000080E1  A$usb_tx$160                       usb_tx
+     000080E5  A$usb_tx$161                       usb_tx
+     000080E6  A$usb_tx$162                       usb_tx
+     000080E7  A$usb_tx$163                       usb_tx
+     000080E8  A$usb_tx$164                       usb_tx
+     000080EB  A$usb_tx$166                       usb_tx
+     000080EC  A$usb_tx$167                       usb_tx
+     000080EE  A$usb_tx$168                       usb_tx
+     000080F2  A$usb_tx$169                       usb_tx
+     000080F4  A$usb_tx$170                       usb_tx
+     000080F5  A$usb_tx$171                       usb_tx
+     000080F6  A$usb_tx$172                       usb_tx
+     000080F9  A$usb_tx$174                       usb_tx
+     000080FA  A$usb_tx$175                       usb_tx
+     000080FB  A$usb_tx$176                       usb_tx
+     000080FC  A$usb_tx$177                       usb_tx
+     000080FE  A$usb_tx$178                       usb_tx
+     00008100  A$usb_tx$179                       usb_tx
+     00008101  A$usb_tx$180                       usb_tx
+     00008102  A$usb_tx$182                       usb_tx
+     00008106  A$usb_tx$183                       usb_tx
+     00008107  A$usb_tx$184                       usb_tx
+     00008108  A$usb_tx$185                       usb_tx
+     00008109  A$usb_tx$186                       usb_tx
+     0000810C  A$usb_tx$188                       usb_tx
+     0000810D  A$usb_tx$189                       usb_tx
+     0000810F  A$usb_tx$190                       usb_tx
+     00008113  A$usb_tx$191                       usb_tx
+     00008115  A$usb_tx$192                       usb_tx
+     00008116  A$usb_tx$193                       usb_tx
+     00008119  A$usb_tx$195                       usb_tx
+     0000811A  A$usb_tx$196                       usb_tx
+     0000811B  A$usb_tx$197                       usb_tx
+     0000811D  A$usb_tx$198                       usb_tx
+     0000811F  A$usb_tx$199                       usb_tx
+     00008120  A$usb_tx$200                       usb_tx
+     00008121  A$usb_tx$201                       usb_tx
+     00008122  A$usb_tx$203                       usb_tx
+     00008126  A$usb_tx$204                       usb_tx
+     00008127  A$usb_tx$205                       usb_tx
+     00008128  A$usb_tx$206                       usb_tx
+     0000812B  A$usb_tx$208                       usb_tx
+     0000812D  A$usb_tx$209                       usb_tx
+     0000812F  A$usb_tx$210                       usb_tx
+     00008130  A$usb_tx$211                       usb_tx
+     00008134  A$usb_tx$212                       usb_tx
+     00008137  A$usb_tx$214                       usb_tx
+     00008138  A$usb_tx$215                       usb_tx
+     00008139  A$usb_tx$216                       usb_tx
+     0000813B  A$usb_tx$217                       usb_tx
+ASxxxx Linker V03.00/V05.40 + sdld,  page 11.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                0000803A    00000183 =         387. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     0000813D  A$usb_tx$218                       usb_tx
+     0000813E  A$usb_tx$219                       usb_tx
+     0000813F  A$usb_tx$220                       usb_tx
+     00008140  A$usb_tx$221                       usb_tx
+     00008141  A$usb_tx$222                       usb_tx
+     00008142  A$usb_tx$223                       usb_tx
+     00008146  A$usb_tx$224                       usb_tx
+     00008149  A$usb_tx$226                       usb_tx
+     0000814A  A$usb_tx$227                       usb_tx
+     0000814B  A$usb_tx$228                       usb_tx
+     0000814D  A$usb_tx$229                       usb_tx
+     0000814E  A$usb_tx$230                       usb_tx
+     00008152  A$usb_tx$231                       usb_tx
+     00008154  A$usb_tx$232                       usb_tx
+     00008158  A$usb_tx$233                       usb_tx
+     0000815A  A$usb_tx$234                       usb_tx
+     0000815D  A$usb_tx$236                       usb_tx
+     0000815E  A$usb_tx$237                       usb_tx
+     00008160  A$usb_tx$239                       usb_tx
+     00008164  A$usb_tx$240                       usb_tx
+     00008166  A$usb_tx$241                       usb_tx
+     00008169  A$usb_tx$244                       usb_tx
+     0000816B  A$usb_tx$245                       usb_tx
+     0000816C  A$usb_tx$246                       usb_tx
+     0000816D  A$usb_tx$247                       usb_tx
+     0000816E  A$usb_tx$248                       usb_tx
+     0000816F  A$usb_tx$249                       usb_tx
+     00008173  A$usb_tx$250                       usb_tx
+     00008177  A$usb_tx$251                       usb_tx
+     00008179  A$usb_tx$252                       usb_tx
+     0000817A  A$usb_tx$253                       usb_tx
+     0000817D  A$usb_tx$257                       usb_tx
+     0000817E  A$usb_tx$259                       usb_tx
+     0000817F  A$usb_tx$260                       usb_tx
+     00008180  A$usb_tx$261                       usb_tx
+     00008181  A$usb_tx$262                       usb_tx
+     00008185  A$usb_tx$263                       usb_tx
+     00008189  A$usb_tx$265                       usb_tx
+     0000818B  A$usb_tx$266                       usb_tx
+     0000818D  A$usb_tx$267                       usb_tx
+     0000818E  A$usb_tx$268                       usb_tx
+     0000818F  A$usb_tx$269                       usb_tx
+     00008193  A$usb_tx$270                       usb_tx
+     00008196  A$usb_tx$271                       usb_tx
+     00008199  A$usb_tx$272                       usb_tx
+     0000819C  A$usb_tx$273                       usb_tx
+     0000819F  A$usb_tx$274                       usb_tx
+     000081A2  A$usb_tx$275                       usb_tx
+     000081A5  A$usb_tx$276                       usb_tx
+     000081A8  A$usb_tx$277                       usb_tx
+     000081AB  A$usb_tx$278                       usb_tx
+ASxxxx Linker V03.00/V05.40 + sdld,  page 12.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+CODE                                0000803A    00000183 =         387. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     000081AE  A$usb_tx$279                       usb_tx
+     000081B1  A$usb_tx$280                       usb_tx
+     000081B4  A$usb_tx$281                       usb_tx
+     000081B7  A$usb_tx$282                       usb_tx
+     000081BA  A$usb_tx$287                       usb_tx
+     000081BA  Susb_tx$usb_tx$3                   usb_tx
+     000081BA  Susb_tx$usb_tx$4                   usb_tx
+     000081BA  XG$usb_tx$0$0                      usb_tx
+     000081BB  Susb_tx$usb_tx$5                   usb_tx
+     000081BB  ___sdcc_external_startup           _startup
+ASxxxx Linker V03.00/V05.40 + sdld,  page 13.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_line                         00000000    00000151 =         337. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 14.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_loc                          00000000    00000028 =          40. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 15.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_abbrev                       00000000    0000006B =         107. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 16.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_info                         00000000    000000E5 =         229. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 17.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_pubnames                     00000000    00000038 =          56. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 18.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.debug_frame                        00000000    00000058 =          88. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00/V05.40 + sdld,  page 19.
 
 Files Linked                              [ module(s) ]
 
@@ -103,7 +450,7 @@ Libraries Linked                          [ object file ]
 D:\Software\Work\SDCC\bin\..\lib\stm8/stm8.lib
                                           [ _startup.rel ]
 
-ASxxxx Linker V03.00/V05.40 + sdld,  page 9.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 20.
 
 User Base Address Definitions
 

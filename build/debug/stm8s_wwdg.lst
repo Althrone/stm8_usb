@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_wwdg
                                       6 	.optsdcc -mstm8
@@ -228,10 +228,10 @@
                                     219 	.area CABS (ABS)
                                     220 
                                     221 	.area .debug_line (NOLOAD)
-      000000 00 00 01 92            222 	.dw	0,Ldebug_line_end-Ldebug_line_start
+      000000 00 00 01 9E            222 	.dw	0,Ldebug_line_end-Ldebug_line_start
       000004                        223 Ldebug_line_start:
       000004 00 02                  224 	.dw	2
-      000006 00 00 00 A9            225 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
+      000006 00 00 00 B5            225 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
       00000A 01                     226 	.db	1
       00000B 01                     227 	.db	1
       00000C FB                     228 	.db	-5
@@ -246,21 +246,23 @@
       000015 00                     237 	.db	0
       000016 00                     238 	.db	0
       000017 01                     239 	.db	1
-      000018 44 3A 5C 5C 53 6F 66   240 	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+      000018 44 3A 5C 5C 53 6F 66   240 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-             5C 5C 73 74 6D 38
-      000041 00                     241 	.db	0
-      000042 44 3A 5C 5C 53 6F 66   242 	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65 5C
+             5C 73 74 6D 38
+      000047 00                     241 	.db	0
+      000048 44 3A 5C 5C 53 6F 66   242 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-      000065 00                     243 	.db	0
-      000066 00                     244 	.db	0
-      000067 2E 2F 53 54 4D 38 53   245 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_wwdg.c"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65
+      000071 00                     243 	.db	0
+      000072 00                     244 	.db	0
+      000073 2E 2F 53 54 4D 38 53   245 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_wwdg.c"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -271,173 +273,173 @@
              72 63 2F 73 74 6D 38
              73 5F 77 77 64 67 2E
              63
-      0000AE 00                     246 	.db	0
-      0000AF 00                     247 	.uleb128	0
-      0000B0 00                     248 	.uleb128	0
-      0000B1 00                     249 	.uleb128	0
-      0000B2 00                     250 	.db	0
-      0000B3                        251 Ldebug_line_stmt:
-      0000B3 00                     252 	.db	0
-      0000B4 05                     253 	.uleb128	5
-      0000B5 02                     254 	.db	2
-      0000B6 00 00r00r00            255 	.dw	0,(Sstm8s_wwdg$WWDG_Init$0)
-      0000BA 03                     256 	.db	3
-      0000BB 34                     257 	.sleb128	52
-      0000BC 01                     258 	.db	1
-      0000BD 00                     259 	.db	0
-      0000BE 05                     260 	.uleb128	5
-      0000BF 02                     261 	.db	2
-      0000C0 00 00r00r03            262 	.dw	0,(Sstm8s_wwdg$WWDG_Init$3)
-      0000C4 03                     263 	.db	3
-      0000C5 03                     264 	.sleb128	3
-      0000C6 01                     265 	.db	1
-      0000C7 00                     266 	.db	0
-      0000C8 05                     267 	.uleb128	5
-      0000C9 02                     268 	.db	2
-      0000CA 00 00r00r15            269 	.dw	0,(Sstm8s_wwdg$WWDG_Init$8)
-      0000CE 03                     270 	.db	3
-      0000CF 02                     271 	.sleb128	2
-      0000D0 01                     272 	.db	1
-      0000D1 00                     273 	.db	0
-      0000D2 05                     274 	.uleb128	5
-      0000D3 02                     275 	.db	2
-      0000D4 00 00r00r19            276 	.dw	0,(Sstm8s_wwdg$WWDG_Init$9)
-      0000D8 03                     277 	.db	3
-      0000D9 01                     278 	.sleb128	1
-      0000DA 01                     279 	.db	1
-      0000DB 00                     280 	.db	0
-      0000DC 05                     281 	.uleb128	5
-      0000DD 02                     282 	.db	2
-      0000DE 00 00r00r20            283 	.dw	0,(Sstm8s_wwdg$WWDG_Init$10)
-      0000E2 03                     284 	.db	3
-      0000E3 01                     285 	.sleb128	1
-      0000E4 01                     286 	.db	1
-      0000E5 00                     287 	.db	0
-      0000E6 05                     288 	.uleb128	5
-      0000E7 02                     289 	.db	2
-      0000E8 00 00r00r29            290 	.dw	0,(Sstm8s_wwdg$WWDG_Init$11)
-      0000EC 03                     291 	.db	3
-      0000ED 01                     292 	.sleb128	1
-      0000EE 01                     293 	.db	1
-      0000EF 00                     294 	.db	0
-      0000F0 05                     295 	.uleb128	5
-      0000F1 02                     296 	.db	2
-      0000F2 00 00r00r2D            297 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$16)
-      0000F6 03                     298 	.db	3
-      0000F7 08                     299 	.sleb128	8
-      0000F8 01                     300 	.db	1
-      0000F9 00                     301 	.db	0
-      0000FA 05                     302 	.uleb128	5
-      0000FB 02                     303 	.db	2
-      0000FC 00 00r00r2D            304 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$18)
-      000100 03                     305 	.db	3
-      000101 03                     306 	.sleb128	3
-      000102 01                     307 	.db	1
-      000103 00                     308 	.db	0
-      000104 05                     309 	.uleb128	5
-      000105 02                     310 	.db	2
-      000106 00 00r00r3F            311 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$25)
-      00010A 03                     312 	.db	3
-      00010B 04                     313 	.sleb128	4
-      00010C 01                     314 	.db	1
-      00010D 00                     315 	.db	0
-      00010E 05                     316 	.uleb128	5
-      00010F 02                     317 	.db	2
-      000110 00 00r00r44            318 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$26)
-      000114 03                     319 	.db	3
-      000115 01                     320 	.sleb128	1
-      000116 01                     321 	.db	1
-      000117 09                     322 	.db	9
-      000118 00 01                  323 	.dw	1+Sstm8s_wwdg$WWDG_SetCounter$27-Sstm8s_wwdg$WWDG_SetCounter$26
-      00011A 00                     324 	.db	0
-      00011B 01                     325 	.uleb128	1
-      00011C 01                     326 	.db	1
-      00011D 00                     327 	.db	0
-      00011E 05                     328 	.uleb128	5
-      00011F 02                     329 	.db	2
-      000120 00 00r00r45            330 	.dw	0,(Sstm8s_wwdg$WWDG_GetCounter$29)
-      000124 03                     331 	.db	3
-      000125 D5 00                  332 	.sleb128	85
-      000127 01                     333 	.db	1
-      000128 00                     334 	.db	0
-      000129 05                     335 	.uleb128	5
-      00012A 02                     336 	.db	2
-      00012B 00 00r00r45            337 	.dw	0,(Sstm8s_wwdg$WWDG_GetCounter$31)
-      00012F 03                     338 	.db	3
-      000130 02                     339 	.sleb128	2
-      000131 01                     340 	.db	1
-      000132 00                     341 	.db	0
-      000133 05                     342 	.uleb128	5
-      000134 02                     343 	.db	2
-      000135 00 00r00r48            344 	.dw	0,(Sstm8s_wwdg$WWDG_GetCounter$32)
-      000139 03                     345 	.db	3
-      00013A 01                     346 	.sleb128	1
-      00013B 01                     347 	.db	1
-      00013C 09                     348 	.db	9
-      00013D 00 01                  349 	.dw	1+Sstm8s_wwdg$WWDG_GetCounter$33-Sstm8s_wwdg$WWDG_GetCounter$32
-      00013F 00                     350 	.db	0
-      000140 01                     351 	.uleb128	1
-      000141 01                     352 	.db	1
-      000142 00                     353 	.db	0
-      000143 05                     354 	.uleb128	5
-      000144 02                     355 	.db	2
-      000145 00 00r00r49            356 	.dw	0,(Sstm8s_wwdg$WWDG_SWReset$35)
-      000149 03                     357 	.db	3
-      00014A DF 00                  358 	.sleb128	95
-      00014C 01                     359 	.db	1
-      00014D 00                     360 	.db	0
-      00014E 05                     361 	.uleb128	5
-      00014F 02                     362 	.db	2
-      000150 00 00r00r49            363 	.dw	0,(Sstm8s_wwdg$WWDG_SWReset$37)
-      000154 03                     364 	.db	3
-      000155 02                     365 	.sleb128	2
-      000156 01                     366 	.db	1
-      000157 00                     367 	.db	0
-      000158 05                     368 	.uleb128	5
-      000159 02                     369 	.db	2
-      00015A 00 00r00r4D            370 	.dw	0,(Sstm8s_wwdg$WWDG_SWReset$38)
-      00015E 03                     371 	.db	3
-      00015F 01                     372 	.sleb128	1
-      000160 01                     373 	.db	1
-      000161 09                     374 	.db	9
-      000162 00 01                  375 	.dw	1+Sstm8s_wwdg$WWDG_SWReset$39-Sstm8s_wwdg$WWDG_SWReset$38
-      000164 00                     376 	.db	0
-      000165 01                     377 	.uleb128	1
-      000166 01                     378 	.db	1
-      000167 00                     379 	.db	0
-      000168 05                     380 	.uleb128	5
-      000169 02                     381 	.db	2
-      00016A 00 00r00r4E            382 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$41)
-      00016E 03                     383 	.db	3
-      00016F EB 00                  384 	.sleb128	107
-      000171 01                     385 	.db	1
-      000172 00                     386 	.db	0
-      000173 05                     387 	.uleb128	5
-      000174 02                     388 	.db	2
-      000175 00 00r00r4E            389 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$43)
-      000179 03                     390 	.db	3
-      00017A 03                     391 	.sleb128	3
-      00017B 01                     392 	.db	1
-      00017C 00                     393 	.db	0
-      00017D 05                     394 	.uleb128	5
-      00017E 02                     395 	.db	2
-      00017F 00 00r00r60            396 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$50)
-      000183 03                     397 	.db	3
-      000184 02                     398 	.sleb128	2
-      000185 01                     399 	.db	1
-      000186 00                     400 	.db	0
-      000187 05                     401 	.uleb128	5
-      000188 02                     402 	.db	2
-      000189 00 00r00r67            403 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$51)
-      00018D 03                     404 	.db	3
-      00018E 01                     405 	.sleb128	1
-      00018F 01                     406 	.db	1
-      000190 09                     407 	.db	9
-      000191 00 01                  408 	.dw	1+Sstm8s_wwdg$WWDG_SetWindowValue$52-Sstm8s_wwdg$WWDG_SetWindowValue$51
-      000193 00                     409 	.db	0
-      000194 01                     410 	.uleb128	1
-      000195 01                     411 	.db	1
-      000196                        412 Ldebug_line_end:
+      0000BA 00                     246 	.db	0
+      0000BB 00                     247 	.uleb128	0
+      0000BC 00                     248 	.uleb128	0
+      0000BD 00                     249 	.uleb128	0
+      0000BE 00                     250 	.db	0
+      0000BF                        251 Ldebug_line_stmt:
+      0000BF 00                     252 	.db	0
+      0000C0 05                     253 	.uleb128	5
+      0000C1 02                     254 	.db	2
+      0000C2 00 00r00r00            255 	.dw	0,(Sstm8s_wwdg$WWDG_Init$0)
+      0000C6 03                     256 	.db	3
+      0000C7 34                     257 	.sleb128	52
+      0000C8 01                     258 	.db	1
+      0000C9 00                     259 	.db	0
+      0000CA 05                     260 	.uleb128	5
+      0000CB 02                     261 	.db	2
+      0000CC 00 00r00r03            262 	.dw	0,(Sstm8s_wwdg$WWDG_Init$3)
+      0000D0 03                     263 	.db	3
+      0000D1 03                     264 	.sleb128	3
+      0000D2 01                     265 	.db	1
+      0000D3 00                     266 	.db	0
+      0000D4 05                     267 	.uleb128	5
+      0000D5 02                     268 	.db	2
+      0000D6 00 00r00r15            269 	.dw	0,(Sstm8s_wwdg$WWDG_Init$8)
+      0000DA 03                     270 	.db	3
+      0000DB 02                     271 	.sleb128	2
+      0000DC 01                     272 	.db	1
+      0000DD 00                     273 	.db	0
+      0000DE 05                     274 	.uleb128	5
+      0000DF 02                     275 	.db	2
+      0000E0 00 00r00r19            276 	.dw	0,(Sstm8s_wwdg$WWDG_Init$9)
+      0000E4 03                     277 	.db	3
+      0000E5 01                     278 	.sleb128	1
+      0000E6 01                     279 	.db	1
+      0000E7 00                     280 	.db	0
+      0000E8 05                     281 	.uleb128	5
+      0000E9 02                     282 	.db	2
+      0000EA 00 00r00r20            283 	.dw	0,(Sstm8s_wwdg$WWDG_Init$10)
+      0000EE 03                     284 	.db	3
+      0000EF 01                     285 	.sleb128	1
+      0000F0 01                     286 	.db	1
+      0000F1 00                     287 	.db	0
+      0000F2 05                     288 	.uleb128	5
+      0000F3 02                     289 	.db	2
+      0000F4 00 00r00r29            290 	.dw	0,(Sstm8s_wwdg$WWDG_Init$11)
+      0000F8 03                     291 	.db	3
+      0000F9 01                     292 	.sleb128	1
+      0000FA 01                     293 	.db	1
+      0000FB 00                     294 	.db	0
+      0000FC 05                     295 	.uleb128	5
+      0000FD 02                     296 	.db	2
+      0000FE 00 00r00r2D            297 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$16)
+      000102 03                     298 	.db	3
+      000103 08                     299 	.sleb128	8
+      000104 01                     300 	.db	1
+      000105 00                     301 	.db	0
+      000106 05                     302 	.uleb128	5
+      000107 02                     303 	.db	2
+      000108 00 00r00r2D            304 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$18)
+      00010C 03                     305 	.db	3
+      00010D 03                     306 	.sleb128	3
+      00010E 01                     307 	.db	1
+      00010F 00                     308 	.db	0
+      000110 05                     309 	.uleb128	5
+      000111 02                     310 	.db	2
+      000112 00 00r00r3F            311 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$25)
+      000116 03                     312 	.db	3
+      000117 04                     313 	.sleb128	4
+      000118 01                     314 	.db	1
+      000119 00                     315 	.db	0
+      00011A 05                     316 	.uleb128	5
+      00011B 02                     317 	.db	2
+      00011C 00 00r00r44            318 	.dw	0,(Sstm8s_wwdg$WWDG_SetCounter$26)
+      000120 03                     319 	.db	3
+      000121 01                     320 	.sleb128	1
+      000122 01                     321 	.db	1
+      000123 09                     322 	.db	9
+      000124 00 01                  323 	.dw	1+Sstm8s_wwdg$WWDG_SetCounter$27-Sstm8s_wwdg$WWDG_SetCounter$26
+      000126 00                     324 	.db	0
+      000127 01                     325 	.uleb128	1
+      000128 01                     326 	.db	1
+      000129 00                     327 	.db	0
+      00012A 05                     328 	.uleb128	5
+      00012B 02                     329 	.db	2
+      00012C 00 00r00r45            330 	.dw	0,(Sstm8s_wwdg$WWDG_GetCounter$29)
+      000130 03                     331 	.db	3
+      000131 D5 00                  332 	.sleb128	85
+      000133 01                     333 	.db	1
+      000134 00                     334 	.db	0
+      000135 05                     335 	.uleb128	5
+      000136 02                     336 	.db	2
+      000137 00 00r00r45            337 	.dw	0,(Sstm8s_wwdg$WWDG_GetCounter$31)
+      00013B 03                     338 	.db	3
+      00013C 02                     339 	.sleb128	2
+      00013D 01                     340 	.db	1
+      00013E 00                     341 	.db	0
+      00013F 05                     342 	.uleb128	5
+      000140 02                     343 	.db	2
+      000141 00 00r00r48            344 	.dw	0,(Sstm8s_wwdg$WWDG_GetCounter$32)
+      000145 03                     345 	.db	3
+      000146 01                     346 	.sleb128	1
+      000147 01                     347 	.db	1
+      000148 09                     348 	.db	9
+      000149 00 01                  349 	.dw	1+Sstm8s_wwdg$WWDG_GetCounter$33-Sstm8s_wwdg$WWDG_GetCounter$32
+      00014B 00                     350 	.db	0
+      00014C 01                     351 	.uleb128	1
+      00014D 01                     352 	.db	1
+      00014E 00                     353 	.db	0
+      00014F 05                     354 	.uleb128	5
+      000150 02                     355 	.db	2
+      000151 00 00r00r49            356 	.dw	0,(Sstm8s_wwdg$WWDG_SWReset$35)
+      000155 03                     357 	.db	3
+      000156 DF 00                  358 	.sleb128	95
+      000158 01                     359 	.db	1
+      000159 00                     360 	.db	0
+      00015A 05                     361 	.uleb128	5
+      00015B 02                     362 	.db	2
+      00015C 00 00r00r49            363 	.dw	0,(Sstm8s_wwdg$WWDG_SWReset$37)
+      000160 03                     364 	.db	3
+      000161 02                     365 	.sleb128	2
+      000162 01                     366 	.db	1
+      000163 00                     367 	.db	0
+      000164 05                     368 	.uleb128	5
+      000165 02                     369 	.db	2
+      000166 00 00r00r4D            370 	.dw	0,(Sstm8s_wwdg$WWDG_SWReset$38)
+      00016A 03                     371 	.db	3
+      00016B 01                     372 	.sleb128	1
+      00016C 01                     373 	.db	1
+      00016D 09                     374 	.db	9
+      00016E 00 01                  375 	.dw	1+Sstm8s_wwdg$WWDG_SWReset$39-Sstm8s_wwdg$WWDG_SWReset$38
+      000170 00                     376 	.db	0
+      000171 01                     377 	.uleb128	1
+      000172 01                     378 	.db	1
+      000173 00                     379 	.db	0
+      000174 05                     380 	.uleb128	5
+      000175 02                     381 	.db	2
+      000176 00 00r00r4E            382 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$41)
+      00017A 03                     383 	.db	3
+      00017B EB 00                  384 	.sleb128	107
+      00017D 01                     385 	.db	1
+      00017E 00                     386 	.db	0
+      00017F 05                     387 	.uleb128	5
+      000180 02                     388 	.db	2
+      000181 00 00r00r4E            389 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$43)
+      000185 03                     390 	.db	3
+      000186 03                     391 	.sleb128	3
+      000187 01                     392 	.db	1
+      000188 00                     393 	.db	0
+      000189 05                     394 	.uleb128	5
+      00018A 02                     395 	.db	2
+      00018B 00 00r00r60            396 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$50)
+      00018F 03                     397 	.db	3
+      000190 02                     398 	.sleb128	2
+      000191 01                     399 	.db	1
+      000192 00                     400 	.db	0
+      000193 05                     401 	.uleb128	5
+      000194 02                     402 	.db	2
+      000195 00 00r00r67            403 	.dw	0,(Sstm8s_wwdg$WWDG_SetWindowValue$51)
+      000199 03                     404 	.db	3
+      00019A 01                     405 	.sleb128	1
+      00019B 01                     406 	.db	1
+      00019C 09                     407 	.db	9
+      00019D 00 01                  408 	.dw	1+Sstm8s_wwdg$WWDG_SetWindowValue$52-Sstm8s_wwdg$WWDG_SetWindowValue$51
+      00019F 00                     409 	.db	0
+      0001A0 01                     410 	.uleb128	1
+      0001A1 01                     411 	.db	1
+      0001A2                        412 Ldebug_line_end:
                                     413 
                                     414 	.area .debug_loc (NOLOAD)
       000000                        415 Ldebug_loc_start:
@@ -733,10 +735,10 @@
       000053 00                     695 	.db	0
       000054 00 00r00r00            696 	.dw	0,(Ldebug_line_start+-4)
       000058 01                     697 	.db	1
-      000059 53 44 43 43 20 76 65   698 	.ascii "SDCC version 4.3.0 #14184"
+      000059 53 44 43 43 20 76 65   698 	.ascii "SDCC version 4.4.0 #14620"
              72 73 69 6F 6E 20 34
-             2E 33 2E 30 20 23 31
-             34 31 38 34
+             2E 34 2E 30 20 23 31
+             34 36 32 30
       000072 00                     699 	.db	0
       000073 02                     700 	.uleb128	2
       000074 00 00 00 AC            701 	.dw	0,172

@@ -20,7 +20,8 @@ OBJS_RELEASE=$(addprefix $(BUILD_DIR)/release/,$(notdir $(SRCS_C:.c=.rel)))
 # OBJS_S=$(addprefix $(BUILD_DIR)/,$(notdir $(SRCS_S:.S=.o)))
 
 INC_DIRS=$(sort $(dir $(shell find . -type f -name "*.h")))
-INCS_C=$(patsubst ./%,-I%,$(INC_DIRS))
+INCS_C=$(patsubst ./%,-I./%,$(INC_DIRS))
+# INCS_C=$(patsubst ./%,-I%,$(INC_DIRS))
 
 #######################################
 # binaries
@@ -46,8 +47,9 @@ CFLAGS = $(CPU) $(C_DEFS) $(INCS_C)
 #OpenOCD
 #######################################
 OCD_LINK_FILE = stlink-dap.cfg#烧录器配置文件，用于普通买到的烧录器
-# OCD_LINK_FILE = stlink-v2-1.cfg	#烧录器配置文件，用于stm32f4discovery
-OCD_CHIP_FILE = stm8s003.cfg	#芯片配置文件
+# OCD_LINK_FILE = stlink.cfg	#烧录器配置文件，用于stm32f4discovery
+OCD_CHIP_FILE = stm8s103.cfg	#芯片配置文件
+# OCD_CHIP_FILE = stm8s003.cfg	#芯片配置文件
 
 .PHONY: all
 
@@ -60,20 +62,40 @@ vpath %.c $(sort $(dir $(SRCS_C)))
 $(BUILD_DIR)/debug/%.rel: %.c Makefile | $(BUILD_DIR)/debug 
 	$(CC) -c $(CFLAGS) --debug --out-fmt-elf --opt-code-size $< -o $@
 
-$(BUILD_DIR)/release/%.rel: %.c Makefile | $(BUILD_DIR)/release
-	$(CC) -c $(CFLAGS) --opt-code-size $< -o $@
+# $(BUILD_DIR)/release/%.rel: %.c Makefile | $(BUILD_DIR)/release
+# 	$(CC) -c $(CFLAGS) --opt-code-size $< -o $@
 
 $(BUILD_DIR)/debug/$(TARGET).elf: $(OBJS_DEBUG) Makefile
-	$(CC) $(CFLAGS) --debug --opt-code-size --out-fmt-elf $^ -o $@
+	$(CC) $(CFLAGS) --debug --opt-code-size --out-fmt-elf -o $^ $@
+
 # $(SZ) $@
 
-$(BUILD_DIR)/release/$(TARGET).ihx: $(OBJS_RELEASE) Makefile
-	$(CC) $(CFLAGS) --opt-code-size --out-fmt-ihx $^ -o $@
+# $(BUILD_DIR)/release/$(TARGET).ihx: $(OBJS_RELEASE) Makefile
+# 	$(CC) $(CFLAGS) --opt-code-size --out-fmt-ihx $^ -o $@
 	
 $(BUILD_DIR):
 	mkdir $@
 	mkdir $@/debug
 	mkdir $@/release
 
+burn:
+	openocd \
+	-f interface/$(OCD_LINK_FILE) \
+	-f target/$(OCD_CHIP_FILE) \
+	-c init \
+	-c "reset halt" \
+	-c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
+	-c "reset run" \
+	-c exit
+# -c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
+
+link: 
+	openocd \
+	-f interface/$(OCD_LINK_FILE) \
+	-f target/$(OCD_CHIP_FILE) \
+	-c init \
+	-c "reset halt" \
+
+
 echo:
-	@echo  $(OBJS_DEBUG)
+	@echo  $(INCS_C)

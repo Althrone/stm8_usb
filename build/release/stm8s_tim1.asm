@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_tim1
 	.optsdcc -mstm8
@@ -980,22 +980,22 @@ _TIM1_ICInit:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 430: assert_param(IS_TIM1_CHANNEL_OK(TIM1_Channel));
 	ld	(0x03, sp), a
 	dec	a
-	jrne	00235$
+	jrne	00269$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00235$:
+00269$:
 	clr	(0x01, sp)
-00236$:
+00270$:
 	ld	a, (0x03, sp)
 	sub	a, #0x02
-	jrne	00238$
+	jrne	00272$
 	inc	a
 	ld	(0x02, sp), a
 	.byte 0xc5
-00238$:
+00272$:
 	clr	(0x02, sp)
-00239$:
+00273$:
 	tnz	(0x03, sp)
 	jreq	00113$
 	tnz	(0x01, sp)
@@ -1168,13 +1168,13 @@ _TIM1_PWMIConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 500: assert_param(IS_TIM1_IC_SELECTION_OK(TIM1_ICSelection));
 	ld	a, (0x07, sp)
 	dec	a
-	jrne	00218$
+	jrne	00246$
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	.byte 0xc5
-00218$:
+00246$:
 	clr	(0x02, sp)
-00219$:
+00247$:
 	tnz	(0x02, sp)
 	jrne	00123$
 	ld	a, (0x07, sp)
@@ -1565,13 +1565,13 @@ _TIM1_TIxExternalClockConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 756: assert_param(IS_TIM1_TIXCLK_SOURCE_OK(TIM1_TIxExternalCLKSource));
 	ld	(0x02, sp), a
 	sub	a, #0x60
-	jrne	00157$
+	jrne	00171$
 	inc	a
 	ld	(0x01, sp), a
 	.byte 0xc5
-00157$:
+00171$:
 	clr	(0x01, sp)
-00158$:
+00172$:
 	ld	a, (0x02, sp)
 	cp	a, #0x40
 	jreq	00107$
@@ -2881,25 +2881,25 @@ _TIM1_CCxCmd:
 	pushw	x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1582: assert_param(IS_TIM1_CHANNEL_OK(TIM1_Channel));
 	cp	a, #0x01
-	jrne	00206$
+	jrne	00232$
 	push	a
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	pop	a
 	.byte 0xc5
-00206$:
+00232$:
 	clr	(0x01, sp)
-00207$:
+00233$:
 	cp	a, #0x02
-	jrne	00209$
+	jrne	00235$
 	push	a
 	ld	a, #0x01
 	ld	(0x03, sp), a
 	pop	a
 	.byte 0xc5
-00209$:
+00235$:
 	clr	(0x02, sp)
-00210$:
+00236$:
 	tnz	a
 	jreq	00125$
 	tnz	(0x01, sp)
@@ -3015,15 +3015,15 @@ _TIM1_CCxNCmd:
 	push	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1650: assert_param(IS_TIM1_COMPLEMENTARY_CHANNEL_OK(TIM1_Channel));
 	cp	a, #0x01
-	jrne	00182$
+	jrne	00202$
 	push	a
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	pop	a
 	.byte 0xc5
-00182$:
+00202$:
 	clr	(0x01, sp)
-00183$:
+00203$:
 	tnz	a
 	jreq	00119$
 	tnz	(0x01, sp)
@@ -3117,22 +3117,22 @@ _TIM1_SelectOCxM:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1715: assert_param(IS_TIM1_CHANNEL_OK(TIM1_Channel));
 	ld	(0x03, sp), a
 	dec	a
-	jrne	00222$
+	jrne	00252$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00222$:
+00252$:
 	clr	(0x01, sp)
-00223$:
+00253$:
 	ld	a, (0x03, sp)
 	sub	a, #0x02
-	jrne	00225$
+	jrne	00255$
 	inc	a
 	ld	(0x02, sp), a
 	.byte 0xc5
-00225$:
+00255$:
 	clr	(0x02, sp)
-00226$:
+00256$:
 	tnz	(0x03, sp)
 	jreq	00113$
 	tnz	(0x01, sp)
@@ -3466,14 +3466,10 @@ _TIM1_GetCapture1:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1930: tmpccr1l = TIM1->CCR1L;
 	ld	a, 0x5266
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1932: tmpccr1 = (uint16_t)(tmpccr1l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1933: tmpccr1 |= (uint16_t)((uint16_t)tmpccr1h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1935: return (uint16_t)tmpccr1;
-	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1936: }
 	addw	sp, #2
 	ret
@@ -3489,14 +3485,10 @@ _TIM1_GetCapture2:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1951: tmpccr2l = TIM1->CCR2L;
 	ld	a, 0x5268
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1953: tmpccr2 = (uint16_t)(tmpccr2l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1954: tmpccr2 |= (uint16_t)((uint16_t)tmpccr2h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1956: return (uint16_t)tmpccr2;
-	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1957: }
 	addw	sp, #2
 	ret
@@ -3512,14 +3504,10 @@ _TIM1_GetCapture3:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1971: tmpccr3l = TIM1->CCR3L;
 	ld	a, 0x526a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1973: tmpccr3 = (uint16_t)(tmpccr3l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1974: tmpccr3 |= (uint16_t)((uint16_t)tmpccr3h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1976: return (uint16_t)tmpccr3;
-	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1977: }
 	addw	sp, #2
 	ret
@@ -3535,14 +3523,10 @@ _TIM1_GetCapture4:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1991: tmpccr4l = TIM1->CCR4L;
 	ld	a, 0x526c
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1993: tmpccr4 = (uint16_t)(tmpccr4l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1994: tmpccr4 |= (uint16_t)((uint16_t)tmpccr4h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1996: return (uint16_t)tmpccr4;
-	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1997: }
 	addw	sp, #2
 	ret
@@ -3551,40 +3535,32 @@ _TIM1_GetCapture4:
 ;	 function TIM1_GetCounter
 ;	-----------------------------------------
 _TIM1_GetCounter:
-	sub	sp, #4
+	pushw	x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2008: tmpcntr = ((uint16_t)TIM1->CNTRH << 8);
 	ld	a, 0x525e
 	ld	xh, a
 	clr	(0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2011: return (uint16_t)(tmpcntr | (uint16_t)(TIM1->CNTRL));
 	ld	a, 0x525f
-	clr	(0x03, sp)
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x03, sp)
-	ld	xh, a
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2012: }
-	addw	sp, #4
+	addw	sp, #2
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2019: uint16_t TIM1_GetPrescaler(void)
 ;	-----------------------------------------
 ;	 function TIM1_GetPrescaler
 ;	-----------------------------------------
 _TIM1_GetPrescaler:
-	sub	sp, #4
+	pushw	x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2023: temp = ((uint16_t)TIM1->PSCRH << 8);
 	ld	a, 0x5260
 	ld	xh, a
 	clr	(0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2026: return (uint16_t)( temp | (uint16_t)(TIM1->PSCRL));
 	ld	a, 0x5261
-	clr	(0x03, sp)
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x03, sp)
-	ld	xh, a
+	ld	xl, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2027: }
-	addw	sp, #4
+	addw	sp, #2
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2047: FlagStatus TIM1_GetFlagStatus(TIM1_FLAG_TypeDef TIM1_FLAG)
 ;	-----------------------------------------
@@ -3692,7 +3668,7 @@ _TIM1_ClearFlag:
 ;	 function TIM1_GetITStatus
 ;	-----------------------------------------
 _TIM1_GetITStatus:
-	push	a
+	pushw	x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2118: assert_param(IS_TIM1_GET_IT_OK(TIM1_IT));
 	cp	a, #0x01
 	jreq	00108$
@@ -3723,23 +3699,21 @@ _TIM1_GetITStatus:
 	ldw	x, #0x5255
 	push	a
 	ld	a, (x)
-	ld	(0x02, sp), a
+	ld	(0x03, sp), a
 	pop	a
 	push	a
-	and	a, (0x02, sp)
-	ld	yl, a
+	and	a, (0x03, sp)
+	ld	(0x02, sp), a
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2122: TIM1_itEnable = (uint8_t)(TIM1->IER & (uint8_t)TIM1_IT);
 	ldw	x, #0x5254
 	push	a
 	ld	a, (x)
-	ld	(0x02, sp), a
+	ld	(0x03, sp), a
 	pop	a
-	and	a, (0x01, sp)
+	and	a, (0x02, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2124: if ((TIM1_itStatus != (uint8_t)RESET ) && (TIM1_itEnable != (uint8_t)RESET ))
-	exg	a, yl
-	tnz	a
-	exg	a, yl
+	tnz	(0x01, sp)
 	jreq	00102$
 	tnz	a
 	jreq	00102$
@@ -3752,7 +3726,7 @@ _TIM1_GetITStatus:
 00103$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2132: return (ITStatus)(bitstatus);
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2133: }
-	addw	sp, #1
+	popw	x
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2149: void TIM1_ClearITPendingBit(TIM1_IT_TypeDef TIM1_IT)
 ;	-----------------------------------------

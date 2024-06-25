@@ -8,25 +8,25 @@ Symbol Table
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
   9 _FLASH_DeInit                                                  000058 GR
-  9 _FLASH_EraseBlock                                              0003BB GR
+  9 _FLASH_EraseBlock                                              0003B9 GR
   9 _FLASH_EraseByte                                               00009A GR
   9 _FLASH_EraseOptionByte                                         000253 GR
-  9 _FLASH_GetBootSize                                             000351 GR
-  9 _FLASH_GetFlagStatus                                           000371 GR
-  9 _FLASH_GetLowPowerMode                                         000345 GR
-  9 _FLASH_GetProgrammingTime                                      00034B GR
+  9 _FLASH_GetBootSize                                             00034C GR
+  9 _FLASH_GetFlagStatus                                           00036F GR
+  9 _FLASH_GetLowPowerMode                                         000340 GR
+  9 _FLASH_GetProgrammingTime                                      000346 GR
   9 _FLASH_ITConfig                                                000070 GR
   9 _FLASH_Lock                                                    000035 GR
-  9 _FLASH_ProgramBlock                                            000431 GR
+  9 _FLASH_ProgramBlock                                            00042E GR
   9 _FLASH_ProgramByte                                             0000E6 GR
   9 _FLASH_ProgramOptionByte                                       0001FF GR
   9 _FLASH_ProgramWord                                             000180 GR
   9 _FLASH_ReadByte                                                000134 GR
   9 _FLASH_ReadOptionByte                                          000299 GR
-  9 _FLASH_SetLowPowerMode                                         0002E5 GR
-  9 _FLASH_SetProgrammingTime                                      00031A GR
+  9 _FLASH_SetLowPowerMode                                         0002E0 GR
+  9 _FLASH_SetProgrammingTime                                      000315 GR
   9 _FLASH_Unlock                                                  000000 GR
-  9 _FLASH_WaitForLastOperation                                    0003A3 GR
+  9 _FLASH_WaitForLastOperation                                    0003A1 GR
   7 ___str_0                                                       000000 R
     _assert_failed                                                 ****** GX
 
@@ -45,6 +45,6 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     49   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size    508   flags    0
+   9 CODE                                       size    50B   flags    0
    A CABS                                       size      0   flags    8
 

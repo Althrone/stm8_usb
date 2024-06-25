@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_itc
 	.optsdcc -mstm8
@@ -141,13 +141,13 @@ _ITC_GetSoftwarePriority:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 116: assert_param(IS_ITC_IRQ_OK((uint8_t)IrqNum));
 	ld	a, (0x05, sp)
 	cp	a, #0x18
-	jrugt	00138$
+	jrugt	00142$
 	clr	(0x02, sp)
-	jra	00139$
-00138$:
+	jra	00143$
+00142$:
 	ld	a, #0x01
 	ld	(0x02, sp), a
-00139$:
+00143$:
 	tnz	(0x02, sp)
 	jreq	00127$
 	push	#0x74
@@ -170,12 +170,12 @@ _ITC_GetSoftwarePriority:
 	ld	a, #0x03
 	ld	(0x04, sp), a
 	ld	a, (0x03, sp)
-	jreq	00142$
-00141$:
+	jreq	00146$
+00145$:
 	sll	(0x04, sp)
 	dec	a
-	jrne	00141$
-00142$:
+	jrne	00145$
+00146$:
 	Sstm8s_itc$ITC_GetSoftwarePriority$36 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 121: switch (IrqNum)
 	ld	a, (0x02, sp)
@@ -184,9 +184,9 @@ _ITC_GetSoftwarePriority:
 	ld	a, (0x05, sp)
 	ld	xl, a
 	sllw	x
-	ldw	x, (#00144$, x)
+	ldw	x, (#00148$, x)
 	jp	(x)
-00144$:
+00148$:
 	.dw	#00104$
 	.dw	#00104$
 	.dw	#00104$
@@ -297,12 +297,12 @@ _ITC_GetSoftwarePriority:
 	push	a
 	Sstm8s_itc$ITC_GetSoftwarePriority$61 ==.
 	ld	a, (0x04, sp)
-	jreq	00146$
-00145$:
+	jreq	00150$
+00149$:
 	srl	(1, sp)
 	dec	a
-	jrne	00145$
-00146$:
+	jrne	00149$
+00150$:
 	pop	a
 	Sstm8s_itc$ITC_GetSoftwarePriority$62 ==.
 	Sstm8s_itc$ITC_GetSoftwarePriority$63 ==.
@@ -328,13 +328,13 @@ _ITC_SetSoftwarePriority:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 229: assert_param(IS_ITC_IRQ_OK((uint8_t)IrqNum));
 	ld	(0x04, sp), a
 	cp	a, #0x18
-	jrugt	00176$
+	jrugt	00190$
 	clr	(0x01, sp)
-	jra	00177$
-00176$:
+	jra	00191$
+00190$:
 	ld	a, #0x01
 	ld	(0x01, sp), a
-00177$:
+00191$:
 	tnz	(0x01, sp)
 	jreq	00127$
 	push	#0xe5
@@ -395,21 +395,20 @@ _ITC_SetSoftwarePriority:
 	Sstm8s_itc$ITC_SetSoftwarePriority$90 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 237: Mask = (uint8_t)(~(uint8_t)(0x03U << (((uint8_t)IrqNum % 4U) * 2U)));
 	ld	a, (0x04, sp)
-	clrw	x
 	and	a, #0x03
+	sll	a
 	ld	xl, a
-	sllw	x
 	ld	a, #0x03
 	push	a
 	Sstm8s_itc$ITC_SetSoftwarePriority$91 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00193$
-00192$:
+	jreq	00207$
+00206$:
 	sll	(1, sp)
 	dec	a
-	jrne	00192$
-00193$:
+	jrne	00206$
+00207$:
 	pop	a
 	Sstm8s_itc$ITC_SetSoftwarePriority$92 ==.
 	cpl	a
@@ -421,28 +420,28 @@ _ITC_SetSoftwarePriority:
 	Sstm8s_itc$ITC_SetSoftwarePriority$94 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00195$
-00194$:
+	jreq	00209$
+00208$:
 	sll	(1, sp)
 	dec	a
-	jrne	00194$
-00195$:
+	jrne	00208$
+00209$:
 	pop	a
 	Sstm8s_itc$ITC_SetSoftwarePriority$95 ==.
 	ld	(0x03, sp), a
 	Sstm8s_itc$ITC_SetSoftwarePriority$96 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c: 242: switch (IrqNum)
 	ld	a, (0x01, sp)
-	jreq	00196$
+	jreq	00210$
 	jp	00124$
-00196$:
+00210$:
 	clrw	x
 	ld	a, (0x04, sp)
 	ld	xl, a
 	sllw	x
-	ldw	x, (#00197$, x)
+	ldw	x, (#00211$, x)
 	jp	(x)
-00197$:
+00211$:
 	.dw	#00104$
 	.dw	#00104$
 	.dw	#00104$
@@ -623,9 +622,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_itc.c"
@@ -1461,7 +1460,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "unsigned char"

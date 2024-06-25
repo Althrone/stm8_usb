@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_exti
                                       6 	.optsdcc -mstm8
@@ -117,9 +117,9 @@
       000054                        117 00125$:
                                     118 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 77: switch (Port)
       000054 A1 04            [ 1]  119 	cp	a, #0x04
-      000056 23 03            [ 2]  120 	jrule	00208$
+      000056 23 03            [ 2]  120 	jrule	00228$
       000058 CCr00rDD         [ 2]  121 	jp	00108$
-      00005B                        122 00208$:
+      00005B                        122 00228$:
                                     123 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 85: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 2);
       00005B 61               [ 1]  124 	exg	a, yl
       00005C 7B 04            [ 1]  125 	ld	a, (0x04, sp)
@@ -128,9 +128,9 @@
       00005F 5F               [ 1]  128 	clrw	x
       000060 97               [ 1]  129 	ld	xl, a
       000061 58               [ 2]  130 	sllw	x
-      000062 DEu00u66         [ 2]  131 	ldw	x, (#00209$, x)
+      000062 DEu00u66         [ 2]  131 	ldw	x, (#00229$, x)
       000065 FC               [ 2]  132 	jp	(x)
-      000066                        133 00209$:
+      000066                        133 00229$:
       000066r00r70                  134 	.dw	#00101$
       000068r00r82                  135 	.dw	#00102$
       00006Ar00r99                  136 	.dw	#00103$
@@ -280,9 +280,9 @@
       000132 5F               [ 1]  280 	clrw	x
       000133 97               [ 1]  281 	ld	xl, a
       000134 58               [ 2]  282 	sllw	x
-      000135 DEu01u39         [ 2]  283 	ldw	x, (#00168$, x)
+      000135 DEu01u39         [ 2]  283 	ldw	x, (#00180$, x)
       000138 FC               [ 2]  284 	jp	(x)
-      000139                        285 00168$:
+      000139                        285 00180$:
       000139r01r43                  286 	.dw	#00101$
       00013Br01r4C                  287 	.dw	#00102$
       00013Dr01r57                  288 	.dw	#00103$

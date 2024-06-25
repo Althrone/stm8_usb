@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_spi
 	.optsdcc -mstm8
@@ -133,13 +133,13 @@ _SPI_Init:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 83: assert_param(IS_SPI_MODE_OK(Mode));
 	ld	a, (0x07, sp)
 	cp	a, #0x04
-	jrne	00314$
+	jrne	00362$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00314$:
+00362$:
 	clr	(0x01, sp)
-00315$:
+00363$:
 	tnz	(0x01, sp)
 	jrne	00135$
 	tnz	(0x07, sp)
@@ -340,12 +340,12 @@ _SPI_ITConfig:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00172$
-00171$:
+	jreq	00186$
+00185$:
 	sll	(1, sp)
 	dec	a
-	jrne	00171$
-00172$:
+	jrne	00185$
+00186$:
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 153: SPI->ICR |= itpos; /* Enable interrupt*/
 	ldw	x, #0x5202
@@ -664,12 +664,12 @@ _SPI_GetITStatus:
 	ld	(0x02, sp), a
 	ld	a, xl
 	tnz	a
-	jreq	00183$
-00182$:
+	jreq	00199$
+00198$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00182$
-00183$:
+	jrne	00198$
+00199$:
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 378: itmask1 = (uint8_t)((uint8_t)SPI_IT >> (uint8_t)4);
 	swap	a
@@ -680,12 +680,12 @@ _SPI_GetITStatus:
 	ld	(0x03, sp), a
 	pop	a
 	tnz	a
-	jreq	00185$
-00184$:
+	jreq	00201$
+00200$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00184$
-00185$:
+	jrne	00200$
+00201$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 382: enablestatus = (uint8_t)((uint8_t)SPI->SR & itmask2);
 	ld	a, 0x5203
 	and	a, (0x02, sp)
@@ -736,12 +736,12 @@ _SPI_ClearITPendingBit:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00125$
-00124$:
+	jreq	00129$
+00128$:
 	sll	(1, sp)
 	dec	a
-	jrne	00124$
-00125$:
+	jrne	00128$
+00129$:
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 422: SPI->SR = (uint8_t)(~itpos);
 	cpl	a

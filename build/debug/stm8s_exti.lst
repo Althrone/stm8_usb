@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_exti
                                       6 	.optsdcc -mstm8
@@ -156,9 +156,9 @@
                            000054   156 	Sstm8s_exti$EXTI_SetExtIntSensitivity$37 ==.
                                     157 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 77: switch (Port)
       000054 A1 04            [ 1]  158 	cp	a, #0x04
-      000056 23 03            [ 2]  159 	jrule	00208$
+      000056 23 03            [ 2]  159 	jrule	00228$
       000058 CCr00rDD         [ 2]  160 	jp	00108$
-      00005B                        161 00208$:
+      00005B                        161 00228$:
                            00005B   162 	Sstm8s_exti$EXTI_SetExtIntSensitivity$38 ==.
                                     163 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 85: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 2);
       00005B 61               [ 1]  164 	exg	a, yl
@@ -169,9 +169,9 @@
       00005F 5F               [ 1]  169 	clrw	x
       000060 97               [ 1]  170 	ld	xl, a
       000061 58               [ 2]  171 	sllw	x
-      000062 DEu00u66         [ 2]  172 	ldw	x, (#00209$, x)
+      000062 DEu00u66         [ 2]  172 	ldw	x, (#00229$, x)
       000065 FC               [ 2]  173 	jp	(x)
-      000066                        174 00209$:
+      000066                        174 00229$:
       000066r00r70                  175 	.dw	#00101$
       000068r00r82                  176 	.dw	#00102$
       00006Ar00r99                  177 	.dw	#00103$
@@ -382,9 +382,9 @@
       000132 5F               [ 1]  382 	clrw	x
       000133 97               [ 1]  383 	ld	xl, a
       000134 58               [ 2]  384 	sllw	x
-      000135 DEu01u39         [ 2]  385 	ldw	x, (#00168$, x)
+      000135 DEu01u39         [ 2]  385 	ldw	x, (#00180$, x)
       000138 FC               [ 2]  386 	jp	(x)
-      000139                        387 00168$:
+      000139                        387 00180$:
       000139r01r43                  388 	.dw	#00101$
       00013Br01r4C                  389 	.dw	#00102$
       00013Dr01r57                  390 	.dw	#00103$
@@ -507,10 +507,10 @@
                                     498 	.area CABS (ABS)
                                     499 
                                     500 	.area .debug_line (NOLOAD)
-      000000 00 00 03 2C            501 	.dw	0,Ldebug_line_end-Ldebug_line_start
+      000000 00 00 03 38            501 	.dw	0,Ldebug_line_end-Ldebug_line_start
       000004                        502 Ldebug_line_start:
       000004 00 02                  503 	.dw	2
-      000006 00 00 00 A9            504 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
+      000006 00 00 00 B5            504 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
       00000A 01                     505 	.db	1
       00000B 01                     506 	.db	1
       00000C FB                     507 	.db	-5
@@ -525,21 +525,23 @@
       000015 00                     516 	.db	0
       000016 00                     517 	.db	0
       000017 01                     518 	.db	1
-      000018 44 3A 5C 5C 53 6F 66   519 	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+      000018 44 3A 5C 5C 53 6F 66   519 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-             5C 5C 73 74 6D 38
-      000041 00                     520 	.db	0
-      000042 44 3A 5C 5C 53 6F 66   521 	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65 5C
+             5C 73 74 6D 38
+      000047 00                     520 	.db	0
+      000048 44 3A 5C 5C 53 6F 66   521 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-      000065 00                     522 	.db	0
-      000066 00                     523 	.db	0
-      000067 2E 2F 53 54 4D 38 53   524 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65
+      000071 00                     522 	.db	0
+      000072 00                     523 	.db	0
+      000073 2E 2F 53 54 4D 38 53   524 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -550,460 +552,460 @@
              72 63 2F 73 74 6D 38
              73 5F 65 78 74 69 2E
              63
-      0000AE 00                     525 	.db	0
-      0000AF 00                     526 	.uleb128	0
-      0000B0 00                     527 	.uleb128	0
-      0000B1 00                     528 	.uleb128	0
-      0000B2 00                     529 	.db	0
-      0000B3                        530 Ldebug_line_stmt:
-      0000B3 00                     531 	.db	0
-      0000B4 05                     532 	.uleb128	5
-      0000B5 02                     533 	.db	2
-      0000B6 00 00r00r00            534 	.dw	0,(Sstm8s_exti$EXTI_DeInit$0)
-      0000BA 03                     535 	.db	3
-      0000BB 34                     536 	.sleb128	52
-      0000BC 01                     537 	.db	1
-      0000BD 00                     538 	.db	0
-      0000BE 05                     539 	.uleb128	5
-      0000BF 02                     540 	.db	2
-      0000C0 00 00r00r00            541 	.dw	0,(Sstm8s_exti$EXTI_DeInit$2)
-      0000C4 03                     542 	.db	3
-      0000C5 02                     543 	.sleb128	2
-      0000C6 01                     544 	.db	1
-      0000C7 00                     545 	.db	0
-      0000C8 05                     546 	.uleb128	5
-      0000C9 02                     547 	.db	2
-      0000CA 00 00r00r04            548 	.dw	0,(Sstm8s_exti$EXTI_DeInit$3)
-      0000CE 03                     549 	.db	3
-      0000CF 01                     550 	.sleb128	1
-      0000D0 01                     551 	.db	1
-      0000D1 00                     552 	.db	0
-      0000D2 05                     553 	.uleb128	5
-      0000D3 02                     554 	.db	2
-      0000D4 00 00r00r08            555 	.dw	0,(Sstm8s_exti$EXTI_DeInit$4)
-      0000D8 03                     556 	.db	3
-      0000D9 01                     557 	.sleb128	1
-      0000DA 01                     558 	.db	1
-      0000DB 09                     559 	.db	9
-      0000DC 00 01                  560 	.dw	1+Sstm8s_exti$EXTI_DeInit$5-Sstm8s_exti$EXTI_DeInit$4
-      0000DE 00                     561 	.db	0
-      0000DF 01                     562 	.uleb128	1
-      0000E0 01                     563 	.db	1
-      0000E1 00                     564 	.db	0
-      0000E2 05                     565 	.uleb128	5
-      0000E3 02                     566 	.db	2
-      0000E4 00 00r00r09            567 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$7)
-      0000E8 03                     568 	.db	3
-      0000E9 C5 00                  569 	.sleb128	69
-      0000EB 01                     570 	.db	1
-      0000EC 00                     571 	.db	0
-      0000ED 05                     572 	.uleb128	5
-      0000EE 02                     573 	.db	2
-      0000EF 00 00r00r0A            574 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$10)
-      0000F3 03                     575 	.db	3
-      0000F4 03                     576 	.sleb128	3
-      0000F5 01                     577 	.db	1
-      0000F6 00                     578 	.db	0
-      0000F7 05                     579 	.uleb128	5
-      0000F8 02                     580 	.db	2
-      0000F9 00 00r00r2B            581 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$21)
-      0000FD 03                     582 	.db	3
-      0000FE 01                     583 	.sleb128	1
-      0000FF 01                     584 	.db	1
-      000100 00                     585 	.db	0
-      000101 05                     586 	.uleb128	5
-      000102 02                     587 	.db	2
-      000103 00 00r00r54            588 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$37)
-      000107 03                     589 	.db	3
-      000108 03                     590 	.sleb128	3
-      000109 01                     591 	.db	1
-      00010A 00                     592 	.db	0
-      00010B 05                     593 	.uleb128	5
-      00010C 02                     594 	.db	2
-      00010D 00 00r00r5B            595 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$38)
-      000111 03                     596 	.db	3
-      000112 08                     597 	.sleb128	8
-      000113 01                     598 	.db	1
-      000114 00                     599 	.db	0
-      000115 05                     600 	.uleb128	5
-      000116 02                     601 	.db	2
-      000117 00 00r00r5F            602 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$39)
-      00011B 03                     603 	.db	3
-      00011C 78                     604 	.sleb128	-8
-      00011D 01                     605 	.db	1
-      00011E 00                     606 	.db	0
-      00011F 05                     607 	.uleb128	5
-      000120 02                     608 	.db	2
-      000121 00 00r00r70            609 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$41)
-      000125 03                     610 	.db	3
-      000126 02                     611 	.sleb128	2
-      000127 01                     612 	.db	1
-      000128 00                     613 	.db	0
-      000129 05                     614 	.uleb128	5
-      00012A 02                     615 	.db	2
-      00012B 00 00r00r70            616 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$42)
-      00012F 03                     617 	.db	3
-      000130 01                     618 	.sleb128	1
-      000131 01                     619 	.db	1
-      000132 00                     620 	.db	0
-      000133 05                     621 	.uleb128	5
-      000134 02                     622 	.db	2
-      000135 00 00r00r78            623 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$43)
-      000139 03                     624 	.db	3
-      00013A 01                     625 	.sleb128	1
-      00013B 01                     626 	.db	1
-      00013C 00                     627 	.db	0
-      00013D 05                     628 	.uleb128	5
-      00013E 02                     629 	.db	2
-      00013F 00 00r00r80            630 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$44)
-      000143 03                     631 	.db	3
-      000144 01                     632 	.sleb128	1
-      000145 01                     633 	.db	1
-      000146 00                     634 	.db	0
-      000147 05                     635 	.uleb128	5
-      000148 02                     636 	.db	2
-      000149 00 00r00r82            637 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$45)
-      00014D 03                     638 	.db	3
-      00014E 01                     639 	.sleb128	1
-      00014F 01                     640 	.db	1
-      000150 00                     641 	.db	0
-      000151 05                     642 	.uleb128	5
-      000152 02                     643 	.db	2
-      000153 00 00r00r82            644 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$46)
-      000157 03                     645 	.db	3
-      000158 01                     646 	.sleb128	1
-      000159 01                     647 	.db	1
-      00015A 00                     648 	.db	0
-      00015B 05                     649 	.uleb128	5
-      00015C 02                     650 	.db	2
-      00015D 00 00r00r8A            651 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$47)
-      000161 03                     652 	.db	3
-      000162 01                     653 	.sleb128	1
-      000163 01                     654 	.db	1
-      000164 00                     655 	.db	0
-      000165 05                     656 	.uleb128	5
-      000166 02                     657 	.db	2
-      000167 00 00r00r97            658 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$50)
-      00016B 03                     659 	.db	3
-      00016C 01                     660 	.sleb128	1
-      00016D 01                     661 	.db	1
-      00016E 00                     662 	.db	0
-      00016F 05                     663 	.uleb128	5
-      000170 02                     664 	.db	2
-      000171 00 00r00r99            665 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$51)
-      000175 03                     666 	.db	3
-      000176 01                     667 	.sleb128	1
-      000177 01                     668 	.db	1
-      000178 00                     669 	.db	0
-      000179 05                     670 	.uleb128	5
-      00017A 02                     671 	.db	2
-      00017B 00 00r00r99            672 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$52)
-      00017F 03                     673 	.db	3
-      000180 01                     674 	.sleb128	1
-      000181 01                     675 	.db	1
-      000182 00                     676 	.db	0
-      000183 05                     677 	.uleb128	5
-      000184 02                     678 	.db	2
-      000185 00 00r00rA1            679 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$53)
-      000189 03                     680 	.db	3
-      00018A 01                     681 	.sleb128	1
-      00018B 01                     682 	.db	1
-      00018C 00                     683 	.db	0
-      00018D 05                     684 	.uleb128	5
-      00018E 02                     685 	.db	2
-      00018F 00 00r00rB0            686 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$54)
-      000193 03                     687 	.db	3
-      000194 01                     688 	.sleb128	1
-      000195 01                     689 	.db	1
-      000196 00                     690 	.db	0
-      000197 05                     691 	.uleb128	5
-      000198 02                     692 	.db	2
-      000199 00 00r00rB2            693 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$55)
-      00019D 03                     694 	.db	3
-      00019E 01                     695 	.sleb128	1
-      00019F 01                     696 	.db	1
-      0001A0 00                     697 	.db	0
-      0001A1 05                     698 	.uleb128	5
-      0001A2 02                     699 	.db	2
-      0001A3 00 00r00rB2            700 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$56)
-      0001A7 03                     701 	.db	3
-      0001A8 01                     702 	.sleb128	1
-      0001A9 01                     703 	.db	1
-      0001AA 00                     704 	.db	0
-      0001AB 05                     705 	.uleb128	5
-      0001AC 02                     706 	.db	2
-      0001AD 00 00r00rBA            707 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$57)
-      0001B1 03                     708 	.db	3
-      0001B2 01                     709 	.sleb128	1
-      0001B3 01                     710 	.db	1
-      0001B4 00                     711 	.db	0
-      0001B5 05                     712 	.uleb128	5
-      0001B6 02                     713 	.db	2
-      0001B7 00 00r00rCB            714 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$58)
-      0001BB 03                     715 	.db	3
-      0001BC 01                     716 	.sleb128	1
-      0001BD 01                     717 	.db	1
-      0001BE 00                     718 	.db	0
-      0001BF 05                     719 	.uleb128	5
-      0001C0 02                     720 	.db	2
-      0001C1 00 00r00rCD            721 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$59)
-      0001C5 03                     722 	.db	3
-      0001C6 01                     723 	.sleb128	1
-      0001C7 01                     724 	.db	1
-      0001C8 00                     725 	.db	0
-      0001C9 05                     726 	.uleb128	5
-      0001CA 02                     727 	.db	2
-      0001CB 00 00r00rCD            728 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$60)
-      0001CF 03                     729 	.db	3
-      0001D0 01                     730 	.sleb128	1
-      0001D1 01                     731 	.db	1
-      0001D2 00                     732 	.db	0
-      0001D3 05                     733 	.uleb128	5
-      0001D4 02                     734 	.db	2
-      0001D5 00 00r00rD5            735 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$61)
-      0001D9 03                     736 	.db	3
-      0001DA 01                     737 	.sleb128	1
-      0001DB 01                     738 	.db	1
-      0001DC 00                     739 	.db	0
-      0001DD 05                     740 	.uleb128	5
-      0001DE 02                     741 	.db	2
-      0001DF 00 00r00rDD            742 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$63)
-      0001E3 03                     743 	.db	3
-      0001E4 04                     744 	.sleb128	4
-      0001E5 01                     745 	.db	1
-      0001E6 00                     746 	.db	0
-      0001E7 05                     747 	.uleb128	5
-      0001E8 02                     748 	.db	2
-      0001E9 00 00r00rDD            749 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$64)
-      0001ED 03                     750 	.db	3
-      0001EE 01                     751 	.sleb128	1
-      0001EF 01                     752 	.db	1
-      0001F0 00                     753 	.db	0
-      0001F1 05                     754 	.uleb128	5
-      0001F2 02                     755 	.db	2
-      0001F3 00 00r00rE1            756 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$69)
-      0001F7 03                     757 	.db	3
-      0001F8 09                     758 	.sleb128	9
-      0001F9 01                     759 	.db	1
-      0001FA 00                     760 	.db	0
-      0001FB 05                     761 	.uleb128	5
-      0001FC 02                     762 	.db	2
-      0001FD 00 00r00rE2            763 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$72)
-      000201 03                     764 	.db	3
-      000202 03                     765 	.sleb128	3
-      000203 01                     766 	.db	1
-      000204 00                     767 	.db	0
-      000205 05                     768 	.uleb128	5
-      000206 02                     769 	.db	2
-      000207 00 00r00rF8            770 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$78)
-      00020B 03                     771 	.db	3
-      00020C 03                     772 	.sleb128	3
-      00020D 01                     773 	.db	1
-      00020E 00                     774 	.db	0
-      00020F 05                     775 	.uleb128	5
-      000210 02                     776 	.db	2
-      000211 00 00r01r00            777 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$79)
-      000215 03                     778 	.db	3
-      000216 01                     779 	.sleb128	1
-      000217 01                     780 	.db	1
-      000218 00                     781 	.db	0
-      000219 05                     782 	.uleb128	5
-      00021A 02                     783 	.db	2
-      00021B 00 00r01r08            784 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$80)
-      00021F 03                     785 	.db	3
-      000220 01                     786 	.sleb128	1
-      000221 01                     787 	.db	1
-      000222 09                     788 	.db	9
-      000223 00 02                  789 	.dw	1+Sstm8s_exti$EXTI_SetTLISensitivity$82-Sstm8s_exti$EXTI_SetTLISensitivity$80
-      000225 00                     790 	.db	0
-      000226 01                     791 	.uleb128	1
-      000227 01                     792 	.db	1
-      000228 00                     793 	.db	0
-      000229 05                     794 	.uleb128	5
-      00022A 02                     795 	.db	2
-      00022B 00 00r01r0A            796 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$84)
-      00022F 03                     797 	.db	3
-      000230 FD 00                  798 	.sleb128	125
-      000232 01                     799 	.db	1
-      000233 00                     800 	.db	0
-      000234 05                     801 	.uleb128	5
-      000235 02                     802 	.db	2
-      000236 00 00r01r0B            803 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$87)
-      00023A 03                     804 	.db	3
-      00023B 02                     805 	.sleb128	2
-      00023C 01                     806 	.db	1
-      00023D 00                     807 	.db	0
-      00023E 05                     808 	.uleb128	5
-      00023F 02                     809 	.db	2
-      000240 00 00r01r0D            810 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$88)
-      000244 03                     811 	.db	3
-      000245 03                     812 	.sleb128	3
-      000246 01                     813 	.db	1
-      000247 00                     814 	.db	0
-      000248 05                     815 	.uleb128	5
-      000249 02                     816 	.db	2
-      00024A 00 00r01r2E            817 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$99)
-      00024E 03                     818 	.db	3
-      00024F 02                     819 	.sleb128	2
-      000250 01                     820 	.db	1
-      000251 00                     821 	.db	0
-      000252 05                     822 	.uleb128	5
-      000253 02                     823 	.db	2
-      000254 00 00r01r43            824 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$101)
-      000258 03                     825 	.db	3
-      000259 02                     826 	.sleb128	2
-      00025A 01                     827 	.db	1
-      00025B 00                     828 	.db	0
-      00025C 05                     829 	.uleb128	5
-      00025D 02                     830 	.db	2
-      00025E 00 00r01r43            831 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$102)
-      000262 03                     832 	.db	3
-      000263 01                     833 	.sleb128	1
-      000264 01                     834 	.db	1
-      000265 00                     835 	.db	0
-      000266 05                     836 	.uleb128	5
-      000267 02                     837 	.db	2
-      000268 00 00r01r4A            838 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$103)
-      00026C 03                     839 	.db	3
-      00026D 01                     840 	.sleb128	1
-      00026E 01                     841 	.db	1
-      00026F 00                     842 	.db	0
-      000270 05                     843 	.uleb128	5
-      000271 02                     844 	.db	2
-      000272 00 00r01r4C            845 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$104)
-      000276 03                     846 	.db	3
-      000277 01                     847 	.sleb128	1
-      000278 01                     848 	.db	1
-      000279 00                     849 	.db	0
-      00027A 05                     850 	.uleb128	5
-      00027B 02                     851 	.db	2
-      00027C 00 00r01r4C            852 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$105)
-      000280 03                     853 	.db	3
-      000281 01                     854 	.sleb128	1
-      000282 01                     855 	.db	1
-      000283 00                     856 	.db	0
-      000284 05                     857 	.uleb128	5
-      000285 02                     858 	.db	2
-      000286 00 00r01r55            859 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$106)
-      00028A 03                     860 	.db	3
-      00028B 01                     861 	.sleb128	1
-      00028C 01                     862 	.db	1
-      00028D 00                     863 	.db	0
-      00028E 05                     864 	.uleb128	5
-      00028F 02                     865 	.db	2
-      000290 00 00r01r57            866 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$107)
-      000294 03                     867 	.db	3
-      000295 01                     868 	.sleb128	1
-      000296 01                     869 	.db	1
-      000297 00                     870 	.db	0
-      000298 05                     871 	.uleb128	5
-      000299 02                     872 	.db	2
-      00029A 00 00r01r57            873 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$108)
-      00029E 03                     874 	.db	3
-      00029F 01                     875 	.sleb128	1
-      0002A0 01                     876 	.db	1
-      0002A1 00                     877 	.db	0
-      0002A2 05                     878 	.uleb128	5
-      0002A3 02                     879 	.db	2
-      0002A4 00 00r01r61            880 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$109)
-      0002A8 03                     881 	.db	3
-      0002A9 01                     882 	.sleb128	1
-      0002AA 01                     883 	.db	1
-      0002AB 00                     884 	.db	0
-      0002AC 05                     885 	.uleb128	5
-      0002AD 02                     886 	.db	2
-      0002AE 00 00r01r63            887 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$110)
-      0002B2 03                     888 	.db	3
-      0002B3 01                     889 	.sleb128	1
-      0002B4 01                     890 	.db	1
-      0002B5 00                     891 	.db	0
-      0002B6 05                     892 	.uleb128	5
-      0002B7 02                     893 	.db	2
-      0002B8 00 00r01r63            894 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$111)
-      0002BC 03                     895 	.db	3
-      0002BD 01                     896 	.sleb128	1
-      0002BE 01                     897 	.db	1
-      0002BF 00                     898 	.db	0
-      0002C0 05                     899 	.uleb128	5
-      0002C1 02                     900 	.db	2
-      0002C2 00 00r01r6F            901 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$112)
-      0002C6 03                     902 	.db	3
-      0002C7 01                     903 	.sleb128	1
-      0002C8 01                     904 	.db	1
-      0002C9 00                     905 	.db	0
-      0002CA 05                     906 	.uleb128	5
-      0002CB 02                     907 	.db	2
-      0002CC 00 00r01r71            908 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$113)
-      0002D0 03                     909 	.db	3
-      0002D1 01                     910 	.sleb128	1
-      0002D2 01                     911 	.db	1
-      0002D3 00                     912 	.db	0
-      0002D4 05                     913 	.uleb128	5
-      0002D5 02                     914 	.db	2
-      0002D6 00 00r01r71            915 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$114)
-      0002DA 03                     916 	.db	3
-      0002DB 01                     917 	.sleb128	1
-      0002DC 01                     918 	.db	1
-      0002DD 00                     919 	.db	0
-      0002DE 05                     920 	.uleb128	5
-      0002DF 02                     921 	.db	2
-      0002E0 00 00r01r78            922 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$116)
-      0002E4 03                     923 	.db	3
-      0002E5 04                     924 	.sleb128	4
-      0002E6 01                     925 	.db	1
-      0002E7 00                     926 	.db	0
-      0002E8 05                     927 	.uleb128	5
-      0002E9 02                     928 	.db	2
-      0002EA 00 00r01r78            929 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$117)
-      0002EE 03                     930 	.db	3
-      0002EF 02                     931 	.sleb128	2
-      0002F0 01                     932 	.db	1
-      0002F1 00                     933 	.db	0
-      0002F2 05                     934 	.uleb128	5
-      0002F3 02                     935 	.db	2
-      0002F4 00 00r01r7A            936 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$118)
-      0002F8 03                     937 	.db	3
-      0002F9 01                     938 	.sleb128	1
-      0002FA 01                     939 	.db	1
-      0002FB 09                     940 	.db	9
-      0002FC 00 03                  941 	.dw	1+Sstm8s_exti$EXTI_GetExtIntSensitivity$120-Sstm8s_exti$EXTI_GetExtIntSensitivity$118
-      0002FE 00                     942 	.db	0
-      0002FF 01                     943 	.uleb128	1
-      000300 01                     944 	.db	1
-      000301 00                     945 	.db	0
-      000302 05                     946 	.uleb128	5
-      000303 02                     947 	.db	2
-      000304 00 00r01r7D            948 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$122)
-      000308 03                     949 	.db	3
-      000309 A1 01                  950 	.sleb128	161
-      00030B 01                     951 	.db	1
-      00030C 00                     952 	.db	0
-      00030D 05                     953 	.uleb128	5
-      00030E 02                     954 	.db	2
-      00030F 00 00r01r7D            955 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$124)
-      000313 03                     956 	.db	3
-      000314 05                     957 	.sleb128	5
-      000315 01                     958 	.db	1
-      000316 00                     959 	.db	0
-      000317 05                     960 	.uleb128	5
-      000318 02                     961 	.db	2
-      000319 00 00r01r82            962 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$125)
-      00031D 03                     963 	.db	3
-      00031E 02                     964 	.sleb128	2
-      00031F 01                     965 	.db	1
-      000320 00                     966 	.db	0
-      000321 05                     967 	.uleb128	5
-      000322 02                     968 	.db	2
-      000323 00 00r01r82            969 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$126)
-      000327 03                     970 	.db	3
-      000328 01                     971 	.sleb128	1
-      000329 01                     972 	.db	1
-      00032A 09                     973 	.db	9
-      00032B 00 01                  974 	.dw	1+Sstm8s_exti$EXTI_GetTLISensitivity$127-Sstm8s_exti$EXTI_GetTLISensitivity$126
-      00032D 00                     975 	.db	0
-      00032E 01                     976 	.uleb128	1
-      00032F 01                     977 	.db	1
-      000330                        978 Ldebug_line_end:
+      0000BA 00                     525 	.db	0
+      0000BB 00                     526 	.uleb128	0
+      0000BC 00                     527 	.uleb128	0
+      0000BD 00                     528 	.uleb128	0
+      0000BE 00                     529 	.db	0
+      0000BF                        530 Ldebug_line_stmt:
+      0000BF 00                     531 	.db	0
+      0000C0 05                     532 	.uleb128	5
+      0000C1 02                     533 	.db	2
+      0000C2 00 00r00r00            534 	.dw	0,(Sstm8s_exti$EXTI_DeInit$0)
+      0000C6 03                     535 	.db	3
+      0000C7 34                     536 	.sleb128	52
+      0000C8 01                     537 	.db	1
+      0000C9 00                     538 	.db	0
+      0000CA 05                     539 	.uleb128	5
+      0000CB 02                     540 	.db	2
+      0000CC 00 00r00r00            541 	.dw	0,(Sstm8s_exti$EXTI_DeInit$2)
+      0000D0 03                     542 	.db	3
+      0000D1 02                     543 	.sleb128	2
+      0000D2 01                     544 	.db	1
+      0000D3 00                     545 	.db	0
+      0000D4 05                     546 	.uleb128	5
+      0000D5 02                     547 	.db	2
+      0000D6 00 00r00r04            548 	.dw	0,(Sstm8s_exti$EXTI_DeInit$3)
+      0000DA 03                     549 	.db	3
+      0000DB 01                     550 	.sleb128	1
+      0000DC 01                     551 	.db	1
+      0000DD 00                     552 	.db	0
+      0000DE 05                     553 	.uleb128	5
+      0000DF 02                     554 	.db	2
+      0000E0 00 00r00r08            555 	.dw	0,(Sstm8s_exti$EXTI_DeInit$4)
+      0000E4 03                     556 	.db	3
+      0000E5 01                     557 	.sleb128	1
+      0000E6 01                     558 	.db	1
+      0000E7 09                     559 	.db	9
+      0000E8 00 01                  560 	.dw	1+Sstm8s_exti$EXTI_DeInit$5-Sstm8s_exti$EXTI_DeInit$4
+      0000EA 00                     561 	.db	0
+      0000EB 01                     562 	.uleb128	1
+      0000EC 01                     563 	.db	1
+      0000ED 00                     564 	.db	0
+      0000EE 05                     565 	.uleb128	5
+      0000EF 02                     566 	.db	2
+      0000F0 00 00r00r09            567 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$7)
+      0000F4 03                     568 	.db	3
+      0000F5 C5 00                  569 	.sleb128	69
+      0000F7 01                     570 	.db	1
+      0000F8 00                     571 	.db	0
+      0000F9 05                     572 	.uleb128	5
+      0000FA 02                     573 	.db	2
+      0000FB 00 00r00r0A            574 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$10)
+      0000FF 03                     575 	.db	3
+      000100 03                     576 	.sleb128	3
+      000101 01                     577 	.db	1
+      000102 00                     578 	.db	0
+      000103 05                     579 	.uleb128	5
+      000104 02                     580 	.db	2
+      000105 00 00r00r2B            581 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$21)
+      000109 03                     582 	.db	3
+      00010A 01                     583 	.sleb128	1
+      00010B 01                     584 	.db	1
+      00010C 00                     585 	.db	0
+      00010D 05                     586 	.uleb128	5
+      00010E 02                     587 	.db	2
+      00010F 00 00r00r54            588 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$37)
+      000113 03                     589 	.db	3
+      000114 03                     590 	.sleb128	3
+      000115 01                     591 	.db	1
+      000116 00                     592 	.db	0
+      000117 05                     593 	.uleb128	5
+      000118 02                     594 	.db	2
+      000119 00 00r00r5B            595 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$38)
+      00011D 03                     596 	.db	3
+      00011E 08                     597 	.sleb128	8
+      00011F 01                     598 	.db	1
+      000120 00                     599 	.db	0
+      000121 05                     600 	.uleb128	5
+      000122 02                     601 	.db	2
+      000123 00 00r00r5F            602 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$39)
+      000127 03                     603 	.db	3
+      000128 78                     604 	.sleb128	-8
+      000129 01                     605 	.db	1
+      00012A 00                     606 	.db	0
+      00012B 05                     607 	.uleb128	5
+      00012C 02                     608 	.db	2
+      00012D 00 00r00r70            609 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$41)
+      000131 03                     610 	.db	3
+      000132 02                     611 	.sleb128	2
+      000133 01                     612 	.db	1
+      000134 00                     613 	.db	0
+      000135 05                     614 	.uleb128	5
+      000136 02                     615 	.db	2
+      000137 00 00r00r70            616 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$42)
+      00013B 03                     617 	.db	3
+      00013C 01                     618 	.sleb128	1
+      00013D 01                     619 	.db	1
+      00013E 00                     620 	.db	0
+      00013F 05                     621 	.uleb128	5
+      000140 02                     622 	.db	2
+      000141 00 00r00r78            623 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$43)
+      000145 03                     624 	.db	3
+      000146 01                     625 	.sleb128	1
+      000147 01                     626 	.db	1
+      000148 00                     627 	.db	0
+      000149 05                     628 	.uleb128	5
+      00014A 02                     629 	.db	2
+      00014B 00 00r00r80            630 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$44)
+      00014F 03                     631 	.db	3
+      000150 01                     632 	.sleb128	1
+      000151 01                     633 	.db	1
+      000152 00                     634 	.db	0
+      000153 05                     635 	.uleb128	5
+      000154 02                     636 	.db	2
+      000155 00 00r00r82            637 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$45)
+      000159 03                     638 	.db	3
+      00015A 01                     639 	.sleb128	1
+      00015B 01                     640 	.db	1
+      00015C 00                     641 	.db	0
+      00015D 05                     642 	.uleb128	5
+      00015E 02                     643 	.db	2
+      00015F 00 00r00r82            644 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$46)
+      000163 03                     645 	.db	3
+      000164 01                     646 	.sleb128	1
+      000165 01                     647 	.db	1
+      000166 00                     648 	.db	0
+      000167 05                     649 	.uleb128	5
+      000168 02                     650 	.db	2
+      000169 00 00r00r8A            651 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$47)
+      00016D 03                     652 	.db	3
+      00016E 01                     653 	.sleb128	1
+      00016F 01                     654 	.db	1
+      000170 00                     655 	.db	0
+      000171 05                     656 	.uleb128	5
+      000172 02                     657 	.db	2
+      000173 00 00r00r97            658 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$50)
+      000177 03                     659 	.db	3
+      000178 01                     660 	.sleb128	1
+      000179 01                     661 	.db	1
+      00017A 00                     662 	.db	0
+      00017B 05                     663 	.uleb128	5
+      00017C 02                     664 	.db	2
+      00017D 00 00r00r99            665 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$51)
+      000181 03                     666 	.db	3
+      000182 01                     667 	.sleb128	1
+      000183 01                     668 	.db	1
+      000184 00                     669 	.db	0
+      000185 05                     670 	.uleb128	5
+      000186 02                     671 	.db	2
+      000187 00 00r00r99            672 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$52)
+      00018B 03                     673 	.db	3
+      00018C 01                     674 	.sleb128	1
+      00018D 01                     675 	.db	1
+      00018E 00                     676 	.db	0
+      00018F 05                     677 	.uleb128	5
+      000190 02                     678 	.db	2
+      000191 00 00r00rA1            679 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$53)
+      000195 03                     680 	.db	3
+      000196 01                     681 	.sleb128	1
+      000197 01                     682 	.db	1
+      000198 00                     683 	.db	0
+      000199 05                     684 	.uleb128	5
+      00019A 02                     685 	.db	2
+      00019B 00 00r00rB0            686 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$54)
+      00019F 03                     687 	.db	3
+      0001A0 01                     688 	.sleb128	1
+      0001A1 01                     689 	.db	1
+      0001A2 00                     690 	.db	0
+      0001A3 05                     691 	.uleb128	5
+      0001A4 02                     692 	.db	2
+      0001A5 00 00r00rB2            693 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$55)
+      0001A9 03                     694 	.db	3
+      0001AA 01                     695 	.sleb128	1
+      0001AB 01                     696 	.db	1
+      0001AC 00                     697 	.db	0
+      0001AD 05                     698 	.uleb128	5
+      0001AE 02                     699 	.db	2
+      0001AF 00 00r00rB2            700 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$56)
+      0001B3 03                     701 	.db	3
+      0001B4 01                     702 	.sleb128	1
+      0001B5 01                     703 	.db	1
+      0001B6 00                     704 	.db	0
+      0001B7 05                     705 	.uleb128	5
+      0001B8 02                     706 	.db	2
+      0001B9 00 00r00rBA            707 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$57)
+      0001BD 03                     708 	.db	3
+      0001BE 01                     709 	.sleb128	1
+      0001BF 01                     710 	.db	1
+      0001C0 00                     711 	.db	0
+      0001C1 05                     712 	.uleb128	5
+      0001C2 02                     713 	.db	2
+      0001C3 00 00r00rCB            714 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$58)
+      0001C7 03                     715 	.db	3
+      0001C8 01                     716 	.sleb128	1
+      0001C9 01                     717 	.db	1
+      0001CA 00                     718 	.db	0
+      0001CB 05                     719 	.uleb128	5
+      0001CC 02                     720 	.db	2
+      0001CD 00 00r00rCD            721 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$59)
+      0001D1 03                     722 	.db	3
+      0001D2 01                     723 	.sleb128	1
+      0001D3 01                     724 	.db	1
+      0001D4 00                     725 	.db	0
+      0001D5 05                     726 	.uleb128	5
+      0001D6 02                     727 	.db	2
+      0001D7 00 00r00rCD            728 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$60)
+      0001DB 03                     729 	.db	3
+      0001DC 01                     730 	.sleb128	1
+      0001DD 01                     731 	.db	1
+      0001DE 00                     732 	.db	0
+      0001DF 05                     733 	.uleb128	5
+      0001E0 02                     734 	.db	2
+      0001E1 00 00r00rD5            735 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$61)
+      0001E5 03                     736 	.db	3
+      0001E6 01                     737 	.sleb128	1
+      0001E7 01                     738 	.db	1
+      0001E8 00                     739 	.db	0
+      0001E9 05                     740 	.uleb128	5
+      0001EA 02                     741 	.db	2
+      0001EB 00 00r00rDD            742 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$63)
+      0001EF 03                     743 	.db	3
+      0001F0 04                     744 	.sleb128	4
+      0001F1 01                     745 	.db	1
+      0001F2 00                     746 	.db	0
+      0001F3 05                     747 	.uleb128	5
+      0001F4 02                     748 	.db	2
+      0001F5 00 00r00rDD            749 	.dw	0,(Sstm8s_exti$EXTI_SetExtIntSensitivity$64)
+      0001F9 03                     750 	.db	3
+      0001FA 01                     751 	.sleb128	1
+      0001FB 01                     752 	.db	1
+      0001FC 00                     753 	.db	0
+      0001FD 05                     754 	.uleb128	5
+      0001FE 02                     755 	.db	2
+      0001FF 00 00r00rE1            756 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$69)
+      000203 03                     757 	.db	3
+      000204 09                     758 	.sleb128	9
+      000205 01                     759 	.db	1
+      000206 00                     760 	.db	0
+      000207 05                     761 	.uleb128	5
+      000208 02                     762 	.db	2
+      000209 00 00r00rE2            763 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$72)
+      00020D 03                     764 	.db	3
+      00020E 03                     765 	.sleb128	3
+      00020F 01                     766 	.db	1
+      000210 00                     767 	.db	0
+      000211 05                     768 	.uleb128	5
+      000212 02                     769 	.db	2
+      000213 00 00r00rF8            770 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$78)
+      000217 03                     771 	.db	3
+      000218 03                     772 	.sleb128	3
+      000219 01                     773 	.db	1
+      00021A 00                     774 	.db	0
+      00021B 05                     775 	.uleb128	5
+      00021C 02                     776 	.db	2
+      00021D 00 00r01r00            777 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$79)
+      000221 03                     778 	.db	3
+      000222 01                     779 	.sleb128	1
+      000223 01                     780 	.db	1
+      000224 00                     781 	.db	0
+      000225 05                     782 	.uleb128	5
+      000226 02                     783 	.db	2
+      000227 00 00r01r08            784 	.dw	0,(Sstm8s_exti$EXTI_SetTLISensitivity$80)
+      00022B 03                     785 	.db	3
+      00022C 01                     786 	.sleb128	1
+      00022D 01                     787 	.db	1
+      00022E 09                     788 	.db	9
+      00022F 00 02                  789 	.dw	1+Sstm8s_exti$EXTI_SetTLISensitivity$82-Sstm8s_exti$EXTI_SetTLISensitivity$80
+      000231 00                     790 	.db	0
+      000232 01                     791 	.uleb128	1
+      000233 01                     792 	.db	1
+      000234 00                     793 	.db	0
+      000235 05                     794 	.uleb128	5
+      000236 02                     795 	.db	2
+      000237 00 00r01r0A            796 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$84)
+      00023B 03                     797 	.db	3
+      00023C FD 00                  798 	.sleb128	125
+      00023E 01                     799 	.db	1
+      00023F 00                     800 	.db	0
+      000240 05                     801 	.uleb128	5
+      000241 02                     802 	.db	2
+      000242 00 00r01r0B            803 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$87)
+      000246 03                     804 	.db	3
+      000247 02                     805 	.sleb128	2
+      000248 01                     806 	.db	1
+      000249 00                     807 	.db	0
+      00024A 05                     808 	.uleb128	5
+      00024B 02                     809 	.db	2
+      00024C 00 00r01r0D            810 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$88)
+      000250 03                     811 	.db	3
+      000251 03                     812 	.sleb128	3
+      000252 01                     813 	.db	1
+      000253 00                     814 	.db	0
+      000254 05                     815 	.uleb128	5
+      000255 02                     816 	.db	2
+      000256 00 00r01r2E            817 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$99)
+      00025A 03                     818 	.db	3
+      00025B 02                     819 	.sleb128	2
+      00025C 01                     820 	.db	1
+      00025D 00                     821 	.db	0
+      00025E 05                     822 	.uleb128	5
+      00025F 02                     823 	.db	2
+      000260 00 00r01r43            824 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$101)
+      000264 03                     825 	.db	3
+      000265 02                     826 	.sleb128	2
+      000266 01                     827 	.db	1
+      000267 00                     828 	.db	0
+      000268 05                     829 	.uleb128	5
+      000269 02                     830 	.db	2
+      00026A 00 00r01r43            831 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$102)
+      00026E 03                     832 	.db	3
+      00026F 01                     833 	.sleb128	1
+      000270 01                     834 	.db	1
+      000271 00                     835 	.db	0
+      000272 05                     836 	.uleb128	5
+      000273 02                     837 	.db	2
+      000274 00 00r01r4A            838 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$103)
+      000278 03                     839 	.db	3
+      000279 01                     840 	.sleb128	1
+      00027A 01                     841 	.db	1
+      00027B 00                     842 	.db	0
+      00027C 05                     843 	.uleb128	5
+      00027D 02                     844 	.db	2
+      00027E 00 00r01r4C            845 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$104)
+      000282 03                     846 	.db	3
+      000283 01                     847 	.sleb128	1
+      000284 01                     848 	.db	1
+      000285 00                     849 	.db	0
+      000286 05                     850 	.uleb128	5
+      000287 02                     851 	.db	2
+      000288 00 00r01r4C            852 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$105)
+      00028C 03                     853 	.db	3
+      00028D 01                     854 	.sleb128	1
+      00028E 01                     855 	.db	1
+      00028F 00                     856 	.db	0
+      000290 05                     857 	.uleb128	5
+      000291 02                     858 	.db	2
+      000292 00 00r01r55            859 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$106)
+      000296 03                     860 	.db	3
+      000297 01                     861 	.sleb128	1
+      000298 01                     862 	.db	1
+      000299 00                     863 	.db	0
+      00029A 05                     864 	.uleb128	5
+      00029B 02                     865 	.db	2
+      00029C 00 00r01r57            866 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$107)
+      0002A0 03                     867 	.db	3
+      0002A1 01                     868 	.sleb128	1
+      0002A2 01                     869 	.db	1
+      0002A3 00                     870 	.db	0
+      0002A4 05                     871 	.uleb128	5
+      0002A5 02                     872 	.db	2
+      0002A6 00 00r01r57            873 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$108)
+      0002AA 03                     874 	.db	3
+      0002AB 01                     875 	.sleb128	1
+      0002AC 01                     876 	.db	1
+      0002AD 00                     877 	.db	0
+      0002AE 05                     878 	.uleb128	5
+      0002AF 02                     879 	.db	2
+      0002B0 00 00r01r61            880 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$109)
+      0002B4 03                     881 	.db	3
+      0002B5 01                     882 	.sleb128	1
+      0002B6 01                     883 	.db	1
+      0002B7 00                     884 	.db	0
+      0002B8 05                     885 	.uleb128	5
+      0002B9 02                     886 	.db	2
+      0002BA 00 00r01r63            887 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$110)
+      0002BE 03                     888 	.db	3
+      0002BF 01                     889 	.sleb128	1
+      0002C0 01                     890 	.db	1
+      0002C1 00                     891 	.db	0
+      0002C2 05                     892 	.uleb128	5
+      0002C3 02                     893 	.db	2
+      0002C4 00 00r01r63            894 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$111)
+      0002C8 03                     895 	.db	3
+      0002C9 01                     896 	.sleb128	1
+      0002CA 01                     897 	.db	1
+      0002CB 00                     898 	.db	0
+      0002CC 05                     899 	.uleb128	5
+      0002CD 02                     900 	.db	2
+      0002CE 00 00r01r6F            901 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$112)
+      0002D2 03                     902 	.db	3
+      0002D3 01                     903 	.sleb128	1
+      0002D4 01                     904 	.db	1
+      0002D5 00                     905 	.db	0
+      0002D6 05                     906 	.uleb128	5
+      0002D7 02                     907 	.db	2
+      0002D8 00 00r01r71            908 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$113)
+      0002DC 03                     909 	.db	3
+      0002DD 01                     910 	.sleb128	1
+      0002DE 01                     911 	.db	1
+      0002DF 00                     912 	.db	0
+      0002E0 05                     913 	.uleb128	5
+      0002E1 02                     914 	.db	2
+      0002E2 00 00r01r71            915 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$114)
+      0002E6 03                     916 	.db	3
+      0002E7 01                     917 	.sleb128	1
+      0002E8 01                     918 	.db	1
+      0002E9 00                     919 	.db	0
+      0002EA 05                     920 	.uleb128	5
+      0002EB 02                     921 	.db	2
+      0002EC 00 00r01r78            922 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$116)
+      0002F0 03                     923 	.db	3
+      0002F1 04                     924 	.sleb128	4
+      0002F2 01                     925 	.db	1
+      0002F3 00                     926 	.db	0
+      0002F4 05                     927 	.uleb128	5
+      0002F5 02                     928 	.db	2
+      0002F6 00 00r01r78            929 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$117)
+      0002FA 03                     930 	.db	3
+      0002FB 02                     931 	.sleb128	2
+      0002FC 01                     932 	.db	1
+      0002FD 00                     933 	.db	0
+      0002FE 05                     934 	.uleb128	5
+      0002FF 02                     935 	.db	2
+      000300 00 00r01r7A            936 	.dw	0,(Sstm8s_exti$EXTI_GetExtIntSensitivity$118)
+      000304 03                     937 	.db	3
+      000305 01                     938 	.sleb128	1
+      000306 01                     939 	.db	1
+      000307 09                     940 	.db	9
+      000308 00 03                  941 	.dw	1+Sstm8s_exti$EXTI_GetExtIntSensitivity$120-Sstm8s_exti$EXTI_GetExtIntSensitivity$118
+      00030A 00                     942 	.db	0
+      00030B 01                     943 	.uleb128	1
+      00030C 01                     944 	.db	1
+      00030D 00                     945 	.db	0
+      00030E 05                     946 	.uleb128	5
+      00030F 02                     947 	.db	2
+      000310 00 00r01r7D            948 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$122)
+      000314 03                     949 	.db	3
+      000315 A1 01                  950 	.sleb128	161
+      000317 01                     951 	.db	1
+      000318 00                     952 	.db	0
+      000319 05                     953 	.uleb128	5
+      00031A 02                     954 	.db	2
+      00031B 00 00r01r7D            955 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$124)
+      00031F 03                     956 	.db	3
+      000320 05                     957 	.sleb128	5
+      000321 01                     958 	.db	1
+      000322 00                     959 	.db	0
+      000323 05                     960 	.uleb128	5
+      000324 02                     961 	.db	2
+      000325 00 00r01r82            962 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$125)
+      000329 03                     963 	.db	3
+      00032A 02                     964 	.sleb128	2
+      00032B 01                     965 	.db	1
+      00032C 00                     966 	.db	0
+      00032D 05                     967 	.uleb128	5
+      00032E 02                     968 	.db	2
+      00032F 00 00r01r82            969 	.dw	0,(Sstm8s_exti$EXTI_GetTLISensitivity$126)
+      000333 03                     970 	.db	3
+      000334 01                     971 	.sleb128	1
+      000335 01                     972 	.db	1
+      000336 09                     973 	.db	9
+      000337 00 01                  974 	.dw	1+Sstm8s_exti$EXTI_GetTLISensitivity$127-Sstm8s_exti$EXTI_GetTLISensitivity$126
+      000339 00                     975 	.db	0
+      00033A 01                     976 	.uleb128	1
+      00033B 01                     977 	.db	1
+      00033C                        978 Ldebug_line_end:
                                     979 
                                     980 	.area .debug_loc (NOLOAD)
       000000                        981 Ldebug_loc_start:
@@ -1460,10 +1462,10 @@
       000053 00                    1422 	.db	0
       000054 00 00r00r00           1423 	.dw	0,(Ldebug_line_start+-4)
       000058 01                    1424 	.db	1
-      000059 53 44 43 43 20 76 65  1425 	.ascii "SDCC version 4.3.0 #14184"
+      000059 53 44 43 43 20 76 65  1425 	.ascii "SDCC version 4.4.0 #14620"
              72 73 69 6F 6E 20 34
-             2E 33 2E 30 20 23 31
-             34 31 38 34
+             2E 34 2E 30 20 23 31
+             34 36 32 30
       000072 00                    1426 	.db	0
       000073 02                    1427 	.uleb128	2
       000074 45 58 54 49 5F 44 65  1428 	.ascii "EXTI_DeInit"

@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_adc1
 	.optsdcc -mstm8
@@ -757,14 +757,14 @@ _ADC1_SchmittTriggerConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 236: assert_param(IS_ADC1_SCHMITTTRIG_OK(ADC1_SchmittTriggerChannel));
 	ld	xl, a
 	inc	a
-	jrne	00254$
+	jrne	00292$
 	ld	a, #0x01
 	ld	xh, a
-	jra	00255$
-00254$:
+	jra	00293$
+00292$:
 	clr	a
 	ld	xh, a
-00255$:
+00293$:
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$223 ==.
 	ld	a, xl
 	tnz	a
@@ -901,12 +901,12 @@ _ADC1_SchmittTriggerConfig:
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$264 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00294$
-00293$:
+	jreq	00332$
+00331$:
 	sll	(1, sp)
 	dec	a
-	jrne	00293$
-00294$:
+	jrne	00331$
+00332$:
 	pop	a
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$265 ==.
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$266 ==.
@@ -943,12 +943,12 @@ _ADC1_SchmittTriggerConfig:
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$276 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00297$
-00296$:
+	jreq	00335$
+00334$:
 	sll	(1, sp)
 	dec	a
-	jrne	00296$
-00297$:
+	jrne	00334$
+00335$:
 	pop	a
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$277 ==.
 	Sstm8s_adc1$ADC1_SchmittTriggerConfig$278 ==.
@@ -1237,7 +1237,7 @@ _ADC1_StartConversion:
 ;	-----------------------------------------
 _ADC1_GetConversionValue:
 	Sstm8s_adc1$ADC1_GetConversionValue$370 ==.
-	pushw	x
+	sub	sp, #4
 	Sstm8s_adc1$ADC1_GetConversionValue$371 ==.
 	Sstm8s_adc1$ADC1_GetConversionValue$372 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 375: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
@@ -1253,15 +1253,12 @@ _ADC1_GetConversionValue:
 	ld	xh, a
 	Sstm8s_adc1$ADC1_GetConversionValue$376 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 382: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
-	clr	(0x02, sp)
 	clr	a
 	pushw	x
 	Sstm8s_adc1$ADC1_GetConversionValue$377 ==.
-	or	a, (1, sp)
+	or	a, (2, sp)
 	popw	x
 	Sstm8s_adc1$ADC1_GetConversionValue$378 ==.
-	rrwa	x
-	or	a, (0x02, sp)
 	ld	xl, a
 	Sstm8s_adc1$ADC1_GetConversionValue$379 ==.
 	jra	00103$
@@ -1286,18 +1283,19 @@ _ADC1_GetConversionValue:
 	sllw	x
 	sllw	x
 	ldw	(0x01, sp), x
-	ld	a, (0x02, sp)
-	ld	xl, a
 	ld	a, yl
+	clr	(0x04, sp)
 	or	a, (0x01, sp)
 	ld	xh, a
+	ld	a, (0x02, sp)
+	ld	xl, a
 	Sstm8s_adc1$ADC1_GetConversionValue$384 ==.
 00103$:
 	Sstm8s_adc1$ADC1_GetConversionValue$385 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 394: return ((uint16_t)temph);
 	Sstm8s_adc1$ADC1_GetConversionValue$386 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 395: }
-	addw	sp, #2
+	addw	sp, #4
 	Sstm8s_adc1$ADC1_GetConversionValue$387 ==.
 	Sstm8s_adc1$ADC1_GetConversionValue$388 ==.
 	XG$ADC1_GetConversionValue$0$0 ==.
@@ -1399,12 +1397,12 @@ _ADC1_AWDChannelConfig:
 	pop	a
 	Sstm8s_adc1$ADC1_AWDChannelConfig$422 ==.
 	tnz	a
-	jreq	00264$
-00263$:
+	jreq	00296$
+00295$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00263$
-00264$:
+	jrne	00295$
+00296$:
 	Sstm8s_adc1$ADC1_AWDChannelConfig$423 ==.
 	Sstm8s_adc1$ADC1_AWDChannelConfig$424 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 413: if (NewState != DISABLE)
@@ -1445,12 +1443,12 @@ _ADC1_AWDChannelConfig:
 	Sstm8s_adc1$ADC1_AWDChannelConfig$434 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00267$
-00266$:
+	jreq	00299$
+00298$:
 	sll	(1, sp)
 	dec	a
-	jrne	00266$
-00267$:
+	jrne	00298$
+00299$:
 	pop	a
 	Sstm8s_adc1$ADC1_AWDChannelConfig$435 ==.
 	Sstm8s_adc1$ADC1_AWDChannelConfig$436 ==.
@@ -1610,10 +1608,8 @@ _ADC1_GetBufferValue:
 	clr	(0x04, sp)
 	clr	(0x05, sp)
 	ld	a, (0x06, sp)
-	or	a, (0x04, sp)
 	ld	(0x02, sp), a
-	ld	a, (0x05, sp)
-	or	a, (0x03, sp)
+	ld	a, (0x03, sp)
 	ld	(0x01, sp), a
 	Sstm8s_adc1$ADC1_GetBufferValue$487 ==.
 	jra	00103$
@@ -1641,7 +1637,6 @@ _ADC1_GetBufferValue:
 	or	a, (0x03, sp)
 	ld	(0x01, sp), a
 	ld	a, (0x04, sp)
-	or	a, (0x06, sp)
 	ld	(0x02, sp), a
 	Sstm8s_adc1$ADC1_GetBufferValue$492 ==.
 00103$:
@@ -1732,12 +1727,12 @@ _ADC1_GetAWDChannelStatus:
 	pop	a
 	Sstm8s_adc1$ADC1_GetAWDChannelStatus$524 ==.
 	tnz	a
-	jreq	00231$
-00230$:
+	jreq	00255$
+00254$:
 	sll	(0x01, sp)
 	dec	a
-	jrne	00230$
-00231$:
+	jrne	00254$
+00255$:
 	ld	a, xl
 	and	a, (0x01, sp)
 	Sstm8s_adc1$ADC1_GetAWDChannelStatus$525 ==.
@@ -1760,12 +1755,12 @@ _ADC1_GetAWDChannelStatus:
 	Sstm8s_adc1$ADC1_GetAWDChannelStatus$530 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00233$
-00232$:
+	jreq	00257$
+00256$:
 	sll	(1, sp)
 	dec	a
-	jrne	00232$
-00233$:
+	jrne	00256$
+00257$:
 	pop	a
 	Sstm8s_adc1$ADC1_GetAWDChannelStatus$531 ==.
 	and	a, (0x01, sp)
@@ -1791,59 +1786,59 @@ _ADC1_GetAWDChannelStatus:
 ;	-----------------------------------------
 _ADC1_GetFlagStatus:
 	Sstm8s_adc1$ADC1_GetFlagStatus$539 ==.
-	sub	sp, #3
+	pushw	x
 	Sstm8s_adc1$ADC1_GetFlagStatus$540 ==.
 	Sstm8s_adc1$ADC1_GetFlagStatus$541 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 533: assert_param(IS_ADC1_FLAG_OK(Flag));
-	ld	(0x03, sp), a
+	ld	(0x02, sp), a
 	cp	a, #0x80
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$542 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x41
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$543 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x40
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$544 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x10
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$545 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x11
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$546 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x12
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$547 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x13
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$548 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x14
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$549 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x15
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$550 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x16
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$551 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x17
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$552 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x18
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$553 ==.
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x19
 	jreq	00113$
 	Sstm8s_adc1$ADC1_GetFlagStatus$554 ==.
@@ -1860,14 +1855,10 @@ _ADC1_GetFlagStatus:
 00113$:
 	Sstm8s_adc1$ADC1_GetFlagStatus$559 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 535: if ((Flag & 0x0F) == 0x01)
-	ld	a, (0x03, sp)
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
-	clrw	x
 	ld	a, (0x02, sp)
-	and	a, #0x0f
 	ld	xl, a
-	decw	x
+	and	a, #0x0f
+	dec	a
 	jrne	00108$
 	Sstm8s_adc1$ADC1_GetFlagStatus$560 ==.
 	Sstm8s_adc1$ADC1_GetFlagStatus$561 ==.
@@ -1880,17 +1871,15 @@ _ADC1_GetFlagStatus:
 00108$:
 	Sstm8s_adc1$ADC1_GetFlagStatus$564 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 540: else if ((Flag & 0xF0) == 0x10)
-	clrw	x
-	ld	a, (0x02, sp)
+	ld	a, xl
 	and	a, #0xf0
-	ld	xl, a
-	cpw	x, #0x0010
+	cp	a, #0x10
 	jrne	00105$
 	Sstm8s_adc1$ADC1_GetFlagStatus$565 ==.
 	Sstm8s_adc1$ADC1_GetFlagStatus$566 ==.
 	Sstm8s_adc1$ADC1_GetFlagStatus$567 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 543: temp = (uint8_t)(Flag & (uint8_t)0x0F);
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	and	a, #0x0f
 	Sstm8s_adc1$ADC1_GetFlagStatus$568 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 544: if (temp < 8)
@@ -1901,21 +1890,21 @@ _ADC1_GetFlagStatus:
 	Sstm8s_adc1$ADC1_GetFlagStatus$570 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 546: flagstatus = (uint8_t)(ADC1->AWSRL & (uint8_t)((uint8_t)1 << temp));
 	ld	a, 0x540d
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	ld	a, #0x01
 	push	a
 	Sstm8s_adc1$ADC1_GetFlagStatus$571 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00277$
-00276$:
+	jreq	00309$
+00308$:
 	sll	(1, sp)
 	dec	a
-	jrne	00276$
-00277$:
+	jrne	00308$
+00309$:
 	pop	a
 	Sstm8s_adc1$ADC1_GetFlagStatus$572 ==.
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	Sstm8s_adc1$ADC1_GetFlagStatus$573 ==.
 	jra	00109$
 00102$:
@@ -1923,22 +1912,22 @@ _ADC1_GetFlagStatus:
 	Sstm8s_adc1$ADC1_GetFlagStatus$575 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 550: flagstatus = (uint8_t)(ADC1->AWSRH & (uint8_t)((uint8_t)1 << (temp - 8)));
 	ld	a, 0x540c
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	subw	x, #8
 	ld	a, #0x01
 	push	a
 	Sstm8s_adc1$ADC1_GetFlagStatus$576 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00279$
-00278$:
+	jreq	00311$
+00310$:
 	sll	(1, sp)
 	dec	a
-	jrne	00278$
-00279$:
+	jrne	00310$
+00311$:
 	pop	a
 	Sstm8s_adc1$ADC1_GetFlagStatus$577 ==.
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	Sstm8s_adc1$ADC1_GetFlagStatus$578 ==.
 	jra	00109$
 00105$:
@@ -1946,7 +1935,7 @@ _ADC1_GetFlagStatus:
 	Sstm8s_adc1$ADC1_GetFlagStatus$580 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 555: flagstatus = (uint8_t)(ADC1->CSR & Flag);
 	ld	a, 0x5400
-	and	a, (0x03, sp)
+	and	a, (0x02, sp)
 	Sstm8s_adc1$ADC1_GetFlagStatus$581 ==.
 00109$:
 	Sstm8s_adc1$ADC1_GetFlagStatus$582 ==.
@@ -1956,7 +1945,7 @@ _ADC1_GetFlagStatus:
 	rlc	a
 	Sstm8s_adc1$ADC1_GetFlagStatus$583 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 559: }
-	addw	sp, #3
+	popw	x
 	Sstm8s_adc1$ADC1_GetFlagStatus$584 ==.
 	Sstm8s_adc1$ADC1_GetFlagStatus$585 ==.
 	XG$ADC1_GetFlagStatus$0$0 ==.
@@ -1969,7 +1958,7 @@ _ADC1_GetFlagStatus:
 ;	-----------------------------------------
 _ADC1_ClearFlag:
 	Sstm8s_adc1$ADC1_ClearFlag$588 ==.
-	pushw	x
+	push	a
 	Sstm8s_adc1$ADC1_ClearFlag$589 ==.
 	Sstm8s_adc1$ADC1_ClearFlag$590 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 572: assert_param(IS_ADC1_FLAG_OK(Flag));
@@ -2029,183 +2018,180 @@ _ADC1_ClearFlag:
 00113$:
 	Sstm8s_adc1$ADC1_ClearFlag$610 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 574: if ((Flag & 0x0F) == 0x01)
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	(0x01, sp), a
 	push	a
 	Sstm8s_adc1$ADC1_ClearFlag$611 ==.
-	clrw	x
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	and	a, #0x0f
-	ld	xl, a
-	pop	a
-	Sstm8s_adc1$ADC1_ClearFlag$612 ==.
-	decw	x
-	jrne	00108$
 	Sstm8s_adc1$ADC1_ClearFlag$613 ==.
+	dec	a
+	pop	a
 	Sstm8s_adc1$ADC1_ClearFlag$614 ==.
+	jrne	00108$
 	Sstm8s_adc1$ADC1_ClearFlag$615 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$616 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$617 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 577: ADC1->CR3 &= (uint8_t)(~ADC1_CR3_OVR);
 	bres	0x5403, #6
-	Sstm8s_adc1$ADC1_ClearFlag$616 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$618 ==.
 	jra	00110$
 00108$:
-	Sstm8s_adc1$ADC1_ClearFlag$617 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$619 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 579: else if ((Flag & 0xF0) == 0x10)
 	push	a
-	Sstm8s_adc1$ADC1_ClearFlag$618 ==.
-	clrw	x
-	ld	a, (0x03, sp)
-	and	a, #0xf0
-	ld	xl, a
-	pop	a
-	Sstm8s_adc1$ADC1_ClearFlag$619 ==.
-	cpw	x, #0x0010
-	jrne	00105$
 	Sstm8s_adc1$ADC1_ClearFlag$620 ==.
-	Sstm8s_adc1$ADC1_ClearFlag$621 ==.
+	ld	a, (0x02, sp)
+	and	a, #0xf0
 	Sstm8s_adc1$ADC1_ClearFlag$622 ==.
+	cp	a, #0x10
+	pop	a
+	Sstm8s_adc1$ADC1_ClearFlag$623 ==.
+	jrne	00105$
+	Sstm8s_adc1$ADC1_ClearFlag$624 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$625 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$626 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 582: temp = (uint8_t)(Flag & (uint8_t)0x0F);
 	and	a, #0x0f
-	Sstm8s_adc1$ADC1_ClearFlag$623 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$627 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 583: if (temp < 8)
 	ld	xl, a
 	cp	a, #0x08
 	jrnc	00102$
-	Sstm8s_adc1$ADC1_ClearFlag$624 ==.
-	Sstm8s_adc1$ADC1_ClearFlag$625 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$628 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$629 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 585: ADC1->AWSRL &= (uint8_t)~(uint8_t)((uint8_t)1 << temp);
 	ld	a, 0x540d
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	ld	a, #0x01
 	push	a
-	Sstm8s_adc1$ADC1_ClearFlag$626 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$630 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00277$
-00276$:
+	jreq	00309$
+00308$:
 	sll	(1, sp)
 	dec	a
-	jrne	00276$
-00277$:
+	jrne	00308$
+00309$:
 	pop	a
-	Sstm8s_adc1$ADC1_ClearFlag$627 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$631 ==.
 	cpl	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	ld	0x540d, a
-	Sstm8s_adc1$ADC1_ClearFlag$628 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$632 ==.
 	jra	00110$
 00102$:
-	Sstm8s_adc1$ADC1_ClearFlag$629 ==.
-	Sstm8s_adc1$ADC1_ClearFlag$630 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$633 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$634 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 589: ADC1->AWSRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (temp - 8));
 	ld	a, 0x540c
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	subw	x, #8
 	ld	a, #0x01
 	push	a
-	Sstm8s_adc1$ADC1_ClearFlag$631 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$635 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00279$
-00278$:
+	jreq	00311$
+00310$:
 	sll	(1, sp)
 	dec	a
-	jrne	00278$
-00279$:
+	jrne	00310$
+00311$:
 	pop	a
-	Sstm8s_adc1$ADC1_ClearFlag$632 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$636 ==.
 	cpl	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	ld	0x540c, a
-	Sstm8s_adc1$ADC1_ClearFlag$633 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$637 ==.
 	jra	00110$
 00105$:
-	Sstm8s_adc1$ADC1_ClearFlag$634 ==.
-	Sstm8s_adc1$ADC1_ClearFlag$635 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$638 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$639 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 594: ADC1->CSR &= (uint8_t) (~Flag);
 	ldw	x, #0x5400
 	push	a
-	Sstm8s_adc1$ADC1_ClearFlag$636 ==.
-	ld	a, (x)
-	ld	(0x03, sp), a
-	pop	a
-	Sstm8s_adc1$ADC1_ClearFlag$637 ==.
-	cpl	a
-	and	a, (0x02, sp)
-	ld	0x5400, a
-	Sstm8s_adc1$ADC1_ClearFlag$638 ==.
-00110$:
-	Sstm8s_adc1$ADC1_ClearFlag$639 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 596: }
-	popw	x
 	Sstm8s_adc1$ADC1_ClearFlag$640 ==.
+	ld	a, (x)
+	ld	(0x02, sp), a
+	pop	a
 	Sstm8s_adc1$ADC1_ClearFlag$641 ==.
+	cpl	a
+	and	a, (0x01, sp)
+	ld	0x5400, a
+	Sstm8s_adc1$ADC1_ClearFlag$642 ==.
+00110$:
+	Sstm8s_adc1$ADC1_ClearFlag$643 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 596: }
+	pop	a
+	Sstm8s_adc1$ADC1_ClearFlag$644 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$645 ==.
 	XG$ADC1_ClearFlag$0$0 ==.
 	ret
-	Sstm8s_adc1$ADC1_ClearFlag$642 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$643 ==.
+	Sstm8s_adc1$ADC1_ClearFlag$646 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$647 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 616: ITStatus ADC1_GetITStatus(ADC1_IT_TypeDef ITPendingBit)
 ;	-----------------------------------------
 ;	 function ADC1_GetITStatus
 ;	-----------------------------------------
 _ADC1_GetITStatus:
-	Sstm8s_adc1$ADC1_GetITStatus$644 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$648 ==.
 	sub	sp, #3
-	Sstm8s_adc1$ADC1_GetITStatus$645 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$646 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$649 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$650 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 622: assert_param(IS_ADC1_ITPENDINGBIT_OK(ITPendingBit));
 	ldw	(0x02, sp), x
 	cpw	x, #0x0080
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$647 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$651 ==.
 	cpw	x, #0x0140
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$648 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$652 ==.
 	cpw	x, #0x0110
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$649 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$653 ==.
 	cpw	x, #0x0111
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$650 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$654 ==.
 	cpw	x, #0x0112
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$651 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$655 ==.
 	cpw	x, #0x0113
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$652 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$656 ==.
 	cpw	x, #0x0114
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$653 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$657 ==.
 	cpw	x, #0x0115
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$654 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$658 ==.
 	cpw	x, #0x0116
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$655 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$659 ==.
 	cpw	x, #0x0117
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$656 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$660 ==.
 	cpw	x, #0x0118
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$657 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$661 ==.
 	cpw	x, #0x011c
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$658 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$662 ==.
 	cpw	x, #0x0119
 	jreq	00110$
-	Sstm8s_adc1$ADC1_GetITStatus$659 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$663 ==.
 	push	#0x6e
-	Sstm8s_adc1$ADC1_GetITStatus$660 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$664 ==.
 	push	#0x02
-	Sstm8s_adc1$ADC1_GetITStatus$661 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$665 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_adc1$ADC1_GetITStatus$662 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$666 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_adc1$ADC1_GetITStatus$663 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$667 ==.
 00110$:
-	Sstm8s_adc1$ADC1_GetITStatus$664 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$668 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 624: if (((uint16_t)ITPendingBit & 0xF0) == 0x10)
 	clrw	x
 	ld	a, (0x03, sp)
@@ -2213,70 +2199,70 @@ _ADC1_GetITStatus:
 	ld	xl, a
 	cpw	x, #0x0010
 	jrne	00105$
-	Sstm8s_adc1$ADC1_GetITStatus$665 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$666 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$667 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$669 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$670 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$671 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 627: temp = (uint8_t)((uint16_t)ITPendingBit & 0x0F);
 	ld	a, (0x03, sp)
 	and	a, #0x0f
-	Sstm8s_adc1$ADC1_GetITStatus$668 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$672 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 628: if (temp < 8)
 	ld	xl, a
 	cp	a, #0x08
 	jrnc	00102$
-	Sstm8s_adc1$ADC1_GetITStatus$669 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$670 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$673 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$674 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 630: itstatus = (ITStatus)(ADC1->AWSRL & (uint8_t)((uint8_t)1 << temp));
 	ld	a, 0x540d
 	push	a
-	Sstm8s_adc1$ADC1_GetITStatus$671 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$675 ==.
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	ld	a, xl
 	tnz	a
-	jreq	00266$
-00265$:
+	jreq	00296$
+00295$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00265$
-00266$:
+	jrne	00295$
+00296$:
 	pop	a
-	Sstm8s_adc1$ADC1_GetITStatus$672 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$676 ==.
 	and	a, (0x01, sp)
 	neg	a
 	clr	a
 	rlc	a
-	Sstm8s_adc1$ADC1_GetITStatus$673 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$677 ==.
 	jra	00106$
 00102$:
-	Sstm8s_adc1$ADC1_GetITStatus$674 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$675 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$678 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$679 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 634: itstatus = (ITStatus)(ADC1->AWSRH & (uint8_t)((uint8_t)1 << (temp - 8)));
 	ld	a, 0x540c
 	ld	(0x01, sp), a
 	subw	x, #8
 	ld	a, #0x01
 	push	a
-	Sstm8s_adc1$ADC1_GetITStatus$676 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$680 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00268$
-00267$:
+	jreq	00298$
+00297$:
 	sll	(1, sp)
 	dec	a
-	jrne	00267$
-00268$:
+	jrne	00297$
+00298$:
 	pop	a
-	Sstm8s_adc1$ADC1_GetITStatus$677 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$681 ==.
 	and	a, (0x01, sp)
 	neg	a
 	clr	a
 	rlc	a
-	Sstm8s_adc1$ADC1_GetITStatus$678 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$682 ==.
 	jra	00106$
 00105$:
-	Sstm8s_adc1$ADC1_GetITStatus$679 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$680 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$683 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$684 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 639: itstatus = (ITStatus)(ADC1->CSR & (uint8_t)ITPendingBit);
 	ld	a, 0x5400
 	ld	(0x01, sp), a
@@ -2285,86 +2271,86 @@ _ADC1_GetITStatus:
 	neg	a
 	clr	a
 	rlc	a
-	Sstm8s_adc1$ADC1_GetITStatus$681 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$685 ==.
 00106$:
-	Sstm8s_adc1$ADC1_GetITStatus$682 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$686 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 641: return ((ITStatus)itstatus);
-	Sstm8s_adc1$ADC1_GetITStatus$683 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$687 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 642: }
 	addw	sp, #3
-	Sstm8s_adc1$ADC1_GetITStatus$684 ==.
-	Sstm8s_adc1$ADC1_GetITStatus$685 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$688 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$689 ==.
 	XG$ADC1_GetITStatus$0$0 ==.
 	ret
-	Sstm8s_adc1$ADC1_GetITStatus$686 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$687 ==.
+	Sstm8s_adc1$ADC1_GetITStatus$690 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$691 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 662: void ADC1_ClearITPendingBit(ADC1_IT_TypeDef ITPendingBit)
 ;	-----------------------------------------
 ;	 function ADC1_ClearITPendingBit
 ;	-----------------------------------------
 _ADC1_ClearITPendingBit:
-	Sstm8s_adc1$ADC1_ClearITPendingBit$688 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$692 ==.
 	sub	sp, #3
-	Sstm8s_adc1$ADC1_ClearITPendingBit$689 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$690 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$693 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$694 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 667: assert_param(IS_ADC1_ITPENDINGBIT_OK(ITPendingBit));
 	ldw	(0x02, sp), x
 	cpw	x, #0x0080
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$691 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$695 ==.
 	cpw	x, #0x0140
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$692 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$696 ==.
 	cpw	x, #0x0110
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$693 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$697 ==.
 	cpw	x, #0x0111
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$694 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$698 ==.
 	cpw	x, #0x0112
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$695 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$699 ==.
 	cpw	x, #0x0113
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$696 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$700 ==.
 	cpw	x, #0x0114
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$697 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$701 ==.
 	cpw	x, #0x0115
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$698 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$702 ==.
 	cpw	x, #0x0116
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$699 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$703 ==.
 	cpw	x, #0x0117
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$700 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$704 ==.
 	cpw	x, #0x0118
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$701 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$705 ==.
 	cpw	x, #0x011c
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$702 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$706 ==.
 	cpw	x, #0x0119
 	jreq	00110$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$703 ==.
-	pushw	x
-	Sstm8s_adc1$ADC1_ClearITPendingBit$704 ==.
-	push	#0x9b
-	Sstm8s_adc1$ADC1_ClearITPendingBit$705 ==.
-	push	#0x02
-	Sstm8s_adc1$ADC1_ClearITPendingBit$706 ==.
-	push	#0x00
 	Sstm8s_adc1$ADC1_ClearITPendingBit$707 ==.
-	push	#0x00
+	pushw	x
 	Sstm8s_adc1$ADC1_ClearITPendingBit$708 ==.
+	push	#0x9b
+	Sstm8s_adc1$ADC1_ClearITPendingBit$709 ==.
+	push	#0x02
+	Sstm8s_adc1$ADC1_ClearITPendingBit$710 ==.
+	push	#0x00
+	Sstm8s_adc1$ADC1_ClearITPendingBit$711 ==.
+	push	#0x00
+	Sstm8s_adc1$ADC1_ClearITPendingBit$712 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_adc1$ADC1_ClearITPendingBit$709 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$713 ==.
 	popw	x
-	Sstm8s_adc1$ADC1_ClearITPendingBit$710 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$714 ==.
 00110$:
-	Sstm8s_adc1$ADC1_ClearITPendingBit$711 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$715 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 669: if (((uint16_t)ITPendingBit & 0xF0) == 0x10)
 	clrw	y
 	ld	a, (0x03, sp)
@@ -2372,91 +2358,91 @@ _ADC1_ClearITPendingBit:
 	ld	yl, a
 	cpw	y, #0x0010
 	jrne	00105$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$712 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$713 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$714 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$716 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$717 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$718 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 672: temp = (uint8_t)((uint16_t)ITPendingBit & 0x0F);
 	ld	a, (0x03, sp)
 	and	a, #0x0f
-	Sstm8s_adc1$ADC1_ClearITPendingBit$715 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$719 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 673: if (temp < 8)
 	ld	xl, a
 	cp	a, #0x08
 	jrnc	00102$
-	Sstm8s_adc1$ADC1_ClearITPendingBit$716 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$717 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$720 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$721 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 675: ADC1->AWSRL &= (uint8_t)~(uint8_t)((uint8_t)1 << temp);
 	ld	a, 0x540d
 	ld	(0x01, sp), a
 	ld	a, #0x01
 	push	a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$718 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$722 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00266$
-00265$:
+	jreq	00296$
+00295$:
 	sll	(1, sp)
 	dec	a
-	jrne	00265$
-00266$:
+	jrne	00295$
+00296$:
 	pop	a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$719 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$723 ==.
 	cpl	a
 	and	a, (0x01, sp)
 	ld	0x540d, a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$720 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$724 ==.
 	jra	00107$
 00102$:
-	Sstm8s_adc1$ADC1_ClearITPendingBit$721 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$722 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$725 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$726 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 679: ADC1->AWSRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (temp - 8));
 	ld	a, 0x540c
 	ld	(0x01, sp), a
 	subw	x, #8
 	ld	a, #0x01
 	push	a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$723 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$727 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00268$
-00267$:
+	jreq	00298$
+00297$:
 	sll	(1, sp)
 	dec	a
-	jrne	00267$
-00268$:
+	jrne	00297$
+00298$:
 	pop	a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$724 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$728 ==.
 	cpl	a
 	and	a, (0x01, sp)
 	ld	0x540c, a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$725 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$729 ==.
 	jra	00107$
 00105$:
-	Sstm8s_adc1$ADC1_ClearITPendingBit$726 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$727 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$730 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$731 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 684: ADC1->CSR &= (uint8_t)((uint16_t)~(uint16_t)ITPendingBit);
 	ld	a, 0x5400
 	push	a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$728 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$732 ==.
 	cplw	x
 	pop	a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$729 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$733 ==.
 	pushw	x
-	Sstm8s_adc1$ADC1_ClearITPendingBit$730 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$734 ==.
 	and	a, (2, sp)
 	popw	x
-	Sstm8s_adc1$ADC1_ClearITPendingBit$731 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$735 ==.
 	ld	0x5400, a
-	Sstm8s_adc1$ADC1_ClearITPendingBit$732 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$736 ==.
 00107$:
-	Sstm8s_adc1$ADC1_ClearITPendingBit$733 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$737 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 686: }
 	addw	sp, #3
-	Sstm8s_adc1$ADC1_ClearITPendingBit$734 ==.
-	Sstm8s_adc1$ADC1_ClearITPendingBit$735 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$738 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$739 ==.
 	XG$ADC1_ClearITPendingBit$0$0 ==.
 	ret
-	Sstm8s_adc1$ADC1_ClearITPendingBit$736 ==.
+	Sstm8s_adc1$ADC1_ClearITPendingBit$740 ==.
 	.area CODE
 	.area CONST
 Fstm8s_adc1$__str_0$0_0$0 == .
@@ -2488,9 +2474,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c"
@@ -3835,204 +3821,204 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$615)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$617)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$617)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$619)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$622)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$626)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$623)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$627)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$625)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$629)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$630)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$634)
 	.db	3
 	.sleb128	4
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$635)
-	.db	3
-	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$639)
 	.db	3
+	.sleb128	5
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$643)
+	.db	3
 	.sleb128	2
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_adc1$ADC1_ClearFlag$641-Sstm8s_adc1$ADC1_ClearFlag$639
+	.dw	1+Sstm8s_adc1$ADC1_ClearFlag$645-Sstm8s_adc1$ADC1_ClearFlag$643
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$643)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$647)
 	.db	3
 	.sleb128	615
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$646)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$650)
 	.db	3
 	.sleb128	6
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$664)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$668)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$667)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$671)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$668)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$672)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$670)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$674)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$675)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$679)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$680)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$684)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$682)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$686)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$683)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$687)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_adc1$ADC1_GetITStatus$685-Sstm8s_adc1$ADC1_GetITStatus$683
+	.dw	1+Sstm8s_adc1$ADC1_GetITStatus$689-Sstm8s_adc1$ADC1_GetITStatus$687
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$687)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$691)
 	.db	3
 	.sleb128	661
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$690)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$694)
 	.db	3
 	.sleb128	5
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$711)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$714)
-	.db	3
-	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$715)
 	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$718)
+	.db	3
+	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$719)
+	.db	3
 	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$717)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$721)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$722)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$726)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$727)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$731)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$733)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$737)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_adc1$ADC1_ClearITPendingBit$735-Sstm8s_adc1$ADC1_ClearITPendingBit$733
+	.dw	1+Sstm8s_adc1$ADC1_ClearITPendingBit$739-Sstm8s_adc1$ADC1_ClearITPendingBit$737
 	.db	0
 	.uleb128	1
 	.db	1
@@ -4040,91 +4026,111 @@ Ldebug_line_end:
 
 	.area .debug_loc (NOLOAD)
 Ldebug_loc_start:
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$734)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$736)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$738)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$740)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$731)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$735)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$738)
+	.dw	2
+	.db	120
+	.sleb128	4
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$734)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$735)
+	.dw	2
+	.db	120
+	.sleb128	6
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$733)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$734)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$730)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$731)
-	.dw	2
-	.db	120
-	.sleb128	6
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$729)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$730)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$728)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$729)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$732)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$733)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$724)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$728)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$732)
+	.dw	2
+	.db	120
+	.sleb128	4
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$727)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$728)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	5
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$723)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$724)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$727)
+	.dw	2
+	.db	120
+	.sleb128	4
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$722)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$723)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$719)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$723)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$716)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$722)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$718)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$719)
-	.dw	2
-	.db	120
-	.sleb128	5
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$712)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$718)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$714)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$716)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$710)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$712)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$709)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$710)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$713)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$714)
 	.dw	2
 	.db	120
 	.sleb128	6
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$708)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$709)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$712)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$713)
 	.dw	2
 	.db	120
 	.sleb128	10
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$711)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$712)
+	.dw	2
+	.db	120
+	.sleb128	9
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$710)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$711)
+	.dw	2
+	.db	120
+	.sleb128	8
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$709)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$710)
+	.dw	2
+	.db	120
+	.sleb128	7
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$708)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$709)
+	.dw	2
+	.db	120
+	.sleb128	6
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$707)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$708)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$706)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$707)
 	.dw	2
 	.db	120
-	.sleb128	8
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$705)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$706)
 	.dw	2
 	.db	120
-	.sleb128	7
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$704)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$705)
 	.dw	2
 	.db	120
-	.sleb128	6
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$703)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$704)
 	.dw	2
@@ -4170,88 +4176,88 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$694)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$693)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$695)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$693)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$694)
-	.dw	2
-	.db	120
-	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$692)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$693)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$691)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$692)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$689)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$691)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$688)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$689)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$684)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$686)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$688)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$690)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$677)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$684)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$681)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$688)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$676)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$677)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$680)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$681)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$672)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$676)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$680)
+	.dw	2
+	.db	120
+	.sleb128	4
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$675)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$676)
 	.dw	2
 	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$671)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$672)
-	.dw	2
-	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$665)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$671)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$669)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$675)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$663)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$665)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$667)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$669)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$662)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$663)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$666)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$667)
 	.dw	2
 	.db	120
 	.sleb128	8
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$665)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$666)
+	.dw	2
+	.db	120
+	.sleb128	6
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$664)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$665)
+	.dw	2
+	.db	120
+	.sleb128	5
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$663)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$664)
+	.dw	2
+	.db	120
+	.sleb128	4
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$662)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$663)
+	.dw	2
+	.db	120
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$661)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$662)
 	.dw	2
 	.db	120
-	.sleb128	6
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$660)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$661)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$659)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$660)
 	.dw	2
@@ -4297,90 +4303,90 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$650)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$649)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$651)
 	.dw	2
 	.db	120
 	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$649)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$650)
-	.dw	2
-	.db	120
-	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$648)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$649)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$647)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$648)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$645)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$647)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$644)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$645)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$640)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$642)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$644)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$646)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$637)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$641)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$644)
+	.dw	2
+	.db	120
+	.sleb128	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$640)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$641)
+	.dw	2
+	.db	120
+	.sleb128	3
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$636)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$640)
 	.dw	2
 	.db	120
-	.sleb128	3
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$636)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$637)
-	.dw	2
-	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$632)
+	.sleb128	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$635)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$636)
 	.dw	2
 	.db	120
 	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$631)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$632)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$635)
 	.dw	2
 	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$627)
+	.sleb128	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$630)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$631)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$626)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$627)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$624)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$630)
 	.dw	2
 	.db	120
-	.sleb128	4
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$620)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$626)
+	.sleb128	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$623)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$624)
+	.dw	2
+	.db	120
+	.sleb128	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$622)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$623)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$619)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$621)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$622)
+	.dw	2
+	.db	120
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$620)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$621)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$618)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$619)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$615)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$620)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	2
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$614)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$615)
+	.dw	2
+	.db	120
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$613)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$618)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$614)
 	.dw	2
 	.db	120
 	.sleb128	3
@@ -4388,112 +4394,112 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$613)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$611)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$612)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$609)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$611)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$608)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$609)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$607)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$608)
 	.dw	2
 	.db	120
-	.sleb128	8
+	.sleb128	7
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$606)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$607)
 	.dw	2
 	.db	120
-	.sleb128	6
+	.sleb128	5
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$605)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$606)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$604)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$605)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$603)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$604)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$602)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$603)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$601)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$602)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$600)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$601)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$599)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$600)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$598)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$599)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$597)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$598)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$596)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$597)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$595)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$596)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$594)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$595)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$593)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$594)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$592)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$593)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$591)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$592)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$589)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$591)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$588)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$589)
 	.dw	2
@@ -4510,122 +4516,122 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$584)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$576)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$577)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$572)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$576)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$571)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$572)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$565)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$571)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$560)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$565)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$558)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$560)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$557)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$558)
 	.dw	2
 	.db	120
-	.sleb128	8
+	.sleb128	7
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$556)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$557)
 	.dw	2
 	.db	120
-	.sleb128	6
+	.sleb128	5
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$555)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$556)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$554)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$555)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$553)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$554)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$552)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$553)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$551)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$552)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$550)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$551)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$549)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$550)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$548)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$549)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$547)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$548)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$546)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$547)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$545)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$546)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$544)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$545)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$543)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$544)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$542)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$543)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$540)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$542)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$539)
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$540)
 	.dw	2
@@ -5025,17 +5031,17 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$387)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	5
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$377)
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$378)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	7
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$371)
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$377)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	5
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$370)
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$371)
 	.dw	2
@@ -6243,7 +6249,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "ADC1_DeInit"
@@ -6251,7 +6257,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_DeInit)
 	.dw	0,(XG$ADC1_DeInit$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+4896)
+	.dw	0,(Ldebug_loc_start+4944)
 	.uleb128	3
 	.dw	0,383
 	.ascii "ADC1_Init"
@@ -6332,7 +6338,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_Cmd)
 	.dw	0,(XG$ADC1_Cmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3940)
+	.dw	0,(Ldebug_loc_start+3988)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -6354,7 +6360,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_ScanModeCmd)
 	.dw	0,(XG$ADC1_ScanModeCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3848)
+	.dw	0,(Ldebug_loc_start+3896)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -6376,7 +6382,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_DataBufferCmd)
 	.dw	0,(XG$ADC1_DataBufferCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3756)
+	.dw	0,(Ldebug_loc_start+3804)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -6398,7 +6404,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_ITConfig)
 	.dw	0,(XG$ADC1_ITConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3520)
+	.dw	0,(Ldebug_loc_start+3568)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -6432,7 +6438,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_PrescalerConfig)
 	.dw	0,(XG$ADC1_PrescalerConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3344)
+	.dw	0,(Ldebug_loc_start+3392)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -6557,7 +6563,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_StartConversion)
 	.dw	0,(XG$ADC1_StartConversion$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2436)
+	.dw	0,(Ldebug_loc_start+2484)
 	.uleb128	5
 	.ascii "unsigned int"
 	.db	0
@@ -6570,7 +6576,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_GetConversionValue)
 	.dw	0,(XG$ADC1_GetConversionValue$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2368)
+	.dw	0,(Ldebug_loc_start+2416)
 	.dw	0,1198
 	.uleb128	7
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$373)
@@ -6642,7 +6648,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_SetHighThreshold)
 	.dw	0,(XG$ADC1_SetHighThreshold$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1928)
+	.dw	0,(Ldebug_loc_start+1976)
 	.uleb128	4
 	.db	6
 	.db	84
@@ -6662,7 +6668,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_SetLowThreshold)
 	.dw	0,(XG$ADC1_SetLowThreshold$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1908)
+	.dw	0,(Ldebug_loc_start+1956)
 	.uleb128	4
 	.db	6
 	.db	82
@@ -6682,7 +6688,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_GetBufferValue)
 	.dw	0,(XG$ADC1_GetBufferValue$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1768)
+	.dw	0,(Ldebug_loc_start+1816)
 	.dw	0,1198
 	.uleb128	4
 	.db	1
@@ -6721,7 +6727,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_GetAWDChannelStatus)
 	.dw	0,(XG$ADC1_GetAWDChannelStatus$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1436)
+	.dw	0,(Ldebug_loc_start+1484)
 	.dw	0,383
 	.uleb128	4
 	.db	1
@@ -6749,7 +6755,7 @@ Ldebug_info_start:
 	.dw	0,(_ADC1_GetFlagStatus)
 	.dw	0,(XG$ADC1_GetFlagStatus$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1116)
+	.dw	0,(Ldebug_loc_start+1164)
 	.dw	0,383
 	.uleb128	4
 	.db	2
@@ -6802,21 +6808,21 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,392
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$614)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$616)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$618)
 	.uleb128	8
 	.dw	0,1966
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$621)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$625)
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$624)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$628)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$632)
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$629)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$633)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$637)
 	.uleb128	0
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$634)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$638)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$642)
 	.uleb128	11
 	.db	1
 	.db	81
@@ -6842,17 +6848,17 @@ Ldebug_info_start:
 	.dw	0,700
 	.uleb128	8
 	.dw	0,2076
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$666)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$670)
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$669)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$673)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$677)
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$674)
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$678)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$682)
 	.uleb128	0
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$679)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$681)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$683)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$685)
 	.uleb128	11
 	.db	1
 	.db	80
@@ -6883,17 +6889,17 @@ Ldebug_info_start:
 	.dw	0,700
 	.uleb128	8
 	.dw	0,2204
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$713)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$717)
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$716)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$720)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$724)
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$721)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$725)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$729)
 	.uleb128	0
 	.uleb128	7
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$726)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$732)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$730)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$736)
 	.uleb128	11
 	.db	1
 	.db	81
@@ -7013,30 +7019,14 @@ Ldebug_CIE0_start:
 Ldebug_CIE0_end:
 	.dw	0,236
 	.dw	0,(Ldebug_CIE0_start-4)
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$688)	;initial loc
-	.dw	0,Sstm8s_adc1$ADC1_ClearITPendingBit$736-Sstm8s_adc1$ADC1_ClearITPendingBit$688
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$688)
-	.db	14
-	.uleb128	2
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$689)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$691)
-	.db	14
-	.uleb128	5
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$692)	;initial loc
+	.dw	0,Sstm8s_adc1$ADC1_ClearITPendingBit$740-Sstm8s_adc1$ADC1_ClearITPendingBit$692
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$692)
 	.db	14
-	.uleb128	5
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$693)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$694)
 	.db	14
 	.uleb128	5
 	.db	1
@@ -7078,69 +7068,85 @@ Ldebug_CIE0_end:
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$704)
 	.db	14
-	.uleb128	7
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$705)
 	.db	14
-	.uleb128	8
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$706)
 	.db	14
-	.uleb128	9
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$707)
 	.db	14
-	.uleb128	10
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$708)
 	.db	14
-	.uleb128	11
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$709)
 	.db	14
-	.uleb128	7
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$710)
 	.db	14
-	.uleb128	5
+	.uleb128	9
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$711)
+	.db	14
+	.uleb128	10
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$712)
 	.db	14
-	.uleb128	5
+	.uleb128	11
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$718)
-	.db	14
-	.uleb128	6
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$719)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$723)
-	.db	14
-	.uleb128	6
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$724)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$728)
-	.db	14
-	.uleb128	6
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$729)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$730)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$713)
 	.db	14
 	.uleb128	7
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$731)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$714)
+	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$716)
+	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$722)
+	.db	14
+	.uleb128	6
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$723)
+	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$727)
+	.db	14
+	.uleb128	6
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$728)
+	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$732)
+	.db	14
+	.uleb128	6
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$733)
 	.db	14
 	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$734)
+	.db	14
+	.uleb128	7
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$735)
+	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearITPendingBit$738)
 	.db	14
 	.uleb128	2
 
@@ -7165,30 +7171,14 @@ Ldebug_CIE1_start:
 Ldebug_CIE1_end:
 	.dw	0,188
 	.dw	0,(Ldebug_CIE1_start-4)
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$644)	;initial loc
-	.dw	0,Sstm8s_adc1$ADC1_GetITStatus$686-Sstm8s_adc1$ADC1_GetITStatus$644
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$644)
-	.db	14
-	.uleb128	2
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$645)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$647)
-	.db	14
-	.uleb128	5
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$648)	;initial loc
+	.dw	0,Sstm8s_adc1$ADC1_GetITStatus$690-Sstm8s_adc1$ADC1_GetITStatus$648
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$648)
 	.db	14
-	.uleb128	5
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$649)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$650)
 	.db	14
 	.uleb128	5
 	.db	1
@@ -7230,41 +7220,57 @@ Ldebug_CIE1_end:
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$660)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$661)
 	.db	14
-	.uleb128	7
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$662)
 	.db	14
-	.uleb128	9
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$663)
 	.db	14
 	.uleb128	5
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$665)
-	.db	14
-	.uleb128	5
-	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$671)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$664)
 	.db	14
 	.uleb128	6
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$672)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$665)
+	.db	14
+	.uleb128	7
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$666)
+	.db	14
+	.uleb128	9
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$667)
 	.db	14
 	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$669)
+	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$675)
+	.db	14
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$676)
 	.db	14
+	.uleb128	5
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$680)
+	.db	14
 	.uleb128	6
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$677)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$681)
 	.db	14
 	.uleb128	5
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$684)
+	.dw	0,(Sstm8s_adc1$ADC1_GetITStatus$688)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -7288,10 +7294,10 @@ Ldebug_CIE2_start:
 	.db	0
 	.db	0
 Ldebug_CIE2_end:
-	.dw	0,252
+	.dw	0,280
 	.dw	0,(Ldebug_CIE2_start-4)
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$588)	;initial loc
-	.dw	0,Sstm8s_adc1$ADC1_ClearFlag$642-Sstm8s_adc1$ADC1_ClearFlag$588
+	.dw	0,Sstm8s_adc1$ADC1_ClearFlag$646-Sstm8s_adc1$ADC1_ClearFlag$588
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$588)
 	.db	14
@@ -7299,133 +7305,149 @@ Ldebug_CIE2_end:
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$589)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$591)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$592)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$593)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$594)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$595)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$596)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$597)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$598)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$599)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$600)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$601)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$602)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$603)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$604)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$605)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$606)
 	.db	14
-	.uleb128	7
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$607)
 	.db	14
-	.uleb128	9
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$608)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$609)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$611)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$612)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$613)
 	.db	14
 	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$618)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$614)
 	.db	14
-	.uleb128	5
+	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$619)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$615)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$620)
 	.db	14
 	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$626)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$621)
 	.db	14
-	.uleb128	5
+	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$627)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$622)
+	.db	14
+	.uleb128	4
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$623)
+	.db	14
+	.uleb128	3
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$624)
+	.db	14
+	.uleb128	3
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$630)
 	.db	14
 	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$631)
 	.db	14
-	.uleb128	5
+	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$632)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$635)
 	.db	14
 	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$636)
 	.db	14
-	.uleb128	5
+	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$637)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$640)
 	.db	14
 	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$640)
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$641)
+	.db	14
+	.uleb128	3
+	.db	1
+	.dw	0,(Sstm8s_adc1$ADC1_ClearFlag$644)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -7461,99 +7483,99 @@ Ldebug_CIE3_end:
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$540)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$542)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$543)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$544)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$545)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$546)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$547)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$548)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$549)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$550)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$551)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$552)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$553)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$554)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$555)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$556)
 	.db	14
-	.uleb128	7
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$557)
 	.db	14
-	.uleb128	9
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$558)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$560)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$565)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$571)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$572)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$576)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$577)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetFlagStatus$584)
 	.db	14
@@ -8022,15 +8044,15 @@ Ldebug_CIE9_end:
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$371)
 	.db	14
-	.uleb128	4
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$377)
 	.db	14
-	.uleb128	6
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$378)
 	.db	14
-	.uleb128	4
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_adc1$ADC1_GetConversionValue$387)
 	.db	14

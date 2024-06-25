@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_adc1
 	.optsdcc -mstm8
@@ -528,14 +528,14 @@ _ADC1_SchmittTriggerConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 236: assert_param(IS_ADC1_SCHMITTTRIG_OK(ADC1_SchmittTriggerChannel));
 	ld	xl, a
 	inc	a
-	jrne	00254$
+	jrne	00292$
 	ld	a, #0x01
 	ld	xh, a
-	jra	00255$
-00254$:
+	jra	00293$
+00292$:
 	clr	a
 	ld	xh, a
-00255$:
+00293$:
 	ld	a, xl
 	tnz	a
 	jreq	00119$
@@ -630,12 +630,12 @@ _ADC1_SchmittTriggerConfig:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00294$
-00293$:
+	jreq	00332$
+00331$:
 	sll	(1, sp)
 	dec	a
-	jrne	00293$
-00294$:
+	jrne	00331$
+00332$:
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 254: if (NewState != DISABLE)
 	tnz	(0x04, sp)
@@ -660,12 +660,12 @@ _ADC1_SchmittTriggerConfig:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00297$
-00296$:
+	jreq	00335$
+00334$:
 	sll	(1, sp)
 	dec	a
-	jrne	00296$
-00297$:
+	jrne	00334$
+00335$:
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 265: if (NewState != DISABLE)
 	tnz	(0x04, sp)
@@ -859,7 +859,7 @@ _ADC1_StartConversion:
 ;	 function ADC1_GetConversionValue
 ;	-----------------------------------------
 _ADC1_GetConversionValue:
-	pushw	x
+	sub	sp, #4
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 375: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
 	btjf	0x5402, #3, 00102$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 378: templ = ADC1->DRL;
@@ -869,13 +869,10 @@ _ADC1_GetConversionValue:
 	ld	a, 0x5404
 	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 382: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
-	clr	(0x02, sp)
 	clr	a
 	pushw	x
-	or	a, (1, sp)
+	or	a, (2, sp)
 	popw	x
-	rrwa	x
-	or	a, (0x02, sp)
 	ld	xl, a
 	jra	00103$
 00102$:
@@ -895,15 +892,16 @@ _ADC1_GetConversionValue:
 	sllw	x
 	sllw	x
 	ldw	(0x01, sp), x
-	ld	a, (0x02, sp)
-	ld	xl, a
 	ld	a, yl
+	clr	(0x04, sp)
 	or	a, (0x01, sp)
 	ld	xh, a
+	ld	a, (0x02, sp)
+	ld	xl, a
 00103$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 394: return ((uint16_t)temph);
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 395: }
-	addw	sp, #2
+	addw	sp, #4
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 405: void ADC1_AWDChannelConfig(ADC1_Channel_TypeDef Channel, FunctionalState NewState)
 ;	-----------------------------------------
@@ -969,12 +967,12 @@ _ADC1_AWDChannelConfig:
 	ld	(0x03, sp), a
 	pop	a
 	tnz	a
-	jreq	00264$
-00263$:
+	jreq	00296$
+00295$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00263$
-00264$:
+	jrne	00295$
+00296$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 413: if (NewState != DISABLE)
 	tnz	(0x05, sp)
 	jreq	00102$
@@ -1003,12 +1001,12 @@ _ADC1_AWDChannelConfig:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00267$
-00266$:
+	jreq	00299$
+00298$:
 	sll	(1, sp)
 	dec	a
-	jrne	00266$
-00267$:
+	jrne	00298$
+00299$:
 	pop	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 424: if (NewState != DISABLE)
 	tnz	(0x05, sp)
@@ -1114,10 +1112,8 @@ _ADC1_GetBufferValue:
 	clr	(0x04, sp)
 	clr	(0x05, sp)
 	ld	a, (0x06, sp)
-	or	a, (0x04, sp)
 	ld	(0x02, sp), a
-	ld	a, (0x05, sp)
-	or	a, (0x03, sp)
+	ld	a, (0x03, sp)
 	ld	(0x01, sp), a
 	jra	00103$
 00102$:
@@ -1140,7 +1136,6 @@ _ADC1_GetBufferValue:
 	or	a, (0x03, sp)
 	ld	(0x01, sp), a
 	ld	a, (0x04, sp)
-	or	a, (0x06, sp)
 	ld	(0x02, sp), a
 00103$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 493: return ((uint16_t)temph);
@@ -1198,12 +1193,12 @@ _ADC1_GetAWDChannelStatus:
 	ld	(0x02, sp), a
 	pop	a
 	tnz	a
-	jreq	00231$
-00230$:
+	jreq	00255$
+00254$:
 	sll	(0x01, sp)
 	dec	a
-	jrne	00230$
-00231$:
+	jrne	00254$
+00255$:
 	ld	a, xl
 	and	a, (0x01, sp)
 	jra	00103$
@@ -1220,12 +1215,12 @@ _ADC1_GetAWDChannelStatus:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00233$
-00232$:
+	jreq	00257$
+00256$:
 	sll	(1, sp)
 	dec	a
-	jrne	00232$
-00233$:
+	jrne	00256$
+00257$:
 	pop	a
 	and	a, (0x01, sp)
 00103$:
@@ -1241,45 +1236,45 @@ _ADC1_GetAWDChannelStatus:
 ;	 function ADC1_GetFlagStatus
 ;	-----------------------------------------
 _ADC1_GetFlagStatus:
-	sub	sp, #3
+	pushw	x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 533: assert_param(IS_ADC1_FLAG_OK(Flag));
-	ld	(0x03, sp), a
+	ld	(0x02, sp), a
 	cp	a, #0x80
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x41
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x40
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x10
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x11
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x12
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x13
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x14
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x15
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x16
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x17
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x18
 	jreq	00113$
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	cp	a, #0x19
 	jreq	00113$
 	push	#0x15
@@ -1290,14 +1285,10 @@ _ADC1_GetFlagStatus:
 	call	_assert_failed
 00113$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 535: if ((Flag & 0x0F) == 0x01)
-	ld	a, (0x03, sp)
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
-	clrw	x
 	ld	a, (0x02, sp)
-	and	a, #0x0f
 	ld	xl, a
-	decw	x
+	and	a, #0x0f
+	dec	a
 	jrne	00108$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 538: flagstatus = (uint8_t)(ADC1->CR3 & ADC1_CR3_OVR);
 	ld	a, 0x5403
@@ -1305,14 +1296,12 @@ _ADC1_GetFlagStatus:
 	jra	00109$
 00108$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 540: else if ((Flag & 0xF0) == 0x10)
-	clrw	x
-	ld	a, (0x02, sp)
+	ld	a, xl
 	and	a, #0xf0
-	ld	xl, a
-	cpw	x, #0x0010
+	cp	a, #0x10
 	jrne	00105$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 543: temp = (uint8_t)(Flag & (uint8_t)0x0F);
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	and	a, #0x0f
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 544: if (temp < 8)
 	ld	xl, a
@@ -1320,56 +1309,56 @@ _ADC1_GetFlagStatus:
 	jrnc	00102$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 546: flagstatus = (uint8_t)(ADC1->AWSRL & (uint8_t)((uint8_t)1 << temp));
 	ld	a, 0x540d
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	ld	a, #0x01
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00277$
-00276$:
+	jreq	00309$
+00308$:
 	sll	(1, sp)
 	dec	a
-	jrne	00276$
-00277$:
+	jrne	00308$
+00309$:
 	pop	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	jra	00109$
 00102$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 550: flagstatus = (uint8_t)(ADC1->AWSRH & (uint8_t)((uint8_t)1 << (temp - 8)));
 	ld	a, 0x540c
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	subw	x, #8
 	ld	a, #0x01
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00279$
-00278$:
+	jreq	00311$
+00310$:
 	sll	(1, sp)
 	dec	a
-	jrne	00278$
-00279$:
+	jrne	00310$
+00311$:
 	pop	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	jra	00109$
 00105$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 555: flagstatus = (uint8_t)(ADC1->CSR & Flag);
 	ld	a, 0x5400
-	and	a, (0x03, sp)
+	and	a, (0x02, sp)
 00109$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 557: return ((FlagStatus)flagstatus);
 	neg	a
 	clr	a
 	rlc	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 559: }
-	addw	sp, #3
+	popw	x
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 567: void ADC1_ClearFlag(ADC1_Flag_TypeDef Flag)
 ;	-----------------------------------------
 ;	 function ADC1_ClearFlag
 ;	-----------------------------------------
 _ADC1_ClearFlag:
-	pushw	x
+	push	a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 572: assert_param(IS_ADC1_FLAG_OK(Flag));
 	cp	a, #0x80
 	jreq	00113$
@@ -1407,15 +1396,12 @@ _ADC1_ClearFlag:
 	pop	a
 00113$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 574: if ((Flag & 0x0F) == 0x01)
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	(0x01, sp), a
 	push	a
-	clrw	x
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	and	a, #0x0f
-	ld	xl, a
+	dec	a
 	pop	a
-	decw	x
 	jrne	00108$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 577: ADC1->CR3 &= (uint8_t)(~ADC1_CR3_OVR);
 	bres	0x5403, #6
@@ -1423,12 +1409,10 @@ _ADC1_ClearFlag:
 00108$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 579: else if ((Flag & 0xF0) == 0x10)
 	push	a
-	clrw	x
-	ld	a, (0x03, sp)
+	ld	a, (0x02, sp)
 	and	a, #0xf0
-	ld	xl, a
+	cp	a, #0x10
 	pop	a
-	cpw	x, #0x0010
 	jrne	00105$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 582: temp = (uint8_t)(Flag & (uint8_t)0x0F);
 	and	a, #0x0f
@@ -1438,40 +1422,40 @@ _ADC1_ClearFlag:
 	jrnc	00102$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 585: ADC1->AWSRL &= (uint8_t)~(uint8_t)((uint8_t)1 << temp);
 	ld	a, 0x540d
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	ld	a, #0x01
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00277$
-00276$:
+	jreq	00309$
+00308$:
 	sll	(1, sp)
 	dec	a
-	jrne	00276$
-00277$:
+	jrne	00308$
+00309$:
 	pop	a
 	cpl	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	ld	0x540d, a
 	jra	00110$
 00102$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 589: ADC1->AWSRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (temp - 8));
 	ld	a, 0x540c
-	ld	(0x02, sp), a
+	ld	(0x01, sp), a
 	subw	x, #8
 	ld	a, #0x01
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00279$
-00278$:
+	jreq	00311$
+00310$:
 	sll	(1, sp)
 	dec	a
-	jrne	00278$
-00279$:
+	jrne	00310$
+00311$:
 	pop	a
 	cpl	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	ld	0x540c, a
 	jra	00110$
 00105$:
@@ -1479,14 +1463,14 @@ _ADC1_ClearFlag:
 	ldw	x, #0x5400
 	push	a
 	ld	a, (x)
-	ld	(0x03, sp), a
+	ld	(0x02, sp), a
 	pop	a
 	cpl	a
-	and	a, (0x02, sp)
+	and	a, (0x01, sp)
 	ld	0x5400, a
 00110$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 596: }
-	popw	x
+	pop	a
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_adc1.c: 616: ITStatus ADC1_GetITStatus(ADC1_IT_TypeDef ITPendingBit)
 ;	-----------------------------------------
@@ -1550,12 +1534,12 @@ _ADC1_GetITStatus:
 	ld	(0x02, sp), a
 	ld	a, xl
 	tnz	a
-	jreq	00266$
-00265$:
+	jreq	00296$
+00295$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00265$
-00266$:
+	jrne	00295$
+00296$:
 	pop	a
 	and	a, (0x01, sp)
 	neg	a
@@ -1571,12 +1555,12 @@ _ADC1_GetITStatus:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00268$
-00267$:
+	jreq	00298$
+00297$:
 	sll	(1, sp)
 	dec	a
-	jrne	00267$
-00268$:
+	jrne	00297$
+00298$:
 	pop	a
 	and	a, (0x01, sp)
 	neg	a
@@ -1661,12 +1645,12 @@ _ADC1_ClearITPendingBit:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00266$
-00265$:
+	jreq	00296$
+00295$:
 	sll	(1, sp)
 	dec	a
-	jrne	00265$
-00266$:
+	jrne	00295$
+00296$:
 	pop	a
 	cpl	a
 	and	a, (0x01, sp)
@@ -1681,12 +1665,12 @@ _ADC1_ClearITPendingBit:
 	push	a
 	ld	a, xl
 	tnz	a
-	jreq	00268$
-00267$:
+	jreq	00298$
+00297$:
 	sll	(1, sp)
 	dec	a
-	jrne	00267$
-00268$:
+	jrne	00297$
+00298$:
 	pop	a
 	cpl	a
 	and	a, (0x01, sp)

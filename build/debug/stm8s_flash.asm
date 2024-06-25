@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_flash
 	.optsdcc -mstm8
@@ -77,12 +77,12 @@ _FLASH_Unlock:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 90: assert_param(IS_MEMORY_TYPE_OK(FLASH_MemType));
 	ld	xl, a
 	sub	a, #0xfd
-	jrne	00127$
+	jrne	00133$
 	inc	a
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
+00134$:
 	Sstm8s_flash$FLASH_Unlock$3 ==.
 	tnz	a
 	jrne	00107$
@@ -801,12 +801,9 @@ _FLASH_ReadOptionByte:
 	clr	(0x01, sp)
 	pushw	x
 	Sstm8s_flash$FLASH_ReadOptionByte$205 ==.
-	or	a, (2, sp)
 	popw	x
 	Sstm8s_flash$FLASH_ReadOptionByte$206 ==.
-	rlwa	x
-	or	a, (0x01, sp)
-	ld	xh, a
+	ld	xl, a
 	Sstm8s_flash$FLASH_ReadOptionByte$207 ==.
 	Sstm8s_flash$FLASH_ReadOptionByte$208 ==.
 	Sstm8s_flash$FLASH_ReadOptionByte$209 ==.
@@ -970,33 +967,34 @@ _FLASH_GetBootSize:
 	Sstm8s_flash$FLASH_GetBootSize$261 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 397: temp = (uint32_t)((uint32_t)FLASH->FPR * (uint32_t)512);
 	ld	a, 0x505d
-	clrw	x
-	swapw	x
-	ld	yh, a
+	clrw	y
+	swapw	y
+	ld	xh, a
 	clr	a
-	ld	yl, a
-	sllw	y
-	rlcw	x
+	ld	xl, a
+	sllw	x
+	rlcw	y
 	Sstm8s_flash$FLASH_GetBootSize$262 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 400: if(FLASH->FPR == 0xFF)
 	ld	a, 0x505d
 	inc	a
-	jrne	00102$
+	jreq	00114$
+	ret
+00114$:
 	Sstm8s_flash$FLASH_GetBootSize$263 ==.
 	Sstm8s_flash$FLASH_GetBootSize$264 ==.
 	Sstm8s_flash$FLASH_GetBootSize$265 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 402: temp += 512;
-	addw	y, #0x0200
-	ld	a, xl
+	addw	x, #0x0200
+	ld	a, yl
 	adc	a, #0x00
-	rlwa	x
+	ld	yl, a
+	clr	a
 	adc	a, #0x00
-	ld	xh, a
+	ld	yh, a
 	Sstm8s_flash$FLASH_GetBootSize$266 ==.
-00102$:
 	Sstm8s_flash$FLASH_GetBootSize$267 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 406: return(temp);
-	exgw	x, y
 	Sstm8s_flash$FLASH_GetBootSize$268 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 407: }
 	Sstm8s_flash$FLASH_GetBootSize$269 ==.
@@ -1108,9 +1106,9 @@ _FLASH_WaitForLastOperation:
 	Sstm8s_flash$FLASH_WaitForLastOperation$307 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 584: if(timeout == 0x00 )
 	tnzw	x
-	jreq	00132$
+	jreq	00140$
 	ret
-00132$:
+00140$:
 	Sstm8s_flash$FLASH_WaitForLastOperation$308 ==.
 	Sstm8s_flash$FLASH_WaitForLastOperation$309 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 586: flagstatus = FLASH_STATUS_TIMEOUT;
@@ -1131,19 +1129,19 @@ _FLASH_WaitForLastOperation:
 ;	-----------------------------------------
 _FLASH_EraseBlock:
 	Sstm8s_flash$FLASH_EraseBlock$316 ==.
-	sub	sp, #8
+	sub	sp, #4
 	Sstm8s_flash$FLASH_EraseBlock$317 ==.
-	ldw	(0x07, sp), x
+	ldw	(0x03, sp), x
 	Sstm8s_flash$FLASH_EraseBlock$318 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 611: assert_param(IS_MEMORY_TYPE_OK(FLASH_MemType));
 	ld	xl, a
 	sub	a, #0xfd
-	jrne	00141$
+	jrne	00151$
 	inc	a
 	.byte 0x21
-00141$:
+00151$:
 	clr	a
-00142$:
+00152$:
 	Sstm8s_flash$FLASH_EraseBlock$319 ==.
 	tnz	a
 	jrne	00107$
@@ -1177,7 +1175,7 @@ _FLASH_EraseBlock:
 	Sstm8s_flash$FLASH_EraseBlock$330 ==.
 	Sstm8s_flash$FLASH_EraseBlock$331 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 614: assert_param(IS_FLASH_PROG_BLOCK_NUMBER_OK(BlockNum));
-	ldw	x, (0x07, sp)
+	ldw	x, (0x03, sp)
 	cpw	x, #0x0080
 	jrc	00112$
 	push	#0x66
@@ -1193,15 +1191,14 @@ _FLASH_EraseBlock:
 00112$:
 	Sstm8s_flash$FLASH_EraseBlock$336 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 615: startaddress = FLASH_PROG_START_PHYSICAL_ADDRESS;
-	ldw	x, #0x8000
-	ldw	(0x03, sp), x
+	ldw	y, #0x8000
 	Sstm8s_flash$FLASH_EraseBlock$337 ==.
 	jra	00103$
 00102$:
 	Sstm8s_flash$FLASH_EraseBlock$338 ==.
 	Sstm8s_flash$FLASH_EraseBlock$339 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 619: assert_param(IS_FLASH_DATA_BLOCK_NUMBER_OK(BlockNum));
-	ldw	x, (0x07, sp)
+	ldw	x, (0x03, sp)
 	cpw	x, #0x000a
 	jrc	00114$
 	push	#0x6b
@@ -1217,21 +1214,21 @@ _FLASH_EraseBlock:
 00114$:
 	Sstm8s_flash$FLASH_EraseBlock$344 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 620: startaddress = FLASH_DATA_START_PHYSICAL_ADDRESS;
-	ldw	x, #0x4000
-	ldw	(0x03, sp), x
+	ldw	y, #0x4000
 	Sstm8s_flash$FLASH_EraseBlock$345 ==.
 00103$:
 	Sstm8s_flash$FLASH_EraseBlock$346 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 628: pwFlash = (PointerAttr uint32_t *)(MemoryAddressCast)(startaddress + ((uint32_t)BlockNum * FLASH_BLOCK_SIZE));
-	ldw	x, (0x07, sp)
+	ldw	x, (0x03, sp)
 	sllw	x
 	sllw	x
 	sllw	x
 	sllw	x
 	sllw	x
 	sllw	x
-	ldw	(0x05, sp), x
-	addw	x, (0x03, sp)
+	ldw	(0x01, sp), x
+	ldw	x, y
+	addw	x, (0x01, sp)
 	Sstm8s_flash$FLASH_EraseBlock$347 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 632: FLASH->CR2 |= FLASH_CR2_ERASE;
 	bset	0x505b, #5
@@ -1245,7 +1242,7 @@ _FLASH_EraseBlock:
 	ldw	(x), y
 	Sstm8s_flash$FLASH_EraseBlock$350 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 645: }
-	addw	sp, #8
+	addw	sp, #4
 	Sstm8s_flash$FLASH_EraseBlock$351 ==.
 	Sstm8s_flash$FLASH_EraseBlock$352 ==.
 	XG$FLASH_EraseBlock$0$0 ==.
@@ -1258,25 +1255,25 @@ _FLASH_EraseBlock:
 ;	-----------------------------------------
 _FLASH_ProgramBlock:
 	Sstm8s_flash$FLASH_ProgramBlock$355 ==.
-	sub	sp, #16
+	sub	sp, #14
 	Sstm8s_flash$FLASH_ProgramBlock$356 ==.
 	ldw	(0x0d, sp), x
 	Sstm8s_flash$FLASH_ProgramBlock$357 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 663: assert_param(IS_MEMORY_TYPE_OK(FLASH_MemType));
 	cp	a, #0xfd
-	jrne	00173$
+	jrne	00191$
 	push	a
 	Sstm8s_flash$FLASH_ProgramBlock$358 ==.
 	ld	a, #0x01
-	ld	(0x11, sp), a
+	ld	(0x0d, sp), a
 	pop	a
 	Sstm8s_flash$FLASH_ProgramBlock$359 ==.
 	.byte 0xc5
-00173$:
-	clr	(0x10, sp)
-00174$:
+00191$:
+	clr	(0x0c, sp)
+00192$:
 	Sstm8s_flash$FLASH_ProgramBlock$360 ==.
-	tnz	(0x10, sp)
+	tnz	(0x0c, sp)
 	jrne	00113$
 	cp	a, #0xf7
 	jreq	00113$
@@ -1294,9 +1291,9 @@ _FLASH_ProgramBlock:
 00113$:
 	Sstm8s_flash$FLASH_ProgramBlock$366 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 664: assert_param(IS_FLASH_PROGRAM_MODE_OK(FLASH_ProgMode));
-	tnz	(0x13, sp)
+	tnz	(0x11, sp)
 	jreq	00118$
-	ld	a, (0x13, sp)
+	ld	a, (0x11, sp)
 	cp	a, #0x10
 	jreq	00118$
 	Sstm8s_flash$FLASH_ProgramBlock$367 ==.
@@ -1313,7 +1310,7 @@ _FLASH_ProgramBlock:
 00118$:
 	Sstm8s_flash$FLASH_ProgramBlock$372 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 665: if(FLASH_MemType == FLASH_MEMTYPE_PROG)
-	ld	a, (0x10, sp)
+	ld	a, (0x0c, sp)
 	jreq	00102$
 	Sstm8s_flash$FLASH_ProgramBlock$373 ==.
 	Sstm8s_flash$FLASH_ProgramBlock$374 ==.
@@ -1374,82 +1371,87 @@ _FLASH_ProgramBlock:
 	ldw	(0x0c, sp), y
 	ldw	y, (0x06, sp)
 	ld	a, #0x06
-00186$:
+00204$:
 	sll	(0x0d, sp)
 	rlc	(0x0c, sp)
 	rlcw	y
 	dec	a
-	jrne	00186$
+	jrne	00204$
+	Sstm8s_flash$FLASH_ProgramBlock$392 ==.
+	ld	a, xl
+	add	a, (0x0d, sp)
+	ld	(0x09, sp), a
 	pop	a
-	Sstm8s_flash$FLASH_ProgramBlock$391 ==.
-	ld	xh, a
-	addw	x, (0x0b, sp)
+	Sstm8s_flash$FLASH_ProgramBlock$393 ==.
+	adc	a, (0x0b, sp)
+	ld	(0x07, sp), a
 	ld	a, yl
 	adc	a, (0x02, sp)
-	ld	yl, a
+	ld	(0x06, sp), a
 	ld	a, yh
 	adc	a, (0x01, sp)
-	ldw	(0x09, sp), x
-	ld	(0x07, sp), a
-	Sstm8s_flash$FLASH_ProgramBlock$392 ==.
+	ld	(0x05, sp), a
+	Sstm8s_flash$FLASH_ProgramBlock$394 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 683: FLASH->CR2 |= FLASH_CR2_PRG;
 	ld	a, 0x505b
-	Sstm8s_flash$FLASH_ProgramBlock$393 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 680: if(FLASH_ProgMode == FLASH_PROGRAMMODE_STANDARD)
-	tnz	(0x13, sp)
-	jrne	00105$
-	Sstm8s_flash$FLASH_ProgramBlock$394 ==.
 	Sstm8s_flash$FLASH_ProgramBlock$395 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 680: if(FLASH_ProgMode == FLASH_PROGRAMMODE_STANDARD)
+	tnz	(0x11, sp)
+	jrne	00105$
+	Sstm8s_flash$FLASH_ProgramBlock$396 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$397 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 683: FLASH->CR2 |= FLASH_CR2_PRG;
 	or	a, #0x01
 	ld	0x505b, a
-	Sstm8s_flash$FLASH_ProgramBlock$396 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$398 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 684: FLASH->NCR2 &= (uint8_t)(~FLASH_NCR2_NPRG);
 	bres	0x505c, #0
-	Sstm8s_flash$FLASH_ProgramBlock$397 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$399 ==.
 	jra	00134$
 00105$:
-	Sstm8s_flash$FLASH_ProgramBlock$398 ==.
-	Sstm8s_flash$FLASH_ProgramBlock$399 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$400 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$401 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 689: FLASH->CR2 |= FLASH_CR2_FPRG;
 	or	a, #0x10
 	ld	0x505b, a
-	Sstm8s_flash$FLASH_ProgramBlock$400 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$402 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 690: FLASH->NCR2 &= (uint8_t)(~FLASH_NCR2_NFPRG);
 	bres	0x505c, #4
-	Sstm8s_flash$FLASH_ProgramBlock$401 ==.
-	Sstm8s_flash$FLASH_ProgramBlock$402 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$403 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$404 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 694: for(Count = 0; Count < FLASH_BLOCK_SIZE; Count++)
 00134$:
 	clrw	x
-	ldw	(0x0f, sp), x
 00108$:
-	Sstm8s_flash$FLASH_ProgramBlock$403 ==.
-	Sstm8s_flash$FLASH_ProgramBlock$404 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 696: *((PointerAttr uint8_t*) (MemoryAddressCast)startaddress + Count) = ((uint8_t)(Buffer[Count]));
-	ldw	x, (0x09, sp)
-	addw	x, (0x0f, sp)
-	ldw	(0x0b, sp), x
-	ldw	x, (0x14, sp)
-	addw	x, (0x0f, sp)
-	ld	a, (x)
-	ldw	x, (0x0b, sp)
-	ld	(x), a
 	Sstm8s_flash$FLASH_ProgramBlock$405 ==.
 	Sstm8s_flash$FLASH_ProgramBlock$406 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 696: *((PointerAttr uint8_t*) (MemoryAddressCast)startaddress + Count) = ((uint8_t)(Buffer[Count]));
+	ldw	y, (0x07, sp)
+	ldw	(0x09, sp), y
+	ld	a, xl
+	add	a, (0x0a, sp)
+	ld	(0x0c, sp), a
+	clr	a
+	adc	a, (0x09, sp)
+	ld	(0x0b, sp), a
+	ldw	y, x
+	addw	y, (0x12, sp)
+	ld	a, (y)
+	ldw	y, (0x0b, sp)
+	ld	(y), a
+	Sstm8s_flash$FLASH_ProgramBlock$407 ==.
+	Sstm8s_flash$FLASH_ProgramBlock$408 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 694: for(Count = 0; Count < FLASH_BLOCK_SIZE; Count++)
-	ldw	x, (0x0f, sp)
 	incw	x
-	ldw	(0x0f, sp), x
 	cpw	x, #0x0040
 	jrc	00108$
-	Sstm8s_flash$FLASH_ProgramBlock$407 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 698: }
-	ldw	x, (17, sp)
-	addw	sp, #21
-	Sstm8s_flash$FLASH_ProgramBlock$408 ==.
-	jp	(x)
 	Sstm8s_flash$FLASH_ProgramBlock$409 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c: 698: }
+	ldw	x, (15, sp)
+	addw	sp, #19
+	Sstm8s_flash$FLASH_ProgramBlock$410 ==.
+	jp	(x)
+	Sstm8s_flash$FLASH_ProgramBlock$411 ==.
 	.area CODE
 	.area CONST
 Fstm8s_flash$__str_0$0_0$0 == .
@@ -1481,9 +1483,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_flash.c"
@@ -2614,70 +2616,70 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$392)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$394)
 	.db	3
 	.sleb128	6
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$393)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$395)
 	.db	3
 	.sleb128	-3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$395)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$397)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$396)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$398)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$399)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$401)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$400)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$402)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$402)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$404)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$404)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$406)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$406)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$408)
 	.db	3
 	.sleb128	-2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$407)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$409)
 	.db	3
 	.sleb128	4
 	.db	1
@@ -2694,97 +2696,97 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$351)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$342)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$343)
 	.dw	2
 	.db	120
-	.sleb128	13
+	.sleb128	9
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$341)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$342)
 	.dw	2
 	.db	120
-	.sleb128	11
+	.sleb128	7
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$340)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$341)
 	.dw	2
 	.db	120
-	.sleb128	10
+	.sleb128	6
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$335)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$340)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$334)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$335)
 	.dw	2
 	.db	120
-	.sleb128	13
+	.sleb128	9
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$333)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$334)
 	.dw	2
 	.db	120
-	.sleb128	11
+	.sleb128	7
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$332)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$333)
 	.dw	2
 	.db	120
-	.sleb128	10
+	.sleb128	6
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$328)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$332)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$327)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$328)
 	.dw	2
 	.db	120
-	.sleb128	10
+	.sleb128	6
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$326)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$327)
 	.dw	2
 	.db	120
-	.sleb128	14
+	.sleb128	10
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$325)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$326)
 	.dw	2
 	.db	120
-	.sleb128	12
+	.sleb128	8
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$324)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$325)
 	.dw	2
 	.db	120
-	.sleb128	11
+	.sleb128	7
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$323)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$324)
 	.dw	2
 	.db	120
-	.sleb128	10
+	.sleb128	6
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$322)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$323)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$321)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$322)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$320)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$321)
 	.dw	2
 	.db	120
-	.sleb128	10
+	.sleb128	6
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$319)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$320)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$317)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$319)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	5
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$316)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$317)
 	.dw	2
@@ -3649,7 +3651,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.dw	0,187
@@ -3984,16 +3986,16 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_flash$FLASH_GetBootSize$266)
 	.uleb128	11
 	.db	12
-	.db	82
-	.db	147
-	.uleb128	1
-	.db	81
-	.db	147
-	.uleb128	1
 	.db	84
 	.db	147
 	.uleb128	1
 	.db	83
+	.db	147
+	.uleb128	1
+	.db	82
+	.db	147
+	.uleb128	1
+	.db	81
 	.db	147
 	.uleb128	1
 	.ascii "temp"
@@ -4066,7 +4068,7 @@ Ldebug_info_start:
 	.dw	0,677
 	.uleb128	0
 	.uleb128	2
-	.dw	0,1600
+	.dw	0,1592
 	.ascii "FLASH_EraseBlock"
 	.db	0
 	.dw	0,(_FLASH_EraseBlock)
@@ -4093,19 +4095,11 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$338)
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$345)
 	.uleb128	11
-	.db	14
+	.db	6
 	.db	84
 	.db	147
 	.uleb128	1
 	.db	83
-	.db	147
-	.uleb128	1
-	.db	145
-	.sleb128	-6
-	.db	147
-	.uleb128	1
-	.db	145
-	.sleb128	-5
 	.db	147
 	.uleb128	1
 	.ascii "startaddress"
@@ -4124,10 +4118,10 @@ Ldebug_info_start:
 	.uleb128	1
 	.ascii "pwFlash"
 	.db	0
-	.dw	0,1573
+	.dw	0,1565
 	.uleb128	0
 	.uleb128	7
-	.dw	0,1805
+	.dw	0,1788
 	.ascii "FLASH_ProgramBlock"
 	.db	0
 	.dw	0,(_FLASH_ProgramBlock)
@@ -4135,7 +4129,7 @@ Ldebug_info_start:
 	.uleb128	3
 	.db	2
 	.db	145
-	.sleb128	-4
+	.sleb128	-2
 	.ascii "BlockNum"
 	.db	0
 	.dw	0,677
@@ -4161,7 +4155,7 @@ Ldebug_info_start:
 	.sleb128	3
 	.ascii "Buffer"
 	.db	0
-	.dw	0,1690
+	.dw	0,1682
 	.uleb128	4
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$373)
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$380)
@@ -4169,38 +4163,29 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$381)
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$388)
 	.uleb128	4
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$394)
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$397)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$396)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$399)
 	.uleb128	4
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$398)
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$401)
-	.uleb128	4
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$400)
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$403)
+	.uleb128	4
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$405)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$407)
 	.uleb128	11
-	.db	2
-	.db	145
-	.sleb128	-2
+	.db	6
+	.db	82
+	.db	147
+	.uleb128	1
+	.db	81
+	.db	147
+	.uleb128	1
 	.ascii "Count"
 	.db	0
 	.dw	0,677
 	.uleb128	11
-	.db	15
+	.db	2
 	.db	145
 	.sleb128	-10
-	.db	147
-	.uleb128	1
-	.db	83
-	.db	147
-	.uleb128	1
-	.db	145
-	.sleb128	-8
-	.db	147
-	.uleb128	1
-	.db	145
-	.sleb128	-7
-	.db	147
-	.uleb128	1
 	.ascii "startaddress"
 	.db	0
 	.dw	0,404
@@ -4208,9 +4193,9 @@ Ldebug_info_start:
 	.uleb128	15
 	.dw	0,187
 	.uleb128	16
-	.dw	0,1823
+	.dw	0,1806
 	.db	73
-	.dw	0,1805
+	.dw	0,1788
 	.uleb128	17
 	.db	72
 	.uleb128	0
@@ -4220,7 +4205,7 @@ Ldebug_info_start:
 	.dw	0,(___str_0)
 	.ascii "__str_0"
 	.db	0
-	.dw	0,1810
+	.dw	0,1793
 	.uleb128	0
 Ldebug_info_end:
 
@@ -4287,7 +4272,7 @@ Ldebug_pubnames_start:
 	.dw	0,1449
 	.ascii "FLASH_EraseBlock"
 	.db	0
-	.dw	0,1600
+	.dw	0,1592
 	.ascii "FLASH_ProgramBlock"
 	.db	0
 	.dw	0,0
@@ -4312,10 +4297,10 @@ Ldebug_CIE0_start:
 	.db	0
 	.db	0
 Ldebug_CIE0_end:
-	.dw	0,200
+	.dw	0,212
 	.dw	0,(Ldebug_CIE0_start-4)
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$355)	;initial loc
-	.dw	0,Sstm8s_flash$FLASH_ProgramBlock$409-Sstm8s_flash$FLASH_ProgramBlock$355
+	.dw	0,Sstm8s_flash$FLASH_ProgramBlock$411-Sstm8s_flash$FLASH_ProgramBlock$355
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$355)
 	.db	14
@@ -4323,105 +4308,111 @@ Ldebug_CIE0_end:
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$356)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$358)
 	.db	14
-	.uleb128	19
+	.uleb128	17
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$359)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$360)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$361)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$362)
 	.db	14
-	.uleb128	19
+	.uleb128	17
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$363)
 	.db	14
-	.uleb128	20
+	.uleb128	18
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$364)
 	.db	14
-	.uleb128	22
+	.uleb128	20
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$365)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$367)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$368)
 	.db	14
-	.uleb128	19
+	.uleb128	17
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$369)
 	.db	14
-	.uleb128	20
+	.uleb128	18
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$370)
 	.db	14
-	.uleb128	22
+	.uleb128	20
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$371)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$375)
 	.db	14
-	.uleb128	19
+	.uleb128	17
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$376)
 	.db	14
-	.uleb128	20
+	.uleb128	18
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$377)
 	.db	14
-	.uleb128	22
+	.uleb128	20
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$378)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$383)
 	.db	14
-	.uleb128	19
+	.uleb128	17
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$384)
 	.db	14
-	.uleb128	20
+	.uleb128	18
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$385)
 	.db	14
-	.uleb128	22
+	.uleb128	20
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$386)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$390)
 	.db	14
-	.uleb128	19
+	.uleb128	17
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$391)
 	.db	14
-	.uleb128	18
+	.uleb128	16
 	.db	1
-	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$408)
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$392)
+	.db	14
+	.uleb128	17
+	.db	1
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$393)
+	.db	14
+	.uleb128	16
+	.db	1
+	.dw	0,(Sstm8s_flash$FLASH_ProgramBlock$410)
 	.db	14
 	.uleb128	-3
-	.db	0
-	.db	0
 
 	.area .debug_frame (NOLOAD)
 	.dw	0
@@ -4453,79 +4444,79 @@ Ldebug_CIE1_end:
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$317)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$319)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$320)
 	.db	14
-	.uleb128	11
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$321)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$322)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$323)
 	.db	14
-	.uleb128	11
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$324)
 	.db	14
-	.uleb128	12
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$325)
 	.db	14
-	.uleb128	13
+	.uleb128	9
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$326)
 	.db	14
-	.uleb128	15
+	.uleb128	11
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$327)
 	.db	14
-	.uleb128	11
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$328)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$332)
 	.db	14
-	.uleb128	11
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$333)
 	.db	14
-	.uleb128	12
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$334)
 	.db	14
-	.uleb128	14
+	.uleb128	10
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$335)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$340)
 	.db	14
-	.uleb128	11
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$341)
 	.db	14
-	.uleb128	12
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$342)
 	.db	14
-	.uleb128	14
+	.uleb128	10
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$343)
 	.db	14
-	.uleb128	10
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_flash$FLASH_EraseBlock$351)
 	.db	14

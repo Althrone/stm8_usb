@@ -1,7 +1,7 @@
 #include "usb_tx.h"
 
-static unsigned char tx_buf_size;
-static unsigned char usb_tx_buf[12];
+static unsigned char tx_buf_size=2;
+static unsigned char usb_tx_buf[12]={0};
 
 void usb_tx(void)
 {

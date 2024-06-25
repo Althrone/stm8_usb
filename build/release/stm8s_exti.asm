@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_exti
 	.optsdcc -mstm8
@@ -117,9 +117,9 @@ _EXTI_SetExtIntSensitivity:
 00125$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 77: switch (Port)
 	cp	a, #0x04
-	jrule	00208$
+	jrule	00228$
 	jp	00108$
-00208$:
+00228$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 85: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 2);
 	exg	a, yl
 	ld	a, (0x04, sp)
@@ -128,9 +128,9 @@ _EXTI_SetExtIntSensitivity:
 	clrw	x
 	ld	xl, a
 	sllw	x
-	ldw	x, (#00209$, x)
+	ldw	x, (#00229$, x)
 	jp	(x)
-00209$:
+00229$:
 	.dw	#00101$
 	.dw	#00102$
 	.dw	#00103$
@@ -280,9 +280,9 @@ _EXTI_GetExtIntSensitivity:
 	clrw	x
 	ld	xl, a
 	sllw	x
-	ldw	x, (#00168$, x)
+	ldw	x, (#00180$, x)
 	jp	(x)
-00168$:
+00180$:
 	.dw	#00101$
 	.dw	#00102$
 	.dw	#00103$

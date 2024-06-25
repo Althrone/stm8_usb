@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_clk
 	.optsdcc -mstm8
@@ -553,12 +553,12 @@ _CLK_PeripheralClockConfig:
 	Sstm8s_clk$CLK_PeripheralClockConfig$167 ==.
 	ld	a, (0x03, sp)
 	sub	a, #0x03
-	jrne	00260$
+	jrne	00298$
 	inc	a
 	.byte 0x21
-00260$:
+00298$:
 	clr	a
-00261$:
+00299$:
 	Sstm8s_clk$CLK_PeripheralClockConfig$168 ==.
 	tnz	a
 	jrne	00118$
@@ -568,26 +568,26 @@ _CLK_PeripheralClockConfig:
 	jrne	00118$
 	ld	a, (0x03, sp)
 	sub	a, #0x04
-	jrne	00266$
+	jrne	00304$
 	inc	a
 	ld	xl, a
-	jra	00267$
-00266$:
+	jra	00305$
+00304$:
 	clr	a
 	ld	xl, a
-00267$:
+00305$:
 	Sstm8s_clk$CLK_PeripheralClockConfig$169 ==.
 	ld	a, xl
 	tnz	a
 	jrne	00118$
 	ld	a, (0x03, sp)
 	sub	a, #0x05
-	jrne	00270$
+	jrne	00308$
 	inc	a
 	.byte 0x21
-00270$:
+00308$:
 	clr	a
-00271$:
+00309$:
 	Sstm8s_clk$CLK_PeripheralClockConfig$170 ==.
 	tnz	a
 	jrne	00118$
@@ -638,12 +638,12 @@ _CLK_PeripheralClockConfig:
 	pop	a
 	Sstm8s_clk$CLK_PeripheralClockConfig$182 ==.
 	tnz	a
-	jreq	00291$
-00290$:
+	jreq	00329$
+00328$:
 	sll	(0x01, sp)
 	dec	a
-	jrne	00290$
-00291$:
+	jrne	00328$
+00329$:
 	Sstm8s_clk$CLK_PeripheralClockConfig$183 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 279: CLK->PCKENR1 &= (uint8_t)(~(uint8_t)(((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F))));
 	ld	a, (0x01, sp)
@@ -1185,26 +1185,26 @@ _CLK_ITConfig:
 	Sstm8s_clk$CLK_ITConfig$366 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 463: assert_param(IS_CLK_IT_OK(CLK_IT));
 	cp	a, #0x0c
-	jrne	00172$
+	jrne	00190$
 	exg	a, xl
 	ld	a, #0x01
 	exg	a, xl
-	jra	00173$
-00172$:
+	jra	00191$
+00190$:
 	exg	a, xl
 	clr	a
 	exg	a, xl
-00173$:
+00191$:
 	Sstm8s_clk$CLK_ITConfig$367 ==.
 	sub	a, #0x1c
-	jrne	00175$
+	jrne	00193$
 	inc	a
 	ld	xh, a
-	jra	00176$
-00175$:
+	jra	00194$
+00193$:
 	clr	a
 	ld	xh, a
-00176$:
+00194$:
 	Sstm8s_clk$CLK_ITConfig$368 ==.
 	ld	a, xl
 	tnz	a
@@ -1551,462 +1551,457 @@ _CLK_GetClockFreq:
 	Sstm8s_clk$CLK_GetClockFreq$479 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 583: clockfrequency = HSI_VALUE / presc;
 	clrw	x
-	ld	xl, a
-	clrw	y
+	clr	(0x01, sp)
 	Sstm8s_clk$CLK_GetClockFreq$480 ==.
-	pushw	x
+	push	a
 	Sstm8s_clk$CLK_GetClockFreq$481 ==.
-	pushw	y
+	pushw	x
 	Sstm8s_clk$CLK_GetClockFreq$482 ==.
-	push	#0x00
+	clr	a
+	push	a
 	Sstm8s_clk$CLK_GetClockFreq$483 ==.
-	push	#0x24
-	Sstm8s_clk$CLK_GetClockFreq$484 ==.
-	push	#0xf4
-	Sstm8s_clk$CLK_GetClockFreq$485 ==.
 	push	#0x00
+	Sstm8s_clk$CLK_GetClockFreq$484 ==.
+	push	#0x24
+	Sstm8s_clk$CLK_GetClockFreq$485 ==.
+	push	#0xf4
 	Sstm8s_clk$CLK_GetClockFreq$486 ==.
+	push	#0x00
+	Sstm8s_clk$CLK_GetClockFreq$487 ==.
 	call	__divulong
 	addw	sp, #8
-	Sstm8s_clk$CLK_GetClockFreq$487 ==.
-	exgw	x, y
-	ldw	(0x03, sp), y
+	Sstm8s_clk$CLK_GetClockFreq$488 ==.
 	jra	00106$
 00105$:
-	Sstm8s_clk$CLK_GetClockFreq$488 ==.
+	Sstm8s_clk$CLK_GetClockFreq$489 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 585: else if ( clocksource == CLK_SOURCE_LSI)
 	ld	a, (0x04, sp)
 	cp	a, #0xd2
 	jrne	00102$
-	Sstm8s_clk$CLK_GetClockFreq$489 ==.
 	Sstm8s_clk$CLK_GetClockFreq$490 ==.
 	Sstm8s_clk$CLK_GetClockFreq$491 ==.
+	Sstm8s_clk$CLK_GetClockFreq$492 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 587: clockfrequency = LSI_VALUE;
 	ldw	x, #0xf400
-	ldw	(0x03, sp), x
-	clrw	x
-	incw	x
-	Sstm8s_clk$CLK_GetClockFreq$492 ==.
+	ldw	y, #0x0001
+	Sstm8s_clk$CLK_GetClockFreq$493 ==.
 	jra	00106$
 00102$:
-	Sstm8s_clk$CLK_GetClockFreq$493 ==.
 	Sstm8s_clk$CLK_GetClockFreq$494 ==.
+	Sstm8s_clk$CLK_GetClockFreq$495 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 591: clockfrequency = HSE_VALUE;
 	ldw	x, #0x1b00
-	ldw	(0x03, sp), x
-	ldw	x, #0x00b7
-	Sstm8s_clk$CLK_GetClockFreq$495 ==.
-00106$:
+	ldw	y, #0x00b7
 	Sstm8s_clk$CLK_GetClockFreq$496 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 594: return((uint32_t)clockfrequency);
-	exgw	x, y
-	ldw	x, (0x03, sp)
+00106$:
 	Sstm8s_clk$CLK_GetClockFreq$497 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 594: return((uint32_t)clockfrequency);
+	Sstm8s_clk$CLK_GetClockFreq$498 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 595: }
 	addw	sp, #4
-	Sstm8s_clk$CLK_GetClockFreq$498 ==.
 	Sstm8s_clk$CLK_GetClockFreq$499 ==.
+	Sstm8s_clk$CLK_GetClockFreq$500 ==.
 	XG$CLK_GetClockFreq$0$0 ==.
 	ret
-	Sstm8s_clk$CLK_GetClockFreq$500 ==.
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$501 ==.
+	Sstm8s_clk$CLK_GetClockFreq$501 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$502 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 604: void CLK_AdjustHSICalibrationValue(CLK_HSITrimValue_TypeDef CLK_HSICalibrationValue)
 ;	-----------------------------------------
 ;	 function CLK_AdjustHSICalibrationValue
 ;	-----------------------------------------
 _CLK_AdjustHSICalibrationValue:
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$502 ==.
-	push	a
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$503 ==.
+	push	a
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$504 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$505 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 607: assert_param(IS_CLK_HSITRIMVALUE_OK(CLK_HSICalibrationValue));
 	tnz	a
 	jreq	00104$
 	cp	a, #0x01
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$505 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$506 ==.
 	cp	a, #0x02
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$506 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$507 ==.
 	cp	a, #0x03
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$507 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$508 ==.
 	cp	a, #0x04
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$508 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$509 ==.
 	cp	a, #0x05
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$509 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$510 ==.
 	cp	a, #0x06
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$510 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$511 ==.
 	cp	a, #0x07
 	jreq	00104$
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$511 ==.
-	push	a
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$512 ==.
-	push	#0x5f
+	push	a
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$513 ==.
-	push	#0x02
+	push	#0x5f
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$514 ==.
+	push	#0x02
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$515 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$515 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$516 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$516 ==.
-	pop	a
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$517 ==.
-00104$:
+	pop	a
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$518 ==.
+00104$:
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$519 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 610: CLK->HSITRIMR = (uint8_t)( (uint8_t)(CLK->HSITRIMR & (uint8_t)(~CLK_HSITRIMR_HSITRIM))|((uint8_t)CLK_HSICalibrationValue));
 	ldw	x, #0x50cc
 	push	a
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$519 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$520 ==.
 	ld	a, (x)
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$521 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$522 ==.
 	and	a, #0xf8
 	ld	(0x02, sp), a
 	pop	a
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$522 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$523 ==.
 	or	a, (0x01, sp)
 	ld	0x50cc, a
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$523 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$524 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 611: }
 	pop	a
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$524 ==.
 	Sstm8s_clk$CLK_AdjustHSICalibrationValue$525 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$526 ==.
 	XG$CLK_AdjustHSICalibrationValue$0$0 ==.
 	ret
-	Sstm8s_clk$CLK_AdjustHSICalibrationValue$526 ==.
-	Sstm8s_clk$CLK_SYSCLKEmergencyClear$527 ==.
+	Sstm8s_clk$CLK_AdjustHSICalibrationValue$527 ==.
+	Sstm8s_clk$CLK_SYSCLKEmergencyClear$528 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 622: void CLK_SYSCLKEmergencyClear(void)
 ;	-----------------------------------------
 ;	 function CLK_SYSCLKEmergencyClear
 ;	-----------------------------------------
 _CLK_SYSCLKEmergencyClear:
-	Sstm8s_clk$CLK_SYSCLKEmergencyClear$528 ==.
 	Sstm8s_clk$CLK_SYSCLKEmergencyClear$529 ==.
+	Sstm8s_clk$CLK_SYSCLKEmergencyClear$530 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 624: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWBSY);
 	bres	0x50c5, #0
-	Sstm8s_clk$CLK_SYSCLKEmergencyClear$530 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 625: }
 	Sstm8s_clk$CLK_SYSCLKEmergencyClear$531 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 625: }
+	Sstm8s_clk$CLK_SYSCLKEmergencyClear$532 ==.
 	XG$CLK_SYSCLKEmergencyClear$0$0 ==.
 	ret
-	Sstm8s_clk$CLK_SYSCLKEmergencyClear$532 ==.
-	Sstm8s_clk$CLK_GetFlagStatus$533 ==.
+	Sstm8s_clk$CLK_SYSCLKEmergencyClear$533 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$534 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 634: FlagStatus CLK_GetFlagStatus(CLK_Flag_TypeDef CLK_FLAG)
 ;	-----------------------------------------
 ;	 function CLK_GetFlagStatus
 ;	-----------------------------------------
 _CLK_GetFlagStatus:
-	Sstm8s_clk$CLK_GetFlagStatus$534 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$535 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$536 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 641: assert_param(IS_CLK_FLAG_OK(CLK_FLAG));
 	ldw	y, x
 	cpw	x, #0x0110
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$536 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$537 ==.
 	cpw	x, #0x0102
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$537 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$538 ==.
 	cpw	x, #0x0202
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$538 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$539 ==.
 	cpw	x, #0x0308
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$539 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$540 ==.
 	cpw	x, #0x0301
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$540 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$541 ==.
 	cpw	x, #0x0408
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$541 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$542 ==.
 	cpw	x, #0x0402
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$542 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$543 ==.
 	cpw	x, #0x0504
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$543 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$544 ==.
 	cpw	x, #0x0502
 	jreq	00119$
-	Sstm8s_clk$CLK_GetFlagStatus$544 ==.
-	pushw	x
 	Sstm8s_clk$CLK_GetFlagStatus$545 ==.
-	pushw	y
+	pushw	x
 	Sstm8s_clk$CLK_GetFlagStatus$546 ==.
-	push	#0x81
+	pushw	y
 	Sstm8s_clk$CLK_GetFlagStatus$547 ==.
-	push	#0x02
+	push	#0x81
 	Sstm8s_clk$CLK_GetFlagStatus$548 ==.
-	push	#0x00
+	push	#0x02
 	Sstm8s_clk$CLK_GetFlagStatus$549 ==.
 	push	#0x00
 	Sstm8s_clk$CLK_GetFlagStatus$550 ==.
+	push	#0x00
+	Sstm8s_clk$CLK_GetFlagStatus$551 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_clk$CLK_GetFlagStatus$551 ==.
-	popw	y
 	Sstm8s_clk$CLK_GetFlagStatus$552 ==.
-	popw	x
+	popw	y
 	Sstm8s_clk$CLK_GetFlagStatus$553 ==.
-00119$:
+	popw	x
 	Sstm8s_clk$CLK_GetFlagStatus$554 ==.
+00119$:
+	Sstm8s_clk$CLK_GetFlagStatus$555 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 644: statusreg = (uint16_t)((uint16_t)CLK_FLAG & (uint16_t)0xFF00);
 	clr	a
-	Sstm8s_clk$CLK_GetFlagStatus$555 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$556 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 647: if (statusreg == 0x0100) /* The flag to check is in ICKRregister */
 	ld	xl, a
 	cpw	x, #0x0100
 	jrne	00111$
-	Sstm8s_clk$CLK_GetFlagStatus$556 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$557 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$558 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$559 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 649: tmpreg = CLK->ICKR;
 	ld	a, 0x50c0
-	Sstm8s_clk$CLK_GetFlagStatus$559 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$560 ==.
 	jra	00112$
 00111$:
-	Sstm8s_clk$CLK_GetFlagStatus$560 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$561 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 651: else if (statusreg == 0x0200) /* The flag to check is in ECKRregister */
 	cpw	x, #0x0200
 	jrne	00108$
-	Sstm8s_clk$CLK_GetFlagStatus$561 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$562 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$563 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$564 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 653: tmpreg = CLK->ECKR;
 	ld	a, 0x50c1
-	Sstm8s_clk$CLK_GetFlagStatus$564 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$565 ==.
 	jra	00112$
 00108$:
-	Sstm8s_clk$CLK_GetFlagStatus$565 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$566 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 655: else if (statusreg == 0x0300) /* The flag to check is in SWIC register */
 	cpw	x, #0x0300
 	jrne	00105$
-	Sstm8s_clk$CLK_GetFlagStatus$566 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$567 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$568 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$569 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 657: tmpreg = CLK->SWCR;
 	ld	a, 0x50c5
-	Sstm8s_clk$CLK_GetFlagStatus$569 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$570 ==.
 	jra	00112$
 00105$:
-	Sstm8s_clk$CLK_GetFlagStatus$570 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$571 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 659: else if (statusreg == 0x0400) /* The flag to check is in CSS register */
 	cpw	x, #0x0400
 	jrne	00102$
-	Sstm8s_clk$CLK_GetFlagStatus$571 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$572 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$573 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$574 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 661: tmpreg = CLK->CSSR;
 	ld	a, 0x50c8
-	Sstm8s_clk$CLK_GetFlagStatus$574 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$575 ==.
 	jra	00112$
 00102$:
-	Sstm8s_clk$CLK_GetFlagStatus$575 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$576 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$577 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 665: tmpreg = CLK->CCOR;
 	ld	a, 0x50c9
-	Sstm8s_clk$CLK_GetFlagStatus$577 ==.
-00112$:
 	Sstm8s_clk$CLK_GetFlagStatus$578 ==.
+00112$:
+	Sstm8s_clk$CLK_GetFlagStatus$579 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 668: if ((tmpreg & (uint8_t)CLK_FLAG) != (uint8_t)RESET)
 	ldw	x, y
 	pushw	x
-	Sstm8s_clk$CLK_GetFlagStatus$579 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$580 ==.
 	and	a, (2, sp)
 	popw	x
-	Sstm8s_clk$CLK_GetFlagStatus$580 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$581 ==.
 	tnz	a
 	jreq	00114$
-	Sstm8s_clk$CLK_GetFlagStatus$581 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$582 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$583 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 670: bitstatus = SET;
 	ld	a, #0x01
-	Sstm8s_clk$CLK_GetFlagStatus$583 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$584 ==.
 	ret
 00114$:
-	Sstm8s_clk$CLK_GetFlagStatus$584 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$585 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$586 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 674: bitstatus = RESET;
 	clr	a
-	Sstm8s_clk$CLK_GetFlagStatus$586 ==.
 	Sstm8s_clk$CLK_GetFlagStatus$587 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 678: return((FlagStatus)bitstatus);
 	Sstm8s_clk$CLK_GetFlagStatus$588 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 679: }
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 678: return((FlagStatus)bitstatus);
 	Sstm8s_clk$CLK_GetFlagStatus$589 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 679: }
+	Sstm8s_clk$CLK_GetFlagStatus$590 ==.
 	XG$CLK_GetFlagStatus$0$0 ==.
 	ret
-	Sstm8s_clk$CLK_GetFlagStatus$590 ==.
-	Sstm8s_clk$CLK_GetITStatus$591 ==.
+	Sstm8s_clk$CLK_GetFlagStatus$591 ==.
+	Sstm8s_clk$CLK_GetITStatus$592 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 687: ITStatus CLK_GetITStatus(CLK_IT_TypeDef CLK_IT)
 ;	-----------------------------------------
 ;	 function CLK_GetITStatus
 ;	-----------------------------------------
 _CLK_GetITStatus:
-	Sstm8s_clk$CLK_GetITStatus$592 ==.
-	push	a
 	Sstm8s_clk$CLK_GetITStatus$593 ==.
+	push	a
 	Sstm8s_clk$CLK_GetITStatus$594 ==.
+	Sstm8s_clk$CLK_GetITStatus$595 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 692: assert_param(IS_CLK_IT_OK(CLK_IT));
 	ld	(0x01, sp), a
 	sub	a, #0x1c
-	jrne	00143$
+	jrne	00153$
 	inc	a
 	.byte 0x21
-00143$:
+00153$:
 	clr	a
-00144$:
-	Sstm8s_clk$CLK_GetITStatus$595 ==.
-	push	a
+00154$:
 	Sstm8s_clk$CLK_GetITStatus$596 ==.
+	push	a
+	Sstm8s_clk$CLK_GetITStatus$597 ==.
 	ld	a, (0x02, sp)
 	cp	a, #0x0c
 	pop	a
-	Sstm8s_clk$CLK_GetITStatus$597 ==.
-	jreq	00113$
 	Sstm8s_clk$CLK_GetITStatus$598 ==.
+	jreq	00113$
+	Sstm8s_clk$CLK_GetITStatus$599 ==.
 	tnz	a
 	jrne	00113$
 	push	a
-	Sstm8s_clk$CLK_GetITStatus$599 ==.
-	push	#0xb4
 	Sstm8s_clk$CLK_GetITStatus$600 ==.
-	push	#0x02
+	push	#0xb4
 	Sstm8s_clk$CLK_GetITStatus$601 ==.
+	push	#0x02
+	Sstm8s_clk$CLK_GetITStatus$602 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_clk$CLK_GetITStatus$602 ==.
+	Sstm8s_clk$CLK_GetITStatus$603 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_clk$CLK_GetITStatus$603 ==.
-	pop	a
 	Sstm8s_clk$CLK_GetITStatus$604 ==.
-00113$:
+	pop	a
 	Sstm8s_clk$CLK_GetITStatus$605 ==.
+00113$:
+	Sstm8s_clk$CLK_GetITStatus$606 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 694: if (CLK_IT == CLK_IT_SWIF)
 	tnz	a
 	jreq	00108$
-	Sstm8s_clk$CLK_GetITStatus$606 ==.
 	Sstm8s_clk$CLK_GetITStatus$607 ==.
+	Sstm8s_clk$CLK_GetITStatus$608 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 697: if ((CLK->SWCR & (uint8_t)CLK_IT) == (uint8_t)0x0C)
 	ld	a, 0x50c5
 	and	a, (0x01, sp)
-	Sstm8s_clk$CLK_GetITStatus$608 ==.
 	Sstm8s_clk$CLK_GetITStatus$609 ==.
 	Sstm8s_clk$CLK_GetITStatus$610 ==.
+	Sstm8s_clk$CLK_GetITStatus$611 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 699: bitstatus = SET;
 	sub	a, #0x0c
 	jrne	00102$
 	inc	a
-	Sstm8s_clk$CLK_GetITStatus$611 ==.
+	Sstm8s_clk$CLK_GetITStatus$612 ==.
 	jra	00109$
 00102$:
-	Sstm8s_clk$CLK_GetITStatus$612 ==.
 	Sstm8s_clk$CLK_GetITStatus$613 ==.
+	Sstm8s_clk$CLK_GetITStatus$614 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 703: bitstatus = RESET;
 	clr	a
-	Sstm8s_clk$CLK_GetITStatus$614 ==.
+	Sstm8s_clk$CLK_GetITStatus$615 ==.
 	jra	00109$
 00108$:
-	Sstm8s_clk$CLK_GetITStatus$615 ==.
 	Sstm8s_clk$CLK_GetITStatus$616 ==.
+	Sstm8s_clk$CLK_GetITStatus$617 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 709: if ((CLK->CSSR & (uint8_t)CLK_IT) == (uint8_t)0x0C)
 	ld	a, 0x50c8
 	and	a, (0x01, sp)
-	Sstm8s_clk$CLK_GetITStatus$617 ==.
 	Sstm8s_clk$CLK_GetITStatus$618 ==.
 	Sstm8s_clk$CLK_GetITStatus$619 ==.
+	Sstm8s_clk$CLK_GetITStatus$620 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 711: bitstatus = SET;
 	sub	a, #0x0c
 	jrne	00105$
 	inc	a
-	Sstm8s_clk$CLK_GetITStatus$620 ==.
 	Sstm8s_clk$CLK_GetITStatus$621 ==.
 	Sstm8s_clk$CLK_GetITStatus$622 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 715: bitstatus = RESET;
 	Sstm8s_clk$CLK_GetITStatus$623 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 715: bitstatus = RESET;
+	Sstm8s_clk$CLK_GetITStatus$624 ==.
 	.byte 0x21
 00105$:
 	clr	a
 00109$:
-	Sstm8s_clk$CLK_GetITStatus$624 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 720: return bitstatus;
 	Sstm8s_clk$CLK_GetITStatus$625 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 720: return bitstatus;
+	Sstm8s_clk$CLK_GetITStatus$626 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 721: }
 	addw	sp, #1
-	Sstm8s_clk$CLK_GetITStatus$626 ==.
 	Sstm8s_clk$CLK_GetITStatus$627 ==.
+	Sstm8s_clk$CLK_GetITStatus$628 ==.
 	XG$CLK_GetITStatus$0$0 ==.
 	ret
-	Sstm8s_clk$CLK_GetITStatus$628 ==.
-	Sstm8s_clk$CLK_ClearITPendingBit$629 ==.
+	Sstm8s_clk$CLK_GetITStatus$629 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$630 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 729: void CLK_ClearITPendingBit(CLK_IT_TypeDef CLK_IT)
 ;	-----------------------------------------
 ;	 function CLK_ClearITPendingBit
 ;	-----------------------------------------
 _CLK_ClearITPendingBit:
-	Sstm8s_clk$CLK_ClearITPendingBit$630 ==.
 	Sstm8s_clk$CLK_ClearITPendingBit$631 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$632 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 732: assert_param(IS_CLK_IT_OK(CLK_IT));
 	ld	xl, a
 	sub	a, #0x0c
-	jrne	00127$
+	jrne	00133$
 	inc	a
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
-	Sstm8s_clk$CLK_ClearITPendingBit$632 ==.
+00134$:
+	Sstm8s_clk$CLK_ClearITPendingBit$633 ==.
 	tnz	a
 	jrne	00107$
 	push	a
-	Sstm8s_clk$CLK_ClearITPendingBit$633 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$634 ==.
 	ld	a, xl
 	cp	a, #0x1c
 	pop	a
-	Sstm8s_clk$CLK_ClearITPendingBit$634 ==.
-	jreq	00107$
 	Sstm8s_clk$CLK_ClearITPendingBit$635 ==.
-	push	a
+	jreq	00107$
 	Sstm8s_clk$CLK_ClearITPendingBit$636 ==.
-	push	#0xdc
+	push	a
 	Sstm8s_clk$CLK_ClearITPendingBit$637 ==.
-	push	#0x02
+	push	#0xdc
 	Sstm8s_clk$CLK_ClearITPendingBit$638 ==.
+	push	#0x02
+	Sstm8s_clk$CLK_ClearITPendingBit$639 ==.
 	clrw	x
 	pushw	x
-	Sstm8s_clk$CLK_ClearITPendingBit$639 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$640 ==.
 	ldw	x, #(___str_0+0)
 	call	_assert_failed
-	Sstm8s_clk$CLK_ClearITPendingBit$640 ==.
-	pop	a
 	Sstm8s_clk$CLK_ClearITPendingBit$641 ==.
-00107$:
+	pop	a
 	Sstm8s_clk$CLK_ClearITPendingBit$642 ==.
+00107$:
+	Sstm8s_clk$CLK_ClearITPendingBit$643 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 734: if (CLK_IT == (uint8_t)CLK_IT_CSSD)
 	tnz	a
 	jreq	00102$
-	Sstm8s_clk$CLK_ClearITPendingBit$643 ==.
 	Sstm8s_clk$CLK_ClearITPendingBit$644 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$645 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 737: CLK->CSSR &= (uint8_t)(~CLK_CSSR_CSSD);
 	bres	0x50c8, #3
-	Sstm8s_clk$CLK_ClearITPendingBit$645 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$646 ==.
 	ret
 00102$:
-	Sstm8s_clk$CLK_ClearITPendingBit$646 ==.
 	Sstm8s_clk$CLK_ClearITPendingBit$647 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$648 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 742: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIF);
 	bres	0x50c5, #3
-	Sstm8s_clk$CLK_ClearITPendingBit$648 ==.
 	Sstm8s_clk$CLK_ClearITPendingBit$649 ==.
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 745: }
 	Sstm8s_clk$CLK_ClearITPendingBit$650 ==.
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 745: }
+	Sstm8s_clk$CLK_ClearITPendingBit$651 ==.
 	XG$CLK_ClearITPendingBit$0$0 ==.
 	ret
-	Sstm8s_clk$CLK_ClearITPendingBit$651 ==.
+	Sstm8s_clk$CLK_ClearITPendingBit$652 ==.
 	.area CODE
 	.area CONST
 G$HSIDivFactor$0_0$0 == .
@@ -2054,9 +2049,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c"
@@ -3357,122 +3352,115 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$488)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$489)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$491)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$492)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$494)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$495)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$496)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$497)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$497)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$498)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_clk$CLK_GetClockFreq$499-Sstm8s_clk$CLK_GetClockFreq$497
+	.dw	1+Sstm8s_clk$CLK_GetClockFreq$500-Sstm8s_clk$CLK_GetClockFreq$498
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$501)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$502)
 	.db	3
 	.sleb128	603
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$504)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$505)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$518)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$519)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$523)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$524)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_clk$CLK_AdjustHSICalibrationValue$525-Sstm8s_clk$CLK_AdjustHSICalibrationValue$523
+	.dw	1+Sstm8s_clk$CLK_AdjustHSICalibrationValue$526-Sstm8s_clk$CLK_AdjustHSICalibrationValue$524
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$527)
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$528)
 	.db	3
 	.sleb128	621
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$529)
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$530)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$530)
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$531)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_clk$CLK_SYSCLKEmergencyClear$531-Sstm8s_clk$CLK_SYSCLKEmergencyClear$530
+	.dw	1+Sstm8s_clk$CLK_SYSCLKEmergencyClear$532-Sstm8s_clk$CLK_SYSCLKEmergencyClear$531
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$533)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$534)
 	.db	3
 	.sleb128	633
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$535)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$536)
 	.db	3
 	.sleb128	7
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$554)
-	.db	3
-	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
@@ -3484,84 +3472,84 @@ Ldebug_line_stmt:
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$558)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$560)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$563)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$565)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$568)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$570)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$573)
-	.db	3
-	.sleb128	2
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$576)
-	.db	3
-	.sleb128	4
-	.db	1
-	.db	0
-	.uleb128	5
-	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$578)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$556)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$582)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$559)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$585)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$561)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$564)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$566)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$569)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$571)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$574)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$577)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$587)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$579)
+	.db	3
+	.sleb128	3
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$583)
+	.db	3
+	.sleb128	2
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$586)
 	.db	3
 	.sleb128	4
 	.db	1
@@ -3570,139 +3558,146 @@ Ldebug_line_stmt:
 	.db	2
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$588)
 	.db	3
+	.sleb128	4
+	.db	1
+	.db	0
+	.uleb128	5
+	.db	2
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$589)
+	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_clk$CLK_GetFlagStatus$589-Sstm8s_clk$CLK_GetFlagStatus$588
+	.dw	1+Sstm8s_clk$CLK_GetFlagStatus$590-Sstm8s_clk$CLK_GetFlagStatus$589
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$591)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$592)
 	.db	3
 	.sleb128	686
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$594)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$595)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$605)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$606)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$607)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$608)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$610)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$611)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$613)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$614)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$616)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$617)
 	.db	3
 	.sleb128	6
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$619)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$620)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$622)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$623)
 	.db	3
 	.sleb128	4
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$624)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$625)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$625)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$626)
 	.db	3
 	.sleb128	1
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_clk$CLK_GetITStatus$627-Sstm8s_clk$CLK_GetITStatus$625
+	.dw	1+Sstm8s_clk$CLK_GetITStatus$628-Sstm8s_clk$CLK_GetITStatus$626
 	.db	0
 	.uleb128	1
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$629)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$630)
 	.db	3
 	.sleb128	728
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$631)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$632)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$642)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$643)
 	.db	3
 	.sleb128	2
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$644)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$645)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$647)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$648)
 	.db	3
 	.sleb128	5
 	.db	1
 	.db	0
 	.uleb128	5
 	.db	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$649)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$650)
 	.db	3
 	.sleb128	3
 	.db	1
 	.db	9
-	.dw	1+Sstm8s_clk$CLK_ClearITPendingBit$650-Sstm8s_clk$CLK_ClearITPendingBit$649
+	.dw	1+Sstm8s_clk$CLK_ClearITPendingBit$651-Sstm8s_clk$CLK_ClearITPendingBit$650
 	.db	0
 	.uleb128	1
 	.db	1
@@ -3710,36 +3705,41 @@ Ldebug_line_end:
 
 	.area .debug_loc (NOLOAD)
 Ldebug_loc_start:
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$641)
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$651)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$642)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$652)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$640)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$641)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$642)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$639)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$640)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$641)
 	.dw	2
 	.db	120
 	.sleb128	6
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$639)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$640)
+	.dw	2
+	.db	120
+	.sleb128	4
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$638)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$639)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$637)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$638)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$636)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$637)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$635)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$636)
 	.dw	2
@@ -3749,69 +3749,69 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$635)
 	.dw	2
 	.db	120
-	.sleb128	1
+	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$633)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$634)
 	.dw	2
 	.db	120
-	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$632)
+	.sleb128	1
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$631)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$633)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$630)
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$632)
+	.dw	0,0
+	.dw	0,0
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$627)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$629)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,0
-	.dw	0,0
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$626)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$628)
-	.dw	2
-	.db	120
-	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$617)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$626)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$618)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$627)
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$608)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$617)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$609)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$618)
+	.dw	2
+	.db	120
+	.sleb128	2
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$605)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$609)
 	.dw	2
 	.db	120
 	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$604)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$608)
-	.dw	2
-	.db	120
-	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$603)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$604)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$605)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$602)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$603)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$604)
 	.dw	2
 	.db	120
 	.sleb128	7
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$602)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$603)
+	.dw	2
+	.db	120
+	.sleb128	5
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$601)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$602)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$600)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$601)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$599)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$600)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$598)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$599)
 	.dw	2
@@ -3821,104 +3821,104 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$598)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$596)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$597)
 	.dw	2
 	.db	120
-	.sleb128	3
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$595)
+	.sleb128	2
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$594)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$596)
 	.dw	2
 	.db	120
 	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$593)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$595)
-	.dw	2
-	.db	120
-	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$592)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$593)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$594)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$580)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$590)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$581)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$591)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$579)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$580)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$581)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$571)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$579)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$572)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$580)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$566)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$571)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$567)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$572)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$561)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$566)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$562)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$567)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$556)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$561)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$557)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$562)
+	.dw	2
+	.db	120
+	.sleb128	1
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$554)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$557)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$553)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$556)
-	.dw	2
-	.db	120
-	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$552)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$553)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$554)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$551)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$552)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$553)
 	.dw	2
 	.db	120
 	.sleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$550)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$551)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$552)
 	.dw	2
 	.db	120
 	.sleb128	9
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$550)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$551)
+	.dw	2
+	.db	120
+	.sleb128	8
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$549)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$550)
 	.dw	2
 	.db	120
-	.sleb128	8
+	.sleb128	7
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$548)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$549)
 	.dw	2
 	.db	120
-	.sleb128	7
+	.sleb128	6
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$547)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$548)
 	.dw	2
 	.db	120
-	.sleb128	6
+	.sleb128	5
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$546)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$547)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	3
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$545)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$546)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$544)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$545)
 	.dw	2
@@ -3959,80 +3959,80 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$536)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$535)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$537)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$534)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$536)
+	.dw	0,0
+	.dw	0,0
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$529)
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$533)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$528)
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$532)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$525)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$527)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,0
-	.dw	0,0
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$524)
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$526)
-	.dw	2
-	.db	120
-	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$522)
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$524)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$523)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$525)
 	.dw	2
 	.db	120
 	.sleb128	2
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$522)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$523)
+	.dw	2
+	.db	120
+	.sleb128	3
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$521)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$522)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$520)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$521)
 	.dw	2
 	.db	120
-	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$519)
+	.sleb128	3
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$518)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$520)
 	.dw	2
 	.db	120
-	.sleb128	3
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$517)
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$519)
-	.dw	2
-	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$516)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$517)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$518)
 	.dw	2
 	.db	120
 	.sleb128	3
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$515)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$516)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$517)
 	.dw	2
 	.db	120
 	.sleb128	7
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$515)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$516)
+	.dw	2
+	.db	120
+	.sleb128	5
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$514)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$515)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	4
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$513)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$514)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	3
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$512)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$513)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$511)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$512)
 	.dw	2
@@ -4063,68 +4063,68 @@ Ldebug_loc_start:
 	.dw	2
 	.db	120
 	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$505)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$504)
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$506)
 	.dw	2
 	.db	120
 	.sleb128	2
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$503)
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$505)
-	.dw	2
-	.db	120
-	.sleb128	2
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$502)
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$503)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$504)
 	.dw	2
 	.db	120
 	.sleb128	1
 	.dw	0,0
 	.dw	0,0
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$498)
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$500)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$499)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$501)
 	.dw	2
 	.db	120
 	.sleb128	1
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$489)
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$498)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$490)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$499)
+	.dw	2
+	.db	120
+	.sleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$488)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$490)
 	.dw	2
 	.db	120
 	.sleb128	5
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$487)
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$489)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$488)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	13
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$486)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$487)
 	.dw	2
 	.db	120
-	.sleb128	13
+	.sleb128	12
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$485)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$486)
 	.dw	2
 	.db	120
-	.sleb128	12
+	.sleb128	11
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$484)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$485)
 	.dw	2
 	.db	120
-	.sleb128	11
+	.sleb128	10
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$483)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$484)
 	.dw	2
 	.db	120
-	.sleb128	10
+	.sleb128	9
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$482)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$483)
 	.dw	2
 	.db	120
-	.sleb128	9
+	.sleb128	8
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$481)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$482)
 	.dw	2
 	.db	120
-	.sleb128	7
+	.sleb128	6
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$474)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$481)
 	.dw	2
@@ -5337,7 +5337,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "CLK_DeInit"
@@ -5345,7 +5345,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_DeInit)
 	.dw	0,(XG$CLK_DeInit$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3392)
+	.dw	0,(Ldebug_loc_start+3404)
 	.uleb128	3
 	.dw	0,215
 	.ascii "CLK_FastHaltWakeUpCmd"
@@ -5353,7 +5353,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_FastHaltWakeUpCmd)
 	.dw	0,(XG$CLK_FastHaltWakeUpCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3300)
+	.dw	0,(Ldebug_loc_start+3312)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5380,7 +5380,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_HSECmd)
 	.dw	0,(XG$CLK_HSECmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3208)
+	.dw	0,(Ldebug_loc_start+3220)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5402,7 +5402,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_HSICmd)
 	.dw	0,(XG$CLK_HSICmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3116)
+	.dw	0,(Ldebug_loc_start+3128)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5424,7 +5424,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_LSICmd)
 	.dw	0,(XG$CLK_LSICmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+3024)
+	.dw	0,(Ldebug_loc_start+3036)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5446,7 +5446,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_CCOCmd)
 	.dw	0,(XG$CLK_CCOCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2932)
+	.dw	0,(Ldebug_loc_start+2944)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5468,7 +5468,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_ClockSwitchCmd)
 	.dw	0,(XG$CLK_ClockSwitchCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2840)
+	.dw	0,(Ldebug_loc_start+2852)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5490,7 +5490,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_SlowActiveHaltWakeUpCmd)
 	.dw	0,(XG$CLK_SlowActiveHaltWakeUpCmd$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2748)
+	.dw	0,(Ldebug_loc_start+2760)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5674,7 +5674,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_HSIPrescalerConfig)
 	.dw	0,(XG$CLK_HSIPrescalerConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+2032)
+	.dw	0,(Ldebug_loc_start+2044)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5690,7 +5690,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_CCOConfig)
 	.dw	0,(XG$CLK_CCOConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1676)
+	.dw	0,(Ldebug_loc_start+1688)
 	.uleb128	4
 	.db	1
 	.db	80
@@ -5738,7 +5738,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_SYSCLKConfig)
 	.dw	0,(XG$CLK_SYSCLKConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1188)
+	.dw	0,(Ldebug_loc_start+1200)
 	.uleb128	4
 	.db	1
 	.db	82
@@ -5759,7 +5759,7 @@ Ldebug_info_start:
 	.dw	0,(_CLK_SWIMConfig)
 	.dw	0,(XG$CLK_SWIMConfig$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1096)
+	.dw	0,(Ldebug_loc_start+1108)
 	.uleb128	4
 	.db	2
 	.db	145
@@ -5780,14 +5780,14 @@ Ldebug_info_start:
 	.dw	0,(_CLK_ClockSecuritySystemEnable)
 	.dw	0,(XG$CLK_ClockSecuritySystemEnable$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1076)
+	.dw	0,(Ldebug_loc_start+1088)
 	.uleb128	13
 	.ascii "CLK_GetSYSCLKSource"
 	.db	0
 	.dw	0,(_CLK_GetSYSCLKSource)
 	.dw	0,(XG$CLK_GetSYSCLKSource$0$0+1)
 	.db	1
-	.dw	0,(Ldebug_loc_start+1056)
+	.dw	0,(Ldebug_loc_start+1068)
 	.dw	0,768
 	.uleb128	6
 	.ascii "unsigned long"
@@ -5795,7 +5795,7 @@ Ldebug_info_start:
 	.db	4
 	.db	7
 	.uleb128	14
-	.dw	0,1735
+	.dw	0,1733
 	.ascii "CLK_GetClockFreq"
 	.db	0
 	.dw	0,(_CLK_GetClockFreq)
@@ -5807,25 +5807,23 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$475)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$480)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$490)
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$492)
-	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$491)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$493)
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$495)
+	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$494)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$496)
 	.uleb128	12
-	.db	14
+	.db	12
+	.db	84
+	.db	147
+	.uleb128	1
+	.db	83
+	.db	147
+	.uleb128	1
 	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
-	.db	147
-	.uleb128	1
-	.db	145
-	.sleb128	-2
-	.db	147
-	.uleb128	1
-	.db	145
-	.sleb128	-1
 	.db	147
 	.uleb128	1
 	.ascii "clockfrequency"
@@ -5852,7 +5850,7 @@ Ldebug_info_start:
 	.dw	0,768
 	.uleb128	0
 	.uleb128	3
-	.dw	0,1815
+	.dw	0,1813
 	.ascii "CLK_AdjustHSICalibrationValue"
 	.db	0
 	.dw	0,(_CLK_AdjustHSICalibrationValue)
@@ -5874,7 +5872,7 @@ Ldebug_info_start:
 	.db	1
 	.dw	0,(Ldebug_loc_start+636)
 	.uleb128	14
-	.dw	0,2032
+	.dw	0,2030
 	.ascii "CLK_GetFlagStatus"
 	.db	0
 	.dw	0,(_CLK_GetFlagStatus)
@@ -5892,28 +5890,28 @@ Ldebug_info_start:
 	.uleb128	1
 	.ascii "CLK_FLAG"
 	.db	0
-	.dw	0,2032
+	.dw	0,2030
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$557)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$559)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$558)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$560)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$562)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$564)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$563)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$565)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$567)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$569)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$568)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$570)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$572)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$574)
-	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$573)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$575)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$577)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$581)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$583)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$576)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$578)
 	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$582)
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$584)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$586)
+	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$585)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$587)
 	.uleb128	12
 	.db	6
 	.db	82
@@ -5944,7 +5942,7 @@ Ldebug_info_start:
 	.db	2
 	.db	7
 	.uleb128	14
-	.dw	0,2175
+	.dw	0,2173
 	.ascii "CLK_GetITStatus"
 	.db	0
 	.dw	0,(_CLK_GetITStatus)
@@ -5960,24 +5958,24 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,768
 	.uleb128	8
-	.dw	0,2129
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$606)
+	.dw	0,2127
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$607)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$609)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$611)
-	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$610)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$612)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$614)
+	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$613)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$615)
 	.uleb128	0
 	.uleb128	8
-	.dw	0,2157
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$615)
+	.dw	0,2155
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$616)
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$618)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$620)
-	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$619)
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$621)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$623)
+	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$622)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$624)
 	.uleb128	0
 	.uleb128	12
 	.db	1
@@ -5987,7 +5985,7 @@ Ldebug_info_start:
 	.dw	0,215
 	.uleb128	0
 	.uleb128	3
-	.dw	0,2248
+	.dw	0,2246
 	.ascii "CLK_ClearITPendingBit"
 	.db	0
 	.dw	0,(_CLK_ClearITPendingBit)
@@ -6001,18 +5999,18 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,768
 	.uleb128	5
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$643)
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$645)
-	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$644)
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$646)
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$648)
+	.uleb128	5
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$647)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$649)
 	.uleb128	0
 	.uleb128	15
 	.dw	0,768
 	.uleb128	16
-	.dw	0,2266
+	.dw	0,2264
 	.db	4
-	.dw	0,2248
+	.dw	0,2246
 	.uleb128	17
 	.db	3
 	.uleb128	0
@@ -6023,11 +6021,11 @@ Ldebug_info_start:
 	.ascii "HSIDivFactor"
 	.db	0
 	.db	1
-	.dw	0,2253
+	.dw	0,2251
 	.uleb128	16
-	.dw	0,2304
+	.dw	0,2302
 	.db	8
-	.dw	0,2248
+	.dw	0,2246
 	.uleb128	17
 	.db	7
 	.uleb128	0
@@ -6038,11 +6036,11 @@ Ldebug_info_start:
 	.ascii "CLKPrescTable"
 	.db	0
 	.db	1
-	.dw	0,2291
+	.dw	0,2289
 	.uleb128	16
-	.dw	0,2343
+	.dw	0,2341
 	.db	71
-	.dw	0,2248
+	.dw	0,2246
 	.uleb128	17
 	.db	70
 	.uleb128	0
@@ -6052,7 +6050,7 @@ Ldebug_info_start:
 	.dw	0,(___str_0)
 	.ascii "__str_0"
 	.db	0
-	.dw	0,2330
+	.dw	0,2328
 	.uleb128	0
 Ldebug_info_end:
 
@@ -6116,25 +6114,25 @@ Ldebug_pubnames_start:
 	.dw	0,1589
 	.ascii "CLK_GetClockFreq"
 	.db	0
-	.dw	0,1735
+	.dw	0,1733
 	.ascii "CLK_AdjustHSICalibrationValue"
 	.db	0
-	.dw	0,1815
+	.dw	0,1813
 	.ascii "CLK_SYSCLKEmergencyClear"
 	.db	0
-	.dw	0,1854
+	.dw	0,1852
 	.ascii "CLK_GetFlagStatus"
 	.db	0
-	.dw	0,2048
+	.dw	0,2046
 	.ascii "CLK_GetITStatus"
 	.db	0
-	.dw	0,2175
+	.dw	0,2173
 	.ascii "CLK_ClearITPendingBit"
 	.db	0
-	.dw	0,2266
+	.dw	0,2264
 	.ascii "HSIDivFactor"
 	.db	0
-	.dw	0,2304
+	.dw	0,2302
 	.ascii "CLKPrescTable"
 	.db	0
 	.dw	0,0
@@ -6161,24 +6159,20 @@ Ldebug_CIE0_start:
 Ldebug_CIE0_end:
 	.dw	0,92
 	.dw	0,(Ldebug_CIE0_start-4)
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$630)	;initial loc
-	.dw	0,Sstm8s_clk$CLK_ClearITPendingBit$651-Sstm8s_clk$CLK_ClearITPendingBit$630
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$631)	;initial loc
+	.dw	0,Sstm8s_clk$CLK_ClearITPendingBit$652-Sstm8s_clk$CLK_ClearITPendingBit$631
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$630)
-	.db	14
-	.uleb128	2
-	.db	1
-	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$632)
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$631)
 	.db	14
 	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$633)
 	.db	14
-	.uleb128	3
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$634)
 	.db	14
-	.uleb128	2
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$635)
 	.db	14
@@ -6186,25 +6180,29 @@ Ldebug_CIE0_end:
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$636)
 	.db	14
-	.uleb128	3
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$637)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$638)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$639)
 	.db	14
-	.uleb128	7
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$640)
 	.db	14
-	.uleb128	3
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$641)
+	.db	14
+	.uleb128	3
+	.db	1
+	.dw	0,(Sstm8s_clk$CLK_ClearITPendingBit$642)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6232,28 +6230,24 @@ Ldebug_CIE1_start:
 Ldebug_CIE1_end:
 	.dw	0,120
 	.dw	0,(Ldebug_CIE1_start-4)
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$592)	;initial loc
-	.dw	0,Sstm8s_clk$CLK_GetITStatus$628-Sstm8s_clk$CLK_GetITStatus$592
-	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$592)
-	.db	14
-	.uleb128	2
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$593)	;initial loc
+	.dw	0,Sstm8s_clk$CLK_GetITStatus$629-Sstm8s_clk$CLK_GetITStatus$593
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$593)
 	.db	14
-	.uleb128	3
+	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$595)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$594)
 	.db	14
 	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$596)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$597)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$598)
 	.db	14
@@ -6261,37 +6255,41 @@ Ldebug_CIE1_end:
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$599)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$600)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$601)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$602)
 	.db	14
-	.uleb128	8
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$603)
 	.db	14
-	.uleb128	4
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetITStatus$604)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$608)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$605)
 	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$617)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$609)
 	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetITStatus$626)
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$618)
+	.db	14
+	.uleb128	3
+	.db	1
+	.dw	0,(Sstm8s_clk$CLK_GetITStatus$627)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6319,14 +6317,10 @@ Ldebug_CIE2_start:
 Ldebug_CIE2_end:
 	.dw	0,188
 	.dw	0,(Ldebug_CIE2_start-4)
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$534)	;initial loc
-	.dw	0,Sstm8s_clk$CLK_GetFlagStatus$590-Sstm8s_clk$CLK_GetFlagStatus$534
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$535)	;initial loc
+	.dw	0,Sstm8s_clk$CLK_GetFlagStatus$591-Sstm8s_clk$CLK_GetFlagStatus$535
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$534)
-	.db	14
-	.uleb128	2
-	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$536)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$535)
 	.db	14
 	.uleb128	2
 	.db	1
@@ -6364,61 +6358,65 @@ Ldebug_CIE2_end:
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$545)
 	.db	14
-	.uleb128	4
+	.uleb128	2
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$546)
 	.db	14
-	.uleb128	6
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$547)
 	.db	14
-	.uleb128	7
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$548)
 	.db	14
-	.uleb128	8
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$549)
 	.db	14
-	.uleb128	9
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$550)
 	.db	14
-	.uleb128	10
+	.uleb128	9
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$551)
 	.db	14
-	.uleb128	6
+	.uleb128	10
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$552)
 	.db	14
-	.uleb128	4
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$553)
 	.db	14
-	.uleb128	2
+	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$556)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$554)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$561)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$557)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$566)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$562)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$571)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$567)
 	.db	14
 	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$579)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$572)
+	.db	14
+	.uleb128	2
+	.db	1
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$580)
 	.db	14
 	.uleb128	4
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$580)
+	.dw	0,(Sstm8s_clk$CLK_GetFlagStatus$581)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6444,10 +6442,10 @@ Ldebug_CIE3_start:
 Ldebug_CIE3_end:
 	.dw	0,20
 	.dw	0,(Ldebug_CIE3_start-4)
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$528)	;initial loc
-	.dw	0,Sstm8s_clk$CLK_SYSCLKEmergencyClear$532-Sstm8s_clk$CLK_SYSCLKEmergencyClear$528
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$529)	;initial loc
+	.dw	0,Sstm8s_clk$CLK_SYSCLKEmergencyClear$533-Sstm8s_clk$CLK_SYSCLKEmergencyClear$529
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$528)
+	.dw	0,(Sstm8s_clk$CLK_SYSCLKEmergencyClear$529)
 	.db	14
 	.uleb128	2
 	.db	0
@@ -6473,18 +6471,14 @@ Ldebug_CIE4_start:
 Ldebug_CIE4_end:
 	.dw	0,152
 	.dw	0,(Ldebug_CIE4_start-4)
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$502)	;initial loc
-	.dw	0,Sstm8s_clk$CLK_AdjustHSICalibrationValue$526-Sstm8s_clk$CLK_AdjustHSICalibrationValue$502
-	.db	1
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$502)
-	.db	14
-	.uleb128	2
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$503)	;initial loc
+	.dw	0,Sstm8s_clk$CLK_AdjustHSICalibrationValue$527-Sstm8s_clk$CLK_AdjustHSICalibrationValue$503
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$503)
 	.db	14
-	.uleb128	3
+	.uleb128	2
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$505)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$504)
 	.db	14
 	.uleb128	3
 	.db	1
@@ -6514,45 +6508,49 @@ Ldebug_CIE4_end:
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$512)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$513)
 	.db	14
-	.uleb128	5
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$514)
 	.db	14
-	.uleb128	6
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$515)
 	.db	14
-	.uleb128	8
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$516)
 	.db	14
-	.uleb128	4
+	.uleb128	8
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$517)
 	.db	14
-	.uleb128	3
-	.db	1
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$519)
-	.db	14
 	.uleb128	4
+	.db	1
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$518)
+	.db	14
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$520)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$521)
 	.db	14
-	.uleb128	4
+	.uleb128	3
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$522)
 	.db	14
+	.uleb128	4
+	.db	1
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$523)
+	.db	14
 	.uleb128	3
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$524)
+	.dw	0,(Sstm8s_clk$CLK_AdjustHSICalibrationValue$525)
 	.db	14
 	.uleb128	2
 
@@ -6575,10 +6573,10 @@ Ldebug_CIE5_start:
 	.db	0
 	.db	0
 Ldebug_CIE5_end:
-	.dw	0,96
+	.dw	0,104
 	.dw	0,(Ldebug_CIE5_start-4)
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$470)	;initial loc
-	.dw	0,Sstm8s_clk$CLK_GetClockFreq$500-Sstm8s_clk$CLK_GetClockFreq$470
+	.dw	0,Sstm8s_clk$CLK_GetClockFreq$501-Sstm8s_clk$CLK_GetClockFreq$470
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$470)
 	.db	14
@@ -6594,39 +6592,44 @@ Ldebug_CIE5_end:
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$481)
 	.db	14
-	.uleb128	8
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$482)
 	.db	14
-	.uleb128	10
+	.uleb128	9
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$483)
 	.db	14
-	.uleb128	11
+	.uleb128	10
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$484)
 	.db	14
-	.uleb128	12
+	.uleb128	11
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$485)
 	.db	14
-	.uleb128	13
+	.uleb128	12
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$486)
 	.db	14
-	.uleb128	14
+	.uleb128	13
 	.db	1
 	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$487)
 	.db	14
-	.uleb128	6
+	.uleb128	14
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$489)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$488)
 	.db	14
 	.uleb128	6
 	.db	1
-	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$498)
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$490)
+	.db	14
+	.uleb128	6
+	.db	1
+	.dw	0,(Sstm8s_clk$CLK_GetClockFreq$499)
 	.db	14
 	.uleb128	2
+	.db	0
 
 	.area .debug_frame (NOLOAD)
 	.dw	0

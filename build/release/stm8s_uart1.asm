@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_uart1
 	.optsdcc -mstm8
@@ -185,12 +185,12 @@ _UART1_Init:
 	jreq	00139$
 	ld	a, (0x18, sp)
 	sub	a, #0x0c
-	jrne	00339$
+	jrne	00388$
 	inc	a
 	.byte 0x21
-00339$:
+00388$:
 	clr	a
-00340$:
+00389$:
 	tnz	a
 	jrne	00139$
 	tnz	a
@@ -276,12 +276,12 @@ _UART1_Init:
 	ldw	(0x06, sp), x
 	ldw	x, (0x12, sp)
 	ld	a, #0x04
-00364$:
+00413$:
 	sllw	x
 	rlc	(0x07, sp)
 	rlc	(0x06, sp)
 	dec	a
-	jrne	00364$
+	jrne	00413$
 	ldw	(0x08, sp), x
 	pushw	x
 	ldw	x, (0x08, sp)
@@ -289,11 +289,11 @@ _UART1_Init:
 	ldw	x, (0x10, sp)
 	pushw	x
 	pushw	y
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
 	call	__divulong
 	addw	sp, #8
 	ldw	(0x03, sp), x
 	ldw	(0x01, sp), y
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
 	call	_CLK_GetClockFreq
 	pushw	x
 	pushw	y
@@ -311,13 +311,14 @@ _UART1_Init:
 	ldw	x, (0x10, sp)
 	pushw	x
 	pushw	y
+;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
 	call	__divulong
 	addw	sp, #8
-	ld	a, yh
 	ldw	(0x07, sp), x
+	rlwa	y
 	ld	(0x05, sp), a
+	rrwa	y
 	ld	a, yl
-;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
 	ldw	x, #0x5233
 	push	a
 	ld	a, (x)
@@ -343,11 +344,11 @@ _UART1_Init:
 	sbc	a, (0x0a, sp)
 	ld	xh, a
 	ld	a, #0x04
-00366$:
+00415$:
 	sllw	y
 	rlcw	x
 	dec	a
-	jrne	00366$
+	jrne	00415$
 	push	#0x64
 	push	#0x00
 	push	#0x00
@@ -526,35 +527,35 @@ _UART1_ITConfig:
 	ld	a, #0x01
 	exg	a, xl
 	tnz	a
-	jreq	00226$
-00225$:
+	jreq	00252$
+00251$:
 	exg	a, xl
 	sll	a
 	exg	a, xl
 	dec	a
-	jrne	00225$
-00226$:
+	jrne	00251$
+00252$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 227: if (uartreg == 0x01)
 	ld	a, xh
 	dec	a
-	jrne	00228$
+	jrne	00254$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00228$:
+00254$:
 	clr	(0x01, sp)
-00229$:
+00255$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 231: else if (uartreg == 0x02)
 	ld	a, xh
 	sub	a, #0x02
-	jrne	00231$
+	jrne	00257$
 	inc	a
 	ld	xh, a
-	jra	00232$
-00231$:
+	jra	00258$
+00257$:
 	clr	a
 	ld	xh, a
-00232$:
+00258$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 224: if (NewState != DISABLE)
 	tnz	(0x03, sp)
 	jreq	00114$
@@ -942,7 +943,6 @@ _UART1_ReceiveData8:
 ;	 function UART1_ReceiveData9
 ;	-----------------------------------------
 _UART1_ReceiveData9:
-	pushw	x
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 465: temp = (uint16_t)(((uint16_t)( (uint16_t)UART1->CR1 & (uint16_t)UART1_CR1_R8)) << 1);
 	ld	a, 0x5234
 	and	a, #0x80
@@ -950,17 +950,14 @@ _UART1_ReceiveData9:
 	clr	a
 	ld	xh, a
 	sllw	x
-	ldw	(0x01, sp), x
+	exgw	x, y
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 466: return (uint16_t)( (((uint16_t) UART1->DR) | temp ) & ((uint16_t)0x01FF));
 	ld	a, 0x5231
-	clrw	x
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	ld	xl, a
+	ld	a, yh
 	and	a, #0x01
 	ld	xh, a
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 467: }
-	addw	sp, #2
 	ret
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 474: void UART1_SendData8(uint8_t Data)
 ;	-----------------------------------------
@@ -1060,20 +1057,20 @@ _UART1_GetFlagStatus:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 573: assert_param(IS_UART1_FLAG_OK(UART1_FLAG));
 	ldw	y, x
 	cpw	x, #0x0101
-	jrne	00223$
+	jrne	00253$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00223$:
+00253$:
 	clr	(0x01, sp)
-00224$:
+00254$:
 	cpw	x, #0x0210
-	jrne	00226$
+	jrne	00256$
 	ld	a, #0x01
 	.byte 0x21
-00226$:
+00256$:
 	clr	a
-00227$:
+00257$:
 	cpw	x, #0x0080
 	jreq	00119$
 	cpw	x, #0x0040
@@ -1161,12 +1158,12 @@ _UART1_GetFlagStatus:
 _UART1_ClearFlag:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 648: assert_param(IS_UART1_CLEAR_FLAG_OK(UART1_FLAG));
 	cpw	x, #0x0020
-	jrne	00127$
+	jrne	00133$
 	ld	a, #0x01
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
+00134$:
 	tnz	a
 	jrne	00107$
 	cpw	x, #0x0210
@@ -1200,21 +1197,21 @@ _UART1_GetITStatus:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 684: assert_param(IS_UART1_GET_IT_OK(UART1_IT));
 	ldw	y, x
 	cpw	x, #0x0346
-	jrne	00217$
+	jrne	00247$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00217$:
+00247$:
 	clr	(0x01, sp)
-00218$:
+00248$:
 	cpw	x, #0x0100
-	jrne	00220$
+	jrne	00250$
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	.byte 0xc5
-00220$:
+00250$:
 	clr	(0x02, sp)
-00221$:
+00251$:
 	cpw	x, #0x0277
 	jreq	00122$
 	cpw	x, #0x0266
@@ -1247,12 +1244,12 @@ _UART1_GetITStatus:
 	ld	(0x04, sp), a
 	pop	a
 	tnz	a
-	jreq	00240$
-00239$:
+	jreq	00270$
+00269$:
 	sll	(0x03, sp)
 	dec	a
-	jrne	00239$
-00240$:
+	jrne	00269$
+00270$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 689: itmask1 = (uint8_t)((uint8_t)UART1_IT >> (uint8_t)4);
 	ld	a, xl
 	swap	a
@@ -1263,12 +1260,12 @@ _UART1_GetITStatus:
 	ld	(0x05, sp), a
 	pop	a
 	tnz	a
-	jreq	00242$
-00241$:
+	jreq	00272$
+00271$:
 	sll	(0x04, sp)
 	dec	a
-	jrne	00241$
-00242$:
+	jrne	00271$
+00272$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 695: if (UART1_IT == UART1_IT_PE)
 	ld	a, (0x02, sp)
 	jreq	00117$
@@ -1342,12 +1339,12 @@ _UART1_GetITStatus:
 _UART1_ClearITPendingBit:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 777: assert_param(IS_UART1_CLEAR_IT_OK(UART1_IT));
 	cpw	x, #0x0255
-	jrne	00127$
+	jrne	00133$
 	ld	a, #0x01
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
+00134$:
 	tnz	a
 	jrne	00107$
 	cpw	x, #0x0346

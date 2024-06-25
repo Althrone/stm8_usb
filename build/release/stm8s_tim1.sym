@@ -7,17 +7,17 @@ Symbol Table
     .__.ABS.                                                    =  000000 G
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
-  9 _TI1_Config                                                    0013C2 R
-  9 _TI2_Config                                                    0013FC R
-  9 _TI3_Config                                                    001436 R
-  9 _TI4_Config                                                    001474 R
+  9 _TI1_Config                                                    001394 R
+  9 _TI2_Config                                                    0013CE R
+  9 _TI3_Config                                                    001408 R
+  9 _TI4_Config                                                    001446 R
   9 _TIM1_ARRPreloadConfig                                         000C36 GR
   9 _TIM1_BDTRConfig                                               0004F4 GR
   9 _TIM1_CCPreloadControl                                         000C8A GR
   9 _TIM1_CCxCmd                                                   000F4D GR
   9 _TIM1_CCxNCmd                                                  000FFE GR
-  9 _TIM1_ClearFlag                                                00132B GR
-  9 _TIM1_ClearITPendingBit                                        0013AC GR
+  9 _TIM1_ClearFlag                                                0012FF GR
+  9 _TIM1_ClearITPendingBit                                        00137E GR
   9 _TIM1_Cmd                                                      000757 GR
   9 _TIM1_CounterModeConfig                                        000B6D GR
   9 _TIM1_CtrlPWMOutputs                                           000781 GR
@@ -32,13 +32,13 @@ Symbol Table
   9 _TIM1_ForcedOC4Config                                          000C11 GR
   9 _TIM1_GenerateEvent                                            000E04 GR
   9 _TIM1_GetCapture1                                              00123E GR
-  9 _TIM1_GetCapture2                                              001253 GR
-  9 _TIM1_GetCapture3                                              001268 GR
-  9 _TIM1_GetCapture4                                              00127D GR
-  9 _TIM1_GetCounter                                               001292 GR
-  9 _TIM1_GetFlagStatus                                            0012BE GR
-  9 _TIM1_GetITStatus                                              001356 GR
-  9 _TIM1_GetPrescaler                                             0012A8 GR
+  9 _TIM1_GetCapture2                                              00124C GR
+  9 _TIM1_GetCapture3                                              00125A GR
+  9 _TIM1_GetCapture4                                              001268 GR
+  9 _TIM1_GetCounter                                               001276 GR
+  9 _TIM1_GetFlagStatus                                            001292 GR
+  9 _TIM1_GetITStatus                                              00132A GR
+  9 _TIM1_GetPrescaler                                             001284 GR
   9 _TIM1_ICInit                                                   00058A GR
   9 _TIM1_ITConfig                                                 0007AB GR
   9 _TIM1_InternalClockConfig                                      0007EE GR
@@ -107,6 +107,6 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     48   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size   14AE   flags    0
+   9 CODE                                       size   1480   flags    0
    A CABS                                       size      0   flags    8
 
