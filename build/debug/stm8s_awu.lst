@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_awu
                                       6 	.optsdcc -mstm8
@@ -463,10 +463,10 @@
                                     454 	.area CABS (ABS)
                                     455 
                                     456 	.area .debug_line (NOLOAD)
-      000000 00 00 02 39            457 	.dw	0,Ldebug_line_end-Ldebug_line_start
+      000000 00 00 02 45            457 	.dw	0,Ldebug_line_end-Ldebug_line_start
       000004                        458 Ldebug_line_start:
       000004 00 02                  459 	.dw	2
-      000006 00 00 00 A8            460 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
+      000006 00 00 00 B4            460 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
       00000A 01                     461 	.db	1
       00000B 01                     462 	.db	1
       00000C FB                     463 	.db	-5
@@ -481,21 +481,23 @@
       000015 00                     472 	.db	0
       000016 00                     473 	.db	0
       000017 01                     474 	.db	1
-      000018 44 3A 5C 5C 53 6F 66   475 	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+      000018 44 3A 5C 5C 53 6F 66   475 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-             5C 5C 73 74 6D 38
-      000041 00                     476 	.db	0
-      000042 44 3A 5C 5C 53 6F 66   477 	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65 5C
+             5C 73 74 6D 38
+      000047 00                     476 	.db	0
+      000048 44 3A 5C 5C 53 6F 66   477 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-      000065 00                     478 	.db	0
-      000066 00                     479 	.db	0
-      000067 2E 2F 53 54 4D 38 53   480 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_awu.c"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65
+      000071 00                     478 	.db	0
+      000072 00                     479 	.db	0
+      000073 2E 2F 53 54 4D 38 53   480 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_awu.c"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -505,290 +507,290 @@
              72 69 76 65 72 2F 73
              72 63 2F 73 74 6D 38
              73 5F 61 77 75 2E 63
-      0000AD 00                     481 	.db	0
-      0000AE 00                     482 	.uleb128	0
-      0000AF 00                     483 	.uleb128	0
-      0000B0 00                     484 	.uleb128	0
-      0000B1 00                     485 	.db	0
-      0000B2                        486 Ldebug_line_stmt:
-      0000B2 00                     487 	.db	0
-      0000B3 05                     488 	.uleb128	5
-      0000B4 02                     489 	.db	2
-      0000B5 00 00r00r00            490 	.dw	0,(Sstm8s_awu$AWU_DeInit$0)
-      0000B9 03                     491 	.db	3
-      0000BA C8 00                  492 	.sleb128	72
-      0000BC 01                     493 	.db	1
-      0000BD 00                     494 	.db	0
-      0000BE 05                     495 	.uleb128	5
-      0000BF 02                     496 	.db	2
-      0000C0 00 00r00r00            497 	.dw	0,(Sstm8s_awu$AWU_DeInit$2)
-      0000C4 03                     498 	.db	3
-      0000C5 02                     499 	.sleb128	2
-      0000C6 01                     500 	.db	1
-      0000C7 00                     501 	.db	0
-      0000C8 05                     502 	.uleb128	5
-      0000C9 02                     503 	.db	2
-      0000CA 00 00r00r04            504 	.dw	0,(Sstm8s_awu$AWU_DeInit$3)
-      0000CE 03                     505 	.db	3
-      0000CF 01                     506 	.sleb128	1
-      0000D0 01                     507 	.db	1
-      0000D1 00                     508 	.db	0
-      0000D2 05                     509 	.uleb128	5
-      0000D3 02                     510 	.db	2
-      0000D4 00 00r00r08            511 	.dw	0,(Sstm8s_awu$AWU_DeInit$4)
-      0000D8 03                     512 	.db	3
-      0000D9 01                     513 	.sleb128	1
-      0000DA 01                     514 	.db	1
-      0000DB 00                     515 	.db	0
-      0000DC 05                     516 	.uleb128	5
-      0000DD 02                     517 	.db	2
-      0000DE 00 00r00r0C            518 	.dw	0,(Sstm8s_awu$AWU_DeInit$5)
-      0000E2 03                     519 	.db	3
-      0000E3 01                     520 	.sleb128	1
-      0000E4 01                     521 	.db	1
-      0000E5 09                     522 	.db	9
-      0000E6 00 01                  523 	.dw	1+Sstm8s_awu$AWU_DeInit$6-Sstm8s_awu$AWU_DeInit$5
-      0000E8 00                     524 	.db	0
-      0000E9 01                     525 	.uleb128	1
-      0000EA 01                     526 	.db	1
-      0000EB 00                     527 	.db	0
-      0000EC 05                     528 	.uleb128	5
-      0000ED 02                     529 	.db	2
-      0000EE 00 00r00r0D            530 	.dw	0,(Sstm8s_awu$AWU_Init$8)
-      0000F2 03                     531 	.db	3
-      0000F3 D7 00                  532 	.sleb128	87
-      0000F5 01                     533 	.db	1
-      0000F6 00                     534 	.db	0
-      0000F7 05                     535 	.uleb128	5
-      0000F8 02                     536 	.db	2
-      0000F9 00 00r00r0E            537 	.dw	0,(Sstm8s_awu$AWU_Init$11)
-      0000FD 03                     538 	.db	3
-      0000FE 03                     539 	.sleb128	3
-      0000FF 01                     540 	.db	1
-      000100 00                     541 	.db	0
-      000101 05                     542 	.uleb128	5
-      000102 02                     543 	.db	2
-      000103 00 00r00r75            544 	.dw	0,(Sstm8s_awu$AWU_Init$36)
-      000107 03                     545 	.db	3
-      000108 03                     546 	.sleb128	3
-      000109 01                     547 	.db	1
-      00010A 00                     548 	.db	0
-      00010B 05                     549 	.uleb128	5
-      00010C 02                     550 	.db	2
-      00010D 00 00r00r79            551 	.dw	0,(Sstm8s_awu$AWU_Init$37)
-      000111 03                     552 	.db	3
-      000112 03                     553 	.sleb128	3
-      000113 01                     554 	.db	1
-      000114 00                     555 	.db	0
-      000115 05                     556 	.uleb128	5
-      000116 02                     557 	.db	2
-      000117 00 00r00r81            558 	.dw	0,(Sstm8s_awu$AWU_Init$38)
-      00011B 03                     559 	.db	3
-      00011C 01                     560 	.sleb128	1
-      00011D 01                     561 	.db	1
-      00011E 00                     562 	.db	0
-      00011F 05                     563 	.uleb128	5
-      000120 02                     564 	.db	2
-      000121 00 00r00r94            565 	.dw	0,(Sstm8s_awu$AWU_Init$39)
-      000125 03                     566 	.db	3
-      000126 03                     567 	.sleb128	3
-      000127 01                     568 	.db	1
-      000128 00                     569 	.db	0
-      000129 05                     570 	.uleb128	5
-      00012A 02                     571 	.db	2
-      00012B 00 00r00r9C            572 	.dw	0,(Sstm8s_awu$AWU_Init$40)
-      00012F 03                     573 	.db	3
-      000130 01                     574 	.sleb128	1
-      000131 01                     575 	.db	1
-      000132 00                     576 	.db	0
-      000133 05                     577 	.uleb128	5
-      000134 02                     578 	.db	2
-      000135 00 00r00rAB            579 	.dw	0,(Sstm8s_awu$AWU_Init$41)
-      000139 03                     580 	.db	3
-      00013A 01                     581 	.sleb128	1
-      00013B 01                     582 	.db	1
-      00013C 09                     583 	.db	9
-      00013D 00 02                  584 	.dw	1+Sstm8s_awu$AWU_Init$43-Sstm8s_awu$AWU_Init$41
-      00013F 00                     585 	.db	0
-      000140 01                     586 	.uleb128	1
-      000141 01                     587 	.db	1
-      000142 00                     588 	.db	0
-      000143 05                     589 	.uleb128	5
-      000144 02                     590 	.db	2
-      000145 00 00r00rAD            591 	.dw	0,(Sstm8s_awu$AWU_Cmd$45)
-      000149 03                     592 	.db	3
-      00014A EF 00                  593 	.sleb128	111
-      00014C 01                     594 	.db	1
-      00014D 00                     595 	.db	0
-      00014E 05                     596 	.uleb128	5
-      00014F 02                     597 	.db	2
-      000150 00 00r00rB0            598 	.dw	0,(Sstm8s_awu$AWU_Cmd$48)
-      000154 03                     599 	.db	3
-      000155 05                     600 	.sleb128	5
-      000156 01                     601 	.db	1
-      000157 00                     602 	.db	0
-      000158 05                     603 	.uleb128	5
-      000159 02                     604 	.db	2
-      00015A 00 00r00rB3            605 	.dw	0,(Sstm8s_awu$AWU_Cmd$49)
-      00015E 03                     606 	.db	3
-      00015F 7D                     607 	.sleb128	-3
-      000160 01                     608 	.db	1
-      000161 00                     609 	.db	0
-      000162 05                     610 	.uleb128	5
-      000163 02                     611 	.db	2
-      000164 00 00r00rB7            612 	.dw	0,(Sstm8s_awu$AWU_Cmd$51)
-      000168 03                     613 	.db	3
-      000169 03                     614 	.sleb128	3
-      00016A 01                     615 	.db	1
-      00016B 00                     616 	.db	0
-      00016C 05                     617 	.uleb128	5
-      00016D 02                     618 	.db	2
-      00016E 00 00r00rBE            619 	.dw	0,(Sstm8s_awu$AWU_Cmd$54)
-      000172 03                     620 	.db	3
-      000173 05                     621 	.sleb128	5
-      000174 01                     622 	.db	1
-      000175 00                     623 	.db	0
-      000176 05                     624 	.uleb128	5
-      000177 02                     625 	.db	2
-      000178 00 00r00rC3            626 	.dw	0,(Sstm8s_awu$AWU_Cmd$56)
-      00017C 03                     627 	.db	3
-      00017D 02                     628 	.sleb128	2
-      00017E 01                     629 	.db	1
-      00017F 09                     630 	.db	9
-      000180 00 02                  631 	.dw	1+Sstm8s_awu$AWU_Cmd$58-Sstm8s_awu$AWU_Cmd$56
-      000182 00                     632 	.db	0
-      000183 01                     633 	.uleb128	1
-      000184 01                     634 	.db	1
-      000185 00                     635 	.db	0
-      000186 05                     636 	.uleb128	5
-      000187 02                     637 	.db	2
-      000188 00 00r00rC5            638 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$60)
-      00018C 03                     639 	.db	3
-      00018D 8A 01                  640 	.sleb128	138
-      00018F 01                     641 	.db	1
-      000190 00                     642 	.db	0
-      000191 05                     643 	.uleb128	5
-      000192 02                     644 	.db	2
-      000193 00 00r00rC7            645 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$63)
-      000197 03                     646 	.db	3
-      000198 06                     647 	.sleb128	6
-      000199 01                     648 	.db	1
-      00019A 00                     649 	.db	0
-      00019B 05                     650 	.uleb128	5
-      00019C 02                     651 	.db	2
-      00019D 00 00r00rF0            652 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$68)
-      0001A1 03                     653 	.db	3
-      0001A2 02                     654 	.sleb128	2
-      0001A3 01                     655 	.db	1
-      0001A4 00                     656 	.db	0
-      0001A5 05                     657 	.uleb128	5
-      0001A6 02                     658 	.db	2
-      0001A7 00 00r01r01            659 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$75)
-      0001AB 03                     660 	.db	3
-      0001AC 04                     661 	.sleb128	4
-      0001AD 01                     662 	.db	1
-      0001AE 00                     663 	.db	0
-      0001AF 05                     664 	.uleb128	5
-      0001B0 02                     665 	.db	2
-      0001B1 00 00r01r05            666 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$76)
-      0001B5 03                     667 	.db	3
-      0001B6 02                     668 	.sleb128	2
-      0001B7 01                     669 	.db	1
-      0001B8 00                     670 	.db	0
-      0001B9 05                     671 	.uleb128	5
-      0001BA 02                     672 	.db	2
-      0001BB 00 00r01r1A            673 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$78)
-      0001BF 03                     674 	.db	3
-      0001C0 02                     675 	.sleb128	2
-      0001C1 01                     676 	.db	1
-      0001C2 00                     677 	.db	0
-      0001C3 05                     678 	.uleb128	5
-      0001C4 02                     679 	.db	2
-      0001C5 00 00r01r21            680 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$80)
-      0001C9 03                     681 	.db	3
-      0001CA 7E                     682 	.sleb128	-2
-      0001CB 01                     683 	.db	1
-      0001CC 00                     684 	.db	0
-      0001CD 05                     685 	.uleb128	5
-      0001CE 02                     686 	.db	2
-      0001CF 00 00r01r27            687 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$82)
-      0001D3 03                     688 	.db	3
-      0001D4 02                     689 	.sleb128	2
-      0001D5 01                     690 	.db	1
-      0001D6 00                     691 	.db	0
-      0001D7 05                     692 	.uleb128	5
-      0001D8 02                     693 	.db	2
-      0001D9 00 00r01r2E            694 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$85)
-      0001DD 03                     695 	.db	3
-      0001DE 04                     696 	.sleb128	4
-      0001DF 01                     697 	.db	1
-      0001E0 00                     698 	.db	0
-      0001E1 05                     699 	.uleb128	5
-      0001E2 02                     700 	.db	2
-      0001E3 00 00r01r32            701 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$87)
-      0001E7 03                     702 	.db	3
-      0001E8 02                     703 	.sleb128	2
-      0001E9 01                     704 	.db	1
-      0001EA 00                     705 	.db	0
-      0001EB 05                     706 	.uleb128	5
-      0001EC 02                     707 	.db	2
-      0001ED 00 00r01r37            708 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$90)
-      0001F1 03                     709 	.db	3
-      0001F2 07                     710 	.sleb128	7
-      0001F3 01                     711 	.db	1
-      0001F4 00                     712 	.db	0
-      0001F5 05                     713 	.uleb128	5
-      0001F6 02                     714 	.db	2
-      0001F7 00 00r01r37            715 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$92)
-      0001FB 03                     716 	.db	3
-      0001FC 03                     717 	.sleb128	3
-      0001FD 01                     718 	.db	1
-      0001FE 00                     719 	.db	0
-      0001FF 05                     720 	.uleb128	5
-      000200 02                     721 	.db	2
-      000201 00 00r01r3B            722 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$93)
-      000205 03                     723 	.db	3
-      000206 03                     724 	.sleb128	3
-      000207 01                     725 	.db	1
-      000208 00                     726 	.db	0
-      000209 05                     727 	.uleb128	5
-      00020A 02                     728 	.db	2
-      00020B 00 00r01r3F            729 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$94)
-      00020F 03                     730 	.db	3
-      000210 01                     731 	.sleb128	1
-      000211 01                     732 	.db	1
-      000212 09                     733 	.db	9
-      000213 00 01                  734 	.dw	1+Sstm8s_awu$AWU_IdleModeEnable$95-Sstm8s_awu$AWU_IdleModeEnable$94
-      000215 00                     735 	.db	0
-      000216 01                     736 	.uleb128	1
-      000217 01                     737 	.db	1
-      000218 00                     738 	.db	0
-      000219 05                     739 	.uleb128	5
-      00021A 02                     740 	.db	2
-      00021B 00 00r01r40            741 	.dw	0,(Sstm8s_awu$AWU_GetFlagStatus$97)
-      00021F 03                     742 	.db	3
-      000220 B6 01                  743 	.sleb128	182
-      000222 01                     744 	.db	1
-      000223 00                     745 	.db	0
-      000224 05                     746 	.uleb128	5
-      000225 02                     747 	.db	2
-      000226 00 00r01r40            748 	.dw	0,(Sstm8s_awu$AWU_GetFlagStatus$99)
-      00022A 03                     749 	.db	3
-      00022B 02                     750 	.sleb128	2
-      00022C 01                     751 	.db	1
-      00022D 00                     752 	.db	0
-      00022E 05                     753 	.uleb128	5
-      00022F 02                     754 	.db	2
-      000230 00 00r01r4A            755 	.dw	0,(Sstm8s_awu$AWU_GetFlagStatus$100)
-      000234 03                     756 	.db	3
-      000235 01                     757 	.sleb128	1
-      000236 01                     758 	.db	1
-      000237 09                     759 	.db	9
-      000238 00 01                  760 	.dw	1+Sstm8s_awu$AWU_GetFlagStatus$101-Sstm8s_awu$AWU_GetFlagStatus$100
-      00023A 00                     761 	.db	0
-      00023B 01                     762 	.uleb128	1
-      00023C 01                     763 	.db	1
-      00023D                        764 Ldebug_line_end:
+      0000B9 00                     481 	.db	0
+      0000BA 00                     482 	.uleb128	0
+      0000BB 00                     483 	.uleb128	0
+      0000BC 00                     484 	.uleb128	0
+      0000BD 00                     485 	.db	0
+      0000BE                        486 Ldebug_line_stmt:
+      0000BE 00                     487 	.db	0
+      0000BF 05                     488 	.uleb128	5
+      0000C0 02                     489 	.db	2
+      0000C1 00 00r00r00            490 	.dw	0,(Sstm8s_awu$AWU_DeInit$0)
+      0000C5 03                     491 	.db	3
+      0000C6 C8 00                  492 	.sleb128	72
+      0000C8 01                     493 	.db	1
+      0000C9 00                     494 	.db	0
+      0000CA 05                     495 	.uleb128	5
+      0000CB 02                     496 	.db	2
+      0000CC 00 00r00r00            497 	.dw	0,(Sstm8s_awu$AWU_DeInit$2)
+      0000D0 03                     498 	.db	3
+      0000D1 02                     499 	.sleb128	2
+      0000D2 01                     500 	.db	1
+      0000D3 00                     501 	.db	0
+      0000D4 05                     502 	.uleb128	5
+      0000D5 02                     503 	.db	2
+      0000D6 00 00r00r04            504 	.dw	0,(Sstm8s_awu$AWU_DeInit$3)
+      0000DA 03                     505 	.db	3
+      0000DB 01                     506 	.sleb128	1
+      0000DC 01                     507 	.db	1
+      0000DD 00                     508 	.db	0
+      0000DE 05                     509 	.uleb128	5
+      0000DF 02                     510 	.db	2
+      0000E0 00 00r00r08            511 	.dw	0,(Sstm8s_awu$AWU_DeInit$4)
+      0000E4 03                     512 	.db	3
+      0000E5 01                     513 	.sleb128	1
+      0000E6 01                     514 	.db	1
+      0000E7 00                     515 	.db	0
+      0000E8 05                     516 	.uleb128	5
+      0000E9 02                     517 	.db	2
+      0000EA 00 00r00r0C            518 	.dw	0,(Sstm8s_awu$AWU_DeInit$5)
+      0000EE 03                     519 	.db	3
+      0000EF 01                     520 	.sleb128	1
+      0000F0 01                     521 	.db	1
+      0000F1 09                     522 	.db	9
+      0000F2 00 01                  523 	.dw	1+Sstm8s_awu$AWU_DeInit$6-Sstm8s_awu$AWU_DeInit$5
+      0000F4 00                     524 	.db	0
+      0000F5 01                     525 	.uleb128	1
+      0000F6 01                     526 	.db	1
+      0000F7 00                     527 	.db	0
+      0000F8 05                     528 	.uleb128	5
+      0000F9 02                     529 	.db	2
+      0000FA 00 00r00r0D            530 	.dw	0,(Sstm8s_awu$AWU_Init$8)
+      0000FE 03                     531 	.db	3
+      0000FF D7 00                  532 	.sleb128	87
+      000101 01                     533 	.db	1
+      000102 00                     534 	.db	0
+      000103 05                     535 	.uleb128	5
+      000104 02                     536 	.db	2
+      000105 00 00r00r0E            537 	.dw	0,(Sstm8s_awu$AWU_Init$11)
+      000109 03                     538 	.db	3
+      00010A 03                     539 	.sleb128	3
+      00010B 01                     540 	.db	1
+      00010C 00                     541 	.db	0
+      00010D 05                     542 	.uleb128	5
+      00010E 02                     543 	.db	2
+      00010F 00 00r00r75            544 	.dw	0,(Sstm8s_awu$AWU_Init$36)
+      000113 03                     545 	.db	3
+      000114 03                     546 	.sleb128	3
+      000115 01                     547 	.db	1
+      000116 00                     548 	.db	0
+      000117 05                     549 	.uleb128	5
+      000118 02                     550 	.db	2
+      000119 00 00r00r79            551 	.dw	0,(Sstm8s_awu$AWU_Init$37)
+      00011D 03                     552 	.db	3
+      00011E 03                     553 	.sleb128	3
+      00011F 01                     554 	.db	1
+      000120 00                     555 	.db	0
+      000121 05                     556 	.uleb128	5
+      000122 02                     557 	.db	2
+      000123 00 00r00r81            558 	.dw	0,(Sstm8s_awu$AWU_Init$38)
+      000127 03                     559 	.db	3
+      000128 01                     560 	.sleb128	1
+      000129 01                     561 	.db	1
+      00012A 00                     562 	.db	0
+      00012B 05                     563 	.uleb128	5
+      00012C 02                     564 	.db	2
+      00012D 00 00r00r94            565 	.dw	0,(Sstm8s_awu$AWU_Init$39)
+      000131 03                     566 	.db	3
+      000132 03                     567 	.sleb128	3
+      000133 01                     568 	.db	1
+      000134 00                     569 	.db	0
+      000135 05                     570 	.uleb128	5
+      000136 02                     571 	.db	2
+      000137 00 00r00r9C            572 	.dw	0,(Sstm8s_awu$AWU_Init$40)
+      00013B 03                     573 	.db	3
+      00013C 01                     574 	.sleb128	1
+      00013D 01                     575 	.db	1
+      00013E 00                     576 	.db	0
+      00013F 05                     577 	.uleb128	5
+      000140 02                     578 	.db	2
+      000141 00 00r00rAB            579 	.dw	0,(Sstm8s_awu$AWU_Init$41)
+      000145 03                     580 	.db	3
+      000146 01                     581 	.sleb128	1
+      000147 01                     582 	.db	1
+      000148 09                     583 	.db	9
+      000149 00 02                  584 	.dw	1+Sstm8s_awu$AWU_Init$43-Sstm8s_awu$AWU_Init$41
+      00014B 00                     585 	.db	0
+      00014C 01                     586 	.uleb128	1
+      00014D 01                     587 	.db	1
+      00014E 00                     588 	.db	0
+      00014F 05                     589 	.uleb128	5
+      000150 02                     590 	.db	2
+      000151 00 00r00rAD            591 	.dw	0,(Sstm8s_awu$AWU_Cmd$45)
+      000155 03                     592 	.db	3
+      000156 EF 00                  593 	.sleb128	111
+      000158 01                     594 	.db	1
+      000159 00                     595 	.db	0
+      00015A 05                     596 	.uleb128	5
+      00015B 02                     597 	.db	2
+      00015C 00 00r00rB0            598 	.dw	0,(Sstm8s_awu$AWU_Cmd$48)
+      000160 03                     599 	.db	3
+      000161 05                     600 	.sleb128	5
+      000162 01                     601 	.db	1
+      000163 00                     602 	.db	0
+      000164 05                     603 	.uleb128	5
+      000165 02                     604 	.db	2
+      000166 00 00r00rB3            605 	.dw	0,(Sstm8s_awu$AWU_Cmd$49)
+      00016A 03                     606 	.db	3
+      00016B 7D                     607 	.sleb128	-3
+      00016C 01                     608 	.db	1
+      00016D 00                     609 	.db	0
+      00016E 05                     610 	.uleb128	5
+      00016F 02                     611 	.db	2
+      000170 00 00r00rB7            612 	.dw	0,(Sstm8s_awu$AWU_Cmd$51)
+      000174 03                     613 	.db	3
+      000175 03                     614 	.sleb128	3
+      000176 01                     615 	.db	1
+      000177 00                     616 	.db	0
+      000178 05                     617 	.uleb128	5
+      000179 02                     618 	.db	2
+      00017A 00 00r00rBE            619 	.dw	0,(Sstm8s_awu$AWU_Cmd$54)
+      00017E 03                     620 	.db	3
+      00017F 05                     621 	.sleb128	5
+      000180 01                     622 	.db	1
+      000181 00                     623 	.db	0
+      000182 05                     624 	.uleb128	5
+      000183 02                     625 	.db	2
+      000184 00 00r00rC3            626 	.dw	0,(Sstm8s_awu$AWU_Cmd$56)
+      000188 03                     627 	.db	3
+      000189 02                     628 	.sleb128	2
+      00018A 01                     629 	.db	1
+      00018B 09                     630 	.db	9
+      00018C 00 02                  631 	.dw	1+Sstm8s_awu$AWU_Cmd$58-Sstm8s_awu$AWU_Cmd$56
+      00018E 00                     632 	.db	0
+      00018F 01                     633 	.uleb128	1
+      000190 01                     634 	.db	1
+      000191 00                     635 	.db	0
+      000192 05                     636 	.uleb128	5
+      000193 02                     637 	.db	2
+      000194 00 00r00rC5            638 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$60)
+      000198 03                     639 	.db	3
+      000199 8A 01                  640 	.sleb128	138
+      00019B 01                     641 	.db	1
+      00019C 00                     642 	.db	0
+      00019D 05                     643 	.uleb128	5
+      00019E 02                     644 	.db	2
+      00019F 00 00r00rC7            645 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$63)
+      0001A3 03                     646 	.db	3
+      0001A4 06                     647 	.sleb128	6
+      0001A5 01                     648 	.db	1
+      0001A6 00                     649 	.db	0
+      0001A7 05                     650 	.uleb128	5
+      0001A8 02                     651 	.db	2
+      0001A9 00 00r00rF0            652 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$68)
+      0001AD 03                     653 	.db	3
+      0001AE 02                     654 	.sleb128	2
+      0001AF 01                     655 	.db	1
+      0001B0 00                     656 	.db	0
+      0001B1 05                     657 	.uleb128	5
+      0001B2 02                     658 	.db	2
+      0001B3 00 00r01r01            659 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$75)
+      0001B7 03                     660 	.db	3
+      0001B8 04                     661 	.sleb128	4
+      0001B9 01                     662 	.db	1
+      0001BA 00                     663 	.db	0
+      0001BB 05                     664 	.uleb128	5
+      0001BC 02                     665 	.db	2
+      0001BD 00 00r01r05            666 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$76)
+      0001C1 03                     667 	.db	3
+      0001C2 02                     668 	.sleb128	2
+      0001C3 01                     669 	.db	1
+      0001C4 00                     670 	.db	0
+      0001C5 05                     671 	.uleb128	5
+      0001C6 02                     672 	.db	2
+      0001C7 00 00r01r1A            673 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$78)
+      0001CB 03                     674 	.db	3
+      0001CC 02                     675 	.sleb128	2
+      0001CD 01                     676 	.db	1
+      0001CE 00                     677 	.db	0
+      0001CF 05                     678 	.uleb128	5
+      0001D0 02                     679 	.db	2
+      0001D1 00 00r01r21            680 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$80)
+      0001D5 03                     681 	.db	3
+      0001D6 7E                     682 	.sleb128	-2
+      0001D7 01                     683 	.db	1
+      0001D8 00                     684 	.db	0
+      0001D9 05                     685 	.uleb128	5
+      0001DA 02                     686 	.db	2
+      0001DB 00 00r01r27            687 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$82)
+      0001DF 03                     688 	.db	3
+      0001E0 02                     689 	.sleb128	2
+      0001E1 01                     690 	.db	1
+      0001E2 00                     691 	.db	0
+      0001E3 05                     692 	.uleb128	5
+      0001E4 02                     693 	.db	2
+      0001E5 00 00r01r2E            694 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$85)
+      0001E9 03                     695 	.db	3
+      0001EA 04                     696 	.sleb128	4
+      0001EB 01                     697 	.db	1
+      0001EC 00                     698 	.db	0
+      0001ED 05                     699 	.uleb128	5
+      0001EE 02                     700 	.db	2
+      0001EF 00 00r01r32            701 	.dw	0,(Sstm8s_awu$AWU_LSICalibrationConfig$87)
+      0001F3 03                     702 	.db	3
+      0001F4 02                     703 	.sleb128	2
+      0001F5 01                     704 	.db	1
+      0001F6 00                     705 	.db	0
+      0001F7 05                     706 	.uleb128	5
+      0001F8 02                     707 	.db	2
+      0001F9 00 00r01r37            708 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$90)
+      0001FD 03                     709 	.db	3
+      0001FE 07                     710 	.sleb128	7
+      0001FF 01                     711 	.db	1
+      000200 00                     712 	.db	0
+      000201 05                     713 	.uleb128	5
+      000202 02                     714 	.db	2
+      000203 00 00r01r37            715 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$92)
+      000207 03                     716 	.db	3
+      000208 03                     717 	.sleb128	3
+      000209 01                     718 	.db	1
+      00020A 00                     719 	.db	0
+      00020B 05                     720 	.uleb128	5
+      00020C 02                     721 	.db	2
+      00020D 00 00r01r3B            722 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$93)
+      000211 03                     723 	.db	3
+      000212 03                     724 	.sleb128	3
+      000213 01                     725 	.db	1
+      000214 00                     726 	.db	0
+      000215 05                     727 	.uleb128	5
+      000216 02                     728 	.db	2
+      000217 00 00r01r3F            729 	.dw	0,(Sstm8s_awu$AWU_IdleModeEnable$94)
+      00021B 03                     730 	.db	3
+      00021C 01                     731 	.sleb128	1
+      00021D 01                     732 	.db	1
+      00021E 09                     733 	.db	9
+      00021F 00 01                  734 	.dw	1+Sstm8s_awu$AWU_IdleModeEnable$95-Sstm8s_awu$AWU_IdleModeEnable$94
+      000221 00                     735 	.db	0
+      000222 01                     736 	.uleb128	1
+      000223 01                     737 	.db	1
+      000224 00                     738 	.db	0
+      000225 05                     739 	.uleb128	5
+      000226 02                     740 	.db	2
+      000227 00 00r01r40            741 	.dw	0,(Sstm8s_awu$AWU_GetFlagStatus$97)
+      00022B 03                     742 	.db	3
+      00022C B6 01                  743 	.sleb128	182
+      00022E 01                     744 	.db	1
+      00022F 00                     745 	.db	0
+      000230 05                     746 	.uleb128	5
+      000231 02                     747 	.db	2
+      000232 00 00r01r40            748 	.dw	0,(Sstm8s_awu$AWU_GetFlagStatus$99)
+      000236 03                     749 	.db	3
+      000237 02                     750 	.sleb128	2
+      000238 01                     751 	.db	1
+      000239 00                     752 	.db	0
+      00023A 05                     753 	.uleb128	5
+      00023B 02                     754 	.db	2
+      00023C 00 00r01r4A            755 	.dw	0,(Sstm8s_awu$AWU_GetFlagStatus$100)
+      000240 03                     756 	.db	3
+      000241 01                     757 	.sleb128	1
+      000242 01                     758 	.db	1
+      000243 09                     759 	.db	9
+      000244 00 01                  760 	.dw	1+Sstm8s_awu$AWU_GetFlagStatus$101-Sstm8s_awu$AWU_GetFlagStatus$100
+      000246 00                     761 	.db	0
+      000247 01                     762 	.uleb128	1
+      000248 01                     763 	.db	1
+      000249                        764 Ldebug_line_end:
                                     765 
                                     766 	.area .debug_loc (NOLOAD)
       000000                        767 Ldebug_loc_start:
@@ -1222,10 +1224,10 @@
       000052 00                    1186 	.db	0
       000053 00 00r00r00           1187 	.dw	0,(Ldebug_line_start+-4)
       000057 01                    1188 	.db	1
-      000058 53 44 43 43 20 76 65  1189 	.ascii "SDCC version 4.3.0 #14184"
+      000058 53 44 43 43 20 76 65  1189 	.ascii "SDCC version 4.4.0 #14620"
              72 73 69 6F 6E 20 34
-             2E 33 2E 30 20 23 31
-             34 31 38 34
+             2E 34 2E 30 20 23 31
+             34 36 32 30
       000071 00                    1190 	.db	0
       000072 02                    1191 	.uleb128	2
       000073 41 57 55 5F 44 65 49  1192 	.ascii "AWU_DeInit"

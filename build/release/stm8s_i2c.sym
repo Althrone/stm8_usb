@@ -9,17 +9,17 @@ Symbol Table
     .__.H$L.                                                    =  000001 L
   9 _I2C_AcknowledgeConfig                                         0002D9 GR
   9 _I2C_CheckEvent                                                000400 GR
-  9 _I2C_ClearFlag                                                 00056E GR
-  9 _I2C_ClearITPendingBit                                         000622 GR
+  9 _I2C_ClearFlag                                                 00055D GR
+  9 _I2C_ClearITPendingBit                                         000615 GR
   9 _I2C_Cmd                                                       0001DD GR
   9 _I2C_DeInit                                                    000000 GR
   9 _I2C_FastModeDutyCycleConfig                                   000387 GR
   9 _I2C_GeneralCallCmd                                            000207 GR
   9 _I2C_GenerateSTART                                             000231 GR
   9 _I2C_GenerateSTOP                                              00025B GR
-  9 _I2C_GetFlagStatus                                             0004D7 GR
-  9 _I2C_GetITStatus                                               00058E GR
-  9 _I2C_GetLastEvent                                              0004AE GR
+  9 _I2C_GetFlagStatus                                             0004C6 GR
+  9 _I2C_GetITStatus                                               00057D GR
+  9 _I2C_GetLastEvent                                              0004A4 GR
   9 _I2C_ITConfig                                                  000329 GR
   9 _I2C_Init                                                      000025 GR
   9 _I2C_ReceiveData                                               0003C0 GR
@@ -48,6 +48,6 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     47   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size    653   flags    0
+   9 CODE                                       size    646   flags    0
    A CABS                                       size      0   flags    8
 

@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_clk
 	.optsdcc -mstm8
@@ -377,12 +377,12 @@ _CLK_PeripheralClockConfig:
 	jreq	00118$
 	ld	a, (0x03, sp)
 	sub	a, #0x03
-	jrne	00260$
+	jrne	00298$
 	inc	a
 	.byte 0x21
-00260$:
+00298$:
 	clr	a
-00261$:
+00299$:
 	tnz	a
 	jrne	00118$
 	tnz	a
@@ -391,25 +391,25 @@ _CLK_PeripheralClockConfig:
 	jrne	00118$
 	ld	a, (0x03, sp)
 	sub	a, #0x04
-	jrne	00266$
+	jrne	00304$
 	inc	a
 	ld	xl, a
-	jra	00267$
-00266$:
+	jra	00305$
+00304$:
 	clr	a
 	ld	xl, a
-00267$:
+00305$:
 	ld	a, xl
 	tnz	a
 	jrne	00118$
 	ld	a, (0x03, sp)
 	sub	a, #0x05
-	jrne	00270$
+	jrne	00308$
 	inc	a
 	.byte 0x21
-00270$:
+00308$:
 	clr	a
-00271$:
+00309$:
 	tnz	a
 	jrne	00118$
 	tnz	a
@@ -447,12 +447,12 @@ _CLK_PeripheralClockConfig:
 	ld	(0x02, sp), a
 	pop	a
 	tnz	a
-	jreq	00291$
-00290$:
+	jreq	00329$
+00328$:
 	sll	(0x01, sp)
 	dec	a
-	jrne	00290$
-00291$:
+	jrne	00328$
+00329$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 279: CLK->PCKENR1 &= (uint8_t)(~(uint8_t)(((uint8_t)1 << ((uint8_t)CLK_Peripheral & (uint8_t)0x0F))));
 	ld	a, (0x01, sp)
 	cpl	a
@@ -809,25 +809,25 @@ _CLK_ITConfig:
 00115$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 463: assert_param(IS_CLK_IT_OK(CLK_IT));
 	cp	a, #0x0c
-	jrne	00172$
+	jrne	00190$
 	exg	a, xl
 	ld	a, #0x01
 	exg	a, xl
-	jra	00173$
-00172$:
+	jra	00191$
+00190$:
 	exg	a, xl
 	clr	a
 	exg	a, xl
-00173$:
+00191$:
 	sub	a, #0x1c
-	jrne	00175$
+	jrne	00193$
 	inc	a
 	ld	xh, a
-	jra	00176$
-00175$:
+	jra	00194$
+00193$:
 	clr	a
 	ld	xh, a
-00176$:
+00194$:
 	ld	a, xl
 	tnz	a
 	jrne	00120$
@@ -1058,18 +1058,17 @@ _CLK_GetClockFreq:
 	ld	a, (_HSIDivFactor+0, x)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 583: clockfrequency = HSI_VALUE / presc;
 	clrw	x
-	ld	xl, a
-	clrw	y
+	clr	(0x01, sp)
+	push	a
 	pushw	x
-	pushw	y
+	clr	a
+	push	a
 	push	#0x00
 	push	#0x24
 	push	#0xf4
 	push	#0x00
 	call	__divulong
 	addw	sp, #8
-	exgw	x, y
-	ldw	(0x03, sp), y
 	jra	00106$
 00105$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 585: else if ( clocksource == CLK_SOURCE_LSI)
@@ -1078,19 +1077,14 @@ _CLK_GetClockFreq:
 	jrne	00102$
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 587: clockfrequency = LSI_VALUE;
 	ldw	x, #0xf400
-	ldw	(0x03, sp), x
-	clrw	x
-	incw	x
+	ldw	y, #0x0001
 	jra	00106$
 00102$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 591: clockfrequency = HSE_VALUE;
 	ldw	x, #0x1b00
-	ldw	(0x03, sp), x
-	ldw	x, #0x00b7
+	ldw	y, #0x00b7
 00106$:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 594: return((uint32_t)clockfrequency);
-	exgw	x, y
-	ldw	x, (0x03, sp)
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 595: }
 	addw	sp, #4
 	ret
@@ -1242,12 +1236,12 @@ _CLK_GetITStatus:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 692: assert_param(IS_CLK_IT_OK(CLK_IT));
 	ld	(0x01, sp), a
 	sub	a, #0x1c
-	jrne	00143$
+	jrne	00153$
 	inc	a
 	.byte 0x21
-00143$:
+00153$:
 	clr	a
-00144$:
+00154$:
 	push	a
 	ld	a, (0x02, sp)
 	cp	a, #0x0c
@@ -1304,12 +1298,12 @@ _CLK_ClearITPendingBit:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_clk.c: 732: assert_param(IS_CLK_IT_OK(CLK_IT));
 	ld	xl, a
 	sub	a, #0x0c
-	jrne	00127$
+	jrne	00133$
 	inc	a
 	.byte 0x21
-00127$:
+00133$:
 	clr	a
-00128$:
+00134$:
 	tnz	a
 	jrne	00107$
 	push	a

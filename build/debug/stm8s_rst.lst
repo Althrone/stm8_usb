@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_rst
                                       6 	.optsdcc -mstm8
@@ -181,10 +181,10 @@
                                     172 	.area CABS (ABS)
                                     173 
                                     174 	.area .debug_line (NOLOAD)
-      000000 00 00 01 0B            175 	.dw	0,Ldebug_line_end-Ldebug_line_start
+      000000 00 00 01 17            175 	.dw	0,Ldebug_line_end-Ldebug_line_start
       000004                        176 Ldebug_line_start:
       000004 00 02                  177 	.dw	2
-      000006 00 00 00 A8            178 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
+      000006 00 00 00 B4            178 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
       00000A 01                     179 	.db	1
       00000B 01                     180 	.db	1
       00000C FB                     181 	.db	-5
@@ -199,21 +199,23 @@
       000015 00                     190 	.db	0
       000016 00                     191 	.db	0
       000017 01                     192 	.db	1
-      000018 44 3A 5C 5C 53 6F 66   193 	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+      000018 44 3A 5C 5C 53 6F 66   193 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-             5C 5C 73 74 6D 38
-      000041 00                     194 	.db	0
-      000042 44 3A 5C 5C 53 6F 66   195 	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65 5C
+             5C 73 74 6D 38
+      000047 00                     194 	.db	0
+      000048 44 3A 5C 5C 53 6F 66   195 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-      000065 00                     196 	.db	0
-      000066 00                     197 	.db	0
-      000067 2E 2F 53 54 4D 38 53   198 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_rst.c"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65
+      000071 00                     196 	.db	0
+      000072 00                     197 	.db	0
+      000073 2E 2F 53 54 4D 38 53   198 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_rst.c"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -223,79 +225,79 @@
              72 69 76 65 72 2F 73
              72 63 2F 73 74 6D 38
              73 5F 72 73 74 2E 63
-      0000AD 00                     199 	.db	0
-      0000AE 00                     200 	.uleb128	0
-      0000AF 00                     201 	.uleb128	0
-      0000B0 00                     202 	.uleb128	0
-      0000B1 00                     203 	.db	0
-      0000B2                        204 Ldebug_line_stmt:
-      0000B2 00                     205 	.db	0
-      0000B3 05                     206 	.uleb128	5
-      0000B4 02                     207 	.db	2
-      0000B5 00 00r00r00            208 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$0)
-      0000B9 03                     209 	.db	3
-      0000BA 35                     210 	.sleb128	53
-      0000BB 01                     211 	.db	1
-      0000BC 00                     212 	.db	0
-      0000BD 05                     213 	.uleb128	5
-      0000BE 02                     214 	.db	2
-      0000BF 00 00r00r01            215 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$3)
-      0000C3 03                     216 	.db	3
-      0000C4 03                     217 	.sleb128	3
-      0000C5 01                     218 	.db	1
-      0000C6 00                     219 	.db	0
-      0000C7 05                     220 	.uleb128	5
-      0000C8 02                     221 	.db	2
-      0000C9 00 00r00r23            222 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$15)
-      0000CD 03                     223 	.db	3
-      0000CE 03                     224 	.sleb128	3
-      0000CF 01                     225 	.db	1
-      0000D0 00                     226 	.db	0
-      0000D1 05                     227 	.uleb128	5
-      0000D2 02                     228 	.db	2
-      0000D3 00 00r00r32            229 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$18)
-      0000D7 03                     230 	.db	3
-      0000D8 01                     231 	.sleb128	1
-      0000D9 01                     232 	.db	1
-      0000DA 09                     233 	.db	9
-      0000DB 00 03                  234 	.dw	1+Sstm8s_rst$RST_GetFlagStatus$20-Sstm8s_rst$RST_GetFlagStatus$18
-      0000DD 00                     235 	.db	0
-      0000DE 01                     236 	.uleb128	1
-      0000DF 01                     237 	.db	1
-      0000E0 00                     238 	.db	0
-      0000E1 05                     239 	.uleb128	5
-      0000E2 02                     240 	.db	2
-      0000E3 00 00r00r35            241 	.dw	0,(Sstm8s_rst$RST_ClearFlag$22)
-      0000E7 03                     242 	.db	3
-      0000E8 C4 00                  243 	.sleb128	68
-      0000EA 01                     244 	.db	1
-      0000EB 00                     245 	.db	0
-      0000EC 05                     246 	.uleb128	5
-      0000ED 02                     247 	.db	2
-      0000EE 00 00r00r35            248 	.dw	0,(Sstm8s_rst$RST_ClearFlag$24)
-      0000F2 03                     249 	.db	3
-      0000F3 03                     250 	.sleb128	3
-      0000F4 01                     251 	.db	1
-      0000F5 00                     252 	.db	0
-      0000F6 05                     253 	.uleb128	5
-      0000F7 02                     254 	.db	2
-      0000F8 00 00r00r57            255 	.dw	0,(Sstm8s_rst$RST_ClearFlag$36)
-      0000FC 03                     256 	.db	3
-      0000FD 02                     257 	.sleb128	2
-      0000FE 01                     258 	.db	1
-      0000FF 00                     259 	.db	0
-      000100 05                     260 	.uleb128	5
-      000101 02                     261 	.db	2
-      000102 00 00r00r5A            262 	.dw	0,(Sstm8s_rst$RST_ClearFlag$37)
-      000106 03                     263 	.db	3
-      000107 01                     264 	.sleb128	1
-      000108 01                     265 	.db	1
-      000109 09                     266 	.db	9
-      00010A 00 01                  267 	.dw	1+Sstm8s_rst$RST_ClearFlag$38-Sstm8s_rst$RST_ClearFlag$37
-      00010C 00                     268 	.db	0
-      00010D 01                     269 	.uleb128	1
-      00010E 01                     270 	.db	1
-      00010F                        271 Ldebug_line_end:
+      0000B9 00                     199 	.db	0
+      0000BA 00                     200 	.uleb128	0
+      0000BB 00                     201 	.uleb128	0
+      0000BC 00                     202 	.uleb128	0
+      0000BD 00                     203 	.db	0
+      0000BE                        204 Ldebug_line_stmt:
+      0000BE 00                     205 	.db	0
+      0000BF 05                     206 	.uleb128	5
+      0000C0 02                     207 	.db	2
+      0000C1 00 00r00r00            208 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$0)
+      0000C5 03                     209 	.db	3
+      0000C6 35                     210 	.sleb128	53
+      0000C7 01                     211 	.db	1
+      0000C8 00                     212 	.db	0
+      0000C9 05                     213 	.uleb128	5
+      0000CA 02                     214 	.db	2
+      0000CB 00 00r00r01            215 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$3)
+      0000CF 03                     216 	.db	3
+      0000D0 03                     217 	.sleb128	3
+      0000D1 01                     218 	.db	1
+      0000D2 00                     219 	.db	0
+      0000D3 05                     220 	.uleb128	5
+      0000D4 02                     221 	.db	2
+      0000D5 00 00r00r23            222 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$15)
+      0000D9 03                     223 	.db	3
+      0000DA 03                     224 	.sleb128	3
+      0000DB 01                     225 	.db	1
+      0000DC 00                     226 	.db	0
+      0000DD 05                     227 	.uleb128	5
+      0000DE 02                     228 	.db	2
+      0000DF 00 00r00r32            229 	.dw	0,(Sstm8s_rst$RST_GetFlagStatus$18)
+      0000E3 03                     230 	.db	3
+      0000E4 01                     231 	.sleb128	1
+      0000E5 01                     232 	.db	1
+      0000E6 09                     233 	.db	9
+      0000E7 00 03                  234 	.dw	1+Sstm8s_rst$RST_GetFlagStatus$20-Sstm8s_rst$RST_GetFlagStatus$18
+      0000E9 00                     235 	.db	0
+      0000EA 01                     236 	.uleb128	1
+      0000EB 01                     237 	.db	1
+      0000EC 00                     238 	.db	0
+      0000ED 05                     239 	.uleb128	5
+      0000EE 02                     240 	.db	2
+      0000EF 00 00r00r35            241 	.dw	0,(Sstm8s_rst$RST_ClearFlag$22)
+      0000F3 03                     242 	.db	3
+      0000F4 C4 00                  243 	.sleb128	68
+      0000F6 01                     244 	.db	1
+      0000F7 00                     245 	.db	0
+      0000F8 05                     246 	.uleb128	5
+      0000F9 02                     247 	.db	2
+      0000FA 00 00r00r35            248 	.dw	0,(Sstm8s_rst$RST_ClearFlag$24)
+      0000FE 03                     249 	.db	3
+      0000FF 03                     250 	.sleb128	3
+      000100 01                     251 	.db	1
+      000101 00                     252 	.db	0
+      000102 05                     253 	.uleb128	5
+      000103 02                     254 	.db	2
+      000104 00 00r00r57            255 	.dw	0,(Sstm8s_rst$RST_ClearFlag$36)
+      000108 03                     256 	.db	3
+      000109 02                     257 	.sleb128	2
+      00010A 01                     258 	.db	1
+      00010B 00                     259 	.db	0
+      00010C 05                     260 	.uleb128	5
+      00010D 02                     261 	.db	2
+      00010E 00 00r00r5A            262 	.dw	0,(Sstm8s_rst$RST_ClearFlag$37)
+      000112 03                     263 	.db	3
+      000113 01                     264 	.sleb128	1
+      000114 01                     265 	.db	1
+      000115 09                     266 	.db	9
+      000116 00 01                  267 	.dw	1+Sstm8s_rst$RST_ClearFlag$38-Sstm8s_rst$RST_ClearFlag$37
+      000118 00                     268 	.db	0
+      000119 01                     269 	.uleb128	1
+      00011A 01                     270 	.db	1
+      00011B                        271 Ldebug_line_end:
                                     272 
                                     273 	.area .debug_loc (NOLOAD)
       000000                        274 Ldebug_loc_start:
@@ -575,10 +577,10 @@
       000052 00                     539 	.db	0
       000053 00 00r00r00            540 	.dw	0,(Ldebug_line_start+-4)
       000057 01                     541 	.db	1
-      000058 53 44 43 43 20 76 65   542 	.ascii "SDCC version 4.3.0 #14184"
+      000058 53 44 43 43 20 76 65   542 	.ascii "SDCC version 4.4.0 #14620"
              72 73 69 6F 6E 20 34
-             2E 33 2E 30 20 23 31
-             34 31 38 34
+             2E 34 2E 30 20 23 31
+             34 36 32 30
       000071 00                     543 	.db	0
       000072 02                     544 	.uleb128	2
       000073 5F 42 6F 6F 6C         545 	.ascii "_Bool"

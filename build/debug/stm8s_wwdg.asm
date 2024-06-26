@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_wwdg
 	.optsdcc -mstm8
@@ -237,9 +237,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_wwdg.c"
@@ -695,7 +695,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.dw	0,172

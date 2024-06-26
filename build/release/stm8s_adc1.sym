@@ -7,26 +7,26 @@ Symbol Table
     .__.ABS.                                                    =  000000 G
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
-  9 _ADC1_AWDChannelConfig                                         0004DE GR
-  9 _ADC1_ClearFlag                                                00074B GR
-  9 _ADC1_ClearITPendingBit                                        0008A7 GR
+  9 _ADC1_AWDChannelConfig                                         0004DC GR
+  9 _ADC1_ClearFlag                                                000736 GR
+  9 _ADC1_ClearITPendingBit                                        00088B GR
   9 _ADC1_Cmd                                                      00019C GR
   9 _ADC1_ConversionConfig                                         0003A3 GR
   9 _ADC1_DataBufferCmd                                            0001F0 GR
   9 _ADC1_DeInit                                                   000000 GR
   9 _ADC1_ExternalTriggerConfig                                    00044D GR
-  9 _ADC1_GetAWDChannelStatus                                      000615 GR
-  9 _ADC1_GetBufferValue                                           0005A3 GR
+  9 _ADC1_GetAWDChannelStatus                                      00060D GR
+  9 _ADC1_GetBufferValue                                           0005A1 GR
   9 _ADC1_GetConversionValue                                       0004A4 GR
-  9 _ADC1_GetFlagStatus                                            00068B GR
-  9 _ADC1_GetITStatus                                              0007FE GR
+  9 _ADC1_GetFlagStatus                                            000683 GR
+  9 _ADC1_GetITStatus                                              0007E2 GR
   9 _ADC1_ITConfig                                                 00021A GR
   9 _ADC1_Init                                                     000031 GR
   9 _ADC1_PrescalerConfig                                          000270 GR
   9 _ADC1_ScanModeCmd                                              0001C6 GR
   9 _ADC1_SchmittTriggerConfig                                     0002BD GR
-  9 _ADC1_SetHighThreshold                                         00058A GR
-  9 _ADC1_SetLowThreshold                                          000598 GR
+  9 _ADC1_SetHighThreshold                                         000588 GR
+  9 _ADC1_SetLowThreshold                                          000596 GR
   9 _ADC1_StartConversion                                          00049F GR
   7 ___str_0                                                       000000 R
     _assert_failed                                                 ****** GX
@@ -45,6 +45,6 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     48   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size    95A   flags    0
+   9 CODE                                       size    93E   flags    0
    A CABS                                       size      0   flags    8
 

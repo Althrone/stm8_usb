@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_tim1
 	.optsdcc -mstm8
@@ -1335,23 +1335,23 @@ _TIM1_ICInit:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 430: assert_param(IS_TIM1_CHANNEL_OK(TIM1_Channel));
 	ld	(0x03, sp), a
 	dec	a
-	jrne	00235$
+	jrne	00269$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00235$:
+00269$:
 	clr	(0x01, sp)
-00236$:
+00270$:
 	Sstm8s_tim1$TIM1_ICInit$354 ==.
 	ld	a, (0x03, sp)
 	sub	a, #0x02
-	jrne	00238$
+	jrne	00272$
 	inc	a
 	ld	(0x02, sp), a
 	.byte 0xc5
-00238$:
+00272$:
 	clr	(0x02, sp)
-00239$:
+00273$:
 	Sstm8s_tim1$TIM1_ICInit$355 ==.
 	tnz	(0x03, sp)
 	jreq	00113$
@@ -1606,13 +1606,13 @@ _TIM1_PWMIConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 500: assert_param(IS_TIM1_IC_SELECTION_OK(TIM1_ICSelection));
 	ld	a, (0x07, sp)
 	dec	a
-	jrne	00218$
+	jrne	00246$
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	.byte 0xc5
-00218$:
+00246$:
 	clr	(0x02, sp)
-00219$:
+00247$:
 	Sstm8s_tim1$TIM1_PWMIConfig$437 ==.
 	tnz	(0x02, sp)
 	jrne	00123$
@@ -2205,13 +2205,13 @@ _TIM1_TIxExternalClockConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 756: assert_param(IS_TIM1_TIXCLK_SOURCE_OK(TIM1_TIxExternalCLKSource));
 	ld	(0x02, sp), a
 	sub	a, #0x60
-	jrne	00157$
+	jrne	00171$
 	inc	a
 	ld	(0x01, sp), a
 	.byte 0xc5
-00157$:
+00171$:
 	clr	(0x01, sp)
-00158$:
+00172$:
 	Sstm8s_tim1$TIM1_TIxExternalClockConfig$636 ==.
 	ld	a, (0x02, sp)
 	cp	a, #0x40
@@ -4284,7 +4284,7 @@ _TIM1_CCxCmd:
 	Sstm8s_tim1$TIM1_CCxCmd$1367 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1582: assert_param(IS_TIM1_CHANNEL_OK(TIM1_Channel));
 	cp	a, #0x01
-	jrne	00206$
+	jrne	00232$
 	push	a
 	Sstm8s_tim1$TIM1_CCxCmd$1368 ==.
 	ld	a, #0x01
@@ -4292,12 +4292,12 @@ _TIM1_CCxCmd:
 	pop	a
 	Sstm8s_tim1$TIM1_CCxCmd$1369 ==.
 	.byte 0xc5
-00206$:
+00232$:
 	clr	(0x01, sp)
-00207$:
+00233$:
 	Sstm8s_tim1$TIM1_CCxCmd$1370 ==.
 	cp	a, #0x02
-	jrne	00209$
+	jrne	00235$
 	push	a
 	Sstm8s_tim1$TIM1_CCxCmd$1371 ==.
 	ld	a, #0x01
@@ -4305,9 +4305,9 @@ _TIM1_CCxCmd:
 	pop	a
 	Sstm8s_tim1$TIM1_CCxCmd$1372 ==.
 	.byte 0xc5
-00209$:
+00235$:
 	clr	(0x02, sp)
-00210$:
+00236$:
 	Sstm8s_tim1$TIM1_CCxCmd$1373 ==.
 	tnz	a
 	jreq	00125$
@@ -4485,7 +4485,7 @@ _TIM1_CCxNCmd:
 	Sstm8s_tim1$TIM1_CCxNCmd$1434 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1650: assert_param(IS_TIM1_COMPLEMENTARY_CHANNEL_OK(TIM1_Channel));
 	cp	a, #0x01
-	jrne	00182$
+	jrne	00202$
 	push	a
 	Sstm8s_tim1$TIM1_CCxNCmd$1435 ==.
 	ld	a, #0x01
@@ -4493,9 +4493,9 @@ _TIM1_CCxNCmd:
 	pop	a
 	Sstm8s_tim1$TIM1_CCxNCmd$1436 ==.
 	.byte 0xc5
-00182$:
+00202$:
 	clr	(0x01, sp)
-00183$:
+00203$:
 	Sstm8s_tim1$TIM1_CCxNCmd$1437 ==.
 	tnz	a
 	jreq	00119$
@@ -4642,23 +4642,23 @@ _TIM1_SelectOCxM:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1715: assert_param(IS_TIM1_CHANNEL_OK(TIM1_Channel));
 	ld	(0x03, sp), a
 	dec	a
-	jrne	00222$
+	jrne	00252$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00222$:
+00252$:
 	clr	(0x01, sp)
-00223$:
+00253$:
 	Sstm8s_tim1$TIM1_SelectOCxM$1490 ==.
 	ld	a, (0x03, sp)
 	sub	a, #0x02
-	jrne	00225$
+	jrne	00255$
 	inc	a
 	ld	(0x02, sp), a
 	.byte 0xc5
-00225$:
+00255$:
 	clr	(0x02, sp)
-00226$:
+00256$:
 	Sstm8s_tim1$TIM1_SelectOCxM$1491 ==.
 	tnz	(0x03, sp)
 	jreq	00113$
@@ -5165,16 +5165,12 @@ _TIM1_GetCapture1:
 	ld	a, 0x5266
 	Sstm8s_tim1$TIM1_GetCapture1$1653 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1932: tmpccr1 = (uint16_t)(tmpccr1l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim1$TIM1_GetCapture1$1654 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1933: tmpccr1 |= (uint16_t)((uint16_t)tmpccr1h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim1$TIM1_GetCapture1$1655 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1935: return (uint16_t)tmpccr1;
-	ld	xh, a
 	Sstm8s_tim1$TIM1_GetCapture1$1656 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1936: }
 	addw	sp, #2
@@ -5201,16 +5197,12 @@ _TIM1_GetCapture2:
 	ld	a, 0x5268
 	Sstm8s_tim1$TIM1_GetCapture2$1665 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1953: tmpccr2 = (uint16_t)(tmpccr2l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim1$TIM1_GetCapture2$1666 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1954: tmpccr2 |= (uint16_t)((uint16_t)tmpccr2h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim1$TIM1_GetCapture2$1667 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1956: return (uint16_t)tmpccr2;
-	ld	xh, a
 	Sstm8s_tim1$TIM1_GetCapture2$1668 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1957: }
 	addw	sp, #2
@@ -5237,16 +5229,12 @@ _TIM1_GetCapture3:
 	ld	a, 0x526a
 	Sstm8s_tim1$TIM1_GetCapture3$1677 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1973: tmpccr3 = (uint16_t)(tmpccr3l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim1$TIM1_GetCapture3$1678 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1974: tmpccr3 |= (uint16_t)((uint16_t)tmpccr3h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim1$TIM1_GetCapture3$1679 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1976: return (uint16_t)tmpccr3;
-	ld	xh, a
 	Sstm8s_tim1$TIM1_GetCapture3$1680 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1977: }
 	addw	sp, #2
@@ -5273,16 +5261,12 @@ _TIM1_GetCapture4:
 	ld	a, 0x526c
 	Sstm8s_tim1$TIM1_GetCapture4$1689 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1993: tmpccr4 = (uint16_t)(tmpccr4l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim1$TIM1_GetCapture4$1690 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1994: tmpccr4 |= (uint16_t)((uint16_t)tmpccr4h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim1$TIM1_GetCapture4$1691 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1996: return (uint16_t)tmpccr4;
-	ld	xh, a
 	Sstm8s_tim1$TIM1_GetCapture4$1692 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 1997: }
 	addw	sp, #2
@@ -5298,7 +5282,7 @@ _TIM1_GetCapture4:
 ;	-----------------------------------------
 _TIM1_GetCounter:
 	Sstm8s_tim1$TIM1_GetCounter$1697 ==.
-	sub	sp, #4
+	pushw	x
 	Sstm8s_tim1$TIM1_GetCounter$1698 ==.
 	Sstm8s_tim1$TIM1_GetCounter$1699 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2008: tmpcntr = ((uint16_t)TIM1->CNTRH << 8);
@@ -5308,14 +5292,10 @@ _TIM1_GetCounter:
 	Sstm8s_tim1$TIM1_GetCounter$1700 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2011: return (uint16_t)(tmpcntr | (uint16_t)(TIM1->CNTRL));
 	ld	a, 0x525f
-	clr	(0x03, sp)
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x03, sp)
-	ld	xh, a
+	ld	xl, a
 	Sstm8s_tim1$TIM1_GetCounter$1701 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2012: }
-	addw	sp, #4
+	addw	sp, #2
 	Sstm8s_tim1$TIM1_GetCounter$1702 ==.
 	Sstm8s_tim1$TIM1_GetCounter$1703 ==.
 	XG$TIM1_GetCounter$0$0 ==.
@@ -5328,7 +5308,7 @@ _TIM1_GetCounter:
 ;	-----------------------------------------
 _TIM1_GetPrescaler:
 	Sstm8s_tim1$TIM1_GetPrescaler$1706 ==.
-	sub	sp, #4
+	pushw	x
 	Sstm8s_tim1$TIM1_GetPrescaler$1707 ==.
 	Sstm8s_tim1$TIM1_GetPrescaler$1708 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2023: temp = ((uint16_t)TIM1->PSCRH << 8);
@@ -5338,14 +5318,10 @@ _TIM1_GetPrescaler:
 	Sstm8s_tim1$TIM1_GetPrescaler$1709 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2026: return (uint16_t)( temp | (uint16_t)(TIM1->PSCRL));
 	ld	a, 0x5261
-	clr	(0x03, sp)
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x03, sp)
-	ld	xh, a
+	ld	xl, a
 	Sstm8s_tim1$TIM1_GetPrescaler$1710 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2027: }
-	addw	sp, #4
+	addw	sp, #2
 	Sstm8s_tim1$TIM1_GetPrescaler$1711 ==.
 	Sstm8s_tim1$TIM1_GetPrescaler$1712 ==.
 	XG$TIM1_GetPrescaler$0$0 ==.
@@ -5517,7 +5493,7 @@ _TIM1_ClearFlag:
 ;	-----------------------------------------
 _TIM1_GetITStatus:
 	Sstm8s_tim1$TIM1_GetITStatus$1771 ==.
-	push	a
+	pushw	x
 	Sstm8s_tim1$TIM1_GetITStatus$1772 ==.
 	Sstm8s_tim1$TIM1_GetITStatus$1773 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2118: assert_param(IS_TIM1_GET_IT_OK(TIM1_IT));
@@ -5566,13 +5542,13 @@ _TIM1_GetITStatus:
 	push	a
 	Sstm8s_tim1$TIM1_GetITStatus$1789 ==.
 	ld	a, (x)
-	ld	(0x02, sp), a
+	ld	(0x03, sp), a
 	pop	a
 	Sstm8s_tim1$TIM1_GetITStatus$1790 ==.
 	push	a
 	Sstm8s_tim1$TIM1_GetITStatus$1791 ==.
-	and	a, (0x02, sp)
-	ld	yl, a
+	and	a, (0x03, sp)
+	ld	(0x02, sp), a
 	pop	a
 	Sstm8s_tim1$TIM1_GetITStatus$1792 ==.
 	Sstm8s_tim1$TIM1_GetITStatus$1793 ==.
@@ -5581,15 +5557,13 @@ _TIM1_GetITStatus:
 	push	a
 	Sstm8s_tim1$TIM1_GetITStatus$1794 ==.
 	ld	a, (x)
-	ld	(0x02, sp), a
+	ld	(0x03, sp), a
 	pop	a
 	Sstm8s_tim1$TIM1_GetITStatus$1795 ==.
-	and	a, (0x01, sp)
+	and	a, (0x02, sp)
 	Sstm8s_tim1$TIM1_GetITStatus$1796 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2124: if ((TIM1_itStatus != (uint8_t)RESET ) && (TIM1_itEnable != (uint8_t)RESET ))
-	exg	a, yl
-	tnz	a
-	exg	a, yl
+	tnz	(0x01, sp)
 	jreq	00102$
 	tnz	a
 	jreq	00102$
@@ -5610,7 +5584,7 @@ _TIM1_GetITStatus:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2132: return (ITStatus)(bitstatus);
 	Sstm8s_tim1$TIM1_GetITStatus$1804 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c: 2133: }
-	addw	sp, #1
+	popw	x
 	Sstm8s_tim1$TIM1_GetITStatus$1805 ==.
 	Sstm8s_tim1$TIM1_GetITStatus$1806 ==.
 	XG$TIM1_GetITStatus$0$0 ==.
@@ -5925,9 +5899,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim1.c"
@@ -10948,107 +10922,107 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1805)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1794)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1795)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	4
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1792)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1794)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1791)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1792)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	4
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1790)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1791)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1789)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1790)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	4
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1787)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1789)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1786)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1787)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	4
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1785)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1786)
 	.dw	2
 	.db	120
-	.sleb128	7
+	.sleb128	8
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1784)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1785)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	6
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1783)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1784)
 	.dw	2
 	.db	120
-	.sleb128	4
+	.sleb128	5
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1782)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1783)
 	.dw	2
 	.db	120
-	.sleb128	3
+	.sleb128	4
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1781)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1782)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1780)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1781)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1779)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1780)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1778)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1779)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1777)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1778)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1776)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1777)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1775)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1776)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1774)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1775)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1772)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1774)
 	.dw	2
 	.db	120
-	.sleb128	2
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1771)
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1772)
 	.dw	2
@@ -11239,7 +11213,7 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_tim1$TIM1_GetPrescaler$1711)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetPrescaler$1706)
 	.dw	0,(Sstm8s_tim1$TIM1_GetPrescaler$1707)
 	.dw	2
@@ -11256,7 +11230,7 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_tim1$TIM1_GetCounter$1702)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	3
 	.dw	0,(Sstm8s_tim1$TIM1_GetCounter$1697)
 	.dw	0,(Sstm8s_tim1$TIM1_GetCounter$1698)
 	.dw	2
@@ -15547,7 +15521,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "TIM1_DeInit"
@@ -17270,7 +17244,7 @@ Ldebug_info_start:
 	.dw	0,273
 	.uleb128	7
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -17303,7 +17277,7 @@ Ldebug_info_start:
 	.dw	0,273
 	.uleb128	7
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -17336,7 +17310,7 @@ Ldebug_info_start:
 	.dw	0,273
 	.uleb128	7
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -17369,7 +17343,7 @@ Ldebug_info_start:
 	.dw	0,273
 	.uleb128	7
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -17406,7 +17380,7 @@ Ldebug_info_start:
 	.db	147
 	.uleb128	1
 	.db	145
-	.sleb128	-3
+	.sleb128	-1
 	.db	147
 	.uleb128	1
 	.ascii "tmpcntr"
@@ -17428,7 +17402,7 @@ Ldebug_info_start:
 	.db	147
 	.uleb128	1
 	.db	145
-	.sleb128	-3
+	.sleb128	-1
 	.db	147
 	.uleb128	1
 	.ascii "temp"
@@ -17503,7 +17477,7 @@ Ldebug_info_start:
 	.dw	0,6705
 	.uleb128	0
 	.uleb128	11
-	.dw	0,6909
+	.dw	0,6910
 	.ascii "TIM1_GetITStatus"
 	.db	0
 	.dw	0,(_TIM1_GetITStatus)
@@ -17530,8 +17504,9 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,1449
 	.uleb128	7
-	.db	1
-	.db	83
+	.db	2
+	.db	145
+	.sleb128	-2
 	.ascii "TIM1_itStatus"
 	.db	0
 	.dw	0,289
@@ -17543,7 +17518,7 @@ Ldebug_info_start:
 	.dw	0,289
 	.uleb128	0
 	.uleb128	8
-	.dw	0,6966
+	.dw	0,6967
 	.ascii "TIM1_ClearITPendingBit"
 	.db	0
 	.dw	0,(_TIM1_ClearITPendingBit)
@@ -17558,7 +17533,7 @@ Ldebug_info_start:
 	.dw	0,289
 	.uleb128	0
 	.uleb128	3
-	.dw	0,7077
+	.dw	0,7078
 	.ascii "TI1_Config"
 	.db	0
 	.dw	0,(_TI1_Config)
@@ -17592,7 +17567,7 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_tim1$TI1_Config$1834)
 	.uleb128	0
 	.uleb128	3
-	.dw	0,7188
+	.dw	0,7189
 	.ascii "TI2_Config"
 	.db	0
 	.dw	0,(_TI2_Config)
@@ -17626,7 +17601,7 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_tim1$TI2_Config$1852)
 	.uleb128	0
 	.uleb128	3
-	.dw	0,7299
+	.dw	0,7300
 	.ascii "TI3_Config"
 	.db	0
 	.dw	0,(_TI3_Config)
@@ -17660,7 +17635,7 @@ Ldebug_info_start:
 	.dw	0,(Sstm8s_tim1$TI3_Config$1870)
 	.uleb128	0
 	.uleb128	3
-	.dw	0,7410
+	.dw	0,7411
 	.ascii "TI4_Config"
 	.db	0
 	.dw	0,(_TI4_Config)
@@ -17696,9 +17671,9 @@ Ldebug_info_start:
 	.uleb128	12
 	.dw	0,289
 	.uleb128	13
-	.dw	0,7428
+	.dw	0,7429
 	.db	72
-	.dw	0,7410
+	.dw	0,7411
 	.uleb128	14
 	.db	71
 	.uleb128	0
@@ -17708,7 +17683,7 @@ Ldebug_info_start:
 	.dw	0,(___str_0)
 	.ascii "__str_0"
 	.db	0
-	.dw	0,7415
+	.dw	0,7416
 	.uleb128	0
 Ldebug_info_end:
 
@@ -17937,7 +17912,7 @@ Ldebug_pubnames_start:
 	.dw	0,6777
 	.ascii "TIM1_GetITStatus"
 	.db	0
-	.dw	0,6909
+	.dw	0,6910
 	.ascii "TIM1_ClearITPendingBit"
 	.db	0
 	.dw	0,0
@@ -18184,87 +18159,87 @@ Ldebug_CIE5_end:
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1772)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1774)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1775)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1776)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1777)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1778)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1779)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1780)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1781)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1782)
 	.db	14
-	.uleb128	4
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1783)
 	.db	14
-	.uleb128	5
+	.uleb128	6
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1784)
 	.db	14
-	.uleb128	6
+	.uleb128	7
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1785)
 	.db	14
-	.uleb128	8
+	.uleb128	9
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1786)
 	.db	14
-	.uleb128	4
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1787)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1789)
 	.db	14
-	.uleb128	4
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1790)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1791)
 	.db	14
-	.uleb128	4
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1792)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1794)
 	.db	14
-	.uleb128	4
+	.uleb128	5
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1795)
 	.db	14
-	.uleb128	3
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetITStatus$1805)
 	.db	14
@@ -18489,7 +18464,7 @@ Ldebug_CIE8_end:
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetPrescaler$1707)
 	.db	14
-	.uleb128	6
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetPrescaler$1711)
 	.db	14
@@ -18528,7 +18503,7 @@ Ldebug_CIE9_end:
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetCounter$1698)
 	.db	14
-	.uleb128	6
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim1$TIM1_GetCounter$1702)
 	.db	14

@@ -3,24 +3,10 @@
 -y
 -b HOME = 0x8000
 -b DATA = 0x0001
--k D:\Software\SDCC\bin\..\lib\stm8
+-k D:\Software\Work\SDCC\bin\..\lib\stm8
 -l stm8
-build/debug/stm8s_adc1.rel
-build/debug/stm8s_awu.rel
-build/debug/stm8s_beep.rel
-build/debug/stm8s_clk.rel
-build/debug/stm8s_exti.rel
-build/debug/stm8s_flash.rel
-build/debug/stm8s_gpio.rel
-build/debug/stm8s_i2c.rel
-build/debug/stm8s_itc.rel
-build/debug/stm8s_iwdg.rel
-build/debug/stm8s_rst.rel
-build/debug/stm8s_spi.rel
-build/debug/stm8s_tim1.rel
-build/debug/stm8s_tim2.rel
-build/debug/stm8s_tim4.rel
-build/debug/stm8s_uart1.rel
-build/debug/stm8s_wwdg.rel
+main.rel
+stm8s_gpio.rel
+usb_tx.rel
 
 -e

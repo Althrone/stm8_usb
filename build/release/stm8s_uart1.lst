@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_uart1
                                       6 	.optsdcc -mstm8
@@ -185,12 +185,12 @@
       0000B1 27 2D            [ 1]  185 	jreq	00139$
       0000B3 7B 18            [ 1]  186 	ld	a, (0x18, sp)
       0000B5 A0 0C            [ 1]  187 	sub	a, #0x0c
-      0000B7 26 02            [ 1]  188 	jrne	00339$
+      0000B7 26 02            [ 1]  188 	jrne	00388$
       0000B9 4C               [ 1]  189 	inc	a
       0000BA 21                     190 	.byte 0x21
-      0000BB                        191 00339$:
+      0000BB                        191 00388$:
       0000BB 4F               [ 1]  192 	clr	a
-      0000BC                        193 00340$:
+      0000BC                        193 00389$:
       0000BC 4D               [ 1]  194 	tnz	a
       0000BD 26 21            [ 1]  195 	jrne	00139$
       0000BF 4D               [ 1]  196 	tnz	a
@@ -276,12 +276,12 @@
       000152 1F 06            [ 2]  276 	ldw	(0x06, sp), x
       000154 1E 12            [ 2]  277 	ldw	x, (0x12, sp)
       000156 A6 04            [ 1]  278 	ld	a, #0x04
-      000158                        279 00364$:
+      000158                        279 00413$:
       000158 58               [ 2]  280 	sllw	x
       000159 09 07            [ 1]  281 	rlc	(0x07, sp)
       00015B 09 06            [ 1]  282 	rlc	(0x06, sp)
       00015D 4A               [ 1]  283 	dec	a
-      00015E 26 F8            [ 1]  284 	jrne	00364$
+      00015E 26 F8            [ 1]  284 	jrne	00413$
       000160 1F 08            [ 2]  285 	ldw	(0x08, sp), x
       000162 89               [ 2]  286 	pushw	x
       000163 1E 08            [ 2]  287 	ldw	x, (0x08, sp)
@@ -289,11 +289,11 @@
       000166 1E 10            [ 2]  289 	ldw	x, (0x10, sp)
       000168 89               [ 2]  290 	pushw	x
       000169 90 89            [ 2]  291 	pushw	y
-      00016B CDr00r00         [ 4]  292 	call	__divulong
-      00016E 5B 08            [ 2]  293 	addw	sp, #8
-      000170 1F 03            [ 2]  294 	ldw	(0x03, sp), x
-      000172 17 01            [ 2]  295 	ldw	(0x01, sp), y
-                                    296 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
+                                    292 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 129: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
+      00016B CDr00r00         [ 4]  293 	call	__divulong
+      00016E 5B 08            [ 2]  294 	addw	sp, #8
+      000170 1F 03            [ 2]  295 	ldw	(0x03, sp), x
+      000172 17 01            [ 2]  296 	ldw	(0x01, sp), y
       000174 CDr00r00         [ 4]  297 	call	_CLK_GetClockFreq
       000177 89               [ 2]  298 	pushw	x
       000178 90 89            [ 2]  299 	pushw	y
@@ -311,1072 +311,1069 @@
       00018D 1E 10            [ 2]  311 	ldw	x, (0x10, sp)
       00018F 89               [ 2]  312 	pushw	x
       000190 90 89            [ 2]  313 	pushw	y
-      000192 CDr00r00         [ 4]  314 	call	__divulong
-      000195 5B 08            [ 2]  315 	addw	sp, #8
-      000197 90 9E            [ 1]  316 	ld	a, yh
-      000199 1F 07            [ 2]  317 	ldw	(0x07, sp), x
-      00019B 6B 05            [ 1]  318 	ld	(0x05, sp), a
-      00019D 90 9F            [ 1]  319 	ld	a, yl
-                                    320 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
-      00019F AE 52 33         [ 2]  321 	ldw	x, #0x5233
-      0001A2 88               [ 1]  322 	push	a
-      0001A3 F6               [ 1]  323 	ld	a, (x)
-      0001A4 6B 0A            [ 1]  324 	ld	(0x0a, sp), a
-      0001A6 1E 04            [ 2]  325 	ldw	x, (0x04, sp)
-      0001A8 89               [ 2]  326 	pushw	x
-      0001A9 1E 04            [ 2]  327 	ldw	x, (0x04, sp)
-      0001AB 89               [ 2]  328 	pushw	x
-      0001AC 4B 64            [ 1]  329 	push	#0x64
-      0001AE 5F               [ 1]  330 	clrw	x
-      0001AF 89               [ 2]  331 	pushw	x
-      0001B0 4B 00            [ 1]  332 	push	#0x00
-      0001B2 CDr00r00         [ 4]  333 	call	__mullong
-      0001B5 5B 08            [ 2]  334 	addw	sp, #8
-      0001B7 1F 0D            [ 2]  335 	ldw	(0x0d, sp), x
-      0001B9 17 0B            [ 2]  336 	ldw	(0x0b, sp), y
-      0001BB 84               [ 1]  337 	pop	a
-      0001BC 16 07            [ 2]  338 	ldw	y, (0x07, sp)
-      0001BE 72 F2 0C         [ 2]  339 	subw	y, (0x0c, sp)
-      0001C1 12 0B            [ 1]  340 	sbc	a, (0x0b, sp)
-      0001C3 97               [ 1]  341 	ld	xl, a
-      0001C4 7B 05            [ 1]  342 	ld	a, (0x05, sp)
-      0001C6 12 0A            [ 1]  343 	sbc	a, (0x0a, sp)
-      0001C8 95               [ 1]  344 	ld	xh, a
-      0001C9 A6 04            [ 1]  345 	ld	a, #0x04
-      0001CB                        346 00366$:
-      0001CB 90 58            [ 2]  347 	sllw	y
-      0001CD 59               [ 2]  348 	rlcw	x
-      0001CE 4A               [ 1]  349 	dec	a
-      0001CF 26 FA            [ 1]  350 	jrne	00366$
-      0001D1 4B 64            [ 1]  351 	push	#0x64
-      0001D3 4B 00            [ 1]  352 	push	#0x00
+                                    314 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 131: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
+      000192 CDr00r00         [ 4]  315 	call	__divulong
+      000195 5B 08            [ 2]  316 	addw	sp, #8
+      000197 1F 07            [ 2]  317 	ldw	(0x07, sp), x
+      000199 90 02            [ 1]  318 	rlwa	y
+      00019B 6B 05            [ 1]  319 	ld	(0x05, sp), a
+      00019D 90 01            [ 1]  320 	rrwa	y
+      00019F 90 9F            [ 1]  321 	ld	a, yl
+      0001A1 AE 52 33         [ 2]  322 	ldw	x, #0x5233
+      0001A4 88               [ 1]  323 	push	a
+      0001A5 F6               [ 1]  324 	ld	a, (x)
+      0001A6 6B 0A            [ 1]  325 	ld	(0x0a, sp), a
+      0001A8 1E 04            [ 2]  326 	ldw	x, (0x04, sp)
+      0001AA 89               [ 2]  327 	pushw	x
+      0001AB 1E 04            [ 2]  328 	ldw	x, (0x04, sp)
+      0001AD 89               [ 2]  329 	pushw	x
+      0001AE 4B 64            [ 1]  330 	push	#0x64
+      0001B0 5F               [ 1]  331 	clrw	x
+      0001B1 89               [ 2]  332 	pushw	x
+      0001B2 4B 00            [ 1]  333 	push	#0x00
+      0001B4 CDr00r00         [ 4]  334 	call	__mullong
+      0001B7 5B 08            [ 2]  335 	addw	sp, #8
+      0001B9 1F 0D            [ 2]  336 	ldw	(0x0d, sp), x
+      0001BB 17 0B            [ 2]  337 	ldw	(0x0b, sp), y
+      0001BD 84               [ 1]  338 	pop	a
+      0001BE 16 07            [ 2]  339 	ldw	y, (0x07, sp)
+      0001C0 72 F2 0C         [ 2]  340 	subw	y, (0x0c, sp)
+      0001C3 12 0B            [ 1]  341 	sbc	a, (0x0b, sp)
+      0001C5 97               [ 1]  342 	ld	xl, a
+      0001C6 7B 05            [ 1]  343 	ld	a, (0x05, sp)
+      0001C8 12 0A            [ 1]  344 	sbc	a, (0x0a, sp)
+      0001CA 95               [ 1]  345 	ld	xh, a
+      0001CB A6 04            [ 1]  346 	ld	a, #0x04
+      0001CD                        347 00415$:
+      0001CD 90 58            [ 2]  348 	sllw	y
+      0001CF 59               [ 2]  349 	rlcw	x
+      0001D0 4A               [ 1]  350 	dec	a
+      0001D1 26 FA            [ 1]  351 	jrne	00415$
+      0001D3 4B 64            [ 1]  352 	push	#0x64
       0001D5 4B 00            [ 1]  353 	push	#0x00
       0001D7 4B 00            [ 1]  354 	push	#0x00
-      0001D9 90 89            [ 2]  355 	pushw	y
-      0001DB 89               [ 2]  356 	pushw	x
-      0001DC CDr00r00         [ 4]  357 	call	__divulong
-      0001DF 5B 08            [ 2]  358 	addw	sp, #8
-      0001E1 9F               [ 1]  359 	ld	a, xl
-      0001E2 A4 0F            [ 1]  360 	and	a, #0x0f
-      0001E4 1A 09            [ 1]  361 	or	a, (0x09, sp)
-      0001E6 C7 52 33         [ 1]  362 	ld	0x5233, a
-                                    363 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 133: UART1->BRR2 |= (uint8_t)((BaudRate_Mantissa >> 4) & (uint8_t)0xF0); 
-      0001E9 C6 52 33         [ 1]  364 	ld	a, 0x5233
-      0001EC 6B 0D            [ 1]  365 	ld	(0x0d, sp), a
-      0001EE 1E 03            [ 2]  366 	ldw	x, (0x03, sp)
-      0001F0 A6 10            [ 1]  367 	ld	a, #0x10
-      0001F2 62               [ 2]  368 	div	x, a
-      0001F3 90 93            [ 1]  369 	ldw	y, x
-      0001F5 9F               [ 1]  370 	ld	a, xl
-      0001F6 A4 F0            [ 1]  371 	and	a, #0xf0
-      0001F8 1A 0D            [ 1]  372 	or	a, (0x0d, sp)
-      0001FA C7 52 33         [ 1]  373 	ld	0x5233, a
-                                    374 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 135: UART1->BRR1 |= (uint8_t)BaudRate_Mantissa;           
-      0001FD C6 52 32         [ 1]  375 	ld	a, 0x5232
-      000200 6B 0D            [ 1]  376 	ld	(0x0d, sp), a
-      000202 7B 04            [ 1]  377 	ld	a, (0x04, sp)
-      000204 1A 0D            [ 1]  378 	or	a, (0x0d, sp)
-      000206 C7 52 32         [ 1]  379 	ld	0x5232, a
-                                    380 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
-      000209 C6 52 35         [ 1]  381 	ld	a, 0x5235
-      00020C A4 F3            [ 1]  382 	and	a, #0xf3
-      00020E C7 52 35         [ 1]  383 	ld	0x5235, a
-                                    384 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 140: UART1->CR3 &= (uint8_t)~(UART1_CR3_CPOL | UART1_CR3_CPHA | UART1_CR3_LBCL); 
-      000211 C6 52 36         [ 1]  385 	ld	a, 0x5236
-      000214 A4 F8            [ 1]  386 	and	a, #0xf8
-      000216 C7 52 36         [ 1]  387 	ld	0x5236, a
-                                    388 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 142: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & (uint8_t)(UART1_CR3_CPOL | 
-      000219 C6 52 36         [ 1]  389 	ld	a, 0x5236
-      00021C 6B 0D            [ 1]  390 	ld	(0x0d, sp), a
-      00021E 7B 17            [ 1]  391 	ld	a, (0x17, sp)
-      000220 A4 07            [ 1]  392 	and	a, #0x07
-      000222 1A 0D            [ 1]  393 	or	a, (0x0d, sp)
-      000224 C7 52 36         [ 1]  394 	ld	0x5236, a
-                                    395 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
-      000227 C6 52 35         [ 1]  396 	ld	a, 0x5235
-                                    397 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 145: if ((uint8_t)(Mode & UART1_MODE_TX_ENABLE))
-      00022A 88               [ 1]  398 	push	a
-      00022B 7B 19            [ 1]  399 	ld	a, (0x19, sp)
-      00022D A5 04            [ 1]  400 	bcp	a, #0x04
-      00022F 84               [ 1]  401 	pop	a
-      000230 27 07            [ 1]  402 	jreq	00102$
-                                    403 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 148: UART1->CR2 |= (uint8_t)UART1_CR2_TEN;  
-      000232 AA 08            [ 1]  404 	or	a, #0x08
-      000234 C7 52 35         [ 1]  405 	ld	0x5235, a
-      000237 20 05            [ 2]  406 	jra	00103$
-      000239                        407 00102$:
-                                    408 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 153: UART1->CR2 &= (uint8_t)(~UART1_CR2_TEN);  
-      000239 A4 F7            [ 1]  409 	and	a, #0xf7
-      00023B C7 52 35         [ 1]  410 	ld	0x5235, a
-      00023E                        411 00103$:
-                                    412 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
-      00023E C6 52 35         [ 1]  413 	ld	a, 0x5235
-                                    414 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 155: if ((uint8_t)(Mode & UART1_MODE_RX_ENABLE))
-      000241 88               [ 1]  415 	push	a
-      000242 7B 19            [ 1]  416 	ld	a, (0x19, sp)
-      000244 A5 08            [ 1]  417 	bcp	a, #0x08
-      000246 84               [ 1]  418 	pop	a
-      000247 27 07            [ 1]  419 	jreq	00105$
-                                    420 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 158: UART1->CR2 |= (uint8_t)UART1_CR2_REN;  
-      000249 AA 04            [ 1]  421 	or	a, #0x04
-      00024B C7 52 35         [ 1]  422 	ld	0x5235, a
-      00024E 20 05            [ 2]  423 	jra	00106$
-      000250                        424 00105$:
-                                    425 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 163: UART1->CR2 &= (uint8_t)(~UART1_CR2_REN);  
-      000250 A4 FB            [ 1]  426 	and	a, #0xfb
-      000252 C7 52 35         [ 1]  427 	ld	0x5235, a
-      000255                        428 00106$:
-                                    429 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 111: UART1->CR3 &= (uint8_t)(~UART1_CR3_STOP);  
-      000255 C6 52 36         [ 1]  430 	ld	a, 0x5236
-                                    431 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 167: if ((uint8_t)(SyncMode & UART1_SYNCMODE_CLOCK_DISABLE))
-      000258 0D 17            [ 1]  432 	tnz	(0x17, sp)
-      00025A 2A 07            [ 1]  433 	jrpl	00108$
-                                    434 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 170: UART1->CR3 &= (uint8_t)(~UART1_CR3_CKEN); 
-      00025C A4 F7            [ 1]  435 	and	a, #0xf7
-      00025E C7 52 36         [ 1]  436 	ld	0x5236, a
-      000261 20 0D            [ 2]  437 	jra	00110$
-      000263                        438 00108$:
-                                    439 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 174: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & UART1_CR3_CKEN);
-      000263 88               [ 1]  440 	push	a
-      000264 7B 18            [ 1]  441 	ld	a, (0x18, sp)
-      000266 A4 08            [ 1]  442 	and	a, #0x08
-      000268 6B 0E            [ 1]  443 	ld	(0x0e, sp), a
-      00026A 84               [ 1]  444 	pop	a
-      00026B 1A 0D            [ 1]  445 	or	a, (0x0d, sp)
-      00026D C7 52 36         [ 1]  446 	ld	0x5236, a
-      000270                        447 00110$:
-                                    448 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 176: }
-      000270 1E 0E            [ 2]  449 	ldw	x, (14, sp)
-      000272 5B 18            [ 2]  450 	addw	sp, #24
-      000274 FC               [ 2]  451 	jp	(x)
-                                    452 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 184: void UART1_Cmd(FunctionalState NewState)
-                                    453 ;	-----------------------------------------
-                                    454 ;	 function UART1_Cmd
-                                    455 ;	-----------------------------------------
-      000275                        456 _UART1_Cmd:
-      000275 88               [ 1]  457 	push	a
-      000276 6B 01            [ 1]  458 	ld	(0x01, sp), a
-                                    459 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 189: UART1->CR1 &= (uint8_t)(~UART1_CR1_UARTD); 
-      000278 C6 52 34         [ 1]  460 	ld	a, 0x5234
-                                    461 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 186: if (NewState != DISABLE)
-      00027B 0D 01            [ 1]  462 	tnz	(0x01, sp)
-      00027D 27 07            [ 1]  463 	jreq	00102$
-                                    464 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 189: UART1->CR1 &= (uint8_t)(~UART1_CR1_UARTD); 
-      00027F A4 DF            [ 1]  465 	and	a, #0xdf
-      000281 C7 52 34         [ 1]  466 	ld	0x5234, a
-      000284 20 05            [ 2]  467 	jra	00104$
-      000286                        468 00102$:
-                                    469 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 194: UART1->CR1 |= UART1_CR1_UARTD;  
-      000286 AA 20            [ 1]  470 	or	a, #0x20
-      000288 C7 52 34         [ 1]  471 	ld	0x5234, a
-      00028B                        472 00104$:
-                                    473 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 196: }
-      00028B 84               [ 1]  474 	pop	a
-      00028C 81               [ 4]  475 	ret
-                                    476 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 211: void UART1_ITConfig(UART1_IT_TypeDef UART1_IT, FunctionalState NewState)
-                                    477 ;	-----------------------------------------
-                                    478 ;	 function UART1_ITConfig
-                                    479 ;	-----------------------------------------
-      00028D                        480 _UART1_ITConfig:
-      00028D 52 05            [ 2]  481 	sub	sp, #5
-      00028F 1F 04            [ 2]  482 	ldw	(0x04, sp), x
-      000291 6B 03            [ 1]  483 	ld	(0x03, sp), a
-                                    484 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 216: assert_param(IS_UART1_CONFIG_IT_OK(UART1_IT));
-      000293 1E 04            [ 2]  485 	ldw	x, (0x04, sp)
-      000295 A3 01 00         [ 2]  486 	cpw	x, #0x0100
-      000298 27 29            [ 1]  487 	jreq	00119$
-      00029A A3 02 77         [ 2]  488 	cpw	x, #0x0277
-      00029D 27 24            [ 1]  489 	jreq	00119$
-      00029F A3 02 66         [ 2]  490 	cpw	x, #0x0266
-      0002A2 27 1F            [ 1]  491 	jreq	00119$
-      0002A4 A3 02 05         [ 2]  492 	cpw	x, #0x0205
-      0002A7 27 1A            [ 1]  493 	jreq	00119$
-      0002A9 A3 02 44         [ 2]  494 	cpw	x, #0x0244
-      0002AC 27 15            [ 1]  495 	jreq	00119$
-      0002AE A3 03 46         [ 2]  496 	cpw	x, #0x0346
-      0002B1 27 10            [ 1]  497 	jreq	00119$
-      0002B3 89               [ 2]  498 	pushw	x
-      0002B4 4B D8            [ 1]  499 	push	#0xd8
-      0002B6 4B 00            [ 1]  500 	push	#0x00
+      0001D9 4B 00            [ 1]  355 	push	#0x00
+      0001DB 90 89            [ 2]  356 	pushw	y
+      0001DD 89               [ 2]  357 	pushw	x
+      0001DE CDr00r00         [ 4]  358 	call	__divulong
+      0001E1 5B 08            [ 2]  359 	addw	sp, #8
+      0001E3 9F               [ 1]  360 	ld	a, xl
+      0001E4 A4 0F            [ 1]  361 	and	a, #0x0f
+      0001E6 1A 09            [ 1]  362 	or	a, (0x09, sp)
+      0001E8 C7 52 33         [ 1]  363 	ld	0x5233, a
+                                    364 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 133: UART1->BRR2 |= (uint8_t)((BaudRate_Mantissa >> 4) & (uint8_t)0xF0); 
+      0001EB C6 52 33         [ 1]  365 	ld	a, 0x5233
+      0001EE 6B 0D            [ 1]  366 	ld	(0x0d, sp), a
+      0001F0 1E 03            [ 2]  367 	ldw	x, (0x03, sp)
+      0001F2 A6 10            [ 1]  368 	ld	a, #0x10
+      0001F4 62               [ 2]  369 	div	x, a
+      0001F5 90 93            [ 1]  370 	ldw	y, x
+      0001F7 9F               [ 1]  371 	ld	a, xl
+      0001F8 A4 F0            [ 1]  372 	and	a, #0xf0
+      0001FA 1A 0D            [ 1]  373 	or	a, (0x0d, sp)
+      0001FC C7 52 33         [ 1]  374 	ld	0x5233, a
+                                    375 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 135: UART1->BRR1 |= (uint8_t)BaudRate_Mantissa;           
+      0001FF C6 52 32         [ 1]  376 	ld	a, 0x5232
+      000202 6B 0D            [ 1]  377 	ld	(0x0d, sp), a
+      000204 7B 04            [ 1]  378 	ld	a, (0x04, sp)
+      000206 1A 0D            [ 1]  379 	or	a, (0x0d, sp)
+      000208 C7 52 32         [ 1]  380 	ld	0x5232, a
+                                    381 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
+      00020B C6 52 35         [ 1]  382 	ld	a, 0x5235
+      00020E A4 F3            [ 1]  383 	and	a, #0xf3
+      000210 C7 52 35         [ 1]  384 	ld	0x5235, a
+                                    385 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 140: UART1->CR3 &= (uint8_t)~(UART1_CR3_CPOL | UART1_CR3_CPHA | UART1_CR3_LBCL); 
+      000213 C6 52 36         [ 1]  386 	ld	a, 0x5236
+      000216 A4 F8            [ 1]  387 	and	a, #0xf8
+      000218 C7 52 36         [ 1]  388 	ld	0x5236, a
+                                    389 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 142: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & (uint8_t)(UART1_CR3_CPOL | 
+      00021B C6 52 36         [ 1]  390 	ld	a, 0x5236
+      00021E 6B 0D            [ 1]  391 	ld	(0x0d, sp), a
+      000220 7B 17            [ 1]  392 	ld	a, (0x17, sp)
+      000222 A4 07            [ 1]  393 	and	a, #0x07
+      000224 1A 0D            [ 1]  394 	or	a, (0x0d, sp)
+      000226 C7 52 36         [ 1]  395 	ld	0x5236, a
+                                    396 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
+      000229 C6 52 35         [ 1]  397 	ld	a, 0x5235
+                                    398 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 145: if ((uint8_t)(Mode & UART1_MODE_TX_ENABLE))
+      00022C 88               [ 1]  399 	push	a
+      00022D 7B 19            [ 1]  400 	ld	a, (0x19, sp)
+      00022F A5 04            [ 1]  401 	bcp	a, #0x04
+      000231 84               [ 1]  402 	pop	a
+      000232 27 07            [ 1]  403 	jreq	00102$
+                                    404 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 148: UART1->CR2 |= (uint8_t)UART1_CR2_TEN;  
+      000234 AA 08            [ 1]  405 	or	a, #0x08
+      000236 C7 52 35         [ 1]  406 	ld	0x5235, a
+      000239 20 05            [ 2]  407 	jra	00103$
+      00023B                        408 00102$:
+                                    409 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 153: UART1->CR2 &= (uint8_t)(~UART1_CR2_TEN);  
+      00023B A4 F7            [ 1]  410 	and	a, #0xf7
+      00023D C7 52 35         [ 1]  411 	ld	0x5235, a
+      000240                        412 00103$:
+                                    413 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 138: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
+      000240 C6 52 35         [ 1]  414 	ld	a, 0x5235
+                                    415 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 155: if ((uint8_t)(Mode & UART1_MODE_RX_ENABLE))
+      000243 88               [ 1]  416 	push	a
+      000244 7B 19            [ 1]  417 	ld	a, (0x19, sp)
+      000246 A5 08            [ 1]  418 	bcp	a, #0x08
+      000248 84               [ 1]  419 	pop	a
+      000249 27 07            [ 1]  420 	jreq	00105$
+                                    421 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 158: UART1->CR2 |= (uint8_t)UART1_CR2_REN;  
+      00024B AA 04            [ 1]  422 	or	a, #0x04
+      00024D C7 52 35         [ 1]  423 	ld	0x5235, a
+      000250 20 05            [ 2]  424 	jra	00106$
+      000252                        425 00105$:
+                                    426 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 163: UART1->CR2 &= (uint8_t)(~UART1_CR2_REN);  
+      000252 A4 FB            [ 1]  427 	and	a, #0xfb
+      000254 C7 52 35         [ 1]  428 	ld	0x5235, a
+      000257                        429 00106$:
+                                    430 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 111: UART1->CR3 &= (uint8_t)(~UART1_CR3_STOP);  
+      000257 C6 52 36         [ 1]  431 	ld	a, 0x5236
+                                    432 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 167: if ((uint8_t)(SyncMode & UART1_SYNCMODE_CLOCK_DISABLE))
+      00025A 0D 17            [ 1]  433 	tnz	(0x17, sp)
+      00025C 2A 07            [ 1]  434 	jrpl	00108$
+                                    435 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 170: UART1->CR3 &= (uint8_t)(~UART1_CR3_CKEN); 
+      00025E A4 F7            [ 1]  436 	and	a, #0xf7
+      000260 C7 52 36         [ 1]  437 	ld	0x5236, a
+      000263 20 0D            [ 2]  438 	jra	00110$
+      000265                        439 00108$:
+                                    440 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 174: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & UART1_CR3_CKEN);
+      000265 88               [ 1]  441 	push	a
+      000266 7B 18            [ 1]  442 	ld	a, (0x18, sp)
+      000268 A4 08            [ 1]  443 	and	a, #0x08
+      00026A 6B 0E            [ 1]  444 	ld	(0x0e, sp), a
+      00026C 84               [ 1]  445 	pop	a
+      00026D 1A 0D            [ 1]  446 	or	a, (0x0d, sp)
+      00026F C7 52 36         [ 1]  447 	ld	0x5236, a
+      000272                        448 00110$:
+                                    449 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 176: }
+      000272 1E 0E            [ 2]  450 	ldw	x, (14, sp)
+      000274 5B 18            [ 2]  451 	addw	sp, #24
+      000276 FC               [ 2]  452 	jp	(x)
+                                    453 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 184: void UART1_Cmd(FunctionalState NewState)
+                                    454 ;	-----------------------------------------
+                                    455 ;	 function UART1_Cmd
+                                    456 ;	-----------------------------------------
+      000277                        457 _UART1_Cmd:
+      000277 88               [ 1]  458 	push	a
+      000278 6B 01            [ 1]  459 	ld	(0x01, sp), a
+                                    460 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 189: UART1->CR1 &= (uint8_t)(~UART1_CR1_UARTD); 
+      00027A C6 52 34         [ 1]  461 	ld	a, 0x5234
+                                    462 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 186: if (NewState != DISABLE)
+      00027D 0D 01            [ 1]  463 	tnz	(0x01, sp)
+      00027F 27 07            [ 1]  464 	jreq	00102$
+                                    465 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 189: UART1->CR1 &= (uint8_t)(~UART1_CR1_UARTD); 
+      000281 A4 DF            [ 1]  466 	and	a, #0xdf
+      000283 C7 52 34         [ 1]  467 	ld	0x5234, a
+      000286 20 05            [ 2]  468 	jra	00104$
+      000288                        469 00102$:
+                                    470 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 194: UART1->CR1 |= UART1_CR1_UARTD;  
+      000288 AA 20            [ 1]  471 	or	a, #0x20
+      00028A C7 52 34         [ 1]  472 	ld	0x5234, a
+      00028D                        473 00104$:
+                                    474 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 196: }
+      00028D 84               [ 1]  475 	pop	a
+      00028E 81               [ 4]  476 	ret
+                                    477 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 211: void UART1_ITConfig(UART1_IT_TypeDef UART1_IT, FunctionalState NewState)
+                                    478 ;	-----------------------------------------
+                                    479 ;	 function UART1_ITConfig
+                                    480 ;	-----------------------------------------
+      00028F                        481 _UART1_ITConfig:
+      00028F 52 05            [ 2]  482 	sub	sp, #5
+      000291 1F 04            [ 2]  483 	ldw	(0x04, sp), x
+      000293 6B 03            [ 1]  484 	ld	(0x03, sp), a
+                                    485 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 216: assert_param(IS_UART1_CONFIG_IT_OK(UART1_IT));
+      000295 1E 04            [ 2]  486 	ldw	x, (0x04, sp)
+      000297 A3 01 00         [ 2]  487 	cpw	x, #0x0100
+      00029A 27 29            [ 1]  488 	jreq	00119$
+      00029C A3 02 77         [ 2]  489 	cpw	x, #0x0277
+      00029F 27 24            [ 1]  490 	jreq	00119$
+      0002A1 A3 02 66         [ 2]  491 	cpw	x, #0x0266
+      0002A4 27 1F            [ 1]  492 	jreq	00119$
+      0002A6 A3 02 05         [ 2]  493 	cpw	x, #0x0205
+      0002A9 27 1A            [ 1]  494 	jreq	00119$
+      0002AB A3 02 44         [ 2]  495 	cpw	x, #0x0244
+      0002AE 27 15            [ 1]  496 	jreq	00119$
+      0002B0 A3 03 46         [ 2]  497 	cpw	x, #0x0346
+      0002B3 27 10            [ 1]  498 	jreq	00119$
+      0002B5 89               [ 2]  499 	pushw	x
+      0002B6 4B D8            [ 1]  500 	push	#0xd8
       0002B8 4B 00            [ 1]  501 	push	#0x00
       0002BA 4B 00            [ 1]  502 	push	#0x00
-      0002BC AEr00r00         [ 2]  503 	ldw	x, #(___str_0+0)
-      0002BF CDr00r00         [ 4]  504 	call	_assert_failed
-      0002C2 85               [ 2]  505 	popw	x
-      0002C3                        506 00119$:
-                                    507 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 217: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      0002C3 0D 03            [ 1]  508 	tnz	(0x03, sp)
-      0002C5 27 14            [ 1]  509 	jreq	00136$
-      0002C7 0D 03            [ 1]  510 	tnz	(0x03, sp)
-      0002C9 26 10            [ 1]  511 	jrne	00136$
-      0002CB 89               [ 2]  512 	pushw	x
-      0002CC 4B D9            [ 1]  513 	push	#0xd9
-      0002CE 4B 00            [ 1]  514 	push	#0x00
+      0002BC 4B 00            [ 1]  503 	push	#0x00
+      0002BE AEr00r00         [ 2]  504 	ldw	x, #(___str_0+0)
+      0002C1 CDr00r00         [ 4]  505 	call	_assert_failed
+      0002C4 85               [ 2]  506 	popw	x
+      0002C5                        507 00119$:
+                                    508 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 217: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0002C5 0D 03            [ 1]  509 	tnz	(0x03, sp)
+      0002C7 27 14            [ 1]  510 	jreq	00136$
+      0002C9 0D 03            [ 1]  511 	tnz	(0x03, sp)
+      0002CB 26 10            [ 1]  512 	jrne	00136$
+      0002CD 89               [ 2]  513 	pushw	x
+      0002CE 4B D9            [ 1]  514 	push	#0xd9
       0002D0 4B 00            [ 1]  515 	push	#0x00
       0002D2 4B 00            [ 1]  516 	push	#0x00
-      0002D4 AEr00r00         [ 2]  517 	ldw	x, #(___str_0+0)
-      0002D7 CDr00r00         [ 4]  518 	call	_assert_failed
-      0002DA 85               [ 2]  519 	popw	x
-      0002DB                        520 00136$:
-                                    521 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 220: uartreg = (uint8_t)((uint16_t)UART1_IT >> 0x08);
-                                    522 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 222: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
-      0002DB 7B 05            [ 1]  523 	ld	a, (0x05, sp)
-      0002DD A4 0F            [ 1]  524 	and	a, #0x0f
-      0002DF 41               [ 1]  525 	exg	a, xl
-      0002E0 A6 01            [ 1]  526 	ld	a, #0x01
-      0002E2 41               [ 1]  527 	exg	a, xl
-      0002E3 4D               [ 1]  528 	tnz	a
-      0002E4 27 06            [ 1]  529 	jreq	00226$
-      0002E6                        530 00225$:
-      0002E6 41               [ 1]  531 	exg	a, xl
-      0002E7 48               [ 1]  532 	sll	a
-      0002E8 41               [ 1]  533 	exg	a, xl
-      0002E9 4A               [ 1]  534 	dec	a
-      0002EA 26 FA            [ 1]  535 	jrne	00225$
-      0002EC                        536 00226$:
-                                    537 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 227: if (uartreg == 0x01)
-      0002EC 9E               [ 1]  538 	ld	a, xh
-      0002ED 4A               [ 1]  539 	dec	a
-      0002EE 26 05            [ 1]  540 	jrne	00228$
-      0002F0 A6 01            [ 1]  541 	ld	a, #0x01
-      0002F2 6B 01            [ 1]  542 	ld	(0x01, sp), a
-      0002F4 C5                     543 	.byte 0xc5
-      0002F5                        544 00228$:
-      0002F5 0F 01            [ 1]  545 	clr	(0x01, sp)
-      0002F7                        546 00229$:
-                                    547 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 231: else if (uartreg == 0x02)
-      0002F7 9E               [ 1]  548 	ld	a, xh
-      0002F8 A0 02            [ 1]  549 	sub	a, #0x02
-      0002FA 26 04            [ 1]  550 	jrne	00231$
-      0002FC 4C               [ 1]  551 	inc	a
-      0002FD 95               [ 1]  552 	ld	xh, a
-      0002FE 20 02            [ 2]  553 	jra	00232$
-      000300                        554 00231$:
-      000300 4F               [ 1]  555 	clr	a
-      000301 95               [ 1]  556 	ld	xh, a
-      000302                        557 00232$:
-                                    558 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 224: if (NewState != DISABLE)
-      000302 0D 03            [ 1]  559 	tnz	(0x03, sp)
-      000304 27 2C            [ 1]  560 	jreq	00114$
-                                    561 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 227: if (uartreg == 0x01)
-      000306 0D 01            [ 1]  562 	tnz	(0x01, sp)
-      000308 27 0C            [ 1]  563 	jreq	00105$
-                                    564 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 229: UART1->CR1 |= itpos;
-      00030A C6 52 34         [ 1]  565 	ld	a, 0x5234
-      00030D 89               [ 2]  566 	pushw	x
-      00030E 1A 02            [ 1]  567 	or	a, (2, sp)
-      000310 85               [ 2]  568 	popw	x
-      000311 C7 52 34         [ 1]  569 	ld	0x5234, a
-      000314 20 44            [ 2]  570 	jra	00116$
-      000316                        571 00105$:
-                                    572 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 231: else if (uartreg == 0x02)
-      000316 9E               [ 1]  573 	ld	a, xh
-      000317 4D               [ 1]  574 	tnz	a
-      000318 27 0C            [ 1]  575 	jreq	00102$
-                                    576 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 233: UART1->CR2 |= itpos;
-      00031A C6 52 35         [ 1]  577 	ld	a, 0x5235
-      00031D 89               [ 2]  578 	pushw	x
-      00031E 1A 02            [ 1]  579 	or	a, (2, sp)
-      000320 85               [ 2]  580 	popw	x
-      000321 C7 52 35         [ 1]  581 	ld	0x5235, a
-      000324 20 34            [ 2]  582 	jra	00116$
-      000326                        583 00102$:
-                                    584 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 237: UART1->CR4 |= itpos;
-      000326 C6 52 37         [ 1]  585 	ld	a, 0x5237
-      000329 89               [ 2]  586 	pushw	x
-      00032A 1A 02            [ 1]  587 	or	a, (2, sp)
-      00032C 85               [ 2]  588 	popw	x
-      00032D C7 52 37         [ 1]  589 	ld	0x5237, a
-      000330 20 28            [ 2]  590 	jra	00116$
-      000332                        591 00114$:
-                                    592 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 245: UART1->CR1 &= (uint8_t)(~itpos);
-      000332 9F               [ 1]  593 	ld	a, xl
-      000333 43               [ 1]  594 	cpl	a
-      000334 6B 02            [ 1]  595 	ld	(0x02, sp), a
-                                    596 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 243: if (uartreg == 0x01)
-      000336 0D 01            [ 1]  597 	tnz	(0x01, sp)
-      000338 27 0A            [ 1]  598 	jreq	00111$
-                                    599 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 245: UART1->CR1 &= (uint8_t)(~itpos);
-      00033A C6 52 34         [ 1]  600 	ld	a, 0x5234
-      00033D 14 02            [ 1]  601 	and	a, (0x02, sp)
-      00033F C7 52 34         [ 1]  602 	ld	0x5234, a
-      000342 20 16            [ 2]  603 	jra	00116$
-      000344                        604 00111$:
-                                    605 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 247: else if (uartreg == 0x02)
-      000344 9E               [ 1]  606 	ld	a, xh
-      000345 4D               [ 1]  607 	tnz	a
-      000346 27 0A            [ 1]  608 	jreq	00108$
-                                    609 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 249: UART1->CR2 &= (uint8_t)(~itpos);
-      000348 C6 52 35         [ 1]  610 	ld	a, 0x5235
-      00034B 14 02            [ 1]  611 	and	a, (0x02, sp)
-      00034D C7 52 35         [ 1]  612 	ld	0x5235, a
-      000350 20 08            [ 2]  613 	jra	00116$
-      000352                        614 00108$:
-                                    615 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 253: UART1->CR4 &= (uint8_t)(~itpos);
-      000352 C6 52 37         [ 1]  616 	ld	a, 0x5237
-      000355 14 02            [ 1]  617 	and	a, (0x02, sp)
-      000357 C7 52 37         [ 1]  618 	ld	0x5237, a
-      00035A                        619 00116$:
-                                    620 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 257: }
-      00035A 5B 05            [ 2]  621 	addw	sp, #5
-      00035C 81               [ 4]  622 	ret
-                                    623 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 265: void UART1_HalfDuplexCmd(FunctionalState NewState)
-                                    624 ;	-----------------------------------------
-                                    625 ;	 function UART1_HalfDuplexCmd
-                                    626 ;	-----------------------------------------
-      00035D                        627 _UART1_HalfDuplexCmd:
-      00035D 88               [ 1]  628 	push	a
-                                    629 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 267: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      00035E 6B 01            [ 1]  630 	ld	(0x01, sp), a
-      000360 27 10            [ 1]  631 	jreq	00107$
-      000362 0D 01            [ 1]  632 	tnz	(0x01, sp)
-      000364 26 0C            [ 1]  633 	jrne	00107$
-      000366 4B 0B            [ 1]  634 	push	#0x0b
-      000368 4B 01            [ 1]  635 	push	#0x01
-      00036A 5F               [ 1]  636 	clrw	x
-      00036B 89               [ 2]  637 	pushw	x
-      00036C AEr00r00         [ 2]  638 	ldw	x, #(___str_0+0)
-      00036F CDr00r00         [ 4]  639 	call	_assert_failed
-      000372                        640 00107$:
-                                    641 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 271: UART1->CR5 |= UART1_CR5_HDSEL;  /**< UART1 Half Duplex Enable  */
-      000372 C6 52 38         [ 1]  642 	ld	a, 0x5238
-                                    643 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 269: if (NewState != DISABLE)
-      000375 0D 01            [ 1]  644 	tnz	(0x01, sp)
-      000377 27 07            [ 1]  645 	jreq	00102$
-                                    646 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 271: UART1->CR5 |= UART1_CR5_HDSEL;  /**< UART1 Half Duplex Enable  */
-      000379 AA 08            [ 1]  647 	or	a, #0x08
-      00037B C7 52 38         [ 1]  648 	ld	0x5238, a
-      00037E 20 05            [ 2]  649 	jra	00104$
-      000380                        650 00102$:
-                                    651 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 275: UART1->CR5 &= (uint8_t)~UART1_CR5_HDSEL; /**< UART1 Half Duplex Disable */
-      000380 A4 F7            [ 1]  652 	and	a, #0xf7
-      000382 C7 52 38         [ 1]  653 	ld	0x5238, a
-      000385                        654 00104$:
-                                    655 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 277: }
-      000385 84               [ 1]  656 	pop	a
-      000386 81               [ 4]  657 	ret
-                                    658 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 285: void UART1_IrDAConfig(UART1_IrDAMode_TypeDef UART1_IrDAMode)
-                                    659 ;	-----------------------------------------
-                                    660 ;	 function UART1_IrDAConfig
-                                    661 ;	-----------------------------------------
-      000387                        662 _UART1_IrDAConfig:
-      000387 88               [ 1]  663 	push	a
-                                    664 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 287: assert_param(IS_UART1_IRDAMODE_OK(UART1_IrDAMode));
-      000388 6B 01            [ 1]  665 	ld	(0x01, sp), a
-      00038A 26 10            [ 1]  666 	jrne	00107$
-      00038C 0D 01            [ 1]  667 	tnz	(0x01, sp)
-      00038E 27 0C            [ 1]  668 	jreq	00107$
-      000390 4B 1F            [ 1]  669 	push	#0x1f
-      000392 4B 01            [ 1]  670 	push	#0x01
-      000394 5F               [ 1]  671 	clrw	x
-      000395 89               [ 2]  672 	pushw	x
-      000396 AEr00r00         [ 2]  673 	ldw	x, #(___str_0+0)
-      000399 CDr00r00         [ 4]  674 	call	_assert_failed
-      00039C                        675 00107$:
-                                    676 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 291: UART1->CR5 |= UART1_CR5_IRLP;
-      00039C C6 52 38         [ 1]  677 	ld	a, 0x5238
-                                    678 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 289: if (UART1_IrDAMode != UART1_IRDAMODE_NORMAL)
-      00039F 0D 01            [ 1]  679 	tnz	(0x01, sp)
-      0003A1 27 07            [ 1]  680 	jreq	00102$
-                                    681 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 291: UART1->CR5 |= UART1_CR5_IRLP;
-      0003A3 AA 04            [ 1]  682 	or	a, #0x04
-      0003A5 C7 52 38         [ 1]  683 	ld	0x5238, a
-      0003A8 20 05            [ 2]  684 	jra	00104$
-      0003AA                        685 00102$:
-                                    686 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 295: UART1->CR5 &= ((uint8_t)~UART1_CR5_IRLP);
-      0003AA A4 FB            [ 1]  687 	and	a, #0xfb
-      0003AC C7 52 38         [ 1]  688 	ld	0x5238, a
-      0003AF                        689 00104$:
-                                    690 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 297: }
-      0003AF 84               [ 1]  691 	pop	a
-      0003B0 81               [ 4]  692 	ret
-                                    693 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 305: void UART1_IrDACmd(FunctionalState NewState)
-                                    694 ;	-----------------------------------------
-                                    695 ;	 function UART1_IrDACmd
-                                    696 ;	-----------------------------------------
-      0003B1                        697 _UART1_IrDACmd:
-      0003B1 88               [ 1]  698 	push	a
-                                    699 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 308: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      0003B2 6B 01            [ 1]  700 	ld	(0x01, sp), a
-      0003B4 27 10            [ 1]  701 	jreq	00107$
-      0003B6 0D 01            [ 1]  702 	tnz	(0x01, sp)
-      0003B8 26 0C            [ 1]  703 	jrne	00107$
-      0003BA 4B 34            [ 1]  704 	push	#0x34
-      0003BC 4B 01            [ 1]  705 	push	#0x01
-      0003BE 5F               [ 1]  706 	clrw	x
-      0003BF 89               [ 2]  707 	pushw	x
-      0003C0 AEr00r00         [ 2]  708 	ldw	x, #(___str_0+0)
-      0003C3 CDr00r00         [ 4]  709 	call	_assert_failed
-      0003C6                        710 00107$:
-                                    711 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 313: UART1->CR5 |= UART1_CR5_IREN;
-      0003C6 C6 52 38         [ 1]  712 	ld	a, 0x5238
-                                    713 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 310: if (NewState != DISABLE)
-      0003C9 0D 01            [ 1]  714 	tnz	(0x01, sp)
-      0003CB 27 07            [ 1]  715 	jreq	00102$
-                                    716 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 313: UART1->CR5 |= UART1_CR5_IREN;
-      0003CD AA 02            [ 1]  717 	or	a, #0x02
-      0003CF C7 52 38         [ 1]  718 	ld	0x5238, a
-      0003D2 20 05            [ 2]  719 	jra	00104$
-      0003D4                        720 00102$:
-                                    721 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 318: UART1->CR5 &= ((uint8_t)~UART1_CR5_IREN);
-      0003D4 A4 FD            [ 1]  722 	and	a, #0xfd
-      0003D6 C7 52 38         [ 1]  723 	ld	0x5238, a
-      0003D9                        724 00104$:
-                                    725 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 320: }
-      0003D9 84               [ 1]  726 	pop	a
-      0003DA 81               [ 4]  727 	ret
-                                    728 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 329: void UART1_LINBreakDetectionConfig(UART1_LINBreakDetectionLength_TypeDef UART1_LINBreakDetectionLength)
-                                    729 ;	-----------------------------------------
-                                    730 ;	 function UART1_LINBreakDetectionConfig
-                                    731 ;	-----------------------------------------
-      0003DB                        732 _UART1_LINBreakDetectionConfig:
-      0003DB 88               [ 1]  733 	push	a
-                                    734 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 331: assert_param(IS_UART1_LINBREAKDETECTIONLENGTH_OK(UART1_LINBreakDetectionLength));
-      0003DC 6B 01            [ 1]  735 	ld	(0x01, sp), a
-      0003DE 27 10            [ 1]  736 	jreq	00107$
-      0003E0 0D 01            [ 1]  737 	tnz	(0x01, sp)
-      0003E2 26 0C            [ 1]  738 	jrne	00107$
-      0003E4 4B 4B            [ 1]  739 	push	#0x4b
-      0003E6 4B 01            [ 1]  740 	push	#0x01
-      0003E8 5F               [ 1]  741 	clrw	x
-      0003E9 89               [ 2]  742 	pushw	x
-      0003EA AEr00r00         [ 2]  743 	ldw	x, #(___str_0+0)
-      0003ED CDr00r00         [ 4]  744 	call	_assert_failed
-      0003F0                        745 00107$:
-                                    746 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 335: UART1->CR4 |= UART1_CR4_LBDL;
-      0003F0 C6 52 37         [ 1]  747 	ld	a, 0x5237
-                                    748 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 333: if (UART1_LINBreakDetectionLength != UART1_LINBREAKDETECTIONLENGTH_10BITS)
-      0003F3 0D 01            [ 1]  749 	tnz	(0x01, sp)
-      0003F5 27 07            [ 1]  750 	jreq	00102$
-                                    751 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 335: UART1->CR4 |= UART1_CR4_LBDL;
-      0003F7 AA 20            [ 1]  752 	or	a, #0x20
-      0003F9 C7 52 37         [ 1]  753 	ld	0x5237, a
-      0003FC 20 05            [ 2]  754 	jra	00104$
-      0003FE                        755 00102$:
-                                    756 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 339: UART1->CR4 &= ((uint8_t)~UART1_CR4_LBDL);
-      0003FE A4 DF            [ 1]  757 	and	a, #0xdf
-      000400 C7 52 37         [ 1]  758 	ld	0x5237, a
-      000403                        759 00104$:
-                                    760 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 341: }
-      000403 84               [ 1]  761 	pop	a
-      000404 81               [ 4]  762 	ret
-                                    763 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 349: void UART1_LINCmd(FunctionalState NewState)
-                                    764 ;	-----------------------------------------
-                                    765 ;	 function UART1_LINCmd
-                                    766 ;	-----------------------------------------
-      000405                        767 _UART1_LINCmd:
-      000405 88               [ 1]  768 	push	a
-                                    769 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 351: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      000406 6B 01            [ 1]  770 	ld	(0x01, sp), a
-      000408 27 10            [ 1]  771 	jreq	00107$
-      00040A 0D 01            [ 1]  772 	tnz	(0x01, sp)
-      00040C 26 0C            [ 1]  773 	jrne	00107$
-      00040E 4B 5F            [ 1]  774 	push	#0x5f
-      000410 4B 01            [ 1]  775 	push	#0x01
-      000412 5F               [ 1]  776 	clrw	x
-      000413 89               [ 2]  777 	pushw	x
-      000414 AEr00r00         [ 2]  778 	ldw	x, #(___str_0+0)
-      000417 CDr00r00         [ 4]  779 	call	_assert_failed
-      00041A                        780 00107$:
-                                    781 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 356: UART1->CR3 |= UART1_CR3_LINEN;
-      00041A C6 52 36         [ 1]  782 	ld	a, 0x5236
-                                    783 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 353: if (NewState != DISABLE)
-      00041D 0D 01            [ 1]  784 	tnz	(0x01, sp)
-      00041F 27 07            [ 1]  785 	jreq	00102$
-                                    786 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 356: UART1->CR3 |= UART1_CR3_LINEN;
-      000421 AA 40            [ 1]  787 	or	a, #0x40
-      000423 C7 52 36         [ 1]  788 	ld	0x5236, a
-      000426 20 05            [ 2]  789 	jra	00104$
-      000428                        790 00102$:
-                                    791 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 361: UART1->CR3 &= ((uint8_t)~UART1_CR3_LINEN);
-      000428 A4 BF            [ 1]  792 	and	a, #0xbf
-      00042A C7 52 36         [ 1]  793 	ld	0x5236, a
-      00042D                        794 00104$:
-                                    795 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 363: }
-      00042D 84               [ 1]  796 	pop	a
-      00042E 81               [ 4]  797 	ret
-                                    798 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 371: void UART1_SmartCardCmd(FunctionalState NewState)
-                                    799 ;	-----------------------------------------
-                                    800 ;	 function UART1_SmartCardCmd
-                                    801 ;	-----------------------------------------
-      00042F                        802 _UART1_SmartCardCmd:
-      00042F 88               [ 1]  803 	push	a
-                                    804 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 373: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      000430 6B 01            [ 1]  805 	ld	(0x01, sp), a
-      000432 27 10            [ 1]  806 	jreq	00107$
-      000434 0D 01            [ 1]  807 	tnz	(0x01, sp)
-      000436 26 0C            [ 1]  808 	jrne	00107$
-      000438 4B 75            [ 1]  809 	push	#0x75
-      00043A 4B 01            [ 1]  810 	push	#0x01
-      00043C 5F               [ 1]  811 	clrw	x
-      00043D 89               [ 2]  812 	pushw	x
-      00043E AEr00r00         [ 2]  813 	ldw	x, #(___str_0+0)
-      000441 CDr00r00         [ 4]  814 	call	_assert_failed
-      000444                        815 00107$:
-                                    816 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 378: UART1->CR5 |= UART1_CR5_SCEN;
-      000444 C6 52 38         [ 1]  817 	ld	a, 0x5238
-                                    818 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 375: if (NewState != DISABLE)
-      000447 0D 01            [ 1]  819 	tnz	(0x01, sp)
-      000449 27 07            [ 1]  820 	jreq	00102$
-                                    821 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 378: UART1->CR5 |= UART1_CR5_SCEN;
-      00044B AA 20            [ 1]  822 	or	a, #0x20
-      00044D C7 52 38         [ 1]  823 	ld	0x5238, a
-      000450 20 05            [ 2]  824 	jra	00104$
-      000452                        825 00102$:
-                                    826 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 383: UART1->CR5 &= ((uint8_t)(~UART1_CR5_SCEN));
-      000452 A4 DF            [ 1]  827 	and	a, #0xdf
-      000454 C7 52 38         [ 1]  828 	ld	0x5238, a
-      000457                        829 00104$:
-                                    830 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 385: }
-      000457 84               [ 1]  831 	pop	a
-      000458 81               [ 4]  832 	ret
-                                    833 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 394: void UART1_SmartCardNACKCmd(FunctionalState NewState)
-                                    834 ;	-----------------------------------------
-                                    835 ;	 function UART1_SmartCardNACKCmd
-                                    836 ;	-----------------------------------------
-      000459                        837 _UART1_SmartCardNACKCmd:
-      000459 88               [ 1]  838 	push	a
-                                    839 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 396: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      00045A 6B 01            [ 1]  840 	ld	(0x01, sp), a
-      00045C 27 10            [ 1]  841 	jreq	00107$
-      00045E 0D 01            [ 1]  842 	tnz	(0x01, sp)
-      000460 26 0C            [ 1]  843 	jrne	00107$
-      000462 4B 8C            [ 1]  844 	push	#0x8c
-      000464 4B 01            [ 1]  845 	push	#0x01
-      000466 5F               [ 1]  846 	clrw	x
-      000467 89               [ 2]  847 	pushw	x
-      000468 AEr00r00         [ 2]  848 	ldw	x, #(___str_0+0)
-      00046B CDr00r00         [ 4]  849 	call	_assert_failed
-      00046E                        850 00107$:
-                                    851 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 401: UART1->CR5 |= UART1_CR5_NACK;
-      00046E C6 52 38         [ 1]  852 	ld	a, 0x5238
-                                    853 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 398: if (NewState != DISABLE)
-      000471 0D 01            [ 1]  854 	tnz	(0x01, sp)
-      000473 27 07            [ 1]  855 	jreq	00102$
-                                    856 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 401: UART1->CR5 |= UART1_CR5_NACK;
-      000475 AA 10            [ 1]  857 	or	a, #0x10
-      000477 C7 52 38         [ 1]  858 	ld	0x5238, a
-      00047A 20 05            [ 2]  859 	jra	00104$
-      00047C                        860 00102$:
-                                    861 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 406: UART1->CR5 &= ((uint8_t)~(UART1_CR5_NACK));
-      00047C A4 EF            [ 1]  862 	and	a, #0xef
-      00047E C7 52 38         [ 1]  863 	ld	0x5238, a
-      000481                        864 00104$:
-                                    865 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 408: }
-      000481 84               [ 1]  866 	pop	a
-      000482 81               [ 4]  867 	ret
-                                    868 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 416: void UART1_WakeUpConfig(UART1_WakeUp_TypeDef UART1_WakeUp)
-                                    869 ;	-----------------------------------------
-                                    870 ;	 function UART1_WakeUpConfig
-                                    871 ;	-----------------------------------------
-      000483                        872 _UART1_WakeUpConfig:
-      000483 88               [ 1]  873 	push	a
-                                    874 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 418: assert_param(IS_UART1_WAKEUP_OK(UART1_WakeUp));
-      000484 6B 01            [ 1]  875 	ld	(0x01, sp), a
-      000486 27 12            [ 1]  876 	jreq	00104$
-      000488 7B 01            [ 1]  877 	ld	a, (0x01, sp)
-      00048A A1 08            [ 1]  878 	cp	a, #0x08
-      00048C 27 0C            [ 1]  879 	jreq	00104$
-      00048E 4B A2            [ 1]  880 	push	#0xa2
-      000490 4B 01            [ 1]  881 	push	#0x01
-      000492 5F               [ 1]  882 	clrw	x
-      000493 89               [ 2]  883 	pushw	x
-      000494 AEr00r00         [ 2]  884 	ldw	x, #(___str_0+0)
-      000497 CDr00r00         [ 4]  885 	call	_assert_failed
-      00049A                        886 00104$:
-                                    887 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 420: UART1->CR1 &= ((uint8_t)~UART1_CR1_WAKE);
-      00049A 72 17 52 34      [ 1]  888 	bres	0x5234, #3
-                                    889 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 421: UART1->CR1 |= (uint8_t)UART1_WakeUp;
-      00049E C6 52 34         [ 1]  890 	ld	a, 0x5234
-      0004A1 1A 01            [ 1]  891 	or	a, (0x01, sp)
-      0004A3 C7 52 34         [ 1]  892 	ld	0x5234, a
-                                    893 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 422: }
-      0004A6 84               [ 1]  894 	pop	a
-      0004A7 81               [ 4]  895 	ret
-                                    896 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 430: void UART1_ReceiverWakeUpCmd(FunctionalState NewState)
-                                    897 ;	-----------------------------------------
-                                    898 ;	 function UART1_ReceiverWakeUpCmd
-                                    899 ;	-----------------------------------------
-      0004A8                        900 _UART1_ReceiverWakeUpCmd:
-      0004A8 88               [ 1]  901 	push	a
-                                    902 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 432: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
-      0004A9 6B 01            [ 1]  903 	ld	(0x01, sp), a
-      0004AB 27 10            [ 1]  904 	jreq	00107$
-      0004AD 0D 01            [ 1]  905 	tnz	(0x01, sp)
-      0004AF 26 0C            [ 1]  906 	jrne	00107$
-      0004B1 4B B0            [ 1]  907 	push	#0xb0
-      0004B3 4B 01            [ 1]  908 	push	#0x01
-      0004B5 5F               [ 1]  909 	clrw	x
-      0004B6 89               [ 2]  910 	pushw	x
-      0004B7 AEr00r00         [ 2]  911 	ldw	x, #(___str_0+0)
-      0004BA CDr00r00         [ 4]  912 	call	_assert_failed
-      0004BD                        913 00107$:
-                                    914 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 437: UART1->CR2 |= UART1_CR2_RWU;
-      0004BD C6 52 35         [ 1]  915 	ld	a, 0x5235
-                                    916 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 434: if (NewState != DISABLE)
-      0004C0 0D 01            [ 1]  917 	tnz	(0x01, sp)
-      0004C2 27 07            [ 1]  918 	jreq	00102$
-                                    919 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 437: UART1->CR2 |= UART1_CR2_RWU;
-      0004C4 AA 02            [ 1]  920 	or	a, #0x02
-      0004C6 C7 52 35         [ 1]  921 	ld	0x5235, a
-      0004C9 20 05            [ 2]  922 	jra	00104$
-      0004CB                        923 00102$:
-                                    924 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 442: UART1->CR2 &= ((uint8_t)~UART1_CR2_RWU);
-      0004CB A4 FD            [ 1]  925 	and	a, #0xfd
-      0004CD C7 52 35         [ 1]  926 	ld	0x5235, a
-      0004D0                        927 00104$:
-                                    928 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 444: }
-      0004D0 84               [ 1]  929 	pop	a
-      0004D1 81               [ 4]  930 	ret
-                                    931 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 451: uint8_t UART1_ReceiveData8(void)
-                                    932 ;	-----------------------------------------
-                                    933 ;	 function UART1_ReceiveData8
-                                    934 ;	-----------------------------------------
-      0004D2                        935 _UART1_ReceiveData8:
-                                    936 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 453: return ((uint8_t)UART1->DR);
-      0004D2 C6 52 31         [ 1]  937 	ld	a, 0x5231
-                                    938 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 454: }
-      0004D5 81               [ 4]  939 	ret
-                                    940 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 461: uint16_t UART1_ReceiveData9(void)
-                                    941 ;	-----------------------------------------
-                                    942 ;	 function UART1_ReceiveData9
-                                    943 ;	-----------------------------------------
-      0004D6                        944 _UART1_ReceiveData9:
-      0004D6 89               [ 2]  945 	pushw	x
+      0002D4 4B 00            [ 1]  517 	push	#0x00
+      0002D6 AEr00r00         [ 2]  518 	ldw	x, #(___str_0+0)
+      0002D9 CDr00r00         [ 4]  519 	call	_assert_failed
+      0002DC 85               [ 2]  520 	popw	x
+      0002DD                        521 00136$:
+                                    522 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 220: uartreg = (uint8_t)((uint16_t)UART1_IT >> 0x08);
+                                    523 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 222: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
+      0002DD 7B 05            [ 1]  524 	ld	a, (0x05, sp)
+      0002DF A4 0F            [ 1]  525 	and	a, #0x0f
+      0002E1 41               [ 1]  526 	exg	a, xl
+      0002E2 A6 01            [ 1]  527 	ld	a, #0x01
+      0002E4 41               [ 1]  528 	exg	a, xl
+      0002E5 4D               [ 1]  529 	tnz	a
+      0002E6 27 06            [ 1]  530 	jreq	00252$
+      0002E8                        531 00251$:
+      0002E8 41               [ 1]  532 	exg	a, xl
+      0002E9 48               [ 1]  533 	sll	a
+      0002EA 41               [ 1]  534 	exg	a, xl
+      0002EB 4A               [ 1]  535 	dec	a
+      0002EC 26 FA            [ 1]  536 	jrne	00251$
+      0002EE                        537 00252$:
+                                    538 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 227: if (uartreg == 0x01)
+      0002EE 9E               [ 1]  539 	ld	a, xh
+      0002EF 4A               [ 1]  540 	dec	a
+      0002F0 26 05            [ 1]  541 	jrne	00254$
+      0002F2 A6 01            [ 1]  542 	ld	a, #0x01
+      0002F4 6B 01            [ 1]  543 	ld	(0x01, sp), a
+      0002F6 C5                     544 	.byte 0xc5
+      0002F7                        545 00254$:
+      0002F7 0F 01            [ 1]  546 	clr	(0x01, sp)
+      0002F9                        547 00255$:
+                                    548 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 231: else if (uartreg == 0x02)
+      0002F9 9E               [ 1]  549 	ld	a, xh
+      0002FA A0 02            [ 1]  550 	sub	a, #0x02
+      0002FC 26 04            [ 1]  551 	jrne	00257$
+      0002FE 4C               [ 1]  552 	inc	a
+      0002FF 95               [ 1]  553 	ld	xh, a
+      000300 20 02            [ 2]  554 	jra	00258$
+      000302                        555 00257$:
+      000302 4F               [ 1]  556 	clr	a
+      000303 95               [ 1]  557 	ld	xh, a
+      000304                        558 00258$:
+                                    559 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 224: if (NewState != DISABLE)
+      000304 0D 03            [ 1]  560 	tnz	(0x03, sp)
+      000306 27 2C            [ 1]  561 	jreq	00114$
+                                    562 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 227: if (uartreg == 0x01)
+      000308 0D 01            [ 1]  563 	tnz	(0x01, sp)
+      00030A 27 0C            [ 1]  564 	jreq	00105$
+                                    565 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 229: UART1->CR1 |= itpos;
+      00030C C6 52 34         [ 1]  566 	ld	a, 0x5234
+      00030F 89               [ 2]  567 	pushw	x
+      000310 1A 02            [ 1]  568 	or	a, (2, sp)
+      000312 85               [ 2]  569 	popw	x
+      000313 C7 52 34         [ 1]  570 	ld	0x5234, a
+      000316 20 44            [ 2]  571 	jra	00116$
+      000318                        572 00105$:
+                                    573 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 231: else if (uartreg == 0x02)
+      000318 9E               [ 1]  574 	ld	a, xh
+      000319 4D               [ 1]  575 	tnz	a
+      00031A 27 0C            [ 1]  576 	jreq	00102$
+                                    577 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 233: UART1->CR2 |= itpos;
+      00031C C6 52 35         [ 1]  578 	ld	a, 0x5235
+      00031F 89               [ 2]  579 	pushw	x
+      000320 1A 02            [ 1]  580 	or	a, (2, sp)
+      000322 85               [ 2]  581 	popw	x
+      000323 C7 52 35         [ 1]  582 	ld	0x5235, a
+      000326 20 34            [ 2]  583 	jra	00116$
+      000328                        584 00102$:
+                                    585 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 237: UART1->CR4 |= itpos;
+      000328 C6 52 37         [ 1]  586 	ld	a, 0x5237
+      00032B 89               [ 2]  587 	pushw	x
+      00032C 1A 02            [ 1]  588 	or	a, (2, sp)
+      00032E 85               [ 2]  589 	popw	x
+      00032F C7 52 37         [ 1]  590 	ld	0x5237, a
+      000332 20 28            [ 2]  591 	jra	00116$
+      000334                        592 00114$:
+                                    593 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 245: UART1->CR1 &= (uint8_t)(~itpos);
+      000334 9F               [ 1]  594 	ld	a, xl
+      000335 43               [ 1]  595 	cpl	a
+      000336 6B 02            [ 1]  596 	ld	(0x02, sp), a
+                                    597 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 243: if (uartreg == 0x01)
+      000338 0D 01            [ 1]  598 	tnz	(0x01, sp)
+      00033A 27 0A            [ 1]  599 	jreq	00111$
+                                    600 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 245: UART1->CR1 &= (uint8_t)(~itpos);
+      00033C C6 52 34         [ 1]  601 	ld	a, 0x5234
+      00033F 14 02            [ 1]  602 	and	a, (0x02, sp)
+      000341 C7 52 34         [ 1]  603 	ld	0x5234, a
+      000344 20 16            [ 2]  604 	jra	00116$
+      000346                        605 00111$:
+                                    606 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 247: else if (uartreg == 0x02)
+      000346 9E               [ 1]  607 	ld	a, xh
+      000347 4D               [ 1]  608 	tnz	a
+      000348 27 0A            [ 1]  609 	jreq	00108$
+                                    610 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 249: UART1->CR2 &= (uint8_t)(~itpos);
+      00034A C6 52 35         [ 1]  611 	ld	a, 0x5235
+      00034D 14 02            [ 1]  612 	and	a, (0x02, sp)
+      00034F C7 52 35         [ 1]  613 	ld	0x5235, a
+      000352 20 08            [ 2]  614 	jra	00116$
+      000354                        615 00108$:
+                                    616 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 253: UART1->CR4 &= (uint8_t)(~itpos);
+      000354 C6 52 37         [ 1]  617 	ld	a, 0x5237
+      000357 14 02            [ 1]  618 	and	a, (0x02, sp)
+      000359 C7 52 37         [ 1]  619 	ld	0x5237, a
+      00035C                        620 00116$:
+                                    621 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 257: }
+      00035C 5B 05            [ 2]  622 	addw	sp, #5
+      00035E 81               [ 4]  623 	ret
+                                    624 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 265: void UART1_HalfDuplexCmd(FunctionalState NewState)
+                                    625 ;	-----------------------------------------
+                                    626 ;	 function UART1_HalfDuplexCmd
+                                    627 ;	-----------------------------------------
+      00035F                        628 _UART1_HalfDuplexCmd:
+      00035F 88               [ 1]  629 	push	a
+                                    630 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 267: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000360 6B 01            [ 1]  631 	ld	(0x01, sp), a
+      000362 27 10            [ 1]  632 	jreq	00107$
+      000364 0D 01            [ 1]  633 	tnz	(0x01, sp)
+      000366 26 0C            [ 1]  634 	jrne	00107$
+      000368 4B 0B            [ 1]  635 	push	#0x0b
+      00036A 4B 01            [ 1]  636 	push	#0x01
+      00036C 5F               [ 1]  637 	clrw	x
+      00036D 89               [ 2]  638 	pushw	x
+      00036E AEr00r00         [ 2]  639 	ldw	x, #(___str_0+0)
+      000371 CDr00r00         [ 4]  640 	call	_assert_failed
+      000374                        641 00107$:
+                                    642 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 271: UART1->CR5 |= UART1_CR5_HDSEL;  /**< UART1 Half Duplex Enable  */
+      000374 C6 52 38         [ 1]  643 	ld	a, 0x5238
+                                    644 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 269: if (NewState != DISABLE)
+      000377 0D 01            [ 1]  645 	tnz	(0x01, sp)
+      000379 27 07            [ 1]  646 	jreq	00102$
+                                    647 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 271: UART1->CR5 |= UART1_CR5_HDSEL;  /**< UART1 Half Duplex Enable  */
+      00037B AA 08            [ 1]  648 	or	a, #0x08
+      00037D C7 52 38         [ 1]  649 	ld	0x5238, a
+      000380 20 05            [ 2]  650 	jra	00104$
+      000382                        651 00102$:
+                                    652 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 275: UART1->CR5 &= (uint8_t)~UART1_CR5_HDSEL; /**< UART1 Half Duplex Disable */
+      000382 A4 F7            [ 1]  653 	and	a, #0xf7
+      000384 C7 52 38         [ 1]  654 	ld	0x5238, a
+      000387                        655 00104$:
+                                    656 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 277: }
+      000387 84               [ 1]  657 	pop	a
+      000388 81               [ 4]  658 	ret
+                                    659 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 285: void UART1_IrDAConfig(UART1_IrDAMode_TypeDef UART1_IrDAMode)
+                                    660 ;	-----------------------------------------
+                                    661 ;	 function UART1_IrDAConfig
+                                    662 ;	-----------------------------------------
+      000389                        663 _UART1_IrDAConfig:
+      000389 88               [ 1]  664 	push	a
+                                    665 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 287: assert_param(IS_UART1_IRDAMODE_OK(UART1_IrDAMode));
+      00038A 6B 01            [ 1]  666 	ld	(0x01, sp), a
+      00038C 26 10            [ 1]  667 	jrne	00107$
+      00038E 0D 01            [ 1]  668 	tnz	(0x01, sp)
+      000390 27 0C            [ 1]  669 	jreq	00107$
+      000392 4B 1F            [ 1]  670 	push	#0x1f
+      000394 4B 01            [ 1]  671 	push	#0x01
+      000396 5F               [ 1]  672 	clrw	x
+      000397 89               [ 2]  673 	pushw	x
+      000398 AEr00r00         [ 2]  674 	ldw	x, #(___str_0+0)
+      00039B CDr00r00         [ 4]  675 	call	_assert_failed
+      00039E                        676 00107$:
+                                    677 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 291: UART1->CR5 |= UART1_CR5_IRLP;
+      00039E C6 52 38         [ 1]  678 	ld	a, 0x5238
+                                    679 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 289: if (UART1_IrDAMode != UART1_IRDAMODE_NORMAL)
+      0003A1 0D 01            [ 1]  680 	tnz	(0x01, sp)
+      0003A3 27 07            [ 1]  681 	jreq	00102$
+                                    682 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 291: UART1->CR5 |= UART1_CR5_IRLP;
+      0003A5 AA 04            [ 1]  683 	or	a, #0x04
+      0003A7 C7 52 38         [ 1]  684 	ld	0x5238, a
+      0003AA 20 05            [ 2]  685 	jra	00104$
+      0003AC                        686 00102$:
+                                    687 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 295: UART1->CR5 &= ((uint8_t)~UART1_CR5_IRLP);
+      0003AC A4 FB            [ 1]  688 	and	a, #0xfb
+      0003AE C7 52 38         [ 1]  689 	ld	0x5238, a
+      0003B1                        690 00104$:
+                                    691 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 297: }
+      0003B1 84               [ 1]  692 	pop	a
+      0003B2 81               [ 4]  693 	ret
+                                    694 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 305: void UART1_IrDACmd(FunctionalState NewState)
+                                    695 ;	-----------------------------------------
+                                    696 ;	 function UART1_IrDACmd
+                                    697 ;	-----------------------------------------
+      0003B3                        698 _UART1_IrDACmd:
+      0003B3 88               [ 1]  699 	push	a
+                                    700 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 308: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0003B4 6B 01            [ 1]  701 	ld	(0x01, sp), a
+      0003B6 27 10            [ 1]  702 	jreq	00107$
+      0003B8 0D 01            [ 1]  703 	tnz	(0x01, sp)
+      0003BA 26 0C            [ 1]  704 	jrne	00107$
+      0003BC 4B 34            [ 1]  705 	push	#0x34
+      0003BE 4B 01            [ 1]  706 	push	#0x01
+      0003C0 5F               [ 1]  707 	clrw	x
+      0003C1 89               [ 2]  708 	pushw	x
+      0003C2 AEr00r00         [ 2]  709 	ldw	x, #(___str_0+0)
+      0003C5 CDr00r00         [ 4]  710 	call	_assert_failed
+      0003C8                        711 00107$:
+                                    712 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 313: UART1->CR5 |= UART1_CR5_IREN;
+      0003C8 C6 52 38         [ 1]  713 	ld	a, 0x5238
+                                    714 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 310: if (NewState != DISABLE)
+      0003CB 0D 01            [ 1]  715 	tnz	(0x01, sp)
+      0003CD 27 07            [ 1]  716 	jreq	00102$
+                                    717 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 313: UART1->CR5 |= UART1_CR5_IREN;
+      0003CF AA 02            [ 1]  718 	or	a, #0x02
+      0003D1 C7 52 38         [ 1]  719 	ld	0x5238, a
+      0003D4 20 05            [ 2]  720 	jra	00104$
+      0003D6                        721 00102$:
+                                    722 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 318: UART1->CR5 &= ((uint8_t)~UART1_CR5_IREN);
+      0003D6 A4 FD            [ 1]  723 	and	a, #0xfd
+      0003D8 C7 52 38         [ 1]  724 	ld	0x5238, a
+      0003DB                        725 00104$:
+                                    726 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 320: }
+      0003DB 84               [ 1]  727 	pop	a
+      0003DC 81               [ 4]  728 	ret
+                                    729 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 329: void UART1_LINBreakDetectionConfig(UART1_LINBreakDetectionLength_TypeDef UART1_LINBreakDetectionLength)
+                                    730 ;	-----------------------------------------
+                                    731 ;	 function UART1_LINBreakDetectionConfig
+                                    732 ;	-----------------------------------------
+      0003DD                        733 _UART1_LINBreakDetectionConfig:
+      0003DD 88               [ 1]  734 	push	a
+                                    735 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 331: assert_param(IS_UART1_LINBREAKDETECTIONLENGTH_OK(UART1_LINBreakDetectionLength));
+      0003DE 6B 01            [ 1]  736 	ld	(0x01, sp), a
+      0003E0 27 10            [ 1]  737 	jreq	00107$
+      0003E2 0D 01            [ 1]  738 	tnz	(0x01, sp)
+      0003E4 26 0C            [ 1]  739 	jrne	00107$
+      0003E6 4B 4B            [ 1]  740 	push	#0x4b
+      0003E8 4B 01            [ 1]  741 	push	#0x01
+      0003EA 5F               [ 1]  742 	clrw	x
+      0003EB 89               [ 2]  743 	pushw	x
+      0003EC AEr00r00         [ 2]  744 	ldw	x, #(___str_0+0)
+      0003EF CDr00r00         [ 4]  745 	call	_assert_failed
+      0003F2                        746 00107$:
+                                    747 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 335: UART1->CR4 |= UART1_CR4_LBDL;
+      0003F2 C6 52 37         [ 1]  748 	ld	a, 0x5237
+                                    749 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 333: if (UART1_LINBreakDetectionLength != UART1_LINBREAKDETECTIONLENGTH_10BITS)
+      0003F5 0D 01            [ 1]  750 	tnz	(0x01, sp)
+      0003F7 27 07            [ 1]  751 	jreq	00102$
+                                    752 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 335: UART1->CR4 |= UART1_CR4_LBDL;
+      0003F9 AA 20            [ 1]  753 	or	a, #0x20
+      0003FB C7 52 37         [ 1]  754 	ld	0x5237, a
+      0003FE 20 05            [ 2]  755 	jra	00104$
+      000400                        756 00102$:
+                                    757 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 339: UART1->CR4 &= ((uint8_t)~UART1_CR4_LBDL);
+      000400 A4 DF            [ 1]  758 	and	a, #0xdf
+      000402 C7 52 37         [ 1]  759 	ld	0x5237, a
+      000405                        760 00104$:
+                                    761 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 341: }
+      000405 84               [ 1]  762 	pop	a
+      000406 81               [ 4]  763 	ret
+                                    764 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 349: void UART1_LINCmd(FunctionalState NewState)
+                                    765 ;	-----------------------------------------
+                                    766 ;	 function UART1_LINCmd
+                                    767 ;	-----------------------------------------
+      000407                        768 _UART1_LINCmd:
+      000407 88               [ 1]  769 	push	a
+                                    770 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 351: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000408 6B 01            [ 1]  771 	ld	(0x01, sp), a
+      00040A 27 10            [ 1]  772 	jreq	00107$
+      00040C 0D 01            [ 1]  773 	tnz	(0x01, sp)
+      00040E 26 0C            [ 1]  774 	jrne	00107$
+      000410 4B 5F            [ 1]  775 	push	#0x5f
+      000412 4B 01            [ 1]  776 	push	#0x01
+      000414 5F               [ 1]  777 	clrw	x
+      000415 89               [ 2]  778 	pushw	x
+      000416 AEr00r00         [ 2]  779 	ldw	x, #(___str_0+0)
+      000419 CDr00r00         [ 4]  780 	call	_assert_failed
+      00041C                        781 00107$:
+                                    782 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 356: UART1->CR3 |= UART1_CR3_LINEN;
+      00041C C6 52 36         [ 1]  783 	ld	a, 0x5236
+                                    784 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 353: if (NewState != DISABLE)
+      00041F 0D 01            [ 1]  785 	tnz	(0x01, sp)
+      000421 27 07            [ 1]  786 	jreq	00102$
+                                    787 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 356: UART1->CR3 |= UART1_CR3_LINEN;
+      000423 AA 40            [ 1]  788 	or	a, #0x40
+      000425 C7 52 36         [ 1]  789 	ld	0x5236, a
+      000428 20 05            [ 2]  790 	jra	00104$
+      00042A                        791 00102$:
+                                    792 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 361: UART1->CR3 &= ((uint8_t)~UART1_CR3_LINEN);
+      00042A A4 BF            [ 1]  793 	and	a, #0xbf
+      00042C C7 52 36         [ 1]  794 	ld	0x5236, a
+      00042F                        795 00104$:
+                                    796 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 363: }
+      00042F 84               [ 1]  797 	pop	a
+      000430 81               [ 4]  798 	ret
+                                    799 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 371: void UART1_SmartCardCmd(FunctionalState NewState)
+                                    800 ;	-----------------------------------------
+                                    801 ;	 function UART1_SmartCardCmd
+                                    802 ;	-----------------------------------------
+      000431                        803 _UART1_SmartCardCmd:
+      000431 88               [ 1]  804 	push	a
+                                    805 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 373: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000432 6B 01            [ 1]  806 	ld	(0x01, sp), a
+      000434 27 10            [ 1]  807 	jreq	00107$
+      000436 0D 01            [ 1]  808 	tnz	(0x01, sp)
+      000438 26 0C            [ 1]  809 	jrne	00107$
+      00043A 4B 75            [ 1]  810 	push	#0x75
+      00043C 4B 01            [ 1]  811 	push	#0x01
+      00043E 5F               [ 1]  812 	clrw	x
+      00043F 89               [ 2]  813 	pushw	x
+      000440 AEr00r00         [ 2]  814 	ldw	x, #(___str_0+0)
+      000443 CDr00r00         [ 4]  815 	call	_assert_failed
+      000446                        816 00107$:
+                                    817 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 378: UART1->CR5 |= UART1_CR5_SCEN;
+      000446 C6 52 38         [ 1]  818 	ld	a, 0x5238
+                                    819 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 375: if (NewState != DISABLE)
+      000449 0D 01            [ 1]  820 	tnz	(0x01, sp)
+      00044B 27 07            [ 1]  821 	jreq	00102$
+                                    822 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 378: UART1->CR5 |= UART1_CR5_SCEN;
+      00044D AA 20            [ 1]  823 	or	a, #0x20
+      00044F C7 52 38         [ 1]  824 	ld	0x5238, a
+      000452 20 05            [ 2]  825 	jra	00104$
+      000454                        826 00102$:
+                                    827 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 383: UART1->CR5 &= ((uint8_t)(~UART1_CR5_SCEN));
+      000454 A4 DF            [ 1]  828 	and	a, #0xdf
+      000456 C7 52 38         [ 1]  829 	ld	0x5238, a
+      000459                        830 00104$:
+                                    831 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 385: }
+      000459 84               [ 1]  832 	pop	a
+      00045A 81               [ 4]  833 	ret
+                                    834 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 394: void UART1_SmartCardNACKCmd(FunctionalState NewState)
+                                    835 ;	-----------------------------------------
+                                    836 ;	 function UART1_SmartCardNACKCmd
+                                    837 ;	-----------------------------------------
+      00045B                        838 _UART1_SmartCardNACKCmd:
+      00045B 88               [ 1]  839 	push	a
+                                    840 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 396: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      00045C 6B 01            [ 1]  841 	ld	(0x01, sp), a
+      00045E 27 10            [ 1]  842 	jreq	00107$
+      000460 0D 01            [ 1]  843 	tnz	(0x01, sp)
+      000462 26 0C            [ 1]  844 	jrne	00107$
+      000464 4B 8C            [ 1]  845 	push	#0x8c
+      000466 4B 01            [ 1]  846 	push	#0x01
+      000468 5F               [ 1]  847 	clrw	x
+      000469 89               [ 2]  848 	pushw	x
+      00046A AEr00r00         [ 2]  849 	ldw	x, #(___str_0+0)
+      00046D CDr00r00         [ 4]  850 	call	_assert_failed
+      000470                        851 00107$:
+                                    852 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 401: UART1->CR5 |= UART1_CR5_NACK;
+      000470 C6 52 38         [ 1]  853 	ld	a, 0x5238
+                                    854 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 398: if (NewState != DISABLE)
+      000473 0D 01            [ 1]  855 	tnz	(0x01, sp)
+      000475 27 07            [ 1]  856 	jreq	00102$
+                                    857 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 401: UART1->CR5 |= UART1_CR5_NACK;
+      000477 AA 10            [ 1]  858 	or	a, #0x10
+      000479 C7 52 38         [ 1]  859 	ld	0x5238, a
+      00047C 20 05            [ 2]  860 	jra	00104$
+      00047E                        861 00102$:
+                                    862 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 406: UART1->CR5 &= ((uint8_t)~(UART1_CR5_NACK));
+      00047E A4 EF            [ 1]  863 	and	a, #0xef
+      000480 C7 52 38         [ 1]  864 	ld	0x5238, a
+      000483                        865 00104$:
+                                    866 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 408: }
+      000483 84               [ 1]  867 	pop	a
+      000484 81               [ 4]  868 	ret
+                                    869 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 416: void UART1_WakeUpConfig(UART1_WakeUp_TypeDef UART1_WakeUp)
+                                    870 ;	-----------------------------------------
+                                    871 ;	 function UART1_WakeUpConfig
+                                    872 ;	-----------------------------------------
+      000485                        873 _UART1_WakeUpConfig:
+      000485 88               [ 1]  874 	push	a
+                                    875 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 418: assert_param(IS_UART1_WAKEUP_OK(UART1_WakeUp));
+      000486 6B 01            [ 1]  876 	ld	(0x01, sp), a
+      000488 27 12            [ 1]  877 	jreq	00104$
+      00048A 7B 01            [ 1]  878 	ld	a, (0x01, sp)
+      00048C A1 08            [ 1]  879 	cp	a, #0x08
+      00048E 27 0C            [ 1]  880 	jreq	00104$
+      000490 4B A2            [ 1]  881 	push	#0xa2
+      000492 4B 01            [ 1]  882 	push	#0x01
+      000494 5F               [ 1]  883 	clrw	x
+      000495 89               [ 2]  884 	pushw	x
+      000496 AEr00r00         [ 2]  885 	ldw	x, #(___str_0+0)
+      000499 CDr00r00         [ 4]  886 	call	_assert_failed
+      00049C                        887 00104$:
+                                    888 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 420: UART1->CR1 &= ((uint8_t)~UART1_CR1_WAKE);
+      00049C 72 17 52 34      [ 1]  889 	bres	0x5234, #3
+                                    890 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 421: UART1->CR1 |= (uint8_t)UART1_WakeUp;
+      0004A0 C6 52 34         [ 1]  891 	ld	a, 0x5234
+      0004A3 1A 01            [ 1]  892 	or	a, (0x01, sp)
+      0004A5 C7 52 34         [ 1]  893 	ld	0x5234, a
+                                    894 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 422: }
+      0004A8 84               [ 1]  895 	pop	a
+      0004A9 81               [ 4]  896 	ret
+                                    897 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 430: void UART1_ReceiverWakeUpCmd(FunctionalState NewState)
+                                    898 ;	-----------------------------------------
+                                    899 ;	 function UART1_ReceiverWakeUpCmd
+                                    900 ;	-----------------------------------------
+      0004AA                        901 _UART1_ReceiverWakeUpCmd:
+      0004AA 88               [ 1]  902 	push	a
+                                    903 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 432: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      0004AB 6B 01            [ 1]  904 	ld	(0x01, sp), a
+      0004AD 27 10            [ 1]  905 	jreq	00107$
+      0004AF 0D 01            [ 1]  906 	tnz	(0x01, sp)
+      0004B1 26 0C            [ 1]  907 	jrne	00107$
+      0004B3 4B B0            [ 1]  908 	push	#0xb0
+      0004B5 4B 01            [ 1]  909 	push	#0x01
+      0004B7 5F               [ 1]  910 	clrw	x
+      0004B8 89               [ 2]  911 	pushw	x
+      0004B9 AEr00r00         [ 2]  912 	ldw	x, #(___str_0+0)
+      0004BC CDr00r00         [ 4]  913 	call	_assert_failed
+      0004BF                        914 00107$:
+                                    915 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 437: UART1->CR2 |= UART1_CR2_RWU;
+      0004BF C6 52 35         [ 1]  916 	ld	a, 0x5235
+                                    917 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 434: if (NewState != DISABLE)
+      0004C2 0D 01            [ 1]  918 	tnz	(0x01, sp)
+      0004C4 27 07            [ 1]  919 	jreq	00102$
+                                    920 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 437: UART1->CR2 |= UART1_CR2_RWU;
+      0004C6 AA 02            [ 1]  921 	or	a, #0x02
+      0004C8 C7 52 35         [ 1]  922 	ld	0x5235, a
+      0004CB 20 05            [ 2]  923 	jra	00104$
+      0004CD                        924 00102$:
+                                    925 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 442: UART1->CR2 &= ((uint8_t)~UART1_CR2_RWU);
+      0004CD A4 FD            [ 1]  926 	and	a, #0xfd
+      0004CF C7 52 35         [ 1]  927 	ld	0x5235, a
+      0004D2                        928 00104$:
+                                    929 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 444: }
+      0004D2 84               [ 1]  930 	pop	a
+      0004D3 81               [ 4]  931 	ret
+                                    932 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 451: uint8_t UART1_ReceiveData8(void)
+                                    933 ;	-----------------------------------------
+                                    934 ;	 function UART1_ReceiveData8
+                                    935 ;	-----------------------------------------
+      0004D4                        936 _UART1_ReceiveData8:
+                                    937 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 453: return ((uint8_t)UART1->DR);
+      0004D4 C6 52 31         [ 1]  938 	ld	a, 0x5231
+                                    939 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 454: }
+      0004D7 81               [ 4]  940 	ret
+                                    941 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 461: uint16_t UART1_ReceiveData9(void)
+                                    942 ;	-----------------------------------------
+                                    943 ;	 function UART1_ReceiveData9
+                                    944 ;	-----------------------------------------
+      0004D8                        945 _UART1_ReceiveData9:
                                     946 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 465: temp = (uint16_t)(((uint16_t)( (uint16_t)UART1->CR1 & (uint16_t)UART1_CR1_R8)) << 1);
-      0004D7 C6 52 34         [ 1]  947 	ld	a, 0x5234
-      0004DA A4 80            [ 1]  948 	and	a, #0x80
-      0004DC 97               [ 1]  949 	ld	xl, a
-      0004DD 4F               [ 1]  950 	clr	a
-      0004DE 95               [ 1]  951 	ld	xh, a
-      0004DF 58               [ 2]  952 	sllw	x
-      0004E0 1F 01            [ 2]  953 	ldw	(0x01, sp), x
+      0004D8 C6 52 34         [ 1]  947 	ld	a, 0x5234
+      0004DB A4 80            [ 1]  948 	and	a, #0x80
+      0004DD 97               [ 1]  949 	ld	xl, a
+      0004DE 4F               [ 1]  950 	clr	a
+      0004DF 95               [ 1]  951 	ld	xh, a
+      0004E0 58               [ 2]  952 	sllw	x
+      0004E1 51               [ 1]  953 	exgw	x, y
                                     954 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 466: return (uint16_t)( (((uint16_t) UART1->DR) | temp ) & ((uint16_t)0x01FF));
       0004E2 C6 52 31         [ 1]  955 	ld	a, 0x5231
-      0004E5 5F               [ 1]  956 	clrw	x
-      0004E6 1A 02            [ 1]  957 	or	a, (0x02, sp)
-      0004E8 02               [ 1]  958 	rlwa	x
-      0004E9 1A 01            [ 1]  959 	or	a, (0x01, sp)
-      0004EB A4 01            [ 1]  960 	and	a, #0x01
-      0004ED 95               [ 1]  961 	ld	xh, a
-                                    962 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 467: }
-      0004EE 5B 02            [ 2]  963 	addw	sp, #2
-      0004F0 81               [ 4]  964 	ret
-                                    965 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 474: void UART1_SendData8(uint8_t Data)
-                                    966 ;	-----------------------------------------
-                                    967 ;	 function UART1_SendData8
-                                    968 ;	-----------------------------------------
-      0004F1                        969 _UART1_SendData8:
-                                    970 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 477: UART1->DR = Data;
-      0004F1 C7 52 31         [ 1]  971 	ld	0x5231, a
-                                    972 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 478: }
-      0004F4 81               [ 4]  973 	ret
-                                    974 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 486: void UART1_SendData9(uint16_t Data)
-                                    975 ;	-----------------------------------------
-                                    976 ;	 function UART1_SendData9
-                                    977 ;	-----------------------------------------
-      0004F5                        978 _UART1_SendData9:
-      0004F5 88               [ 1]  979 	push	a
-      0004F6 51               [ 1]  980 	exgw	x, y
-                                    981 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 489: UART1->CR1 &= ((uint8_t)~UART1_CR1_T8);
-      0004F7 72 1D 52 34      [ 1]  982 	bres	0x5234, #6
-                                    983 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 491: UART1->CR1 |= (uint8_t)(((uint8_t)(Data >> 2)) & UART1_CR1_T8);
-      0004FB C6 52 34         [ 1]  984 	ld	a, 0x5234
-      0004FE 6B 01            [ 1]  985 	ld	(0x01, sp), a
-      000500 93               [ 1]  986 	ldw	x, y
-      000501 54               [ 2]  987 	srlw	x
-      000502 54               [ 2]  988 	srlw	x
-      000503 9F               [ 1]  989 	ld	a, xl
-      000504 A4 40            [ 1]  990 	and	a, #0x40
-      000506 1A 01            [ 1]  991 	or	a, (0x01, sp)
-      000508 C7 52 34         [ 1]  992 	ld	0x5234, a
-                                    993 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 493: UART1->DR   = (uint8_t)(Data);
-      00050B 90 9F            [ 1]  994 	ld	a, yl
-      00050D C7 52 31         [ 1]  995 	ld	0x5231, a
-                                    996 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 494: }
-      000510 84               [ 1]  997 	pop	a
-      000511 81               [ 4]  998 	ret
-                                    999 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 501: void UART1_SendBreak(void)
-                                   1000 ;	-----------------------------------------
-                                   1001 ;	 function UART1_SendBreak
-                                   1002 ;	-----------------------------------------
-      000512                       1003 _UART1_SendBreak:
-                                   1004 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 503: UART1->CR2 |= UART1_CR2_SBK;
-      000512 72 10 52 35      [ 1] 1005 	bset	0x5235, #0
-                                   1006 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 504: }
-      000516 81               [ 4] 1007 	ret
-                                   1008 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 511: void UART1_SetAddress(uint8_t UART1_Address)
-                                   1009 ;	-----------------------------------------
-                                   1010 ;	 function UART1_SetAddress
-                                   1011 ;	-----------------------------------------
-      000517                       1012 _UART1_SetAddress:
-      000517 88               [ 1] 1013 	push	a
-                                   1014 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 514: assert_param(IS_UART1_ADDRESS_OK(UART1_Address));
-      000518 6B 01            [ 1] 1015 	ld	(0x01, sp), a
-      00051A A1 10            [ 1] 1016 	cp	a, #0x10
-      00051C 25 0C            [ 1] 1017 	jrc	00104$
-      00051E 4B 02            [ 1] 1018 	push	#0x02
-      000520 4B 02            [ 1] 1019 	push	#0x02
-      000522 5F               [ 1] 1020 	clrw	x
-      000523 89               [ 2] 1021 	pushw	x
-      000524 AEr00r00         [ 2] 1022 	ldw	x, #(___str_0+0)
-      000527 CDr00r00         [ 4] 1023 	call	_assert_failed
-      00052A                       1024 00104$:
-                                   1025 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 517: UART1->CR4 &= ((uint8_t)~UART1_CR4_ADD);
-      00052A C6 52 37         [ 1] 1026 	ld	a, 0x5237
-      00052D A4 F0            [ 1] 1027 	and	a, #0xf0
-      00052F C7 52 37         [ 1] 1028 	ld	0x5237, a
-                                   1029 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 519: UART1->CR4 |= UART1_Address;
-      000532 C6 52 37         [ 1] 1030 	ld	a, 0x5237
-      000535 1A 01            [ 1] 1031 	or	a, (0x01, sp)
-      000537 C7 52 37         [ 1] 1032 	ld	0x5237, a
-                                   1033 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 520: }
-      00053A 84               [ 1] 1034 	pop	a
-      00053B 81               [ 4] 1035 	ret
-                                   1036 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 528: void UART1_SetGuardTime(uint8_t UART1_GuardTime)
-                                   1037 ;	-----------------------------------------
-                                   1038 ;	 function UART1_SetGuardTime
-                                   1039 ;	-----------------------------------------
-      00053C                       1040 _UART1_SetGuardTime:
-                                   1041 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 531: UART1->GTR = UART1_GuardTime;
-      00053C C7 52 39         [ 1] 1042 	ld	0x5239, a
-                                   1043 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 532: }
-      00053F 81               [ 4] 1044 	ret
-                                   1045 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 556: void UART1_SetPrescaler(uint8_t UART1_Prescaler)
-                                   1046 ;	-----------------------------------------
-                                   1047 ;	 function UART1_SetPrescaler
-                                   1048 ;	-----------------------------------------
-      000540                       1049 _UART1_SetPrescaler:
-                                   1050 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 559: UART1->PSCR = UART1_Prescaler;
-      000540 C7 52 3A         [ 1] 1051 	ld	0x523a, a
-                                   1052 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 560: }
-      000543 81               [ 4] 1053 	ret
-                                   1054 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 568: FlagStatus UART1_GetFlagStatus(UART1_Flag_TypeDef UART1_FLAG)
-                                   1055 ;	-----------------------------------------
-                                   1056 ;	 function UART1_GetFlagStatus
-                                   1057 ;	-----------------------------------------
-      000544                       1058 _UART1_GetFlagStatus:
-      000544 89               [ 2] 1059 	pushw	x
-                                   1060 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 573: assert_param(IS_UART1_FLAG_OK(UART1_FLAG));
-      000545 90 93            [ 1] 1061 	ldw	y, x
-      000547 A3 01 01         [ 2] 1062 	cpw	x, #0x0101
-      00054A 26 05            [ 1] 1063 	jrne	00223$
-      00054C A6 01            [ 1] 1064 	ld	a, #0x01
-      00054E 6B 01            [ 1] 1065 	ld	(0x01, sp), a
-      000550 C5                    1066 	.byte 0xc5
-      000551                       1067 00223$:
-      000551 0F 01            [ 1] 1068 	clr	(0x01, sp)
-      000553                       1069 00224$:
-      000553 A3 02 10         [ 2] 1070 	cpw	x, #0x0210
-      000556 26 03            [ 1] 1071 	jrne	00226$
-      000558 A6 01            [ 1] 1072 	ld	a, #0x01
-      00055A 21                    1073 	.byte 0x21
-      00055B                       1074 00226$:
-      00055B 4F               [ 1] 1075 	clr	a
-      00055C                       1076 00227$:
-      00055C A3 00 80         [ 2] 1077 	cpw	x, #0x0080
-      00055F 27 3A            [ 1] 1078 	jreq	00119$
-      000561 A3 00 40         [ 2] 1079 	cpw	x, #0x0040
-      000564 27 35            [ 1] 1080 	jreq	00119$
-      000566 A3 00 20         [ 2] 1081 	cpw	x, #0x0020
-      000569 27 30            [ 1] 1082 	jreq	00119$
-      00056B A3 00 10         [ 2] 1083 	cpw	x, #0x0010
-      00056E 27 2B            [ 1] 1084 	jreq	00119$
-      000570 A3 00 08         [ 2] 1085 	cpw	x, #0x0008
-      000573 27 26            [ 1] 1086 	jreq	00119$
-      000575 A3 00 04         [ 2] 1087 	cpw	x, #0x0004
-      000578 27 21            [ 1] 1088 	jreq	00119$
-      00057A A3 00 02         [ 2] 1089 	cpw	x, #0x0002
-      00057D 27 1C            [ 1] 1090 	jreq	00119$
-      00057F 5A               [ 2] 1091 	decw	x
-      000580 27 19            [ 1] 1092 	jreq	00119$
-      000582 0D 01            [ 1] 1093 	tnz	(0x01, sp)
-      000584 26 15            [ 1] 1094 	jrne	00119$
-      000586 4D               [ 1] 1095 	tnz	a
-      000587 26 12            [ 1] 1096 	jrne	00119$
-      000589 88               [ 1] 1097 	push	a
-      00058A 90 89            [ 2] 1098 	pushw	y
-      00058C 4B 3D            [ 1] 1099 	push	#0x3d
-      00058E 4B 02            [ 1] 1100 	push	#0x02
-      000590 5F               [ 1] 1101 	clrw	x
-      000591 89               [ 2] 1102 	pushw	x
-      000592 AEr00r00         [ 2] 1103 	ldw	x, #(___str_0+0)
-      000595 CDr00r00         [ 4] 1104 	call	_assert_failed
-      000598 90 85            [ 2] 1105 	popw	y
-      00059A 84               [ 1] 1106 	pop	a
-      00059B                       1107 00119$:
-                                   1108 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
-      00059B 61               [ 1] 1109 	exg	a, yl
-      00059C 6B 02            [ 1] 1110 	ld	(0x02, sp), a
-      00059E 61               [ 1] 1111 	exg	a, yl
-                                   1112 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 577: if (UART1_FLAG == UART1_FLAG_LBDF)
-      00059F 4D               [ 1] 1113 	tnz	a
-      0005A0 27 0E            [ 1] 1114 	jreq	00114$
-                                   1115 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
-      0005A2 C6 52 37         [ 1] 1116 	ld	a, 0x5237
-      0005A5 14 02            [ 1] 1117 	and	a, (0x02, sp)
-      0005A7 27 04            [ 1] 1118 	jreq	00102$
-                                   1119 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 582: status = SET;
-      0005A9 A6 01            [ 1] 1120 	ld	a, #0x01
-      0005AB 20 20            [ 2] 1121 	jra	00115$
-      0005AD                       1122 00102$:
-                                   1123 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 587: status = RESET;
-      0005AD 4F               [ 1] 1124 	clr	a
-      0005AE 20 1D            [ 2] 1125 	jra	00115$
-      0005B0                       1126 00114$:
-                                   1127 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 590: else if (UART1_FLAG == UART1_FLAG_SBK)
-      0005B0 7B 01            [ 1] 1128 	ld	a, (0x01, sp)
-      0005B2 27 0E            [ 1] 1129 	jreq	00111$
-                                   1130 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 592: if ((UART1->CR2 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
-      0005B4 C6 52 35         [ 1] 1131 	ld	a, 0x5235
-      0005B7 14 02            [ 1] 1132 	and	a, (0x02, sp)
-      0005B9 27 04            [ 1] 1133 	jreq	00105$
-                                   1134 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 595: status = SET;
-      0005BB A6 01            [ 1] 1135 	ld	a, #0x01
-      0005BD 20 0E            [ 2] 1136 	jra	00115$
-      0005BF                       1137 00105$:
-                                   1138 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 600: status = RESET;
-      0005BF 4F               [ 1] 1139 	clr	a
-      0005C0 20 0B            [ 2] 1140 	jra	00115$
-      0005C2                       1141 00111$:
-                                   1142 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 605: if ((UART1->SR & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
-      0005C2 C6 52 30         [ 1] 1143 	ld	a, 0x5230
-      0005C5 14 02            [ 1] 1144 	and	a, (0x02, sp)
-      0005C7 27 03            [ 1] 1145 	jreq	00108$
-                                   1146 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 608: status = SET;
-      0005C9 A6 01            [ 1] 1147 	ld	a, #0x01
-                                   1148 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 613: status = RESET;
-      0005CB 21                    1149 	.byte 0x21
-      0005CC                       1150 00108$:
-      0005CC 4F               [ 1] 1151 	clr	a
-      0005CD                       1152 00115$:
-                                   1153 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 617: return status;
-                                   1154 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 618: }
-      0005CD 85               [ 2] 1155 	popw	x
-      0005CE 81               [ 4] 1156 	ret
-                                   1157 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 646: void UART1_ClearFlag(UART1_Flag_TypeDef UART1_FLAG)
-                                   1158 ;	-----------------------------------------
-                                   1159 ;	 function UART1_ClearFlag
-                                   1160 ;	-----------------------------------------
-      0005CF                       1161 _UART1_ClearFlag:
-                                   1162 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 648: assert_param(IS_UART1_CLEAR_FLAG_OK(UART1_FLAG));
-      0005CF A3 00 20         [ 2] 1163 	cpw	x, #0x0020
-      0005D2 26 03            [ 1] 1164 	jrne	00127$
-      0005D4 A6 01            [ 1] 1165 	ld	a, #0x01
-      0005D6 21                    1166 	.byte 0x21
-      0005D7                       1167 00127$:
-      0005D7 4F               [ 1] 1168 	clr	a
-      0005D8                       1169 00128$:
-      0005D8 4D               [ 1] 1170 	tnz	a
-      0005D9 26 13            [ 1] 1171 	jrne	00107$
-      0005DB A3 02 10         [ 2] 1172 	cpw	x, #0x0210
-      0005DE 27 0E            [ 1] 1173 	jreq	00107$
-      0005E0 88               [ 1] 1174 	push	a
-      0005E1 4B 88            [ 1] 1175 	push	#0x88
-      0005E3 4B 02            [ 1] 1176 	push	#0x02
-      0005E5 5F               [ 1] 1177 	clrw	x
-      0005E6 89               [ 2] 1178 	pushw	x
-      0005E7 AEr00r00         [ 2] 1179 	ldw	x, #(___str_0+0)
-      0005EA CDr00r00         [ 4] 1180 	call	_assert_failed
-      0005ED 84               [ 1] 1181 	pop	a
-      0005EE                       1182 00107$:
-                                   1183 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 651: if (UART1_FLAG == UART1_FLAG_RXNE)
-      0005EE 4D               [ 1] 1184 	tnz	a
-      0005EF 27 05            [ 1] 1185 	jreq	00102$
-                                   1186 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 653: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
-      0005F1 35 DF 52 30      [ 1] 1187 	mov	0x5230+0, #0xdf
-      0005F5 81               [ 4] 1188 	ret
-      0005F6                       1189 00102$:
-                                   1190 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 658: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
-      0005F6 72 19 52 37      [ 1] 1191 	bres	0x5237, #4
-                                   1192 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 660: }
-      0005FA 81               [ 4] 1193 	ret
-                                   1194 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 675: ITStatus UART1_GetITStatus(UART1_IT_TypeDef UART1_IT)
-                                   1195 ;	-----------------------------------------
-                                   1196 ;	 function UART1_GetITStatus
-                                   1197 ;	-----------------------------------------
-      0005FB                       1198 _UART1_GetITStatus:
-      0005FB 52 04            [ 2] 1199 	sub	sp, #4
-                                   1200 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 684: assert_param(IS_UART1_GET_IT_OK(UART1_IT));
-      0005FD 90 93            [ 1] 1201 	ldw	y, x
-      0005FF A3 03 46         [ 2] 1202 	cpw	x, #0x0346
-      000602 26 05            [ 1] 1203 	jrne	00217$
-      000604 A6 01            [ 1] 1204 	ld	a, #0x01
-      000606 6B 01            [ 1] 1205 	ld	(0x01, sp), a
-      000608 C5                    1206 	.byte 0xc5
-      000609                       1207 00217$:
-      000609 0F 01            [ 1] 1208 	clr	(0x01, sp)
-      00060B                       1209 00218$:
-      00060B A3 01 00         [ 2] 1210 	cpw	x, #0x0100
-      00060E 26 05            [ 1] 1211 	jrne	00220$
-      000610 A6 01            [ 1] 1212 	ld	a, #0x01
-      000612 6B 02            [ 1] 1213 	ld	(0x02, sp), a
-      000614 C5                    1214 	.byte 0xc5
-      000615                       1215 00220$:
-      000615 0F 02            [ 1] 1216 	clr	(0x02, sp)
-      000617                       1217 00221$:
-      000617 A3 02 77         [ 2] 1218 	cpw	x, #0x0277
-      00061A 27 2C            [ 1] 1219 	jreq	00122$
-      00061C A3 02 66         [ 2] 1220 	cpw	x, #0x0266
-      00061F 27 27            [ 1] 1221 	jreq	00122$
-      000621 A3 02 55         [ 2] 1222 	cpw	x, #0x0255
-      000624 27 22            [ 1] 1223 	jreq	00122$
-      000626 A3 02 44         [ 2] 1224 	cpw	x, #0x0244
-      000629 27 1D            [ 1] 1225 	jreq	00122$
-      00062B A3 02 35         [ 2] 1226 	cpw	x, #0x0235
-      00062E 27 18            [ 1] 1227 	jreq	00122$
-      000630 0D 01            [ 1] 1228 	tnz	(0x01, sp)
-      000632 26 14            [ 1] 1229 	jrne	00122$
-      000634 0D 02            [ 1] 1230 	tnz	(0x02, sp)
-      000636 26 10            [ 1] 1231 	jrne	00122$
-      000638 90 89            [ 2] 1232 	pushw	y
-      00063A 4B AC            [ 1] 1233 	push	#0xac
-      00063C 4B 02            [ 1] 1234 	push	#0x02
-      00063E 5F               [ 1] 1235 	clrw	x
-      00063F 89               [ 2] 1236 	pushw	x
-      000640 AEr00r00         [ 2] 1237 	ldw	x, #(___str_0+0)
-      000643 CDr00r00         [ 4] 1238 	call	_assert_failed
-      000646 90 85            [ 2] 1239 	popw	y
-      000648                       1240 00122$:
-                                   1241 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 687: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
-      000648 93               [ 1] 1242 	ldw	x, y
-      000649 9F               [ 1] 1243 	ld	a, xl
-      00064A A4 0F            [ 1] 1244 	and	a, #0x0f
-      00064C 88               [ 1] 1245 	push	a
-      00064D A6 01            [ 1] 1246 	ld	a, #0x01
-      00064F 6B 04            [ 1] 1247 	ld	(0x04, sp), a
-      000651 84               [ 1] 1248 	pop	a
-      000652 4D               [ 1] 1249 	tnz	a
-      000653 27 05            [ 1] 1250 	jreq	00240$
-      000655                       1251 00239$:
-      000655 08 03            [ 1] 1252 	sll	(0x03, sp)
-      000657 4A               [ 1] 1253 	dec	a
-      000658 26 FB            [ 1] 1254 	jrne	00239$
-      00065A                       1255 00240$:
-                                   1256 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 689: itmask1 = (uint8_t)((uint8_t)UART1_IT >> (uint8_t)4);
-      00065A 9F               [ 1] 1257 	ld	a, xl
-      00065B 4E               [ 1] 1258 	swap	a
-      00065C A4 0F            [ 1] 1259 	and	a, #0x0f
-                                   1260 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 691: itmask2 = (uint8_t)((uint8_t)1 << itmask1);
-      00065E 88               [ 1] 1261 	push	a
-      00065F A6 01            [ 1] 1262 	ld	a, #0x01
-      000661 6B 05            [ 1] 1263 	ld	(0x05, sp), a
-      000663 84               [ 1] 1264 	pop	a
-      000664 4D               [ 1] 1265 	tnz	a
-      000665 27 05            [ 1] 1266 	jreq	00242$
-      000667                       1267 00241$:
-      000667 08 04            [ 1] 1268 	sll	(0x04, sp)
-      000669 4A               [ 1] 1269 	dec	a
-      00066A 26 FB            [ 1] 1270 	jrne	00241$
-      00066C                       1271 00242$:
-                                   1272 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 695: if (UART1_IT == UART1_IT_PE)
-      00066C 7B 02            [ 1] 1273 	ld	a, (0x02, sp)
-      00066E 27 18            [ 1] 1274 	jreq	00117$
-                                   1275 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 698: enablestatus = (uint8_t)((uint8_t)UART1->CR1 & itmask2);
-      000670 C6 52 34         [ 1] 1276 	ld	a, 0x5234
-      000673 14 04            [ 1] 1277 	and	a, (0x04, sp)
-      000675 97               [ 1] 1278 	ld	xl, a
-                                   1279 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 701: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
-      000676 C6 52 30         [ 1] 1280 	ld	a, 0x5230
-      000679 14 03            [ 1] 1281 	and	a, (0x03, sp)
-      00067B 27 08            [ 1] 1282 	jreq	00102$
-      00067D 9F               [ 1] 1283 	ld	a, xl
-      00067E 4D               [ 1] 1284 	tnz	a
-      00067F 27 04            [ 1] 1285 	jreq	00102$
-                                   1286 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 704: pendingbitstatus = SET;
-      000681 A6 01            [ 1] 1287 	ld	a, #0x01
-      000683 20 34            [ 2] 1288 	jra	00118$
-      000685                       1289 00102$:
-                                   1290 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 709: pendingbitstatus = RESET;
-      000685 4F               [ 1] 1291 	clr	a
-      000686 20 31            [ 2] 1292 	jra	00118$
-      000688                       1293 00117$:
-                                   1294 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 713: else if (UART1_IT == UART1_IT_LBDF)
-      000688 7B 01            [ 1] 1295 	ld	a, (0x01, sp)
-      00068A 27 18            [ 1] 1296 	jreq	00114$
-                                   1297 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 716: enablestatus = (uint8_t)((uint8_t)UART1->CR4 & itmask2);
-      00068C C6 52 37         [ 1] 1298 	ld	a, 0x5237
-      00068F 14 04            [ 1] 1299 	and	a, (0x04, sp)
-      000691 97               [ 1] 1300 	ld	xl, a
-                                   1301 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 718: if (((UART1->CR4 & itpos) != (uint8_t)0x00) && enablestatus)
-      000692 C6 52 37         [ 1] 1302 	ld	a, 0x5237
-      000695 14 03            [ 1] 1303 	and	a, (0x03, sp)
-      000697 27 08            [ 1] 1304 	jreq	00106$
-      000699 9F               [ 1] 1305 	ld	a, xl
-      00069A 4D               [ 1] 1306 	tnz	a
-      00069B 27 04            [ 1] 1307 	jreq	00106$
-                                   1308 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 721: pendingbitstatus = SET;
-      00069D A6 01            [ 1] 1309 	ld	a, #0x01
-      00069F 20 18            [ 2] 1310 	jra	00118$
-      0006A1                       1311 00106$:
-                                   1312 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 726: pendingbitstatus = RESET;
-      0006A1 4F               [ 1] 1313 	clr	a
-      0006A2 20 15            [ 2] 1314 	jra	00118$
-      0006A4                       1315 00114$:
-                                   1316 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 732: enablestatus = (uint8_t)((uint8_t)UART1->CR2 & itmask2);
-      0006A4 C6 52 35         [ 1] 1317 	ld	a, 0x5235
-      0006A7 14 04            [ 1] 1318 	and	a, (0x04, sp)
-      0006A9 97               [ 1] 1319 	ld	xl, a
-                                   1320 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 734: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
-      0006AA C6 52 30         [ 1] 1321 	ld	a, 0x5230
-      0006AD 14 03            [ 1] 1322 	and	a, (0x03, sp)
-      0006AF 27 07            [ 1] 1323 	jreq	00110$
-      0006B1 9F               [ 1] 1324 	ld	a, xl
-      0006B2 4D               [ 1] 1325 	tnz	a
-      0006B3 27 03            [ 1] 1326 	jreq	00110$
-                                   1327 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 737: pendingbitstatus = SET;
-      0006B5 A6 01            [ 1] 1328 	ld	a, #0x01
-                                   1329 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 742: pendingbitstatus = RESET;
-      0006B7 21                    1330 	.byte 0x21
-      0006B8                       1331 00110$:
-      0006B8 4F               [ 1] 1332 	clr	a
-      0006B9                       1333 00118$:
-                                   1334 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 747: return  pendingbitstatus;
-                                   1335 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 748: }
-      0006B9 5B 04            [ 2] 1336 	addw	sp, #4
-      0006BB 81               [ 4] 1337 	ret
-                                   1338 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 775: void UART1_ClearITPendingBit(UART1_IT_TypeDef UART1_IT)
-                                   1339 ;	-----------------------------------------
-                                   1340 ;	 function UART1_ClearITPendingBit
-                                   1341 ;	-----------------------------------------
-      0006BC                       1342 _UART1_ClearITPendingBit:
-                                   1343 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 777: assert_param(IS_UART1_CLEAR_IT_OK(UART1_IT));
-      0006BC A3 02 55         [ 2] 1344 	cpw	x, #0x0255
-      0006BF 26 03            [ 1] 1345 	jrne	00127$
-      0006C1 A6 01            [ 1] 1346 	ld	a, #0x01
-      0006C3 21                    1347 	.byte 0x21
-      0006C4                       1348 00127$:
-      0006C4 4F               [ 1] 1349 	clr	a
-      0006C5                       1350 00128$:
-      0006C5 4D               [ 1] 1351 	tnz	a
-      0006C6 26 13            [ 1] 1352 	jrne	00107$
-      0006C8 A3 03 46         [ 2] 1353 	cpw	x, #0x0346
-      0006CB 27 0E            [ 1] 1354 	jreq	00107$
-      0006CD 88               [ 1] 1355 	push	a
-      0006CE 4B 09            [ 1] 1356 	push	#0x09
-      0006D0 4B 03            [ 1] 1357 	push	#0x03
-      0006D2 5F               [ 1] 1358 	clrw	x
-      0006D3 89               [ 2] 1359 	pushw	x
-      0006D4 AEr00r00         [ 2] 1360 	ldw	x, #(___str_0+0)
-      0006D7 CDr00r00         [ 4] 1361 	call	_assert_failed
-      0006DA 84               [ 1] 1362 	pop	a
-      0006DB                       1363 00107$:
-                                   1364 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 780: if (UART1_IT == UART1_IT_RXNE)
-      0006DB 4D               [ 1] 1365 	tnz	a
-      0006DC 27 05            [ 1] 1366 	jreq	00102$
-                                   1367 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 782: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
-      0006DE 35 DF 52 30      [ 1] 1368 	mov	0x5230+0, #0xdf
-      0006E2 81               [ 4] 1369 	ret
-      0006E3                       1370 00102$:
-                                   1371 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 787: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
-      0006E3 72 19 52 37      [ 1] 1372 	bres	0x5237, #4
-                                   1373 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 789: }
-      0006E7 81               [ 4] 1374 	ret
-                                   1375 	.area CODE
-                                   1376 	.area CONST
-                                   1377 	.area CONST
-      000000                       1378 ___str_0:
-      000000 2E 2F 53 54 4D 38 53  1379 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
+      0004E5 97               [ 1]  956 	ld	xl, a
+      0004E6 90 9E            [ 1]  957 	ld	a, yh
+      0004E8 A4 01            [ 1]  958 	and	a, #0x01
+      0004EA 95               [ 1]  959 	ld	xh, a
+                                    960 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 467: }
+      0004EB 81               [ 4]  961 	ret
+                                    962 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 474: void UART1_SendData8(uint8_t Data)
+                                    963 ;	-----------------------------------------
+                                    964 ;	 function UART1_SendData8
+                                    965 ;	-----------------------------------------
+      0004EC                        966 _UART1_SendData8:
+                                    967 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 477: UART1->DR = Data;
+      0004EC C7 52 31         [ 1]  968 	ld	0x5231, a
+                                    969 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 478: }
+      0004EF 81               [ 4]  970 	ret
+                                    971 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 486: void UART1_SendData9(uint16_t Data)
+                                    972 ;	-----------------------------------------
+                                    973 ;	 function UART1_SendData9
+                                    974 ;	-----------------------------------------
+      0004F0                        975 _UART1_SendData9:
+      0004F0 88               [ 1]  976 	push	a
+      0004F1 51               [ 1]  977 	exgw	x, y
+                                    978 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 489: UART1->CR1 &= ((uint8_t)~UART1_CR1_T8);
+      0004F2 72 1D 52 34      [ 1]  979 	bres	0x5234, #6
+                                    980 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 491: UART1->CR1 |= (uint8_t)(((uint8_t)(Data >> 2)) & UART1_CR1_T8);
+      0004F6 C6 52 34         [ 1]  981 	ld	a, 0x5234
+      0004F9 6B 01            [ 1]  982 	ld	(0x01, sp), a
+      0004FB 93               [ 1]  983 	ldw	x, y
+      0004FC 54               [ 2]  984 	srlw	x
+      0004FD 54               [ 2]  985 	srlw	x
+      0004FE 9F               [ 1]  986 	ld	a, xl
+      0004FF A4 40            [ 1]  987 	and	a, #0x40
+      000501 1A 01            [ 1]  988 	or	a, (0x01, sp)
+      000503 C7 52 34         [ 1]  989 	ld	0x5234, a
+                                    990 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 493: UART1->DR   = (uint8_t)(Data);
+      000506 90 9F            [ 1]  991 	ld	a, yl
+      000508 C7 52 31         [ 1]  992 	ld	0x5231, a
+                                    993 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 494: }
+      00050B 84               [ 1]  994 	pop	a
+      00050C 81               [ 4]  995 	ret
+                                    996 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 501: void UART1_SendBreak(void)
+                                    997 ;	-----------------------------------------
+                                    998 ;	 function UART1_SendBreak
+                                    999 ;	-----------------------------------------
+      00050D                       1000 _UART1_SendBreak:
+                                   1001 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 503: UART1->CR2 |= UART1_CR2_SBK;
+      00050D 72 10 52 35      [ 1] 1002 	bset	0x5235, #0
+                                   1003 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 504: }
+      000511 81               [ 4] 1004 	ret
+                                   1005 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 511: void UART1_SetAddress(uint8_t UART1_Address)
+                                   1006 ;	-----------------------------------------
+                                   1007 ;	 function UART1_SetAddress
+                                   1008 ;	-----------------------------------------
+      000512                       1009 _UART1_SetAddress:
+      000512 88               [ 1] 1010 	push	a
+                                   1011 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 514: assert_param(IS_UART1_ADDRESS_OK(UART1_Address));
+      000513 6B 01            [ 1] 1012 	ld	(0x01, sp), a
+      000515 A1 10            [ 1] 1013 	cp	a, #0x10
+      000517 25 0C            [ 1] 1014 	jrc	00104$
+      000519 4B 02            [ 1] 1015 	push	#0x02
+      00051B 4B 02            [ 1] 1016 	push	#0x02
+      00051D 5F               [ 1] 1017 	clrw	x
+      00051E 89               [ 2] 1018 	pushw	x
+      00051F AEr00r00         [ 2] 1019 	ldw	x, #(___str_0+0)
+      000522 CDr00r00         [ 4] 1020 	call	_assert_failed
+      000525                       1021 00104$:
+                                   1022 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 517: UART1->CR4 &= ((uint8_t)~UART1_CR4_ADD);
+      000525 C6 52 37         [ 1] 1023 	ld	a, 0x5237
+      000528 A4 F0            [ 1] 1024 	and	a, #0xf0
+      00052A C7 52 37         [ 1] 1025 	ld	0x5237, a
+                                   1026 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 519: UART1->CR4 |= UART1_Address;
+      00052D C6 52 37         [ 1] 1027 	ld	a, 0x5237
+      000530 1A 01            [ 1] 1028 	or	a, (0x01, sp)
+      000532 C7 52 37         [ 1] 1029 	ld	0x5237, a
+                                   1030 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 520: }
+      000535 84               [ 1] 1031 	pop	a
+      000536 81               [ 4] 1032 	ret
+                                   1033 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 528: void UART1_SetGuardTime(uint8_t UART1_GuardTime)
+                                   1034 ;	-----------------------------------------
+                                   1035 ;	 function UART1_SetGuardTime
+                                   1036 ;	-----------------------------------------
+      000537                       1037 _UART1_SetGuardTime:
+                                   1038 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 531: UART1->GTR = UART1_GuardTime;
+      000537 C7 52 39         [ 1] 1039 	ld	0x5239, a
+                                   1040 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 532: }
+      00053A 81               [ 4] 1041 	ret
+                                   1042 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 556: void UART1_SetPrescaler(uint8_t UART1_Prescaler)
+                                   1043 ;	-----------------------------------------
+                                   1044 ;	 function UART1_SetPrescaler
+                                   1045 ;	-----------------------------------------
+      00053B                       1046 _UART1_SetPrescaler:
+                                   1047 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 559: UART1->PSCR = UART1_Prescaler;
+      00053B C7 52 3A         [ 1] 1048 	ld	0x523a, a
+                                   1049 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 560: }
+      00053E 81               [ 4] 1050 	ret
+                                   1051 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 568: FlagStatus UART1_GetFlagStatus(UART1_Flag_TypeDef UART1_FLAG)
+                                   1052 ;	-----------------------------------------
+                                   1053 ;	 function UART1_GetFlagStatus
+                                   1054 ;	-----------------------------------------
+      00053F                       1055 _UART1_GetFlagStatus:
+      00053F 89               [ 2] 1056 	pushw	x
+                                   1057 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 573: assert_param(IS_UART1_FLAG_OK(UART1_FLAG));
+      000540 90 93            [ 1] 1058 	ldw	y, x
+      000542 A3 01 01         [ 2] 1059 	cpw	x, #0x0101
+      000545 26 05            [ 1] 1060 	jrne	00253$
+      000547 A6 01            [ 1] 1061 	ld	a, #0x01
+      000549 6B 01            [ 1] 1062 	ld	(0x01, sp), a
+      00054B C5                    1063 	.byte 0xc5
+      00054C                       1064 00253$:
+      00054C 0F 01            [ 1] 1065 	clr	(0x01, sp)
+      00054E                       1066 00254$:
+      00054E A3 02 10         [ 2] 1067 	cpw	x, #0x0210
+      000551 26 03            [ 1] 1068 	jrne	00256$
+      000553 A6 01            [ 1] 1069 	ld	a, #0x01
+      000555 21                    1070 	.byte 0x21
+      000556                       1071 00256$:
+      000556 4F               [ 1] 1072 	clr	a
+      000557                       1073 00257$:
+      000557 A3 00 80         [ 2] 1074 	cpw	x, #0x0080
+      00055A 27 3A            [ 1] 1075 	jreq	00119$
+      00055C A3 00 40         [ 2] 1076 	cpw	x, #0x0040
+      00055F 27 35            [ 1] 1077 	jreq	00119$
+      000561 A3 00 20         [ 2] 1078 	cpw	x, #0x0020
+      000564 27 30            [ 1] 1079 	jreq	00119$
+      000566 A3 00 10         [ 2] 1080 	cpw	x, #0x0010
+      000569 27 2B            [ 1] 1081 	jreq	00119$
+      00056B A3 00 08         [ 2] 1082 	cpw	x, #0x0008
+      00056E 27 26            [ 1] 1083 	jreq	00119$
+      000570 A3 00 04         [ 2] 1084 	cpw	x, #0x0004
+      000573 27 21            [ 1] 1085 	jreq	00119$
+      000575 A3 00 02         [ 2] 1086 	cpw	x, #0x0002
+      000578 27 1C            [ 1] 1087 	jreq	00119$
+      00057A 5A               [ 2] 1088 	decw	x
+      00057B 27 19            [ 1] 1089 	jreq	00119$
+      00057D 0D 01            [ 1] 1090 	tnz	(0x01, sp)
+      00057F 26 15            [ 1] 1091 	jrne	00119$
+      000581 4D               [ 1] 1092 	tnz	a
+      000582 26 12            [ 1] 1093 	jrne	00119$
+      000584 88               [ 1] 1094 	push	a
+      000585 90 89            [ 2] 1095 	pushw	y
+      000587 4B 3D            [ 1] 1096 	push	#0x3d
+      000589 4B 02            [ 1] 1097 	push	#0x02
+      00058B 5F               [ 1] 1098 	clrw	x
+      00058C 89               [ 2] 1099 	pushw	x
+      00058D AEr00r00         [ 2] 1100 	ldw	x, #(___str_0+0)
+      000590 CDr00r00         [ 4] 1101 	call	_assert_failed
+      000593 90 85            [ 2] 1102 	popw	y
+      000595 84               [ 1] 1103 	pop	a
+      000596                       1104 00119$:
+                                   1105 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      000596 61               [ 1] 1106 	exg	a, yl
+      000597 6B 02            [ 1] 1107 	ld	(0x02, sp), a
+      000599 61               [ 1] 1108 	exg	a, yl
+                                   1109 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 577: if (UART1_FLAG == UART1_FLAG_LBDF)
+      00059A 4D               [ 1] 1110 	tnz	a
+      00059B 27 0E            [ 1] 1111 	jreq	00114$
+                                   1112 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 579: if ((UART1->CR4 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      00059D C6 52 37         [ 1] 1113 	ld	a, 0x5237
+      0005A0 14 02            [ 1] 1114 	and	a, (0x02, sp)
+      0005A2 27 04            [ 1] 1115 	jreq	00102$
+                                   1116 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 582: status = SET;
+      0005A4 A6 01            [ 1] 1117 	ld	a, #0x01
+      0005A6 20 20            [ 2] 1118 	jra	00115$
+      0005A8                       1119 00102$:
+                                   1120 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 587: status = RESET;
+      0005A8 4F               [ 1] 1121 	clr	a
+      0005A9 20 1D            [ 2] 1122 	jra	00115$
+      0005AB                       1123 00114$:
+                                   1124 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 590: else if (UART1_FLAG == UART1_FLAG_SBK)
+      0005AB 7B 01            [ 1] 1125 	ld	a, (0x01, sp)
+      0005AD 27 0E            [ 1] 1126 	jreq	00111$
+                                   1127 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 592: if ((UART1->CR2 & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      0005AF C6 52 35         [ 1] 1128 	ld	a, 0x5235
+      0005B2 14 02            [ 1] 1129 	and	a, (0x02, sp)
+      0005B4 27 04            [ 1] 1130 	jreq	00105$
+                                   1131 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 595: status = SET;
+      0005B6 A6 01            [ 1] 1132 	ld	a, #0x01
+      0005B8 20 0E            [ 2] 1133 	jra	00115$
+      0005BA                       1134 00105$:
+                                   1135 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 600: status = RESET;
+      0005BA 4F               [ 1] 1136 	clr	a
+      0005BB 20 0B            [ 2] 1137 	jra	00115$
+      0005BD                       1138 00111$:
+                                   1139 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 605: if ((UART1->SR & (uint8_t)UART1_FLAG) != (uint8_t)0x00)
+      0005BD C6 52 30         [ 1] 1140 	ld	a, 0x5230
+      0005C0 14 02            [ 1] 1141 	and	a, (0x02, sp)
+      0005C2 27 03            [ 1] 1142 	jreq	00108$
+                                   1143 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 608: status = SET;
+      0005C4 A6 01            [ 1] 1144 	ld	a, #0x01
+                                   1145 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 613: status = RESET;
+      0005C6 21                    1146 	.byte 0x21
+      0005C7                       1147 00108$:
+      0005C7 4F               [ 1] 1148 	clr	a
+      0005C8                       1149 00115$:
+                                   1150 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 617: return status;
+                                   1151 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 618: }
+      0005C8 85               [ 2] 1152 	popw	x
+      0005C9 81               [ 4] 1153 	ret
+                                   1154 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 646: void UART1_ClearFlag(UART1_Flag_TypeDef UART1_FLAG)
+                                   1155 ;	-----------------------------------------
+                                   1156 ;	 function UART1_ClearFlag
+                                   1157 ;	-----------------------------------------
+      0005CA                       1158 _UART1_ClearFlag:
+                                   1159 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 648: assert_param(IS_UART1_CLEAR_FLAG_OK(UART1_FLAG));
+      0005CA A3 00 20         [ 2] 1160 	cpw	x, #0x0020
+      0005CD 26 03            [ 1] 1161 	jrne	00133$
+      0005CF A6 01            [ 1] 1162 	ld	a, #0x01
+      0005D1 21                    1163 	.byte 0x21
+      0005D2                       1164 00133$:
+      0005D2 4F               [ 1] 1165 	clr	a
+      0005D3                       1166 00134$:
+      0005D3 4D               [ 1] 1167 	tnz	a
+      0005D4 26 13            [ 1] 1168 	jrne	00107$
+      0005D6 A3 02 10         [ 2] 1169 	cpw	x, #0x0210
+      0005D9 27 0E            [ 1] 1170 	jreq	00107$
+      0005DB 88               [ 1] 1171 	push	a
+      0005DC 4B 88            [ 1] 1172 	push	#0x88
+      0005DE 4B 02            [ 1] 1173 	push	#0x02
+      0005E0 5F               [ 1] 1174 	clrw	x
+      0005E1 89               [ 2] 1175 	pushw	x
+      0005E2 AEr00r00         [ 2] 1176 	ldw	x, #(___str_0+0)
+      0005E5 CDr00r00         [ 4] 1177 	call	_assert_failed
+      0005E8 84               [ 1] 1178 	pop	a
+      0005E9                       1179 00107$:
+                                   1180 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 651: if (UART1_FLAG == UART1_FLAG_RXNE)
+      0005E9 4D               [ 1] 1181 	tnz	a
+      0005EA 27 05            [ 1] 1182 	jreq	00102$
+                                   1183 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 653: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
+      0005EC 35 DF 52 30      [ 1] 1184 	mov	0x5230+0, #0xdf
+      0005F0 81               [ 4] 1185 	ret
+      0005F1                       1186 00102$:
+                                   1187 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 658: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
+      0005F1 72 19 52 37      [ 1] 1188 	bres	0x5237, #4
+                                   1189 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 660: }
+      0005F5 81               [ 4] 1190 	ret
+                                   1191 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 675: ITStatus UART1_GetITStatus(UART1_IT_TypeDef UART1_IT)
+                                   1192 ;	-----------------------------------------
+                                   1193 ;	 function UART1_GetITStatus
+                                   1194 ;	-----------------------------------------
+      0005F6                       1195 _UART1_GetITStatus:
+      0005F6 52 04            [ 2] 1196 	sub	sp, #4
+                                   1197 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 684: assert_param(IS_UART1_GET_IT_OK(UART1_IT));
+      0005F8 90 93            [ 1] 1198 	ldw	y, x
+      0005FA A3 03 46         [ 2] 1199 	cpw	x, #0x0346
+      0005FD 26 05            [ 1] 1200 	jrne	00247$
+      0005FF A6 01            [ 1] 1201 	ld	a, #0x01
+      000601 6B 01            [ 1] 1202 	ld	(0x01, sp), a
+      000603 C5                    1203 	.byte 0xc5
+      000604                       1204 00247$:
+      000604 0F 01            [ 1] 1205 	clr	(0x01, sp)
+      000606                       1206 00248$:
+      000606 A3 01 00         [ 2] 1207 	cpw	x, #0x0100
+      000609 26 05            [ 1] 1208 	jrne	00250$
+      00060B A6 01            [ 1] 1209 	ld	a, #0x01
+      00060D 6B 02            [ 1] 1210 	ld	(0x02, sp), a
+      00060F C5                    1211 	.byte 0xc5
+      000610                       1212 00250$:
+      000610 0F 02            [ 1] 1213 	clr	(0x02, sp)
+      000612                       1214 00251$:
+      000612 A3 02 77         [ 2] 1215 	cpw	x, #0x0277
+      000615 27 2C            [ 1] 1216 	jreq	00122$
+      000617 A3 02 66         [ 2] 1217 	cpw	x, #0x0266
+      00061A 27 27            [ 1] 1218 	jreq	00122$
+      00061C A3 02 55         [ 2] 1219 	cpw	x, #0x0255
+      00061F 27 22            [ 1] 1220 	jreq	00122$
+      000621 A3 02 44         [ 2] 1221 	cpw	x, #0x0244
+      000624 27 1D            [ 1] 1222 	jreq	00122$
+      000626 A3 02 35         [ 2] 1223 	cpw	x, #0x0235
+      000629 27 18            [ 1] 1224 	jreq	00122$
+      00062B 0D 01            [ 1] 1225 	tnz	(0x01, sp)
+      00062D 26 14            [ 1] 1226 	jrne	00122$
+      00062F 0D 02            [ 1] 1227 	tnz	(0x02, sp)
+      000631 26 10            [ 1] 1228 	jrne	00122$
+      000633 90 89            [ 2] 1229 	pushw	y
+      000635 4B AC            [ 1] 1230 	push	#0xac
+      000637 4B 02            [ 1] 1231 	push	#0x02
+      000639 5F               [ 1] 1232 	clrw	x
+      00063A 89               [ 2] 1233 	pushw	x
+      00063B AEr00r00         [ 2] 1234 	ldw	x, #(___str_0+0)
+      00063E CDr00r00         [ 4] 1235 	call	_assert_failed
+      000641 90 85            [ 2] 1236 	popw	y
+      000643                       1237 00122$:
+                                   1238 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 687: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
+      000643 93               [ 1] 1239 	ldw	x, y
+      000644 9F               [ 1] 1240 	ld	a, xl
+      000645 A4 0F            [ 1] 1241 	and	a, #0x0f
+      000647 88               [ 1] 1242 	push	a
+      000648 A6 01            [ 1] 1243 	ld	a, #0x01
+      00064A 6B 04            [ 1] 1244 	ld	(0x04, sp), a
+      00064C 84               [ 1] 1245 	pop	a
+      00064D 4D               [ 1] 1246 	tnz	a
+      00064E 27 05            [ 1] 1247 	jreq	00270$
+      000650                       1248 00269$:
+      000650 08 03            [ 1] 1249 	sll	(0x03, sp)
+      000652 4A               [ 1] 1250 	dec	a
+      000653 26 FB            [ 1] 1251 	jrne	00269$
+      000655                       1252 00270$:
+                                   1253 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 689: itmask1 = (uint8_t)((uint8_t)UART1_IT >> (uint8_t)4);
+      000655 9F               [ 1] 1254 	ld	a, xl
+      000656 4E               [ 1] 1255 	swap	a
+      000657 A4 0F            [ 1] 1256 	and	a, #0x0f
+                                   1257 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 691: itmask2 = (uint8_t)((uint8_t)1 << itmask1);
+      000659 88               [ 1] 1258 	push	a
+      00065A A6 01            [ 1] 1259 	ld	a, #0x01
+      00065C 6B 05            [ 1] 1260 	ld	(0x05, sp), a
+      00065E 84               [ 1] 1261 	pop	a
+      00065F 4D               [ 1] 1262 	tnz	a
+      000660 27 05            [ 1] 1263 	jreq	00272$
+      000662                       1264 00271$:
+      000662 08 04            [ 1] 1265 	sll	(0x04, sp)
+      000664 4A               [ 1] 1266 	dec	a
+      000665 26 FB            [ 1] 1267 	jrne	00271$
+      000667                       1268 00272$:
+                                   1269 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 695: if (UART1_IT == UART1_IT_PE)
+      000667 7B 02            [ 1] 1270 	ld	a, (0x02, sp)
+      000669 27 18            [ 1] 1271 	jreq	00117$
+                                   1272 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 698: enablestatus = (uint8_t)((uint8_t)UART1->CR1 & itmask2);
+      00066B C6 52 34         [ 1] 1273 	ld	a, 0x5234
+      00066E 14 04            [ 1] 1274 	and	a, (0x04, sp)
+      000670 97               [ 1] 1275 	ld	xl, a
+                                   1276 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 701: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
+      000671 C6 52 30         [ 1] 1277 	ld	a, 0x5230
+      000674 14 03            [ 1] 1278 	and	a, (0x03, sp)
+      000676 27 08            [ 1] 1279 	jreq	00102$
+      000678 9F               [ 1] 1280 	ld	a, xl
+      000679 4D               [ 1] 1281 	tnz	a
+      00067A 27 04            [ 1] 1282 	jreq	00102$
+                                   1283 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 704: pendingbitstatus = SET;
+      00067C A6 01            [ 1] 1284 	ld	a, #0x01
+      00067E 20 34            [ 2] 1285 	jra	00118$
+      000680                       1286 00102$:
+                                   1287 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 709: pendingbitstatus = RESET;
+      000680 4F               [ 1] 1288 	clr	a
+      000681 20 31            [ 2] 1289 	jra	00118$
+      000683                       1290 00117$:
+                                   1291 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 713: else if (UART1_IT == UART1_IT_LBDF)
+      000683 7B 01            [ 1] 1292 	ld	a, (0x01, sp)
+      000685 27 18            [ 1] 1293 	jreq	00114$
+                                   1294 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 716: enablestatus = (uint8_t)((uint8_t)UART1->CR4 & itmask2);
+      000687 C6 52 37         [ 1] 1295 	ld	a, 0x5237
+      00068A 14 04            [ 1] 1296 	and	a, (0x04, sp)
+      00068C 97               [ 1] 1297 	ld	xl, a
+                                   1298 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 718: if (((UART1->CR4 & itpos) != (uint8_t)0x00) && enablestatus)
+      00068D C6 52 37         [ 1] 1299 	ld	a, 0x5237
+      000690 14 03            [ 1] 1300 	and	a, (0x03, sp)
+      000692 27 08            [ 1] 1301 	jreq	00106$
+      000694 9F               [ 1] 1302 	ld	a, xl
+      000695 4D               [ 1] 1303 	tnz	a
+      000696 27 04            [ 1] 1304 	jreq	00106$
+                                   1305 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 721: pendingbitstatus = SET;
+      000698 A6 01            [ 1] 1306 	ld	a, #0x01
+      00069A 20 18            [ 2] 1307 	jra	00118$
+      00069C                       1308 00106$:
+                                   1309 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 726: pendingbitstatus = RESET;
+      00069C 4F               [ 1] 1310 	clr	a
+      00069D 20 15            [ 2] 1311 	jra	00118$
+      00069F                       1312 00114$:
+                                   1313 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 732: enablestatus = (uint8_t)((uint8_t)UART1->CR2 & itmask2);
+      00069F C6 52 35         [ 1] 1314 	ld	a, 0x5235
+      0006A2 14 04            [ 1] 1315 	and	a, (0x04, sp)
+      0006A4 97               [ 1] 1316 	ld	xl, a
+                                   1317 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 734: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
+      0006A5 C6 52 30         [ 1] 1318 	ld	a, 0x5230
+      0006A8 14 03            [ 1] 1319 	and	a, (0x03, sp)
+      0006AA 27 07            [ 1] 1320 	jreq	00110$
+      0006AC 9F               [ 1] 1321 	ld	a, xl
+      0006AD 4D               [ 1] 1322 	tnz	a
+      0006AE 27 03            [ 1] 1323 	jreq	00110$
+                                   1324 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 737: pendingbitstatus = SET;
+      0006B0 A6 01            [ 1] 1325 	ld	a, #0x01
+                                   1326 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 742: pendingbitstatus = RESET;
+      0006B2 21                    1327 	.byte 0x21
+      0006B3                       1328 00110$:
+      0006B3 4F               [ 1] 1329 	clr	a
+      0006B4                       1330 00118$:
+                                   1331 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 747: return  pendingbitstatus;
+                                   1332 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 748: }
+      0006B4 5B 04            [ 2] 1333 	addw	sp, #4
+      0006B6 81               [ 4] 1334 	ret
+                                   1335 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 775: void UART1_ClearITPendingBit(UART1_IT_TypeDef UART1_IT)
+                                   1336 ;	-----------------------------------------
+                                   1337 ;	 function UART1_ClearITPendingBit
+                                   1338 ;	-----------------------------------------
+      0006B7                       1339 _UART1_ClearITPendingBit:
+                                   1340 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 777: assert_param(IS_UART1_CLEAR_IT_OK(UART1_IT));
+      0006B7 A3 02 55         [ 2] 1341 	cpw	x, #0x0255
+      0006BA 26 03            [ 1] 1342 	jrne	00133$
+      0006BC A6 01            [ 1] 1343 	ld	a, #0x01
+      0006BE 21                    1344 	.byte 0x21
+      0006BF                       1345 00133$:
+      0006BF 4F               [ 1] 1346 	clr	a
+      0006C0                       1347 00134$:
+      0006C0 4D               [ 1] 1348 	tnz	a
+      0006C1 26 13            [ 1] 1349 	jrne	00107$
+      0006C3 A3 03 46         [ 2] 1350 	cpw	x, #0x0346
+      0006C6 27 0E            [ 1] 1351 	jreq	00107$
+      0006C8 88               [ 1] 1352 	push	a
+      0006C9 4B 09            [ 1] 1353 	push	#0x09
+      0006CB 4B 03            [ 1] 1354 	push	#0x03
+      0006CD 5F               [ 1] 1355 	clrw	x
+      0006CE 89               [ 2] 1356 	pushw	x
+      0006CF AEr00r00         [ 2] 1357 	ldw	x, #(___str_0+0)
+      0006D2 CDr00r00         [ 4] 1358 	call	_assert_failed
+      0006D5 84               [ 1] 1359 	pop	a
+      0006D6                       1360 00107$:
+                                   1361 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 780: if (UART1_IT == UART1_IT_RXNE)
+      0006D6 4D               [ 1] 1362 	tnz	a
+      0006D7 27 05            [ 1] 1363 	jreq	00102$
+                                   1364 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 782: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
+      0006D9 35 DF 52 30      [ 1] 1365 	mov	0x5230+0, #0xdf
+      0006DD 81               [ 4] 1366 	ret
+      0006DE                       1367 00102$:
+                                   1368 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 787: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
+      0006DE 72 19 52 37      [ 1] 1369 	bres	0x5237, #4
+                                   1370 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_uart1.c: 789: }
+      0006E2 81               [ 4] 1371 	ret
+                                   1372 	.area CODE
+                                   1373 	.area CONST
+                                   1374 	.area CONST
+      000000                       1375 ___str_0:
+      000000 2E 2F 53 54 4D 38 53  1376 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/s"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -1385,9 +1382,9 @@
              65 72 69 70 68 5F 44
              72 69 76 65 72 2F 73
              72 63 2F 73
-      00003C 74 6D 38 73 5F 75 61  1380 	.ascii "tm8s_uart1.c"
+      00003C 74 6D 38 73 5F 75 61  1377 	.ascii "tm8s_uart1.c"
              72 74 31 2E 63
-      000048 00                    1381 	.db 0x00
-                                   1382 	.area CODE
-                                   1383 	.area INITIALIZER
-                                   1384 	.area CABS (ABS)
+      000048 00                    1378 	.db 0x00
+                                   1379 	.area CODE
+                                   1380 	.area INITIALIZER
+                                   1381 	.area CABS (ABS)

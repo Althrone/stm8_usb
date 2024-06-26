@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_spi
 	.optsdcc -mstm8
@@ -166,13 +166,13 @@ _SPI_Init:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 83: assert_param(IS_SPI_MODE_OK(Mode));
 	ld	a, (0x07, sp)
 	cp	a, #0x04
-	jrne	00314$
+	jrne	00362$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00314$:
+00362$:
 	clr	(0x01, sp)
-00315$:
+00363$:
 	Sstm8s_spi$SPI_Init$32 ==.
 	tnz	(0x01, sp)
 	jrne	00135$
@@ -468,12 +468,12 @@ _SPI_ITConfig:
 	Sstm8s_spi$SPI_ITConfig$125 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00172$
-00171$:
+	jreq	00186$
+00185$:
 	sll	(1, sp)
 	dec	a
-	jrne	00171$
-00172$:
+	jrne	00185$
+00186$:
 	pop	a
 	Sstm8s_spi$SPI_ITConfig$126 ==.
 	Sstm8s_spi$SPI_ITConfig$127 ==.
@@ -995,12 +995,12 @@ _SPI_GetITStatus:
 	ld	(0x02, sp), a
 	ld	a, xl
 	tnz	a
-	jreq	00183$
-00182$:
+	jreq	00199$
+00198$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00182$
-00183$:
+	jrne	00198$
+00199$:
 	pop	a
 	Sstm8s_spi$SPI_GetITStatus$319 ==.
 	Sstm8s_spi$SPI_GetITStatus$320 ==.
@@ -1016,12 +1016,12 @@ _SPI_GetITStatus:
 	pop	a
 	Sstm8s_spi$SPI_GetITStatus$323 ==.
 	tnz	a
-	jreq	00185$
-00184$:
+	jreq	00201$
+00200$:
 	sll	(0x02, sp)
 	dec	a
-	jrne	00184$
-00185$:
+	jrne	00200$
+00201$:
 	Sstm8s_spi$SPI_GetITStatus$324 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c: 382: enablestatus = (uint8_t)((uint8_t)SPI->SR & itmask2);
 	ld	a, 0x5203
@@ -1099,12 +1099,12 @@ _SPI_ClearITPendingBit:
 	Sstm8s_spi$SPI_ClearITPendingBit$349 ==.
 	ld	a, xl
 	tnz	a
-	jreq	00125$
-00124$:
+	jreq	00129$
+00128$:
 	sll	(1, sp)
 	dec	a
-	jrne	00124$
-00125$:
+	jrne	00128$
+00129$:
 	pop	a
 	Sstm8s_spi$SPI_ClearITPendingBit$350 ==.
 	Sstm8s_spi$SPI_ClearITPendingBit$351 ==.
@@ -1148,9 +1148,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_spi.c"
@@ -3107,7 +3107,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "SPI_DeInit"

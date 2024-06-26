@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_exti
 	.optsdcc -mstm8
@@ -156,9 +156,9 @@ _EXTI_SetExtIntSensitivity:
 	Sstm8s_exti$EXTI_SetExtIntSensitivity$37 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 77: switch (Port)
 	cp	a, #0x04
-	jrule	00208$
+	jrule	00228$
 	jp	00108$
-00208$:
+00228$:
 	Sstm8s_exti$EXTI_SetExtIntSensitivity$38 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c: 85: EXTI->CR1 |= (uint8_t)((uint8_t)(SensitivityValue) << 2);
 	exg	a, yl
@@ -169,9 +169,9 @@ _EXTI_SetExtIntSensitivity:
 	clrw	x
 	ld	xl, a
 	sllw	x
-	ldw	x, (#00209$, x)
+	ldw	x, (#00229$, x)
 	jp	(x)
-00209$:
+00229$:
 	.dw	#00101$
 	.dw	#00102$
 	.dw	#00103$
@@ -382,9 +382,9 @@ _EXTI_GetExtIntSensitivity:
 	clrw	x
 	ld	xl, a
 	sllw	x
-	ldw	x, (#00168$, x)
+	ldw	x, (#00180$, x)
 	jp	(x)
-00168$:
+00180$:
 	.dw	#00101$
 	.dw	#00102$
 	.dw	#00103$
@@ -516,9 +516,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_exti.c"
@@ -1422,7 +1422,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "EXTI_DeInit"

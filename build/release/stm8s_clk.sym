@@ -8,18 +8,18 @@ Symbol Table
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
   7 _CLKPrescTable                                                 000004 GR
-  9 _CLK_AdjustHSICalibrationValue                                 000548 GR
+  9 _CLK_AdjustHSICalibrationValue                                 000541 GR
   9 _CLK_CCOCmd                                                    0000DE GR
   9 _CLK_CCOConfig                                                 000361 GR
-  9 _CLK_ClearITPendingBit                                         00064D GR
+  9 _CLK_ClearITPendingBit                                         000646 GR
   9 _CLK_ClockSecuritySystemEnable                                 0004F1 GR
   9 _CLK_ClockSwitchCmd                                            000108 GR
   9 _CLK_ClockSwitchConfig                                         000226 GR
   9 _CLK_DeInit                                                    000000 GR
   9 _CLK_FastHaltWakeUpCmd                                         000036 GR
   9 _CLK_GetClockFreq                                              0004FA GR
-  9 _CLK_GetFlagStatus                                             00058C GR
-  9 _CLK_GetITStatus                                               000609 GR
+  9 _CLK_GetFlagStatus                                             000585 GR
+  9 _CLK_GetITStatus                                               000602 GR
   9 _CLK_GetSYSCLKSource                                           0004F6 GR
   9 _CLK_HSECmd                                                    000060 GR
   9 _CLK_HSICmd                                                    00008A GR
@@ -29,7 +29,7 @@ Symbol Table
   9 _CLK_PeripheralClockConfig                                     00015C GR
   9 _CLK_SWIMConfig                                                0004C7 GR
   9 _CLK_SYSCLKConfig                                              00044A GR
-  9 _CLK_SYSCLKEmergencyClear                                      000587 GR
+  9 _CLK_SYSCLKEmergencyClear                                      000580 GR
   9 _CLK_SlowActiveHaltWakeUpCmd                                   000132 GR
   7 _HSIDivFactor                                                  000000 GR
   7 ___str_0                                                       00000C R
@@ -51,6 +51,6 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     53   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size    67A   flags    0
+   9 CODE                                       size    673   flags    0
    A CABS                                       size      0   flags    8
 

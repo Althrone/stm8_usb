@@ -1,6 +1,6 @@
 ;--------------------------------------------------------
 ; File Created by SDCC : free open source ISO C Compiler 
-; Version 4.3.0 #14184 (MINGW64)
+; Version 4.4.0 #14620 (MINGW64)
 ;--------------------------------------------------------
 	.module stm8s_tim2
 	.optsdcc -mstm8
@@ -577,13 +577,13 @@ _TIM2_ICInit:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 219: assert_param(IS_TIM2_CHANNEL_OK(TIM2_Channel));
 	ld	(0x02, sp), a
 	dec	a
-	jrne	00219$
+	jrne	00249$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00219$:
+00249$:
 	clr	(0x01, sp)
-00220$:
+00250$:
 	Sstm8s_tim2$TIM2_ICInit$144 ==.
 	tnz	(0x02, sp)
 	jreq	00110$
@@ -794,13 +794,13 @@ _TIM2_PWMIConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 277: assert_param(IS_TIM2_IC_POLARITY_OK(TIM2_ICPolarity));
 	ld	a, (0x06, sp)
 	sub	a, #0x44
-	jrne	00216$
+	jrne	00244$
 	inc	a
 	ld	(0x01, sp), a
 	.byte 0xc5
-00216$:
+00244$:
 	clr	(0x01, sp)
-00217$:
+00245$:
 	Sstm8s_tim2$TIM2_PWMIConfig$213 ==.
 	tnz	(0x06, sp)
 	jreq	00118$
@@ -821,13 +821,13 @@ _TIM2_PWMIConfig:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 278: assert_param(IS_TIM2_IC_SELECTION_OK(TIM2_ICSelection));
 	ld	a, (0x07, sp)
 	dec	a
-	jrne	00221$
+	jrne	00249$
 	ld	a, #0x01
 	ld	(0x02, sp), a
 	.byte 0xc5
-00221$:
+00249$:
 	clr	(0x02, sp)
-00222$:
+00250$:
 	Sstm8s_tim2$TIM2_PWMIConfig$219 ==.
 	tnz	(0x02, sp)
 	jrne	00123$
@@ -1997,7 +1997,7 @@ _TIM2_CCxCmd:
 	Sstm8s_tim2$TIM2_CCxCmd$632 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 748: assert_param(IS_TIM2_CHANNEL_OK(TIM2_Channel));
 	cp	a, #0x01
-	jrne	00182$
+	jrne	00202$
 	push	a
 	Sstm8s_tim2$TIM2_CCxCmd$633 ==.
 	ld	a, #0x01
@@ -2005,9 +2005,9 @@ _TIM2_CCxCmd:
 	pop	a
 	Sstm8s_tim2$TIM2_CCxCmd$634 ==.
 	.byte 0xc5
-00182$:
+00202$:
 	clr	(0x01, sp)
-00183$:
+00203$:
 	Sstm8s_tim2$TIM2_CCxCmd$635 ==.
 	tnz	a
 	jreq	00119$
@@ -2154,13 +2154,13 @@ _TIM2_SelectOCxM:
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 813: assert_param(IS_TIM2_CHANNEL_OK(TIM2_Channel));
 	ld	(0x02, sp), a
 	dec	a
-	jrne	00206$
+	jrne	00232$
 	ld	a, #0x01
 	ld	(0x01, sp), a
 	.byte 0xc5
-00206$:
+00232$:
 	clr	(0x01, sp)
-00207$:
+00233$:
 	Sstm8s_tim2$TIM2_SelectOCxM$688 ==.
 	tnz	(0x02, sp)
 	jreq	00110$
@@ -2565,16 +2565,12 @@ _TIM2_GetCapture1:
 	ld	a, 0x5312
 	Sstm8s_tim2$TIM2_GetCapture1$819 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 984: tmpccr1 = (uint16_t)(tmpccr1l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim2$TIM2_GetCapture1$820 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 985: tmpccr1 |= (uint16_t)((uint16_t)tmpccr1h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim2$TIM2_GetCapture1$821 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 987: return (uint16_t)tmpccr1;
-	ld	xh, a
 	Sstm8s_tim2$TIM2_GetCapture1$822 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 988: }
 	addw	sp, #2
@@ -2601,16 +2597,12 @@ _TIM2_GetCapture2:
 	ld	a, 0x5314
 	Sstm8s_tim2$TIM2_GetCapture2$831 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1004: tmpccr2 = (uint16_t)(tmpccr2l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim2$TIM2_GetCapture2$832 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1005: tmpccr2 |= (uint16_t)((uint16_t)tmpccr2h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim2$TIM2_GetCapture2$833 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1007: return (uint16_t)tmpccr2;
-	ld	xh, a
 	Sstm8s_tim2$TIM2_GetCapture2$834 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1008: }
 	addw	sp, #2
@@ -2637,16 +2629,12 @@ _TIM2_GetCapture3:
 	ld	a, 0x5316
 	Sstm8s_tim2$TIM2_GetCapture3$843 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1024: tmpccr3 = (uint16_t)(tmpccr3l);
-	ld	(0x02, sp), a
-	clr	(0x01, sp)
+	ld	xl, a
 	Sstm8s_tim2$TIM2_GetCapture3$844 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1025: tmpccr3 |= (uint16_t)((uint16_t)tmpccr3h << 8);
-	ld	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x01, sp)
+	clr	(0x02, sp)
 	Sstm8s_tim2$TIM2_GetCapture3$845 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1027: return (uint16_t)tmpccr3;
-	ld	xh, a
 	Sstm8s_tim2$TIM2_GetCapture3$846 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1028: }
 	addw	sp, #2
@@ -2662,7 +2650,7 @@ _TIM2_GetCapture3:
 ;	-----------------------------------------
 _TIM2_GetCounter:
 	Sstm8s_tim2$TIM2_GetCounter$851 ==.
-	sub	sp, #4
+	pushw	x
 	Sstm8s_tim2$TIM2_GetCounter$852 ==.
 	Sstm8s_tim2$TIM2_GetCounter$853 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1039: tmpcntr =  ((uint16_t)TIM2->CNTRH << 8);
@@ -2672,14 +2660,10 @@ _TIM2_GetCounter:
 	Sstm8s_tim2$TIM2_GetCounter$854 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1041: return (uint16_t)( tmpcntr| (uint16_t)(TIM2->CNTRL));
 	ld	a, 0x530d
-	clr	(0x03, sp)
-	or	a, (0x02, sp)
-	rlwa	x
-	or	a, (0x03, sp)
-	ld	xh, a
+	ld	xl, a
 	Sstm8s_tim2$TIM2_GetCounter$855 ==.
 ;	./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c: 1042: }
-	addw	sp, #4
+	addw	sp, #2
 	Sstm8s_tim2$TIM2_GetCounter$856 ==.
 	Sstm8s_tim2$TIM2_GetCounter$857 ==.
 	XG$TIM2_GetCounter$0$0 ==.
@@ -3168,9 +3152,9 @@ Ldebug_line_start:
 	.db	0
 	.db	0
 	.db	1
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
 	.db	0
-	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
 	.db	0
 	.db	0
 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_tim2.c"
@@ -6146,7 +6130,7 @@ Ldebug_loc_start:
 	.dw	0,(Sstm8s_tim2$TIM2_GetCounter$856)
 	.dw	2
 	.db	120
-	.sleb128	5
+	.sleb128	3
 	.dw	0,(Sstm8s_tim2$TIM2_GetCounter$851)
 	.dw	0,(Sstm8s_tim2$TIM2_GetCounter$852)
 	.dw	2
@@ -8393,7 +8377,7 @@ Ldebug_info_start:
 	.db	0
 	.dw	0,(Ldebug_line_start+-4)
 	.db	1
-	.ascii "SDCC version 4.3.0 #14184"
+	.ascii "SDCC version 4.4.0 #14620"
 	.db	0
 	.uleb128	2
 	.ascii "TIM2_DeInit"
@@ -9262,7 +9246,7 @@ Ldebug_info_start:
 	.dw	0,241
 	.uleb128	8
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -9295,7 +9279,7 @@ Ldebug_info_start:
 	.dw	0,241
 	.uleb128	8
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -9328,7 +9312,7 @@ Ldebug_info_start:
 	.dw	0,241
 	.uleb128	8
 	.db	6
-	.db	80
+	.db	82
 	.db	147
 	.uleb128	1
 	.db	81
@@ -9365,7 +9349,7 @@ Ldebug_info_start:
 	.db	147
 	.uleb128	1
 	.db	145
-	.sleb128	-3
+	.sleb128	-1
 	.db	147
 	.uleb128	1
 	.ascii "tmpcntr"
@@ -10219,7 +10203,7 @@ Ldebug_CIE8_end:
 	.db	1
 	.dw	0,(Sstm8s_tim2$TIM2_GetCounter$852)
 	.db	14
-	.uleb128	6
+	.uleb128	4
 	.db	1
 	.dw	0,(Sstm8s_tim2$TIM2_GetCounter$856)
 	.db	14

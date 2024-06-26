@@ -1,6 +1,6 @@
                                       1 ;--------------------------------------------------------
                                       2 ; File Created by SDCC : free open source ISO C Compiler 
-                                      3 ; Version 4.3.0 #14184 (MINGW64)
+                                      3 ; Version 4.4.0 #14620 (MINGW64)
                                       4 ;--------------------------------------------------------
                                       5 	.module stm8s_beep
                                       6 	.optsdcc -mstm8
@@ -320,10 +320,10 @@
                                     311 	.area CABS (ABS)
                                     312 
                                     313 	.area .debug_line (NOLOAD)
-      000000 00 00 01 E6            314 	.dw	0,Ldebug_line_end-Ldebug_line_start
+      000000 00 00 01 F2            314 	.dw	0,Ldebug_line_end-Ldebug_line_start
       000004                        315 Ldebug_line_start:
       000004 00 02                  316 	.dw	2
-      000006 00 00 00 A9            317 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
+      000006 00 00 00 B5            317 	.dw	0,Ldebug_line_stmt-6-Ldebug_line_start
       00000A 01                     318 	.db	1
       00000B 01                     319 	.db	1
       00000C FB                     320 	.db	-5
@@ -338,21 +338,23 @@
       000015 00                     329 	.db	0
       000016 00                     330 	.db	0
       000017 01                     331 	.db	1
-      000018 44 3A 5C 5C 53 6F 66   332 	.ascii "D:\\Software\\SDCC\\bin\\..\\include\\stm8"
+      000018 44 3A 5C 5C 53 6F 66   332 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include\\stm8"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-             5C 5C 73 74 6D 38
-      000041 00                     333 	.db	0
-      000042 44 3A 5C 5C 53 6F 66   334 	.ascii "D:\\Software\\SDCC\\bin\\..\\include"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65 5C
+             5C 73 74 6D 38
+      000047 00                     333 	.db	0
+      000048 44 3A 5C 5C 53 6F 66   334 	.ascii "D:\\Software\\Work\\SDCC\\bin\\..\\include"
              74 77 61 72 65 5C 5C
-             53 44 43 43 5C 08 69
-             6E 5C 5C 2E 2E 5C 5C
-             69 6E 63 6C 75 64 65
-      000065 00                     335 	.db	0
-      000066 00                     336 	.db	0
-      000067 2E 2F 53 54 4D 38 53   337 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_beep.c"
+             57 6F 72 6B 5C 5C 53
+             44 43 43 5C 08 69 6E
+             5C 5C 2E 2E 5C 5C 69
+             6E 63 6C 75 64 65
+      000071 00                     335 	.db	0
+      000072 00                     336 	.db	0
+      000073 2E 2F 53 54 4D 38 53   337 	.ascii "./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_beep.c"
              5F 53 74 64 50 65 72
              69 70 68 5F 4C 69 62
              2F 4C 69 62 72 61 72
@@ -363,231 +365,231 @@
              72 63 2F 73 74 6D 38
              73 5F 62 65 65 70 2E
              63
-      0000AE 00                     338 	.db	0
-      0000AF 00                     339 	.uleb128	0
-      0000B0 00                     340 	.uleb128	0
-      0000B1 00                     341 	.uleb128	0
-      0000B2 00                     342 	.db	0
-      0000B3                        343 Ldebug_line_stmt:
-      0000B3 00                     344 	.db	0
-      0000B4 05                     345 	.uleb128	5
-      0000B5 02                     346 	.db	2
-      0000B6 00 00r00r00            347 	.dw	0,(Sstm8s_beep$BEEP_DeInit$0)
-      0000BA 03                     348 	.db	3
-      0000BB 35                     349 	.sleb128	53
-      0000BC 01                     350 	.db	1
-      0000BD 00                     351 	.db	0
-      0000BE 05                     352 	.uleb128	5
-      0000BF 02                     353 	.db	2
-      0000C0 00 00r00r00            354 	.dw	0,(Sstm8s_beep$BEEP_DeInit$2)
-      0000C4 03                     355 	.db	3
-      0000C5 02                     356 	.sleb128	2
-      0000C6 01                     357 	.db	1
-      0000C7 00                     358 	.db	0
-      0000C8 05                     359 	.uleb128	5
-      0000C9 02                     360 	.db	2
-      0000CA 00 00r00r04            361 	.dw	0,(Sstm8s_beep$BEEP_DeInit$3)
-      0000CE 03                     362 	.db	3
-      0000CF 01                     363 	.sleb128	1
-      0000D0 01                     364 	.db	1
-      0000D1 09                     365 	.db	9
-      0000D2 00 01                  366 	.dw	1+Sstm8s_beep$BEEP_DeInit$4-Sstm8s_beep$BEEP_DeInit$3
-      0000D4 00                     367 	.db	0
-      0000D5 01                     368 	.uleb128	1
-      0000D6 01                     369 	.db	1
-      0000D7 00                     370 	.db	0
-      0000D8 05                     371 	.uleb128	5
-      0000D9 02                     372 	.db	2
-      0000DA 00 00r00r05            373 	.dw	0,(Sstm8s_beep$BEEP_Init$6)
-      0000DE 03                     374 	.db	3
-      0000DF C2 00                  375 	.sleb128	66
-      0000E1 01                     376 	.db	1
-      0000E2 00                     377 	.db	0
-      0000E3 05                     378 	.uleb128	5
-      0000E4 02                     379 	.db	2
-      0000E5 00 00r00r06            380 	.dw	0,(Sstm8s_beep$BEEP_Init$9)
-      0000E9 03                     381 	.db	3
-      0000EA 03                     382 	.sleb128	3
-      0000EB 01                     383 	.db	1
-      0000EC 00                     384 	.db	0
-      0000ED 05                     385 	.uleb128	5
-      0000EE 02                     386 	.db	2
-      0000EF 00 00r00r22            387 	.dw	0,(Sstm8s_beep$BEEP_Init$16)
-      0000F3 03                     388 	.db	3
-      0000F4 03                     389 	.sleb128	3
-      0000F5 01                     390 	.db	1
-      0000F6 00                     391 	.db	0
-      0000F7 05                     392 	.uleb128	5
-      0000F8 02                     393 	.db	2
-      0000F9 00 00r00r2A            394 	.dw	0,(Sstm8s_beep$BEEP_Init$19)
-      0000FD 03                     395 	.db	3
-      0000FE 02                     396 	.sleb128	2
-      0000FF 01                     397 	.db	1
-      000100 00                     398 	.db	0
-      000101 05                     399 	.uleb128	5
-      000102 02                     400 	.db	2
-      000103 00 00r00r32            401 	.dw	0,(Sstm8s_beep$BEEP_Init$20)
-      000107 03                     402 	.db	3
-      000108 01                     403 	.sleb128	1
-      000109 01                     404 	.db	1
-      00010A 00                     405 	.db	0
-      00010B 05                     406 	.uleb128	5
-      00010C 02                     407 	.db	2
-      00010D 00 00r00r3A            408 	.dw	0,(Sstm8s_beep$BEEP_Init$22)
-      000111 03                     409 	.db	3
-      000112 04                     410 	.sleb128	4
-      000113 01                     411 	.db	1
-      000114 00                     412 	.db	0
-      000115 05                     413 	.uleb128	5
-      000116 02                     414 	.db	2
-      000117 00 00r00r42            415 	.dw	0,(Sstm8s_beep$BEEP_Init$23)
-      00011B 03                     416 	.db	3
-      00011C 01                     417 	.sleb128	1
-      00011D 01                     418 	.db	1
-      00011E 00                     419 	.db	0
-      00011F 05                     420 	.uleb128	5
-      000120 02                     421 	.db	2
-      000121 00 00r00r4A            422 	.dw	0,(Sstm8s_beep$BEEP_Init$24)
-      000125 03                     423 	.db	3
-      000126 01                     424 	.sleb128	1
-      000127 01                     425 	.db	1
-      000128 09                     426 	.db	9
-      000129 00 02                  427 	.dw	1+Sstm8s_beep$BEEP_Init$26-Sstm8s_beep$BEEP_Init$24
-      00012B 00                     428 	.db	0
-      00012C 01                     429 	.uleb128	1
-      00012D 01                     430 	.db	1
-      00012E 00                     431 	.db	0
-      00012F 05                     432 	.uleb128	5
-      000130 02                     433 	.db	2
-      000131 00 00r00r4C            434 	.dw	0,(Sstm8s_beep$BEEP_Cmd$28)
-      000135 03                     435 	.db	3
-      000136 DA 00                  436 	.sleb128	90
-      000138 01                     437 	.db	1
-      000139 00                     438 	.db	0
-      00013A 05                     439 	.uleb128	5
-      00013B 02                     440 	.db	2
-      00013C 00 00r00r4F            441 	.dw	0,(Sstm8s_beep$BEEP_Cmd$31)
-      000140 03                     442 	.db	3
-      000141 05                     443 	.sleb128	5
-      000142 01                     444 	.db	1
-      000143 00                     445 	.db	0
-      000144 05                     446 	.uleb128	5
-      000145 02                     447 	.db	2
-      000146 00 00r00r52            448 	.dw	0,(Sstm8s_beep$BEEP_Cmd$32)
-      00014A 03                     449 	.db	3
-      00014B 7D                     450 	.sleb128	-3
-      00014C 01                     451 	.db	1
-      00014D 00                     452 	.db	0
-      00014E 05                     453 	.uleb128	5
-      00014F 02                     454 	.db	2
-      000150 00 00r00r56            455 	.dw	0,(Sstm8s_beep$BEEP_Cmd$34)
-      000154 03                     456 	.db	3
-      000155 03                     457 	.sleb128	3
-      000156 01                     458 	.db	1
-      000157 00                     459 	.db	0
-      000158 05                     460 	.uleb128	5
-      000159 02                     461 	.db	2
-      00015A 00 00r00r5D            462 	.dw	0,(Sstm8s_beep$BEEP_Cmd$37)
-      00015E 03                     463 	.db	3
-      00015F 05                     464 	.sleb128	5
-      000160 01                     465 	.db	1
-      000161 00                     466 	.db	0
-      000162 05                     467 	.uleb128	5
-      000163 02                     468 	.db	2
-      000164 00 00r00r62            469 	.dw	0,(Sstm8s_beep$BEEP_Cmd$39)
-      000168 03                     470 	.db	3
-      000169 02                     471 	.sleb128	2
-      00016A 01                     472 	.db	1
-      00016B 09                     473 	.db	9
-      00016C 00 02                  474 	.dw	1+Sstm8s_beep$BEEP_Cmd$41-Sstm8s_beep$BEEP_Cmd$39
-      00016E 00                     475 	.db	0
-      00016F 01                     476 	.uleb128	1
-      000170 01                     477 	.db	1
-      000171 00                     478 	.db	0
-      000172 05                     479 	.uleb128	5
-      000173 02                     480 	.db	2
-      000174 00 00r00r64            481 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$43)
-      000178 03                     482 	.db	3
-      000179 F5 00                  483 	.sleb128	117
-      00017B 01                     484 	.db	1
-      00017C 00                     485 	.db	0
-      00017D 05                     486 	.uleb128	5
-      00017E 02                     487 	.db	2
-      00017F 00 00r00r66            488 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$46)
-      000183 03                     489 	.db	3
-      000184 06                     490 	.sleb128	6
-      000185 01                     491 	.db	1
-      000186 00                     492 	.db	0
-      000187 05                     493 	.uleb128	5
-      000188 02                     494 	.db	2
-      000189 00 00r00r8F            495 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$51)
-      00018D 03                     496 	.db	3
-      00018E 02                     497 	.sleb128	2
-      00018F 01                     498 	.db	1
-      000190 00                     499 	.db	0
-      000191 05                     500 	.uleb128	5
-      000192 02                     501 	.db	2
-      000193 00 00r00rA2            502 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$58)
-      000197 03                     503 	.db	3
-      000198 04                     504 	.sleb128	4
-      000199 01                     505 	.db	1
-      00019A 00                     506 	.db	0
-      00019B 05                     507 	.uleb128	5
-      00019C 02                     508 	.db	2
-      00019D 00 00r00rAA            509 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$59)
-      0001A1 03                     510 	.db	3
-      0001A2 02                     511 	.sleb128	2
-      0001A3 01                     512 	.db	1
-      0001A4 00                     513 	.db	0
-      0001A5 05                     514 	.uleb128	5
-      0001A6 02                     515 	.db	2
-      0001A7 00 00r00rAF            516 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$60)
-      0001AB 03                     517 	.db	3
-      0001AC 02                     518 	.sleb128	2
-      0001AD 01                     519 	.db	1
-      0001AE 00                     520 	.db	0
-      0001AF 05                     521 	.uleb128	5
-      0001B0 02                     522 	.db	2
-      0001B1 00 00r00rC3            523 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$62)
-      0001B5 03                     524 	.db	3
-      0001B6 7C                     525 	.sleb128	-4
-      0001B7 01                     526 	.db	1
-      0001B8 00                     527 	.db	0
-      0001B9 05                     528 	.uleb128	5
-      0001BA 02                     529 	.db	2
-      0001BB 00 00r00rCD            530 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$64)
-      0001BF 03                     531 	.db	3
-      0001C0 06                     532 	.sleb128	6
-      0001C1 01                     533 	.db	1
-      0001C2 00                     534 	.db	0
-      0001C3 05                     535 	.uleb128	5
-      0001C4 02                     536 	.db	2
-      0001C5 00 00r00rCF            537 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$65)
-      0001C9 03                     538 	.db	3
-      0001CA 7E                     539 	.sleb128	-2
-      0001CB 01                     540 	.db	1
-      0001CC 00                     541 	.db	0
-      0001CD 05                     542 	.uleb128	5
-      0001CE 02                     543 	.db	2
-      0001CF 00 00r00rD5            544 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$67)
-      0001D3 03                     545 	.db	3
-      0001D4 02                     546 	.sleb128	2
-      0001D5 01                     547 	.db	1
-      0001D6 00                     548 	.db	0
-      0001D7 05                     549 	.uleb128	5
-      0001D8 02                     550 	.db	2
-      0001D9 00 00r00rDE            551 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$70)
-      0001DD 03                     552 	.db	3
-      0001DE 04                     553 	.sleb128	4
-      0001DF 01                     554 	.db	1
-      0001E0 00                     555 	.db	0
-      0001E1 05                     556 	.uleb128	5
-      0001E2 02                     557 	.db	2
-      0001E3 00 00r00rE4            558 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$72)
-      0001E7 03                     559 	.db	3
-      0001E8 02                     560 	.sleb128	2
-      0001E9 01                     561 	.db	1
-      0001EA                        562 Ldebug_line_end:
+      0000BA 00                     338 	.db	0
+      0000BB 00                     339 	.uleb128	0
+      0000BC 00                     340 	.uleb128	0
+      0000BD 00                     341 	.uleb128	0
+      0000BE 00                     342 	.db	0
+      0000BF                        343 Ldebug_line_stmt:
+      0000BF 00                     344 	.db	0
+      0000C0 05                     345 	.uleb128	5
+      0000C1 02                     346 	.db	2
+      0000C2 00 00r00r00            347 	.dw	0,(Sstm8s_beep$BEEP_DeInit$0)
+      0000C6 03                     348 	.db	3
+      0000C7 35                     349 	.sleb128	53
+      0000C8 01                     350 	.db	1
+      0000C9 00                     351 	.db	0
+      0000CA 05                     352 	.uleb128	5
+      0000CB 02                     353 	.db	2
+      0000CC 00 00r00r00            354 	.dw	0,(Sstm8s_beep$BEEP_DeInit$2)
+      0000D0 03                     355 	.db	3
+      0000D1 02                     356 	.sleb128	2
+      0000D2 01                     357 	.db	1
+      0000D3 00                     358 	.db	0
+      0000D4 05                     359 	.uleb128	5
+      0000D5 02                     360 	.db	2
+      0000D6 00 00r00r04            361 	.dw	0,(Sstm8s_beep$BEEP_DeInit$3)
+      0000DA 03                     362 	.db	3
+      0000DB 01                     363 	.sleb128	1
+      0000DC 01                     364 	.db	1
+      0000DD 09                     365 	.db	9
+      0000DE 00 01                  366 	.dw	1+Sstm8s_beep$BEEP_DeInit$4-Sstm8s_beep$BEEP_DeInit$3
+      0000E0 00                     367 	.db	0
+      0000E1 01                     368 	.uleb128	1
+      0000E2 01                     369 	.db	1
+      0000E3 00                     370 	.db	0
+      0000E4 05                     371 	.uleb128	5
+      0000E5 02                     372 	.db	2
+      0000E6 00 00r00r05            373 	.dw	0,(Sstm8s_beep$BEEP_Init$6)
+      0000EA 03                     374 	.db	3
+      0000EB C2 00                  375 	.sleb128	66
+      0000ED 01                     376 	.db	1
+      0000EE 00                     377 	.db	0
+      0000EF 05                     378 	.uleb128	5
+      0000F0 02                     379 	.db	2
+      0000F1 00 00r00r06            380 	.dw	0,(Sstm8s_beep$BEEP_Init$9)
+      0000F5 03                     381 	.db	3
+      0000F6 03                     382 	.sleb128	3
+      0000F7 01                     383 	.db	1
+      0000F8 00                     384 	.db	0
+      0000F9 05                     385 	.uleb128	5
+      0000FA 02                     386 	.db	2
+      0000FB 00 00r00r22            387 	.dw	0,(Sstm8s_beep$BEEP_Init$16)
+      0000FF 03                     388 	.db	3
+      000100 03                     389 	.sleb128	3
+      000101 01                     390 	.db	1
+      000102 00                     391 	.db	0
+      000103 05                     392 	.uleb128	5
+      000104 02                     393 	.db	2
+      000105 00 00r00r2A            394 	.dw	0,(Sstm8s_beep$BEEP_Init$19)
+      000109 03                     395 	.db	3
+      00010A 02                     396 	.sleb128	2
+      00010B 01                     397 	.db	1
+      00010C 00                     398 	.db	0
+      00010D 05                     399 	.uleb128	5
+      00010E 02                     400 	.db	2
+      00010F 00 00r00r32            401 	.dw	0,(Sstm8s_beep$BEEP_Init$20)
+      000113 03                     402 	.db	3
+      000114 01                     403 	.sleb128	1
+      000115 01                     404 	.db	1
+      000116 00                     405 	.db	0
+      000117 05                     406 	.uleb128	5
+      000118 02                     407 	.db	2
+      000119 00 00r00r3A            408 	.dw	0,(Sstm8s_beep$BEEP_Init$22)
+      00011D 03                     409 	.db	3
+      00011E 04                     410 	.sleb128	4
+      00011F 01                     411 	.db	1
+      000120 00                     412 	.db	0
+      000121 05                     413 	.uleb128	5
+      000122 02                     414 	.db	2
+      000123 00 00r00r42            415 	.dw	0,(Sstm8s_beep$BEEP_Init$23)
+      000127 03                     416 	.db	3
+      000128 01                     417 	.sleb128	1
+      000129 01                     418 	.db	1
+      00012A 00                     419 	.db	0
+      00012B 05                     420 	.uleb128	5
+      00012C 02                     421 	.db	2
+      00012D 00 00r00r4A            422 	.dw	0,(Sstm8s_beep$BEEP_Init$24)
+      000131 03                     423 	.db	3
+      000132 01                     424 	.sleb128	1
+      000133 01                     425 	.db	1
+      000134 09                     426 	.db	9
+      000135 00 02                  427 	.dw	1+Sstm8s_beep$BEEP_Init$26-Sstm8s_beep$BEEP_Init$24
+      000137 00                     428 	.db	0
+      000138 01                     429 	.uleb128	1
+      000139 01                     430 	.db	1
+      00013A 00                     431 	.db	0
+      00013B 05                     432 	.uleb128	5
+      00013C 02                     433 	.db	2
+      00013D 00 00r00r4C            434 	.dw	0,(Sstm8s_beep$BEEP_Cmd$28)
+      000141 03                     435 	.db	3
+      000142 DA 00                  436 	.sleb128	90
+      000144 01                     437 	.db	1
+      000145 00                     438 	.db	0
+      000146 05                     439 	.uleb128	5
+      000147 02                     440 	.db	2
+      000148 00 00r00r4F            441 	.dw	0,(Sstm8s_beep$BEEP_Cmd$31)
+      00014C 03                     442 	.db	3
+      00014D 05                     443 	.sleb128	5
+      00014E 01                     444 	.db	1
+      00014F 00                     445 	.db	0
+      000150 05                     446 	.uleb128	5
+      000151 02                     447 	.db	2
+      000152 00 00r00r52            448 	.dw	0,(Sstm8s_beep$BEEP_Cmd$32)
+      000156 03                     449 	.db	3
+      000157 7D                     450 	.sleb128	-3
+      000158 01                     451 	.db	1
+      000159 00                     452 	.db	0
+      00015A 05                     453 	.uleb128	5
+      00015B 02                     454 	.db	2
+      00015C 00 00r00r56            455 	.dw	0,(Sstm8s_beep$BEEP_Cmd$34)
+      000160 03                     456 	.db	3
+      000161 03                     457 	.sleb128	3
+      000162 01                     458 	.db	1
+      000163 00                     459 	.db	0
+      000164 05                     460 	.uleb128	5
+      000165 02                     461 	.db	2
+      000166 00 00r00r5D            462 	.dw	0,(Sstm8s_beep$BEEP_Cmd$37)
+      00016A 03                     463 	.db	3
+      00016B 05                     464 	.sleb128	5
+      00016C 01                     465 	.db	1
+      00016D 00                     466 	.db	0
+      00016E 05                     467 	.uleb128	5
+      00016F 02                     468 	.db	2
+      000170 00 00r00r62            469 	.dw	0,(Sstm8s_beep$BEEP_Cmd$39)
+      000174 03                     470 	.db	3
+      000175 02                     471 	.sleb128	2
+      000176 01                     472 	.db	1
+      000177 09                     473 	.db	9
+      000178 00 02                  474 	.dw	1+Sstm8s_beep$BEEP_Cmd$41-Sstm8s_beep$BEEP_Cmd$39
+      00017A 00                     475 	.db	0
+      00017B 01                     476 	.uleb128	1
+      00017C 01                     477 	.db	1
+      00017D 00                     478 	.db	0
+      00017E 05                     479 	.uleb128	5
+      00017F 02                     480 	.db	2
+      000180 00 00r00r64            481 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$43)
+      000184 03                     482 	.db	3
+      000185 F5 00                  483 	.sleb128	117
+      000187 01                     484 	.db	1
+      000188 00                     485 	.db	0
+      000189 05                     486 	.uleb128	5
+      00018A 02                     487 	.db	2
+      00018B 00 00r00r66            488 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$46)
+      00018F 03                     489 	.db	3
+      000190 06                     490 	.sleb128	6
+      000191 01                     491 	.db	1
+      000192 00                     492 	.db	0
+      000193 05                     493 	.uleb128	5
+      000194 02                     494 	.db	2
+      000195 00 00r00r8F            495 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$51)
+      000199 03                     496 	.db	3
+      00019A 02                     497 	.sleb128	2
+      00019B 01                     498 	.db	1
+      00019C 00                     499 	.db	0
+      00019D 05                     500 	.uleb128	5
+      00019E 02                     501 	.db	2
+      00019F 00 00r00rA2            502 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$58)
+      0001A3 03                     503 	.db	3
+      0001A4 04                     504 	.sleb128	4
+      0001A5 01                     505 	.db	1
+      0001A6 00                     506 	.db	0
+      0001A7 05                     507 	.uleb128	5
+      0001A8 02                     508 	.db	2
+      0001A9 00 00r00rAA            509 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$59)
+      0001AD 03                     510 	.db	3
+      0001AE 02                     511 	.sleb128	2
+      0001AF 01                     512 	.db	1
+      0001B0 00                     513 	.db	0
+      0001B1 05                     514 	.uleb128	5
+      0001B2 02                     515 	.db	2
+      0001B3 00 00r00rAF            516 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$60)
+      0001B7 03                     517 	.db	3
+      0001B8 02                     518 	.sleb128	2
+      0001B9 01                     519 	.db	1
+      0001BA 00                     520 	.db	0
+      0001BB 05                     521 	.uleb128	5
+      0001BC 02                     522 	.db	2
+      0001BD 00 00r00rC3            523 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$62)
+      0001C1 03                     524 	.db	3
+      0001C2 7C                     525 	.sleb128	-4
+      0001C3 01                     526 	.db	1
+      0001C4 00                     527 	.db	0
+      0001C5 05                     528 	.uleb128	5
+      0001C6 02                     529 	.db	2
+      0001C7 00 00r00rCD            530 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$64)
+      0001CB 03                     531 	.db	3
+      0001CC 06                     532 	.sleb128	6
+      0001CD 01                     533 	.db	1
+      0001CE 00                     534 	.db	0
+      0001CF 05                     535 	.uleb128	5
+      0001D0 02                     536 	.db	2
+      0001D1 00 00r00rCF            537 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$65)
+      0001D5 03                     538 	.db	3
+      0001D6 7E                     539 	.sleb128	-2
+      0001D7 01                     540 	.db	1
+      0001D8 00                     541 	.db	0
+      0001D9 05                     542 	.uleb128	5
+      0001DA 02                     543 	.db	2
+      0001DB 00 00r00rD5            544 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$67)
+      0001DF 03                     545 	.db	3
+      0001E0 02                     546 	.sleb128	2
+      0001E1 01                     547 	.db	1
+      0001E2 00                     548 	.db	0
+      0001E3 05                     549 	.uleb128	5
+      0001E4 02                     550 	.db	2
+      0001E5 00 00r00rDE            551 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$70)
+      0001E9 03                     552 	.db	3
+      0001EA 04                     553 	.sleb128	4
+      0001EB 01                     554 	.db	1
+      0001EC 00                     555 	.db	0
+      0001ED 05                     556 	.uleb128	5
+      0001EE 02                     557 	.db	2
+      0001EF 00 00r00rE4            558 	.dw	0,(Sstm8s_beep$BEEP_LSICalibrationConfig$72)
+      0001F3 03                     559 	.db	3
+      0001F4 02                     560 	.sleb128	2
+      0001F5 01                     561 	.db	1
+      0001F6                        562 Ldebug_line_end:
                                     563 
                                     564 	.area .debug_loc (NOLOAD)
       000000                        565 Ldebug_loc_start:
@@ -818,10 +820,10 @@
       000053 00                     780 	.db	0
       000054 00 00r00r00            781 	.dw	0,(Ldebug_line_start+-4)
       000058 01                     782 	.db	1
-      000059 53 44 43 43 20 76 65   783 	.ascii "SDCC version 4.3.0 #14184"
+      000059 53 44 43 43 20 76 65   783 	.ascii "SDCC version 4.4.0 #14620"
              72 73 69 6F 6E 20 34
-             2E 33 2E 30 20 23 31
-             34 31 38 34
+             2E 34 2E 30 20 23 31
+             34 36 32 30
       000072 00                     784 	.db	0
       000073 02                     785 	.uleb128	2
       000074 42 45 45 50 5F 44 65   786 	.ascii "BEEP_DeInit"

@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "stm8-debug",
+            "request": "launch",
+            "name": "Launch Program",
+            "serverType": "stm8-sdcc",
+            "executable": "${workspaceRoot}/build/debug/RcF_STM8Usb.elf",
+            "cpu": "STM8S103F3P",
+            "openOcdConfigs": [
+                "interface/stlink-dap.cfg",
+                "target/stm8s103.cfg"
+            ]
+        }
+    ]
+}

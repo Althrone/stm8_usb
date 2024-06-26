@@ -142,161 +142,161 @@ Symbol Table
   9 A$stm8s_adc1$1226                                              00049F GR
   9 A$stm8s_adc1$1231                                              0004A3 GR
   9 A$stm8s_adc1$1240                                              0004A4 GR
-  9 A$stm8s_adc1$1244                                              0004A5 GR
-  9 A$stm8s_adc1$1248                                              0004AA GR
-  9 A$stm8s_adc1$1249                                              0004AD GR
-  9 A$stm8s_adc1$1252                                              0004AE GR
-  9 A$stm8s_adc1$1253                                              0004B1 GR
-  9 A$stm8s_adc1$1256                                              0004B2 GR
+  9 A$stm8s_adc1$1244                                              0004A6 GR
+  9 A$stm8s_adc1$1248                                              0004AB GR
+  9 A$stm8s_adc1$1249                                              0004AE GR
+  9 A$stm8s_adc1$1252                                              0004AF GR
+  9 A$stm8s_adc1$1253                                              0004B2 GR
+  9 A$stm8s_adc1$1256                                              0004B3 GR
   9 A$stm8s_adc1$1257                                              0004B4 GR
-  9 A$stm8s_adc1$1258                                              0004B5 GR
+  9 A$stm8s_adc1$1259                                              0004B5 GR
   9 A$stm8s_adc1$126                                               000031 GR
-  9 A$stm8s_adc1$1260                                              0004B6 GR
-  9 A$stm8s_adc1$1261                                              0004B8 GR
-  9 A$stm8s_adc1$1263                                              0004B9 GR
-  9 A$stm8s_adc1$1264                                              0004BA GR
-  9 A$stm8s_adc1$1265                                              0004BC GR
-  9 A$stm8s_adc1$1267                                              0004BD GR
-  9 A$stm8s_adc1$1272                                              0004BF GR
-  9 A$stm8s_adc1$1273                                              0004C2 GR
-  9 A$stm8s_adc1$1274                                              0004C4 GR
-  9 A$stm8s_adc1$1277                                              0004C6 GR
-  9 A$stm8s_adc1$1280                                              0004C9 GR
-  9 A$stm8s_adc1$1281                                              0004CA GR
-  9 A$stm8s_adc1$1282                                              0004CB GR
-  9 A$stm8s_adc1$1283                                              0004CC GR
-  9 A$stm8s_adc1$1284                                              0004CD GR
-  9 A$stm8s_adc1$1285                                              0004CE GR
+  9 A$stm8s_adc1$1260                                              0004B7 GR
+  9 A$stm8s_adc1$1262                                              0004B8 GR
+  9 A$stm8s_adc1$1264                                              0004B9 GR
+  9 A$stm8s_adc1$1269                                              0004BB GR
+  9 A$stm8s_adc1$1270                                              0004BE GR
+  9 A$stm8s_adc1$1271                                              0004C0 GR
+  9 A$stm8s_adc1$1274                                              0004C2 GR
+  9 A$stm8s_adc1$1277                                              0004C5 GR
+  9 A$stm8s_adc1$1278                                              0004C6 GR
+  9 A$stm8s_adc1$1279                                              0004C7 GR
+  9 A$stm8s_adc1$1280                                              0004C8 GR
+  9 A$stm8s_adc1$1281                                              0004C9 GR
+  9 A$stm8s_adc1$1282                                              0004CA GR
+  9 A$stm8s_adc1$1283                                              0004CB GR
+  9 A$stm8s_adc1$1284                                              0004CC GR
+  9 A$stm8s_adc1$1285                                              0004CD GR
   9 A$stm8s_adc1$1286                                              0004CF GR
-  9 A$stm8s_adc1$1287                                              0004D0 GR
-  9 A$stm8s_adc1$1288                                              0004D1 GR
-  9 A$stm8s_adc1$1289                                              0004D3 GR
-  9 A$stm8s_adc1$1290                                              0004D5 GR
-  9 A$stm8s_adc1$1291                                              0004D6 GR
-  9 A$stm8s_adc1$1292                                              0004D8 GR
-  9 A$stm8s_adc1$1293                                              0004DA GR
+  9 A$stm8s_adc1$1287                                              0004D1 GR
+  9 A$stm8s_adc1$1288                                              0004D3 GR
+  9 A$stm8s_adc1$1289                                              0004D5 GR
+  9 A$stm8s_adc1$1290                                              0004D6 GR
+  9 A$stm8s_adc1$1291                                              0004D8 GR
+  9 A$stm8s_adc1$1298                                              0004D9 GR
   9 A$stm8s_adc1$130                                               000032 GR
-  9 A$stm8s_adc1$1300                                              0004DB GR
-  9 A$stm8s_adc1$1304                                              0004DD GR
+  9 A$stm8s_adc1$1302                                              0004DB GR
+  9 A$stm8s_adc1$131                                               000034 GR
+  9 A$stm8s_adc1$1311                                              0004DC GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 4
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$131                                               000034 GR
-  9 A$stm8s_adc1$1313                                              0004DE GR
-  9 A$stm8s_adc1$1317                                              0004DF GR
-  9 A$stm8s_adc1$1318                                              0004E1 GR
-  9 A$stm8s_adc1$1319                                              0004E3 GR
+  9 A$stm8s_adc1$1315                                              0004DD GR
+  9 A$stm8s_adc1$1316                                              0004DF GR
+  9 A$stm8s_adc1$1317                                              0004E1 GR
+  9 A$stm8s_adc1$1318                                              0004E3 GR
+  9 A$stm8s_adc1$1319                                              0004E5 GR
   9 A$stm8s_adc1$132                                               000036 GR
-  9 A$stm8s_adc1$1320                                              0004E5 GR
-  9 A$stm8s_adc1$1321                                              0004E7 GR
+  9 A$stm8s_adc1$1321                                              0004E6 GR
   9 A$stm8s_adc1$1323                                              0004E8 GR
   9 A$stm8s_adc1$1325                                              0004EA GR
-  9 A$stm8s_adc1$1327                                              0004EC GR
-  9 A$stm8s_adc1$1328                                              0004ED GR
+  9 A$stm8s_adc1$1326                                              0004EB GR
+  9 A$stm8s_adc1$1328                                              0004EC GR
+  9 A$stm8s_adc1$1329                                              0004EF GR
   9 A$stm8s_adc1$133                                               000038 GR
-  9 A$stm8s_adc1$1330                                              0004EE GR
-  9 A$stm8s_adc1$1331                                              0004F1 GR
-  9 A$stm8s_adc1$1333                                              0004F4 GR
-  9 A$stm8s_adc1$1338                                              0004F5 GR
-  9 A$stm8s_adc1$1339                                              0004F6 GR
+  9 A$stm8s_adc1$1331                                              0004F2 GR
+  9 A$stm8s_adc1$1336                                              0004F3 GR
+  9 A$stm8s_adc1$1337                                              0004F4 GR
+  9 A$stm8s_adc1$1338                                              0004F6 GR
+  9 A$stm8s_adc1$1339                                              0004F8 GR
   9 A$stm8s_adc1$134                                               00003A GR
-  9 A$stm8s_adc1$1340                                              0004F8 GR
   9 A$stm8s_adc1$1341                                              0004FA GR
-  9 A$stm8s_adc1$1343                                              0004FC GR
+  9 A$stm8s_adc1$1342                                              0004FC GR
   9 A$stm8s_adc1$1344                                              0004FE GR
-  9 A$stm8s_adc1$1346                                              000500 GR
+  9 A$stm8s_adc1$1345                                              000500 GR
   9 A$stm8s_adc1$1347                                              000502 GR
-  9 A$stm8s_adc1$1349                                              000504 GR
+  9 A$stm8s_adc1$1348                                              000504 GR
   9 A$stm8s_adc1$1350                                              000506 GR
-  9 A$stm8s_adc1$1352                                              000508 GR
+  9 A$stm8s_adc1$1351                                              000508 GR
   9 A$stm8s_adc1$1353                                              00050A GR
-  9 A$stm8s_adc1$1355                                              00050C GR
+  9 A$stm8s_adc1$1354                                              00050C GR
   9 A$stm8s_adc1$1356                                              00050E GR
-  9 A$stm8s_adc1$1358                                              000510 GR
+  9 A$stm8s_adc1$1357                                              000510 GR
   9 A$stm8s_adc1$1359                                              000512 GR
   9 A$stm8s_adc1$136                                               00003C GR
-  9 A$stm8s_adc1$1361                                              000514 GR
+  9 A$stm8s_adc1$1360                                              000514 GR
   9 A$stm8s_adc1$1362                                              000516 GR
-  9 A$stm8s_adc1$1364                                              000518 GR
+  9 A$stm8s_adc1$1363                                              000518 GR
   9 A$stm8s_adc1$1365                                              00051A GR
-  9 A$stm8s_adc1$1367                                              00051C GR
+  9 A$stm8s_adc1$1366                                              00051C GR
   9 A$stm8s_adc1$1368                                              00051E GR
   9 A$stm8s_adc1$137                                               00003D GR
-  9 A$stm8s_adc1$1370                                              000520 GR
+  9 A$stm8s_adc1$1370                                              00051F GR
   9 A$stm8s_adc1$1372                                              000521 GR
   9 A$stm8s_adc1$1374                                              000523 GR
-  9 A$stm8s_adc1$1376                                              000525 GR
-  9 A$stm8s_adc1$1377                                              000526 GR
-  9 A$stm8s_adc1$1379                                              000527 GR
-  9 A$stm8s_adc1$1380                                              00052A GR
-  9 A$stm8s_adc1$1382                                              00052D GR
-  9 A$stm8s_adc1$1387                                              00052E GR
-  9 A$stm8s_adc1$1388                                              000530 GR
+  9 A$stm8s_adc1$1375                                              000524 GR
+  9 A$stm8s_adc1$1377                                              000525 GR
+  9 A$stm8s_adc1$1378                                              000528 GR
+  9 A$stm8s_adc1$1380                                              00052B GR
+  9 A$stm8s_adc1$1385                                              00052C GR
+  9 A$stm8s_adc1$1386                                              00052E GR
+  9 A$stm8s_adc1$1389                                              000530 GR
   9 A$stm8s_adc1$139                                               00003E GR
-  9 A$stm8s_adc1$1391                                              000532 GR
-  9 A$stm8s_adc1$1392                                              000535 GR
-  9 A$stm8s_adc1$1394                                              000536 GR
+  9 A$stm8s_adc1$1390                                              000533 GR
+  9 A$stm8s_adc1$1392                                              000534 GR
+  9 A$stm8s_adc1$1393                                              000535 GR
+  9 A$stm8s_adc1$1395                                              000537 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 5
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$1395                                              000537 GR
-  9 A$stm8s_adc1$1397                                              000539 GR
-  9 A$stm8s_adc1$1398                                              00053B GR
-  9 A$stm8s_adc1$1399                                              00053D GR
-  9 A$stm8s_adc1$1401                                              00053E GR
+  9 A$stm8s_adc1$1396                                              000539 GR
+  9 A$stm8s_adc1$1397                                              00053B GR
+  9 A$stm8s_adc1$1399                                              00053C GR
+  9 A$stm8s_adc1$1400                                              00053D GR
   9 A$stm8s_adc1$1402                                              00053F GR
-  9 A$stm8s_adc1$1404                                              000541 GR
-  9 A$stm8s_adc1$1405                                              000543 GR
-  9 A$stm8s_adc1$1406                                              000544 GR
+  9 A$stm8s_adc1$1403                                              000541 GR
+  9 A$stm8s_adc1$1404                                              000542 GR
+  9 A$stm8s_adc1$1409                                              000544 GR
   9 A$stm8s_adc1$141                                               000040 GR
-  9 A$stm8s_adc1$1411                                              000546 GR
-  9 A$stm8s_adc1$1412                                              000548 GR
-  9 A$stm8s_adc1$1416                                              00054A GR
-  9 A$stm8s_adc1$1417                                              00054C GR
-  9 A$stm8s_adc1$1418                                              00054E GR
+  9 A$stm8s_adc1$1410                                              000546 GR
+  9 A$stm8s_adc1$1414                                              000548 GR
+  9 A$stm8s_adc1$1415                                              00054A GR
+  9 A$stm8s_adc1$1416                                              00054C GR
+  9 A$stm8s_adc1$1418                                              00054F GR
   9 A$stm8s_adc1$142                                               000043 GR
-  9 A$stm8s_adc1$1420                                              000551 GR
-  9 A$stm8s_adc1$1425                                              000553 GR
-  9 A$stm8s_adc1$1426                                              000555 GR
-  9 A$stm8s_adc1$1427                                              000556 GR
-  9 A$stm8s_adc1$1428                                              000558 GR
-  9 A$stm8s_adc1$1430                                              00055B GR
-  9 A$stm8s_adc1$1434                                              00055D GR
-  9 A$stm8s_adc1$1435                                              000560 GR
-  9 A$stm8s_adc1$1437                                              000561 GR
-  9 A$stm8s_adc1$1438                                              000562 GR
-  9 A$stm8s_adc1$1439                                              000564 GR
-  9 A$stm8s_adc1$1441                                              000565 GR
-  9 A$stm8s_adc1$1442                                              000567 GR
-  9 A$stm8s_adc1$1443                                              000568 GR
-  9 A$stm8s_adc1$1444                                              00056A GR
+  9 A$stm8s_adc1$1423                                              000551 GR
+  9 A$stm8s_adc1$1424                                              000553 GR
+  9 A$stm8s_adc1$1425                                              000554 GR
+  9 A$stm8s_adc1$1426                                              000556 GR
+  9 A$stm8s_adc1$1428                                              000559 GR
+  9 A$stm8s_adc1$1432                                              00055B GR
+  9 A$stm8s_adc1$1433                                              00055E GR
+  9 A$stm8s_adc1$1435                                              00055F GR
+  9 A$stm8s_adc1$1436                                              000560 GR
+  9 A$stm8s_adc1$1437                                              000562 GR
+  9 A$stm8s_adc1$1439                                              000563 GR
+  9 A$stm8s_adc1$1440                                              000565 GR
+  9 A$stm8s_adc1$1441                                              000566 GR
+  9 A$stm8s_adc1$1442                                              000568 GR
+  9 A$stm8s_adc1$1444                                              000569 GR
+  9 A$stm8s_adc1$1445                                              00056A GR
   9 A$stm8s_adc1$1446                                              00056B GR
-  9 A$stm8s_adc1$1447                                              00056C GR
   9 A$stm8s_adc1$1448                                              00056D GR
-  9 A$stm8s_adc1$1450                                              00056F GR
-  9 A$stm8s_adc1$1451                                              000571 GR
+  9 A$stm8s_adc1$1449                                              00056F GR
+  9 A$stm8s_adc1$1450                                              000570 GR
   9 A$stm8s_adc1$1452                                              000572 GR
-  9 A$stm8s_adc1$1454                                              000574 GR
-  9 A$stm8s_adc1$1459                                              000575 GR
-  9 A$stm8s_adc1$1460                                              000577 GR
-  9 A$stm8s_adc1$1464                                              000579 GR
-  9 A$stm8s_adc1$1465                                              00057B GR
-  9 A$stm8s_adc1$1467                                              00057E GR
+  9 A$stm8s_adc1$1457                                              000573 GR
+  9 A$stm8s_adc1$1458                                              000575 GR
+  9 A$stm8s_adc1$1462                                              000577 GR
+  9 A$stm8s_adc1$1463                                              000579 GR
+  9 A$stm8s_adc1$1465                                              00057C GR
   9 A$stm8s_adc1$147                                               000046 GR
-  9 A$stm8s_adc1$1472                                              000580 GR
-  9 A$stm8s_adc1$1473                                              000581 GR
-  9 A$stm8s_adc1$1474                                              000583 GR
-  9 A$stm8s_adc1$1479                                              000586 GR
+  9 A$stm8s_adc1$1470                                              00057E GR
+  9 A$stm8s_adc1$1471                                              00057F GR
+  9 A$stm8s_adc1$1472                                              000581 GR
+  9 A$stm8s_adc1$1477                                              000584 GR
+  9 A$stm8s_adc1$1479                                              000585 GR
   9 A$stm8s_adc1$148                                               000048 GR
-  9 A$stm8s_adc1$1481                                              000587 GR
-  9 A$stm8s_adc1$1483                                              000588 GR
-  9 A$stm8s_adc1$1485                                              000589 GR
+  9 A$stm8s_adc1$1481                                              000586 GR
+  9 A$stm8s_adc1$1483                                              000587 GR
   9 A$stm8s_adc1$149                                               00004A GR
-  9 A$stm8s_adc1$1496                                              00058A GR
+  9 A$stm8s_adc1$1494                                              000588 GR
+  9 A$stm8s_adc1$1495                                              00058A GR
+  9 A$stm8s_adc1$1496                                              00058B GR
   9 A$stm8s_adc1$1497                                              00058C GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 6
 Hexadecimal [24-Bits]
@@ -304,645 +304,629 @@ Hexadecimal [24-Bits]
 Symbol Table
 
   9 A$stm8s_adc1$1498                                              00058D GR
-  9 A$stm8s_adc1$1499                                              00058E GR
   9 A$stm8s_adc1$150                                               00004C GR
-  9 A$stm8s_adc1$1500                                              00058F GR
-  9 A$stm8s_adc1$1503                                              000592 GR
-  9 A$stm8s_adc1$1504                                              000594 GR
-  9 A$stm8s_adc1$1509                                              000597 GR
+  9 A$stm8s_adc1$1501                                              000590 GR
+  9 A$stm8s_adc1$1502                                              000592 GR
+  9 A$stm8s_adc1$1507                                              000595 GR
   9 A$stm8s_adc1$151                                               00004D GR
-  9 A$stm8s_adc1$1520                                              000598 GR
-  9 A$stm8s_adc1$1521                                              000599 GR
+  9 A$stm8s_adc1$1518                                              000596 GR
+  9 A$stm8s_adc1$1519                                              000597 GR
+  9 A$stm8s_adc1$1522                                              00059A GR
+  9 A$stm8s_adc1$1523                                              00059B GR
   9 A$stm8s_adc1$1524                                              00059C GR
   9 A$stm8s_adc1$1525                                              00059D GR
-  9 A$stm8s_adc1$1526                                              00059E GR
-  9 A$stm8s_adc1$1527                                              00059F GR
   9 A$stm8s_adc1$153                                               00004F GR
-  9 A$stm8s_adc1$1532                                              0005A2 GR
+  9 A$stm8s_adc1$1530                                              0005A0 GR
+  9 A$stm8s_adc1$1539                                              0005A1 GR
   9 A$stm8s_adc1$154                                               000051 GR
-  9 A$stm8s_adc1$1541                                              0005A3 GR
-  9 A$stm8s_adc1$1545                                              0005A5 GR
-  9 A$stm8s_adc1$1546                                              0005A7 GR
-  9 A$stm8s_adc1$1547                                              0005A9 GR
+  9 A$stm8s_adc1$1543                                              0005A3 GR
+  9 A$stm8s_adc1$1544                                              0005A5 GR
+  9 A$stm8s_adc1$1545                                              0005A7 GR
+  9 A$stm8s_adc1$1547                                              0005A8 GR
   9 A$stm8s_adc1$1549                                              0005AA GR
   9 A$stm8s_adc1$155                                               000053 GR
   9 A$stm8s_adc1$1551                                              0005AC GR
-  9 A$stm8s_adc1$1553                                              0005AE GR
-  9 A$stm8s_adc1$1554                                              0005AF GR
-  9 A$stm8s_adc1$1556                                              0005B0 GR
-  9 A$stm8s_adc1$1557                                              0005B3 GR
-  9 A$stm8s_adc1$1559                                              0005B6 GR
-  9 A$stm8s_adc1$1564                                              0005B7 GR
-  9 A$stm8s_adc1$1565                                              0005BA GR
-  9 A$stm8s_adc1$1567                                              0005BB GR
-  9 A$stm8s_adc1$1568                                              0005BC GR
-  9 A$stm8s_adc1$1569                                              0005BE GR
+  9 A$stm8s_adc1$1552                                              0005AD GR
+  9 A$stm8s_adc1$1554                                              0005AE GR
+  9 A$stm8s_adc1$1555                                              0005B1 GR
+  9 A$stm8s_adc1$1557                                              0005B4 GR
+  9 A$stm8s_adc1$1562                                              0005B5 GR
+  9 A$stm8s_adc1$1563                                              0005B8 GR
+  9 A$stm8s_adc1$1565                                              0005B9 GR
+  9 A$stm8s_adc1$1566                                              0005BA GR
+  9 A$stm8s_adc1$1567                                              0005BC GR
   9 A$stm8s_adc1$157                                               000055 GR
+  9 A$stm8s_adc1$1571                                              0005BD GR
+  9 A$stm8s_adc1$1572                                              0005BE GR
   9 A$stm8s_adc1$1573                                              0005BF GR
   9 A$stm8s_adc1$1574                                              0005C0 GR
-  9 A$stm8s_adc1$1575                                              0005C1 GR
-  9 A$stm8s_adc1$1576                                              0005C2 GR
-  9 A$stm8s_adc1$1577                                              0005C4 GR
+  9 A$stm8s_adc1$1575                                              0005C2 GR
+  9 A$stm8s_adc1$1578                                              0005C6 GR
   9 A$stm8s_adc1$158                                               000057 GR
-  9 A$stm8s_adc1$1580                                              0005C8 GR
-  9 A$stm8s_adc1$1587                                              0005CB GR
-  9 A$stm8s_adc1$1588                                              0005CD GR
+  9 A$stm8s_adc1$1585                                              0005C9 GR
+  9 A$stm8s_adc1$1586                                              0005CB GR
+  9 A$stm8s_adc1$1589                                              0005CD GR
   9 A$stm8s_adc1$159                                               000059 GR
-  9 A$stm8s_adc1$1591                                              0005CF GR
-  9 A$stm8s_adc1$1592                                              0005D0 GR
-  9 A$stm8s_adc1$1593                                              0005D2 GR
-  9 A$stm8s_adc1$1596                                              0005D4 GR
-  9 A$stm8s_adc1$1597                                              0005D6 GR
-  9 A$stm8s_adc1$1598                                              0005D8 GR
-  9 A$stm8s_adc1$1604                                              0005DA GR
-  9 A$stm8s_adc1$1605                                              0005DC GR
-  9 A$stm8s_adc1$1608                                              0005DE GR
-  9 A$stm8s_adc1$1609                                              0005E0 GR
+  9 A$stm8s_adc1$1590                                              0005CE GR
+  9 A$stm8s_adc1$1591                                              0005D0 GR
+  9 A$stm8s_adc1$1594                                              0005D2 GR
+  9 A$stm8s_adc1$1595                                              0005D4 GR
+  9 A$stm8s_adc1$1596                                              0005D6 GR
+  9 A$stm8s_adc1$1602                                              0005D8 GR
+  9 A$stm8s_adc1$1603                                              0005DA GR
+  9 A$stm8s_adc1$1606                                              0005DC GR
+  9 A$stm8s_adc1$1607                                              0005DE GR
+  9 A$stm8s_adc1$1608                                              0005E0 GR
+  9 A$stm8s_adc1$1609                                              0005E2 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 7
 Hexadecimal [24-Bits]
 
 Symbol Table
 
   9 A$stm8s_adc1$161                                               00005B GR
-  9 A$stm8s_adc1$1610                                              0005E2 GR
-  9 A$stm8s_adc1$1611                                              0005E4 GR
-  9 A$stm8s_adc1$1612                                              0005E6 GR
-  9 A$stm8s_adc1$1613                                              0005E8 GR
-  9 A$stm8s_adc1$1614                                              0005EA GR
+  9 A$stm8s_adc1$1610                                              0005E4 GR
+  9 A$stm8s_adc1$1611                                              0005E6 GR
+  9 A$stm8s_adc1$1612                                              0005E8 GR
+  9 A$stm8s_adc1$1613                                              0005EA GR
   9 A$stm8s_adc1$1615                                              0005EC GR
-  9 A$stm8s_adc1$1616                                              0005EE GR
-  9 A$stm8s_adc1$1617                                              0005F0 GR
-  9 A$stm8s_adc1$1619                                              0005F2 GR
   9 A$stm8s_adc1$162                                               00005D GR
-  9 A$stm8s_adc1$1624                                              0005F4 GR
-  9 A$stm8s_adc1$1627                                              0005F6 GR
+  9 A$stm8s_adc1$1620                                              0005EE GR
+  9 A$stm8s_adc1$1623                                              0005F0 GR
+  9 A$stm8s_adc1$1626                                              0005F2 GR
+  9 A$stm8s_adc1$1627                                              0005F3 GR
+  9 A$stm8s_adc1$1628                                              0005F4 GR
+  9 A$stm8s_adc1$1629                                              0005F5 GR
   9 A$stm8s_adc1$163                                               00005F GR
-  9 A$stm8s_adc1$1630                                              0005F8 GR
-  9 A$stm8s_adc1$1631                                              0005F9 GR
-  9 A$stm8s_adc1$1632                                              0005FA GR
-  9 A$stm8s_adc1$1633                                              0005FB GR
-  9 A$stm8s_adc1$1634                                              0005FC GR
-  9 A$stm8s_adc1$1635                                              0005FD GR
+  9 A$stm8s_adc1$1630                                              0005F6 GR
+  9 A$stm8s_adc1$1631                                              0005F7 GR
+  9 A$stm8s_adc1$1632                                              0005F8 GR
+  9 A$stm8s_adc1$1633                                              0005F9 GR
+  9 A$stm8s_adc1$1634                                              0005FA GR
+  9 A$stm8s_adc1$1635                                              0005FC GR
   9 A$stm8s_adc1$1636                                              0005FE GR
-  9 A$stm8s_adc1$1637                                              0005FF GR
-  9 A$stm8s_adc1$1638                                              000600 GR
-  9 A$stm8s_adc1$1639                                              000602 GR
-  9 A$stm8s_adc1$1640                                              000604 GR
-  9 A$stm8s_adc1$1641                                              000606 GR
-  9 A$stm8s_adc1$1642                                              000608 GR
-  9 A$stm8s_adc1$1643                                              00060A GR
-  9 A$stm8s_adc1$1644                                              00060C GR
-  9 A$stm8s_adc1$1645                                              00060E GR
+  9 A$stm8s_adc1$1637                                              000600 GR
+  9 A$stm8s_adc1$1638                                              000602 GR
+  9 A$stm8s_adc1$1639                                              000604 GR
+  9 A$stm8s_adc1$1640                                              000606 GR
+  9 A$stm8s_adc1$1645                                              000608 GR
+  9 A$stm8s_adc1$1648                                              00060A GR
   9 A$stm8s_adc1$165                                               000061 GR
-  9 A$stm8s_adc1$1650                                              000610 GR
-  9 A$stm8s_adc1$1653                                              000612 GR
-  9 A$stm8s_adc1$1657                                              000614 GR
+  9 A$stm8s_adc1$1652                                              00060C GR
   9 A$stm8s_adc1$166                                               000063 GR
-  9 A$stm8s_adc1$1666                                              000615 GR
+  9 A$stm8s_adc1$1661                                              00060D GR
+  9 A$stm8s_adc1$1665                                              00060E GR
+  9 A$stm8s_adc1$1666                                              00060F GR
+  9 A$stm8s_adc1$1667                                              000611 GR
+  9 A$stm8s_adc1$1668                                              000613 GR
   9 A$stm8s_adc1$167                                               000065 GR
-  9 A$stm8s_adc1$1670                                              000616 GR
+  9 A$stm8s_adc1$1670                                              000615 GR
   9 A$stm8s_adc1$1671                                              000617 GR
-  9 A$stm8s_adc1$1672                                              000619 GR
-  9 A$stm8s_adc1$1673                                              00061B GR
-  9 A$stm8s_adc1$1675                                              00061D GR
-  9 A$stm8s_adc1$1676                                              00061F GR
-  9 A$stm8s_adc1$1678                                              000621 GR
-  9 A$stm8s_adc1$1679                                              000623 GR
-  9 A$stm8s_adc1$1681                                              000625 GR
-  9 A$stm8s_adc1$1682                                              000627 GR
-  9 A$stm8s_adc1$1684                                              000629 GR
-  9 A$stm8s_adc1$1685                                              00062B GR
-  9 A$stm8s_adc1$1687                                              00062D GR
-  9 A$stm8s_adc1$1688                                              00062F GR
+  9 A$stm8s_adc1$1673                                              000619 GR
+  9 A$stm8s_adc1$1674                                              00061B GR
+  9 A$stm8s_adc1$1676                                              00061D GR
+  9 A$stm8s_adc1$1677                                              00061F GR
+  9 A$stm8s_adc1$1679                                              000621 GR
+  9 A$stm8s_adc1$1680                                              000623 GR
+  9 A$stm8s_adc1$1682                                              000625 GR
+  9 A$stm8s_adc1$1683                                              000627 GR
+  9 A$stm8s_adc1$1685                                              000629 GR
+  9 A$stm8s_adc1$1686                                              00062B GR
+  9 A$stm8s_adc1$1688                                              00062D GR
+  9 A$stm8s_adc1$1689                                              00062F GR
   9 A$stm8s_adc1$169                                               000067 GR
-  9 A$stm8s_adc1$1690                                              000631 GR
-  9 A$stm8s_adc1$1691                                              000633 GR
-  9 A$stm8s_adc1$1693                                              000635 GR
+  9 A$stm8s_adc1$1691                                              000631 GR
+  9 A$stm8s_adc1$1692                                              000633 GR
+  9 A$stm8s_adc1$1694                                              000635 GR
+  9 A$stm8s_adc1$1695                                              000637 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 8
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$1694                                              000637 GR
-  9 A$stm8s_adc1$1696                                              000639 GR
-  9 A$stm8s_adc1$1697                                              00063B GR
-  9 A$stm8s_adc1$1699                                              00063D GR
+  9 A$stm8s_adc1$1697                                              000639 GR
+  9 A$stm8s_adc1$1699                                              00063A GR
   9 A$stm8s_adc1$170                                               000069 GR
-  9 A$stm8s_adc1$1700                                              00063F GR
-  9 A$stm8s_adc1$1702                                              000641 GR
-  9 A$stm8s_adc1$1704                                              000642 GR
-  9 A$stm8s_adc1$1706                                              000644 GR
-  9 A$stm8s_adc1$1708                                              000646 GR
-  9 A$stm8s_adc1$1709                                              000647 GR
+  9 A$stm8s_adc1$1701                                              00063C GR
+  9 A$stm8s_adc1$1703                                              00063E GR
+  9 A$stm8s_adc1$1704                                              00063F GR
+  9 A$stm8s_adc1$1706                                              000640 GR
+  9 A$stm8s_adc1$1707                                              000643 GR
+  9 A$stm8s_adc1$1709                                              000646 GR
   9 A$stm8s_adc1$171                                               00006B GR
-  9 A$stm8s_adc1$1711                                              000648 GR
-  9 A$stm8s_adc1$1712                                              00064B GR
-  9 A$stm8s_adc1$1714                                              00064E GR
-  9 A$stm8s_adc1$1719                                              00064F GR
-  9 A$stm8s_adc1$1720                                              000651 GR
-  9 A$stm8s_adc1$1724                                              000653 GR
-  9 A$stm8s_adc1$1725                                              000656 GR
-  9 A$stm8s_adc1$1727                                              000657 GR
-  9 A$stm8s_adc1$1728                                              000658 GR
+  9 A$stm8s_adc1$1714                                              000647 GR
+  9 A$stm8s_adc1$1715                                              000649 GR
+  9 A$stm8s_adc1$1719                                              00064B GR
+  9 A$stm8s_adc1$1720                                              00064E GR
+  9 A$stm8s_adc1$1722                                              00064F GR
+  9 A$stm8s_adc1$1723                                              000650 GR
+  9 A$stm8s_adc1$1725                                              000651 GR
+  9 A$stm8s_adc1$1726                                              000653 GR
+  9 A$stm8s_adc1$1727                                              000655 GR
+  9 A$stm8s_adc1$1729                                              000656 GR
   9 A$stm8s_adc1$173                                               00006D GR
-  9 A$stm8s_adc1$1730                                              000659 GR
-  9 A$stm8s_adc1$1731                                              00065B GR
-  9 A$stm8s_adc1$1732                                              00065D GR
-  9 A$stm8s_adc1$1734                                              00065E GR
-  9 A$stm8s_adc1$1735                                              00065F GR
-  9 A$stm8s_adc1$1737                                              000661 GR
-  9 A$stm8s_adc1$1738                                              000663 GR
-  9 A$stm8s_adc1$1739                                              000664 GR
+  9 A$stm8s_adc1$1730                                              000657 GR
+  9 A$stm8s_adc1$1732                                              000659 GR
+  9 A$stm8s_adc1$1733                                              00065B GR
+  9 A$stm8s_adc1$1734                                              00065C GR
+  9 A$stm8s_adc1$1736                                              00065E GR
+  9 A$stm8s_adc1$1737                                              00065F GR
+  9 A$stm8s_adc1$1739                                              000661 GR
   9 A$stm8s_adc1$174                                               00006F GR
-  9 A$stm8s_adc1$1741                                              000666 GR
-  9 A$stm8s_adc1$1742                                              000667 GR
-  9 A$stm8s_adc1$1744                                              000669 GR
-  9 A$stm8s_adc1$1749                                              00066B GR
+  9 A$stm8s_adc1$1744                                              000663 GR
+  9 A$stm8s_adc1$1745                                              000666 GR
+  9 A$stm8s_adc1$1747                                              000667 GR
+  9 A$stm8s_adc1$1748                                              000668 GR
+  9 A$stm8s_adc1$1749                                              00066A GR
   9 A$stm8s_adc1$175                                               000071 GR
-  9 A$stm8s_adc1$1750                                              00066E GR
-  9 A$stm8s_adc1$1752                                              00066F GR
-  9 A$stm8s_adc1$1753                                              000670 GR
-  9 A$stm8s_adc1$1754                                              000672 GR
-  9 A$stm8s_adc1$1756                                              000673 GR
-  9 A$stm8s_adc1$1757                                              000675 GR
-  9 A$stm8s_adc1$1758                                              000676 GR
-  9 A$stm8s_adc1$1759                                              000678 GR
-  9 A$stm8s_adc1$1761                                              000679 GR
-  9 A$stm8s_adc1$1762                                              00067A GR
-  9 A$stm8s_adc1$1763                                              00067B GR
-  9 A$stm8s_adc1$1765                                              00067D GR
-  9 A$stm8s_adc1$1766                                              00067F GR
-  9 A$stm8s_adc1$1767                                              000680 GR
-  9 A$stm8s_adc1$1769                                              000682 GR
+  9 A$stm8s_adc1$1751                                              00066B GR
+  9 A$stm8s_adc1$1752                                              00066D GR
+  9 A$stm8s_adc1$1753                                              00066E GR
+  9 A$stm8s_adc1$1754                                              000670 GR
+  9 A$stm8s_adc1$1756                                              000671 GR
+  9 A$stm8s_adc1$1757                                              000672 GR
+  9 A$stm8s_adc1$1758                                              000673 GR
+  9 A$stm8s_adc1$1760                                              000675 GR
+  9 A$stm8s_adc1$1761                                              000677 GR
+  9 A$stm8s_adc1$1762                                              000678 GR
+  9 A$stm8s_adc1$1764                                              00067A GR
+  9 A$stm8s_adc1$1766                                              00067B GR
   9 A$stm8s_adc1$177                                               000073 GR
-  9 A$stm8s_adc1$1771                                              000683 GR
-  9 A$stm8s_adc1$1776                                              000685 GR
-  9 A$stm8s_adc1$1777                                              000686 GR
+  9 A$stm8s_adc1$1771                                              00067D GR
+  9 A$stm8s_adc1$1772                                              00067E GR
+  9 A$stm8s_adc1$1773                                              00067F GR
+  9 A$stm8s_adc1$1776                                              000680 GR
+  9 A$stm8s_adc1$178                                               000075 GR
+  9 A$stm8s_adc1$1780                                              000682 GR
+  9 A$stm8s_adc1$1789                                              000683 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 9
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$1778                                              000687 GR
-  9 A$stm8s_adc1$178                                               000075 GR
-  9 A$stm8s_adc1$1781                                              000688 GR
-  9 A$stm8s_adc1$1785                                              00068A GR
   9 A$stm8s_adc1$179                                               000077 GR
-  9 A$stm8s_adc1$1794                                              00068B GR
-  9 A$stm8s_adc1$1798                                              00068D GR
-  9 A$stm8s_adc1$1799                                              00068F GR
-  9 A$stm8s_adc1$1800                                              000691 GR
-  9 A$stm8s_adc1$1802                                              000693 GR
-  9 A$stm8s_adc1$1803                                              000695 GR
-  9 A$stm8s_adc1$1804                                              000697 GR
-  9 A$stm8s_adc1$1806                                              000699 GR
-  9 A$stm8s_adc1$1807                                              00069B GR
-  9 A$stm8s_adc1$1808                                              00069D GR
+  9 A$stm8s_adc1$1793                                              000684 GR
+  9 A$stm8s_adc1$1794                                              000686 GR
+  9 A$stm8s_adc1$1795                                              000688 GR
+  9 A$stm8s_adc1$1797                                              00068A GR
+  9 A$stm8s_adc1$1798                                              00068C GR
+  9 A$stm8s_adc1$1799                                              00068E GR
+  9 A$stm8s_adc1$1801                                              000690 GR
+  9 A$stm8s_adc1$1802                                              000692 GR
+  9 A$stm8s_adc1$1803                                              000694 GR
+  9 A$stm8s_adc1$1805                                              000696 GR
+  9 A$stm8s_adc1$1806                                              000698 GR
+  9 A$stm8s_adc1$1807                                              00069A GR
+  9 A$stm8s_adc1$1809                                              00069C GR
   9 A$stm8s_adc1$181                                               000079 GR
-  9 A$stm8s_adc1$1810                                              00069F GR
-  9 A$stm8s_adc1$1811                                              0006A1 GR
-  9 A$stm8s_adc1$1812                                              0006A3 GR
-  9 A$stm8s_adc1$1814                                              0006A5 GR
-  9 A$stm8s_adc1$1815                                              0006A7 GR
-  9 A$stm8s_adc1$1816                                              0006A9 GR
-  9 A$stm8s_adc1$1818                                              0006AB GR
-  9 A$stm8s_adc1$1819                                              0006AD GR
+  9 A$stm8s_adc1$1810                                              00069E GR
+  9 A$stm8s_adc1$1811                                              0006A0 GR
+  9 A$stm8s_adc1$1813                                              0006A2 GR
+  9 A$stm8s_adc1$1814                                              0006A4 GR
+  9 A$stm8s_adc1$1815                                              0006A6 GR
+  9 A$stm8s_adc1$1817                                              0006A8 GR
+  9 A$stm8s_adc1$1818                                              0006AA GR
+  9 A$stm8s_adc1$1819                                              0006AC GR
   9 A$stm8s_adc1$182                                               00007B GR
-  9 A$stm8s_adc1$1820                                              0006AF GR
-  9 A$stm8s_adc1$1822                                              0006B1 GR
-  9 A$stm8s_adc1$1823                                              0006B3 GR
-  9 A$stm8s_adc1$1824                                              0006B5 GR
-  9 A$stm8s_adc1$1826                                              0006B7 GR
-  9 A$stm8s_adc1$1827                                              0006B9 GR
-  9 A$stm8s_adc1$1828                                              0006BB GR
+  9 A$stm8s_adc1$1821                                              0006AE GR
+  9 A$stm8s_adc1$1822                                              0006B0 GR
+  9 A$stm8s_adc1$1823                                              0006B2 GR
+  9 A$stm8s_adc1$1825                                              0006B4 GR
+  9 A$stm8s_adc1$1826                                              0006B6 GR
+  9 A$stm8s_adc1$1827                                              0006B8 GR
+  9 A$stm8s_adc1$1829                                              0006BA GR
   9 A$stm8s_adc1$183                                               00007D GR
-  9 A$stm8s_adc1$1830                                              0006BD GR
-  9 A$stm8s_adc1$1831                                              0006BF GR
-  9 A$stm8s_adc1$1832                                              0006C1 GR
-  9 A$stm8s_adc1$1834                                              0006C3 GR
-  9 A$stm8s_adc1$1835                                              0006C5 GR
-  9 A$stm8s_adc1$1836                                              0006C7 GR
-  9 A$stm8s_adc1$1838                                              0006C9 GR
-  9 A$stm8s_adc1$1839                                              0006CB GR
-  9 A$stm8s_adc1$1840                                              0006CD GR
-  9 A$stm8s_adc1$1842                                              0006CF GR
-  9 A$stm8s_adc1$1843                                              0006D1 GR
-  9 A$stm8s_adc1$1844                                              0006D3 GR
-  9 A$stm8s_adc1$1846                                              0006D5 GR
-  9 A$stm8s_adc1$1847                                              0006D7 GR
-  9 A$stm8s_adc1$1848                                              0006D9 GR
+  9 A$stm8s_adc1$1830                                              0006BC GR
+  9 A$stm8s_adc1$1831                                              0006BE GR
+  9 A$stm8s_adc1$1833                                              0006C0 GR
+  9 A$stm8s_adc1$1834                                              0006C2 GR
+  9 A$stm8s_adc1$1835                                              0006C4 GR
+  9 A$stm8s_adc1$1837                                              0006C6 GR
+  9 A$stm8s_adc1$1838                                              0006C8 GR
+  9 A$stm8s_adc1$1839                                              0006CA GR
+  9 A$stm8s_adc1$1841                                              0006CC GR
+  9 A$stm8s_adc1$1842                                              0006CE GR
+  9 A$stm8s_adc1$1843                                              0006D0 GR
+  9 A$stm8s_adc1$1845                                              0006D2 GR
+  9 A$stm8s_adc1$1847                                              0006D4 GR
+  9 A$stm8s_adc1$1849                                              0006D6 GR
   9 A$stm8s_adc1$185                                               00007F GR
-  9 A$stm8s_adc1$1850                                              0006DB GR
-  9 A$stm8s_adc1$1852                                              0006DD GR
-  9 A$stm8s_adc1$1854                                              0006DF GR
-  9 A$stm8s_adc1$1855                                              0006E0 GR
-  9 A$stm8s_adc1$1857                                              0006E1 GR
-  9 A$stm8s_adc1$1858                                              0006E4 GR
+  9 A$stm8s_adc1$1850                                              0006D7 GR
+  9 A$stm8s_adc1$1852                                              0006D8 GR
+  9 A$stm8s_adc1$1853                                              0006DB GR
+  9 A$stm8s_adc1$1858                                              0006DE GR
+  9 A$stm8s_adc1$1859                                              0006E0 GR
+  9 A$stm8s_adc1$186                                               000081 GR
+  9 A$stm8s_adc1$1860                                              0006E1 GR
+  9 A$stm8s_adc1$1861                                              0006E3 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 10
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$186                                               000081 GR
-  9 A$stm8s_adc1$1863                                              0006E7 GR
-  9 A$stm8s_adc1$1864                                              0006E9 GR
-  9 A$stm8s_adc1$1865                                              0006EB GR
-  9 A$stm8s_adc1$1866                                              0006ED GR
-  9 A$stm8s_adc1$1867                                              0006EE GR
-  9 A$stm8s_adc1$1868                                              0006F0 GR
-  9 A$stm8s_adc1$1869                                              0006F2 GR
+  9 A$stm8s_adc1$1862                                              0006E4 GR
+  9 A$stm8s_adc1$1867                                              0006E6 GR
+  9 A$stm8s_adc1$1868                                              0006E9 GR
   9 A$stm8s_adc1$187                                               000083 GR
-  9 A$stm8s_adc1$1870                                              0006F3 GR
-  9 A$stm8s_adc1$1871                                              0006F4 GR
-  9 A$stm8s_adc1$1876                                              0006F6 GR
-  9 A$stm8s_adc1$1877                                              0006F9 GR
-  9 A$stm8s_adc1$1879                                              0006FB GR
-  9 A$stm8s_adc1$1883                                              0006FD GR
-  9 A$stm8s_adc1$1884                                              0006FE GR
-  9 A$stm8s_adc1$1885                                              000700 GR
-  9 A$stm8s_adc1$1886                                              000702 GR
-  9 A$stm8s_adc1$1887                                              000703 GR
-  9 A$stm8s_adc1$1888                                              000706 GR
+  9 A$stm8s_adc1$1870                                              0006EB GR
+  9 A$stm8s_adc1$1874                                              0006ED GR
+  9 A$stm8s_adc1$1875                                              0006EE GR
+  9 A$stm8s_adc1$1876                                              0006F0 GR
+  9 A$stm8s_adc1$1877                                              0006F2 GR
+  9 A$stm8s_adc1$1882                                              0006F4 GR
+  9 A$stm8s_adc1$1883                                              0006F6 GR
+  9 A$stm8s_adc1$1886                                              0006F8 GR
+  9 A$stm8s_adc1$1887                                              0006F9 GR
+  9 A$stm8s_adc1$1888                                              0006FB GR
   9 A$stm8s_adc1$189                                               000085 GR
-  9 A$stm8s_adc1$1893                                              000708 GR
-  9 A$stm8s_adc1$1894                                              00070A GR
-  9 A$stm8s_adc1$1897                                              00070C GR
-  9 A$stm8s_adc1$1898                                              00070D GR
-  9 A$stm8s_adc1$1899                                              00070F GR
-  9 A$stm8s_adc1$1903                                              000711 GR
-  9 A$stm8s_adc1$1904                                              000714 GR
-  9 A$stm8s_adc1$1905                                              000716 GR
-  9 A$stm8s_adc1$1906                                              000718 GR
-  9 A$stm8s_adc1$1908                                              000719 GR
-  9 A$stm8s_adc1$1909                                              00071A GR
+  9 A$stm8s_adc1$1892                                              0006FD GR
+  9 A$stm8s_adc1$1893                                              000700 GR
+  9 A$stm8s_adc1$1894                                              000702 GR
+  9 A$stm8s_adc1$1895                                              000704 GR
+  9 A$stm8s_adc1$1897                                              000705 GR
+  9 A$stm8s_adc1$1898                                              000706 GR
+  9 A$stm8s_adc1$1899                                              000707 GR
+  9 A$stm8s_adc1$1901                                              000709 GR
+  9 A$stm8s_adc1$1902                                              00070B GR
+  9 A$stm8s_adc1$1903                                              00070C GR
+  9 A$stm8s_adc1$1905                                              00070E GR
+  9 A$stm8s_adc1$1907                                              00070F GR
+  9 A$stm8s_adc1$1909                                              000711 GR
   9 A$stm8s_adc1$191                                               000087 GR
-  9 A$stm8s_adc1$1910                                              00071B GR
-  9 A$stm8s_adc1$1912                                              00071D GR
-  9 A$stm8s_adc1$1913                                              00071F GR
-  9 A$stm8s_adc1$1914                                              000720 GR
-  9 A$stm8s_adc1$1916                                              000722 GR
-  9 A$stm8s_adc1$1918                                              000723 GR
+  9 A$stm8s_adc1$1914                                              000713 GR
+  9 A$stm8s_adc1$1915                                              000716 GR
+  9 A$stm8s_adc1$1916                                              000718 GR
+  9 A$stm8s_adc1$1917                                              00071B GR
+  9 A$stm8s_adc1$1918                                              00071D GR
   9 A$stm8s_adc1$192                                               000088 GR
-  9 A$stm8s_adc1$1920                                              000725 GR
-  9 A$stm8s_adc1$1925                                              000727 GR
-  9 A$stm8s_adc1$1926                                              00072A GR
-  9 A$stm8s_adc1$1927                                              00072C GR
-  9 A$stm8s_adc1$1928                                              00072F GR
-  9 A$stm8s_adc1$1929                                              000731 GR
-  9 A$stm8s_adc1$1931                                              000732 GR
-  9 A$stm8s_adc1$1932                                              000733 GR
-  9 A$stm8s_adc1$1933                                              000734 GR
-  9 A$stm8s_adc1$1935                                              000736 GR
-  9 A$stm8s_adc1$1936                                              000738 GR
-  9 A$stm8s_adc1$1937                                              000739 GR
-  9 A$stm8s_adc1$1939                                              00073B GR
+  9 A$stm8s_adc1$1920                                              00071E GR
+  9 A$stm8s_adc1$1921                                              00071F GR
+  9 A$stm8s_adc1$1922                                              000720 GR
+  9 A$stm8s_adc1$1924                                              000722 GR
+  9 A$stm8s_adc1$1925                                              000724 GR
+  9 A$stm8s_adc1$1926                                              000725 GR
+  9 A$stm8s_adc1$1928                                              000727 GR
+  9 A$stm8s_adc1$1930                                              000728 GR
+  9 A$stm8s_adc1$1932                                              00072A GR
+  9 A$stm8s_adc1$1937                                              00072C GR
+  9 A$stm8s_adc1$1938                                              00072F GR
   9 A$stm8s_adc1$194                                               000089 GR
-  9 A$stm8s_adc1$1941                                              00073C GR
+  9 A$stm8s_adc1$1943                                              000731 GR
+  9 A$stm8s_adc1$1944                                              000732 GR
+  9 A$stm8s_adc1$1945                                              000733 GR
+  9 A$stm8s_adc1$1948                                              000734 GR
+  9 A$stm8s_adc1$1952                                              000735 GR
+  9 A$stm8s_adc1$196                                               00008B GR
+  9 A$stm8s_adc1$1961                                              000736 GR
+  9 A$stm8s_adc1$1965                                              000737 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 11
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$1943                                              00073E GR
-  9 A$stm8s_adc1$1948                                              000740 GR
-  9 A$stm8s_adc1$1949                                              000743 GR
-  9 A$stm8s_adc1$1954                                              000745 GR
-  9 A$stm8s_adc1$1955                                              000746 GR
-  9 A$stm8s_adc1$1956                                              000747 GR
-  9 A$stm8s_adc1$1959                                              000748 GR
-  9 A$stm8s_adc1$196                                               00008B GR
-  9 A$stm8s_adc1$1963                                              00074A GR
+  9 A$stm8s_adc1$1966                                              000739 GR
+  9 A$stm8s_adc1$1968                                              00073B GR
+  9 A$stm8s_adc1$1969                                              00073D GR
   9 A$stm8s_adc1$197                                               00008E GR
-  9 A$stm8s_adc1$1972                                              00074B GR
-  9 A$stm8s_adc1$1976                                              00074C GR
-  9 A$stm8s_adc1$1977                                              00074E GR
-  9 A$stm8s_adc1$1979                                              000750 GR
-  9 A$stm8s_adc1$1980                                              000752 GR
-  9 A$stm8s_adc1$1982                                              000754 GR
-  9 A$stm8s_adc1$1983                                              000756 GR
-  9 A$stm8s_adc1$1985                                              000758 GR
-  9 A$stm8s_adc1$1986                                              00075A GR
-  9 A$stm8s_adc1$1988                                              00075C GR
-  9 A$stm8s_adc1$1989                                              00075E GR
-  9 A$stm8s_adc1$1991                                              000760 GR
-  9 A$stm8s_adc1$1992                                              000762 GR
-  9 A$stm8s_adc1$1994                                              000764 GR
-  9 A$stm8s_adc1$1995                                              000766 GR
-  9 A$stm8s_adc1$1997                                              000768 GR
-  9 A$stm8s_adc1$1998                                              00076A GR
-  9 A$stm8s_adc1$2000                                              00076C GR
-  9 A$stm8s_adc1$2001                                              00076E GR
-  9 A$stm8s_adc1$2003                                              000770 GR
-  9 A$stm8s_adc1$2004                                              000772 GR
-  9 A$stm8s_adc1$2006                                              000774 GR
-  9 A$stm8s_adc1$2007                                              000776 GR
-  9 A$stm8s_adc1$2009                                              000778 GR
-  9 A$stm8s_adc1$2010                                              00077A GR
-  9 A$stm8s_adc1$2012                                              00077C GR
-  9 A$stm8s_adc1$2013                                              00077E GR
-  9 A$stm8s_adc1$2015                                              000780 GR
-  9 A$stm8s_adc1$2017                                              000781 GR
-  9 A$stm8s_adc1$2019                                              000783 GR
+  9 A$stm8s_adc1$1971                                              00073F GR
+  9 A$stm8s_adc1$1972                                              000741 GR
+  9 A$stm8s_adc1$1974                                              000743 GR
+  9 A$stm8s_adc1$1975                                              000745 GR
+  9 A$stm8s_adc1$1977                                              000747 GR
+  9 A$stm8s_adc1$1978                                              000749 GR
+  9 A$stm8s_adc1$1980                                              00074B GR
+  9 A$stm8s_adc1$1981                                              00074D GR
+  9 A$stm8s_adc1$1983                                              00074F GR
+  9 A$stm8s_adc1$1984                                              000751 GR
+  9 A$stm8s_adc1$1986                                              000753 GR
+  9 A$stm8s_adc1$1987                                              000755 GR
+  9 A$stm8s_adc1$1989                                              000757 GR
+  9 A$stm8s_adc1$1990                                              000759 GR
+  9 A$stm8s_adc1$1992                                              00075B GR
+  9 A$stm8s_adc1$1993                                              00075D GR
+  9 A$stm8s_adc1$1995                                              00075F GR
+  9 A$stm8s_adc1$1996                                              000761 GR
+  9 A$stm8s_adc1$1998                                              000763 GR
+  9 A$stm8s_adc1$1999                                              000765 GR
+  9 A$stm8s_adc1$2001                                              000767 GR
+  9 A$stm8s_adc1$2002                                              000769 GR
+  9 A$stm8s_adc1$2004                                              00076B GR
+  9 A$stm8s_adc1$2006                                              00076C GR
+  9 A$stm8s_adc1$2008                                              00076E GR
+  9 A$stm8s_adc1$2010                                              000770 GR
+  9 A$stm8s_adc1$2011                                              000771 GR
+  9 A$stm8s_adc1$2013                                              000772 GR
+  9 A$stm8s_adc1$2014                                              000775 GR
+  9 A$stm8s_adc1$2016                                              000778 GR
   9 A$stm8s_adc1$202                                               000091 GR
-  9 A$stm8s_adc1$2021                                              000785 GR
-  9 A$stm8s_adc1$2022                                              000786 GR
-  9 A$stm8s_adc1$2024                                              000787 GR
-  9 A$stm8s_adc1$2025                                              00078A GR
-  9 A$stm8s_adc1$2027                                              00078D GR
+  9 A$stm8s_adc1$2021                                              000779 GR
+  9 A$stm8s_adc1$2022                                              00077B GR
+  9 A$stm8s_adc1$2024                                              00077C GR
+  9 A$stm8s_adc1$2025                                              00077E GR
+  9 A$stm8s_adc1$2027                                              000780 GR
+  9 A$stm8s_adc1$2028                                              000781 GR
   9 A$stm8s_adc1$203                                               000093 GR
-  9 A$stm8s_adc1$2032                                              00078E GR
-  9 A$stm8s_adc1$2033                                              000790 GR
-  9 A$stm8s_adc1$2034                                              000792 GR
-  9 A$stm8s_adc1$2036                                              000793 GR
-  9 A$stm8s_adc1$2037                                              000794 GR
-  9 A$stm8s_adc1$2038                                              000796 GR
-  9 A$stm8s_adc1$2039                                              000798 GR
+  9 A$stm8s_adc1$2030                                              000782 GR
+  9 A$stm8s_adc1$2035                                              000784 GR
+  9 A$stm8s_adc1$2037                                              000788 GR
   9 A$stm8s_adc1$204                                               000095 GR
+  9 A$stm8s_adc1$2041                                              00078A GR
+  9 A$stm8s_adc1$2043                                              00078B GR
+  9 A$stm8s_adc1$2044                                              00078D GR
+  9 A$stm8s_adc1$2046                                              00078F GR
+  9 A$stm8s_adc1$2047                                              000791 GR
+  9 A$stm8s_adc1$2049                                              000792 GR
+  9 A$stm8s_adc1$205                                               000097 GR
+  9 A$stm8s_adc1$2054                                              000794 GR
+  9 A$stm8s_adc1$2057                                              000796 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 12
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$2040                                              000799 GR
-  9 A$stm8s_adc1$2042                                              00079A GR
-  9 A$stm8s_adc1$2043                                              00079B GR
-  9 A$stm8s_adc1$2048                                              00079D GR
-  9 A$stm8s_adc1$205                                               000097 GR
-  9 A$stm8s_adc1$2050                                              0007A1 GR
-  9 A$stm8s_adc1$2054                                              0007A3 GR
-  9 A$stm8s_adc1$2056                                              0007A4 GR
-  9 A$stm8s_adc1$2057                                              0007A5 GR
-  9 A$stm8s_adc1$2058                                              0007A7 GR
-  9 A$stm8s_adc1$2059                                              0007A9 GR
+  9 A$stm8s_adc1$2058                                              000797 GR
+  9 A$stm8s_adc1$2059                                              000799 GR
   9 A$stm8s_adc1$206                                               000099 GR
-  9 A$stm8s_adc1$2060                                              0007AA GR
-  9 A$stm8s_adc1$2062                                              0007AB GR
-  9 A$stm8s_adc1$2063                                              0007AE GR
-  9 A$stm8s_adc1$2068                                              0007B0 GR
-  9 A$stm8s_adc1$2071                                              0007B2 GR
-  9 A$stm8s_adc1$2072                                              0007B3 GR
-  9 A$stm8s_adc1$2073                                              0007B5 GR
-  9 A$stm8s_adc1$2077                                              0007B7 GR
-  9 A$stm8s_adc1$2078                                              0007BA GR
-  9 A$stm8s_adc1$2079                                              0007BC GR
+  9 A$stm8s_adc1$2063                                              00079B GR
+  9 A$stm8s_adc1$2064                                              00079E GR
+  9 A$stm8s_adc1$2065                                              0007A0 GR
+  9 A$stm8s_adc1$2066                                              0007A2 GR
+  9 A$stm8s_adc1$2068                                              0007A3 GR
+  9 A$stm8s_adc1$2069                                              0007A4 GR
+  9 A$stm8s_adc1$2070                                              0007A5 GR
+  9 A$stm8s_adc1$2072                                              0007A7 GR
+  9 A$stm8s_adc1$2073                                              0007A9 GR
+  9 A$stm8s_adc1$2074                                              0007AA GR
+  9 A$stm8s_adc1$2076                                              0007AC GR
+  9 A$stm8s_adc1$2078                                              0007AD GR
+  9 A$stm8s_adc1$2079                                              0007AE GR
   9 A$stm8s_adc1$208                                               00009B GR
-  9 A$stm8s_adc1$2080                                              0007BE GR
-  9 A$stm8s_adc1$2082                                              0007BF GR
-  9 A$stm8s_adc1$2083                                              0007C0 GR
-  9 A$stm8s_adc1$2084                                              0007C1 GR
-  9 A$stm8s_adc1$2086                                              0007C3 GR
-  9 A$stm8s_adc1$2087                                              0007C5 GR
-  9 A$stm8s_adc1$2088                                              0007C6 GR
+  9 A$stm8s_adc1$2080                                              0007B0 GR
+  9 A$stm8s_adc1$2082                                              0007B3 GR
+  9 A$stm8s_adc1$2087                                              0007B5 GR
+  9 A$stm8s_adc1$2088                                              0007B8 GR
+  9 A$stm8s_adc1$2089                                              0007BA GR
   9 A$stm8s_adc1$209                                               00009D GR
-  9 A$stm8s_adc1$2090                                              0007C8 GR
-  9 A$stm8s_adc1$2092                                              0007C9 GR
-  9 A$stm8s_adc1$2093                                              0007CA GR
-  9 A$stm8s_adc1$2094                                              0007CC GR
-  9 A$stm8s_adc1$2096                                              0007CF GR
+  9 A$stm8s_adc1$2090                                              0007BD GR
+  9 A$stm8s_adc1$2091                                              0007BF GR
+  9 A$stm8s_adc1$2093                                              0007C0 GR
+  9 A$stm8s_adc1$2094                                              0007C1 GR
+  9 A$stm8s_adc1$2095                                              0007C2 GR
+  9 A$stm8s_adc1$2097                                              0007C4 GR
+  9 A$stm8s_adc1$2098                                              0007C6 GR
+  9 A$stm8s_adc1$2099                                              0007C7 GR
   9 A$stm8s_adc1$210                                               00009F GR
-  9 A$stm8s_adc1$2101                                              0007D1 GR
-  9 A$stm8s_adc1$2102                                              0007D4 GR
-  9 A$stm8s_adc1$2103                                              0007D6 GR
-  9 A$stm8s_adc1$2104                                              0007D9 GR
-  9 A$stm8s_adc1$2105                                              0007DB GR
-  9 A$stm8s_adc1$2107                                              0007DC GR
-  9 A$stm8s_adc1$2108                                              0007DD GR
-  9 A$stm8s_adc1$2109                                              0007DE GR
-  9 A$stm8s_adc1$2111                                              0007E0 GR
-  9 A$stm8s_adc1$2112                                              0007E2 GR
-  9 A$stm8s_adc1$2113                                              0007E3 GR
-  9 A$stm8s_adc1$2115                                              0007E5 GR
-  9 A$stm8s_adc1$2117                                              0007E6 GR
-  9 A$stm8s_adc1$2118                                              0007E7 GR
-  9 A$stm8s_adc1$2119                                              0007E9 GR
+  9 A$stm8s_adc1$2101                                              0007C9 GR
+  9 A$stm8s_adc1$2103                                              0007CA GR
+  9 A$stm8s_adc1$2104                                              0007CB GR
+  9 A$stm8s_adc1$2105                                              0007CD GR
+  9 A$stm8s_adc1$2107                                              0007D0 GR
+  9 A$stm8s_adc1$2112                                              0007D2 GR
+  9 A$stm8s_adc1$2113                                              0007D5 GR
+  9 A$stm8s_adc1$2115                                              0007D6 GR
+  9 A$stm8s_adc1$2116                                              0007D7 GR
+  9 A$stm8s_adc1$2117                                              0007D9 GR
+  9 A$stm8s_adc1$2119                                              0007DA GR
   9 A$stm8s_adc1$212                                               0000A1 GR
-  9 A$stm8s_adc1$2121                                              0007EC GR
-  9 A$stm8s_adc1$2126                                              0007EE GR
+  9 A$stm8s_adc1$2120                                              0007DB GR
+  9 A$stm8s_adc1$2121                                              0007DD GR
+  9 A$stm8s_adc1$2126                                              0007E0 GR
+  9 A$stm8s_adc1$213                                               0000A3 GR
+  9 A$stm8s_adc1$2130                                              0007E1 GR
+  9 A$stm8s_adc1$2139                                              0007E2 GR
+  9 A$stm8s_adc1$214                                               0000A5 GR
+  9 A$stm8s_adc1$2143                                              0007E4 GR
+  9 A$stm8s_adc1$2144                                              0007E6 GR
+  9 A$stm8s_adc1$2145                                              0007E9 GR
+  9 A$stm8s_adc1$2147                                              0007EB GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 13
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$2127                                              0007F1 GR
-  9 A$stm8s_adc1$2129                                              0007F2 GR
-  9 A$stm8s_adc1$213                                               0000A3 GR
-  9 A$stm8s_adc1$2130                                              0007F3 GR
-  9 A$stm8s_adc1$2131                                              0007F5 GR
-  9 A$stm8s_adc1$2133                                              0007F6 GR
-  9 A$stm8s_adc1$2134                                              0007F7 GR
-  9 A$stm8s_adc1$2135                                              0007F9 GR
-  9 A$stm8s_adc1$214                                               0000A5 GR
-  9 A$stm8s_adc1$2140                                              0007FC GR
-  9 A$stm8s_adc1$2144                                              0007FD GR
-  9 A$stm8s_adc1$2153                                              0007FE GR
-  9 A$stm8s_adc1$2157                                              000800 GR
-  9 A$stm8s_adc1$2158                                              000802 GR
-  9 A$stm8s_adc1$2159                                              000805 GR
+  9 A$stm8s_adc1$2148                                              0007EE GR
+  9 A$stm8s_adc1$2150                                              0007F0 GR
+  9 A$stm8s_adc1$2151                                              0007F3 GR
+  9 A$stm8s_adc1$2153                                              0007F5 GR
+  9 A$stm8s_adc1$2154                                              0007F8 GR
+  9 A$stm8s_adc1$2156                                              0007FA GR
+  9 A$stm8s_adc1$2157                                              0007FD GR
+  9 A$stm8s_adc1$2159                                              0007FF GR
   9 A$stm8s_adc1$216                                               0000A7 GR
-  9 A$stm8s_adc1$2161                                              000807 GR
-  9 A$stm8s_adc1$2162                                              00080A GR
-  9 A$stm8s_adc1$2164                                              00080C GR
-  9 A$stm8s_adc1$2165                                              00080F GR
-  9 A$stm8s_adc1$2167                                              000811 GR
-  9 A$stm8s_adc1$2168                                              000814 GR
+  9 A$stm8s_adc1$2160                                              000802 GR
+  9 A$stm8s_adc1$2162                                              000804 GR
+  9 A$stm8s_adc1$2163                                              000807 GR
+  9 A$stm8s_adc1$2165                                              000809 GR
+  9 A$stm8s_adc1$2166                                              00080C GR
+  9 A$stm8s_adc1$2168                                              00080E GR
+  9 A$stm8s_adc1$2169                                              000811 GR
   9 A$stm8s_adc1$217                                               0000A9 GR
-  9 A$stm8s_adc1$2170                                              000816 GR
-  9 A$stm8s_adc1$2171                                              000819 GR
-  9 A$stm8s_adc1$2173                                              00081B GR
-  9 A$stm8s_adc1$2174                                              00081E GR
-  9 A$stm8s_adc1$2176                                              000820 GR
-  9 A$stm8s_adc1$2177                                              000823 GR
-  9 A$stm8s_adc1$2179                                              000825 GR
+  9 A$stm8s_adc1$2171                                              000813 GR
+  9 A$stm8s_adc1$2172                                              000816 GR
+  9 A$stm8s_adc1$2174                                              000818 GR
+  9 A$stm8s_adc1$2175                                              00081B GR
+  9 A$stm8s_adc1$2177                                              00081D GR
+  9 A$stm8s_adc1$2178                                              000820 GR
   9 A$stm8s_adc1$218                                               0000AB GR
-  9 A$stm8s_adc1$2180                                              000828 GR
-  9 A$stm8s_adc1$2182                                              00082A GR
-  9 A$stm8s_adc1$2183                                              00082D GR
-  9 A$stm8s_adc1$2185                                              00082F GR
-  9 A$stm8s_adc1$2186                                              000832 GR
-  9 A$stm8s_adc1$2188                                              000834 GR
-  9 A$stm8s_adc1$2189                                              000837 GR
-  9 A$stm8s_adc1$2191                                              000839 GR
-  9 A$stm8s_adc1$2192                                              00083C GR
-  9 A$stm8s_adc1$2194                                              00083E GR
-  9 A$stm8s_adc1$2195                                              000841 GR
-  9 A$stm8s_adc1$2197                                              000843 GR
-  9 A$stm8s_adc1$2199                                              000845 GR
+  9 A$stm8s_adc1$2180                                              000822 GR
+  9 A$stm8s_adc1$2181                                              000825 GR
+  9 A$stm8s_adc1$2183                                              000827 GR
+  9 A$stm8s_adc1$2185                                              000829 GR
+  9 A$stm8s_adc1$2187                                              00082B GR
+  9 A$stm8s_adc1$2188                                              00082C GR
+  9 A$stm8s_adc1$2190                                              00082D GR
+  9 A$stm8s_adc1$2191                                              000830 GR
+  9 A$stm8s_adc1$2196                                              000833 GR
+  9 A$stm8s_adc1$2197                                              000834 GR
+  9 A$stm8s_adc1$2198                                              000836 GR
+  9 A$stm8s_adc1$2199                                              000838 GR
   9 A$stm8s_adc1$220                                               0000AD GR
-  9 A$stm8s_adc1$2201                                              000847 GR
-  9 A$stm8s_adc1$2202                                              000848 GR
-  9 A$stm8s_adc1$2204                                              000849 GR
-  9 A$stm8s_adc1$2205                                              00084C GR
+  9 A$stm8s_adc1$2200                                              000839 GR
+  9 A$stm8s_adc1$2201                                              00083C GR
+  9 A$stm8s_adc1$2206                                              00083E GR
+  9 A$stm8s_adc1$2207                                              000840 GR
   9 A$stm8s_adc1$221                                               0000AF GR
-  9 A$stm8s_adc1$2210                                              00084F GR
-  9 A$stm8s_adc1$2211                                              000850 GR
-  9 A$stm8s_adc1$2212                                              000852 GR
-  9 A$stm8s_adc1$2213                                              000854 GR
-  9 A$stm8s_adc1$2214                                              000855 GR
+  9 A$stm8s_adc1$2210                                              000842 GR
+  9 A$stm8s_adc1$2211                                              000843 GR
+  9 A$stm8s_adc1$2212                                              000845 GR
+  9 A$stm8s_adc1$2216                                              000847 GR
+  9 A$stm8s_adc1$2217                                              00084A GR
+  9 A$stm8s_adc1$2219                                              00084B GR
+  9 A$stm8s_adc1$222                                               0000B1 GR
+  9 A$stm8s_adc1$2220                                              00084D GR
+  9 A$stm8s_adc1$2221                                              00084F GR
+  9 A$stm8s_adc1$2222                                              000850 GR
+  9 A$stm8s_adc1$2223                                              000851 GR
+  9 A$stm8s_adc1$2225                                              000853 GR
+  9 A$stm8s_adc1$2226                                              000855 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 14
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$2215                                              000858 GR
-  9 A$stm8s_adc1$222                                               0000B1 GR
-  9 A$stm8s_adc1$2220                                              00085A GR
-  9 A$stm8s_adc1$2221                                              00085C GR
-  9 A$stm8s_adc1$2224                                              00085E GR
-  9 A$stm8s_adc1$2225                                              00085F GR
-  9 A$stm8s_adc1$2226                                              000861 GR
-  9 A$stm8s_adc1$2230                                              000863 GR
-  9 A$stm8s_adc1$2231                                              000866 GR
-  9 A$stm8s_adc1$2233                                              000867 GR
-  9 A$stm8s_adc1$2234                                              000869 GR
-  9 A$stm8s_adc1$2235                                              00086B GR
-  9 A$stm8s_adc1$2236                                              00086C GR
-  9 A$stm8s_adc1$2237                                              00086D GR
-  9 A$stm8s_adc1$2239                                              00086F GR
+  9 A$stm8s_adc1$2227                                              000856 GR
+  9 A$stm8s_adc1$2229                                              000858 GR
+  9 A$stm8s_adc1$2231                                              000859 GR
+  9 A$stm8s_adc1$2232                                              00085B GR
+  9 A$stm8s_adc1$2233                                              00085C GR
+  9 A$stm8s_adc1$2234                                              00085D GR
+  9 A$stm8s_adc1$2236                                              00085E GR
   9 A$stm8s_adc1$224                                               0000B3 GR
-  9 A$stm8s_adc1$2240                                              000871 GR
-  9 A$stm8s_adc1$2241                                              000872 GR
-  9 A$stm8s_adc1$2243                                              000874 GR
-  9 A$stm8s_adc1$2245                                              000875 GR
-  9 A$stm8s_adc1$2246                                              000877 GR
-  9 A$stm8s_adc1$2247                                              000878 GR
-  9 A$stm8s_adc1$2248                                              000879 GR
+  9 A$stm8s_adc1$2241                                              000860 GR
+  9 A$stm8s_adc1$2242                                              000863 GR
+  9 A$stm8s_adc1$2243                                              000865 GR
+  9 A$stm8s_adc1$2244                                              000868 GR
+  9 A$stm8s_adc1$2245                                              00086A GR
+  9 A$stm8s_adc1$2247                                              00086B GR
+  9 A$stm8s_adc1$2248                                              00086C GR
+  9 A$stm8s_adc1$2249                                              00086D GR
   9 A$stm8s_adc1$225                                               0000B5 GR
-  9 A$stm8s_adc1$2250                                              00087A GR
-  9 A$stm8s_adc1$2255                                              00087C GR
-  9 A$stm8s_adc1$2256                                              00087F GR
-  9 A$stm8s_adc1$2257                                              000881 GR
-  9 A$stm8s_adc1$2258                                              000884 GR
-  9 A$stm8s_adc1$2259                                              000886 GR
+  9 A$stm8s_adc1$2251                                              00086F GR
+  9 A$stm8s_adc1$2252                                              000871 GR
+  9 A$stm8s_adc1$2253                                              000872 GR
+  9 A$stm8s_adc1$2255                                              000874 GR
+  9 A$stm8s_adc1$2257                                              000875 GR
+  9 A$stm8s_adc1$2258                                              000877 GR
+  9 A$stm8s_adc1$2259                                              000878 GR
   9 A$stm8s_adc1$226                                               0000B7 GR
-  9 A$stm8s_adc1$2261                                              000887 GR
-  9 A$stm8s_adc1$2262                                              000888 GR
-  9 A$stm8s_adc1$2263                                              000889 GR
-  9 A$stm8s_adc1$2265                                              00088B GR
-  9 A$stm8s_adc1$2266                                              00088D GR
-  9 A$stm8s_adc1$2267                                              00088E GR
-  9 A$stm8s_adc1$2269                                              000890 GR
-  9 A$stm8s_adc1$2271                                              000891 GR
-  9 A$stm8s_adc1$2272                                              000893 GR
-  9 A$stm8s_adc1$2273                                              000894 GR
-  9 A$stm8s_adc1$2274                                              000895 GR
-  9 A$stm8s_adc1$2276                                              000896 GR
+  9 A$stm8s_adc1$2260                                              000879 GR
+  9 A$stm8s_adc1$2262                                              00087A GR
+  9 A$stm8s_adc1$2267                                              00087C GR
+  9 A$stm8s_adc1$2268                                              00087F GR
+  9 A$stm8s_adc1$2269                                              000881 GR
+  9 A$stm8s_adc1$2270                                              000883 GR
+  9 A$stm8s_adc1$2271                                              000885 GR
+  9 A$stm8s_adc1$2272                                              000886 GR
+  9 A$stm8s_adc1$2273                                              000887 GR
   9 A$stm8s_adc1$228                                               0000B9 GR
-  9 A$stm8s_adc1$2281                                              000898 GR
-  9 A$stm8s_adc1$2282                                              00089B GR
-  9 A$stm8s_adc1$2283                                              00089D GR
-  9 A$stm8s_adc1$2284                                              00089F GR
-  9 A$stm8s_adc1$2285                                              0008A1 GR
-  9 A$stm8s_adc1$2286                                              0008A2 GR
-  9 A$stm8s_adc1$2287                                              0008A3 GR
+  9 A$stm8s_adc1$2280                                              000888 GR
+  9 A$stm8s_adc1$2284                                              00088A GR
   9 A$stm8s_adc1$229                                               0000BB GR
-  9 A$stm8s_adc1$2294                                              0008A4 GR
-  9 A$stm8s_adc1$2298                                              0008A6 GR
+  9 A$stm8s_adc1$2293                                              00088B GR
+  9 A$stm8s_adc1$2297                                              00088D GR
+  9 A$stm8s_adc1$2298                                              00088F GR
+  9 A$stm8s_adc1$2299                                              000892 GR
   9 A$stm8s_adc1$230                                               0000BD GR
+  9 A$stm8s_adc1$2301                                              000894 GR
+  9 A$stm8s_adc1$2302                                              000897 GR
+  9 A$stm8s_adc1$2304                                              000899 GR
+  9 A$stm8s_adc1$2305                                              00089C GR
+  9 A$stm8s_adc1$2307                                              00089E GR
+  9 A$stm8s_adc1$2308                                              0008A1 GR
+  9 A$stm8s_adc1$2310                                              0008A3 GR
+  9 A$stm8s_adc1$2311                                              0008A6 GR
+  9 A$stm8s_adc1$2313                                              0008A8 GR
+  9 A$stm8s_adc1$2314                                              0008AB GR
+  9 A$stm8s_adc1$2316                                              0008AD GR
+  9 A$stm8s_adc1$2317                                              0008B0 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 15
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$2307                                              0008A7 GR
-  9 A$stm8s_adc1$2311                                              0008A9 GR
-  9 A$stm8s_adc1$2312                                              0008AB GR
-  9 A$stm8s_adc1$2313                                              0008AE GR
-  9 A$stm8s_adc1$2315                                              0008B0 GR
-  9 A$stm8s_adc1$2316                                              0008B3 GR
-  9 A$stm8s_adc1$2318                                              0008B5 GR
-  9 A$stm8s_adc1$2319                                              0008B8 GR
+  9 A$stm8s_adc1$2319                                              0008B2 GR
   9 A$stm8s_adc1$232                                               0000BF GR
-  9 A$stm8s_adc1$2321                                              0008BA GR
-  9 A$stm8s_adc1$2322                                              0008BD GR
-  9 A$stm8s_adc1$2324                                              0008BF GR
-  9 A$stm8s_adc1$2325                                              0008C2 GR
-  9 A$stm8s_adc1$2327                                              0008C4 GR
-  9 A$stm8s_adc1$2328                                              0008C7 GR
-  9 A$stm8s_adc1$2330                                              0008C9 GR
-  9 A$stm8s_adc1$2331                                              0008CC GR
-  9 A$stm8s_adc1$2333                                              0008CE GR
-  9 A$stm8s_adc1$2334                                              0008D1 GR
-  9 A$stm8s_adc1$2336                                              0008D3 GR
-  9 A$stm8s_adc1$2337                                              0008D6 GR
-  9 A$stm8s_adc1$2339                                              0008D8 GR
+  9 A$stm8s_adc1$2320                                              0008B5 GR
+  9 A$stm8s_adc1$2322                                              0008B7 GR
+  9 A$stm8s_adc1$2323                                              0008BA GR
+  9 A$stm8s_adc1$2325                                              0008BC GR
+  9 A$stm8s_adc1$2326                                              0008BF GR
+  9 A$stm8s_adc1$2328                                              0008C1 GR
+  9 A$stm8s_adc1$2329                                              0008C4 GR
+  9 A$stm8s_adc1$2331                                              0008C6 GR
+  9 A$stm8s_adc1$2332                                              0008C9 GR
+  9 A$stm8s_adc1$2334                                              0008CB GR
+  9 A$stm8s_adc1$2335                                              0008CE GR
+  9 A$stm8s_adc1$2337                                              0008D0 GR
+  9 A$stm8s_adc1$2339                                              0008D1 GR
   9 A$stm8s_adc1$234                                               0000C1 GR
-  9 A$stm8s_adc1$2340                                              0008DB GR
-  9 A$stm8s_adc1$2342                                              0008DD GR
-  9 A$stm8s_adc1$2343                                              0008E0 GR
-  9 A$stm8s_adc1$2345                                              0008E2 GR
-  9 A$stm8s_adc1$2346                                              0008E5 GR
-  9 A$stm8s_adc1$2348                                              0008E7 GR
-  9 A$stm8s_adc1$2349                                              0008EA GR
+  9 A$stm8s_adc1$2341                                              0008D3 GR
+  9 A$stm8s_adc1$2343                                              0008D5 GR
+  9 A$stm8s_adc1$2345                                              0008D7 GR
+  9 A$stm8s_adc1$2347                                              0008D9 GR
+  9 A$stm8s_adc1$2348                                              0008DC GR
   9 A$stm8s_adc1$235                                               0000C2 GR
-  9 A$stm8s_adc1$2351                                              0008EC GR
-  9 A$stm8s_adc1$2353                                              0008ED GR
-  9 A$stm8s_adc1$2355                                              0008EF GR
-  9 A$stm8s_adc1$2357                                              0008F1 GR
-  9 A$stm8s_adc1$2359                                              0008F3 GR
-  9 A$stm8s_adc1$2361                                              0008F5 GR
-  9 A$stm8s_adc1$2362                                              0008F8 GR
-  9 A$stm8s_adc1$2364                                              0008FB GR
-  9 A$stm8s_adc1$2369                                              0008FC GR
+  9 A$stm8s_adc1$2350                                              0008DF GR
+  9 A$stm8s_adc1$2355                                              0008E0 GR
+  9 A$stm8s_adc1$2356                                              0008E2 GR
+  9 A$stm8s_adc1$2357                                              0008E4 GR
+  9 A$stm8s_adc1$2358                                              0008E6 GR
+  9 A$stm8s_adc1$2359                                              0008E8 GR
+  9 A$stm8s_adc1$2360                                              0008EC GR
+  9 A$stm8s_adc1$2365                                              0008EE GR
+  9 A$stm8s_adc1$2366                                              0008F0 GR
+  9 A$stm8s_adc1$2369                                              0008F2 GR
   9 A$stm8s_adc1$237                                               0000C3 GR
-  9 A$stm8s_adc1$2370                                              0008FE GR
-  9 A$stm8s_adc1$2371                                              000900 GR
-  9 A$stm8s_adc1$2372                                              000902 GR
-  9 A$stm8s_adc1$2373                                              000904 GR
-  9 A$stm8s_adc1$2374                                              000908 GR
-  9 A$stm8s_adc1$2379                                              00090A GR
-  9 A$stm8s_adc1$2380                                              00090C GR
-  9 A$stm8s_adc1$2383                                              00090E GR
-  9 A$stm8s_adc1$2384                                              00090F GR
-  9 A$stm8s_adc1$2385                                              000911 GR
-  9 A$stm8s_adc1$2389                                              000913 GR
+  9 A$stm8s_adc1$2370                                              0008F3 GR
+  9 A$stm8s_adc1$2371                                              0008F5 GR
+  9 A$stm8s_adc1$2375                                              0008F7 GR
+  9 A$stm8s_adc1$2376                                              0008FA GR
+  9 A$stm8s_adc1$2377                                              0008FC GR
+  9 A$stm8s_adc1$2378                                              0008FE GR
+  9 A$stm8s_adc1$2380                                              0008FF GR
+  9 A$stm8s_adc1$2381                                              000900 GR
+  9 A$stm8s_adc1$2382                                              000901 GR
+  9 A$stm8s_adc1$2384                                              000903 GR
+  9 A$stm8s_adc1$2385                                              000905 GR
+  9 A$stm8s_adc1$2386                                              000906 GR
+  9 A$stm8s_adc1$2388                                              000908 GR
   9 A$stm8s_adc1$239                                               0000C5 GR
-  9 A$stm8s_adc1$2390                                              000916 GR
-  9 A$stm8s_adc1$2391                                              000918 GR
+  9 A$stm8s_adc1$2390                                              000909 GR
+  9 A$stm8s_adc1$2391                                              00090A GR
+  9 A$stm8s_adc1$2392                                              00090C GR
+  9 A$stm8s_adc1$2394                                              00090F GR
+  9 A$stm8s_adc1$2399                                              000911 GR
+  9 A$stm8s_adc1$240                                               0000C8 GR
+  9 A$stm8s_adc1$2400                                              000914 GR
+  9 A$stm8s_adc1$2401                                              000916 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 16
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_adc1$2392                                              00091A GR
-  9 A$stm8s_adc1$2394                                              00091B GR
-  9 A$stm8s_adc1$2395                                              00091C GR
-  9 A$stm8s_adc1$2396                                              00091D GR
-  9 A$stm8s_adc1$2398                                              00091F GR
-  9 A$stm8s_adc1$2399                                              000921 GR
-  9 A$stm8s_adc1$240                                               0000C8 GR
-  9 A$stm8s_adc1$2400                                              000922 GR
-  9 A$stm8s_adc1$2402                                              000924 GR
-  9 A$stm8s_adc1$2404                                              000925 GR
-  9 A$stm8s_adc1$2405                                              000926 GR
-  9 A$stm8s_adc1$2406                                              000928 GR
-  9 A$stm8s_adc1$2408                                              00092B GR
-  9 A$stm8s_adc1$2413                                              00092D GR
-  9 A$stm8s_adc1$2414                                              000930 GR
-  9 A$stm8s_adc1$2415                                              000932 GR
-  9 A$stm8s_adc1$2416                                              000935 GR
-  9 A$stm8s_adc1$2417                                              000937 GR
-  9 A$stm8s_adc1$2419                                              000938 GR
-  9 A$stm8s_adc1$2420                                              000939 GR
-  9 A$stm8s_adc1$2421                                              00093A GR
-  9 A$stm8s_adc1$2423                                              00093C GR
-  9 A$stm8s_adc1$2424                                              00093E GR
-  9 A$stm8s_adc1$2425                                              00093F GR
-  9 A$stm8s_adc1$2427                                              000941 GR
-  9 A$stm8s_adc1$2429                                              000942 GR
-  9 A$stm8s_adc1$2430                                              000943 GR
-  9 A$stm8s_adc1$2431                                              000945 GR
-  9 A$stm8s_adc1$2433                                              000948 GR
-  9 A$stm8s_adc1$2438                                              00094A GR
-  9 A$stm8s_adc1$2439                                              00094D GR
-  9 A$stm8s_adc1$2441                                              00094E GR
-  9 A$stm8s_adc1$2442                                              00094F GR
-  9 A$stm8s_adc1$2444                                              000950 GR
-  9 A$stm8s_adc1$2446                                              000951 GR
-  9 A$stm8s_adc1$2447                                              000953 GR
-  9 A$stm8s_adc1$2449                                              000954 GR
+  9 A$stm8s_adc1$2402                                              000919 GR
+  9 A$stm8s_adc1$2403                                              00091B GR
+  9 A$stm8s_adc1$2405                                              00091C GR
+  9 A$stm8s_adc1$2406                                              00091D GR
+  9 A$stm8s_adc1$2407                                              00091E GR
+  9 A$stm8s_adc1$2409                                              000920 GR
+  9 A$stm8s_adc1$2410                                              000922 GR
+  9 A$stm8s_adc1$2411                                              000923 GR
+  9 A$stm8s_adc1$2413                                              000925 GR
+  9 A$stm8s_adc1$2415                                              000926 GR
+  9 A$stm8s_adc1$2416                                              000927 GR
+  9 A$stm8s_adc1$2417                                              000929 GR
+  9 A$stm8s_adc1$2419                                              00092C GR
+  9 A$stm8s_adc1$2424                                              00092E GR
+  9 A$stm8s_adc1$2425                                              000931 GR
+  9 A$stm8s_adc1$2427                                              000932 GR
+  9 A$stm8s_adc1$2428                                              000933 GR
+  9 A$stm8s_adc1$2430                                              000934 GR
+  9 A$stm8s_adc1$2432                                              000935 GR
+  9 A$stm8s_adc1$2433                                              000937 GR
+  9 A$stm8s_adc1$2435                                              000938 GR
+  9 A$stm8s_adc1$2440                                              00093B GR
+  9 A$stm8s_adc1$2444                                              00093D GR
   9 A$stm8s_adc1$245                                               0000CB GR
-  9 A$stm8s_adc1$2454                                              000957 GR
-  9 A$stm8s_adc1$2458                                              000959 GR
   9 A$stm8s_adc1$246                                               0000CD GR
   9 A$stm8s_adc1$247                                               0000CF GR
   9 A$stm8s_adc1$248                                               0000D1 GR
@@ -958,11 +942,6 @@ Symbol Table
   9 A$stm8s_adc1$266                                               0000E5 GR
   9 A$stm8s_adc1$267                                               0000E7 GR
   9 A$stm8s_adc1$268                                               0000E9 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 17
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$270                                               0000EB GR
   9 A$stm8s_adc1$271                                               0000EC GR
   9 A$stm8s_adc1$273                                               0000ED GR
@@ -979,6 +958,11 @@ Symbol Table
   9 A$stm8s_adc1$292                                               000103 GR
   9 A$stm8s_adc1$294                                               000105 GR
   9 A$stm8s_adc1$295                                               000108 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 17
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$300                                               00010B GR
   9 A$stm8s_adc1$301                                               00010D GR
   9 A$stm8s_adc1$302                                               00010F GR
@@ -1018,11 +1002,6 @@ Symbol Table
   9 A$stm8s_adc1$348                                               000151 GR
   9 A$stm8s_adc1$349                                               000152 GR
   9 A$stm8s_adc1$351                                               000153 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 18
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$353                                               000155 GR
   9 A$stm8s_adc1$354                                               000158 GR
   9 A$stm8s_adc1$359                                               00015B GR
@@ -1039,6 +1018,11 @@ Symbol Table
   9 A$stm8s_adc1$377                                               000171 GR
   9 A$stm8s_adc1$379                                               000172 GR
   9 A$stm8s_adc1$380                                               000174 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 18
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$382                                               000175 GR
   9 A$stm8s_adc1$383                                               000177 GR
   9 A$stm8s_adc1$387                                               00017A GR
@@ -1078,11 +1062,6 @@ Symbol Table
   9 A$stm8s_adc1$462                                               0001C1 GR
   9 A$stm8s_adc1$467                                               0001C4 GR
   9 A$stm8s_adc1$471                                               0001C5 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 19
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$480                                               0001C6 GR
   9 A$stm8s_adc1$484                                               0001C7 GR
   9 A$stm8s_adc1$485                                               0001C9 GR
@@ -1099,6 +1078,11 @@ Symbol Table
   9 A$stm8s_adc1$505                                               0001E0 GR
   9 A$stm8s_adc1$509                                               0001E2 GR
   9 A$stm8s_adc1$510                                               0001E4 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 19
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$512                                               0001E7 GR
   9 A$stm8s_adc1$517                                               0001E9 GR
   9 A$stm8s_adc1$518                                               0001EB GR
@@ -1138,11 +1122,6 @@ Symbol Table
   9 A$stm8s_adc1$609                                               00022F GR
   9 A$stm8s_adc1$611                                               000231 GR
   9 A$stm8s_adc1$613                                               000233 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 20
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$615                                               000235 GR
   9 A$stm8s_adc1$616                                               000238 GR
   9 A$stm8s_adc1$618                                               00023B GR
@@ -1159,6 +1138,11 @@ Symbol Table
   9 A$stm8s_adc1$638                                               000250 GR
   9 A$stm8s_adc1$640                                               000253 GR
   9 A$stm8s_adc1$645                                               000254 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 20
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$646                                               000257 GR
   9 A$stm8s_adc1$649                                               000259 GR
   9 A$stm8s_adc1$650                                               00025B GR
@@ -1198,11 +1182,6 @@ Symbol Table
   9 A$stm8s_adc1$716                                               00029D GR
   9 A$stm8s_adc1$718                                               00029F GR
   9 A$stm8s_adc1$720                                               0002A1 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 21
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$721                                               0002A2 GR
   9 A$stm8s_adc1$723                                               0002A3 GR
   9 A$stm8s_adc1$725                                               0002A5 GR
@@ -1219,6 +1198,11 @@ Symbol Table
   9 A$stm8s_adc1$758                                               0002BE GR
   9 A$stm8s_adc1$759                                               0002BF GR
   9 A$stm8s_adc1$760                                               0002C0 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 21
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$761                                               0002C2 GR
   9 A$stm8s_adc1$762                                               0002C4 GR
   9 A$stm8s_adc1$763                                               0002C5 GR
@@ -1258,11 +1242,6 @@ Symbol Table
   9 A$stm8s_adc1$808                                               0002F9 GR
   9 A$stm8s_adc1$809                                               0002FA GR
   9 A$stm8s_adc1$810                                               0002FB GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 22
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$811                                               0002FD GR
   9 A$stm8s_adc1$812                                               0002FE GR
   9 A$stm8s_adc1$813                                               000300 GR
@@ -1279,6 +1258,11 @@ Symbol Table
   9 A$stm8s_adc1$834                                               000314 GR
   9 A$stm8s_adc1$835                                               000316 GR
   9 A$stm8s_adc1$836                                               000318 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 22
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$837                                               00031A GR
   9 A$stm8s_adc1$839                                               00031B GR
   9 A$stm8s_adc1$841                                               00031D GR
@@ -1318,11 +1302,6 @@ Symbol Table
   9 A$stm8s_adc1$908                                               000363 GR
   9 A$stm8s_adc1$91                                                000010 GR
   9 A$stm8s_adc1$910                                               000365 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 23
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 A$stm8s_adc1$915                                               000366 GR
   9 A$stm8s_adc1$916                                               000368 GR
   9 A$stm8s_adc1$920                                               00036A GR
@@ -1339,6 +1318,11 @@ Symbol Table
   9 A$stm8s_adc1$941                                               000381 GR
   9 A$stm8s_adc1$942                                               000383 GR
   9 A$stm8s_adc1$944                                               000384 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 23
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 A$stm8s_adc1$945                                               000385 GR
   9 A$stm8s_adc1$946                                               000386 GR
   9 A$stm8s_adc1$948                                               000388 GR
@@ -1366,240 +1350,244 @@ Symbol Table
   7 Fstm8s_adc1$__str_0$0_0$0                                   =  000000 GR
  10 Ldebug_CIE0_end                                                000014 R
  10 Ldebug_CIE0_start                                              000004 R
- 10 Ldebug_CIE10_end                                               0006F4 R
- 10 Ldebug_CIE10_start                                             0006E4 R
- 10 Ldebug_CIE11_end                                               000720 R
- 10 Ldebug_CIE11_start                                             000710 R
- 10 Ldebug_CIE12_end                                               0007AC R
- 10 Ldebug_CIE12_start                                             00079C R
- 10 Ldebug_CIE13_end                                               00088C R
- 10 Ldebug_CIE13_start                                             00087C R
- 10 Ldebug_CIE14_end                                               0009A4 R
- 10 Ldebug_CIE14_start                                             000994 R
- 10 Ldebug_CIE15_end                                               000A2C R
- 10 Ldebug_CIE15_start                                             000A1C R
+ 10 Ldebug_CIE10_end                                               000710 R
+ 10 Ldebug_CIE10_start                                             000700 R
+ 10 Ldebug_CIE11_end                                               00073C R
+ 10 Ldebug_CIE11_start                                             00072C R
+ 10 Ldebug_CIE12_end                                               0007C8 R
+ 10 Ldebug_CIE12_start                                             0007B8 R
+ 10 Ldebug_CIE13_end                                               0008A8 R
+ 10 Ldebug_CIE13_start                                             000898 R
+ 10 Ldebug_CIE14_end                                               0009C0 R
+ 10 Ldebug_CIE14_start                                             0009B0 R
+ 10 Ldebug_CIE15_end                                               000A48 R
+ 10 Ldebug_CIE15_start                                             000A38 R
+ 10 Ldebug_CIE16_end                                               000AF4 R
+ 10 Ldebug_CIE16_start                                             000AE4 R
+ 10 Ldebug_CIE17_end                                               000B4C R
+ 10 Ldebug_CIE17_start                                             000B3C R
+ 10 Ldebug_CIE18_end                                               000BA4 R
+ 10 Ldebug_CIE18_start                                             000B94 R
+ 10 Ldebug_CIE19_end                                               000BFC R
+ 10 Ldebug_CIE19_start                                             000BEC R
+ 10 Ldebug_CIE1_end                                                000118 R
+ 10 Ldebug_CIE1_start                                              000108 R
+ 10 Ldebug_CIE20_end                                               000E1C R
+ 10 Ldebug_CIE20_start                                             000E0C R
+ 10 Ldebug_CIE2_end                                                0001EC R
+ 10 Ldebug_CIE2_start                                              0001DC R
+ 10 Ldebug_CIE3_end                                                00031C R
+ 10 Ldebug_CIE3_start                                              00030C R
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 24
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 10 Ldebug_CIE16_end                                               000AD8 R
- 10 Ldebug_CIE16_start                                             000AC8 R
- 10 Ldebug_CIE17_end                                               000B30 R
- 10 Ldebug_CIE17_start                                             000B20 R
- 10 Ldebug_CIE18_end                                               000B88 R
- 10 Ldebug_CIE18_start                                             000B78 R
- 10 Ldebug_CIE19_end                                               000BE0 R
- 10 Ldebug_CIE19_start                                             000BD0 R
- 10 Ldebug_CIE1_end                                                000118 R
- 10 Ldebug_CIE1_start                                              000108 R
- 10 Ldebug_CIE20_end                                               000E00 R
- 10 Ldebug_CIE20_start                                             000DF0 R
- 10 Ldebug_CIE2_end                                                0001EC R
- 10 Ldebug_CIE2_start                                              0001DC R
- 10 Ldebug_CIE3_end                                                000300 R
- 10 Ldebug_CIE3_start                                              0002F0 R
- 10 Ldebug_CIE4_end                                                0003DC R
- 10 Ldebug_CIE4_start                                              0003CC R
- 10 Ldebug_CIE5_end                                                0004C0 R
- 10 Ldebug_CIE5_start                                              0004B0 R
- 10 Ldebug_CIE6_end                                                000534 R
- 10 Ldebug_CIE6_start                                              000524 R
- 10 Ldebug_CIE7_end                                                000560 R
- 10 Ldebug_CIE7_start                                              000550 R
- 10 Ldebug_CIE8_end                                                00058C R
- 10 Ldebug_CIE8_start                                              00057C R
- 10 Ldebug_CIE9_end                                                0006AC R
- 10 Ldebug_CIE9_start                                              00069C R
+ 10 Ldebug_CIE4_end                                                0003F8 R
+ 10 Ldebug_CIE4_start                                              0003E8 R
+ 10 Ldebug_CIE5_end                                                0004DC R
+ 10 Ldebug_CIE5_start                                              0004CC R
+ 10 Ldebug_CIE6_end                                                000550 R
+ 10 Ldebug_CIE6_start                                              000540 R
+ 10 Ldebug_CIE7_end                                                00057C R
+ 10 Ldebug_CIE7_start                                              00056C R
+ 10 Ldebug_CIE8_end                                                0005A8 R
+ 10 Ldebug_CIE8_start                                              000598 R
+ 10 Ldebug_CIE9_end                                                0006C8 R
+ 10 Ldebug_CIE9_start                                              0006B8 R
   D Ldebug_abbrev                                                  000000 R
   E Ldebug_info_end                                                0008D8 R
   E Ldebug_info_start                                              000004 R
-  B Ldebug_line_end                                                000942 R
+  B Ldebug_line_end                                                00094E R
   B Ldebug_line_start                                              000004 R
-  B Ldebug_line_stmt                                               0000B3 R
+  B Ldebug_line_stmt                                               0000BF R
   C Ldebug_loc_start                                               000000 R
   F Ldebug_pubnames_end                                            0001FC R
   F Ldebug_pubnames_start                                          000004 R
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$390                       =  0004DE GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$391                       =  0004DE GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$392                       =  0004DF GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$393                       =  0004DF GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$394                       =  0004E8 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$395                       =  0004EA GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$396                       =  0004EC GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$397                       =  0004EE GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$398                       =  0004F4 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$399                       =  0004F5 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$400                       =  0004F5 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$401                       =  0004FC GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$402                       =  000500 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$403                       =  000504 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$404                       =  000508 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$405                       =  00050C GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$406                       =  000510 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$407                       =  000514 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$390                       =  0004DC GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$391                       =  0004DC GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$392                       =  0004DD GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$393                       =  0004DD GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$394                       =  0004E6 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$395                       =  0004E8 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$396                       =  0004EA GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$397                       =  0004EC GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$398                       =  0004F2 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$399                       =  0004F3 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$400                       =  0004F3 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$401                       =  0004FA GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$402                       =  0004FE GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$403                       =  000502 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$404                       =  000506 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$405                       =  00050A GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$406                       =  00050E GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$407                       =  000512 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$408                       =  000516 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$409                       =  00051A GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$410                       =  00051E GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$411                       =  00051F GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$412                       =  000521 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$413                       =  000523 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$414                       =  000525 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$415                       =  00052B GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$416                       =  00052C GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$417                       =  00052C GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$418                       =  000530 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$419                       =  000534 GR
+    Sstm8s_adc1$ADC1_AWDChannelConfig$420                          ****** GX
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$421                       =  000537 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$422                       =  00053C GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$423                       =  000544 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 25
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$408                       =  000518 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$409                       =  00051C GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$410                       =  000520 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$411                       =  000521 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$412                       =  000523 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$413                       =  000525 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$414                       =  000527 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$415                       =  00052D GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$416                       =  00052E GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$417                       =  00052E GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$418                       =  000532 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$419                       =  000536 GR
-    Sstm8s_adc1$ADC1_AWDChannelConfig$420                          ****** GX
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$421                       =  000539 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$422                       =  00053E GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$423                       =  000546 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$424                       =  000546 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$425                       =  00054A GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$426                       =  00054A GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$427                       =  000551 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$428                       =  000553 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$429                       =  000553 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$430                       =  00055B GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$431                       =  00055D GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$432                       =  000561 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$433                       =  000565 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$434                       =  00056B GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$435                       =  000575 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$436                       =  000575 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$437                       =  000575 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$438                       =  000579 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$439                       =  000579 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$440                       =  00057E GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$441                       =  000580 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$442                       =  000580 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$443                       =  000586 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$444                       =  000586 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$445                       =  000587 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$446                       =  000588 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$447                       =  000589 GR
-  9 Sstm8s_adc1$ADC1_AWDChannelConfig$448                       =  00058A GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$587                              =  00074B GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$588                              =  00074B GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$589                              =  00074C GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$590                              =  00074C GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$591                              =  000750 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$592                              =  000754 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$593                              =  000758 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$594                              =  00075C GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$595                              =  000760 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$596                              =  000764 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$597                              =  000768 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$598                              =  00076C GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$599                              =  000770 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$600                              =  000774 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$424                       =  000544 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$425                       =  000548 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$426                       =  000548 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$427                       =  00054F GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$428                       =  000551 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$429                       =  000551 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$430                       =  000559 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$431                       =  00055B GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$432                       =  00055F GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$433                       =  000563 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$434                       =  000569 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$435                       =  000573 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$436                       =  000573 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$437                       =  000573 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$438                       =  000577 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$439                       =  000577 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$440                       =  00057C GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$441                       =  00057E GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$442                       =  00057E GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$443                       =  000584 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$444                       =  000584 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$445                       =  000585 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$446                       =  000586 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$447                       =  000587 GR
+  9 Sstm8s_adc1$ADC1_AWDChannelConfig$448                       =  000588 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$587                              =  000736 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$588                              =  000736 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$589                              =  000737 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$590                              =  000737 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$591                              =  00073B GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$592                              =  00073F GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$593                              =  000743 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$594                              =  000747 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$595                              =  00074B GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$596                              =  00074F GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$597                              =  000753 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$598                              =  000757 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$599                              =  00075B GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$600                              =  00075F GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$601                              =  000763 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$602                              =  000767 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$603                              =  00076B GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$604                              =  00076C GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$605                              =  00076E GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$606                              =  000770 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$607                              =  000772 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$608                              =  000778 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$609                              =  000779 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$610                              =  000779 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$611                              =  00077C GR
+    Sstm8s_adc1$ADC1_ClearFlag$612                                 ****** GX
+  9 Sstm8s_adc1$ADC1_ClearFlag$613                              =  000780 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$614                              =  000782 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$615                              =  000784 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$616                              =  000784 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 26
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_ClearFlag$601                              =  000778 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$602                              =  00077C GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$603                              =  000780 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$604                              =  000781 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$605                              =  000783 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$606                              =  000785 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$607                              =  000787 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$608                              =  00078D GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$609                              =  00078E GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$610                              =  00078E GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$611                              =  000793 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$612                              =  00079A GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$613                              =  00079D GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$614                              =  00079D GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$615                              =  00079D GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$616                              =  0007A1 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$617                              =  0007A3 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$618                              =  0007A4 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$619                              =  0007AB GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$620                              =  0007B0 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$621                              =  0007B0 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$622                              =  0007B0 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$623                              =  0007B2 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$624                              =  0007B7 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$625                              =  0007B7 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$626                              =  0007BF GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$627                              =  0007C9 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$628                              =  0007CF GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$629                              =  0007D1 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$630                              =  0007D1 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$631                              =  0007DC GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$632                              =  0007E6 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$633                              =  0007EC GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$634                              =  0007EE GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$635                              =  0007EE GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$636                              =  0007F2 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$637                              =  0007F6 GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$638                              =  0007FC GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$639                              =  0007FC GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$640                              =  0007FD GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$641                              =  0007FD GR
-  9 Sstm8s_adc1$ADC1_ClearFlag$642                              =  0007FE GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$687                      =  0008A7 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$688                      =  0008A7 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$689                      =  0008A9 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$690                      =  0008A9 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$691                      =  0008B0 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$692                      =  0008B5 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$693                      =  0008BA GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$694                      =  0008BF GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$695                      =  0008C4 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$696                      =  0008C9 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$697                      =  0008CE GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$698                      =  0008D3 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$699                      =  0008D8 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$617                              =  000784 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$618                              =  000788 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$619                              =  00078A GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$620                              =  00078B GR
+    Sstm8s_adc1$ADC1_ClearFlag$621                                 ****** GX
+  9 Sstm8s_adc1$ADC1_ClearFlag$622                              =  00078F GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$623                              =  000792 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$624                              =  000794 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$625                              =  000794 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$626                              =  000794 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$627                              =  000796 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$628                              =  00079B GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$629                              =  00079B GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$630                              =  0007A3 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$631                              =  0007AD GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$632                              =  0007B3 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$633                              =  0007B5 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$634                              =  0007B5 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$635                              =  0007C0 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$636                              =  0007CA GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$637                              =  0007D0 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$638                              =  0007D2 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$639                              =  0007D2 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$640                              =  0007D6 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$641                              =  0007DA GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$642                              =  0007E0 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$643                              =  0007E0 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$644                              =  0007E1 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$645                              =  0007E1 GR
+  9 Sstm8s_adc1$ADC1_ClearFlag$646                              =  0007E2 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$691                      =  00088B GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$692                      =  00088B GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$693                      =  00088D GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$694                      =  00088D GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$695                      =  000894 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$696                      =  000899 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$697                      =  00089E GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$698                      =  0008A3 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$699                      =  0008A8 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$700                      =  0008AD GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$701                      =  0008B2 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$702                      =  0008B7 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$703                      =  0008BC GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$704                      =  0008C1 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$705                      =  0008C6 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$706                      =  0008CB GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$707                      =  0008D0 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$708                      =  0008D1 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$709                      =  0008D3 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$710                      =  0008D5 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$711                      =  0008D7 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$712                      =  0008D9 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$713                      =  0008DF GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$714                      =  0008E0 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$715                      =  0008E0 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 27
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$700                      =  0008DD GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$701                      =  0008E2 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$702                      =  0008E7 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$703                      =  0008EC GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$704                      =  0008ED GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$705                      =  0008EF GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$706                      =  0008F1 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$707                      =  0008F3 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$708                      =  0008F5 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$709                      =  0008FB GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$710                      =  0008FC GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$711                      =  0008FC GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$712                      =  00090A GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$713                      =  00090A GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$714                      =  00090A GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$715                      =  00090E GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$716                      =  000913 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$717                      =  000913 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$718                      =  00091B GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$719                      =  000925 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$720                      =  00092B GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$721                      =  00092D GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$722                      =  00092D GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$723                      =  000938 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$724                      =  000942 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$725                      =  000948 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$726                      =  00094A GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$727                      =  00094A GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$728                      =  00094E GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$729                      =  000950 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$730                      =  000951 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$731                      =  000954 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$732                      =  000957 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$733                      =  000957 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$734                      =  000959 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$735                      =  000959 GR
-  9 Sstm8s_adc1$ADC1_ClearITPendingBit$736                      =  00095A GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$716                      =  0008EE GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$717                      =  0008EE GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$718                      =  0008EE GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$719                      =  0008F2 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$720                      =  0008F7 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$721                      =  0008F7 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$722                      =  0008FF GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$723                      =  000909 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$724                      =  00090F GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$725                      =  000911 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$726                      =  000911 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$727                      =  00091C GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$728                      =  000926 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$729                      =  00092C GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$730                      =  00092E GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$731                      =  00092E GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$732                      =  000932 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$733                      =  000934 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$734                      =  000935 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$735                      =  000938 GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$736                      =  00093B GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$737                      =  00093B GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$738                      =  00093D GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$739                      =  00093D GR
+  9 Sstm8s_adc1$ADC1_ClearITPendingBit$740                      =  00093E GR
   9 Sstm8s_adc1$ADC1_Cmd$105                                    =  00019C GR
   9 Sstm8s_adc1$ADC1_Cmd$106                                    =  00019C GR
   9 Sstm8s_adc1$ADC1_Cmd$107                                    =  00019D GR
@@ -1618,11 +1606,6 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_Cmd$120                                    =  0001C4 GR
   9 Sstm8s_adc1$ADC1_Cmd$121                                    =  0001C4 GR
   9 Sstm8s_adc1$ADC1_Cmd$122                                    =  0001C5 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 28
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 Sstm8s_adc1$ADC1_Cmd$123                                    =  0001C5 GR
   9 Sstm8s_adc1$ADC1_Cmd$124                                    =  0001C6 GR
   9 Sstm8s_adc1$ADC1_ConversionConfig$291                       =  0003A3 GR
@@ -1635,6 +1618,11 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_ConversionConfig$298                       =  0003B8 GR
   9 Sstm8s_adc1$ADC1_ConversionConfig$299                       =  0003B8 GR
   9 Sstm8s_adc1$ADC1_ConversionConfig$300                       =  0003C1 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 28
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 Sstm8s_adc1$ADC1_ConversionConfig$301                       =  0003C7 GR
   9 Sstm8s_adc1$ADC1_ConversionConfig$302                       =  0003CD GR
   9 Sstm8s_adc1$ADC1_ConversionConfig$303                       =  0003D3 GR
@@ -1678,11 +1666,6 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_DataBufferCmd$151                          =  0001FF GR
   9 Sstm8s_adc1$ADC1_DataBufferCmd$152                          =  000205 GR
   9 Sstm8s_adc1$ADC1_DataBufferCmd$153                          =  000205 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 29
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 Sstm8s_adc1$ADC1_DataBufferCmd$154                          =  000208 GR
   9 Sstm8s_adc1$ADC1_DataBufferCmd$155                          =  00020C GR
   9 Sstm8s_adc1$ADC1_DataBufferCmd$156                          =  00020C GR
@@ -1695,6 +1678,11 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_DataBufferCmd$163                          =  000219 GR
   9 Sstm8s_adc1$ADC1_DataBufferCmd$164                          =  00021A GR
   9 Sstm8s_adc1$ADC1_DeInit$0                                   =  000000 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 29
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 Sstm8s_adc1$ADC1_DeInit$1                                   =  000000 GR
   9 Sstm8s_adc1$ADC1_DeInit$10                                  =  000020 GR
   9 Sstm8s_adc1$ADC1_DeInit$11                                  =  000024 GR
@@ -1738,216 +1726,216 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_ExternalTriggerConfig$359                  =  00049C GR
   9 Sstm8s_adc1$ADC1_ExternalTriggerConfig$360                  =  00049D GR
   9 Sstm8s_adc1$ADC1_ExternalTriggerConfig$361                  =  00049E GR
+  9 Sstm8s_adc1$ADC1_ExternalTriggerConfig$362                  =  00049F GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$498                    =  00060D GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$499                    =  00060D GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$500                    =  00060E GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$501                    =  00060E GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$502                    =  000615 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$503                    =  000619 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$504                    =  00061D GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$505                    =  000621 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$506                    =  000625 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$507                    =  000629 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$508                    =  00062D GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 30
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_ExternalTriggerConfig$362                  =  00049F GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$498                    =  000615 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$499                    =  000615 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$500                    =  000616 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$501                    =  000616 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$502                    =  00061D GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$503                    =  000621 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$504                    =  000625 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$505                    =  000629 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$506                    =  00062D GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$507                    =  000631 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$508                    =  000635 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$509                    =  000639 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$510                    =  00063D GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$511                    =  000641 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$512                    =  000642 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$513                    =  000644 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$514                    =  000646 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$515                    =  000648 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$516                    =  00064E GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$517                    =  00064F GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$518                    =  00064F GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$519                    =  000653 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$520                    =  000653 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$521                    =  000657 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$509                    =  000631 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$510                    =  000635 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$511                    =  000639 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$512                    =  00063A GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$513                    =  00063C GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$514                    =  00063E GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$515                    =  000640 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$516                    =  000646 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$517                    =  000647 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$518                    =  000647 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$519                    =  00064B GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$520                    =  00064B GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$521                    =  00064F GR
     Sstm8s_adc1$ADC1_GetAWDChannelStatus$522                       ****** GX
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$523                    =  000659 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$524                    =  00065E GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$525                    =  000669 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$526                    =  00066B GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$527                    =  00066B GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$528                    =  00066F GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$529                    =  000673 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$530                    =  000679 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$531                    =  000683 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$532                    =  000685 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$533                    =  000685 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$534                    =  000688 GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$535                    =  00068A GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$536                    =  00068A GR
-  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$537                    =  00068B GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$463                         =  0005A3 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$464                         =  0005A3 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$465                         =  0005A5 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$466                         =  0005A5 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$467                         =  0005AA GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$468                         =  0005AC GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$469                         =  0005AE GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$470                         =  0005B0 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$471                         =  0005B6 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$472                         =  0005B7 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$473                         =  0005B7 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$474                         =  0005BB GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$475                         =  0005BF GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$476                         =  0005BF GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$523                    =  000651 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$524                    =  000656 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$525                    =  000661 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$526                    =  000663 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$527                    =  000663 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$528                    =  000667 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$529                    =  00066B GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$530                    =  000671 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$531                    =  00067B GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$532                    =  00067D GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$533                    =  00067D GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$534                    =  000680 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$535                    =  000682 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$536                    =  000682 GR
+  9 Sstm8s_adc1$ADC1_GetAWDChannelStatus$537                    =  000683 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$463                         =  0005A1 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$464                         =  0005A1 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$465                         =  0005A3 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$466                         =  0005A3 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$467                         =  0005A8 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$468                         =  0005AA GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$469                         =  0005AC GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$470                         =  0005AE GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$471                         =  0005B4 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$472                         =  0005B5 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$473                         =  0005B5 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$474                         =  0005B9 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$475                         =  0005BD GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$476                         =  0005BD GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$477                         =  0005C6 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$478                         =  0005C9 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$479                         =  0005C9 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$480                         =  0005C9 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$481                         =  0005CD GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$482                         =  0005D2 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$483                         =  0005D8 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$484                         =  0005D8 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$485                         =  0005D8 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$486                         =  0005DC GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$487                         =  0005EC GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$488                         =  0005EE GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 31
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_GetBufferValue$477                         =  0005C8 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$478                         =  0005CB GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$479                         =  0005CB GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$480                         =  0005CB GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$481                         =  0005CF GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$482                         =  0005D4 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$483                         =  0005DA GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$484                         =  0005DA GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$485                         =  0005DA GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$486                         =  0005DE GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$487                         =  0005F2 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$488                         =  0005F4 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$489                         =  0005F4 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$490                         =  0005F6 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$491                         =  0005F8 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$492                         =  000610 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$493                         =  000610 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$494                         =  000612 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$495                         =  000614 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$496                         =  000614 GR
-  9 Sstm8s_adc1$ADC1_GetBufferValue$497                         =  000615 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$489                         =  0005EE GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$490                         =  0005F0 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$491                         =  0005F2 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$492                         =  000608 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$493                         =  000608 GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$494                         =  00060A GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$495                         =  00060C GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$496                         =  00060C GR
+  9 Sstm8s_adc1$ADC1_GetBufferValue$497                         =  00060D GR
   9 Sstm8s_adc1$ADC1_GetConversionValue$369                     =  0004A4 GR
   9 Sstm8s_adc1$ADC1_GetConversionValue$370                     =  0004A4 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$371                     =  0004A5 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$372                     =  0004A5 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$373                     =  0004AA GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$374                     =  0004AA GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$375                     =  0004AE GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$376                     =  0004B2 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$377                     =  0004B6 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$378                     =  0004B9 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$379                     =  0004BD GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$380                     =  0004BF GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$381                     =  0004BF GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$382                     =  0004C6 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$383                     =  0004C9 GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$384                     =  0004DB GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$385                     =  0004DB GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$386                     =  0004DB GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$387                     =  0004DD GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$388                     =  0004DD GR
-  9 Sstm8s_adc1$ADC1_GetConversionValue$389                     =  0004DE GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$538                          =  00068B GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$539                          =  00068B GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$540                          =  00068D GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$541                          =  00068D GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$542                          =  000693 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$543                          =  000699 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$544                          =  00069F GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$545                          =  0006A5 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$546                          =  0006AB GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$547                          =  0006B1 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$548                          =  0006B7 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$549                          =  0006BD GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$550                          =  0006C3 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$371                     =  0004A6 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$372                     =  0004A6 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$373                     =  0004AB GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$374                     =  0004AB GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$375                     =  0004AF GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$376                     =  0004B3 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$377                     =  0004B5 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$378                     =  0004B8 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$379                     =  0004B9 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$380                     =  0004BB GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$381                     =  0004BB GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$382                     =  0004C2 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$383                     =  0004C5 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$384                     =  0004D9 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$385                     =  0004D9 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$386                     =  0004D9 GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$387                     =  0004DB GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$388                     =  0004DB GR
+  9 Sstm8s_adc1$ADC1_GetConversionValue$389                     =  0004DC GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$538                          =  000683 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$539                          =  000683 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$540                          =  000684 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$541                          =  000684 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$542                          =  00068A GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$543                          =  000690 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$544                          =  000696 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$545                          =  00069C GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$546                          =  0006A2 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$547                          =  0006A8 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$548                          =  0006AE GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$549                          =  0006B4 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$550                          =  0006BA GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$551                          =  0006C0 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$552                          =  0006C6 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$553                          =  0006CC GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$554                          =  0006D2 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$555                          =  0006D4 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$556                          =  0006D6 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$557                          =  0006D8 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$558                          =  0006DE GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$559                          =  0006DE GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$560                          =  0006E6 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$561                          =  0006E6 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$562                          =  0006E6 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 32
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$551                          =  0006C9 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$552                          =  0006CF GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$553                          =  0006D5 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$554                          =  0006DB GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$555                          =  0006DD GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$556                          =  0006DF GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$557                          =  0006E1 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$558                          =  0006E7 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$559                          =  0006E7 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$560                          =  0006F6 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$561                          =  0006F6 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$562                          =  0006F6 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$563                          =  0006FB GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$564                          =  0006FD GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$565                          =  000708 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$566                          =  000708 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$567                          =  000708 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$568                          =  00070C GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$569                          =  000711 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$570                          =  000711 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$571                          =  000719 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$572                          =  000723 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$573                          =  000725 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$574                          =  000727 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$575                          =  000727 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$576                          =  000732 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$577                          =  00073C GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$578                          =  00073E GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$579                          =  000740 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$580                          =  000740 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$581                          =  000745 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$582                          =  000745 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$583                          =  000748 GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$584                          =  00074A GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$585                          =  00074A GR
-  9 Sstm8s_adc1$ADC1_GetFlagStatus$586                          =  00074B GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$643                            =  0007FE GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$644                            =  0007FE GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$645                            =  000800 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$646                            =  000800 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$647                            =  000807 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$648                            =  00080C GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$649                            =  000811 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$650                            =  000816 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$651                            =  00081B GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$652                            =  000820 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$653                            =  000825 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$654                            =  00082A GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$655                            =  00082F GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$656                            =  000834 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$657                            =  000839 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$658                            =  00083E GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$659                            =  000843 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$660                            =  000845 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$661                            =  000847 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$563                          =  0006EB GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$564                          =  0006ED GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$565                          =  0006F4 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$566                          =  0006F4 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$567                          =  0006F4 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$568                          =  0006F8 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$569                          =  0006FD GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$570                          =  0006FD GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$571                          =  000705 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$572                          =  00070F GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$573                          =  000711 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$574                          =  000713 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$575                          =  000713 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$576                          =  00071E GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$577                          =  000728 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$578                          =  00072A GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$579                          =  00072C GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$580                          =  00072C GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$581                          =  000731 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$582                          =  000731 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$583                          =  000734 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$584                          =  000735 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$585                          =  000735 GR
+  9 Sstm8s_adc1$ADC1_GetFlagStatus$586                          =  000736 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$647                            =  0007E2 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$648                            =  0007E2 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$649                            =  0007E4 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$650                            =  0007E4 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$651                            =  0007EB GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$652                            =  0007F0 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$653                            =  0007F5 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$654                            =  0007FA GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$655                            =  0007FF GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$656                            =  000804 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$657                            =  000809 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$658                            =  00080E GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$659                            =  000813 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$660                            =  000818 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$661                            =  00081D GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$662                            =  000822 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$663                            =  000827 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$664                            =  000829 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$665                            =  00082B GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$666                            =  00082D GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$667                            =  000833 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$668                            =  000833 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$669                            =  00083E GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$670                            =  00083E GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$671                            =  00083E GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$672                            =  000842 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$673                            =  000847 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$674                            =  000847 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$675                            =  00084B GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$676                            =  000859 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$677                            =  00085E GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 33
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_GetITStatus$662                            =  000849 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$663                            =  00084F GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$664                            =  00084F GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$665                            =  00085A GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$666                            =  00085A GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$667                            =  00085A GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$668                            =  00085E GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$669                            =  000863 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$670                            =  000863 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$671                            =  000867 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$672                            =  000875 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$673                            =  00087A GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$674                            =  00087C GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$675                            =  00087C GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$676                            =  000887 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$677                            =  000891 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$678                            =  000896 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$679                            =  000898 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$680                            =  000898 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$681                            =  0008A4 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$682                            =  0008A4 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$683                            =  0008A4 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$684                            =  0008A6 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$685                            =  0008A6 GR
-  9 Sstm8s_adc1$ADC1_GetITStatus$686                            =  0008A7 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$678                            =  000860 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$679                            =  000860 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$680                            =  00086B GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$681                            =  000875 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$682                            =  00087A GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$683                            =  00087C GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$684                            =  00087C GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$685                            =  000888 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$686                            =  000888 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$687                            =  000888 GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$688                            =  00088A GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$689                            =  00088A GR
+  9 Sstm8s_adc1$ADC1_GetITStatus$690                            =  00088B GR
   9 Sstm8s_adc1$ADC1_ITConfig$165                               =  00021A GR
   9 Sstm8s_adc1$ADC1_ITConfig$166                               =  00021A GR
   9 Sstm8s_adc1$ADC1_ITConfig$167                               =  00021C GR
@@ -1978,11 +1966,6 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_ITConfig$192                               =  000266 GR
   9 Sstm8s_adc1$ADC1_ITConfig$193                               =  00026D GR
   9 Sstm8s_adc1$ADC1_ITConfig$194                               =  00026D GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 34
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 Sstm8s_adc1$ADC1_ITConfig$195                               =  00026F GR
   9 Sstm8s_adc1$ADC1_ITConfig$196                               =  00026F GR
   9 Sstm8s_adc1$ADC1_ITConfig$197                               =  000270 GR
@@ -1995,6 +1978,11 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_Init$18                                    =  000031 GR
   9 Sstm8s_adc1$ADC1_Init$19                                    =  000032 GR
   9 Sstm8s_adc1$ADC1_Init$20                                    =  000032 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 34
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 Sstm8s_adc1$ADC1_Init$21                                    =  00003C GR
   9 Sstm8s_adc1$ADC1_Init$22                                    =  00003E GR
   9 Sstm8s_adc1$ADC1_Init$23                                    =  000040 GR
@@ -2038,11 +2026,6 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_Init$61                                    =  0000EF GR
   9 Sstm8s_adc1$ADC1_Init$62                                    =  0000F5 GR
   9 Sstm8s_adc1$ADC1_Init$63                                    =  0000F5 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 35
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 Sstm8s_adc1$ADC1_Init$64                                    =  0000FF GR
   9 Sstm8s_adc1$ADC1_Init$65                                    =  000101 GR
   9 Sstm8s_adc1$ADC1_Init$66                                    =  000103 GR
@@ -2055,6 +2038,11 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_Init$73                                    =  000126 GR
   9 Sstm8s_adc1$ADC1_Init$74                                    =  00012C GR
   9 Sstm8s_adc1$ADC1_Init$75                                    =  000132 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 35
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 Sstm8s_adc1$ADC1_Init$76                                    =  000138 GR
   9 Sstm8s_adc1$ADC1_Init$77                                    =  00013E GR
   9 Sstm8s_adc1$ADC1_Init$78                                    =  000144 GR
@@ -2098,11 +2086,6 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_PrescalerConfig$214                        =  0002B3 GR
   9 Sstm8s_adc1$ADC1_PrescalerConfig$215                        =  0002BB GR
   9 Sstm8s_adc1$ADC1_PrescalerConfig$216                        =  0002BC GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 36
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 Sstm8s_adc1$ADC1_PrescalerConfig$217                        =  0002BC GR
   9 Sstm8s_adc1$ADC1_PrescalerConfig$218                        =  0002BD GR
   9 Sstm8s_adc1$ADC1_ScanModeCmd$125                            =  0001C6 GR
@@ -2115,6 +2098,11 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_ScanModeCmd$132                            =  0001DB GR
   9 Sstm8s_adc1$ADC1_ScanModeCmd$133                            =  0001DB GR
   9 Sstm8s_adc1$ADC1_ScanModeCmd$134                            =  0001DE GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 36
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 Sstm8s_adc1$ADC1_ScanModeCmd$135                            =  0001E2 GR
   9 Sstm8s_adc1$ADC1_ScanModeCmd$136                            =  0001E2 GR
   9 Sstm8s_adc1$ADC1_ScanModeCmd$137                            =  0001E7 GR
@@ -2158,11 +2146,6 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$249                   =  00032A GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$250                   =  00032E GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$251                   =  000331 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 37
-Hexadecimal [24-Bits]
-
-Symbol Table
-
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$252                   =  000331 GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$253                   =  000335 GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$254                   =  000335 GR
@@ -2175,6 +2158,11 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$261                   =  00034F GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$262                   =  000354 GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$263                   =  000359 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 37
+Hexadecimal [24-Bits]
+
+Symbol Table
+
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$264                   =  00035C GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$265                   =  000366 GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$266                   =  000366 GR
@@ -2202,67 +2190,67 @@ Symbol Table
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$288                   =  0003A1 GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$289                   =  0003A2 GR
   9 Sstm8s_adc1$ADC1_SchmittTriggerConfig$290                   =  0003A3 GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$449                       =  00058A GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$450                       =  00058A GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$451                       =  00058A GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$452                       =  000592 GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$453                       =  000597 GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$454                       =  000597 GR
-  9 Sstm8s_adc1$ADC1_SetHighThreshold$455                       =  000598 GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$456                        =  000598 GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$457                        =  000598 GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$458                        =  000598 GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$459                        =  00059C GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$460                        =  0005A2 GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$461                        =  0005A2 GR
-  9 Sstm8s_adc1$ADC1_SetLowThreshold$462                        =  0005A3 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$449                       =  000588 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$450                       =  000588 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$451                       =  000588 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$452                       =  000590 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$453                       =  000595 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$454                       =  000595 GR
+  9 Sstm8s_adc1$ADC1_SetHighThreshold$455                       =  000596 GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$456                        =  000596 GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$457                        =  000596 GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$458                        =  000596 GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$459                        =  00059A GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$460                        =  0005A0 GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$461                        =  0005A0 GR
+  9 Sstm8s_adc1$ADC1_SetLowThreshold$462                        =  0005A1 GR
   9 Sstm8s_adc1$ADC1_StartConversion$363                        =  00049F GR
   9 Sstm8s_adc1$ADC1_StartConversion$364                        =  00049F GR
+  9 Sstm8s_adc1$ADC1_StartConversion$365                        =  00049F GR
+  9 Sstm8s_adc1$ADC1_StartConversion$366                        =  0004A3 GR
+  9 Sstm8s_adc1$ADC1_StartConversion$367                        =  0004A3 GR
+  9 Sstm8s_adc1$ADC1_StartConversion$368                        =  0004A4 GR
+  9 XG$ADC1_ClearFlag$0$0                                       =  0007E1 GR
+  9 XG$ADC1_ClearITPendingBit$0$0                               =  00093D GR
+  9 XG$ADC1_Cmd$0$0                                             =  0001C5 GR
+  9 XG$ADC1_DataBufferCmd$0$0                                   =  000219 GR
+  9 XG$ADC1_DeInit$0$0                                          =  000030 GR
+  9 XG$ADC1_GetAWDChannelStatus$0$0                             =  000682 GR
+  9 XG$ADC1_GetBufferValue$0$0                                  =  00060C GR
+  9 XG$ADC1_GetConversionValue$0$0                              =  0004DB GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8) Page 38
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_adc1$ADC1_StartConversion$365                        =  00049F GR
-  9 Sstm8s_adc1$ADC1_StartConversion$366                        =  0004A3 GR
-  9 Sstm8s_adc1$ADC1_StartConversion$367                        =  0004A3 GR
-  9 Sstm8s_adc1$ADC1_StartConversion$368                        =  0004A4 GR
-  9 XG$ADC1_ClearFlag$0$0                                       =  0007FD GR
-  9 XG$ADC1_ClearITPendingBit$0$0                               =  000959 GR
-  9 XG$ADC1_Cmd$0$0                                             =  0001C5 GR
-  9 XG$ADC1_DataBufferCmd$0$0                                   =  000219 GR
-  9 XG$ADC1_DeInit$0$0                                          =  000030 GR
-  9 XG$ADC1_GetAWDChannelStatus$0$0                             =  00068A GR
-  9 XG$ADC1_GetBufferValue$0$0                                  =  000614 GR
-  9 XG$ADC1_GetConversionValue$0$0                              =  0004DD GR
-  9 XG$ADC1_GetFlagStatus$0$0                                   =  00074A GR
-  9 XG$ADC1_GetITStatus$0$0                                     =  0008A6 GR
+  9 XG$ADC1_GetFlagStatus$0$0                                   =  000735 GR
+  9 XG$ADC1_GetITStatus$0$0                                     =  00088A GR
   9 XG$ADC1_ITConfig$0$0                                        =  00026F GR
   9 XG$ADC1_PrescalerConfig$0$0                                 =  0002BC GR
   9 XG$ADC1_ScanModeCmd$0$0                                     =  0001EF GR
-  9 XG$ADC1_SetHighThreshold$0$0                                =  000597 GR
-  9 XG$ADC1_SetLowThreshold$0$0                                 =  0005A2 GR
+  9 XG$ADC1_SetHighThreshold$0$0                                =  000595 GR
+  9 XG$ADC1_SetLowThreshold$0$0                                 =  0005A0 GR
   9 XG$ADC1_StartConversion$0$0                                 =  0004A3 GR
-  9 _ADC1_AWDChannelConfig                                         0004DE GR
-  9 _ADC1_ClearFlag                                                00074B GR
-  9 _ADC1_ClearITPendingBit                                        0008A7 GR
+  9 _ADC1_AWDChannelConfig                                         0004DC GR
+  9 _ADC1_ClearFlag                                                000736 GR
+  9 _ADC1_ClearITPendingBit                                        00088B GR
   9 _ADC1_Cmd                                                      00019C GR
   9 _ADC1_ConversionConfig                                         0003A3 GR
   9 _ADC1_DataBufferCmd                                            0001F0 GR
   9 _ADC1_DeInit                                                   000000 GR
   9 _ADC1_ExternalTriggerConfig                                    00044D GR
-  9 _ADC1_GetAWDChannelStatus                                      000615 GR
-  9 _ADC1_GetBufferValue                                           0005A3 GR
+  9 _ADC1_GetAWDChannelStatus                                      00060D GR
+  9 _ADC1_GetBufferValue                                           0005A1 GR
   9 _ADC1_GetConversionValue                                       0004A4 GR
-  9 _ADC1_GetFlagStatus                                            00068B GR
-  9 _ADC1_GetITStatus                                              0007FE GR
+  9 _ADC1_GetFlagStatus                                            000683 GR
+  9 _ADC1_GetITStatus                                              0007E2 GR
   9 _ADC1_ITConfig                                                 00021A GR
   9 _ADC1_Init                                                     000031 GR
   9 _ADC1_PrescalerConfig                                          000270 GR
   9 _ADC1_ScanModeCmd                                              0001C6 GR
   9 _ADC1_SchmittTriggerConfig                                     0002BD GR
-  9 _ADC1_SetHighThreshold                                         00058A GR
-  9 _ADC1_SetLowThreshold                                          000598 GR
+  9 _ADC1_SetHighThreshold                                         000588 GR
+  9 _ADC1_SetLowThreshold                                          000596 GR
   9 _ADC1_StartConversion                                          00049F GR
   7 ___str_0                                                       000000 R
     _assert_failed                                                 ****** GX
@@ -2282,12 +2270,12 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     48   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size    95A   flags    0
+   9 CODE                                       size    93E   flags    0
    A CABS                                       size      0   flags    8
-   B .debug_line                                size    942   flags  100
-   C .debug_loc                                 size   1334   flags  100
+   B .debug_line                                size    94E   flags  100
+   C .debug_loc                                 size   1364   flags  100
    D .debug_abbrev                              size     A1   flags  100
    E .debug_info                                size    8D8   flags  100
    F .debug_pubnames                            size    1FC   flags  100
-  10 .debug_frame                               size    E18   flags  100
+  10 .debug_frame                               size    E34   flags  100
 

@@ -141,96 +141,95 @@ Symbol Table
   9 A$stm8s_itc$392                                                00013F GR
   9 A$stm8s_itc$397                                                000142 GR
   9 A$stm8s_itc$398                                                000144 GR
-  9 A$stm8s_itc$399                                                000145 GR
+  9 A$stm8s_itc$399                                                000146 GR
   9 A$stm8s_itc$400                                                000147 GR
   9 A$stm8s_itc$401                                                000148 GR
-  9 A$stm8s_itc$402                                                000149 GR
-  9 A$stm8s_itc$403                                                00014B GR
+  9 A$stm8s_itc$402                                                00014A GR
+  9 A$stm8s_itc$404                                                00014B GR
   9 A$stm8s_itc$405                                                00014C GR
   9 A$stm8s_itc$406                                                00014D GR
-  9 A$stm8s_itc$407                                                00014E GR
-  9 A$stm8s_itc$409                                                000150 GR
+  9 A$stm8s_itc$408                                                00014F GR
+  9 A$stm8s_itc$409                                                000151 GR
   9 A$stm8s_itc$410                                                000152 GR
-  9 A$stm8s_itc$411                                                000153 GR
-  9 A$stm8s_itc$413                                                000155 GR
+  9 A$stm8s_itc$412                                                000154 GR
+  9 A$stm8s_itc$414                                                000155 GR
   9 A$stm8s_itc$415                                                000156 GR
-  9 A$stm8s_itc$416                                                000157 GR
-  9 A$stm8s_itc$419                                                000159 GR
-  9 A$stm8s_itc$420                                                00015B GR
+  9 A$stm8s_itc$418                                                000158 GR
+  9 A$stm8s_itc$419                                                00015A GR
+  9 A$stm8s_itc$421                                                00015B GR
   9 A$stm8s_itc$422                                                00015C GR
   9 A$stm8s_itc$423                                                00015D GR
-  9 A$stm8s_itc$424                                                00015E GR
-  9 A$stm8s_itc$426                                                000160 GR
+  9 A$stm8s_itc$425                                                00015F GR
+  9 A$stm8s_itc$426                                                000161 GR
   9 A$stm8s_itc$427                                                000162 GR
-  9 A$stm8s_itc$428                                                000163 GR
-  9 A$stm8s_itc$430                                                000165 GR
-  9 A$stm8s_itc$432                                                000166 GR
-  9 A$stm8s_itc$435                                                000168 GR
-  9 A$stm8s_itc$436                                                00016A GR
-  9 A$stm8s_itc$437                                                00016C GR
+  9 A$stm8s_itc$429                                                000164 GR
+  9 A$stm8s_itc$431                                                000165 GR
+  9 A$stm8s_itc$434                                                000167 GR
+  9 A$stm8s_itc$435                                                000169 GR
+  9 A$stm8s_itc$436                                                00016B GR
+  9 A$stm8s_itc$438                                                00016E GR
   9 A$stm8s_itc$439                                                00016F GR
-  9 A$stm8s_itc$440                                                000170 GR
+  9 A$stm8s_itc$440                                                000171 GR
   9 A$stm8s_itc$441                                                000172 GR
   9 A$stm8s_itc$442                                                000173 GR
-  9 A$stm8s_itc$443                                                000174 GR
-  9 A$stm8s_itc$444                                                000177 GR
-  9 A$stm8s_itc$477                                                0001AA GR
-  9 A$stm8s_itc$478                                                0001AD GR
-  9 A$stm8s_itc$479                                                0001AF GR
-  9 A$stm8s_itc$482                                                0001B2 GR
+  9 A$stm8s_itc$443                                                000176 GR
+  9 A$stm8s_itc$476                                                0001A9 GR
+  9 A$stm8s_itc$477                                                0001AC GR
+  9 A$stm8s_itc$478                                                0001AE GR
+  9 A$stm8s_itc$481                                                0001B1 GR
+  9 A$stm8s_itc$482                                                0001B4 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 4
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_itc$483                                                0001B5 GR
-  9 A$stm8s_itc$484                                                0001B7 GR
-  9 A$stm8s_itc$487                                                0001BA GR
-  9 A$stm8s_itc$493                                                0001BC GR
-  9 A$stm8s_itc$494                                                0001BF GR
-  9 A$stm8s_itc$495                                                0001C1 GR
-  9 A$stm8s_itc$498                                                0001C4 GR
-  9 A$stm8s_itc$499                                                0001C7 GR
-  9 A$stm8s_itc$500                                                0001C9 GR
-  9 A$stm8s_itc$503                                                0001CC GR
-  9 A$stm8s_itc$509                                                0001CE GR
-  9 A$stm8s_itc$510                                                0001D1 GR
-  9 A$stm8s_itc$511                                                0001D3 GR
-  9 A$stm8s_itc$514                                                0001D6 GR
-  9 A$stm8s_itc$515                                                0001D9 GR
-  9 A$stm8s_itc$516                                                0001DB GR
-  9 A$stm8s_itc$519                                                0001DE GR
-  9 A$stm8s_itc$525                                                0001E0 GR
-  9 A$stm8s_itc$526                                                0001E3 GR
-  9 A$stm8s_itc$527                                                0001E5 GR
-  9 A$stm8s_itc$530                                                0001E8 GR
-  9 A$stm8s_itc$531                                                0001EB GR
-  9 A$stm8s_itc$532                                                0001ED GR
-  9 A$stm8s_itc$535                                                0001F0 GR
-  9 A$stm8s_itc$541                                                0001F2 GR
-  9 A$stm8s_itc$542                                                0001F5 GR
-  9 A$stm8s_itc$543                                                0001F7 GR
-  9 A$stm8s_itc$546                                                0001FA GR
-  9 A$stm8s_itc$547                                                0001FD GR
-  9 A$stm8s_itc$548                                                0001FF GR
-  9 A$stm8s_itc$551                                                000202 GR
-  9 A$stm8s_itc$557                                                000204 GR
-  9 A$stm8s_itc$558                                                000207 GR
-  9 A$stm8s_itc$559                                                000209 GR
-  9 A$stm8s_itc$562                                                00020C GR
-  9 A$stm8s_itc$563                                                00020F GR
-  9 A$stm8s_itc$564                                                000211 GR
-  9 A$stm8s_itc$567                                                000214 GR
-  9 A$stm8s_itc$573                                                000216 GR
-  9 A$stm8s_itc$574                                                000219 GR
-  9 A$stm8s_itc$575                                                00021B GR
-  9 A$stm8s_itc$578                                                00021E GR
-  9 A$stm8s_itc$579                                                000221 GR
-  9 A$stm8s_itc$580                                                000223 GR
-  9 A$stm8s_itc$587                                                000226 GR
-  9 A$stm8s_itc$589                                                000228 GR
-  9 A$stm8s_itc$591                                                000229 GR
-  9 A$stm8s_itc$593                                                00022A GR
+  9 A$stm8s_itc$483                                                0001B6 GR
+  9 A$stm8s_itc$486                                                0001B9 GR
+  9 A$stm8s_itc$492                                                0001BB GR
+  9 A$stm8s_itc$493                                                0001BE GR
+  9 A$stm8s_itc$494                                                0001C0 GR
+  9 A$stm8s_itc$497                                                0001C3 GR
+  9 A$stm8s_itc$498                                                0001C6 GR
+  9 A$stm8s_itc$499                                                0001C8 GR
+  9 A$stm8s_itc$502                                                0001CB GR
+  9 A$stm8s_itc$508                                                0001CD GR
+  9 A$stm8s_itc$509                                                0001D0 GR
+  9 A$stm8s_itc$510                                                0001D2 GR
+  9 A$stm8s_itc$513                                                0001D5 GR
+  9 A$stm8s_itc$514                                                0001D8 GR
+  9 A$stm8s_itc$515                                                0001DA GR
+  9 A$stm8s_itc$518                                                0001DD GR
+  9 A$stm8s_itc$524                                                0001DF GR
+  9 A$stm8s_itc$525                                                0001E2 GR
+  9 A$stm8s_itc$526                                                0001E4 GR
+  9 A$stm8s_itc$529                                                0001E7 GR
+  9 A$stm8s_itc$530                                                0001EA GR
+  9 A$stm8s_itc$531                                                0001EC GR
+  9 A$stm8s_itc$534                                                0001EF GR
+  9 A$stm8s_itc$540                                                0001F1 GR
+  9 A$stm8s_itc$541                                                0001F4 GR
+  9 A$stm8s_itc$542                                                0001F6 GR
+  9 A$stm8s_itc$545                                                0001F9 GR
+  9 A$stm8s_itc$546                                                0001FC GR
+  9 A$stm8s_itc$547                                                0001FE GR
+  9 A$stm8s_itc$550                                                000201 GR
+  9 A$stm8s_itc$556                                                000203 GR
+  9 A$stm8s_itc$557                                                000206 GR
+  9 A$stm8s_itc$558                                                000208 GR
+  9 A$stm8s_itc$561                                                00020B GR
+  9 A$stm8s_itc$562                                                00020E GR
+  9 A$stm8s_itc$563                                                000210 GR
+  9 A$stm8s_itc$566                                                000213 GR
+  9 A$stm8s_itc$572                                                000215 GR
+  9 A$stm8s_itc$573                                                000218 GR
+  9 A$stm8s_itc$574                                                00021A GR
+  9 A$stm8s_itc$577                                                00021D GR
+  9 A$stm8s_itc$578                                                000220 GR
+  9 A$stm8s_itc$579                                                000222 GR
+  9 A$stm8s_itc$586                                                000225 GR
+  9 A$stm8s_itc$588                                                000227 GR
+  9 A$stm8s_itc$590                                                000228 GR
+  9 A$stm8s_itc$592                                                000229 GR
   9 A$stm8s_itc$63                                                 000000 GR
   9 A$stm8s_itc$66                                                 000001 GR
   9 A$stm8s_itc$71                                                 000002 GR
@@ -238,12 +237,12 @@ Symbol Table
   9 A$stm8s_itc$85                                                 000007 GR
   9 A$stm8s_itc$88                                                 00000B GR
   9 A$stm8s_itc$91                                                 00000F GR
+  9 A$stm8s_itc$94                                                 000013 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 5
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 A$stm8s_itc$94                                                 000013 GR
   9 A$stm8s_itc$97                                                 000017 GR
   7 Fstm8s_itc$__str_0$0_0$0                                    =  000000 GR
  10 Ldebug_CIE0_end                                                000014 R
@@ -259,9 +258,9 @@ Symbol Table
   D Ldebug_abbrev                                                  000000 R
   E Ldebug_info_end                                                0001DB R
   E Ldebug_info_start                                              000004 R
-  B Ldebug_line_end                                                000402 R
+  B Ldebug_line_end                                                00040E R
   B Ldebug_line_start                                              000004 R
-  B Ldebug_line_stmt                                               0000B2 R
+  B Ldebug_line_stmt                                               0000BE R
   C Ldebug_loc_start                                               000000 R
   F Ldebug_pubnames_end                                            000083 R
   F Ldebug_pubnames_start                                          000004 R
@@ -298,12 +297,12 @@ Symbol Table
   9 Sstm8s_itc$ITC_GetSoftwarePriority$30                       =  000030 GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$31                       =  000044 GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$32                       =  000046 GR
+  9 Sstm8s_itc$ITC_GetSoftwarePriority$33                       =  000048 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 6
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_itc$ITC_GetSoftwarePriority$33                       =  000048 GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$34                       =  00004E GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$35                       =  00004E GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$36                       =  000062 GR
@@ -338,43 +337,43 @@ Symbol Table
   9 Sstm8s_itc$ITC_GetSoftwarePriority$65                       =  0000ED GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$66                       =  0000ED GR
   9 Sstm8s_itc$ITC_GetSoftwarePriority$67                       =  0000EE GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$100                      =  0001B2 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$101                      =  0001BA GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$102                      =  0001BC GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$103                      =  0001BC GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$104                      =  0001C4 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$105                      =  0001CC GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$106                      =  0001CE GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$107                      =  0001CE GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$108                      =  0001D6 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$109                      =  0001DE GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$110                      =  0001E0 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$111                      =  0001E0 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$112                      =  0001E8 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$113                      =  0001F0 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$114                      =  0001F2 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$115                      =  0001F2 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$116                      =  0001FA GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$117                      =  000202 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$118                      =  000204 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$119                      =  000204 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$100                      =  0001B1 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$101                      =  0001B9 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$102                      =  0001BB GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$103                      =  0001BB GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$104                      =  0001C3 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$105                      =  0001CB GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$106                      =  0001CD GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$107                      =  0001CD GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$108                      =  0001D5 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$109                      =  0001DD GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$110                      =  0001DF GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$111                      =  0001DF GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$112                      =  0001E7 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$113                      =  0001EF GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$114                      =  0001F1 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$115                      =  0001F1 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$116                      =  0001F9 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$117                      =  000201 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$118                      =  000203 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$119                      =  000203 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$120                      =  00020B GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 7
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$120                      =  00020C GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$121                      =  000214 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$122                      =  000216 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$123                      =  000216 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$124                      =  00021E GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$125                      =  000226 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$126                      =  000226 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$127                      =  000226 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$128                      =  000228 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$129                      =  000229 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$130                      =  00022A GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$131                      =  00022B GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$121                      =  000213 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$122                      =  000215 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$123                      =  000215 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$124                      =  00021D GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$125                      =  000225 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$126                      =  000225 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$127                      =  000225 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$128                      =  000227 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$129                      =  000228 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$130                      =  000229 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$131                      =  00022A GR
   9 Sstm8s_itc$ITC_SetSoftwarePriority$68                       =  0000EE GR
   9 Sstm8s_itc$ITC_SetSoftwarePriority$69                       =  0000EE GR
   9 Sstm8s_itc$ITC_SetSoftwarePriority$70                       =  0000F0 GR
@@ -398,15 +397,15 @@ Symbol Table
   9 Sstm8s_itc$ITC_SetSoftwarePriority$88                       =  00013C GR
   9 Sstm8s_itc$ITC_SetSoftwarePriority$89                       =  000142 GR
   9 Sstm8s_itc$ITC_SetSoftwarePriority$90                       =  000142 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$91                       =  00014C GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$92                       =  000156 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$93                       =  000159 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$94                       =  00015C GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$95                       =  000166 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$96                       =  000168 GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$97                       =  0001AA GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$98                       =  0001AA GR
-  9 Sstm8s_itc$ITC_SetSoftwarePriority$99                       =  0001AA GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$91                       =  00014B GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$92                       =  000155 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$93                       =  000158 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$94                       =  00015B GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$95                       =  000165 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$96                       =  000167 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$97                       =  0001A9 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$98                       =  0001A9 GR
+  9 Sstm8s_itc$ITC_SetSoftwarePriority$99                       =  0001A9 GR
   9 XG$ITC_DeInit$0$0                                           =  000023 GR
   9 XG$ITC_GetCPUCC$0$0                                         =  000002 GR
   9 XG$ITC_GetSoftIntStatus$0$0                                 =  000029 GR
@@ -418,14 +417,8 @@ Symbol Table
   9 _ITC_SetSoftwarePriority                                       0000EE GR
   7 ___str_0                                                       000000 R
     _assert_failed                                                 ****** GX
+
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 8
-Hexadecimal [24-Bits]
-
-Symbol Table
-
-
-
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (STMicroelectronics STM8)  Page 9
 Hexadecimal [24-Bits]
 
 Area Table
@@ -439,9 +432,9 @@ Area Table
    6 GSFINAL                                    size      0   flags    0
    7 CONST                                      size     47   flags    0
    8 INITIALIZER                                size      0   flags    0
-   9 CODE                                       size    22B   flags    0
+   9 CODE                                       size    22A   flags    0
    A CABS                                       size      0   flags    8
-   B .debug_line                                size    402   flags  100
+   B .debug_line                                size    40E   flags  100
    C .debug_loc                                 size     B0   flags  100
    D .debug_abbrev                              size     91   flags  100
    E .debug_info                                size    1DB   flags  100
