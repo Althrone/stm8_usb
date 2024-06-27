@@ -20,6 +20,9 @@ void usb_tx(void)
     __asm__ ("push	_usb_tx_buf+10");
     __asm__ ("push	_usb_tx_buf+11");
 
+    __asm__ ("ldw	X,#_usb_tx_buf");
+    __asm__ ("mov	0x500A,#0x40");
+
     __asm__ ("Tx_Bit0_0:");
     __asm__ ("rrc	(X)");
     __asm__ ("jrc	Tx_Bit0_1;不翻转电平j2 nj1");

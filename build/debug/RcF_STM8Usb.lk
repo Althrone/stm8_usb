@@ -1,0 +1,12 @@
+-muwx
+-E build/debug/RcF_STM8Usb.elf
+-y
+-b HOME = 0x8000
+-b DATA = 0x0001
+-k D:\Software\Work\SDCC\bin\..\lib\stm8
+-l stm8
+build/debug/main.rel
+build/debug/stm8s_gpio.rel
+build/debug/usb_tx.rel
+
+-e
