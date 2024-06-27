@@ -56,43 +56,38 @@ OCD_CHIP_FILE = stm8s103.cfg	#芯片配置文件
 #elf是调试用的
 all: $(BUILD_DIR)/debug/$(TARGET).elf $(BUILD_DIR)/release/$(TARGET).ihx##########请nm的绝对保证all放在PHONY第一个
 	@echo build at $(COMPILE_TIME)
-# all: $(BUILD_DIR)/debug/$(TARGET).elf ##########请nm的绝对保证all放在PHONY第一个
-# 	@echo build at $(COMPILE_TIME)
 
 vpath %.c $(sort $(dir $(SRCS_C)))
 
 $(BUILD_DIR)/debug/%.rel: %.c Makefile | $(BUILD_DIR)/debug 
 	$(CC) -c $(CFLAGS) --debug --out-fmt-elf --opt-code-size $< -o $@
 
-$(BUILD_DIR)/release/%.rel: %.c Makefile | $(BUILD_DIR)/release
-	$(CC) -c $(CFLAGS) --opt-code-size $< -o $@
+# $(BUILD_DIR)/release/%.rel: %.c Makefile | $(BUILD_DIR)/release
+# 	$(CC) -c $(CFLAGS) --opt-code-size $< -o $@
 
 $(BUILD_DIR)/debug/$(TARGET).elf: $(OBJS_DEBUG) Makefile
 	$(CC) $(CFLAGS) --debug --opt-code-size --out-fmt-elf -o $^ $@
 
 # $(SZ) $@
 
-$(BUILD_DIR)/release/$(TARGET).ihx: $(OBJS_RELEASE) Makefile
-	$(CC) $(CFLAGS) --opt-code-size --out-fmt-ihx $^ -o $@
+# $(BUILD_DIR)/release/$(TARGET).ihx: $(OBJS_RELEASE) Makefile
+# 	$(CC) $(CFLAGS) --opt-code-size --out-fmt-ihx $^ -o $@
 	
 $(BUILD_DIR):
 	mkdir $@
 	mkdir $@/debug
 	mkdir $@/release
 
-# burn:
-# 	openocd \
-# 	-f interface/$(OCD_LINK_FILE) \
-# 	-f target/$(OCD_CHIP_FILE) \
-# 	-c init \
-# 	-c "reset halt" \
-# 	-c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
-# 	-c "reset run" \
-# 	-c exit
-# -c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
-
 burn:
-	./stm8flash -c stlinkv2 -d /dev/ttyUSB0 -p stm8s103f3 -w build/release/RcF_STM8Usb.ihx
+	openocd \
+	-f interface/$(OCD_LINK_FILE) \
+	-f target/$(OCD_CHIP_FILE) \
+	-c init \
+	-c "reset halt" \
+	-c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
+	-c "reset run" \
+	-c exit
+# -c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
 
 link: 
 	openocd \

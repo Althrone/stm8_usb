@@ -1,16 +1,13 @@
 #include "usb_tx.h"
 
-static unsigned char tx_buf_size=8;
+static unsigned char tx_buf_size=2;
 static unsigned char usb_tx_buf[12]={0};
 
 void usb_tx(void)
 {
-	__asm__ (
-	"; This is a comment\n"
-	"push _tx_buf_size"
-	);
-    
     __asm
+
+    push _tx_buf_size
 
     push _usb_tx_buf+0
     push _usb_tx_buf+1
