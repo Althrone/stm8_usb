@@ -5,28 +5,28 @@ static unsigned char usb_tx_buf[12]={0};
 
 void usb_tx(void)
 {
-	__asm__ (
-	"; This is a comment\n"
-	"push _tx_buf_size"
-	);
+	__asm__ ("push _tx_buf_size");
+
+	__asm__ ("push _usb_tx_buf+0");
+	__asm__ ("push _usb_tx_buf+1");
+	__asm__ ("push _usb_tx_buf+2");
+	__asm__ ("push _usb_tx_buf+3");
+	__asm__ ("push _usb_tx_buf+4");
+	__asm__ ("push _usb_tx_buf+5");
+	__asm__ ("push _usb_tx_buf+6");
+	__asm__ ("push _usb_tx_buf+7");
+	__asm__ ("push _usb_tx_buf+8");
+	__asm__ ("push _usb_tx_buf+9");
+	__asm__ ("push _usb_tx_buf+10");
+	__asm__ ("push _usb_tx_buf+11");
+
+	__asm__ ("Tx_Bit0_0:");
+	__asm__ ("rrc	(X)");
     
     __asm
 
-    push _usb_tx_buf+0
-    push _usb_tx_buf+1
-    push _usb_tx_buf+2
-    push _usb_tx_buf+3
-    push _usb_tx_buf+4
-    push _usb_tx_buf+5
-    push _usb_tx_buf+6
-    push _usb_tx_buf+7
-    push _usb_tx_buf+8
-    push _usb_tx_buf+9
-    push _usb_tx_buf+10
-    push _usb_tx_buf+11
-
-Tx_Bit0_0:
-	rrc	(X)
+// Tx_Bit0_0:
+	// rrc	(X)
 	jrc	Tx_Bit0_1;不翻转电平		j2 nj1
 	cpl	0x500A;翻转输出				1
 	ld	A,#6;复位连续1计数			1
