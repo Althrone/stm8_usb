@@ -1,15 +1,16 @@
 # Prerequisites
 *.d
 
+*.asm
+*.rel
+*.lst
+*.sym
+
 # Object files
 *.o
 *.ko
 *.obj
 *.elf
-
-./build
-./build/debug
-./build/release
 
 # Linker output
 *.ilk

@@ -22,20 +22,20 @@ void usb_tx(void)
 
     __asm__ ("Tx_Bit0_0:");
     __asm__ ("rrc	(X)");
-    __asm__ ("jrc	Tx_Bit0_1;不翻转电平		j2 nj1");
-    __asm__ ("cpl	0x500A;翻转输出				1");
-    __asm__ ("ld	A,#6;复位连续1计数			1");
+    __asm__ ("jrc	Tx_Bit0_1;不翻转电平j2 nj1");
+    __asm__ ("cpl	0x500A;翻转输1");
+    __asm__ ("ld	A,#6;复位连续1计数1");
     __asm__ ("nop");
     __asm__ ("nop");
-    __asm__ ("jp	Tx_Bit1_0;					2");
+    __asm__ ("jp	Tx_Bit1_0;2");
 
     __asm__ ("Tx_Bit0_1:");
     __asm__ ("dec	a;前一位的第10个周期");
     __asm__ ("nop");
     __asm__ ("nop");
-    __asm__ ("jrne	Tx_Bit1_0;a减了之后不等于0，就跳2，等于零 下面位反转+位填充1");
+    __asm__ ("jrne	Tx_Bit1_0;a-了之后不等于0，就跳2，等于零 下面位反转+位填充1");
 
-    __asm__ ("ld	A,#6;复位连续1计数			1");
+    __asm__ ("ld	A,#6;复位连续1计数1");
     __asm__ ("nop");
     __asm__ ("nop");
 
@@ -43,16 +43,16 @@ void usb_tx(void)
     __asm__ ("nop");
     __asm__ ("nop");
     __asm__ ("nop");
-    __asm__ ("jp	Tx_Bit1_0;					2");
+    __asm__ ("jp	Tx_Bit1_0;2");
 
     __asm__ ("Tx_Bit1_0:");
     __asm__ ("rrc	(X)");
-    __asm__ ("jrc	Tx_Bit1_1;不翻转电平		j2 nj1");
-    __asm__ ("cpl	0x500A;翻转输出				1");
-    __asm__ ("ld	A,#6;复位连续1计数			1");
+    __asm__ ("jrc	Tx_Bit1_1;不翻转电平j2 nj1");
+    __asm__ ("cpl	0x500A;翻转输1");
+    __asm__ ("ld	A,#6;复位连续1计数1");
     __asm__ ("nop");
     __asm__ ("nop");
-    __asm__ ("jp	Tx_Bit2_0;					2");
+    __asm__ ("jp	Tx_Bit2_0;2");
 
     __asm
 

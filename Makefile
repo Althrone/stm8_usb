@@ -103,4 +103,4 @@ link:
 
 
 echo:
-	@echo  $(INCS_C)
+	@echo  $(BUILD_DIR)
