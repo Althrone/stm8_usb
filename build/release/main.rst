@@ -54,7 +54,7 @@
                                      54 	.area GSINIT
                                      55 	.area GSFINAL
                                      56 	.area GSINIT
-      008007 CD 82 D7         [ 4]   57 	call	___sdcc_external_startup
+      008007 CD 82 D9         [ 4]   57 	call	___sdcc_external_startup
       00800A 4D               [ 1]   58 	tnz	a
       00800B 27 03            [ 1]   59 	jreq	__sdcc_init_data
       00800D CC 80 04         [ 2]   60 	jp	__sdcc_program_startup

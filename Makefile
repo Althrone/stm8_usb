@@ -41,7 +41,7 @@ C_DEFS = \
 -DSTM8S003 \
 -DHSE_VALUE=12000000
 
-CFLAGS = $(CPU) $(C_DEFS) $(INCS_C)
+CFLAGS = $(CPU) $(C_DEFS) $(INCS_C) --nogcse
 
 #######################################
 #OpenOCD
@@ -51,7 +51,7 @@ OCD_LINK_FILE = stlink-dap.cfg#烧录器配置文件，用于普通买到的烧�
 OCD_CHIP_FILE = stm8s103.cfg	#芯片配置文件
 # OCD_CHIP_FILE = stm8s003.cfg	#芯片配置文件
 
-.PHONY: all
+.PHONY: all build
 
 #elf是调试用的
 all: $(BUILD_DIR)/debug/$(TARGET).elf $(BUILD_DIR)/release/$(TARGET).ihx##########请nm的绝对保证all放在PHONY第一个
@@ -67,15 +67,21 @@ $(BUILD_DIR)/debug/%.rel: %.c Makefile | $(BUILD_DIR)/debug
 $(BUILD_DIR)/release/%.rel: %.c Makefile | $(BUILD_DIR)/release
 	$(CC) -c $(CFLAGS) --opt-code-size $< -o $@
 
-$(BUILD_DIR)/debug/$(TARGET).elf: $(OBJS_DEBUG) Makefile
-	$(CC) $(CFLAGS) --debug --opt-code-size --out-fmt-elf -o $^ $@
+$(BUILD_DIR)/debug/$(TARGET).elf: $(OBJS_DEBUG)
+	@echo -----------------------------------
+	$(CC) $(CFLAGS) --debug --opt-code-size --out-fmt-elf $^ -o $@
+	@echo -----------------------------------
+# $(CC) $(CFLAGS) --debug --opt-code-size --out-fmt-elf -o $^ $@
 
 # $(SZ) $@
 
-$(BUILD_DIR)/release/$(TARGET).ihx: $(OBJS_RELEASE) Makefile
+$(BUILD_DIR)/release/$(TARGET).ihx: $(OBJS_RELEASE)
+	@echo -----------------------------------
 	$(CC) $(CFLAGS) --opt-code-size --out-fmt-ihx $^ -o $@
+	@echo -----------------------------------
+# $(CC) $(CFLAGS) --opt-code-size --out-fmt-ihx $^ -o $@
 	
-$(BUILD_DIR):
+build:
 	mkdir $@
 	mkdir $@/debug
 	mkdir $@/release
@@ -89,7 +95,6 @@ $(BUILD_DIR):
 # 	-c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
 # 	-c "reset run" \
 # 	-c exit
-# -c "load_image $(BUILD_DIR)/debug/$(TARGET).elf 0x8000 elf" \
 
 burn:
 	./stm8flash -c stlinkv2 -d /dev/ttyUSB0 -p stm8s103f3 -w build/release/RcF_STM8Usb.ihx

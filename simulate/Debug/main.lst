@@ -1,4 +1,4 @@
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 1  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
@@ -27,471 +27,434 @@ Page 1  Assembler
 <END_OF_INCLUSION>
    4                         
    5                                   segment  'rom'
-   6                         
-   7                         ;·¢ËÍ2bit timeµÄse0
-   8                         ;·¢ËÍ1bit timeµÄj
-   9                         Tx_Eop1_1:  
-  10  008080   9D                            nop      
-  11                         Tx_Eop3:  
-  12  008081   725F500A                      clr      $500A         ;se0
-  13  008085   90AE0003                      ldw      Y,#3          ;2
-  14                         NOP_delay:  
-  15  008089   905A                          decw     Y
-  16  00808B   26FC                          jrne     NOP_delay
-  17  00808D   9D                            nop      
-  18  00808E   9D                            nop      
-  19                         
-  20  00808F   721C500A                      bset     $500A,#6      ;pc6À­¸ß£¬µ½ÕâÀï²î²»¶àÊÇ2bit 
-                                                                ;time
-  21  008093   9D                            nop      
-  22  008094   9D                            nop      
+   6                                   
+   7                         Tx_Bit0_0:  
+   8  008080   76                            rrc      (X)
+   9  008081   250B                          jrc      Tx_Bit0_1     ;²»·­×ªµçÆ½		j2 nj1
+  10  008083   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+  11  008087   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+  12  008089   9D                            nop      
+  13  00808A   9D                            nop      
+  14  00808B   CC80A1                        jp       Tx_Bit1_0     ;					2
+  15                         
+  16                         Tx_Bit0_1:  
+  17  00808E   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
+  18  00808F   9D                            nop      
+  19  008090   9D                            nop      
+  20  008091   260E                          jrne     Tx_Bit1_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
+                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
+  21                         
+  22  008093   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
   23  008095   9D                            nop      
-  24  008096   81                            ret                    ;·µ»Øµ½cº¯Êý£¬ÕâÀïÒªËÄ¸öcycle
-  25                         Tx_Eop1:  
-  26  008097   CC8080                        jp       Tx_Eop1_1
-  27                         
-  28                         Tx_Bit7_0A:  
-  29  00809A   27FB                          jreq     Tx_Eop1
-  30  00809C   CC8132                        jp       Tx_Bit0_0
-  31                         
-  32                         Tx_Bit1_0:  
-  33  00809F   76                            rrc      (X)
-  34  0080A0   2519                          jrc      Tx_Bit1_1     ;²»·­×ªµçÆ½		j2 nj1
-  35  0080A2   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
-  36  0080A6   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
-  37  0080A7   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+  24  008096   9D                            nop      
+  25                         
+  26                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
+                                                                ;ëÒ»Î»
+  27  008097   7253500A                      cpl      $500A         ;
+  28  00809B   9D                            nop      
+  29  00809C   9D                            nop      
+  30  00809D   9D                            nop      
+  31  00809E   CC80A1                        jp       Tx_Bit1_0     ;2
+  32                         
+  33                         Tx_Bit1_0:  
+  34  0080A1   76                            rrc      (X)
+  35  0080A2   250B                          jrc      Tx_Bit1_1     ;²»·­×ªµçÆ½		j2 nj1
+  36  0080A4   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 2  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
-  38  0080A9   9D                            nop      
-  39  0080AA   CC80AD                        jp       Tx_Bit2_0     ;					2
-  40                         
-  41                         Tx_Bit2_0:  
-  42  0080AD   76                            rrc      (X)
-  43  0080AE   253C                          jrc      Tx_Bit2_1     ;²»·­×ªµçÆ½		j2 nj1
-  44  0080B0   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
-  45  0080B4   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
-  46  0080B5   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
-  47  0080B7   9D                            nop      
-  48  0080B8   CC8154                        jp       Tx_Bit3_0     ;					2
-  49                         
-  50                         Tx_Bit1_1:  
-  51  0080BB   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
-  52  0080BC   9D                            nop      
-  53  0080BD   9D                            nop      
-  54  0080BE   26ED                          jrne     Tx_Bit2_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
+  37  0080A8   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+  38  0080AA   9D                            nop      
+  39  0080AB   9D                            nop      
+  40  0080AC   CC80C2                        jp       Tx_Bit2_0     ;					2
+  41                         
+  42                         Tx_Bit1_1:  
+  43  0080AF   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
+  44  0080B0   9D                            nop      
+  45  0080B1   9D                            nop      
+  46  0080B2   260E                          jrne     Tx_Bit2_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
                                                                 ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
-  55                         
-  56  0080C0   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
-  57  0080C2   9D                            nop      
-  58  0080C3   9D                            nop      
-  59                         
-  60                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
+  47                         
+  48  0080B4   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+  49  0080B6   9D                            nop      
+  50  0080B7   9D                            nop      
+  51                         
+  52                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
                                                                 ;ëÒ»Î»
-  61  0080C4   7253500A                      cpl      $500A         ;
-  62  0080C8   98                            rcf                    ;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
-  63  0080C9   9D                            nop      
-  64  0080CA   9D                            nop      
-  65  0080CB   CC80AD                        jp       Tx_Bit2_0     ;2
-  66                         
-  67                         ;7_1·­×ªµÄÇé¿ö
-  68                         Tx_7_1_Filp:  
-  69                                                          ;dec _tx_buf_size
-  70                                                          ;jrne	Tx_Bit0_0;Èç¹ûÃ»·¢Íê£¬¼ÌÐø
-                                                                ;
-  71                                                          ;·¢ÍêµÄÇé¿ö
-  72                                                          ;jp	Tx_End
+  53  0080B8   7253500A                      cpl      $500A         ;
+  54  0080BC   9D                            nop      
+  55  0080BD   9D                            nop      
+  56  0080BE   9D                            nop      
+  57  0080BF   CC80C2                        jp       Tx_Bit2_0     ;2
+  58                         
+  59                         Tx_Bit2_0:  
+  60  0080C2   76                            rrc      (X)
+  61  0080C3   250B                          jrc      Tx_Bit2_1     ;²»·­×ªµçÆ½		j2 nj1
+  62  0080C5   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+  63  0080C9   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+  64  0080CB   9D                            nop      
+  65  0080CC   9D                            nop      
+  66  0080CD   CC80E3                        jp       Tx_Bit3_0     ;					2
+  67                         
+  68                         Tx_Bit2_1:  
+  69  0080D0   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
+  70  0080D1   9D                            nop      
+  71  0080D2   9D                            nop      
+  72  0080D3   260E                          jrne     Tx_Bit3_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
+                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
   73                         
-  74                         Tx_Bit0_1:  
-  75  0080CE   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
-  76  0080CF   9D                            nop      
-  77  0080D0   9D                            nop      
-  78  0080D1   26CC                          jrne     Tx_Bit1_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
-                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
-  79                         
-  80  0080D3   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
-  81  0080D5   9D                            nop      
-  82  0080D6   9D                            nop      
-  83                         
-  84                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
+  74  0080D5   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+  75  0080D7   9D                            nop      
+  76  0080D8   9D                            nop      
+  77                         
+  78                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
                                                                 ;ëÒ»Î»
-  85  0080D7   7253500A                      cpl      $500A         ;
-  86  0080DB   98                            rcf                    ;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
-  87  0080DC   9D                            nop      
-  88  0080DD   9D                            nop      
-  89  0080DE   CC809F                        jp       Tx_Bit1_0     ;2
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+  79  0080D9   7253500A                      cpl      $500A         ;
+  80  0080DD   9D                            nop      
+  81  0080DE   9D                            nop      
+  82  0080DF   9D                            nop      
+  83  0080E0   CC80E3                        jp       Tx_Bit3_0     ;2
+  84                         
+  85                         Tx_Bit3_0:  
+  86  0080E3   76                            rrc      (X)
+  87  0080E4   250B                          jrc      Tx_Bit3_1     ;²»·­×ªµçÆ½		j2 nj1
+  88  0080E6   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+  89  0080EA   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 3  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
-  90                                   
-  91                         Tx_Bit7_1:  
-  92  0080E1   5C                            incw     x             ;7/16
-  93  0080E2   4A                            dec      a
-  94                                                          ;jreq	Tx_7_1_Filp;Èç¹ûÁ¬Ðø·¢ÁËÁù
-                                                                ;¸ö1¾ÍÌø2£¬²»ÊÇÁù¸ö1²»Ìø1
-  95                                                          ;²»ÓÃ·­×ªµÄÇé¿ö
-  96  0080E3   725A0002                      dec      _tx_buf_size  ;11
-  97  0080E7   2649                          jrne     Tx_Bit0_0     ;Èç¹û·¢ÍêÁË£¬È¥½áÊøÁ÷³Ì
-  98  0080E9   CC8097                        jp       Tx_Eop1       ;Ã»·¢Íê£¬¼ÌÐø
+  90  0080EC   9D                            nop      
+  91  0080ED   9D                            nop      
+  92  0080EE   CC8104                        jp       Tx_Bit4_0     ;					2
+  93                         
+  94                         Tx_Bit3_1:  
+  95  0080F1   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
+  96  0080F2   9D                            nop      
+  97  0080F3   9D                            nop      
+  98  0080F4   260E                          jrne     Tx_Bit4_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
+                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
   99                         
- 100                         Tx_Bit2_1:  
- 101  0080EC   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
- 102  0080ED   9D                            nop      
- 103  0080EE   9D                            nop      
- 104  0080EF   2663                          jrne     Tx_Bit3_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
-                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
- 105                         
- 106  0080F1   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 107  0080F3   9D                            nop      
- 108  0080F4   9D                            nop      
- 109                         
- 110                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
+ 100  0080F6   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 101  0080F8   9D                            nop      
+ 102  0080F9   9D                            nop      
+ 103                         
+ 104                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
                                                                 ;ëÒ»Î»
- 111  0080F5   7253500A                      cpl      $500A         ;
- 112  0080F9   98                            rcf                    ;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 113  0080FA   9D                            nop      
- 114  0080FB   9D                            nop      
- 115  0080FC   CC8154                        jp       Tx_Bit3_0     ;2
- 116                         
- 117                         Tx_Bit3_1:  
- 118  0080FF   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
- 119  008100   9D                            nop      
- 120  008101   9D                            nop      
- 121  008102   265E                          jrne     Tx_Bit4_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
+ 105  0080FA   7253500A                      cpl      $500A         ;
+ 106  0080FE   9D                            nop      
+ 107  0080FF   9D                            nop      
+ 108  008100   9D                            nop      
+ 109  008101   CC8104                        jp       Tx_Bit4_0     ;2
+ 110                         
+ 111                         Tx_Bit4_0:  
+ 112  008104   76                            rrc      (X)
+ 113  008105   250B                          jrc      Tx_Bit4_1     ;²»·­×ªµçÆ½		j2 nj1
+ 114  008107   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+ 115  00810B   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 116  00810D   9D                            nop      
+ 117  00810E   9D                            nop      
+ 118  00810F   CC8125                        jp       Tx_Bit5_0     ;
+ 119                         
+ 120                         Tx_Bit4_1:  
+ 121  008112   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
+ 122  008113   9D                            nop      
+ 123  008114   9D                            nop      
+ 124  008115   260E                          jrne     Tx_Bit5_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
                                                                 ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
- 122                         
- 123  008104   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 124  008106   9D                            nop      
- 125  008107   9D                            nop      
- 126                         
- 127                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
+ 125                         
+ 126  008117   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 127  008119   9D                            nop      
+ 128  00811A   9D                            nop      
+ 129                         
+ 130                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
                                                                 ;ëÒ»Î»
- 128  008108   7253500A                      cpl      $500A         ;
- 129  00810C   98                            rcf                    ;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 130  00810D   9D                            nop      
- 131  00810E   9D                            nop      
- 132  00810F   CC8162                        jp       Tx_Bit4_0     ;2
- 133                         
- 134                         Tx_Bit6_0:  
- 135  008112   76                            rrc      (X)           ;6/14
- 136  008113   252B                          jrc      Tx_Bit6_1     ;²»·­×ªµçÆ½		j2 nj1
- 137  008115   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 138  008117   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
- 139  00811B   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 140  00811C   76                            rrc      (x)           ;bit7µÄÓÒÒÆ
- 141                         Tx_Bit7_0:  
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+ 131  00811B   7253500A                      cpl      $500A         ;
+ 132  00811F   9D                            nop      
+ 133  008120   9D                            nop      
+ 134  008121   9D                            nop      
+ 135  008122   CC8125                        jp       Tx_Bit5_0     ;2
+ 136                         
+ 137                         Tx_Bit5_0:  
+ 138  008125   76                            rrc      (X)
+ 139  008126   250A                          jrc      Tx_Bit5_1     ;²»·­×ªµçÆ½		j2 nj1
+ 140  008128   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+ 141  00812C   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 142  00812E   76                            rrc      (X)
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 4  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
- 142  00811D   25C2                          jrc      Tx_Bit7_1     ;²»·­×ªµçÆ½		j2 nj1
- 143  00811F   5C                            incw     X             ;ptxbuf+1
- 144  008120   725A0002                      dec      _tx_buf_size  ;³¤¶È-1
- 145  008124   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
- 146  008128   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 147  008129   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 148  00812B   9D                            nop      
- 149  00812C   725D0002                      tnz      _tx_buf_size
- 150  008130   2769                          jreq     Tx_Eop2
- 151                         Tx_Bit0_0:                       ;Õâ¸öÒªºÍcheck endÁ¬ÔÚÒ»Æð
- 152  008132   76                            rrc      (X)
- 153  008133   2599                          jrc      Tx_Bit0_1     ;²»·­×ªµçÆ½		j2 nj1
- 154  008135   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
- 155  008139   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 156  00813A   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 157  00813C   9D                            nop      
- 158  00813D   CC809F                        jp       Tx_Bit1_0     ;					2
- 159                         
- 160                         ;½øµ½Õâ¸öº¯Êý£¬ËµÃ÷bit6ÊÇ1£¬ÏÈ×öÎ»ÒÆ
- 161                         Tx_Bit6_1:  
- 162  008140   76                            rrc      (x)           ;9 ÏÈ×öÎ»ÒÆ
- 163  008141   4A                            dec      a             ;10
- 164  008142   274A                          jreq     send_01       ;ÔÚÁíÒ»¸öº¯ÊýÄÚ·¢·´×ªÎ»
- 165  008144   259B                          jrc      Tx_Bit7_1     ;
- 166                                                          ;Èç¹û²»×ªÌø£¬ËµÃ÷ÊÇ7_0
- 167  008146   5C                            incw     x             ;2
- 168  008147   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 169  008149   725A0002                      dec      _tx_buf_size  ;³¤¶È-1 4
- 170  00814D   7253500A                      cpl      $500A         ;Êµ¼ÊÉÏ¾ÍÊÇ7_0
- 171  008151   CC809A                        jp       Tx_Bit7_0A    ;2
- 172                         
- 173                         Tx_Bit3_0:  
- 174  008154   76                            rrc      (X)
- 175  008155   25A8                          jrc      Tx_Bit3_1     ;²»·­×ªµçÆ½		j2 nj1
- 176  008157   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
- 177  00815B   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 178  00815C   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 179  00815E   9D                            nop      
- 180  00815F   CC8162                        jp       Tx_Bit4_0     ;					2
- 181                         
- 182                         Tx_Bit4_0:  
- 183  008162   76                            rrc      (X)
- 184  008163   254D                          jrc      Tx_Bit4_1     ;²»·­×ªµçÆ½		j2 nj1
- 185  008165   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
- 186  008169   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 187  00816A   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 188  00816C   9D                            nop      
- 189  00816D   CC8170                        jp       Tx_Bit5_0     ;
- 190                         
- 191                         Tx_Bit5_0:  
- 192  008170   76                            rrc      (X)
- 193  008171   250A                          jrc      Tx_Bit5_1     ;²»·­×ªµçÆ½		j2 nj1
- 194  008173   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
- 195  008177   9D                            nop                    ;rcf	;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 196  008178   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 197  00817A   CC8112                        jp       Tx_Bit6_0     ;					2
- 198                         
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+ 143  00812F   CC8144                        jp       Tx_Bit6_0     ;					2
+ 144                         
+ 145                         Tx_Bit5_1:  
+ 146  008132   76                            rrc      (X)           ;10Êµ¼ÊÉÏÊÇµÚÁùÎ»µÄÎ»ÒÆ
+ 147  008133   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
+ 148  008134   260E                          jrne     Tx_Bit6_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
+                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
+ 149                         
+ 150  008136   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 151  008138   9D                            nop      
+ 152  008139   9D                            nop      
+ 153  00813A   8A                            push     CC
+ 154                         
+ 155                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
+                                                                ;ëÒ»Î»
+ 156  00813B   7253500A                      cpl      $500A         ;
+ 157  00813F   86                            pop      CC
+ 158  008140   9D                            nop      
+ 159  008141   CC8144                        jp       Tx_Bit6_0     ;2
+ 160                         
+ 161                         Tx_Bit6_0:  
+ 162  008144   250A                          jrc      Tx_Bit6_1     ;²»·­×ªµçÆ½		j2 nj1 6/14
+ 163  008146   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 164  008148   9D                            nop      
+ 165  008149   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+ 166  00814D   CC8162                        jp       Tx_Bit7_0     ;					2
+ 167                                   
+ 168                         Tx_Bit6_1:  
+ 169  008150   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ8¸öÖÜÆÚ
+ 170  008151   9D                            nop      
+ 171  008152   260E                          jrne     Tx_Bit7_0     ;
+ 172  008154   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 173  008156   9D                            nop      
+ 174  008157   9D                            nop      
+ 175  008158   9D                            nop      
+ 176  008159   9D                            nop      
+ 177  00815A   9D                            nop      
+ 178  00815B   7253500A                      cpl      $500A         ;Êµ¼ÊÉÏ¾ÍÊÇ7_0
+ 179  00815F   CC8162                        jp       Tx_Bit7_0     ;2
+ 180                         
+ 181                         Tx_Bit7_0:  
+ 182  008162   76                            rrc      (X)           ;4/12
+ 183  008163   5C                            incw     X             ;ptxbuf+1
+ 184  008164   2510                          jrc      Tx_Bit7_1     ;²»·­×ªµçÆ½		j2 nj1
+ 185  008166   9D                            nop      
+ 186  008167   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+ 187  00816B   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
+ 188  00816D   725A0002                      dec      _tx_buf_size  ;³¤¶È-1
+ 189  008171   2724                          jreq     Tx_Eop6
+ 190  008173   CC8080                        jp       Tx_Bit0_0
+ 191                         
+ 192                         Tx_Bit7_1:  
+ 193  008176   4A                            dec      a             ;9/17
+ 194  008177   2709                          jreq     Tx_7_1_Flip
+ 195                                                          ;²»ÓÃ·­×ªµÄÇé¿ö
+ 196  008179   725A0002                      dec      _tx_buf_size  ;11
+ 197  00817D   2718                          jreq     Tx_Eop6       ;Èç¹û·¢ÍêÁË£¬È¥½áÊøÁ÷³Ì
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 5  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
- 199                         Tx_Bit5_1:  
- 200  00817D   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
- 201  00817E   9D                            nop      
- 202                                                          ;nop
- 203  00817F   2691                          jrne     Tx_Bit6_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
-                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
- 204                         
- 205  008181   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 206  008183   9D                            nop      
- 207  008184   9D                            nop      
- 208                         
- 209                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
-                                                                ;ëÒ»Î»
- 210  008185   7253500A                      cpl      $500A         ;
- 211  008189   98                            rcf                    ;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 212  00818A   9D                            nop      
- 213                                                          ;nop
- 214  00818B   CC8112                        jp       Tx_Bit6_0     ;2
- 215                         
- 216                         send_01:  
- 217  00818E   A606                          ld       a,#6          ;
- 218  008190   9D                            nop      
- 219  008191   9D                            nop      
- 220  008192   8A                            push     cc            ;±£»¤´æÔÚcÖÐµÄbit
- 221  008193   7253500A                      cpl      $500A         ;
- 222  008197   86                            pop      cc
- 223  008198   CC811D                        jp       Tx_Bit7_0     ;2
- 224                         
- 225                         ;·¢ËÍ2bit timeµÄse0
- 226                         ;·¢ËÍ1bit timeµÄj
- 227                         Tx_Eop2:  
- 228  00819B   9D                            nop      
- 229  00819C   725F500A                      clr      $500A         ;se0
- 230  0081A0   90AE0003                      ldw      Y,#3          ;2
- 231                         NOP_delay1:  
- 232  0081A4   905A                          decw     Y
- 233  0081A6   26FC                          jrne     NOP_delay1
- 234  0081A8   9D                            nop      
- 235  0081A9   9D                            nop      
- 236                         
- 237  0081AA   721C500A                      bset     $500A,#6      ;pc6À­¸ß£¬µ½ÕâÀï²î²»¶àÊÇ2bit 
+ 198  00817F   CC8080                        jp       Tx_Bit0_0     ;Ã»·¢Íê£¬¼ÌÐø
+ 199                         
+ 200                         ;´¦ÀíµçÆ½·´×ª
+ 201                         Tx_7_1_Flip:  
+ 202  008182   A606                          ld       A,#6          ;12
+ 203  008184   9D                            nop      
+ 204  008185   9D                            nop      
+ 205  008186   9D                            nop      
+ 206  008187   9D                            nop      
+ 207  008188   7253500A                      cpl      $500A         ;·­×ªÊä³ö				1
+ 208  00818C   725A0002                      dec      _tx_buf_size  ;³¤¶È-1
+ 209  008190   2704                          jreq     Tx_Eop5       ;Èç¹û·¢ÍêÁË£¬È¥½áÊøÁ÷³Ì
+ 210  008192   9D                            nop      
+ 211  008193   CC8080                        jp       Tx_Bit0_0
+ 212                         
+ 213                         ;·¢ËÍ2bit timeµÄse0
+ 214                         ;·¢ËÍ1bit timeµÄj
+ 215                         Tx_Eop5:  
+ 216  008196   9D                            nop      
+ 217                         Tx_Eop6:  
+ 218  008197   9D                            nop      
+ 219  008198   9D                            nop      
+ 220  008199   9D                            nop      
+ 221  00819A   725F500A                      clr      $500A         ;se0
+ 222  00819E   90AE0003                      ldw      Y,#3          ;2
+ 223                         NOP_delay1:  
+ 224  0081A2   905A                          decw     Y
+ 225  0081A4   26FC                          jrne     NOP_delay1
+ 226  0081A6   9D                            nop      
+ 227  0081A7   9D                            nop      
+ 228                         
+ 229  0081A8   721C500A                      bset     $500A,#6      ;pc6À­¸ß£¬µ½ÕâÀï²î²»¶àÊÇ2bit 
                                                                 ;time
- 238  0081AE   9D                            nop      
- 239  0081AF   9D                            nop      
- 240  0081B0   9D                            nop      
- 241  0081B1   81                            ret                    ;·µ»Øµ½cº¯Êý£¬ÕâÀïÒªËÄ¸öcycle
- 242                         
- 243                         Tx_Bit4_1:  
- 244  0081B2   4A                            dec      a             ;Ç°Ò»Î»µÄµÚ10¸öÖÜÆÚ
- 245  0081B3   9D                            nop      
- 246  0081B4   9D                            nop      
- 247  0081B5   26B9                          jrne     Tx_Bit5_0     ;a¼õÁËÖ®ºó²»µÈÓÚ0£¬¾ÍÌø2£¬µÈÓÚÁã
-                                                                ; ÏÂÃæÎ»·´×ª+Î»Ìî³ä1
- 248                         
- 249  0081B7   A606                          ld       A,#6          ;¸´Î»Á¬Ðø1¼ÆÊý			1
- 250  0081B9   9D                            nop      
- 251  0081BA   9D                            nop      
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+ 230  0081AC   9D                            nop      
+ 231  0081AD   9D                            nop      
+ 232  0081AE   9D                            nop      
+ 233  0081AF   81                            ret                    ;·µ»Øµ½cº¯Êý£¬ÕâÀïÒªËÄ¸öcycle
+ 234                         
+ 235                         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                               ;;;;;;;;;;;;;;;;;;
+ 236                         ;main Êµ¼ÊÉÏÊÇ_usb_tx
+ 237                         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                               ;;;;;;;;;;;;;;;;;;
+ 238                         
+ 239                         main.l    
+ 240                                                          ; initialize SP
+ 241  0081B0   AE03FF                        ldw      X,#stack_end
+ 242  0081B3   94                            ldw      SP,X
+ 243                         
+ 244  0081B4                                 #ifdef   1             
+ 245                                                          ; clear RAM0
+ 246  000000                       ram0_start.b  EQU      $0
+ 247  0000FF                       ram0_end.b  EQU      $FF
+ 248  0081B4   AE0000                        ldw      X,#ram0_start
+ 249                         clear_ram0.l  
+ 250  0081B7   7F                            clr      (X)
+ 251  0081B8   5C                            incw     X
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 6  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
- 252                         
- 253                                                          ;Èç¹ûÁ¬Ðø·¢ÁË6Î»1£¬ÔòÐèÒª·´×ª²åÈ
-                                                                ;ëÒ»Î»
- 254  0081BB   7253500A                      cpl      $500A         ;
- 255  0081BF   98                            rcf                    ;Çå¿Õcplµ¼ÖÂµÄcc.c=1		1
- 256  0081C0   9D                            nop      
- 257  0081C1   9D                            nop      
- 258  0081C2   CC8170                        jp       Tx_Bit5_0     ;2
- 259                         
- 260                         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-                               ;;;;;;;;;;;;;;;;;;
- 261                         ;main Êµ¼ÊÉÏÊÇ_usb_tx
- 262                         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-                               ;;;;;;;;;;;;;;;;;;
- 263                         
- 264                         main.l    
- 265                                                          ; initialize SP
- 266  0081C5   AE03FF                        ldw      X,#stack_end
- 267  0081C8   94                            ldw      SP,X
- 268                         
- 269  0081C9                                 #ifdef   1             
- 270                                                          ; clear RAM0
- 271  000000                       ram0_start.b  EQU      $0
- 272  0000FF                       ram0_end.b  EQU      $FF
- 273  0081C9   AE0000                        ldw      X,#ram0_start
- 274                         clear_ram0.l  
- 275  0081CC   7F                            clr      (X)
- 276  0081CD   5C                            incw     X
- 277  0081CE   A300FF                        cpw      X,#ram0_end   
- 278  0081D1   23F9                          jrule    clear_ram0
- 279  0081D3                                 #endif   
- 280                         
- 281  0081D3                                 #ifdef   1
- 282                                                          ; clear RAM1
- 283  000100                       ram1_start.w  EQU      $100
- 284  0001FF                       ram1_end.w  EQU      $1FF          
- 285  0081D3   AE0100                        ldw      X,#ram1_start
- 286                         clear_ram1.l  
- 287  0081D6   7F                            clr      (X)
- 288  0081D7   5C                            incw     X
- 289  0081D8   A301FF                        cpw      X,#ram1_end   
- 290  0081DB   23F9                          jrule    clear_ram1
- 291  0081DD                                 #endif   
- 292                         
- 293                                                          ; clear stack
- 294  000200                       stack_start.w  EQU      $200
- 295  0003FF                       stack_end.w  EQU      $3FF
- 296  0081DD   AE0200                        ldw      X,#stack_start
- 297                         clear_stack.l  
- 298  0081E0   7F                            clr      (X)
- 299  0081E1   5C                            incw     X
- 300  0081E2   A303FF                        cpw      X,#stack_end  
- 301  0081E5   23F9                          jrule    clear_stack
- 302                         
- 303                         infinite_loop.l  
- 304                                   segment  'ram0'
- 305  000000                       var1      ds.b     1
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+ 252  0081B9   A300FF                        cpw      X,#ram0_end   
+ 253  0081BC   23F9                          jrule    clear_ram0
+ 254  0081BE                                 #endif   
+ 255                         
+ 256  0081BE                                 #ifdef   1
+ 257                                                          ; clear RAM1
+ 258  000100                       ram1_start.w  EQU      $100
+ 259  0001FF                       ram1_end.w  EQU      $1FF          
+ 260  0081BE   AE0100                        ldw      X,#ram1_start
+ 261                         clear_ram1.l  
+ 262  0081C1   7F                            clr      (X)
+ 263  0081C2   5C                            incw     X
+ 264  0081C3   A301FF                        cpw      X,#ram1_end   
+ 265  0081C6   23F9                          jrule    clear_ram1
+ 266  0081C8                                 #endif   
+ 267                         
+ 268                                                          ; clear stack
+ 269  000200                       stack_start.w  EQU      $200
+ 270  0003FF                       stack_end.w  EQU      $3FF
+ 271  0081C8   AE0200                        ldw      X,#stack_start
+ 272                         clear_stack.l  
+ 273  0081CB   7F                            clr      (X)
+ 274  0081CC   5C                            incw     X
+ 275  0081CD   A303FF                        cpw      X,#stack_end  
+ 276  0081D0   23F9                          jrule    clear_stack
+ 277                         
+ 278                         infinite_loop.l  
+ 279                                   segment  'ram0'
+ 280  000000                       var1      ds.b     1
+ 281  000001                       var2      ds.b     1
+ 282  000002                       _tx_buf_size  ds.b     1             ;Ê£Óà·¢ËÍ³¤¶È
+ 283                         ;ÓÉÓÚmovÀàÐÍµÄ´úÂë¹ý´ó£¬ËùÒÔÁ¬Ðø1¼ÆÊý»¹ÊÇ·ÅÔÚaÖÐ
+ 284                         ;¹ØÓÚ×îºó±äÁ¿ÎÞ·¨»¹Ô­µÄÇé¿ö£¬½»ÓÉpopÖ¸ÁîÊµÏÖ
+ 285                         ;²»ÒªÔÚÃ¿¸ö·­×ªÖÜÆÚÊ¹ÓÃrcf£¬·¢ËÍÍê³ÉºóÃ¿¸ö×Ö½ÚÏÔÊ¾Îªff¼´Õý³£
+ 286                                   segment  'rom'
+ 287                                   
+ 288                                                          ;±äÁ¿¸³Öµ
+ 289  0081D2   35000000                      mov      var1,#$00     ;
+ 290  0081D6   357F0001                      mov      var2,#$7F     ;
+ 291                         
+ 292  0081DA   35020002                      mov      _tx_buf_size,#2  ;Òª·¢¶àÉÙ¸ö
+ 293                         
+ 294  0081DE   A606                          ld       A,#6          ;Á¢¼´Êý6
+ 295                         
+ 296  0081E0   AE0000                        ldw      X,#var1       ;·¢ËÍÊý×éµØÖ··ÅÈëx¼Ä´æÆ÷ 2tick
+ 297  0081E3   99                            scf                    ;
+ 298  0081E4   3540500A                      mov      $500A,#$40    ;port cµÄÁ½¸ögpioÒý½Å·¢ËÍidle j 
+                                                                ;1tick
+ 299                         
+ 300  0081E8   CD8080                        call     Tx_Bit0_0     ;Èç¹ûTx_Bit0_0Ïà¶ÔµØÖ·³¬¹ý+-127£
+                                                                ;¬ÓÃcall(4tick)²»ÓÃjra
+ 301                                   
+ 302  0081EB   20E5                          jra      infinite_loop
+ 303                         
+ 304  0081ED                                 interrupt NonHandledInterrupt
+ 305                         NonHandledInterrupt.l  
+ 306  0081ED   80                            iret     
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 7  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
- 306  000001                       var2      ds.b     1
- 307  000002                       _tx_buf_size  ds.b     1             ;Ê£Óà·¢ËÍ³¤¶È
- 308                         ;ÓÉÓÚmovÀàÐÍµÄ´úÂë¹ý´ó£¬ËùÒÔÁ¬Ðø1¼ÆÊý»¹ÊÇ·ÅÔÚaÖÐ
- 309                         ;¹ØÓÚ×îºó±äÁ¿ÎÞ·¨»¹Ô­µÄÇé¿ö£¬½»ÓÉpopÖ¸ÁîÊµÏÖ
- 310                         ;²»ÒªÔÚÃ¿¸ö·­×ªÖÜÆÚÊ¹ÓÃrcf£¬·¢ËÍÍê³ÉºóÃ¿¸ö×Ö½ÚÏÔÊ¾Îªff¼´Õý³£
- 311                                   segment  'rom'
- 312                                   
- 313                                                          ;±äÁ¿¸³Öµ
- 314  0081E7   35000000                      mov      var1,#$00     ;
- 315  0081EB   35100001                      mov      var2,#$10     ;
- 316                         
- 317  0081EF   35020002                      mov      _tx_buf_size,#2  ;Òª·¢¶àÉÙ¸ö
- 318                         
- 319  0081F3   A606                          ld       A,#6          ;Á¢¼´Êý6
- 320                         
- 321  0081F5   AE0000                        ldw      X,#var1       ;·¢ËÍÊý×éµØÖ··ÅÈëx¼Ä´æÆ÷ 2tick
- 322  0081F8   99                            scf                    ;
- 323  0081F9   3540500A                      mov      $500A,#$40    ;port cµÄÁ½¸ögpioÒý½Å·¢ËÍidle j 
-                                                                ;1tick
- 324                         
- 325  0081FD   CD8132                        call     Tx_Bit0_0     ;Èç¹ûTx_Bit0_0Ïà¶ÔµØÖ·³¬¹ý+-127£
-                                                                ;¬ÓÃcall(4tick)²»ÓÃjra
- 326                                   
- 327  008200   20E5                          jra      infinite_loop
- 328                         
- 329  008202                                 interrupt NonHandledInterrupt
- 330                         NonHandledInterrupt.l  
- 331  008202   80                            iret     
- 332                         
- 333                                   segment  'vectit'
- 334  008000   820081C5                      dc.l     {$82000000+main}  ; reset
- 335  008004   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; trap
- 336  008008   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq0
- 337  00800C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq1
- 338  008010   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq2
- 339  008014   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq3
- 340  008018   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq4
- 341  00801C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq5
- 342  008020   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq6
- 343  008024   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq7
- 344  008028   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq8
- 345  00802C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq9
- 346  008030   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq10
- 347  008034   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq11
- 348  008038   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq12
- 349  00803C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq13
- 350  008040   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq14
- 351  008044   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq15
- 352  008048   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq16
- 353  00804C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq17
- 354  008050   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq18
- 355  008054   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq19
- 356  008058   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq20
- 357  00805C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq21
- 358  008060   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq22
- 359  008064   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq23
- 360  008068   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq24
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
+ 307                         
+ 308                                   segment  'vectit'
+ 309  008000   820081B0                      dc.l     {$82000000+main}  ; reset
+ 310  008004   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; trap
+ 311  008008   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq0
+ 312  00800C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq1
+ 313  008010   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq2
+ 314  008014   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq3
+ 315  008018   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq4
+ 316  00801C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq5
+ 317  008020   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq6
+ 318  008024   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq7
+ 319  008028   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq8
+ 320  00802C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq9
+ 321  008030   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq10
+ 322  008034   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq11
+ 323  008038   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq12
+ 324  00803C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq13
+ 325  008040   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq14
+ 326  008044   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq15
+ 327  008048   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq16
+ 328  00804C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq17
+ 329  008050   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq18
+ 330  008054   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq19
+ 331  008058   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq20
+ 332  00805C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq21
+ 333  008060   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq22
+ 334  008064   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq23
+ 335  008068   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq24
+ 336  00806C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq25
+ 337  008070   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq26
+ 338  008074   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq27
+ 339  008078   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq28
+ 340  00807C   820081ED                      dc.l     {$82000000+NonHandledInterrupt}  ; irq29
+ 341                         
+ 342  008080                                 end      
+STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Thu Jun 27 19:32:11 2024
 Page 8  Assembler
-                                               d:\project\stm8_usb\simulate\main.asm
-
- 361  00806C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq25
- 362  008070   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq26
- 363  008074   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq27
- 364  008078   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq28
- 365  00807C   82008202                      dc.l     {$82000000+NonHandledInterrupt}  ; irq29
- 366                         
- 367  008080                                 end      
-STMicroelectronics list file postprocessor v1.01   (C)2009-2024   Sun Jun 16 10:02:47 2024
-Page 9  Assembler
                                                d:\project\stm8_usb\simulate\main.asm
 
 Symbol Name                       Value     Call       Type  Scope      Rel.  Line  Privacy  Segment   Size  Bytes File
 
-NOP_delay                             8089         no  WORD  Internal   ABS     14  private  text        14     0  -
-NOP_delay1                            81A4         no  WORD  Internal   ABS    231  private  text        14     0  -
-NonHandledInterrupt               00008202  interrupt  LONG  Internal   ABS    330  private  text         1     0  -
+NOP_delay1                            81A2         no  WORD  Internal   ABS    223  private  text        14     0  -
+NonHandledInterrupt               000081ED  interrupt  LONG  Internal   ABS    305  private  text         1     0  -
 
-Tx_Eop1_1                             8080         no  WORD  Internal   ABS      9  private  text         1     0  -
-Tx_Eop3                               8081         no  WORD  Internal   ABS     11  private  text         8     0  -
-Tx_Eop1                               8097         no  WORD  Internal   ABS     25  private  text         3     0  -
-Tx_Bit7_0A                            809A         no  WORD  Internal   ABS     28  private  text         5     0  -
-Tx_Bit1_0                             809F         no  WORD  Internal   ABS     32  private  text        14     0  -
-Tx_Bit2_0                             80AD         no  WORD  Internal   ABS     41  private  text        14     0  -
-Tx_Bit1_1                             80BB         no  WORD  Internal   ABS     50  private  text        19     0  -
-Tx_7_1_Filp                           80CE         no  WORD  Internal   ABS     68  private  text        19     0  -
-Tx_Bit0_1                             80CE         no  WORD  Internal   ABS     74  private  text        19     0  -
-Tx_Bit7_1                             80E1         no  WORD  Internal   ABS     91  private  text        11     0  -
-Tx_Bit2_1                             80EC         no  WORD  Internal   ABS    100  private  text        19     0  -
-Tx_Bit3_1                             80FF         no  WORD  Internal   ABS    117  private  text        19     0  -
-Tx_Bit6_0                             8112         no  WORD  Internal   ABS    134  private  text        11     0  -
-Tx_Bit7_0                             811D         no  WORD  Internal   ABS    141  private  text        21     0  -
-Tx_Bit0_0                             8132         no  WORD  Internal   ABS    151  private  text        14     0  -
-Tx_Bit6_1                             8140         no  WORD  Internal   ABS    161  private  text        20     0  -
-Tx_Bit3_0                             8154         no  WORD  Internal   ABS    173  private  text        14     0  -
-Tx_Bit4_0                             8162         no  WORD  Internal   ABS    182  private  text        14     0  -
-Tx_Bit5_0                             8170         no  WORD  Internal   ABS    191  private  text        13     0  -
-Tx_Bit5_1                             817D         no  WORD  Internal   ABS    199  private  text        17     0  -
-Tx_Eop2                               819B         no  WORD  Internal   ABS    227  private  text         9     0  -
-Tx_Bit4_1                             81B2         no  WORD  Internal   ABS    243  private  text        19     0  -
+Tx_Bit0_0                             8080         no  WORD  Internal   ABS      7  private  text        14     0  -
+Tx_Bit0_1                             808E         no  WORD  Internal   ABS     16  private  text        19     0  -
+Tx_Bit1_0                             80A1         no  WORD  Internal   ABS     33  private  text        14     0  -
+Tx_Bit1_1                             80AF         no  WORD  Internal   ABS     42  private  text        19     0  -
+Tx_Bit2_0                             80C2         no  WORD  Internal   ABS     59  private  text        14     0  -
+Tx_Bit2_1                             80D0         no  WORD  Internal   ABS     68  private  text        19     0  -
+Tx_Bit3_0                             80E3         no  WORD  Internal   ABS     85  private  text        14     0  -
+Tx_Bit3_1                             80F1         no  WORD  Internal   ABS     94  private  text        19     0  -
+Tx_Bit4_0                             8104         no  WORD  Internal   ABS    111  private  text        14     0  -
+Tx_Bit4_1                             8112         no  WORD  Internal   ABS    120  private  text        19     0  -
+Tx_Bit5_0                             8125         no  WORD  Internal   ABS    137  private  text        13     0  -
+Tx_Bit5_1                             8132         no  WORD  Internal   ABS    145  private  text        18     0  -
+Tx_Bit6_0                             8144         no  WORD  Internal   ABS    161  private  text        12     0  -
+Tx_Bit6_1                             8150         no  WORD  Internal   ABS    168  private  text        18     0  -
+Tx_Bit7_0                             8162         no  WORD  Internal   ABS    181  private  text        20     0  -
+Tx_Bit7_1                             8176         no  WORD  Internal   ABS    192  private  text        12     0  -
+Tx_7_1_Flip                           8182         no  WORD  Internal   ABS    201  private  text        20     0  -
+Tx_Eop5                               8196         no  WORD  Internal   ABS    215  private  text         1     0  -
+Tx_Eop6                               8197         no  WORD  Internal   ABS    217  private  text        11     0  -
 
-_tx_buf_size                          0002         no  WORD  Internal   ABS    307  private  bss          1     1  -
+_tx_buf_size                          0002         no  WORD  Internal   ABS    282  private  bss          1     1  -
 
-clear_ram0                        000081CC         no  LONG  Internal   ABS    274  private  text        10     0  -
-clear_ram1                        000081D6         no  LONG  Internal   ABS    286  private  text        10     0  -
-clear_stack                       000081E0         no  LONG  Internal   ABS    297  private  text         7     0  -
+clear_ram0                        000081B7         no  LONG  Internal   ABS    249  private  text        10     0  -
+clear_ram1                        000081C1         no  LONG  Internal   ABS    261  private  text        10     0  -
+clear_stack                       000081CB         no  LONG  Internal   ABS    272  private  text         7     0  -
 
-infinite_loop                     000081E7         no  LONG  Internal   ABS    303  private  text         0     0  -
+infinite_loop                     000081D2         no  LONG  Internal   ABS    278  private  text         0     0  -
 
-main                              000081C5         no  LONG  Internal   ABS    264  private  text         7     0  -
+main                              000081B0         no  LONG  Internal   ABS    239  private  text         7     0  -
 
-ram0_start                              00         no  BYTE  Internal   ABS    271  private  text         0     0  -
-ram0_end                                FF         no  BYTE  Internal   ABS    272  private  text         0     0  -
-ram1_start                            0100         no  WORD  Internal   ABS    283  private  text         0     0  -
-ram1_end                              01FF         no  WORD  Internal   ABS    284  private  text         0     0  -
+ram0_start                              00         no  BYTE  Internal   ABS    246  private  text         0     0  -
+ram0_end                                FF         no  BYTE  Internal   ABS    247  private  text         0     0  -
+ram1_start                            0100         no  WORD  Internal   ABS    258  private  text         0     0  -
+ram1_end                              01FF         no  WORD  Internal   ABS    259  private  text         0     0  -
 
-send_01                               818E         no  WORD  Internal   ABS    216  private  text        13     0  -
-stack_start                           0200         no  WORD  Internal   ABS    294  private  text         0     0  -
-stack_end                             03FF         no  WORD  Internal   ABS    295  private  text         0     0  -
+stack_start                           0200         no  WORD  Internal   ABS    269  private  text         0     0  -
+stack_end                             03FF         no  WORD  Internal   ABS    270  private  text         0     0  -
 
-var1                                  0000         no  WORD  Internal   ABS    305  private  bss          1     1  -
-var2                                  0001         no  WORD  Internal   ABS    306  private  bss          1     1  -
+var1                                  0000         no  WORD  Internal   ABS    280  private  bss          1     1  -
+var2                                  0001         no  WORD  Internal   ABS    281  private  bss          1     1  -
 
 
-40 labels
+35 labels
 No errors on assembly of 'd:\project\stm8_usb\simulate\main.asm'

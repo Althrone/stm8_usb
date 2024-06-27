@@ -2,10 +2,10 @@
 Segment List
 ------------
 
-d:\project\stm8_usb\simulate\main.asm[2]  304-  310         0 -        2                 'ram0'  [void]
-d:\project\stm8_usb\simulate\main.asm[1]    5-  303      8080 -     81E6                 'rom'  [text]
-d:\project\stm8_usb\simulate\main.asm[3]  311-  332      81E7 -     8202                 'rom'  [text]
-d:\project\stm8_usb\simulate\main.asm[4]  333-  366      8000 -     807F                 'vectit'  [data]
+d:\project\stm8_usb\simulate\main.asm[2]  279-  285         0 -        2                 'ram0'  [void]
+d:\project\stm8_usb\simulate\main.asm[1]    5-  278      8080 -     81D1                 'rom'  [text]
+d:\project\stm8_usb\simulate\main.asm[3]  286-  307      81D2 -     81ED                 'rom'  [text]
+d:\project\stm8_usb\simulate\main.asm[4]  308-  341      8000 -     807F                 'vectit'  [data]
 
 
 Class List
@@ -15,7 +15,7 @@ Class List
 0 '        ram1'   byte from      100 to       FF (lim      1FF) =  0% V
 0 '       stack'   byte from      200 to      1FF (lim      3FF) =  0% V
 0 '      eeprom'   byte from     4000 to     3FFF (lim     407F) =  0% V
-0 '         rom'   byte from     8080 to     8202 (lim     9FFF) =  4% C
+0 '         rom'   byte from     8080 to     81ED (lim     9FFF) =  4% C
 0 '      vectit'   byte from     8000 to     807F (lim     807F) =100% S
 
 
