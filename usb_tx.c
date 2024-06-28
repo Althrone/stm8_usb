@@ -3,8 +3,11 @@
 static unsigned char tx_buf_size=2;
 static unsigned char usb_tx_buf[12]={0x80,0};
 
+#define RECOVER_BUF_AND_SIZE 0
+
 void usb_tx(void)
 {
+#if RECOVER_BUF_AND_SIZE
     __asm__ ("push	_tx_buf_size");
 
     __asm__ ("push	_usb_tx_buf+0");
@@ -19,10 +22,18 @@ void usb_tx(void)
     __asm__ ("push	_usb_tx_buf+9");
     __asm__ ("push	_usb_tx_buf+10");
     __asm__ ("push	_usb_tx_buf+11");
+#endif
 
     __asm__ ("ldw	X,#_usb_tx_buf");
-    __asm__ ("scf");
-    __asm__ ("mov	0x500A,#0x40");
+
+    //切换至输出模式
+    GPIOC->ODR=(GPIOC->ODR&0x3F)|0x40;
+    GPIOC->CR1|=0xC0;//推挽输出
+    GPIOC->CR2|=0xC0;//Output speed 10MHz
+    GPIOC->DDR|=0xC0;//切换至输出模式
+    //在这个瞬间芯片会输出J电平
+
+    //由于每个包开头都是0x80，bit0会翻转电平自动产生SOP，所以不用管
 
     __asm__ ("Tx_Bit0_0:");
     __asm__ ("rrc	(X)");
@@ -229,6 +240,7 @@ void usb_tx(void)
     __asm__ ("nop");
     __asm__ ("bset	0x500A,#6");//pc6拉高，到这里差不多是2bit time	
 
+#if RECOVER_BUF_AND_SIZE
     __asm__ ("pop	_usb_tx_buf+11");
     __asm__ ("pop	_usb_tx_buf+10");
     __asm__ ("pop	_usb_tx_buf+9");
@@ -243,6 +255,7 @@ void usb_tx(void)
     __asm__ ("pop	_usb_tx_buf+0");
 
     __asm__ ("pop	_tx_buf_size");
+#endif
 
     __asm__ ("nop");
 

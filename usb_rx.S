@@ -24,7 +24,7 @@ _usb_rx:
 L_Error:
 	iret	;退出中断
 
-L_Delay_Begin:
+L_Delay_Begin://42个nop
 	nop
 	nop
 	nop

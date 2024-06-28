@@ -54,7 +54,7 @@
                                      54 	.area GSINIT
                                      55 	.area GSFINAL
                                      56 	.area GSINIT
-      008007 CD 82 D9         [ 4]   57 	call	___sdcc_external_startup
+      008007 CD 82 94         [ 4]   57 	call	___sdcc_external_startup
       00800A 4D               [ 1]   58 	tnz	a
       00800B 27 03            [ 1]   59 	jreq	__sdcc_init_data
       00800D CC 80 04         [ 2]   60 	jp	__sdcc_program_startup
@@ -120,36 +120,26 @@
                                     120 ;	 function main
                                     121 ;	-----------------------------------------
       008051                        122 _main:
-                                    123 ;	main.c: 17: GPIO_Init(GPIOC,GPIO_PIN_7,GPIO_MODE_OUT_PP_LOW_FAST);
-      008051 4B E0            [ 1]  124 	push	#0xe0
-      008053 A6 80            [ 1]  125 	ld	a, #0x80
-      008055 AE 50 0A         [ 2]  126 	ldw	x, #0x500a
-      008058 CD 80 91         [ 4]  127 	call	_GPIO_Init
-                                    128 ;	main.c: 18: GPIO_Init(GPIOC,GPIO_PIN_6,GPIO_MODE_OUT_PP_LOW_FAST);
-      00805B 4B E0            [ 1]  129 	push	#0xe0
-      00805D A6 40            [ 1]  130 	ld	a, #0x40
-      00805F AE 50 0A         [ 2]  131 	ldw	x, #0x500a
-      008062 CD 80 91         [ 4]  132 	call	_GPIO_Init
-                                    133 ;	main.c: 19: GPIO_Init(GPIOB,GPIO_PIN_5,GPIO_MODE_OUT_PP_LOW_SLOW);
-      008065 4B C0            [ 1]  134 	push	#0xc0
-      008067 A6 20            [ 1]  135 	ld	a, #0x20
-      008069 AE 50 05         [ 2]  136 	ldw	x, #0x5005
-      00806C CD 80 91         [ 4]  137 	call	_GPIO_Init
-                                    138 ;	main.c: 22: while (1)
-      00806F                        139 00102$:
-                                    140 ;	main.c: 24: usb_tx();
-      00806F CD 81 55         [ 4]  141 	call	_usb_tx
-                                    142 ;	main.c: 25: GPIO_WriteReverse(GPIOB,GPIO_PIN_5);
-      008072 A6 20            [ 1]  143 	ld	a, #0x20
-      008074 AE 50 05         [ 2]  144 	ldw	x, #0x5005
-      008077 CD 81 20         [ 4]  145 	call	_GPIO_WriteReverse
-                                    146 ;	main.c: 28: delay (1000);
-      00807A AE 03 E8         [ 2]  147 	ldw	x, #0x03e8
-      00807D CD 80 3A         [ 4]  148 	call	_delay
-      008080 20 ED            [ 2]  149 	jra	00102$
-                                    150 ;	main.c: 30: }
-      008082 81               [ 4]  151 	ret
-                                    152 	.area CODE
-                                    153 	.area CONST
-                                    154 	.area INITIALIZER
-                                    155 	.area CABS (ABS)
+                                    123 ;	main.c: 33: GPIO_Init(GPIOB,GPIO_PIN_5,GPIO_MODE_OUT_PP_LOW_SLOW);//灯
+      008051 4B C0            [ 1]  124 	push	#0xc0
+      008053 A6 20            [ 1]  125 	ld	a, #0x20
+      008055 AE 50 05         [ 2]  126 	ldw	x, #0x5005
+      008058 CD 80 7D         [ 4]  127 	call	_GPIO_Init
+                                    128 ;	main.c: 49: while (1)
+      00805B                        129 00102$:
+                                    130 ;	main.c: 51: usb_tx();
+      00805B CD 81 41         [ 4]  131 	call	_usb_tx
+                                    132 ;	main.c: 52: GPIO_WriteReverse(GPIOB,GPIO_PIN_5);
+      00805E A6 20            [ 1]  133 	ld	a, #0x20
+      008060 AE 50 05         [ 2]  134 	ldw	x, #0x5005
+      008063 CD 81 0C         [ 4]  135 	call	_GPIO_WriteReverse
+                                    136 ;	main.c: 53: delay (1000);
+      008066 AE 03 E8         [ 2]  137 	ldw	x, #0x03e8
+      008069 CD 80 3A         [ 4]  138 	call	_delay
+      00806C 20 ED            [ 2]  139 	jra	00102$
+                                    140 ;	main.c: 55: }
+      00806E 81               [ 4]  141 	ret
+                                    142 	.area CODE
+                                    143 	.area CONST
+                                    144 	.area INITIALIZER
+                                    145 	.area CABS (ABS)

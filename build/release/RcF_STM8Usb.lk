@@ -6,6 +6,7 @@
 -l stm8
 build/release/main.rel
 build/release/stm8s_gpio.rel
+build/release/usb_rx.rel
 build/release/usb_tx.rel
 
 -e
