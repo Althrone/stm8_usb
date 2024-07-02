@@ -3,10 +3,12 @@
 static unsigned char tx_buf_size=2;
 static unsigned char usb_tx_buf[12]={0x80,0};
 
-#define RECOVER_BUF_AND_SIZE 0
+#define RECOVER_BUF_AND_SIZE 1
 
 void usb_tx(void)
 {
+    __asm__ ("ldw	X,#_usb_tx_buf");
+    __asm__ ("mov	0x500A,#0x40");
 #if RECOVER_BUF_AND_SIZE
     __asm__ ("push	_tx_buf_size");
 
@@ -24,13 +26,13 @@ void usb_tx(void)
     __asm__ ("push	_usb_tx_buf+11");
 #endif
 
-    __asm__ ("ldw	X,#_usb_tx_buf");
+    
 
     //切换至输出模式
-    GPIOC->ODR=(GPIOC->ODR&0x3F)|0x40;
-    GPIOC->CR1|=0xC0;//推挽输出
-    GPIOC->CR2|=0xC0;//Output speed 10MHz
-    GPIOC->DDR|=0xC0;//切换至输出模式
+    // GPIOC->ODR=(GPIOC->ODR&0x3F)|0x40;
+    // GPIOC->CR1|=0xC0;//推挽输出
+    // GPIOC->CR2|=0xC0;//Output speed 10MHz
+    // GPIOC->DDR|=0xC0;//切换至输出模式
     //在这个瞬间芯片会输出J电平
 
     //由于每个包开头都是0x80，bit0会翻转电平自动产生SOP，所以不用管
@@ -239,6 +241,10 @@ void usb_tx(void)
     __asm__ ("nop");
     __asm__ ("nop");
     __asm__ ("bset	0x500A,#6");//pc6拉高，到这里差不多是2bit time	
+
+    // GPIOC->CR2&=0x3F;//Output speed 2MHz 因为此时还是输出模式 等下DDR设置之后就变成了关闭外部中断了
+    // GPIOC->CR1&=0x3F;//假开漏->浮空输入
+    // GPIOC->DDR&=0x3F;//切换至输入模式    
 
 #if RECOVER_BUF_AND_SIZE
     __asm__ ("pop	_usb_tx_buf+11");

@@ -15,6 +15,9 @@ void delay (int ms) //Function Definition
 void main(void)
 {
 
+	CLK_HSECmd(ENABLE);
+    CLK_ClockSwitchConfig(CLK_SWITCHMODE_AUTO,CLK_SOURCE_HSE,DISABLE,CLK_CURRENTCLOCKSTATE_DISABLE);//8MHz
+
     // GPIOC->CR1 = 0xFF;
 	
 	// GPIOC->CR1 = 0;//浮空输入
@@ -30,7 +33,7 @@ void main(void)
 
     // GPIO_Init(GPIOC,GPIO_PIN_7,GPIO_MODE_OUT_PP_LOW_FAST);
     // GPIO_Init(GPIOC,GPIO_PIN_6,GPIO_MODE_OUT_PP_LOW_FAST);
-    GPIO_Init(GPIOB,GPIO_PIN_5,GPIO_MODE_OUT_PP_LOW_SLOW);//灯
+    // GPIO_Init(GPIOB,GPIO_PIN_5,GPIO_MODE_OUT_PP_LOW_SLOW);//灯
 
 #if 0
     //初始化TIM1
@@ -48,8 +51,8 @@ void main(void)
 
     while (1)
     {
-        usb_tx();
-        GPIO_WriteReverse(GPIOB,GPIO_PIN_5);
+        // usb_tx();
+        // GPIO_WriteReverse(GPIOB,GPIO_PIN_5);
         delay (1000);
     }
 }

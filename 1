@@ -1,7 +1,0 @@
-sdcc -mstm8 -DSTM8S003 -DHSE_VALUE=12000000 -I./ -I./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/inc/ --debug --opt-code-size --out-fmt-elf build/debug/main.rel build/debug/stm8s_gpio.rel build/debug/usb_tx.rel -o build/debug/RcF_STM8Usb.elf
-
-sdcc -c -mstm8 -DSTM8S003 -DHSE_VALUE=12000000 -I./ -I./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/inc/ --debug --out-fmt-elf --opt-code-size main.c -o build/debug/main.rel
-
-sdcc -mstm8 -DSTM8S003 -DHSE_VALUE=12000000 -I./ -I./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/inc/ --opt-code-size --out-fmt-ihx build/release/main.rel build/release/stm8s_gpio.rel build/release/usb_tx.rel -o build/release/RcF_STM8Usb.ihx
-
-sdcc -c -mstm8 -DSTM8S003 -DHSE_VALUE=12000000 -I./ -I./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/inc/ --opt-code-size ./STM8S_StdPeriph_Lib/Libraries/STM8S_StdPeriph_Driver/src/stm8s_gpio.c -o build/release/stm8s_gpio.rel
