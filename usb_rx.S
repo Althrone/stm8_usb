@@ -1,3 +1,23 @@
+//uint8_t usb_tx_buffer[12];//sync 1 pid 1 data 8 crc 2
+//uint8_t usb_rx_buffer[12*8+16];//实际上sync是不放入buf的
+uint8_t usb_rx_buffer[11*8+15];//最终长度
+uint16_t usb_rx_index;
+
+ldw X,#_usb_rx_buffer
+
+Rx_Bit:
+	ld	a,$500B;将idr加载到a
+	and	a,#$C0;0x1100_0000
+	jreq	Rx_End;如果两位都是0，就是se0，结束接收
+	ld (X),A
+	incw X
+	jp	Rx_Bit
+
+Rx_End:
+	ldw _usb_rx_index,X
+	ret
+
+
 Rx_Bit0:
 	ld	a,$500B
 	and	a,#$C0;1

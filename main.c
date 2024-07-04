@@ -1,6 +1,13 @@
 #include "stm8s.h"
 #include "usb_tx.h"
 
+/*
+If you have multiple source files in your project, interrupt service routines 
+can be present in any of them, but a prototype of the isr MUST be present or 
+included in the file that contains the function main
+*/
+extern void TIM1_CAP_COM_IRQHandler(void) __interrupt(12);
+
 void delay (int ms) //Function Definition 
 {
 	int i = 0;

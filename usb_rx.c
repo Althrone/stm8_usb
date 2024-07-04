@@ -1,6 +1,25 @@
 #include "stm8s.h"
 
-uint8_t usb_rx_buffer[16];
+uint8_t usb_rx_buffer[11*8+15];
+uint16_t usb_rx_index;
+
+//函数符号会被定在 0x00 8038
+//详见stm8s ds Table 11. Interrupt mapping
+void TIM1_CAP_COM_IRQHandler(void) __interrupt(12)
+{
+    __asm__ ("Rx_Bit:");
+    __asm__ ("ld	A,0x500B");//将idr加载到a
+    __asm__ ("and	A,#0xC0");
+    __asm__ ("jreq	Rx_End");//如果两位都是0，就是se0，结束接收
+    __asm__ ("ld	(X),A");
+    __asm__ ("incw	X");
+    __asm__ ("jp	Rx_Bit");
+
+    __asm__ ("Rx_End:");
+    __asm__ ("ldw _usb_rx_index,X");
+
+    //编译会生成iret
+}
 
 void usb_rx(void)
 {
