@@ -4,6 +4,7 @@
         "stm8s_conf.h": "c",
         "stm8s_clk.h": "c",
         "algorithm": "c",
-        "usb_tx.h": "c"
+        "usb_tx.h": "c",
+        "stm8s_tim1.h": "c"
     }
 }

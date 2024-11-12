@@ -240,11 +240,7 @@ void usb_tx(void)
     __asm__ ("jrne	NOP_delay1");
     __asm__ ("nop");
     __asm__ ("nop");
-    __asm__ ("bset	0x500A,#6");//pc6拉高，到这里差不多是2bit time	
-
-    // GPIOC->CR2&=0x3F;//Output speed 2MHz 因为此时还是输出模式 等下DDR设置之后就变成了关闭外部中断了
-    // GPIOC->CR1&=0x3F;//假开漏->浮空输入
-    // GPIOC->DDR&=0x3F;//切换至输入模式    
+    __asm__ ("bset	0x500A,#6");//pc6拉高，到这里差不多是2bit time  
 
 #if RECOVER_BUF_AND_SIZE
     __asm__ ("pop	_usb_tx_buf+11");
@@ -263,11 +259,13 @@ void usb_tx(void)
     __asm__ ("pop	_tx_buf_size");
 #endif
 
-    __asm__ ("nop");
+    __asm__ ("nop");//这个nop可能是没用的
 
-    // nop
-	// nop
-	// nop
+    //切换回输入模式
+    GPIOC->CR2&=0x3F;//Output speed 2MHz 因为此时还是输出模式 等下DDR设置之后就变成了关闭外部中断了
+    GPIOC->CR1&=0x3F;//假开漏->浮空输入
+    GPIOC->DDR&=0x3F;//切换至输入模式  
+
 	// ret	;返回到c函数，这里要四个cycle
     //编译会自动产生ret
 }
